@@ -31,6 +31,7 @@ export const site = {
   // url: 'https://actionanand.github.io', // required
   // baseUrl: '/arblogz', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog', for vercel, not required
   url: 'https://arblogz.vercel.app', // required
+  baseUrl: '',
   motto: `Don't just be Inspired, be Inspiring!`,
   recentBlogSize: 7,
   archivePageSize: 25,
