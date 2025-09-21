@@ -28,8 +28,9 @@ export const site = {
   description: 'Welcome to my independent blog website! ',
   author: "Anand Raja", // required
   avatar: '/avatar.png', // required
+  // url: 'https://actionanand.github.io', // required
+  // baseUrl: '/arblogz', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog', for vercel, not required
   url: 'https://actionanand.github.io', // required
-  baseUrl: '/arblogz', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
   motto: `Don't just be Inspired, be Inspiring!`,
   recentBlogSize: 7,
   archivePageSize: 25,

@@ -53,6 +53,36 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## GitHub Pages deployment
+
+In /src/consts.ts, modify the contents of the site field:
+
+```js
+export const site = {
+  // ...
+  url: 'https://actionanand.github.io', // required,  website origin
+  baseUrl: '/arblogz', // When using GitHubPages, you must enter the repository name startwith '/'
+  // ...
+}
+```
+
+merge the changes to the branch `main-github`
+
+## Vercel deployment
+
+In /src/consts.ts, modify the contents of the site field:
+
+```js
+export const site = {
+  // ...
+  url: 'vercel.com', // required,  website origin
+  baseUrl: '', // When using GitHubPages, you must enter the repository name startwith '/'
+  // ...
+}
+```
+
+merge the changes to the branch `main-vercel`
+
 ## 👀 Want to learn more?
 
 Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
