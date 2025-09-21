@@ -3,6 +3,12 @@
   "installCommand": "yarn install",
   "buildCommand": "yarn run build",
   "outputDirectory": "dist",
+  "nodeVersion": "22.11.0",
+  "git": {
+    "deploymentEnabled": {
+      "main-vercel": true
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
@@ -13,8 +19,5 @@
         }
       ]
     }
-  ],
-  "env": {
-    "BRANCH": "main-vercel"
-  }
+  ]
 }
