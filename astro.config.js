@@ -20,6 +20,9 @@ import {remarkHtml} from "./src/plugins/remark-html.js";
 export default defineConfig({
   site: site.url,
   base: import.meta.env.PROD ? site.baseUrl : '',
+  server: {
+    allowedHosts: true // Allows all hosts
+  },
   trailingSlash: "never",
   integrations: [sitemap(), tailwind(), expressiveCode({
     plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
