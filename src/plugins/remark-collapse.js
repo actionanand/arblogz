@@ -46,12 +46,18 @@ export function remarkCollapse(options) {
         }
       });
 
-      parent.children[index] = h(
+        parent.children[index] = h(
         "details",
         {
           class: "remark-collapse"
         }, [
-          h("summary", {class: "remark-collapse__summary"}, [{type: "text", value: title}]),
+          h("summary", {class: "remark-collapse__summary"}, [
+            h("span", {
+              "data-translate": "remark.open"
+            }, [
+              {type: "text", value: title}
+            ])
+          ]),
           h("div", {class: "remark-collapse__content"}, node.children),
         ]);
     });

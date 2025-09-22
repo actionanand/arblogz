@@ -10,7 +10,7 @@ const {title, date, slug, category, tags, sticky = false, draft = false} = Astro
   <!-- title -->
   <div class="flex items-center">
     {sticky > 0 &&
-      <div class="post-sticky select-none">{t('home.sticky')}</div>}
+      <div class="post-sticky select-none"><span data-translate="home.sticky">{t('home.sticky')}</span></div>}
     <a class="flex text-xl underline-offset-4 cursor-pointer decoration-skin-base decoration-wavy hover:underline hover:decoration-sky-500 font-bold" href={slug}>
       {title}
     </a>
@@ -26,7 +26,7 @@ const {title, date, slug, category, tags, sticky = false, draft = false} = Astro
     <!-- draft -->
     {
       draft &&
-      <div class="mr-2"><i class="ri-git-pr-draft-line mr-1"/>{t('title.draft')}</div>
+      <div class="mr-2"><i class="ri-git-pr-draft-line mr-1"/><span data-translate="title.draft">{t('title.draft')}</span></div>
     }
 
     <!-- category -->

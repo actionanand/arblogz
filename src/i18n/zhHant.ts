@@ -41,5 +41,13 @@ export  const zhHant = {
   'search.placeholder': '輸入標題或摘要關鍵字',
   'feed.previous': '上一條動態',
   'feed.next': '下一條動態',
-  'more': '更多'
+  'more': '更多',
+  'nav.blog': '博客',
+  'nav.feed': '動態',
+  'nav.archive': '歸檔',
+  'nav.search': '搜索',
+  'nav.about': '關於',
+  'nav.language': '語言',
+  'code.copied': '已複製',
+  'footer.copyright': '版權',
 }

@@ -1,9 +1,9 @@
 const primaryColorScheme = ""; // "light" | "dark"
 
-// Get theme data from local storage
-const currentTheme = localStorage.getItem("theme");
-
 function getPreferTheme() {
+  // Get theme data from local storage
+  const currentTheme = localStorage.getItem("theme");
+  
   // return theme value in local storage if it is set
   if (currentTheme) return currentTheme;
 
@@ -17,15 +17,18 @@ function getPreferTheme() {
 }
 
 let themeValue = getPreferTheme();
+console.log('Initial theme value:', themeValue);
+console.log('Initial localStorage theme:', localStorage.getItem("theme"));
 
 function setPreference() {
   localStorage.setItem("theme", themeValue);
+  console.log('Theme saved to localStorage:', themeValue);
+  console.log('Current localStorage theme:', localStorage.getItem("theme"));
   reflectPreference();
 }
 
 function reflectPreference() {
   document.firstElementChild.setAttribute("data-theme", themeValue);
-
   document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
 }
 
@@ -37,20 +40,31 @@ function init() {
   reflectPreference();
 
   // now this script can find and listen for clicks on the control
-  document.querySelector("#theme-btn")?.addEventListener("click", () => {
+  const themeBtn = document.querySelector("#theme-btn");
+  console.log('Theme button found:', !!themeBtn);
+  
+  themeBtn?.addEventListener("click", () => {
+    console.log('Theme button clicked! Current theme:', themeValue);
     themeValue = themeValue === "light" ? "dark" : "light";
+    console.log('New theme value:', themeValue);
     setPreference();
   });
+  
   document.querySelector("#theme-btn-mobile")?.addEventListener("click", () => {
+    console.log('Mobile theme button clicked! Current theme:', themeValue);
     themeValue = themeValue === "light" ? "dark" : "light";
+    console.log('New theme value:', themeValue);
     setPreference();
   });
 }
 
-
-window.onload = () => {
-  init()
-};
+// Use DOMContentLoaded instead of load for faster initialization
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  // DOM is already loaded
+  init();
+}
 
 // sync with system changes
 window.matchMedia("(prefers-color-scheme: dark)")

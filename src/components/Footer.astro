@@ -13,18 +13,18 @@ let displayDate = new Date().getFullYear() === initialDate ? `${initialDate}` : 
     shouldLoadBusuanzi && (
       <div class="flex items-center justify-center text-skin-base">
     <span id="busuanzi_container_site_pv">
-      {t('footer.busuanziSitePV')}<span id="busuanzi_value_site_pv"></span>{t('footer.busuanziSitePVUnit')}
+      <span data-translate="footer.busuanziSitePV">{t('footer.busuanziSitePV')}</span><span id="busuanzi_value_site_pv"></span><span data-translate="footer.busuanziSitePVUnit">{t('footer.busuanziSitePVUnit')}</span>
     </span>
         <div class="divider-vertical"></div>
         <span id="busuanzi_container_site_uv">
-      {t('footer.busuanziSiteUV')}<span id="busuanzi_value_site_uv"></span>{t('footer.busuanziSiteUVUnit')}
+      <span data-translate="footer.busuanziSiteUV">{t('footer.busuanziSiteUV')}</span><span id="busuanzi_value_site_uv"></span><span data-translate="footer.busuanziSiteUVUnit">{t('footer.busuanziSiteUVUnit')}</span>
     </span>
       </div>
     )
   }
   <div class="flex items-center flex-col flex-wrap justify-center mb-4 text-skin-base first:mb-0 sm:flex-row">
     <div>
-      <span class="cursor-default">Copyright</span>
+      <span class="cursor-default" data-translate="footer.copyright">{t('footer.copyright')}</span>
       <i class="ri-copyright-line align-middle"></i>
       <span class="align-middle">{displayDate}</span>
     </div>
@@ -37,6 +37,6 @@ let displayDate = new Date().getFullYear() === initialDate ? `${initialDate}` : 
       )
     }
     <div class="divider-vertical"></div>
-    <a href={getUrl("/sitemap-0.xml")}>{t('footer.sitemap')}</a>
+    <a href={getUrl("/sitemap-0.xml")}><span data-translate="footer.sitemap">{t('footer.sitemap')}</span></a>
   </div>
 </div>

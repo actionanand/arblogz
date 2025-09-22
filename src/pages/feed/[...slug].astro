@@ -72,7 +72,7 @@ if (sortPosts[currentPostIndex + 1]) {
             title={prevPost.data.title}
           >
             <i class="ri-arrow-left-s-fill"/>
-            {t('feed.previous')}
+            <span data-translate="feed.previous">{t('feed.previous')}</span>
           </a>
         ) : (
           <div/>
@@ -84,7 +84,7 @@ if (sortPosts[currentPostIndex + 1]) {
               href={getUrl('/') + nextPost.collection + '/' + nextPost.slug}
               title={nextPost.data.title}
             >
-              {t('feed.next')}
+              <span data-translate="feed.next">{t('feed.next')}</span>
             </a>
             <i class="ri-arrow-right-s-fill float-right"/>
           </div>

@@ -80,7 +80,7 @@ if (totalPage === 1) {
       </a>
     )
   }
-  {totalPage > 5 && t('pagination.total') + totalPage + t('pagination.unit')}
+  {totalPage > 5 && <span><span data-translate="pagination.total">{t('pagination.total')}</span>{totalPage}<span data-translate="pagination.unit">{t('pagination.unit')}</span></span>}
 </div>
 
 <style>

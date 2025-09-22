@@ -47,7 +47,15 @@ export  let cs = {
   'title.draft': 'návrh',
   'title.minutes':' Minut',
   'title.words':' Slov',
-  'more': 'Více'
+  'more': 'Více',
+  'nav.blog': 'Blog',
+  'nav.feed': 'Feed',
+  'nav.archive': 'Archiv',
+  'nav.search': 'Hledat',
+  'nav.about': 'O nás',
+  'nav.language': 'Jazyk',
+  'code.copied': 'Zkopírováno',
+  'footer.copyright': 'Autorská práva',
 }
 
 
