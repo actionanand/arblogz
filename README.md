@@ -75,13 +75,28 @@ In /src/consts.ts, modify the contents of the site field:
 ```js
 export const site = {
   // ...
-  url: 'vercel.com', // required,  website origin
+  url: 'https://arblogz.vercel.app', // required,  website origin
   baseUrl: '', // When using GitHubPages, you must enter the repository name startwith '/'
   // ...
 }
 ```
 
 merge the changes to the branch `main-vercel`
+
+## Cloudflare deployment
+
+In /src/consts.ts, modify the contents of the site field:
+
+```js
+export const site = {
+  // ...
+  url: 'https://arblogz.pages.dev', // required,  website origin
+  baseUrl: '', // When using GitHubPages, you must enter the repository name startwith '/'
+  // ...
+}
+```
+
+merge the changes to the branch `main-cloudfare`
 
 ## 👀 Want to learn more?
 

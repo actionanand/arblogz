@@ -22,16 +22,20 @@ import type {AnalyticsConfig} from "./types/analyticsTypes"
  *    > 0: display the limited number of tags in the sidebar
  *    All tags will be displayed in single page "/tags".
  */
+
+/*
+* url for cloudflare: 'https://arblogz.pages.dev' | baseUrl: ''
+* url for vercel: 'https://arblogz.vercel.app' | baseUrl: ''
+* url for github Pages: 'https://actionanand.github.io' | baseUrl: '/arblogz'
+*/
 export const site = {
   title: 'AR Blogz', // required
   favicon: '/favicon.svg', // required
   description: 'Welcome to my independent blog website! ',
   author: "Anand Raja", // required
   avatar: '/avatar.png', // required
-  // url: 'https://actionanand.github.io', // required
-  // baseUrl: '/arblogz', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog', for vercel, not required
-  url: 'https://arblogz.vercel.app', // required
-  baseUrl: '',
+  url: 'https://arblogz.pages.dev', // required
+  baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
   motto: `Don't just be Inspired, be Inspiring!`,
   recentBlogSize: 7,
   archivePageSize: 25,
