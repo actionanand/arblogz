@@ -9,7 +9,10 @@ const isActive = hrefMath[1] === pathnameMatch[1]
 const children = menuChildren || [];
 ---
 <div class="box relative h-10 w-auto flex items-center">
-  <a href={getUrl(href)} target={target} class:list={[isActive ? 'header-link-active' : '', 'hover:header-link-hover']} {...props}>
+  <a href={getUrl(href)} target={target} class:list={[
+    isActive ? 'nav-link-enhanced active' : 'nav-link-enhanced', 
+    'menu-item-wavy'
+  ]} {...props}>
     <i class={iconClass}/>
     <slot/>
     {

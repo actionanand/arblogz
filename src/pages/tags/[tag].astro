@@ -27,9 +27,9 @@ const resultPosts = sortPostsByDate(tagPosts);
     {
       resultPosts.map((post) => (
         <li style="list-style-type: disc;" class="ml-4 my-2">
-          <a href={getUrl('/') + post.collection + '/' + post.slug}>
-            <span class="mr-4">{formatDate(post.data.date)}</span>
-            <span class="hover:text-skin-active">{post.data.title}</span>
+          <span class="mr-4">{formatDate(post.data.date)}</span>
+          <a href={getUrl('/') + post.collection + '/' + post.slug} class="hover:text-skin-active transition-colors">
+            {post.data.title}
           </a>
         </li>
       ))

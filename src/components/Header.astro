@@ -21,10 +21,10 @@ let tagCount = getCountByTagName(blogs);
     <div class="block xl:hidden">
       <MenuIcon></MenuIcon>
     </div>
-    <a class="text-2xl p-4" href={getUrl("/")}>{site.title}</a>
+    <a class="brand-logo text-2xl p-4 font-bold relative" href={getUrl("/")}>{site.title}</a>
     <div class="flex items-center">
       <div class="hidden xl:block">
-        <div class="flex items-center space-x-5 pr-4">
+        <div class="flex items-center space-x-1 pr-4">
           {
             categories.map(category => (
               <HeaderLink href={category.href} icon={category.iconClass} target={category.target || '_self'} menuChildren={category.children}>
@@ -44,7 +44,7 @@ let tagCount = getCountByTagName(blogs);
     {
       categories.map((category) => (
         <div class="py-2">
-          <a class=" hover:text-skin-active" href={getUrl(category.href)}>
+          <a class="hover:text-skin-active transition-colors" href={getUrl(category.href)}>
             <i class={category.iconClass}/>
             <span data-translate={category.translationKey}>{t(category.translationKey)}</span>
           </a>
@@ -97,7 +97,7 @@ let tagCount = getCountByTagName(blogs);
       {
         Object.keys(categoryCount).map((category) => (
           <div class="my-2 break-all truncate">
-            <a class="hover:text-skin-active" title={category + " (" + categoryCount[category] + ")"} href={getUrl("/category/") + category}>
+            <a class="hover:text-skin-active transition-colors" title={category + " (" + categoryCount[category] + ")"} href={getUrl("/category/") + category}>
               {category + " (" + categoryCount[category] + ")"}
             </a>
           </div>
@@ -117,7 +117,7 @@ let tagCount = getCountByTagName(blogs);
         tagArr &&
         tagArr.map((tag) => (
           <div class="my-2 break-all truncate">
-            <a class="hover:text-skin-active my-2" title={tag} href={getUrl("/tags/") + tag}>{tag + " (" + tagCount[tag] + ")"}</a>
+            <a class="hover:text-skin-active my-2 transition-colors" title={tag} href={getUrl("/tags/") + tag}>{tag + " (" + tagCount[tag] + ")"}</a>
           </div>
         ))
       }
