@@ -28,11 +28,13 @@ const currentPostIndex = sortPosts.findIndex(
   (postItem) => postItem.data.title === entry.data.title
 );
 let prevPost, nextPost
-if (sortPosts[currentPostIndex - 1]) {
-  prevPost = sortPosts[currentPostIndex - 1];
-}
+// Previous = older posts (higher index in sorted array)
 if (sortPosts[currentPostIndex + 1]) {
-  nextPost = sortPosts[currentPostIndex + 1];
+  prevPost = sortPosts[currentPostIndex + 1];
+}
+// Next = newer posts (lower index in sorted array)
+if (sortPosts[currentPostIndex - 1]) {
+  nextPost = sortPosts[currentPostIndex - 1];
 }
 ---
 <BlogPost frontmatter={entry.data}>
@@ -43,33 +45,31 @@ if (sortPosts[currentPostIndex + 1]) {
       <Content/>
     </article>
     <div class="divider-horizontal"></div>
-    <div class="h-8 text-skin-base">
-      {
-        prevPost ? (
-          <a
-            class="truncate  w-auto max-w-[40%] float-left"
-            href={getUrl('/') + prevPost.collection + '/' + prevPost.slug}
-            title={prevPost.data.title}
-          >
-            <i class="ri-arrow-left-s-fill"/>
-            {prevPost.data.title}
-          </a>
-        ) : (
-          <div/>
-        )
-      }
-      {
-        nextPost ? (
-          <div class="flex item-center float-right w-auto max-w-[40%] text-right">
-            <a class="truncate " href={getUrl('/') + nextPost.collection + '/' + nextPost.slug} title={nextPost.data.title}>
-              {nextPost.data.title}
-            </a>
-            <i class="ri-arrow-right-s-fill float-right"/>
-          </div>
-        ) : (
-          <div/>
-        )
-      }
+    <div class="flex justify-between items-center h-8 text-skin-base">
+      {prevPost ? (
+        <a
+          class="flex items-center truncate max-w-[40%] hover:text-skin-active transition-colors"
+          href={getUrl('/') + prevPost.collection + '/' + prevPost.slug}
+          title={prevPost.data.title}
+        >
+          <i class="ri-arrow-left-s-fill mr-1"/>
+          <span class="truncate">{prevPost.data.title}</span>
+        </a>
+      ) : (
+        <div></div>
+      )}
+      {nextPost ? (
+        <a
+          class="flex items-center truncate max-w-[40%] hover:text-skin-active transition-colors"
+          href={getUrl('/') + nextPost.collection + '/' + nextPost.slug}
+          title={nextPost.data.title}
+        >
+          <span class="truncate">{nextPost.data.title}</span>
+          <i class="ri-arrow-right-s-fill ml-1"/>
+        </a>
+      ) : (
+        <div></div>
+      )}
     </div>
     <BlogFooter title={entry.data.title} url={getUrl('/') + entry.collection + '/' + entry.slug} date={entry.data.date}></BlogFooter>
     {

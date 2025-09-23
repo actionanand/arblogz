@@ -2,7 +2,7 @@
 const { date, index } = Astro.props;
 ---
 
-<feed-post-date class={date ? "mr-2" : ""} data-date={date} data-index={index}>
+<feed-post-date class="text-xs text-skin-muted" data-date={date} data-index={index}>
   <span class="postTimeEle"></span>
 </feed-post-date>
 
@@ -27,7 +27,7 @@ const { date, index } = Astro.props;
       
       // Use client-side translation system for dynamic updates
       const publishedText = window.getCurrentTranslation ? window.getCurrentTranslation('feed.publishedIn') : 'Published in';
-      timeSpan[index].innerHTML = `${publishedText}：${postDateFromNow}`;
+      timeSpan[index].innerHTML = `<span class="opacity-60">${publishedText}:</span> <span>${postDateFromNow}</span>`;
       
       // Add translation key for dynamic updates
       timeSpan[index].setAttribute('data-translate-template', 'feed.publishedIn');
