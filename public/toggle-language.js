@@ -50,456 +50,77 @@ window.getCurrentLanguage = function() {
 };
 
 // Make force update available globally for debugging
-window.forceTranslationUpdate = function() {
-  forceCompleteTranslationUpdate();
+window.forceTranslationUpdate = async function() {
+  await forceCompleteTranslationUpdate();
 };
 
-// Complete translation mappings for client-side updates
-const translations = {
-  'ta': {
-    'aside.caution': 'எச்சரிக்கை',
-    'aside.danger': 'ஆபத்து',
-    'aside.note': 'தகவல்',
-    'aside.tip': 'குறிப்பு',
-    'sidebar.categories': 'கட்டுரை வகைகள்',
-    'sidebar.tags': 'குறிச்சொற்கள்',
-    'sidebar.uncategorized': 'மற்றவை',
-    'sidebar.recentArticle': 'சமீபத்திய கட்டுரைகள்',
-    'sidebar.recentComments': 'சமீபத்திய கருத்துக்கள்',
-    'search.search': 'தேடல்',
-    'search.placeholder': 'தலைப்பு அல்லது சுருக்கக் குறியீடுகளை உள்ளிடவும்',
-    'search.searchLabelOne': 'கண்டுபிடிக்கப்பட்டது ',
-    'search.searchLabelTwo': ' கட்டுரை(கள்) மொத்தம்',
-    'search.labelOne': 'தேடல் முடிவுகள் ',
-    'search.labelTwo': 'இல்',
-    'feed.previous': 'முந்தியது',
-    'feed.next': 'அடுத்தது',
-    'feed.publishedIn': 'பதிவிடப்பட்டது',
-    'blog.tableOfContent': 'உள்ளடக்கக் குறிப்பு',
-    'home.sticky': 'ஒட்டியிருத்தல்',
-    'home.goBack': 'பின்னால் செல்க',
-    'home.moreArticles': 'மேலும் பல கட்டுரைகள்',
-    'home.readMore': 'மேலும் படிக்க',
-    'title.draft': 'வரைவில்',
-    'title.minutes': ' நிமிடங்கள்',
-    'title.words': ' சொற்கள்',
-    'pagination.total': 'மொத்தம்',
-    'pagination.unit': 'பக்கங்கள்',
-    'post.lastUpdated': 'கடைசியாக புதுப்பிக்கப்பட்டது',
-    'remark.open': 'திறக்கவும்',
-    'more': 'மேலும்',
-    'footer.articleTitle': 'கட்டுரை தலைப்பு',
-    'footer.articleAuthor': 'கட்டுரை ஆசிரியர்',
-    'footer.releaseTime': 'வெளியீட்டு நேரம்',
-    'footer.originalLink': 'மூல இணைப்பு',
-    'footer.sitemap': 'தள வரைபடம்',
-    'footer.busuanziSitePV': 'பக்கப் பார்வைகள்:',
-    'footer.busuanziSitePVUnit': '',
-    'footer.busuanziSiteUV': 'மொத்த பார்வையாளர்கள்:',
-    'footer.busuanziSiteUVUnit': '',
-    'nav.blog': 'வலைப்பதிவு',
-    'nav.feed': 'ஊட்டம்',
-    'nav.archive': 'காப்பகம்',
-    'nav.search': 'தேடல்',
-    'nav.about': 'பற்றி',
-    'nav.language': 'மொழி',
-    'footer.copyright': 'காப்புரிமை'
-  },
-  'en': {
-    'aside.caution': 'Caution',
-    'aside.danger': 'Danger',
-    'aside.note': 'Note',
-    'aside.tip': 'Tip',
-    'sidebar.categories': 'Categories',
-    'sidebar.tags': 'Tags',
-    'sidebar.uncategorized': 'Uncategorized',
-    'sidebar.recentArticle': 'Recent Articles',
-    'sidebar.recentComments': 'Recent Comments',
-    'search.search': 'Search',
-    'search.placeholder': 'Search for content...',
-    'search.searchLabelOne': 'Found',
-    'search.searchLabelTwo': 'results',
-    'search.labelOne': 'Search results for',
-    'search.labelTwo': 'in',
-    'feed.previous': 'Previous',
-    'feed.next': 'Next',
-    'feed.publishedIn': 'Published in',
-    'blog.tableOfContent': 'Table of Content',
-    'home.sticky': 'Sticky',
-    'home.goBack': 'Go Back',
-    'home.moreArticles': 'More Articles',
-    'home.readMore': 'Read More',
-    'title.draft': 'Draft',
-    'title.minutes': 'minutes',
-    'title.words': 'words',
-    'pagination.total': 'Total',
-    'pagination.unit': 'pages',
-    'post.lastUpdated': 'Last Updated',
-    'remark.open': 'Open',
-    'more': 'More',
-    'footer.articleTitle': 'Article title',
-    'footer.articleAuthor': 'Article author',
-    'footer.releaseTime': 'Release time',
-    'footer.originalLink': 'Original link',
-    'footer.sitemap': 'Sitemap',
-    'footer.busuanziSitePV': 'Page views:',
-    'footer.busuanziSitePVUnit': '',
-    'footer.busuanziSiteUV': 'Total visitors:',
-    'footer.busuanziSiteUVUnit': '',
-    'nav.blog': 'Blog',
-    'nav.feed': 'Feed',
-    'nav.archive': 'Archive',
-    'nav.search': 'Search',
-    'nav.about': 'About',
-    'nav.language': 'Language',
-    'footer.copyright': 'Copyright'
-  },
-  'zh-cn': {
-    'aside.caution': '注意',
-    'aside.danger': '危险',
-    'aside.note': '注意',
-    'aside.tip': '提示',
-    'sidebar.categories': '分类',
-    'sidebar.tags': '标签',
-    'sidebar.uncategorized': '未分类',
-    'sidebar.recentArticle': '最近文章',
-    'sidebar.recentComments': '最近评论',
-    'search.search': '搜索',
-    'search.placeholder': '搜索内容...',
-    'search.searchLabelOne': '找到',
-    'search.searchLabelTwo': '个结果',
-    'search.labelOne': '搜索结果',
-    'search.labelTwo': '在',
-    'feed.previous': '上一页',
-    'feed.next': '下一页',
-    'feed.publishedIn': '发布于',
-    'blog.tableOfContent': '目录',
-    'home.sticky': '置顶',
-    'home.goBack': '返回',
-    'home.moreArticles': '更多文章',
-    'home.readMore': '阅读更多',
-    'title.draft': '草稿',
-    'title.minutes': '分钟',
-    'title.words': '字',
-    'pagination.total': '总共',
-    'pagination.unit': '页',
-    'post.lastUpdated': '最后更新',
-    'remark.open': '打开',
-    'more': '更多',
-    'footer.articleTitle': '本文标题',
-    'footer.articleAuthor': '文章作者',
-    'footer.releaseTime': '发布时间',
-    'footer.originalLink': '原始链接',
-    'footer.sitemap': '站点地图',
-    'footer.busuanziSitePV': '总访问量',
-    'footer.busuanziSitePVUnit': '次',
-    'footer.busuanziSiteUV': '总访客数',
-    'footer.busuanziSiteUVUnit': '人次',
-    'nav.blog': '博客',
-    'nav.feed': '动态',
-    'nav.archive': '归档',
-    'nav.search': '搜索',
-    'nav.about': '关于',
-    'nav.language': '语言',
-    'footer.copyright': '版权'
-  },
-  'zh-Hant': {
-    'aside.caution': '注意',
-    'aside.danger': '危險',
-    'aside.note': '注意',
-    'aside.tip': '提示',
-    'sidebar.categories': '分類',
-    'sidebar.tags': '標籤',
-    'sidebar.uncategorized': '未分類',
-    'sidebar.recentArticle': '最近文章',
-    'sidebar.recentComments': '最近評論',
-    'search.search': '搜尋',
-    'search.placeholder': '搜尋內容...',
-    'search.searchLabelOne': '找到',
-    'search.searchLabelTwo': '個結果',
-    'search.labelOne': '搜尋結果',
-    'search.labelTwo': '在',
-    'feed.previous': '上一頁',
-    'feed.next': '下一頁',
-    'feed.publishedIn': '發布於',
-    'blog.tableOfContent': '目錄',
-    'home.sticky': '置頂',
-    'home.goBack': '返回',
-    'home.moreArticles': '更多文章',
-    'home.readMore': '閱讀更多',
-    'title.draft': '草稿',
-    'title.minutes': '分鐘',
-    'title.words': '字',
-    'pagination.total': '總共',
-    'pagination.unit': '頁',
-    'post.lastUpdated': '最後更新',
-    'remark.open': '打開',
-    'more': '更多',
-    'footer.articleTitle': '本文標題',
-    'footer.articleAuthor': '文章作者',
-    'footer.releaseTime': '發布時間',
-    'footer.originalLink': '原始鏈接',
-    'footer.sitemap': '站點地圖',
-    'footer.busuanziSitePV': '總訪問量',
-    'footer.busuanziSitePVUnit': '次',
-    'footer.busuanziSiteUV': '總訪客數',
-    'footer.busuanziSiteUVUnit': '人次',
-    'nav.blog': '博客',
-    'nav.feed': '動態',
-    'nav.archive': '歸檔',
-    'nav.search': '搜索',
-    'nav.about': '關於',
-    'nav.language': '語言',
-    'footer.copyright': '版權'
-  },
-  'cs': {
-    'aside.caution': 'Pozor',
-    'aside.danger': 'Nebezpečí',
-    'aside.note': 'Poznámka',
-    'aside.tip': 'Tip',
-    'sidebar.categories': 'Kategorie',
-    'sidebar.tags': 'Štítky',
-    'sidebar.uncategorized': 'Nezařazené',
-    'sidebar.recentArticle': 'Nedávné články',
-    'sidebar.recentComments': 'Nedávné komentáře',
-    'search.search': 'Hledat',
-    'search.placeholder': 'Hledat obsah...',
-    'search.searchLabelOne': 'Nalezeno',
-    'search.searchLabelTwo': 'výsledků',
-    'search.labelOne': 'Výsledky hledání pro',
-    'search.labelTwo': 'v',
-    'feed.previous': 'Předchozí',
-    'feed.next': 'Další',
-    'feed.publishedIn': 'Publikováno v',
-    'blog.tableOfContent': 'Obsah',
-    'home.sticky': 'Připnuto',
-    'home.goBack': 'Zpět',
-    'home.moreArticles': 'Více článků',
-    'home.readMore': 'Číst více',
-    'title.draft': 'Koncept',
-    'title.minutes': 'minut',
-    'title.words': 'slov',
-    'pagination.total': 'Celkem',
-    'pagination.unit': 'stránek',
-    'post.lastUpdated': 'Naposledy aktualizováno',
-    'remark.open': 'Otevřít',
-    'more': 'Více',
-    'footer.articleTitle': 'Název článku',
-    'footer.articleAuthor': 'Autor článku',
-    'footer.releaseTime': 'Čas vydání',
-    'footer.originalLink': 'Původní odkaz',
-    'footer.sitemap': 'Mapa stránek',
-    'footer.busuanziSitePV': 'Zobrazení stránky:',
-    'footer.busuanziSitePVUnit': '',
-    'footer.busuanziSiteUV': 'Celkový počet návštěvníků:',
-    'footer.busuanziSiteUVUnit': '',
-    'nav.blog': 'Blog',
-    'nav.feed': 'Feed',
-    'nav.archive': 'Archiv',
-    'nav.search': 'Hledat',
-    'nav.about': 'O nás',
-    'nav.language': 'Jazyk',
-    'footer.copyright': 'Autorská práva'
-  },
-  'fr': {
-    'aside.caution': 'Attention',
-    'aside.danger': 'Danger',
-    'aside.note': 'Note',
-    'aside.tip': 'Conseil',
-    'sidebar.categories': 'Catégories',
-    'sidebar.tags': 'Étiquettes',
-    'sidebar.uncategorized': 'Non catégorisé',
-    'sidebar.recentArticle': 'Articles récents',
-    'sidebar.recentComments': 'Commentaires récents',
-    'search.search': 'Rechercher',
-    'search.placeholder': 'Rechercher du contenu...',
-    'search.searchLabelOne': 'Trouvé',
-    'search.searchLabelTwo': 'résultats',
-    'search.labelOne': 'Résultats de recherche pour',
-    'search.labelTwo': 'dans',
-    'feed.previous': 'Précédent',
-    'feed.next': 'Suivant',
-    'feed.publishedIn': 'Publié dans',
-    'blog.tableOfContent': 'Table des matières',
-    'home.sticky': 'Épinglé',
-    'home.goBack': 'Retour',
-    'home.moreArticles': 'Plus d\'articles',
-    'home.readMore': 'Lire la suite',
-    'title.draft': 'Brouillon',
-    'title.minutes': 'minutes',
-    'title.words': 'mots',
-    'pagination.total': 'Total',
-    'pagination.unit': 'pages',
-    'post.lastUpdated': 'Dernière mise à jour',
-    'remark.open': 'Ouvrir',
-    'more': 'Plus',
-    'footer.articleTitle': 'Titre de l\'article',
-    'footer.articleAuthor': 'Auteur de l\'article',
-    'footer.releaseTime': 'Date de publication',
-    'footer.originalLink': 'Lien original',
-    'footer.sitemap': 'Plan du site',
-    'footer.busuanziSitePV': 'Vues de la page:',
-    'footer.busuanziSitePVUnit': '',
-    'footer.busuanziSiteUV': 'Total des visiteurs:',
-    'footer.busuanziSiteUVUnit': '',
-    'nav.blog': 'Blog',
-    'nav.feed': 'Flux',
-    'nav.archive': 'Archives',
-    'nav.search': 'Rechercher',
-    'nav.about': 'À propos',
-    'nav.language': 'Langue',
-    'footer.copyright': 'Droits d\'auteur'
-  },
-  'kn': {
-    'aside.caution': 'ಎಚ್ಚರಿಕೆ',
-    'aside.danger': 'ಅಪಾಯ',
-    'aside.note': 'ಗಮನಿಸಿ',
-    'aside.tip': 'ಸಲಹೆ',
-    'sidebar.categories': 'ವರ್ಗಗಳು',
-    'sidebar.tags': 'ಟ್ಯಾಗ್‌ಗಳು',
-    'sidebar.uncategorized': 'ವರ್ಗೀಕರಿಸದ',
-    'sidebar.recentArticle': 'ಇತ್ತೀಚಿನ ಲೇಖನಗಳು',
-    'sidebar.recentComments': 'ಇತ್ತೀಚಿನ ಕಾಮೆಂಟ್‌ಗಳು',
-    'search.search': 'ಹುಡುಕಿ',
-    'search.placeholder': 'ವಿಷಯವನ್ನು ಹುಡುಕಿ...',
-    'search.searchLabelOne': 'ಕಂಡುಬಂದಿದೆ',
-    'search.searchLabelTwo': 'ಫಲಿತಾಂಶಗಳು',
-    'search.labelOne': 'ಹುಡುಕಾಟ ಫಲಿತಾಂಶಗಳು',
-    'search.labelTwo': 'ರಲ್ಲಿ',
-    'feed.previous': 'ಹಿಂದಿನ',
-    'feed.next': 'ಮುಂದಿನ',
-    'feed.publishedIn': 'ಪ್ರಕಟಿಸಲಾಗಿದೆ',
-    'blog.tableOfContent': 'ವಿಷಯ ಪಟ್ಟಿ',
-    'home.sticky': 'ಅಂಟಿಕೊಂಡಿರುವ',
-    'home.goBack': 'ಹಿಂದೆ ಹೋಗಿ',
-    'home.moreArticles': 'ಹೆಚ್ಚಿನ ಲೇಖನಗಳು',
-    'home.readMore': 'ಹೆಚ್ಚು ಓದಿ',
-    'title.draft': 'ಕರಡು',
-    'title.minutes': 'ನಿಮಿಷಗಳು',
-    'title.words': 'ಪದಗಳು',
-    'pagination.total': 'ಒಟ್ಟು',
-    'pagination.unit': 'ಪುಟಗಳು',
-    'post.lastUpdated': 'ಕೊನೆಯ ಬಾರಿ ನವೀಕರಿಸಲಾಗಿದೆ',
-    'remark.open': 'ತೆರೆಯಿರಿ',
-    'more': 'ಹೆಚ್ಚು',
-    'footer.articleTitle': 'ಲೇಖನದ ಶೀರ್ಷಿಕೆ',
-    'footer.articleAuthor': 'ಲೇಖನದ ಲೇಖಕ',
-    'footer.releaseTime': 'ಬಿಡುಗಡೆ ಸಮಯ',
-    'footer.originalLink': 'ಮೂಲ ಲಿಂಕ್',
-    'footer.sitemap': 'ಜಾಲತಾಣ ನಕ್ಷೆ',
-    'footer.busuanziSitePV': 'ಪುಟ ವೀಕ್ಷಣೆಗಳು:',
-    'footer.busuanziSitePVUnit': '',
-    'footer.busuanziSiteUV': 'ಒಟ್ಟು ವೀಕ್ಷಕರು:',
-    'footer.busuanziSiteUVUnit': '',
-    'nav.blog': 'ಬ್ಲಾಗ್',
-    'nav.feed': 'ನವೀಕರಣಗಳು',
-    'nav.archive': 'ಸಂಗ್ರಹ',
-    'nav.search': 'ಹುಡುಕಿ',
-    'nav.about': 'ಬಗ್ಗೆ',
-    'nav.language': 'ಭಾಷೆ',
-    'footer.copyright': 'ಹಕ್ಕುಸ್ವಾಮ್ಯ'
-  },
-  'hi': {
-    'aside.caution': 'सावधानी',
-    'aside.danger': 'खतरा',
-    'aside.note': 'नोट',
-    'aside.tip': 'सुझाव',
-    'sidebar.categories': 'श्रेणियां',
-    'sidebar.tags': 'टैग',
-    'sidebar.uncategorized': 'अवर्गीकृत',
-    'sidebar.recentArticle': 'हाल के लेख',
-    'sidebar.recentComments': 'हाल की टिप्पणियां',
-    'search.search': 'खोजें',
-    'search.placeholder': 'सामग्री खोजें...',
-    'search.searchLabelOne': 'मिला',
-    'search.searchLabelTwo': 'परिणाम',
-    'search.labelOne': 'खोज परिणाम',
-    'search.labelTwo': 'में',
-    'feed.previous': 'पिछला',
-    'feed.next': 'अगला',
-    'feed.publishedIn': 'में प्रकाशित',
-    'blog.tableOfContent': 'विषय सूची',
-    'home.sticky': 'चिपकाया गया',
-    'home.goBack': 'वापस जाएं',
-    'home.moreArticles': 'और लेख',
-    'home.readMore': 'और पढ़ें',
-    'title.draft': 'मसौदा',
-    'title.minutes': 'मिनट',
-    'title.words': 'शब्द',
-    'pagination.total': 'कुल',
-    'pagination.unit': 'पृष्ठ',
-    'post.lastUpdated': 'अंतिम अपडेट',
-    'remark.open': 'खोलें',
-    'more': 'और',
-    'footer.articleTitle': 'लेख शीर्षक',
-    'footer.articleAuthor': 'लेख लेखक',
-    'footer.releaseTime': 'प्रकाशन समय',
-    'footer.originalLink': 'मूल लिंक',
-    'footer.sitemap': 'साइट मैप',
-    'footer.busuanziSitePV': 'पृष्ठ दृश्य:',
-    'footer.busuanziSitePVUnit': '',
-    'footer.busuanziSiteUV': 'कुल आगंतुक:',
-    'footer.busuanziSiteUVUnit': '',
-    'nav.blog': 'ब्लॉग',
-    'nav.feed': 'फीड',
-    'nav.archive': 'संग्रह',
-    'nav.search': 'खोजें',
-    'nav.about': 'के बारे में',
-    'nav.language': 'भाषा',
-    'footer.copyright': 'कॉपीराइट'
-  },
-  'ar': {
-    'aside.caution': 'تحذير',
-    'aside.danger': 'خطر',
-    'aside.note': 'ملاحظة',
-    'aside.tip': 'نصيحة',
-    'sidebar.categories': 'الفئات',
-    'sidebar.tags': 'العلامات',
-    'sidebar.uncategorized': 'غير مصنف',
-    'sidebar.recentArticle': 'المقالات الحديثة',
-    'sidebar.recentComments': 'التعليقات الحديثة',
-    'search.search': 'بحث',
-    'search.placeholder': 'البحث عن المحتوى...',
-    'search.searchLabelOne': 'تم العثور على',
-    'search.searchLabelTwo': 'نتائج',
-    'search.labelOne': 'نتائج البحث عن',
-    'search.labelTwo': 'في',
-    'feed.previous': 'السابق',
-    'feed.next': 'التالي',
-    'feed.publishedIn': 'نُشر في',
-    'blog.tableOfContent': 'جدول المحتويات',
-    'home.sticky': 'مثبت',
-    'home.goBack': 'العودة',
-    'home.moreArticles': 'المزيد من المقالات',
-    'home.readMore': 'اقرأ المزيد',
-    'title.draft': 'مسودة',
-    'title.minutes': 'دقائق',
-    'title.words': 'كلمات',
-    'pagination.total': 'المجموع',
-    'pagination.unit': 'صفحات',
-    'post.lastUpdated': 'آخر تحديث',
-    'remark.open': 'افتح',
-    'more': 'المزيد',
-    'footer.articleTitle': 'عنوان المقال',
-    'footer.articleAuthor': 'مؤلف المقال',
-    'footer.releaseTime': 'وقت النشر',
-    'footer.originalLink': 'الرابط الأصلي',
-    'footer.sitemap': 'خريطة الموقع',
-    'footer.busuanziSitePV': 'مشاهدات الصفحة:',
-    'footer.busuanziSitePVUnit': '',
-    'footer.busuanziSiteUV': 'إجمالي الزوار:',
-    'footer.busuanziSiteUVUnit': '',
-    'nav.blog': 'المدونة',
-    'nav.feed': 'الخلاصة',
-    'nav.archive': 'الأرشيف',
-    'nav.search': 'بحث',
-    'nav.about': 'حول',
-    'nav.language': 'اللغة',
-    'footer.copyright': 'حقوق الطبع والنشر'
+// Helper function to get current translation
+window.getCurrentTranslation = function(key) {
+  const currentLang = window.getCurrentLanguage();
+  const currentTranslations = translations[currentLang] || translations['en'];
+  return currentTranslations[key] || key;
+};
+
+// Translation cache and loading system
+let translations = {};
+let translationsLoaded = false;
+
+// Load translations dynamically using fetch
+async function loadTranslations() {
+  if (translationsLoaded) return translations;
+  
+  try {
+    // Load all translation files using fetch and evaluate them
+    const translationPromises = [
+      fetch('/translations/ta.js').then(r => r.text()),
+      fetch('/translations/en.js').then(r => r.text()),
+      fetch('/translations/zh-cn.js').then(r => r.text()),
+      fetch('/translations/zh-Hant.js').then(r => r.text()),
+      fetch('/translations/cs.js').then(r => r.text()),
+      fetch('/translations/fr.js').then(r => r.text()),
+      fetch('/translations/kn.js').then(r => r.text()),
+      fetch('/translations/hi.js').then(r => r.text()),
+      fetch('/translations/ar.js').then(r => r.text())
+    ];
+
+    const [taCode, enCode, zhCnCode, zhHantCode, csCode, frCode, knCode, hiCode, arCode] = await Promise.all(translationPromises);
+    
+    // Evaluate each translation file in a safe context
+    const evalTranslation = (code, expectedVar) => {
+      const context = {};
+      const func = new Function('window', code + `; return ${expectedVar};`);
+      return func(context);
+    };
+
+    translations = {
+      'ta': evalTranslation(taCode, 'ta'),
+      'en': evalTranslation(enCode, 'en'),
+      'zh-cn': evalTranslation(zhCnCode, 'zhCn'),
+      'zh-Hant': evalTranslation(zhHantCode, 'zhHant'),
+      'cs': evalTranslation(csCode, 'cs'),
+      'fr': evalTranslation(frCode, 'fr'),
+      'kn': evalTranslation(knCode, 'kn'),
+      'hi': evalTranslation(hiCode, 'hi'),
+      'ar': evalTranslation(arCode, 'ar')
+    };
+    
+    translationsLoaded = true;
+    console.log('Translations loaded successfully');
+    return translations;
+  } catch (error) {
+    console.error('Failed to load translations:', error);
+    // Fallback to empty objects if loading fails
+    translations = {
+      'ta': {}, 'en': {}, 'zh-cn': {}, 'zh-Hant': {}, 'cs': {}, 'fr': {}, 'kn': {}, 'hi': {}, 'ar': {}
+    };
+    return translations;
   }
-};
+}
 
-function updatePageTranslations() {
+async function updatePageTranslations() {
+  // Ensure translations are loaded
+  await loadTranslations();
+  
   const currentLang = window.getCurrentLanguage();
   const currentTranslations = translations[currentLang] || translations['en'];
   
@@ -523,6 +144,16 @@ function updatePageTranslations() {
     const key = element.getAttribute('data-translate-placeholder');
     if (currentTranslations[key]) {
       element.placeholder = currentTranslations[key];
+    }
+  });
+  
+  // Step 2.5: Update template elements with data-translate-template attributes
+  document.querySelectorAll('[data-translate-template]').forEach(element => {
+    const key = element.getAttribute('data-translate-template');
+    const dateValue = element.getAttribute('data-date-value');
+    if (currentTranslations[key] && dateValue) {
+      console.log(`Updating template: ${key} -> ${currentTranslations[key]}`);
+      element.innerHTML = `${currentTranslations[key]}：${dateValue}`;
     }
   });
   
@@ -716,22 +347,22 @@ function escapeRegExp(string) {
 }
 
 // Force complete re-translation of the entire page
-function forceCompleteTranslationUpdate() {
+async function forceCompleteTranslationUpdate() {
   console.log('Forcing complete translation update...');
   
   // Update the page multiple times with delays to catch all elements
-  updatePageTranslations();
+  await updatePageTranslations();
   
-  setTimeout(() => {
-    updatePageTranslations();
+  setTimeout(async () => {
+    await updatePageTranslations();
   }, 50);
   
-  setTimeout(() => {
-    updatePageTranslations();
+  setTimeout(async () => {
+    await updatePageTranslations();
   }, 150);
   
-  setTimeout(() => {
-    updatePageTranslations();
+  setTimeout(async () => {
+    await updatePageTranslations();
   }, 300);
 }
 
@@ -748,7 +379,10 @@ function reflectLanguagePreference() {
 // set early so no page flashes / language is made aware
 reflectLanguagePreference();
 
-function init() {
+async function init() {
+  // Load translations first
+  await loadTranslations();
+  
   // Get current language from localStorage on page load
   const savedLang = localStorage.getItem("language");
   
@@ -761,10 +395,13 @@ function init() {
   reflectLanguagePreference();
   
   // Update translations immediately on page load
-  updatePageTranslations();
+  await updatePageTranslations();
 
   // Set up MutationObserver to handle dynamically added elements
-  const observer = new MutationObserver((mutations) => {
+  const observer = new MutationObserver(async (mutations) => {
+    // Ensure translations are loaded
+    await loadTranslations();
+    
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
         // Check if any new elements with translation attributes were added
@@ -781,6 +418,16 @@ function init() {
                 element.textContent = currentTranslations[key];
               }
             });
+            
+            // Update any new elements with data-translate-template attributes
+            const newTemplateElements = node.querySelectorAll ? node.querySelectorAll('[data-translate-template]') : [];
+            newTemplateElements.forEach(element => {
+              const key = element.getAttribute('data-translate-template');
+              const dateValue = element.getAttribute('data-date-value');
+              if (currentTranslations[key] && dateValue) {
+                element.innerHTML = `${currentTranslations[key]}：${dateValue}`;
+              }
+            });
           }
         });
       }
@@ -794,7 +441,7 @@ function init() {
   });
 
   // Listen for clicks on language dropdown items
-  document.addEventListener('click', (e) => {
+  document.addEventListener('click', async (e) => {
     console.log('Click detected on:', e.target);
     const target = e.target.closest('[data-language-link]');
     console.log('Found language link target:', target);
@@ -810,7 +457,7 @@ function init() {
         setLanguagePreference();
         
         // Force complete translation update to catch all elements
-        forceCompleteTranslationUpdate();
+        await forceCompleteTranslationUpdate();
       } else {
         console.log('No language change needed. Current:', languageValue, 'New:', newLanguage);
       }
@@ -818,7 +465,7 @@ function init() {
   });
 
   // Also handle clicks on spans and icons inside language links
-  document.addEventListener('click', (e) => {
+  document.addEventListener('click', async (e) => {
     if (e.target.tagName === 'SPAN' || e.target.tagName === 'I') {
       const parentLink = e.target.closest('[data-language-link]');
       if (parentLink) {
@@ -830,15 +477,15 @@ function init() {
           setLanguagePreference();
           
           // Force complete translation update to catch all elements
-          forceCompleteTranslationUpdate();
+          await forceCompleteTranslationUpdate();
         }
       }
     }
   });
 }
 
-window.addEventListener('load', () => {
-  init();
+window.addEventListener('load', async () => {
+  await init();
 });
 
 // Debug function to test language switching

@@ -24,7 +24,14 @@ const { date, index } = Astro.props;
 
       let timeSpan = document.getElementsByClassName("postTimeEle");
       let postDateFromNow = date ? dayjs(date).fromNow() : dayjs().format("YYYY-MM-DD");
-      timeSpan[index].innerHTML = `${t('feed.publishedIn')}：${postDateFromNow}`;
+      
+      // Use client-side translation system for dynamic updates
+      const publishedText = window.getCurrentTranslation ? window.getCurrentTranslation('feed.publishedIn') : 'Published in';
+      timeSpan[index].innerHTML = `${publishedText}：${postDateFromNow}`;
+      
+      // Add translation key for dynamic updates
+      timeSpan[index].setAttribute('data-translate-template', 'feed.publishedIn');
+      timeSpan[index].setAttribute('data-date-value', postDateFromNow);
     }
   }
   customElements.define("feed-post-date", FeedPostDate);

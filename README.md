@@ -93,6 +93,10 @@ export const site = {
 
 merge the changes to the branch `main-cloudfare`
 
+## Icons search
+
+https://remixicon.com/
+
 ## 👀 Want to learn more?
 
 Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
