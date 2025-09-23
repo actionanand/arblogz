@@ -276,3 +276,31 @@ menu {
 .MathJax svg {
   display: inline;
 }
+
+/* Language selection styles */
+.language-item {
+  transition: all 0.2s ease;
+}
+
+.language-item.selected {
+  color: rgb(var(--color-text-active));
+  font-weight: bold;
+  background: rgba(var(--color-text-active), 0.1);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+.language-item.selected .ri-flag-line {
+  color: rgb(var(--color-text-active));
+}
+
+.language-item.selected .ri-flag-line:before {
+  content: "\ec4a"; /* ri-flag-fill icon */
+}
+
+.language-item:hover:not(.selected) {
+  color: rgb(var(--color-text-active));
+  background: rgba(var(--color-text-active), 0.05);
+  border-radius: 4px;
+  padding: 2px 8px;
+}

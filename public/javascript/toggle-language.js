@@ -372,8 +372,34 @@ function reflectLanguagePreference() {
   // Update document lang attribute for accessibility
   document.documentElement.lang = languageValue;
   
+  // Update visual language selection state
+  updateLanguageSelectionState();
+  
   // Update translations on the page
   updatePageTranslations();
+}
+
+function updateLanguageSelectionState() {
+  // Remove selected class from all language items
+  const allLanguageItems = document.querySelectorAll('.language-item');
+  allLanguageItems.forEach(item => {
+    item.classList.remove('selected');
+  });
+  
+  // Add selected class to current language items
+  const selectedLanguageItems = document.querySelectorAll(`[data-language-code="${languageValue}"]`);
+  selectedLanguageItems.forEach(item => {
+    if (item.classList.contains('language-item')) {
+      item.classList.add('selected');
+    }
+    // Also check parent li element
+    const parentLi = item.closest('.language-item');
+    if (parentLi) {
+      parentLi.classList.add('selected');
+    }
+  });
+  
+  console.log('Updated language selection state for:', languageValue);
 }
 
 // set early so no page flashes / language is made aware
@@ -486,6 +512,11 @@ async function init() {
 
 window.addEventListener('load', async () => {
   await init();
+  
+  // Ensure language selection state is updated after DOM is fully loaded
+  setTimeout(() => {
+    updateLanguageSelectionState();
+  }, 100);
 });
 
 // Debug function to test language switching

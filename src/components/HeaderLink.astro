@@ -21,7 +21,7 @@ const children = menuChildren || [];
       <ul class="space-y-4 w-28">
         {
           children.map(child =>
-            <li class="text-center hover:text-skin-active select-none">
+            <li class="text-center hover:text-skin-active select-none language-item" data-language-code={child.lang}>
               <i class={child.iconClass}></i>
               <a 
                 target={child.target ? child.target : "_self"} 
