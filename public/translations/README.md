@@ -77,7 +77,7 @@ const ru = {
 
 ### Step 2: Update the Translation Loader
 
-Edit `public/toggle-language.js` and find the `loadTranslations()` function:
+Edit `public/javascript/toggle-language.js` and find the `loadTranslations()` function:
 
 1. **Add fetch for the new language:**
    ```javascript
