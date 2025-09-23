@@ -144,7 +144,11 @@ export function remarkAsides(options) {
               },
               iconPaths[variant]
             ),
-            {type: "text", value: title},
+            h("span", {
+              "data-translate": `aside.${variant}`
+            }, [
+              {type: "text", value: title}
+            ]),
           ]),
           h("div", {class: "remark-aside__content"}, node.children),
         ]

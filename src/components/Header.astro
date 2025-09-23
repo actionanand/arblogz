@@ -27,7 +27,9 @@ let tagCount = getCountByTagName(blogs);
         <div class="flex items-center space-x-5 pr-4">
           {
             categories.map(category => (
-              <HeaderLink href={category.href} icon={category.iconClass} target={category.target ? category.target : '_self'} children={category.children ? category.children : []}>{category.name}</HeaderLink>
+              <HeaderLink href={category.href} icon={category.iconClass} target={category.target || '_self'} menuChildren={category.children}>
+                <span data-translate={category.translationKey}>{t(category.translationKey)}</span>
+              </HeaderLink>
             ))
           }
         </div>
@@ -44,7 +46,7 @@ let tagCount = getCountByTagName(blogs);
         <div class="py-2">
           <a class=" hover:text-skin-active" href={getUrl(category.href)}>
             <i class={category.iconClass}/>
-            <span>{category.name}</span>
+            <span data-translate={category.translationKey}>{t(category.translationKey)}</span>
           </a>
           {
             category.children && category.children.length > 0 &&
@@ -54,7 +56,12 @@ let tagCount = getCountByTagName(blogs);
             {
               category.children && category.children.map(sub =>
                 (
-                  <a class="block hover:text-skin-active" href={getUrl(sub.href)}>
+                  <a 
+                    class="block hover:text-skin-active" 
+                    href={sub.href}
+                    data-language-link="true"
+                    data-language-code={sub.lang}
+                  >
                     <i class={sub.iconClass}/>
                     <span>{sub.name}</span>
                   </a>
@@ -83,7 +90,7 @@ let tagCount = getCountByTagName(blogs);
       {
         Object.keys(categoryCount).length > 0 && (
           <div>
-            <i class="ri-folder-3-line menu-icon"/>{t('sidebar.categories')}
+            <i class="ri-folder-3-line menu-icon"/><span data-translate="sidebar.categories">{t('sidebar.categories')}</span>
           </div>
         )
       }
@@ -102,7 +109,7 @@ let tagCount = getCountByTagName(blogs);
           <div class="divider-horizontal-mini"></div>
           <div class="text-center">
             <i class="ri-price-tag-3-line menu-icon"/>
-            {t('sidebar.tags')}
+            <span data-translate="sidebar.tags">{t('sidebar.tags')}</span>
           </div>
         )
       }

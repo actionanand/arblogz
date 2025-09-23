@@ -5,7 +5,7 @@ import {t} from '@/i18n/utils'
 <IndexPage>
   <aside>
     <label for="search" class="text-2xl mb-4 text-skin-base ">
-      {t('search.search')}
+      <span data-translate="search.search">{t('search.search')}</span>
     </label>
 
     <div class="relative">
@@ -18,6 +18,7 @@ import {t} from '@/i18n/utils'
         id="search"
         class="block w-full rounded border border-opacity-40 mt-4 bg-skin-fill text-skin-base py-3 pl-10 pr-3 placeholder:italic placeholder:text-opacity-75 focus:border-skin-accent focus:outline-none"
         placeholder={t('search.placeholder')}
+        data-translate-placeholder="search.placeholder"
         type="search"
         name="search"
         autofocus

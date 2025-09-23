@@ -32,7 +32,14 @@ let resultPosts = sortPosts.splice(0, site.recentBlogSize);
         title={category + " (" + categoryCount[category] + ")"}
         href={getUrl("/category/") + category}
       >
-        {(category === 'uncategorized' ? t('sidebar.uncategorized') : category) + " (" + categoryCount[category] + ")"}
+        {category === 'uncategorized' ? (
+          <span>
+            <span data-translate="sidebar.uncategorized">{t('sidebar.uncategorized')}</span>
+            {" (" + categoryCount[category] + ")"}
+          </span>
+        ) : (
+          category + " (" + categoryCount[category] + ")"
+        )}
       </a>
     ))
   }

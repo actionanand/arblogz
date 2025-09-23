@@ -55,7 +55,11 @@ export const site = {
  * memosPageSize {number} 10
  */
 export const config = {
-  lang: 'en', // ta | en | zh-cn | zh-Hant | cs
+  lang: (() => {
+    // For server-side and initial render, always use English as default
+    // Client-side JavaScript will handle dynamic language switching
+    return 'en';
+  })(),
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
 
   // memos config
@@ -74,29 +78,103 @@ export const config = {
 export const categories = [
   {
     name: "Blog",
+    translationKey: "nav.blog",
     iconClass: "ri-draft-line",
     href: "/blog/1",
+    target: "_self"
   },
   {
     name: "Feed",
+    translationKey: "nav.feed",
     iconClass: "ri-lightbulb-flash-line",
     href: "/feed/1",
+    target: "_self"
   },
   {
     name: "Archive",
+    translationKey: "nav.archive",
     iconClass: "ri-archive-line",
     href: "/archive/1",
+    target: "_self"
   },
   {
     name: "Search",
+    translationKey: "nav.search",
     iconClass: "ri-search-line",
     href: "/search",
+    target: "_self"
   },
   {
     name: 'About',
+    translationKey: "nav.about",
     iconClass: 'ri-information-line',
     href: '/about',
+    target: "_self"
+  },
+  {
+    name: "Language",
+    translationKey: "nav.language",
+    iconClass: "ri-global-line",
+    href: "javascript:void(0);",
+    target: "_self",
+    children: [
+      {
+        name: 'தமிழ்',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'ta'
+      },
+      {
+        name: 'English',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'en'
+      },
+      {
+        name: '简体中文',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'zh-cn'
+      },
+      {
+        name: '繁體中文',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'zh-Hant'
+      },
+      {
+        name: 'Čeština',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'cs'
+      },
+      {
+        name: 'Français',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'fr'
+      },
+      {
+        name: 'ಕನ್ನಡ',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'kn'
+      },
+      {
+        name: 'हिन्दी',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'hi'
+      },
+      {
+        name: 'العربية',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'ar'
+      }
+    ]
   }
+
   /*
   {
     name: "More",
