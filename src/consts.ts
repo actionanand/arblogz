@@ -147,6 +147,30 @@ export const categories = [
         iconClass: 'ri-flag-line',
         href: '#',
         lang: 'cs'
+      },
+      {
+        name: 'Français',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'fr'
+      },
+      {
+        name: 'ಕನ್ನಡ',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'kn'
+      },
+      {
+        name: 'हिन्दी',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'hi'
+      },
+      {
+        name: 'العربية',
+        iconClass: 'ri-flag-line',
+        href: '#',
+        lang: 'ar'
       }
     ]
   }

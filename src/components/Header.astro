@@ -44,78 +44,31 @@ let tagCount = getCountByTagName(blogs);
     {
       categories.map((category) => (
         <div class="py-2">
-          {/* Special handling for Language dropdown in mobile */}
-          {category.translationKey === 'nav.language' ? (
-            <div class="relative inline-block text-left w-full max-w-xs mx-auto">
-              <button 
-                id="mobile-language-btn" 
-                type="button" 
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-skin-base bg-skin-fill border border-skin-line rounded-md hover:bg-skin-accent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-skin-accent"
-                aria-expanded="false" 
-                aria-haspopup="true"
-              >
-                <i class={category.iconClass + " mr-2"}/>
-                <span data-translate={category.translationKey}>{t(category.translationKey)}</span>
-                <i class="ri-arrow-down-s-line ml-2 -mr-1"/>
-              </button>
-              
-              <div 
-                id="mobile-language-dropdown" 
-                class="hidden absolute left-1/2 transform -translate-x-1/2 mt-2 w-56 rounded-md shadow-lg bg-skin-fill ring-1 ring-skin-line ring-opacity-5 focus:outline-none z-[60]"
-                role="menu" 
-                aria-orientation="vertical" 
-                aria-labelledby="mobile-language-btn"
-              >
-                <div class="py-1" role="none">
-                  {
-                    category.children && category.children.map(sub => (
-                      <a 
-                        class="flex items-center px-4 py-2 text-sm text-skin-base hover:bg-skin-accent hover:text-skin-active transition-colors cursor-pointer" 
-                        href="javascript:void(0);"
-                        data-language-link="true"
-                        data-language-code={sub.lang}
-                        role="menuitem"
-                      >
-                        <i class={sub.iconClass + " mr-3"}/>
-                        <span>{sub.name}</span>
-                      </a>
-                    ))
-                  }
-                </div>
-              </div>
-            </div>
-          ) : (
-            <a class=" hover:text-skin-active" href={getUrl(category.href)}>
-              <i class={category.iconClass}/>
-              <span data-translate={category.translationKey}>{t(category.translationKey)}</span>
-            </a>
-          )}
+          <a class=" hover:text-skin-active" href={getUrl(category.href)}>
+            <i class={category.iconClass}/>
+            <span data-translate={category.translationKey}>{t(category.translationKey)}</span>
+          </a>
           {
-            (category.children && category.children.length > 0 && category.translationKey !== 'nav.language') &&
+            category.children && category.children.length > 0 &&
             <div class="divider-horizontal"></div>
           }
-          {/* Only show expanded children for non-language categories */}
-          {
-            (category.translationKey !== 'nav.language') && (
-              <div class="space-y-4 text-sm">
-                {
-                  category.children && category.children.map(sub =>
-                    (
-                      <a 
-                        class="block hover:text-skin-active" 
-                        href={sub.href}
-                        data-language-link="true"
-                        data-language-code={sub.lang}
-                      >
-                        <i class={sub.iconClass}/>
-                        <span>{sub.name}</span>
-                      </a>
-                    )
-                  )
-                }
-              </div>
-            )
-          }
+          <div class="space-y-4 text-sm">
+            {
+              category.children && category.children.map(sub =>
+                (
+                  <a 
+                    class="block hover:text-skin-active" 
+                    href={sub.href}
+                    data-language-link="true"
+                    data-language-code={sub.lang}
+                  >
+                    <i class={sub.iconClass}/>
+                    <span>{sub.name}</span>
+                  </a>
+                )
+              )
+            }
+          </div>
         </div>
       ))
     }
@@ -172,53 +125,3 @@ let tagCount = getCountByTagName(blogs);
 
   </div>
 </header>
-
-<script>
-  // Mobile language dropdown functionality
-  function initMobileLanguageDropdown() {
-    const mobileLanguageBtn = document.getElementById('mobile-language-btn');
-    const mobileLanguageDropdown = document.getElementById('mobile-language-dropdown');
-    
-    if (mobileLanguageBtn && mobileLanguageDropdown) {
-      // Toggle dropdown on button click
-      mobileLanguageBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const isOpen = !mobileLanguageDropdown.classList.contains('hidden');
-        
-        if (isOpen) {
-          mobileLanguageDropdown.classList.add('hidden');
-          mobileLanguageBtn.setAttribute('aria-expanded', 'false');
-        } else {
-          mobileLanguageDropdown.classList.remove('hidden');
-          mobileLanguageBtn.setAttribute('aria-expanded', 'true');
-        }
-      });
-      
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!mobileLanguageBtn.contains(e.target) && !mobileLanguageDropdown.contains(e.target)) {
-          mobileLanguageDropdown.classList.add('hidden');
-          mobileLanguageBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-      
-      // Close dropdown when selecting a language
-      const languageLinks = mobileLanguageDropdown.querySelectorAll('[data-language-link="true"]');
-      languageLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileLanguageDropdown.classList.add('hidden');
-          mobileLanguageBtn.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-  }
-
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileLanguageDropdown);
-  } else {
-    initMobileLanguageDropdown();
-  }
-</script>
