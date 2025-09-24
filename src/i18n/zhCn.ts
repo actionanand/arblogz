@@ -55,4 +55,10 @@ export const zhCn = {
   'nav.language': '语言',
   'code.copied': '已复制',
   'footer.copyright': '版权',
+  'about.website.title': '关于网站',
+  'about.website.content': '演示',
+  'about.me.title': '关于我',
+  'about.me.content': '演示',
+  'about.other.title': '其他信息',
+  'about.other.content': '这是**测试**数据',
 }

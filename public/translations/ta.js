@@ -46,5 +46,11 @@ const ta = {
   'nav.search': 'தேடல்',
   'nav.about': 'பற்றி',
   'nav.language': 'மொழி',
-  'footer.copyright': 'காப்புரிமை'
+  'footer.copyright': 'காப்புரிமை',
+  'about.website.title': 'வலைத்தளத்தைப் பற்றி',
+  'about.website.content': 'டெமோ',
+  'about.me.title': 'என்னைப் பற்றி',
+  'about.me.content': 'டெமோ',
+  'about.other.title': 'மற்ற தகவல்',
+  'about.other.content': 'இது ஒரு **சோதனை** தரவு'
 };

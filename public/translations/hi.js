@@ -46,5 +46,11 @@ const hi = {
   'nav.search': 'खोजें',
   'nav.about': 'के बारे में',
   'nav.language': 'भाषा',
-  'footer.copyright': 'कॉपीराइट'
+  'footer.copyright': 'कॉपीराइट',
+  'about.website.title': 'वेबसाइट के बारे में',
+  'about.website.content': 'डेमो',
+  'about.me.title': 'मेरे बारे में',
+  'about.me.content': 'डेमो',
+  'about.other.title': 'अन्य जानकारी',
+  'about.other.content': 'यह एक **परीक्षण** डेटा है'
 };

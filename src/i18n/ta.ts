@@ -56,4 +56,10 @@ export  const ta = {
   'nav.language': 'மொழி',
   'code.copied': 'நகலெடுக்கப்பட்டது',
   'footer.copyright': 'காப்புரிமை',
+  'about.website.title': 'வலைத்தளத்தைப் பற்றி',
+  'about.website.content': 'டெமோ',
+  'about.me.title': 'என்னைப் பற்றி',
+  'about.me.content': 'டெமோ',
+  'about.other.title': 'மற்ற தகவல்',
+  'about.other.content': 'இது ஒரு **சோதனை** தரவு',
 }

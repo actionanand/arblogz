@@ -46,5 +46,11 @@ const en = {
   'nav.search': 'Search',
   'nav.about': 'About',
   'nav.language': 'Language',
-  'footer.copyright': 'Copyright'
+  'footer.copyright': 'Copyright',
+  'about.website.title': 'About Website',
+  'about.website.content': 'Demo',
+  'about.me.title': 'About Me',
+  'about.me.content': 'Demo',
+  'about.other.title': 'Other Info',
+  'about.other.content': 'It\'s a **test** data'
 };

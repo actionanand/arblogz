@@ -46,5 +46,11 @@ const zhHant = {
   'nav.search': '搜索',
   'nav.about': '關於',
   'nav.language': '語言',
-  'footer.copyright': '版權'
+  'footer.copyright': '版權',
+  'about.website.title': '關於網站',
+  'about.website.content': '示範',
+  'about.me.title': '關於我',
+  'about.me.content': '示範',
+  'about.other.title': '其他信息',
+  'about.other.content': '這是一個**測試**數據'
 };

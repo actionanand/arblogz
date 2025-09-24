@@ -56,6 +56,12 @@ export  let cs = {
   'nav.language': 'Jazyk',
   'code.copied': 'Zkopírováno',
   'footer.copyright': 'Autorská práva',
+  'about.website.title': 'O webové stránce',
+  'about.website.content': 'Demo',
+  'about.me.title': 'O mně',
+  'about.me.content': 'Demo',
+  'about.other.title': 'Další informace',
+  'about.other.content': 'Jsou to **testovací** data',
 }
 
 

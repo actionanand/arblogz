@@ -1,5 +1,5 @@
 ---
-donate: false
+donate: true
 comment: false
 ---
 
@@ -8,3 +8,6 @@ Demo
 
 ## About Me
 Demo
+
+## Other Info
+It's a **test** data

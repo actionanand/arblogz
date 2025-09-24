@@ -46,5 +46,11 @@ const ar = {
   'nav.search': 'بحث',
   'nav.about': 'حول',
   'nav.language': 'اللغة',
-  'footer.copyright': 'حقوق الطبع والنشر'
+  'footer.copyright': 'حقوق الطبع والنشر',
+  'about.website.title': 'حول الموقع',
+  'about.website.content': 'عرض توضيحي',
+  'about.me.title': 'معلومات عني',
+  'about.me.content': 'عرض توضيحي',
+  'about.other.title': 'معلومات أخرى',
+  'about.other.content': 'هذه بيانات **اختبارية**'
 };

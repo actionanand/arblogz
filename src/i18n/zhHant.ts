@@ -50,4 +50,10 @@ export  const zhHant = {
   'nav.language': '語言',
   'code.copied': '已複製',
   'footer.copyright': '版權',
+  'about.website.title': '關於網站',
+  'about.website.content': '示範',
+  'about.me.title': '關於我',
+  'about.me.content': '示範',
+  'about.other.title': '其他資訊',
+  'about.other.content': '這是**測試**資料',
 }

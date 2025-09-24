@@ -71,7 +71,13 @@ const ru = {
   'nav.search': 'Поиск',
   'nav.about': 'О нас',
   'nav.language': 'Язык',
-  'footer.copyright': 'Авторские права'
+  'footer.copyright': 'Авторские права',
+  'about.website.title': 'О сайте',
+  'about.website.content': 'Демо',
+  'about.me.title': 'Обо мне',
+  'about.me.content': 'Демо',
+  'about.other.title': 'Другая информация',
+  'about.other.content': 'Это **тестовые** данные'
 };
 ```
 

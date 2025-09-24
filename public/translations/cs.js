@@ -46,5 +46,11 @@ const cs = {
   'nav.search': 'Hledat',
   'nav.about': 'O nás',
   'nav.language': 'Jazyk',
-  'footer.copyright': 'Autorská práva'
+  'footer.copyright': 'Autorská práva',
+  'about.website.title': 'O webové stránce',
+  'about.website.content': 'Demo',
+  'about.me.title': 'O mně',
+  'about.me.content': 'Demo',
+  'about.other.title': 'Další informace',
+  'about.other.content': 'Jsou to **testovací** data'
 };

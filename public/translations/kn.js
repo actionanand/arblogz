@@ -46,5 +46,11 @@ const kn = {
   'nav.search': 'ಹುಡುಕಿ',
   'nav.about': 'ಬಗ್ಗೆ',
   'nav.language': 'ಭಾಷೆ',
-  'footer.copyright': 'ಹಕ್ಕುಸ್ವಾಮ್ಯ'
+  'footer.copyright': 'ಹಕ್ಕುಸ್ವಾಮ್ಯ',
+  'about.website.title': 'ವೆಬ್‌ಸೈಟ್ ಬಗ್ಗೆ',
+  'about.website.content': 'ಡೆಮೊ',
+  'about.me.title': 'ನನ್ನ ಬಗ್ಗೆ',
+  'about.me.content': 'ಡೆಮೊ',
+  'about.other.title': 'Other Info',
+  'about.other.content': 'ಇದು **ಪರೀಕ್ಷಾ** ದತ್ತಾಂಶ'
 };
