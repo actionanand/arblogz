@@ -50,15 +50,47 @@ function processMarkdown(text: string): string {
     });
   }
 
-  // Run markdown processing after global translations update
+  // Run markdown processing after DOM is loaded
   document.addEventListener('DOMContentLoaded', function() {
+    // Run immediately and with delays to catch different loading states
+    updateAboutMarkdown();
+    setTimeout(updateAboutMarkdown, 50);
     setTimeout(updateAboutMarkdown, 100);
+    setTimeout(updateAboutMarkdown, 200);
+  });
+
+  // Listen for language changes
+  document.addEventListener('languageChanged', function() {
+    setTimeout(updateAboutMarkdown, 50);
+    setTimeout(updateAboutMarkdown, 150);
+  });
+
+  // Listen for language selector clicks
+  document.addEventListener('click', function(e) {
+    const target = e.target as HTMLElement;
+    if (target && target.closest('[data-language-link]')) {
+      setTimeout(updateAboutMarkdown, 50);
+      setTimeout(updateAboutMarkdown, 200);
+    }
+  });
+
+  // Listen for global translation updates
+  window.addEventListener('translationsUpdated', function() {
+    setTimeout(updateAboutMarkdown, 50);
+    setTimeout(updateAboutMarkdown, 100);
+  });
+
+  // Run on page visibility change (when tab becomes active)
+  document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+      setTimeout(updateAboutMarkdown, 50);
+    }
   });
 </script>
 
 <style>
   .legal-links {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
   
   .legal-links ul {
@@ -66,7 +98,8 @@ function processMarkdown(text: string): string {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
+    gap: 0.5rem;
+    justify-content: flex-start;
   }
   
   .legal-links li {
@@ -74,23 +107,79 @@ function processMarkdown(text: string): string {
   }
   
   .legal-links a {
-    color: var(--tw-prose-links);
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
     text-decoration: none;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
     transition: all 0.2s ease;
-    font-size: 0.875rem;
+    border: 1px solid var(--tw-prose-hr, #e5e7eb);
+    background: #e5e7eb;
+    color: var(--tw-prose-body, #374151);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .legal-links a {
+      background: var(--bg-primary, #1f2937);
+      border-color: #374151;
+      color: #d1d5db;
+    }
   }
   
   .legal-links a:hover {
-    background-color: var(--tw-prose-links);
-    color: var(--tw-prose-invert-links);
+    background: #10b981;
+    color: white;
+    border-color: #10b981;
+    transform: translateY(-1px);
+  }  /* Legal Links Styling */
+  .legal-link {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: 2px solid transparent;
+  }
+  
+  .legal-link:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  }
+  
+  /* Contact Link Styling */
+  .contact-link {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    border: 2px solid transparent;
+  }
+  
+  .contact-link:hover {
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(17, 153, 142, 0.3);
+  }
+  
+  /* Add icon indicators */
+  .legal-link::after {
+    content: '⚖️';
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .contact-link::after {
+    content: '📧';
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
   }
   
   @media (max-width: 640px) {
     .legal-links ul {
-      flex-direction: column;
-      gap: 0.5rem;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    
+    .legal-links a {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
     }
   }
 </style>

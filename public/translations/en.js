@@ -59,6 +59,7 @@ const en = {
   'about.legal.copyright': 'Copyright',
   'about.legal.disclaimer': 'Disclaimer',
   'about.legal.faq': 'FAQ',
+  'about.legal.contact': 'Contact Us',
   'faq.title': 'Frequently Asked Questions',
   'faq.intro': 'Find answers to the most **common questions** about our website and services.',
   'faq.q1.question': 'What is this website about?',

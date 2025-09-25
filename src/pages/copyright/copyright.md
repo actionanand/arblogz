@@ -32,7 +32,3 @@ If you believe your copyright has been infringed, please contact us with:
 ## Third-Party Content
 
 Some content may be owned by third parties and used under license. Such content remains the property of its respective owners.
-
-## Contact
-
-For copyright-related inquiries, please contact us through the website's contact form.

@@ -58,7 +58,3 @@ Users are responsible for:
 - Verifying information before relying on it
 - Using appropriate antivirus software
 - Backing up their own data and systems
-
-## Contact
-
-For questions about this disclaimer, please contact us through our website contact form.

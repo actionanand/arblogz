@@ -56,7 +56,3 @@ Depending on your location, you may have rights to:
 ## Cookies
 
 We use cookies to enhance your browsing experience. You can control cookie settings through your browser preferences.
-
-## Contact Us
-
-If you have questions about this Privacy Policy, please contact us through our website contact form.

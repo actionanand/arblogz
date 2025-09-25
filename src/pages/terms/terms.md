@@ -54,7 +54,3 @@ We reserve the right to modify these terms at any time. Changes will be effectiv
 ## Governing Law
 
 These terms shall be governed by and construed in accordance with applicable local laws.
-
-## Contact Information
-
-For questions about these Terms and Conditions, please contact us through our website.
