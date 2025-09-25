@@ -57,11 +57,11 @@ export  let cs = {
   'code.copied': 'Zkopírováno',
   'footer.copyright': 'Autorská práva',
   'about.website.title': 'O webové stránce',
-  'about.website.content': 'Demo',
+  'about.website.content': 'Toto je **moderní** blogová webová stránka postavená s **Astro** a obsahující **vícejazyčný** obsah.',
   'about.me.title': 'O mně',
-  'about.me.content': 'Demo',
+  'about.me.content': 'Jsem **vývojář softwaru** s vášní pro **webové technologie** a vytváření **vícejazyčných** zážitků.',
   'about.other.title': 'Další informace',
-  'about.other.content': 'Jsou to **testovací** data',
+  'about.other.content': 'Tato webová stránka je **open source** a je dostupná na **GitHubu**.',
 }
 
 

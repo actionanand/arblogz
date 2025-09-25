@@ -57,9 +57,9 @@ export  const en = {
   'code.copied': 'Copied',
   'footer.copyright': 'Copyright',
   'about.website.title': 'About Website',
-  'about.website.content': 'Demo',
+  'about.website.content': 'This is a **modern** blog website built with **Astro** and featuring **multilingual** content.',
   'about.me.title': 'About Me',
-  'about.me.content': 'Demo',
+  'about.me.content': 'I am a **software developer** passionate about **web technologies** and creating **multilingual** experiences.',
   'about.other.title': 'Other Info',
-  'about.other.content': 'It\'s a **test** data',
+  'about.other.content': 'This website is **open source** and available on **GitHub**.',
 }

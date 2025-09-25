@@ -56,9 +56,9 @@ export const zhCn = {
   'code.copied': '已复制',
   'footer.copyright': '版权',
   'about.website.title': '关于网站',
-  'about.website.content': '演示',
+  'about.website.content': '这是一个使用 **Astro** 构建的**现代化**博客网站，支持**多语言**内容。',
   'about.me.title': '关于我',
-  'about.me.content': '演示',
+  'about.me.content': '我是一名**软件开发者**，热衷于**网络技术**和创建**多语言**体验。',
   'about.other.title': '其他信息',
-  'about.other.content': '这是**测试**数据',
+  'about.other.content': '本网站为**开源项目**，可在 **GitHub** 上获取。',
 }

@@ -57,9 +57,9 @@ export  const ta = {
   'code.copied': 'நகலெடுக்கப்பட்டது',
   'footer.copyright': 'காப்புரிமை',
   'about.website.title': 'வலைத்தளத்தைப் பற்றி',
-  'about.website.content': 'டெமோ',
+  'about.website.content': 'இது ஒரு **நவீன** வலைப்பதிவு தளம் ஆகும், இது **Astro** மற்றும் **Tamil** உள்ளடக்கத்துடன் கட்டப்பட்டுள்ளது.',
   'about.me.title': 'என்னைப் பற்றி',
-  'about.me.content': 'டெமோ',
+  'about.me.content': 'நான் ஒரு **மென்பொருள் உருவாக்குபவர்** ஆவேன். எனக்கு **வலை தொழில்நுட்பம்** மற்றும் **Tamil** மொழியில் எழுதுவது பிடிக்கும்.',
   'about.other.title': 'மற்ற தகவல்',
-  'about.other.content': 'இது ஒரு **சோதனை** தரவு',
+  'about.other.content': 'இந்த வலைத்தளம் **திறந்த மூலக் குறியீடு** ஆகும். **GitHub** இல் கிடைக்கும்.',
 }

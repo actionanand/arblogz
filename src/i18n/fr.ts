@@ -1,5 +1,4 @@
-// French translations
-const fr = {
+export const fr = {
   'aside.caution': 'Attention',
   'aside.danger': 'Danger',
   'aside.note': 'Note',
@@ -46,11 +45,12 @@ const fr = {
   'nav.search': 'Rechercher',
   'nav.about': 'À propos',
   'nav.language': 'Langue',
+  'code.copied': 'Copié',
   'footer.copyright': 'Droits d\'auteur',
   'about.website.title': 'À propos du site',
   'about.website.content': 'Ceci est un site de blog **moderne** construit avec **Astro** et proposant du contenu **multilingue**.',
   'about.me.title': 'À propos de moi',
   'about.me.content': 'Je suis un **développeur de logiciels** passionné par les **technologies web** et la création d\'expériences **multilingues**.',
   'about.other.title': 'Autres informations',
-  'about.other.content': 'Ce site web est **open source** et disponible sur **GitHub**.'
-};
+  'about.other.content': 'Ce site web est **open source** et disponible sur **GitHub**.',
+}

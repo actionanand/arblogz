@@ -65,76 +65,95 @@ window.getCurrentTranslation = function(key) {
 let translations = {};
 let translationsLoaded = false;
 
-// Load translations dynamically using fetch
+// Optimized translation loading - only loads needed languages
 async function loadTranslations() {
   if (translationsLoaded) return translations;
   
   try {
-    // Load all translation files using fetch and evaluate them
-    const translationPromises = [
-      fetch('/translations/ta.js').then(r => r.text()),
-      fetch('/translations/en.js').then(r => r.text()),
-      fetch('/translations/zh-cn.js').then(r => r.text()),
-      fetch('/translations/zh-Hant.js').then(r => r.text()),
-      fetch('/translations/cs.js').then(r => r.text()),
-      fetch('/translations/fr.js').then(r => r.text()),
-      fetch('/translations/kn.js').then(r => r.text()),
-      fetch('/translations/hi.js').then(r => r.text()),
-      fetch('/translations/ar.js').then(r => r.text())
-    ];
-
-    const [taCode, enCode, zhCnCode, zhHantCode, csCode, frCode, knCode, hiCode, arCode] = await Promise.all(translationPromises);
+    const currentLang = window.getCurrentLanguage() || 'en';
+    const requiredLangs = new Set([currentLang, 'en']); // Always include English as fallback
     
-    // Evaluate each translation file in a safe context
-    const evalTranslation = (code, expectedVar) => {
-      const context = {};
-      const func = new Function('window', code + `; return ${expectedVar};`);
-      return func(context);
+    // Load only required languages
+    const languageMap = {
+      'ta': 'ta', 'en': 'en', 'zh-cn': 'zhCn', 'zh-Hant': 'zhHant', 
+      'cs': 'cs', 'fr': 'fr', 'kn': 'kn', 'hi': 'hi', 'ar': 'ar'
     };
+    
+    const promises = [];
+    const langCodes = [];
+    
+    requiredLangs.forEach(lang => {
+      if (languageMap[lang]) {
+        promises.push(fetch(`/translations/${lang}.js`).then(r => r.text()));
+        langCodes.push(lang);
+      }
+    });
 
-    translations = {
-      'ta': evalTranslation(taCode, 'ta'),
-      'en': evalTranslation(enCode, 'en'),
-      'zh-cn': evalTranslation(zhCnCode, 'zhCn'),
-      'zh-Hant': evalTranslation(zhHantCode, 'zhHant'),
-      'cs': evalTranslation(csCode, 'cs'),
-      'fr': evalTranslation(frCode, 'fr'),
-      'kn': evalTranslation(knCode, 'kn'),
-      'hi': evalTranslation(hiCode, 'hi'),
-      'ar': evalTranslation(arCode, 'ar')
-    };
+    const results = await Promise.all(promises);
+    
+    // Simple eval approach for better performance
+    results.forEach((code, index) => {
+      const lang = langCodes[index];
+      const varName = languageMap[lang];
+      
+      // Create a simple evaluation context
+      const func = new Function(code + `; return ${varName};`);
+      translations[lang] = func();
+    });
     
     translationsLoaded = true;
-    console.log('Translations loaded successfully');
     return translations;
   } catch (error) {
     console.error('Failed to load translations:', error);
     // Fallback to empty objects if loading fails
-    translations = {
-      'ta': {}, 'en': {}, 'zh-cn': {}, 'zh-Hant': {}, 'cs': {}, 'fr': {}, 'kn': {}, 'hi': {}, 'ar': {}
-    };
+    translations = { 'en': {} };
     return translations;
   }
 }
 
+// Load additional language on demand
+async function loadLanguageOnDemand(lang) {
+  if (translations[lang]) return translations[lang]; // Already loaded
+  
+  const languageMap = {
+    'ta': 'ta', 'en': 'en', 'zh-cn': 'zhCn', 'zh-Hant': 'zhHant', 
+    'cs': 'cs', 'fr': 'fr', 'kn': 'kn', 'hi': 'hi', 'ar': 'ar'
+  };
+  
+  if (!languageMap[lang]) return null;
+  
+  try {
+    const response = await fetch(`/translations/${lang}.js`);
+    const code = await response.text();
+    const varName = languageMap[lang];
+    
+    const func = new Function(code + `; return ${varName};`);
+    translations[lang] = func();
+    return translations[lang];
+  } catch (error) {
+    console.error(`Failed to load language ${lang}:`, error);
+    return null;
+  }
+}
+
 async function updatePageTranslations() {
-  // Ensure translations are loaded
   await loadTranslations();
   
   const currentLang = window.getCurrentLanguage();
+  
+  // Load current language if not already loaded
+  if (!translations[currentLang]) {
+    await loadLanguageOnDemand(currentLang);
+  }
+  
   const currentTranslations = translations[currentLang] || translations['en'];
   
-  console.log('Updating translations for language:', currentLang);
-  console.log('Translation keys available:', Object.keys(currentTranslations).length);
-  
-  // Step 1: Update elements with data-translate attributes (highest priority - most reliable)
+  // Fast update - only data-translate elements (most reliable)
   const dataTranslateElements = document.querySelectorAll('[data-translate]');
-  console.log('Found elements with data-translate:', dataTranslateElements.length);
   
   dataTranslateElements.forEach(element => {
     const key = element.getAttribute('data-translate');
     if (currentTranslations[key]) {
-      console.log(`Updating data-translate: ${key} -> ${currentTranslations[key]}`);
       element.textContent = currentTranslations[key];
     }
   });
@@ -152,7 +171,6 @@ async function updatePageTranslations() {
     const key = element.getAttribute('data-translate-template');
     const dateValue = element.getAttribute('data-date-value');
     if (currentTranslations[key] && dateValue) {
-      console.log(`Updating template: ${key} -> ${currentTranslations[key]}`);
       element.innerHTML = `${currentTranslations[key]}：${dateValue}`;
     }
   });
@@ -178,8 +196,6 @@ async function updatePageTranslations() {
       });
     }
   });
-  
-  console.log('Built exact phrase map with', exactPhraseMap.size, 'entries');
   
   // Step 4: Careful text replacement - only in specific safe elements
   const safeElements = document.querySelectorAll(`
@@ -221,7 +237,6 @@ async function updatePageTranslations() {
           if (content === sourceText) {
             // Additional safety check - don't replace if it looks like it's part of a URL or technical content
             if (!shouldSkipTextReplacement(sourceText, textNode)) {
-              console.log(`Safe replacement: "${sourceText}" -> "${targetText}"`);
               textNode.textContent = textNode.textContent.replace(sourceText, targetText);
             }
           }
@@ -249,7 +264,7 @@ async function updatePageTranslations() {
     });
   });
   
-  console.log('Translation update completed');
+  // Translation update completed
 }
 
 // Helper function to check if a word is too common to safely replace

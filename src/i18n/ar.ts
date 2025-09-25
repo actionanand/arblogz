@@ -1,5 +1,4 @@
-// Arabic translations
-const ar = {
+export const ar = {
   'aside.caution': 'تحذير',
   'aside.danger': 'خطر',
   'aside.note': 'ملاحظة',
@@ -46,11 +45,12 @@ const ar = {
   'nav.search': 'بحث',
   'nav.about': 'حول',
   'nav.language': 'اللغة',
+  'code.copied': 'تم النسخ',
   'footer.copyright': 'حقوق الطبع والنشر',
   'about.website.title': 'حول الموقع',
   'about.website.content': 'هذا موقع مدونة **حديث** مبني بـ **Astro** ويدعم المحتوى **متعدد اللغات**.',
   'about.me.title': 'معلومات عني',
   'about.me.content': 'أنا **مطور برمجيات** شغوف بـ **تقنيات الويب** وإنشاء تجارب **متعددة اللغات**.',
   'about.other.title': 'معلومات أخرى',
-  'about.other.content': 'هذا الموقع **مفتوح المصدر** ومتاح على **GitHub**.'
-};
+  'about.other.content': 'هذا الموقع **مفتوح المصدر** ومتاح على **GitHub**.',
+}

@@ -16,37 +16,130 @@ This directory contains the translation files for the multilingual blog system. 
 | Hindi | `hi` | `hi.js` | ✅ Active |
 | Arabic | `ar` | `ar.js` | ✅ Active |
 
-## How to Add a New Language (Example: Russian)
+## 🚀 How to Add a New Language
 
-### Step 1: Create the Translation File
+Follow these steps to add complete translation support for a new language:
 
-Create a new file: `public/translations/ru.js`
+### Step 1: Create Server-Side Translation File
+
+Create `src/i18n/[languageCode].ts` (e.g., `src/i18n/ru.ts`):
+
+```typescript
+export const ru = {
+  'aside.caution': 'Осторожно',
+  'aside.danger': 'Опасность',
+  // ... copy all keys from existing language files
+  'about.website.title': 'О сайте',
+  'about.website.content': 'Демо',
+  'about.me.title': 'Обо мне',
+  'about.me.content': 'Демо',
+  'about.other.title': 'Другая информация',
+  'about.other.content': 'Это **тестовые** данные'
+}
+```
+
+### Step 2: Create Client-Side Translation File
+
+Create `public/translations/[languageCode].js` (e.g., `public/translations/ru.js`):
 
 ```javascript
 // Russian translations
 const ru = {
   'aside.caution': 'Осторожно',
   'aside.danger': 'Опасность',
-  'aside.note': 'Заметка',
-  'aside.tip': 'Совет',
-  'sidebar.categories': 'Категории',
-  'sidebar.tags': 'Теги',
-  'sidebar.uncategorized': 'Без категории',
-  'sidebar.recentArticle': 'Последние статьи',
-  'sidebar.recentComments': 'Последние комментарии',
-  'search.search': 'Поиск',
-  'search.placeholder': 'Поиск контента...',
-  'search.searchLabelOne': 'Найдено',
-  'search.searchLabelTwo': 'результатов',
-  'search.labelOne': 'Результаты поиска для',
-  'search.labelTwo': 'в',
-  'feed.previous': 'Предыдущая',
-  'feed.next': 'Следующая',
-  'feed.publishedIn': 'Опубликовано в',
-  'blog.tableOfContent': 'Содержание',
-  'home.sticky': 'Закреплено',
-  'home.goBack': 'Назад',
-  'home.moreArticles': 'Больше статей',
+  // ... copy all keys from server-side file
+  'about.website.title': 'О сайте',
+  'about.website.content': 'Демо',
+  'about.me.title': 'Обо мне',
+  'about.me.content': 'Демо',
+  'about.other.title': 'Другая информация',
+  'about.other.content': 'Это **тестовые** данные'
+};
+```
+
+⚠️ **IMPORTANT**: Both files must have identical translation keys!
+
+### Step 3: Update Client-Side Loader
+
+Edit `public/javascript/toggle-language.js`:
+
+1. **Add fetch for new language:**
+   ```javascript
+   const translationPromises = [
+     fetch('/translations/ta.js').then(r => r.text()),
+     // ... existing fetches ...
+     fetch('/translations/ru.js').then(r => r.text())  // ADD THIS
+   ];
+   ```
+
+2. **Add to destructuring:**
+   ```javascript
+   const [taCode, enCode, /* ... */, ruCode] = await Promise.all(translationPromises);
+   ```
+
+3. **Add to translations object:**
+   ```javascript
+   translations = {
+     'ta': evalTranslation(taCode, 'ta'),
+     // ... existing languages ...
+     'ru': evalTranslation(ruCode, 'ru')  // ADD THIS
+   };
+   ```
+
+4. **Add to language validation:**
+   ```javascript
+   if (savedLang && ['ta', 'en', 'zh-cn', 'zh-Hant', 'cs', 'fr', 'kn', 'hi', 'ar', 'ru'].includes(savedLang)) {
+   ```
+
+### Step 4: Update Server-Side i18n Utils
+
+Edit `src/i18n/utils.ts`:
+
+1. **Import the new language:**
+   ```typescript
+   import { ru } from './ru';
+   ```
+
+2. **Add to languages object:**
+   ```typescript
+   const languages = {
+     ta: ta,
+     // ... existing languages ...
+     ru: ru  // ADD THIS
+   };
+   ```
+
+### Step 5: Add Language Option to UI
+
+Update language dropdown in navigation components to include:
+
+```html
+<a data-language-link data-language-code="ru" href="#">
+  🇷🇺 Русский
+</a>
+```
+
+## ✅ Translation Checklist
+
+When adding a new language, ensure:
+
+- [ ] Server-side file created (`src/i18n/[lang].ts`)
+- [ ] Client-side file created (`public/translations/[lang].js`)
+- [ ] Both files have **identical keys**
+- [ ] Client-side loader updated (`toggle-language.js`)
+- [ ] Server-side utils updated (`src/i18n/utils.ts`)
+- [ ] Language validation arrays updated
+- [ ] UI dropdown includes new language
+- [ ] Test server-side rendering works
+- [ ] Test client-side language switching works
+- [ ] Test markdown formatting (** bold **) works
+
+## 🔧 Markdown Support
+
+The system supports markdown formatting in translations:
+- `**bold text**` → `<strong>bold text</strong>`
+- Client-side script automatically processes markdown during language switching
+- Server-side uses `processMarkdown()` function for initial rendering
   'home.readMore': 'Читать далее',
   'title.draft': 'Черновик',
   'title.minutes': 'минут',
