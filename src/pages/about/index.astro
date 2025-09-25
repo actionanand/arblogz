@@ -1,11 +1,6 @@
 ---
-import IndexPage from "@/layouts/IndexPage.astro";
+import LegalPage from "@/layouts/LegalPage.astro";
 import {t} from '@/i18n/utils';
-
-const frontmatter = {
-  donate: true,
-  comment: false
-};
 
 // Function to process markdown-like syntax
 function processMarkdown(text: string): string {
@@ -13,7 +8,7 @@ function processMarkdown(text: string): string {
 }
 ---
 
-<IndexPage frontmatter={frontmatter}>
+<LegalPage title={t('about.website.title')}>
   <article class="markdown-body">
     <h2 data-translate="about.website.title">{t('about.website.title')}</h2>
     <p data-translate="about.website.content" set:html={processMarkdown(t('about.website.content'))}></p>
@@ -23,8 +18,19 @@ function processMarkdown(text: string): string {
 
     <h2 data-translate="about.other.title">{t('about.other.title')}</h2>
     <p data-translate="about.other.content" set:html={processMarkdown(t('about.other.content'))}></p>
+    
+    <h2 data-translate="about.legal.title">{t('about.legal.title')}</h2>
+    <div class="legal-links">
+      <ul>
+        <li><a href="/privacy" data-translate="about.legal.privacy">{t('about.legal.privacy')}</a></li>
+        <li><a href="/terms" data-translate="about.legal.terms">{t('about.legal.terms')}</a></li>
+        <li><a href="/copyright" data-translate="about.legal.copyright">{t('about.legal.copyright')}</a></li>
+        <li><a href="/disclaimer" data-translate="about.legal.disclaimer">{t('about.legal.disclaimer')}</a></li>
+        <li><a href="/faq" data-translate="about.legal.faq">{t('about.legal.faq')}</a></li>
+      </ul>
+    </div>
   </article>
-</IndexPage>
+</LegalPage>
 
 <script>
   // Helper function to process markdown-like syntax
@@ -46,19 +52,45 @@ function processMarkdown(text: string): string {
 
   // Run markdown processing after global translations update
   document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(updateAboutMarkdown, 100); // Reduced from 500ms
-  });
-  
-  // Run after language changes (global system runs first, then we process markdown)
-  document.addEventListener('languageChanged', function() {
-    setTimeout(updateAboutMarkdown, 150); // Reduced from 500ms
-  });
-  
-  // Listen for language selector clicks
-  document.addEventListener('click', function(e) {
-    const target = e.target as HTMLElement;
-    if (target && target.closest('[data-language-link]')) {
-      setTimeout(updateAboutMarkdown, 500); // Reduced from 600ms
-    }
+    setTimeout(updateAboutMarkdown, 100);
   });
 </script>
+
+<style>
+  .legal-links {
+    margin-top: 1rem;
+  }
+  
+  .legal-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+  }
+  
+  .legal-links li {
+    margin: 0;
+  }
+  
+  .legal-links a {
+    color: var(--tw-prose-links);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+  }
+  
+  .legal-links a:hover {
+    background-color: var(--tw-prose-links);
+    color: var(--tw-prose-invert-links);
+  }
+  
+  @media (max-width: 640px) {
+    .legal-links ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>

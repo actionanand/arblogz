@@ -1,0 +1,11 @@
+---
+import LegalPage from "@/layouts/LegalPage.astro";
+const posts = Object.values(import.meta.glob("./disclaimer.md", { eager: true }));
+const {Content, frontmatter} = posts[0] as any;
+---
+
+<LegalPage title={frontmatter.title}>
+  <article class="markdown-body">
+    <Content/>
+  </article>
+</LegalPage>
