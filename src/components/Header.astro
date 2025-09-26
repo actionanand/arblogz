@@ -52,23 +52,54 @@ let tagCount = getCountByTagName(blogs);
             category.children && category.children.length > 0 &&
             <div class="divider-horizontal"></div>
           }
-          <div class="space-y-4 text-sm">
-            {
-              category.children && category.children.map(sub =>
-                (
-                  <a 
-                    class="block hover:text-skin-active language-item" 
-                    href={sub.href}
-                    data-language-link="true"
-                    data-language-code={sub.lang}
-                  >
-                    <i class={sub.iconClass}/>
-                    <span>{sub.name}</span>
-                  </a>
-                )
-              )
-            }
-          </div>
+          {
+            category.children && category.children.length > 0 && (
+              <div class="mobile-language-dropdown">
+                <div class="language-dropdown-header" onclick="toggleMobileLanguageMenu()">
+                  <span class="current-language" id="mobile-current-language">English</span>
+                  <i class="ri-arrow-down-s-line dropdown-arrow" id="mobile-dropdown-arrow"></i>
+                </div>
+                <div class="language-dropdown-menu" id="mobile-language-menu">
+                  {
+                    category.children.map(sub =>
+                      (
+                        <a 
+                          class="language-dropdown-item language-item" 
+                          href={sub.href}
+                          data-language-link="true"
+                          data-language-code={sub.lang}
+                        >
+                          <i class={sub.iconClass}/>
+                          <span>{sub.name}</span>
+                        </a>
+                      )
+                    )
+                  }
+                </div>
+              </div>
+            )
+          }
+          {
+            !(category.children && category.children.length > 0) && (
+              <div class="space-y-4 text-sm">
+                {
+                  category.children && category.children.map(sub =>
+                    (
+                      <a 
+                        class="block hover:text-skin-active language-item" 
+                        href={sub.href}
+                        data-language-link="true"
+                        data-language-code={sub.lang}
+                      >
+                        <i class={sub.iconClass}/>
+                        <span>{sub.name}</span>
+                      </a>
+                    )
+                  )
+                }
+              </div>
+            )
+          }
         </div>
       ))
     }
@@ -125,3 +156,74 @@ let tagCount = getCountByTagName(blogs);
 
   </div>
 </header>
+
+<script>
+  // Mobile language dropdown toggle
+  window.toggleMobileLanguageMenu = function() {
+    const menu = document.getElementById('mobile-language-menu');
+    const arrow = document.getElementById('mobile-dropdown-arrow');
+    
+    if (menu && arrow) {
+      menu.classList.toggle('open');
+      arrow.classList.toggle('open');
+    }
+  };
+
+  // Update current language display
+  function updateMobileLanguageDisplay() {
+    const currentLang = window.getCurrentLanguage && window.getCurrentLanguage() || 'en';
+    const currentLangElement = document.getElementById('mobile-current-language');
+    
+    // Language name mapping
+    const languageNames = {
+      'ta': 'தமிழ்',
+      'en': 'English',
+      'zh-cn': '简体中文',
+      'zh-Hant': '繁體中文',
+      'cs': 'Čeština',
+      'fr': 'Français',
+      'kn': 'ಕನ್ನಡ',
+      'hi': 'हिन्दी',
+      'ar': 'العربية'
+    };
+    
+    if (currentLangElement) {
+      currentLangElement.textContent = languageNames[currentLang] || 'English';
+    }
+  }
+
+  // Update display when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(updateMobileLanguageDisplay, 100);
+  });
+
+  // Update display when language changes
+  document.addEventListener('translationComplete', function() {
+    updateMobileLanguageDisplay();
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    const dropdown = document.querySelector('.mobile-language-dropdown');
+    const menu = document.getElementById('mobile-language-menu');
+    const arrow = document.getElementById('mobile-dropdown-arrow');
+    
+    if (dropdown && menu && arrow && !dropdown.contains(e.target)) {
+      menu.classList.remove('open');
+      arrow.classList.remove('open');
+    }
+  });
+
+  // Close dropdown when language is selected
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.language-dropdown-item')) {
+      const menu = document.getElementById('mobile-language-menu');
+      const arrow = document.getElementById('mobile-dropdown-arrow');
+      
+      if (menu && arrow) {
+        menu.classList.remove('open');
+        arrow.classList.remove('open');
+      }
+    }
+  });
+</script>
