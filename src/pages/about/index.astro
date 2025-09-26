@@ -2,6 +2,9 @@
 import LegalPage from "@/layouts/LegalPage.astro";
 import {t} from '@/i18n/utils';
 
+const contactPosts = Object.values(import.meta.glob("../../components/ContactSection.md", { eager: true }));
+const {Content: ContactContent} = contactPosts[0] as any;
+
 // Function to process markdown-like syntax
 function processMarkdown(text: string): string {
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -29,6 +32,15 @@ function processMarkdown(text: string): string {
         <li><a href="/faq" data-translate="about.legal.faq">{t('about.legal.faq')}</a></li>
       </ul>
     </div>
+    
+    <div class="professional-divider">
+      <div class="divider-line"></div>
+      <div class="divider-icon">
+        <i class="ri-customer-service-2-fill"></i>
+      </div>
+      <div class="divider-line"></div>
+    </div>
+    <ContactContent/>
   </article>
 </LegalPage>
 
@@ -180,6 +192,45 @@ function processMarkdown(text: string): string {
     .legal-links a {
       padding: 0.5rem 0.75rem;
       font-size: 0.8rem;
+    }
+  }
+  
+  /* Professional Divider Styles */
+  .professional-divider {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0 2rem 0;
+    gap: 1rem;
+  }
+  
+  .divider-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #10b981 20%, #10b981 80%, transparent 100%);
+    border-radius: 1px;
+  }
+  
+  .divider-icon {
+    background: #10b981;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .divider-line {
+      background: linear-gradient(90deg, transparent 0%, #059669 20%, #059669 80%, transparent 100%);
+    }
+    
+    .divider-icon {
+      background: #059669;
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
     }
   }
 </style>

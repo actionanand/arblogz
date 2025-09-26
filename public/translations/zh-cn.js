@@ -72,5 +72,11 @@ const zhCn = {
   'faq.q5.question': '我可以贡献内容或翻译吗？',
   'faq.q5.answer': '当然可以！这是一个**开源项目**。您可以通过我们的 GitHub 仓库提交内容、翻译或改进建议。',
   'faq.contact.title': '还有问题？',
-  'faq.contact.content': '如果您找不到所需的答案，请随时通过我们的联系表单**联系我们**。'
+  'faq.contact.content': '如果您找不到所需的答案，请随时通过我们的联系表单**联系我们**。',
+  
+  // Contact Section
+  'contact.button': '联系我们',
+  'contact.description': '如果您有任何问题或需要帮助，请随时与我们联系：',
+  'contact.form.title': '保持联系',
+  'contact.form.loading': '加载中…'
 };

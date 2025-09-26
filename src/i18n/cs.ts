@@ -82,6 +82,10 @@ export  let cs = {
   'faq.q5.answer': 'Ano! Toto je **open source projekt**. Můžete přispět obsahem, překlady nebo vylepšeními prostřednictvím našeho GitHub repozitáře.',
   'faq.contact.title': 'Stále máte otázky?',
   'faq.contact.content': 'Pokud nemůžete najít odpověď, kterou hledáte, neváhejte nás **kontaktovat** prostřednictvím našeho kontaktního formuláře.',
+  'contact.button': 'Kontaktujte nás',
+  'contact.description': 'Pokud máte jakékoliv otázky nebo potřebujete pomoc, neváhejte nás kontaktovat:',
+  'contact.form.title': 'Zůstaňte v kontaktu',
+  'contact.form.loading': 'Načítá se…',
 }
 
 

@@ -83,4 +83,8 @@ export  const en = {
   'faq.q5.answer': 'Yes! This is an **open source project**. You can contribute by submitting content, translations, or improvements through our GitHub repository.',
   'faq.contact.title': 'Still Have Questions?',
   'faq.contact.content': 'If you can\'t find the answer you\'re looking for, please feel free to **contact us** through our contact form.',
+  'contact.button': 'Contact Us',
+  'contact.description': 'If you have any questions or need assistance, please don\'t hesitate to reach out to us:',
+  'contact.form.title': 'Get in Touch',
+  'contact.form.loading': 'Loading…',
 }

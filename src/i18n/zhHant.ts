@@ -76,4 +76,8 @@ export  const zhHant = {
   'faq.q5.answer': '當然可以！這是一個**開源專案**。您可以透過我們的 GitHub 儲存庫提交內容、翻譯或改進建議。',
   'faq.contact.title': '還有問題？',
   'faq.contact.content': '如果您找不到所需的答案，請隨時透過我們的聯絡表單**聯絡我們**。',
+  'contact.button': '聯絡我們',
+  'contact.description': '如果您有任何問題或需要協助，請隨時與我們聯絡：',
+  'contact.form.title': '保持聯絡',
+  'contact.form.loading': '載入中…',
 }

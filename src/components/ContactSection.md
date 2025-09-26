@@ -1,6 +1,6 @@
 ## Contact Us
 
-If you have any questions or need assistance, please don't hesitate to reach out to us:
+<span data-translate="contact.description">If you have any questions or need assistance, please don't hesitate to reach out to us:</span>
 
 <div class="contact-social-section">
   <div class="social-icons">
@@ -49,6 +49,34 @@ If you have any questions or need assistance, please don't hesitate to reach out
     <a href="mailto:contact@example.com" class="social-icon email" title="Email" rel="noopener noreferrer">
       <i class="ri-mail-fill"></i>
     </a>
+  </div>
+  
+  <!-- Contact Us Button -->
+  <div class="contact-button-container">
+    <button class="contact-us-button" onclick="openContactForm()" data-translate="contact.button">
+      <i class="ri-customer-service-2-fill"></i>
+      <span>Contact Us</span>
+    </button>
+  </div>
+</div>
+
+<!-- Contact Form Popup -->
+<div id="contactFormModal" class="contact-modal">
+  <div class="contact-modal-content">
+    <div class="contact-modal-header">
+      <h3 data-translate="contact.form.title">Get in Touch</h3>
+      <button class="contact-modal-close" onclick="closeContactForm()">&times;</button>
+    </div>
+    <div class="contact-modal-body">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeGERCF9R3aw9VsTkk6TltyrDXSkIu8Zk4unoZNPjABL53cLA/viewform?embedded=true" 
+              width="100%" 
+              height="600" 
+              frameborder="0" 
+              marginheight="0" 
+              marginwidth="0">
+        <span data-translate="contact.form.loading">Loading…</span>
+      </iframe>
+    </div>
   </div>
 </div>
 
@@ -256,6 +284,155 @@ If you have any questions or need assistance, please don't hesitate to reach out
     text-decoration: none;
   }
   
+  /* Contact Button Styles */
+  .contact-button-container {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .contact-us-button {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    animation: pulse-button 2s infinite;
+  }
+  
+  .contact-us-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    animation: none;
+  }
+  
+  .contact-us-button:active {
+    transform: translateY(0);
+  }
+  
+  .contact-us-button i {
+    font-size: 1.2rem;
+  }
+  
+  /* Blinking Animation */
+  @keyframes pulse-button {
+    0%, 100% {
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+    50% {
+      box-shadow: 0 4px 25px rgba(16, 185, 129, 0.6), 0 0 20px rgba(16, 185, 129, 0.3);
+    }
+  }
+  
+  /* Modal Styles */
+  .contact-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .contact-modal-content {
+    position: relative;
+    background-color: var(--bg-primary, #ffffff);
+    margin: 2% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+  }
+  
+  .contact-modal-header {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .contact-modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .contact-modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    margin: 0;
+    padding-bottom: 7px;
+  }
+  
+  .contact-modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .contact-modal-body {
+    padding: 0;
+    overflow-y: auto;
+    max-height: calc(90vh - 100px);
+  }
+  
+  .contact-modal-body iframe {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .contact-modal-content {
+      background-color: var(--bg-primary, #1f2937);
+      color: var(--text-primary, #e5e7eb);
+    }
+  }
+  
   .social-icon.email {
     background-color: #34495e;
     color: white;
@@ -281,5 +458,69 @@ If you have any questions or need assistance, please don't hesitate to reach out
     .social-icon i {
       font-size: 1rem;
     }
+    
+    .contact-us-button {
+      font-size: 1rem;
+      padding: 0.875rem 1.5rem;
+    }
+    
+    .contact-modal-content {
+      width: 95%;
+      margin: 5% auto;
+    }
+    
+    .contact-modal-body iframe {
+      min-height: 500px;
+    }
   }
 </style>
+
+<script>
+  // Contact form popup functions
+  function openContactForm() {
+    document.getElementById('contactFormModal').style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+  
+  function closeContactForm() {
+    document.getElementById('contactFormModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+  
+  // Close modal when clicking outside
+  window.addEventListener('click', function(event) {
+    const modal = document.getElementById('contactFormModal');
+    if (event.target === modal) {
+      closeContactForm();
+    }
+  });
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      const modal = document.getElementById('contactFormModal');
+      if (modal.style.display === 'block') {
+        closeContactForm();
+      }
+    }
+  });
+  
+  // Update contact button text when language changes
+  function updateContactButtonText() {
+    const button = document.querySelector('.contact-us-button span');
+    const title = document.querySelector('.contact-modal-header h3');
+    
+    if (button && window.currentTranslations && window.currentTranslations.contact) {
+      if (window.currentTranslations.contact.button) {
+        button.textContent = window.currentTranslations.contact.button;
+      }
+      if (title && window.currentTranslations.contact.form && window.currentTranslations.contact.form.title) {
+        title.textContent = window.currentTranslations.contact.form.title;
+      }
+    }
+  }
+  
+  // Listen for language changes
+  document.addEventListener('languageChanged', updateContactButtonText);
+  document.addEventListener('DOMContentLoaded', updateContactButtonText);
+</script>

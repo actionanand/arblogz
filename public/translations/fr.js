@@ -72,5 +72,11 @@ const fr = {
   'faq.q5.question': 'Puis-je contribuer du contenu ou des traductions?',
   'faq.q5.answer': 'Oui! C\'est un **projet open source**. Vous pouvez contribuer du contenu, des traductions ou des améliorations via notre dépôt GitHub.',
   'faq.contact.title': 'Vous avez encore des questions?',
-  'faq.contact.content': 'Si vous ne trouvez pas la réponse que vous cherchez, n\'hésitez pas à **nous contacter** via notre formulaire de contact.'
+  'faq.contact.content': 'Si vous ne trouvez pas la réponse que vous cherchez, n\'hésitez pas à **nous contacter** via notre formulaire de contact.',
+  
+  // Contact Section
+  'contact.button': 'Contactez-nous',
+  'contact.description': 'Si vous avez des questions ou avez besoin d\'aide, n\'hésitez pas à nous contacter :',
+  'contact.form.title': 'Restez en contact',
+  'contact.form.loading': 'Chargement...'
 };
