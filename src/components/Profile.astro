@@ -9,8 +9,8 @@ import getUrl from "@/utils/getUrl";
   <div class="flex items-center justify-center flex-wrap">
     {
       infoLinks.map((infoItem) => (
-        <a title={infoItem.name} href={infoItem.outlink} target="_blank">
-          <i class={infoItem.icon + " text-2xl mr-2 cursor-pointer"}/>
+        <a title={infoItem.name} href={infoItem.outlink} target="_blank" class="p-1 rounded hover:text-skin-active transition-colors">
+          <i class={infoItem.icon + " text-2xl cursor-pointer"}/>
         </a>
       ))
     }

@@ -47,7 +47,7 @@ if (totalPage === 1) {
 <div class="flex items-center justify-center my-16 text-skin-base">
   {
     pager.length > 4 && (
-      <a href={prefixUrl + "1"} style="font-size:18px;line-height:32px;">
+      <a href={prefixUrl + "1"} class="menu-item-wavy" style="font-size:18px;line-height:32px;">
         <i class="ri-skip-left-line"></i>
       </a>
     )
@@ -57,14 +57,14 @@ if (totalPage === 1) {
     pager.map((i) =>
       currentPage === i ? (
         <a
-          class="text-skin-active"
+          class="text-skin-active menu-item-wavy active"
           href={prefixUrl + i}
           style="line-height:32px;"
         >
           {i}
         </a>
       ) : (
-        <a href={prefixUrl + i} style="line-height:32px;">
+        <a href={prefixUrl + i} class="menu-item-wavy" style="line-height:32px;">
           {i}
         </a>
       )
@@ -74,6 +74,7 @@ if (totalPage === 1) {
     pager.length > 4 && (
       <a
         href={prefixUrl + totalPage}
+        class="menu-item-wavy"
         style="font-size:18px;line-height:32px;"
       >
         <i class="ri-skip-right-line"></i>
@@ -85,6 +86,6 @@ if (totalPage === 1) {
 
 <style>
   a {
-    @apply border mr-2 h-8 w-8 text-center leading-8 rounded cursor-pointer hover:text-skin-active;
+    @apply border mr-2 h-8 w-8 text-center leading-8 rounded cursor-pointer hover:text-skin-active transition-all duration-300;
   }
 </style>

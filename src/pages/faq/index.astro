@@ -1,0 +1,355 @@
+---
+import LegalPage from "@/layouts/LegalPage.astro";
+import {t} from '@/i18n/utils';
+
+const contactPosts = Object.values(import.meta.glob("../../components/ContactSection.md", { eager: true }));
+const {Content: ContactContent} = contactPosts[0] as any;
+---
+
+<LegalPage title={t('faq.title')}>
+  <article class="markdown-body">
+    <h1 data-translate="faq.title">{t('faq.title')}</h1>
+    
+    <p data-translate="faq.intro">{t('faq.intro')}</p>
+    
+    <!-- FAQ Item 1 -->
+    <details class="faq-item">
+      <summary data-translate="faq.q1.question">{t('faq.q1.question')}</summary>
+      <div data-translate="faq.q1.answer">{t('faq.q1.answer')}</div>
+    </details>
+    
+    <!-- FAQ Item 2 -->
+    <details class="faq-item">
+      <summary data-translate="faq.q2.question">{t('faq.q2.question')}</summary>
+      <div data-translate="faq.q2.answer">{t('faq.q2.answer')}</div>
+    </details>
+    
+    <!-- FAQ Item 3 -->
+    <details class="faq-item">
+      <summary data-translate="faq.q3.question">{t('faq.q3.question')}</summary>
+      <div data-translate="faq.q3.answer">{t('faq.q3.answer')}</div>
+    </details>
+    
+    <!-- FAQ Item 4 -->
+    <details class="faq-item">
+      <summary data-translate="faq.q4.question">{t('faq.q4.question')}</summary>
+      <div data-translate="faq.q4.answer">{t('faq.q4.answer')}</div>
+    </details>
+    
+    <!-- FAQ Item 5 -->
+    <details class="faq-item">
+      <summary data-translate="faq.q5.question">{t('faq.q5.question')}</summary>
+      <div data-translate="faq.q5.answer">{t('faq.q5.answer')}</div>
+    </details>
+    
+    <!-- Professional Contact Section Divider -->
+    <div class="professional-divider">
+      <div class="divider-line"></div>
+      <div class="divider-icon">
+        <i class="ri-customer-service-2-fill"></i>
+      </div>
+      <div class="divider-line"></div>
+    </div>
+    
+    <!-- Contact Section -->
+    <ContactContent />
+  </article>
+</LegalPage>
+
+<style>
+  /* Base markdown body styling - use theme colors */
+  .markdown-body {
+    color: rgb(var(--color-text));
+  }
+  
+  .markdown-body h1 {
+    color: rgb(var(--color-text));
+  }
+  
+  .markdown-body p {
+    color: rgb(var(--color-text));
+  }
+
+  /* FAQ Items Styling */
+  .faq-item {
+    margin: 1.5rem 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+  
+  .faq-item summary {
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease;
+    user-select: none;
+  }
+  
+  .faq-item summary:hover {
+    background-color: #e9ecef;
+  }
+  
+  .faq-item[open] summary {
+    background-color: #10b981;
+    color: white;
+  }
+  
+  .faq-item div {
+    padding: 1rem 1.5rem;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    line-height: 1.6;
+  }
+  
+  /* Professional Divider Styles */
+  .professional-divider {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0 2rem 0;
+    gap: 1rem;
+  }
+  
+  .divider-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #10b981 20%, #10b981 80%, transparent 100%);
+    border-radius: 1px;
+  }
+  
+  .divider-icon {
+    background: #10b981;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  }
+
+  /* Dark theme support */
+  html[data-theme="dark"] .faq-item {
+    border-color: #404040;
+    background: #1e1e1e;
+  }
+  
+  html[data-theme="dark"] .faq-item summary {
+    background-color: #2d2d2d;
+    color: #ffffff;
+  }
+  
+  html[data-theme="dark"] .faq-item summary:hover {
+    background-color: #404040;
+  }
+  
+  html[data-theme="dark"] .faq-item[open] summary {
+    background-color: #059669;
+  }
+  
+  html[data-theme="dark"] .faq-item div {
+    background-color: #1e1e1e;
+    border-top-color: #404040;
+    color: #e0e0e0;
+  }
+  
+  html[data-theme="dark"] .divider-line {
+    background: linear-gradient(90deg, transparent 0%, #059669 20%, #059669 80%, transparent 100%);
+  }
+  
+  html[data-theme="dark"] .divider-icon {
+    background: #059669;
+    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+  }
+  
+  /* Enhanced FAQ markdown formatting */
+  [data-translate^="faq."] strong {
+    font-weight: 700;
+    color: #000000;
+  }
+  
+  [data-translate^="faq."] em {
+    font-style: italic;
+    color: #000000;
+  }
+  
+  [data-translate^="faq."] code {
+    background: #f5f5f5;
+    color: #333333;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+    font-size: 0.9em;
+    border: 1px solid #e0e0e0;
+  }
+  
+  [data-translate^="faq."] a {
+    color: #0066cc;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 102, 204, 0.3);
+    transition: all 0.2s ease;
+  }
+  
+  [data-translate^="faq."] a:hover {
+    color: #004499;
+    border-bottom-color: #004499;
+  }
+
+  html[data-theme="dark"] [data-translate^="faq."] strong,
+  html[data-theme="dark"] [data-translate^="faq."] em {
+    color: #ffffff;
+  }
+  
+  html[data-theme="dark"] [data-translate^="faq."] code {
+    background: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #404040;
+  }
+  
+  html[data-theme="dark"] [data-translate^="faq."] a {
+    color: #66b3ff;
+    border-bottom-color: rgba(102, 179, 255, 0.3);
+  }
+  
+  html[data-theme="dark"] [data-translate^="faq."] a:hover {
+    color: #99ccff;
+    border-bottom-color: #99ccff;
+  }
+</style>
+
+<script>
+  // Enhanced markdown processor for FAQ page similar to about page
+  class FaqPageManager {
+    private isProcessing = false;
+    
+    constructor() {
+      this.init();
+    }
+
+    // Comprehensive markdown processing with multiple formats
+    private processMarkdown(text: string): string {
+      let processed = text;
+      
+      // Process in specific order to avoid conflicts
+      
+      // 1. Code blocks (process first to protect content)
+      processed = processed.replace(/```([^`]+)```/g, '<pre><code>$1</code></pre>');
+      
+      // 2. Inline code (protect from other formatting)
+      processed = processed.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+      
+      // 3. Bold text: **text**
+      processed = processed.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+      
+      // 4. Italic text: *text* (avoid matching **text**)
+      processed = processed.replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
+      
+      // 5. Strikethrough: ~~text~~
+      processed = processed.replace(/~~([^~\n]+)~~/g, '<del>$1</del>');
+      
+      // 6. Links: [text](url)
+      processed = processed.replace(/\[([^\]\n]+)\]\(([^)\n\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+      
+      // 7. Simple line breaks: double newlines become <br><br>
+      processed = processed.replace(/\n\n/g, '<br><br>');
+      
+      // 8. Single line breaks in text
+      processed = processed.replace(/(?<!<br>)\n(?!<br>)/g, '<br>');
+      
+      return processed;
+    }
+
+    // Check if text contains any markdown patterns
+    private hasMarkdownPatterns(text: string): boolean {
+      const patterns = [
+        /\*\*[^*\n]+\*\*/,           // **bold**
+        /(?<!\*)\*[^*\n]+\*(?!\*)/,  // *italic*
+        /`[^`\n]+`/,                 // `code`
+        /~~[^~\n]+~~/,               // ~~strikethrough~~
+        /\[[^\]\n]+\]\([^)\n\s]+\)/, // [link](url)
+        /```[^`]+```/,               // ```code blocks```
+        /\n\n/                       // double line breaks
+      ];
+      
+      return patterns.some(pattern => pattern.test(text));
+    }
+
+    // Main translation handler
+    private async handleTranslationUpdate() {
+      if (this.isProcessing) return;
+      this.isProcessing = true;
+
+      try {
+        // Small delay to let the translation system finish
+        await new Promise(resolve => setTimeout(resolve, 50));
+        
+        // Process all FAQ page elements
+        const faqElements = document.querySelectorAll('[data-translate^="faq."]');
+        
+        faqElements.forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (!key) return;
+
+          // Get the current translated text
+          let currentText = element.textContent || '';
+          
+          // If text contains any markdown patterns, process them
+          if (this.hasMarkdownPatterns(currentText)) {
+            const processedText = this.processMarkdown(currentText);
+            
+            // Only update if content changed to prevent unnecessary updates
+            if (element.innerHTML !== processedText) {
+              // Smooth transition: brief opacity reduction during update
+              const htmlElement = element as HTMLElement;
+              htmlElement.style.opacity = '0.9';
+              
+              requestAnimationFrame(() => {
+                element.innerHTML = processedText;
+                htmlElement.style.opacity = '1';
+              });
+            }
+          }
+        });
+
+        // Dispatch completion event
+        document.dispatchEvent(new CustomEvent('faqPageTranslated'));
+        
+      } finally {
+        this.isProcessing = false;
+      }
+    }
+
+    private init() {
+      // Single event listener that handles all translation updates
+      document.addEventListener('DOMContentLoaded', () => {
+        this.handleTranslationUpdate();
+      });
+
+      // Listen for the main translation system completion
+      document.addEventListener('translationComplete', () => {
+        this.handleTranslationUpdate();
+      });
+
+      // Fallback for language changes
+      document.addEventListener('languageChanged', () => {
+        this.handleTranslationUpdate();
+      });
+
+      // Clean up on visibility change
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+          this.handleTranslationUpdate();
+        }
+      });
+    }
+  }
+
+  // Initialize the manager
+  const faqManager = new FaqPageManager();
+</script>

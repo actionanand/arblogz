@@ -15,7 +15,28 @@ const blog = defineCollection({
     toc: z.boolean().default(true).nullable(),
     donate: z.boolean().default(true).nullable(),
     comment: z.boolean().default(true).nullable(),
-    ogImage: z.string().optional()
+    ogImage: z.string().optional(),
+    
+    // Enhanced donation system fields
+    showDonate: z.boolean().optional(),
+    donateMessage: z.string().optional(),
+    customDonate: z.object({
+      enable: z.boolean().optional(),
+      tip: z.string().optional(),
+      wechatQRCode: z.string().optional(),
+      alipayQRCode: z.string().optional(),
+      gpayQRCode: z.string().optional(),
+      paytmQRCode: z.string().optional(),
+      phonepeQRCode: z.string().optional(),
+      paypalUrl: z.string().optional(),
+      githubSponsors: z.string().optional(),
+      buyMeACoffee: z.string().optional(),
+      kofi: z.string().optional(),
+      patreon: z.string().optional(),
+      opencollective: z.string().optional(),
+      bitcoin: z.string().optional(),
+      ethereum: z.string().optional(),
+    }).optional(),
   }),
 });
 

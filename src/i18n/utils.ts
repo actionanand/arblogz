@@ -3,6 +3,10 @@ import { en } from './en'
 import { zhCn } from './zhCn'
 import { cs } from './cs'
 import { zhHant } from './zhHant'
+import { ar } from './ar'
+import { fr } from './fr'
+import { hi } from './hi'
+import { kn } from './kn'
 import { config } from "../consts";
 
 // Extend Window interface for TypeScript
@@ -13,7 +17,7 @@ declare global {
 }
 
 const ui = {
-  ta, en, 'zh-cn': zhCn, 'zh-Hant': zhHant, cs
+  ta, en, 'zh-cn': zhCn, 'zh-Hant': zhHant, cs, ar, fr, hi, kn
 }
 
 export function useTranslations(lang: keyof typeof ui) {

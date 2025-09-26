@@ -41,9 +41,9 @@ menu {
     --color-card: 241, 241, 241;
     --color-text: 80, 73, 69;
     --color-text-dodge: 150, 150, 150;
-    --color-text-active: 181, 118, 20;
-    --color-border: 104, 157, 106;
-    --color-border-active: 14, 192, 124;
+    --color-text-active: 16, 185, 129;
+    --color-border: 16, 185, 129;
+    --color-border-active: 5, 150, 105;
     --color-modal: 52, 58, 64;
   }
 
@@ -53,9 +53,9 @@ menu {
     --color-card: 40, 42, 54;
     --color-text: 249, 244, 227;
     --color-text-dodge: 150, 150, 150;
-    --color-text-active: 250, 189, 47;
-    --color-border: 214, 93, 14;
-    --color-border-active: 7, 102, 120;
+    --color-text-active: 52, 211, 153;
+    --color-border: 16, 185, 129;
+    --color-border-active: 5, 150, 105;
     --color-modal: 251, 251, 251;
   }
 
@@ -257,8 +257,8 @@ menu {
 .avatar {
   border-radius: 50%;
   padding: 4px;
-  width: 96px;
-  height: 96px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   background-color: transparent;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -275,4 +275,470 @@ menu {
 
 .MathJax svg {
   display: inline;
+}
+
+/* Language selection styles */
+.language-item {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.language-item.selected {
+  color: rgb(var(--color-text-active));
+  font-weight: 600;
+}
+
+.language-item.selected .ri-flag-line {
+  color: rgb(var(--color-text-active));
+}
+
+.language-item:hover:not(.selected) {
+  color: rgb(var(--color-text-active));
+}
+
+/* Mobile Language Dropdown */
+.mobile-language-dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.language-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgb(var(--color-fill));
+  border: 2px solid rgb(var(--color-border));
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.language-dropdown-header:hover {
+  border-color: rgb(var(--color-text-active));
+}
+
+.current-language {
+  font-weight: 500;
+  color: rgb(var(--color-text-base));
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  color: rgb(var(--color-text-muted));
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.language-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgb(var(--color-fill));
+  border: 2px solid rgb(var(--color-border));
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.language-dropdown-menu.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.language-dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: rgb(var(--color-text-base));
+  border-bottom: 1px solid rgb(var(--color-border));
+  transition: all 0.2s ease;
+}
+
+.language-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.language-dropdown-item:hover {
+  background: rgb(var(--color-accent) / 0.1);
+  color: rgb(var(--color-text-active));
+}
+
+.language-dropdown-item i {
+  margin-right: 8px;
+}
+
+/* Hide mobile dropdown on desktop */
+@media (min-width: 1280px) {
+  .mobile-language-dropdown {
+    display: none;
+  }
+}
+
+/* Simplified Menu Styles */
+.menu-item-wavy {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.menu-item-wavy::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: rgb(var(--color-text-active));
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+.menu-item-wavy:hover::before {
+  width: 70%;
+}
+
+.menu-item-wavy:hover {
+  color: rgb(var(--color-text-active));
+}
+
+.menu-item-wavy.active {
+  color: rgb(var(--color-text-active));
+  font-weight: 600;
+}
+
+.menu-item-wavy.active::before {
+  width: 80%;
+}
+
+/* Simplified Article Card Styles */
+.article-card-wavy {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: rgb(var(--color-card));
+}
+
+.article-card-wavy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Navigation Link Styles */
+.nav-link-enhanced {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-link-enhanced::before {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: rgb(var(--color-text-active));
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-link-enhanced:hover::before {
+  width: calc(100% - 16px);
+}
+
+.nav-link-enhanced:hover {
+  color: rgb(var(--color-text-active));
+}
+
+.nav-link-enhanced.active {
+  color: rgb(var(--color-text-active));
+  font-weight: 600;
+}
+
+.nav-link-enhanced.active::before {
+  width: calc(100% - 16px);
+}
+
+/* Professional Attractive Brand Logo */
+.brand-logo {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  position: relative;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  
+  /* Vibrant professional gradient for light theme */
+  background: linear-gradient(
+    135deg,
+    #15803d 0%,    /* Forest green */
+    #16a34a 25%,   /* Vibrant green */
+    #22c55e 50%,   /* Bright green */
+    #15803d 75%,   /* Forest green */
+    #16a34a 100%   /* Vibrant green */
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Enhanced professional shadow */
+  filter: drop-shadow(0 2px 4px rgba(22, 163, 74, 0.25));
+}
+
+.brand-logo::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #16a34a 25%,
+    #15803d 50%,
+    #16a34a 75%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1px;
+}
+
+.brand-logo:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 4px 12px rgba(22, 163, 74, 0.35));
+  
+  /* Flowing color animation - left to right with vibrant greens */
+  background: linear-gradient(
+    90deg,
+    #22c55e 0%,    /* Start bright */
+    #16a34a 25%,
+    #15803d 50%,
+    #166534 75%,
+    #16a34a 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  animation: colorFlow 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-logo:hover::before {
+  width: 80%;
+}
+
+/* Color flow animation keyframes */
+@keyframes colorFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Dark theme optimization */
+html[data-theme="dark"] .brand-logo {
+  background: linear-gradient(
+    135deg,
+    #34d399 0%,    /* Lighter for dark theme */
+    #10b981 25%,
+    #059669 50%,
+    #047857 75%,
+    #34d399 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  filter: drop-shadow(0 2px 6px rgba(52, 211, 153, 0.3));
+}
+
+html[data-theme="dark"] .brand-logo:hover {
+  filter: drop-shadow(0 4px 16px rgba(52, 211, 153, 0.4));
+  
+  /* Flowing color animation for dark theme */
+  background: linear-gradient(
+    90deg,
+    #6ee7b7 0%,    /* Brighter start */
+    #34d399 25%,
+    #10b981 50%,
+    #059669 75%,
+    #34d399 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  animation: colorFlow 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fallback for browsers without gradient text support */
+@supports not (background-clip: text) {
+  .brand-logo {
+    color: #16a34a;
+    background: none;
+    -webkit-text-fill-color: initial;
+  }
+  
+  html[data-theme="dark"] .brand-logo {
+    color: #34d399;
+  }
+}
+
+/* Anti-flicker CSS for smooth language transitions */
+[data-translate] {
+  transform: translateZ(0); /* Enable hardware acceleration */
+  backface-visibility: hidden; /* Prevent flickering during transforms */
+  -webkit-font-smoothing: antialiased; /* Smooth text rendering */
+  will-change: contents; /* Optimize for content changes */
+}
+
+/* Smooth transition for text content changes */
+[data-translate^="about."] {
+  transition: opacity 0.1s ease-out;
+}
+
+/* Prevent layout shift during translation updates */
+.about-content {
+  min-height: 1em; /* Prevents collapse during updates */
+}
+
+/* Optimize rendering for translated markdown content */
+[data-translate] strong,
+[data-translate] em,
+[data-translate] code,
+[data-translate] del,
+[data-translate] a,
+[data-translate] pre {
+  transform: translateZ(0); /* Hardware acceleration for formatted text */
+}
+
+/* Enhanced markdown styling for about page */
+[data-translate^="about."] strong {
+  font-weight: 700;
+  color: #000000; /* Normal black */
+}
+
+[data-translate^="about."] em {
+  font-style: italic;
+  color: #000000; /* Normal black */
+}
+
+[data-translate^="about."] code {
+  background: #f5f5f5; /* Light gray background */
+  color: #333333; /* Dark gray text */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
+  border: 1px solid #e0e0e0; /* Light border */
+}
+
+[data-translate^="about."] pre {
+  background: #f8f8f8; /* Light background */
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+}
+
+[data-translate^="about."] pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875em;
+  color: #333333; /* Dark gray for code blocks */
+}
+
+[data-translate^="about."] del {
+  text-decoration: line-through;
+  color: #666666; /* Medium gray for strikethrough */
+  opacity: 0.7;
+}
+
+[data-translate^="about."] a {
+  color: #0066cc; /* Standard blue for links */
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 102, 204, 0.3);
+  transition: all 0.2s ease;
+}
+
+[data-translate^="about."] a:hover {
+  color: #004499; /* Darker blue on hover */
+  border-bottom-color: #004499;
+}
+
+/* Line breaks in about content */
+[data-translate^="about."] br {
+  line-height: 1.6;
+}
+
+/* Dark theme adjustments */
+html[data-theme="dark"] [data-translate^="about."] strong {
+  color: #ffffff; /* White for dark theme */
+}
+
+html[data-theme="dark"] [data-translate^="about."] em {
+  color: #ffffff; /* White for dark theme */
+}
+
+html[data-theme="dark"] [data-translate^="about."] code {
+  background: #2d2d2d; /* Dark background */
+  color: #e0e0e0; /* Light gray text */
+  border: 1px solid #404040; /* Dark border */
+}
+
+html[data-theme="dark"] [data-translate^="about."] pre {
+  background: #1e1e1e; /* Darker background */
+  border: 1px solid #404040; /* Dark border */
+}
+
+html[data-theme="dark"] [data-translate^="about."] pre code {
+  color: #e0e0e0; /* Light gray for code blocks */
+}
+
+html[data-theme="dark"] [data-translate^="about."] del {
+  color: #999999; /* Light gray for strikethrough */
+}
+
+html[data-theme="dark"] [data-translate^="about."] a {
+  color: #66b3ff; /* Light blue for dark theme */
+  border-bottom-color: rgba(102, 179, 255, 0.3);
+}
+
+html[data-theme="dark"] [data-translate^="about."] a:hover {
+  color: #99ccff; /* Lighter blue on hover */
+  border-bottom-color: #99ccff;
 }

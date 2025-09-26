@@ -2,7 +2,50 @@
 import IndexPage from "@/layouts/IndexPage.astro";
 ---
 
-<IndexPage>
-  <div>404</div>
-  <div>Oops,This Page Could Not Be Found!</div>
+<IndexPage title="Page Not Found">
+  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+    <!-- 404 Number -->
+    <div class="text-8xl md:text-9xl font-bold text-skin-accent mb-4 opacity-20">
+      404
+    </div>
+
+    <!-- Icon -->
+    <div class="text-6xl mb-6 text-skin-muted">
+      <i class="ri-file-forbid-line"></i>
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-3xl md:text-4xl font-bold text-skin-base mb-4">
+      Page Not Found
+    </h1>
+
+    <!-- Message -->
+    <p class="text-lg text-skin-muted mb-8 max-w-md">
+      Sorry, the page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+    </p>
+
+    <!-- Actions -->
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a
+        href="/"
+        class="inline-flex items-center px-6 py-3 bg-skin-accent text-skin-inverted rounded-lg hover:bg-skin-accent-hover transition-colors duration-200 font-medium"
+      >
+        <i class="ri-home-line mr-2"></i>
+        Go Home
+      </a>
+
+      <a
+        href="/search"
+        class="inline-flex items-center px-6 py-3 border border-skin-border text-skin-base rounded-lg hover:bg-skin-secondary transition-colors duration-200 font-medium"
+      >
+        <i class="ri-search-line mr-2"></i>
+        Search Site
+      </a>
+    </div>
+
+    <!-- Additional Help -->
+    <div class="mt-12 text-sm text-skin-muted">
+      <p>If you believe this is an error, please contact us.</p>
+    </div>
+  </div>
 </IndexPage>

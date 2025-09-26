@@ -5,7 +5,8 @@ import Footer from '@/components/Footer.astro';
 import Profile from '@/components/Profile.astro'
 import Comment from '@/components/Comment.astro'
 import Toc from '@/components/Toc.astro'
-import {comment, config} from "@/consts";
+import Donate from '@/components/Donate.astro';
+import {comment, config, donate} from "@/consts";
 import ScrollToTop from '@/components/ScrollToTop.astro'
 import {t} from '@/i18n/utils'
 
@@ -16,8 +17,21 @@ const {
     toc: false,
     mathjax: false,
     mermaid: false,
+    showDonate: undefined, // Can be true, false, or undefined
+    donateMessage: undefined,
+    customDonate: undefined,
   },
 } = Astro.props;
+
+// Donation logic:
+// 1. If showDonate is explicitly set (true/false), use that value (manual control overrides all)
+// 2. If showDonate is undefined, use global donate.enableForAllBlogs setting
+// 3. Global donate.enable must be true for any donations to work
+const shouldShowDonate = donate.enable && (
+  frontmatter.showDonate !== undefined 
+    ? frontmatter.showDonate 
+    : donate.enableForAllBlogs
+);
 ---
 
 <html lang={config.lang}>
@@ -39,6 +53,18 @@ const {
         <span data-translate="home.goBack">{t('home.goBack')}</span>
       </button>
       <slot/>
+      
+      <!-- Donation Section - Show based on global and manual controls -->
+      {
+        shouldShowDonate && (
+          <Donate 
+            showDonate={true}
+            donateMessage={frontmatter.donateMessage}
+            customDonateConfig={frontmatter.customDonate}
+          />
+        )
+      }
+      
       {
         frontmatter.comment && comment.enable &&
         <Comment></Comment>

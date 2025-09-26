@@ -1,11 +1,329 @@
 ---
-import IndexPage from "@/layouts/IndexPage.astro";
-const posts = Object.values(import.meta.glob("./about.md", { eager: true }));
-let {Content, frontmatter} = posts[0];
+import LegalPage from "@/layouts/LegalPage.astro";
+import {t} from '@/i18n/utils';
+import Donate from "@/components/Donate.astro";
+
+const contactPosts = Object.values(import.meta.glob("../../components/ContactSection.md", { eager: true }));
+const {Content: ContactContent} = contactPosts[0] as any;
+
+// Function to process markdown-like syntax
+function processMarkdown(text: string): string {
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+
+// Donation configuration for this page
+const pageDonationConfig = {
+  enable: true,
+  tip: "Support our blog development! ☕✨",
+  gpayQRCode: "/images/donation/gpay-qr-png",
+  wechatQRCode: "/images/donation/WeChatQR.png",
+  alipayQRCode: "/images/donation/AliPayQR.png", 
+  paypalUrl: "https://paypal.me/yourusername",
+  githubSponsors: "yourusername", // Replace with actual GitHub username
+  buyMeACoffee: "yourusername", // Replace with actual Buy Me a Coffee username
+  kofi: "yourusername", // Replace with actual Ko-fi username
+};
 ---
 
-<IndexPage frontmatter={frontmatter}>
+<LegalPage title={t('about.website.title')}>
   <article class="markdown-body">
-    <Content/>
+    <h2 data-translate="about.website.title">{t('about.website.title')}</h2>
+    <p data-translate="about.website.content" set:html={processMarkdown(t('about.website.content'))}></p>
+
+    <h2 data-translate="about.me.title">{t('about.me.title')}</h2>
+    <p data-translate="about.me.content" set:html={processMarkdown(t('about.me.content'))}></p>
+
+    <h2 data-translate="about.other.title">{t('about.other.title')}</h2>
+    <p data-translate="about.other.content" set:html={processMarkdown(t('about.other.content'))}></p>
+    
+    <h2 data-translate="about.legal.title">{t('about.legal.title')}</h2>
+    <div class="legal-links">
+      <ul>
+        <li><a href="/privacy" data-translate="about.legal.privacy">{t('about.legal.privacy')}</a></li>
+        <li><a href="/terms" data-translate="about.legal.terms">{t('about.legal.terms')}</a></li>
+        <li><a href="/copyright" data-translate="about.legal.copyright">{t('about.legal.copyright')}</a></li>
+        <li><a href="/disclaimer" data-translate="about.legal.disclaimer">{t('about.legal.disclaimer')}</a></li>
+        <li><a href="/faq" data-translate="about.legal.faq">{t('about.legal.faq')}</a></li>
+      </ul>
+    </div>
+    
+    <!-- Donation Section -->
+    <Donate 
+      showDonate={true}
+      donateMessage="Enjoying our content? Support us to keep creating amazing articles!"
+      customDonateConfig={pageDonationConfig}
+    />
+    
+    <div class="professional-divider">
+      <div class="divider-line"></div>
+      <div class="divider-icon">
+        <i class="ri-customer-service-2-fill"></i>
+      </div>
+      <div class="divider-line"></div>
+    </div>
+    <ContactContent/>
   </article>
-</IndexPage>
+</LegalPage>
+
+<script>
+  // Enhanced markdown processor that works WITH the translation system
+  class AboutPageManager {
+    private translatedContent = new Map<string, string>();
+    private isProcessing = false;
+    
+    constructor() {
+      this.init();
+    }
+
+    // Comprehensive markdown processing with multiple formats
+    private processMarkdown(text: string): string {
+      let processed = text;
+      
+      // Process in specific order to avoid conflicts
+      
+      // 1. Code blocks (process first to protect content)
+      processed = processed.replace(/```([^`]+)```/g, '<pre><code>$1</code></pre>');
+      
+      // 2. Inline code (protect from other formatting)
+      processed = processed.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+      
+      // 3. Bold text: **text**
+      processed = processed.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+      
+      // 4. Italic text: *text* (avoid matching **text**)
+      processed = processed.replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
+      
+      // 5. Strikethrough: ~~text~~
+      processed = processed.replace(/~~([^~\n]+)~~/g, '<del>$1</del>');
+      
+      // 6. Links: [text](url)
+      processed = processed.replace(/\[([^\]\n]+)\]\(([^)\n\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+      
+      // 7. Simple line breaks: double newlines become <br><br>
+      processed = processed.replace(/\n\n/g, '<br><br>');
+      
+      // 8. Single line breaks in text
+      processed = processed.replace(/(?<!<br>)\n(?!<br>)/g, '<br>');
+      
+      return processed;
+    }
+
+    // Check if text contains any markdown patterns
+    private hasMarkdownPatterns(text: string): boolean {
+      const patterns = [
+        /\*\*[^*\n]+\*\*/,           // **bold**
+        /(?<!\*)\*[^*\n]+\*(?!\*)/,  // *italic*
+        /`[^`\n]+`/,                 // `code`
+        /~~[^~\n]+~~/,               // ~~strikethrough~~
+        /\[[^\]\n]+\]\([^)\n\s]+\)/, // [link](url)
+        /```[^`]+```/,               // ```code blocks```
+        /\n\n/                       // double line breaks
+      ];
+      
+      return patterns.some(pattern => pattern.test(text));
+    }
+
+    // Main translation handler - replaces all the setTimeout chaos
+    private async handleTranslationUpdate() {
+      if (this.isProcessing) return;
+      this.isProcessing = true;
+
+      try {
+        // Small delay to let the translation system finish
+        await new Promise(resolve => setTimeout(resolve, 50));
+        
+        // Process all about page elements
+        const aboutElements = document.querySelectorAll('[data-translate^="about."]');
+        
+        aboutElements.forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (!key) return;
+
+          // Get the current translated text
+          let currentText = element.textContent || '';
+          
+          // If text contains any markdown patterns, process them
+          if (this.hasMarkdownPatterns(currentText)) {
+            const processedText = this.processMarkdown(currentText);
+            
+            // Only update if content changed to prevent unnecessary updates
+            if (element.innerHTML !== processedText) {
+              // Smooth transition: brief opacity reduction during update
+              const htmlElement = element as HTMLElement;
+              htmlElement.style.opacity = '0.9';
+              
+              requestAnimationFrame(() => {
+                element.innerHTML = processedText;
+                htmlElement.style.opacity = '1';
+              });
+            }
+          }
+        });
+
+        // Dispatch completion event for any other systems that need to know
+        document.dispatchEvent(new CustomEvent('aboutPageTranslated'));
+        
+      } finally {
+        this.isProcessing = false;
+      }
+    }
+
+    private init() {
+      // Single event listener that handles all translation updates
+      document.addEventListener('DOMContentLoaded', () => {
+        this.handleTranslationUpdate();
+      });
+
+      // Listen for the main translation system completion
+      document.addEventListener('translationComplete', () => {
+        this.handleTranslationUpdate();
+      });
+
+      // Fallback for language changes
+      document.addEventListener('languageChanged', () => {
+        this.handleTranslationUpdate();
+      });
+
+      // Clean up on visibility change
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+          this.handleTranslationUpdate();
+        }
+      });
+    }
+  }
+
+  // Initialize the manager
+  const aboutManager = new AboutPageManager();
+</script>
+
+<style>
+  .legal-links {
+    margin-top: 1.5rem;
+  }
+  
+  .legal-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+  
+  .legal-links li {
+    margin: 0;
+  }
+  
+  .legal-links a {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid var(--tw-prose-hr, #e5e7eb);
+    background: #e5e7eb;
+    color: var(--tw-prose-body, #374151);
+  }
+  
+  html[data-theme="dark"] .legal-links a {
+    background: var(--bg-primary, #1f2937);
+    border-color: #374151;
+    color: #d1d5db;
+  }
+  
+  .legal-links a:hover {
+    background: #10b981;
+    color: white;
+    border-color: #10b981;
+    transform: translateY(-1px);
+  }  /* Legal Links Styling */
+  .legal-link {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: 2px solid transparent;
+  }
+  
+  .legal-link:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  }
+  
+  /* Contact Link Styling */
+  .contact-link {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    border: 2px solid transparent;
+  }
+  
+  .contact-link:hover {
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(17, 153, 142, 0.3);
+  }
+  
+  /* Add icon indicators */
+  .legal-link::after {
+    content: '⚖️';
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .contact-link::after {
+    content: '📧';
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  @media (max-width: 640px) {
+    .legal-links ul {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    
+    .legal-links a {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Professional Divider Styles */
+  .professional-divider {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0 2rem 0;
+    gap: 1rem;
+  }
+  
+  .divider-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #10b981 20%, #10b981 80%, transparent 100%);
+    border-radius: 1px;
+  }
+  
+  .divider-icon {
+    background: #10b981;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  }
+  
+  html[data-theme="dark"] .divider-line {
+    background: linear-gradient(90deg, transparent 0%, #059669 20%, #059669 80%, transparent 100%);
+  }
+  
+  html[data-theme="dark"] .divider-icon {
+    background: #059669;
+    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+  }
+</style>

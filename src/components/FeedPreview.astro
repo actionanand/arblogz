@@ -6,16 +6,27 @@ import {t} from '@/i18n/utils'
 import getUrl from "@/utils/getUrl";
 ---
 
-<div class="mt-2 mb-4">
-  <p
-    class="break-all first-letter tracking-wide first-letter:font-semibold first-letter:text-2xl line-clamp-2"
-  >
-    {
-      body.replace(/^#+/gm, "").replace(/!?\[.*?\]\(.*?\)/g, "")
-    }
-  </p>
-  <p class="flex items-center justify-between text-sm">
-    <FeedPostDate date={data.date} index={index}/>
-    <a class="hover:text-skin-active text-sm border rounded py-1 px-2" href={getUrl("/feed/") + slug}><span data-translate="home.readMore">{t('home.readMore')}</span></a>
-  </p>
+<div class="py-4">
+  <!-- Feed Content -->
+  <div class="mb-2">
+    <p class="text-skin-base text-base leading-relaxed break-words line-clamp-3 first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1">
+      {
+        body.replace(/^#+/gm, "").replace(/!?\[.*?\]\(.*?\)/g, "").trim()
+      }
+    </p>
+  </div>
+  
+  <!-- Metadata and Actions -->
+  <div class="flex items-center justify-between text-sm">
+    <div class="flex items-center text-skin-muted">
+      <i class="ri-time-line mr-1.5 text-xs opacity-40"></i>
+      <FeedPostDate date={data.date} index={index}/>
+    </div>
+    <a 
+      class="text-skin-muted hover:text-skin-active transition-colors text-sm underline decoration-transparent hover:decoration-current underline-offset-2"
+      href={getUrl("/feed/") + slug}
+    >
+      <span data-translate="home.readMore">{t('home.readMore')}</span>
+    </a>
+  </div>
 </div>

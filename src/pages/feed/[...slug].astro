@@ -22,77 +22,76 @@ const sortPosts = sortPostsByDate(posts);
 
 let postDate = post.data.date ? formatDate(post.data.date) : '';
 const currentPostIndex = sortPosts.findIndex(
-  (postItem) => postItem.data.date === post.data.date
+  (postItem) => postItem.slug === post.slug
 );
 let prevPost: any, nextPost: any;
-if (sortPosts[currentPostIndex - 1]) {
-  prevPost = sortPosts[currentPostIndex - 1];
-}
+// Previous = older posts (higher index in sorted array)
 if (sortPosts[currentPostIndex + 1]) {
-  nextPost = sortPosts[currentPostIndex + 1];
+  prevPost = sortPosts[currentPostIndex + 1];
+}
+// Next = newer posts (lower index in sorted array)
+if (sortPosts[currentPostIndex - 1]) {
+  nextPost = sortPosts[currentPostIndex - 1];
 }
 ---
 
 <BlogPost frontmatter={post.data}>
   {
     (
-      <div class="flex items-center mb-2">
+      <div class="mb-4 pb-3">
         {postDate &&
-          <div class="flex items-center">
-            <i class="ri-calendar-2-fill mr-1"/>
-            <div class="tag">{postDate}</div>
+          <div class="flex items-center text-skin-muted">
+            <i class="ri-calendar-2-fill mr-2 text-sm opacity-40"/>
+            <span class="text-sm">
+              <span class="opacity-60">{t('feed.publishedIn')}:</span>
+              <span class="ml-1">{postDate}</span>
+            </span>
           </div>}
         {comment.enable && comment.type === "waline" && comment.pageview && (
-          <div class="divider-vertical"/>
-          <a href="#" title="当前页面阅读量" class="flex items-center">
-            <i class="ri-fire-fill mr-1"/>
-            <span class="waline-pageview-count" data-path={getUrl('/') + post.collection + '/' + post.slug}/>
-          </a>
-          <div class="divider-vertical"/>
-          <a href="#waline" title="当前页面评论数" class="flex items-center">
-            <i class="ri-discuss-fill mr-1"/>
-            <span class="waline-comment-count" data-path={getUrl('/') + post.collection + '/' + post.slug}/>
-          </a>
+          <div class="flex items-center text-skin-muted mt-2 space-x-4">
+            <a href="#" title="当前页面阅读量" class="flex items-center hover:text-skin-active transition-colors">
+              <i class="ri-fire-fill mr-1.5 text-sm"/>
+              <span class="waline-pageview-count text-sm" data-path={getUrl('/') + post.collection + '/' + post.slug}/>
+            </a>
+            <a href="#waline" title="当前页面评论数" class="flex items-center hover:text-skin-active transition-colors">
+              <i class="ri-discuss-fill mr-1.5 text-sm"/>
+              <span class="waline-comment-count text-sm" data-path={getUrl('/') + post.collection + '/' + post.slug}/>
+            </a>
+          </div>
         )}
       </div>
     )
   }
   <div class="divider-horizontal"></div>
-  <article class="markdown-body scroll-smooth mb-4">
+  <article class="markdown-body scroll-smooth mb-6">
     <Content/>
   </article>
   <div class="divider-horizontal"></div>
-  {
-    (
-      <div>
-        {prevPost ? (
-          <a
-            class="truncate  w-auto max-w-[40%] float-left"
-            href={getUrl('/') + prevPost.collection + '/' + prevPost.slug}
-            title={prevPost.data.title}
-          >
-            <i class="ri-arrow-left-s-fill"/>
-            <span data-translate="feed.previous">{t('feed.previous')}</span>
-          </a>
-        ) : (
-          <div/>
-        )}
-        {nextPost ? (
-          <div class="flex item-center float-right w-auto max-w-[40%] text-right">
-            <a
-              class="truncate "
-              href={getUrl('/') + nextPost.collection + '/' + nextPost.slug}
-              title={nextPost.data.title}
-            >
-              <span data-translate="feed.next">{t('feed.next')}</span>
-            </a>
-            <i class="ri-arrow-right-s-fill float-right"/>
-          </div>
-        ) : (
-          <div/>
-        )}
-      </div>
-    )
-  }
+  <div class="flex justify-between items-center h-8 text-skin-base">
+    {prevPost ? (
+      <a
+        class="flex items-center truncate max-w-[40%] hover:text-skin-active transition-colors"
+        href={getUrl('/') + prevPost.collection + '/' + prevPost.slug}
+        title={prevPost.data.title}
+      >
+        <i class="ri-arrow-left-s-fill mr-1"/>
+        <span data-translate="feed.previous">{t('feed.previous')}</span>
+      </a>
+    ) : (
+      <div></div>
+    )}
+    {nextPost ? (
+      <a
+        class="flex items-center truncate max-w-[40%] hover:text-skin-active transition-colors"
+        href={getUrl('/') + nextPost.collection + '/' + nextPost.slug}
+        title={nextPost.data.title}
+      >
+        <span data-translate="feed.next">{t('feed.next')}</span>
+        <i class="ri-arrow-right-s-fill ml-1"/>
+      </a>
+    ) : (
+      <div></div>
+    )}
+  </div>
   <div class="h-4"></div>
 </BlogPost>

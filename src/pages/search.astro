@@ -44,7 +44,13 @@ import {t} from '@/i18n/utils'
   let FUSE_OPTIONS = {
     includeScore: true,
     shouldSort: true,
-    threshold: 0.5,
+    threshold: 0.1,        // Much more precise (0.0 = exact match, 1.0 = match everything)
+    location: 0,           // Search from the beginning of strings
+    distance: 100,         // How far from the beginning to search
+    maxPatternLength: 32,  // Maximum pattern length
+    minMatchCharLength: 3, // Minimum characters that must match
+    ignoreLocation: false, // Consider location in matching
+    findAllMatches: false, // Stop after finding the first match
     keys: [
       {
         name: 'title',
@@ -72,6 +78,9 @@ import {t} from '@/i18n/utils'
   const search = document.querySelector('#search');
   const searchReadout = document.querySelector('#searchReadout');
   const resultsList = document.querySelector('#resultsList');
+  
+  // Store current search results count for language change updates
+  let currentResultsCount = null;
 
   window.addEventListener('DOMContentLoaded', () => {
     const urlParams = DOMPurify.sanitize(new URLSearchParams(window.location.search).get('q'));
@@ -79,6 +88,18 @@ import {t} from '@/i18n/utils'
     search.value = urlParams
     search.focus()
   })
+  
+  // Listen for language changes to update search readout
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-language-link]')) {
+      // Small delay to let language change complete
+      setTimeout(() => {
+        if (currentResultsCount !== null) {
+          updateReadout(currentResultsCount);
+        }
+      }, 100);
+    }
+  });
 
   search.addEventListener("input", (e) => {
     const searchTerm = DOMPurify.sanitize(search.value);
@@ -87,9 +108,14 @@ import {t} from '@/i18n/utils'
   })
 
   function updateReadout(length) {
+    currentResultsCount = length; // Store for language change updates
     if (isNumber(length)) {
-      searchReadout.innerHTML = `<div class="my-2">${t('search.searchLabelOne')}<span class="px-2 font-bold text-skin-active">${length}</span>${t('search.searchLabelTwo')}</div>`
+      // Use client-side translation system
+      const labelOne = window.getCurrentTranslation ? window.getCurrentTranslation('search.searchLabelOne') : 'Found';
+      const labelTwo = window.getCurrentTranslation ? window.getCurrentTranslation('search.searchLabelTwo') : 'results';
+      searchReadout.innerHTML = `<div class="my-2">${labelOne}<span class="px-2 font-bold text-skin-active">${length}</span>${labelTwo}</div>`
     } else {
+      currentResultsCount = null;
       searchReadout.innerHTML = ""
     }
   }
@@ -101,64 +127,179 @@ import {t} from '@/i18n/utils'
   }
 
   function generateSearchList(results, searchTerm) {
-    return results.map(r => {
-      const {title, description, date, slug, category, tags} = r.item
-      const reg = new RegExp(searchTerm, 'gi')
-      let titleStr = title.replace(reg, (match) => {
-        return `<span class="text-skin-active font-bold">${match}</span>`
-      })
-      let descriptionStr = description ? description.replace(reg, (match) => {
-        return `<span class="text-skin-active font-bold">${match}</span>`
-      }) : ''
+    console.log('generateSearchList called with', results.length, 'results for term:', searchTerm);
+    
+    try {
+      return results.map((r, index) => {
+        console.log(`Processing result ${index}:`, r.item.title, 'Score:', r.score.toFixed(3));
+        
+        const {title, description, date, slug, category, tags} = r.item
+        
+        // Safer regex handling for non-English characters
+        let titleStr = title;
+        let descriptionStr = description || '';
+        
+        try {
+          const reg = new RegExp(searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+          titleStr = title.replace(reg, (match) => {
+            return `<span class="text-skin-active font-bold">${match}</span>`
+          });
+          
+          if (description) {
+            descriptionStr = description.replace(reg, (match) => {
+              return `<span class="text-skin-active font-bold">${match}</span>`
+            });
+          }
+        } catch (regexError) {
+          console.warn('Regex error for search term:', searchTerm, regexError);
+          // Fallback to no highlighting if regex fails
+          titleStr = title;
+          descriptionStr = description || '';
+        }
 
-      let categoryStr = dealLabel(category).filter(item => item !== 'uncategorized').map(categoryName => (
-        `<a class="mr-2 hover:text-skin-active" href=${getUrl("/category/") + categoryName}><i class="ri-folder-3-line mr-1"></i>${categoryName}</a>`
-      )).join("")
-      let tagsStr = dealLabel(tags).map((tagName) => (
-        `<a class="mr-2 hover:text-skin-active" href=${getUrl("/tags/") + tagName}><i class="ri-hashtag mr-1"></i>${tagName}</a>`
-      )).join("")
-      return `
+        let categoryStr = '';
+        let tagsStr = '';
+        let dateStr = '';
+        
+        try {
+          // Safe date formatting with fallback
+          try {
+            dateStr = formatDate(date);
+          } catch (dateError) {
+            console.warn('Date formatting error:', dateError);
+            dateStr = new Date(date).toLocaleDateString();
+          }
+          
+          categoryStr = dealLabel(category).filter(item => item !== 'uncategorized').map(categoryName => (
+            `<a class="mr-2 hover:text-skin-active" href=${getUrl("/category/") + categoryName}><i class="ri-folder-3-line mr-1"></i>${categoryName}</a>`
+          )).join("");
+          
+          tagsStr = dealLabel(tags).map((tagName) => (
+            `<a class="mr-2 hover:text-skin-active" href=${getUrl("/tags/") + tagName}><i class="ri-hashtag mr-1"></i>${tagName}</a>`
+          )).join("");
+        } catch (labelError) {
+          console.warn('Label processing error:', labelError);
+          categoryStr = '';
+          tagsStr = '';
+          dateStr = dateStr || new Date(date).toLocaleDateString();
+        }
+        
+        const resultHtml = `
         <div class="my-5">
             <a
               class="text-xl underline-offset-4 decoration-skin-base decoration-wavy hover:underline hover:decoration-sky-500 font-bold"
               href=${getUrl("/blog/") + slug}>${titleStr}
             </a>
             <div class="flex items-center my-2">
-              <div class="flex items-center mr-2"><i class="ri-calendar-2-fill mr-1"></i>${formatDate(date)}</div>
+              <div class="flex items-center mr-2"><i class="ri-calendar-2-fill mr-1"></i>${dateStr}</div>
               ${categoryStr} ${tagsStr}
             </div>
             <p class="break-all mb-4">${descriptionStr}</p>
         </div>
-        <div class="divider-horizontal-mini"></div>`
-    }).join("")
+        <div class="divider-horizontal-mini"></div>`;
+        
+        console.log(`Result ${index} HTML generated successfully`);
+        return resultHtml;
+      }).join("");
+    } catch (error) {
+      console.error('generateSearchList error:', error);
+      return `<div class="text-red-500">Error generating search results: ${error.message}</div>`;
+    }
   }
 
   async function fetchSearchResults(search) {
+    console.log('fetchSearchResults called with:', search);
     if (!search) {
       updateReadout(null)
       resultsList.innerHTML = ''
       return
     }
     if (search.length === 0) return;
+    
     resultsList.innerHTML = SPINNER;
+    console.log('Loading search data...');
+    
     if (!SEARCH_DATA) {
       try {
-        const res = await fetch(getUrl("/search.json"))
+        console.log('Fetching search.json...');
+        
+        // Add timeout to prevent infinite loading
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+        
+        const res = await fetch(getUrl("/search.json"), { 
+          signal: controller.signal 
+        });
+        clearTimeout(timeoutId);
+        
+        console.log('Search fetch response:', res.status, res.ok);
         if (!res.ok) {
-          throw new Error("Something went wrong...Please try again.");
+          throw new Error(`HTTP ${res.status}: ${res.statusText}`);
         }
         SEARCH_DATA = await res.json()
+        console.log('Search data loaded:', SEARCH_DATA.length, 'items');
+        console.log('Sample search item:', SEARCH_DATA[0]);
+        
+        // Check for potential encoding issues
+        const sampleItem = SEARCH_DATA[0];
+        if (sampleItem) {
+          console.log('Sample title:', sampleItem.title);
+          console.log('Sample description:', sampleItem.description);
+          console.log('Title type:', typeof sampleItem.title);
+          console.log('Description type:', typeof sampleItem.description);
+        }
       } catch (e) {
-        console.log(e)
+        console.error('Search data fetch failed:', e);
+        if (e.name === 'AbortError') {
+          resultsList.innerHTML = `<div class="text-red-500">Search timed out. Please try again.</div>`;
+        } else {
+          resultsList.innerHTML = `<div class="text-red-500">Search failed: ${e.message}</div>`;
+        }
+        return;
       }
     }
+    
     if (SEARCH_DATA && !FUSE_INSTANCE) {
+      console.log('Creating Fuse instance...');
       FUSE_INSTANCE = new Fuse(SEARCH_DATA, FUSE_OPTIONS)
+      console.log('Fuse instance created');
     }
 
-    if (!FUSE_INSTANCE) return;
-    const searchResults = FUSE_INSTANCE.search(search)
+    if (!FUSE_INSTANCE) {
+      console.error('Fuse instance not available');
+      resultsList.innerHTML = `<div class="text-red-500">Search engine not initialized</div>`;
+      return;
+    }
+    
+    console.log('Performing search for:', search);
+    const allSearchResults = FUSE_INSTANCE.search(search)
+    console.log('Raw search results:', allSearchResults.length, 'found');
+    
+    // Filter results by score to ensure quality matches
+    // Lower scores are better in Fuse.js (0 = perfect match, 1 = no match)
+    const scoreThreshold = 0.3; // Only show results with score <= 0.3
+    const searchResults = allSearchResults.filter(result => result.score <= scoreThreshold);
+    
+    console.log('Filtered search results:', searchResults.length, 'found (score <=', scoreThreshold, ')');
+    if (allSearchResults.length > 0 && searchResults.length === 0) {
+      console.log('All results filtered out due to poor scores. Best score was:', Math.min(...allSearchResults.map(r => r.score)));
+    }
+    
     updateReadout(searchResults.length)
-    resultsList.innerHTML = searchResults.length > 0 ? generateSearchList(searchResults, search) : ""
+    
+    if (searchResults.length > 0) {
+      console.log('Generating search results HTML...');
+      try {
+        const resultsHtml = generateSearchList(searchResults, search);
+        console.log('Search results HTML generated, length:', resultsHtml.length);
+        resultsList.innerHTML = resultsHtml;
+        console.log('Search results displayed successfully');
+      } catch (error) {
+        console.error('Error displaying search results:', error);
+        resultsList.innerHTML = `<div class="text-red-500">Error displaying results: ${error.message}</div>`;
+      }
+    } else {
+      resultsList.innerHTML = ""
+    }
   }
 </script>
