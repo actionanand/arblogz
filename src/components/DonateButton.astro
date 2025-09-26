@@ -1,0 +1,187 @@
+---
+// Simple donation button that can be added anywhere
+import { donate as globalDonate } from "@/consts";
+
+interface Props {
+  message?: string;
+  showMethods?: ('paypal' | 'github' | 'coffee' | 'kofi' | 'alipay' | 'wechat')[];
+  size?: 'small' | 'medium' | 'large';
+  style?: 'button' | 'card' | 'minimal';
+}
+
+const { 
+  message = "Support our work! ☕",
+  showMethods = ['paypal', 'github', 'coffee'],
+  size = 'medium',
+  style = 'card'
+} = Astro.props;
+
+const sizeClasses = {
+  small: 'text-sm p-2',
+  medium: 'text-base p-4',
+  large: 'text-lg p-6'
+};
+
+const styleClasses = {
+  button: 'inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:shadow-lg transition-all',
+  card: 'bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg',
+  minimal: 'border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg'
+};
+---
+
+<div class={`donate-quick ${styleClasses[style]} ${sizeClasses[size]}`}>
+  <div class="text-center">
+    <div class="donate-heart mb-2">
+      <i class="ri-heart-fill text-red-500"></i>
+    </div>
+    <p class="mb-3 font-medium">{message}</p>
+    
+    <div class="flex flex-wrap justify-center gap-2">
+      {showMethods.includes('paypal') && globalDonate.paypalUrl && (
+        <a 
+          href={globalDonate.paypalUrl}
+          target="_blank"
+          rel="noopener noreferrer" 
+          class="donate-method-quick paypal"
+          title="Donate via PayPal"
+        >
+          <i class="ri-paypal-fill"></i>
+          PayPal
+        </a>
+      )}
+      
+      {showMethods.includes('github') && globalDonate.githubSponsors && (
+        <a 
+          href={`https://github.com/sponsors/${globalDonate.githubSponsors}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="donate-method-quick github"
+          title="Sponsor on GitHub"
+        >
+          <i class="ri-github-fill"></i>
+          Sponsor
+        </a>
+      )}
+      
+      {showMethods.includes('coffee') && globalDonate.buyMeACoffee && (
+        <a 
+          href={`https://www.buymeacoffee.com/${globalDonate.buyMeACoffee}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="donate-method-quick coffee"
+          title="Buy me a coffee"
+        >
+          <i class="ri-cup-fill"></i>
+          Coffee
+        </a>
+      )}
+      
+      {showMethods.includes('kofi') && globalDonate.kofi && (
+        <a 
+          href={`https://ko-fi.com/${globalDonate.kofi}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="donate-method-quick kofi"
+          title="Support on Ko-fi"
+        >
+          <i class="ri-heart-2-fill"></i>
+          Ko-fi
+        </a>
+      )}
+    </div>
+  </div>
+</div>
+
+<style>
+  .donate-quick {
+    max-width: 400px;
+    margin: 1rem auto;
+  }
+  
+  .donate-heart {
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  .donate-method-quick {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    text-decoration: none !important; /* Remove underline */
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    color: white;
+  }
+
+  .donate-method-quick:hover {
+    transform: translateY(-1px);
+    text-decoration: none !important; /* Ensure no underline on hover */
+  }
+
+  .donate-method-quick:focus {
+    text-decoration: none !important;
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+  }
+  
+  .donate-method-quick.paypal {
+    background: #0070ba;
+  }
+  
+  .donate-method-quick.paypal:hover {
+    background: #005ea6;
+  }
+  
+  .donate-method-quick.github {
+    background: #24292e;
+  }
+  
+  .donate-method-quick.github:hover {
+    background: #1a1e22;
+  }
+  
+  .donate-method-quick.coffee {
+    background: #ff813f;
+  }
+  
+  .donate-method-quick.coffee:hover {
+    background: #ff6f20;
+  }
+  
+  .donate-method-quick.kofi {
+    background: #ff5e5b;
+  }
+  
+  .donate-method-quick.kofi:hover {
+    background: #ff4444;
+  }
+
+  .donate-method-quick.patreon {
+    background: #e85d46;
+  }
+
+  .donate-method-quick.patreon:hover {
+    background: #d4493a;
+  }
+
+  .donate-method-quick.gpay {
+    background: #34a853;
+  }
+
+  .donate-method-quick.gpay:hover {
+    background: #2d8a47;
+  }
+  
+  /* Dark theme adjustments */
+  html[data-theme="dark"] .donate-quick {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  }
+</style>

@@ -16,7 +16,7 @@ const children = menuChildren || [];
     <i class={iconClass}/>
     <slot/>
     {
-      children.length > 0 && <i class="ri-arrow-down-s-line"></i>
+      children.length > 0 && <i class="ri-arrow-down-s-line desktop-dropdown-arrow"></i>
     }
   </a>
   {children && children.length > 0 && (
@@ -55,5 +55,14 @@ const children = menuChildren || [];
     display: block;
   }
 
+  /* Desktop dropdown arrow animation */
+  .desktop-dropdown-arrow {
+    transition: transform 0.3s ease;
+    margin-left: 0.25rem;
+  }
+
+  .box:hover .desktop-dropdown-arrow {
+    transform: rotate(180deg);
+  }
 </style>
 

@@ -1,6 +1,7 @@
 ---
 import LegalPage from "@/layouts/LegalPage.astro";
 import {t} from '@/i18n/utils';
+import Donate from "@/components/Donate.astro";
 
 const contactPosts = Object.values(import.meta.glob("../../components/ContactSection.md", { eager: true }));
 const {Content: ContactContent} = contactPosts[0] as any;
@@ -9,6 +10,19 @@ const {Content: ContactContent} = contactPosts[0] as any;
 function processMarkdown(text: string): string {
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 }
+
+// Donation configuration for this page
+const pageDonationConfig = {
+  enable: true,
+  tip: "Support our blog development! ☕✨",
+  gpayQRCode: "/images/donation/gpay-qr-png",
+  wechatQRCode: "/images/donation/WeChatQR.png",
+  alipayQRCode: "/images/donation/AliPayQR.png", 
+  paypalUrl: "https://paypal.me/yourusername",
+  githubSponsors: "yourusername", // Replace with actual GitHub username
+  buyMeACoffee: "yourusername", // Replace with actual Buy Me a Coffee username
+  kofi: "yourusername", // Replace with actual Ko-fi username
+};
 ---
 
 <LegalPage title={t('about.website.title')}>
@@ -32,6 +46,13 @@ function processMarkdown(text: string): string {
         <li><a href="/faq" data-translate="about.legal.faq">{t('about.legal.faq')}</a></li>
       </ul>
     </div>
+    
+    <!-- Donation Section -->
+    <Donate 
+      showDonate={true}
+      donateMessage="Enjoying our content? Support us to keep creating amazing articles!"
+      customDonateConfig={pageDonationConfig}
+    />
     
     <div class="professional-divider">
       <div class="divider-line"></div>
@@ -207,12 +228,10 @@ function processMarkdown(text: string): string {
     color: var(--tw-prose-body, #374151);
   }
   
-  @media (prefers-color-scheme: dark) {
-    .legal-links a {
-      background: var(--bg-primary, #1f2937);
-      border-color: #374151;
-      color: #d1d5db;
-    }
+  html[data-theme="dark"] .legal-links a {
+    background: var(--bg-primary, #1f2937);
+    border-color: #374151;
+    color: #d1d5db;
   }
   
   .legal-links a:hover {
@@ -299,14 +318,12 @@ function processMarkdown(text: string): string {
     box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
   }
   
-  @media (prefers-color-scheme: dark) {
-    .divider-line {
-      background: linear-gradient(90deg, transparent 0%, #059669 20%, #059669 80%, transparent 100%);
-    }
-    
-    .divider-icon {
-      background: #059669;
-      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
-    }
+  html[data-theme="dark"] .divider-line {
+    background: linear-gradient(90deg, transparent 0%, #059669 20%, #059669 80%, transparent 100%);
+  }
+  
+  html[data-theme="dark"] .divider-icon {
+    background: #059669;
+    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
   }
 </style>

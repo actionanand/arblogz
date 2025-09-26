@@ -706,41 +706,39 @@ html[data-theme="dark"] .brand-logo:hover {
 }
 
 /* Dark theme adjustments */
-@media (prefers-color-scheme: dark) {
-  [data-translate^="about."] strong {
-    color: #ffffff; /* White for dark theme */
-  }
-  
-  [data-translate^="about."] em {
-    color: #ffffff; /* White for dark theme */
-  }
-  
-  [data-translate^="about."] code {
-    background: #2d2d2d; /* Dark background */
-    color: #e0e0e0; /* Light gray text */
-    border: 1px solid #404040; /* Dark border */
-  }
-  
-  [data-translate^="about."] pre {
-    background: #1e1e1e; /* Darker background */
-    border: 1px solid #404040; /* Dark border */
-  }
-  
-  [data-translate^="about."] pre code {
-    color: #e0e0e0; /* Light gray for code blocks */
-  }
-  
-  [data-translate^="about."] del {
-    color: #999999; /* Light gray for strikethrough */
-  }
-  
-  [data-translate^="about."] a {
-    color: #66b3ff; /* Light blue for dark theme */
-    border-bottom-color: rgba(102, 179, 255, 0.3);
-  }
-  
-  [data-translate^="about."] a:hover {
-    color: #99ccff; /* Lighter blue on hover */
-    border-bottom-color: #99ccff;
-  }
+html[data-theme="dark"] [data-translate^="about."] strong {
+  color: #ffffff; /* White for dark theme */
+}
+
+html[data-theme="dark"] [data-translate^="about."] em {
+  color: #ffffff; /* White for dark theme */
+}
+
+html[data-theme="dark"] [data-translate^="about."] code {
+  background: #2d2d2d; /* Dark background */
+  color: #e0e0e0; /* Light gray text */
+  border: 1px solid #404040; /* Dark border */
+}
+
+html[data-theme="dark"] [data-translate^="about."] pre {
+  background: #1e1e1e; /* Darker background */
+  border: 1px solid #404040; /* Dark border */
+}
+
+html[data-theme="dark"] [data-translate^="about."] pre code {
+  color: #e0e0e0; /* Light gray for code blocks */
+}
+
+html[data-theme="dark"] [data-translate^="about."] del {
+  color: #999999; /* Light gray for strikethrough */
+}
+
+html[data-theme="dark"] [data-translate^="about."] a {
+  color: #66b3ff; /* Light blue for dark theme */
+  border-bottom-color: rgba(102, 179, 255, 0.3);
+}
+
+html[data-theme="dark"] [data-translate^="about."] a:hover {
+  color: #99ccff; /* Lighter blue on hover */
+  border-bottom-color: #99ccff;
 }

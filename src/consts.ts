@@ -239,18 +239,36 @@ export const infoLinks = [
 
 /**
  * donate
- * enable {boolean}
+ * enable {boolean} - Global enable/disable
+ * enableForAllBlogs {boolean} - Enable donations on all blog posts by default
  * tip {string}
- * wechatQRCode: Image addresses should be placed in the public directory.
- * alipayQRCode: Image addresses should be placed in the public directory.
- * paypalUrl {string}
+ * Payment method QR codes: Image addresses should be placed in /public/images/donation/
+ * Payment URLs and usernames for various platforms
  */
 export const donate = {
-  enable: false,
+  enable: true, // Global enable/disable
+  enableForAllBlogs: false, // Enable donations on all blog posts by default (can be overridden per page)
   tip: "Thanks for the coffee !!!☕",
-  wechatQRCode: "/WeChatQR.png",
-  alipayQRCode: "/AliPayQR.png",
-  paypalUrl: "https://paypal.me/xxxxxxxxxx",
+  
+  // QR Code images (place in /public/images/donation/)
+  // if you don't want some payment, comment it out
+  wechatQRCode: "/images/donation/wechat-qr.png",
+  alipayQRCode: "/images/donation/alipay-qr.png", 
+  gpayQRCode: "/images/donation/gpay-qr.png", // Google Pay for India
+  paytmQRCode: "/images/donation/paytm-qr.png", // Paytm for India
+  phonepeQRCode: "/images/donation/phonepe-qr.png", // PhonePe for India
+  
+  // Direct payment URLs
+  paypalUrl: "https://paypal.me/yourusername", // Replace with actual
+  githubSponsors: "yourusername", // Replace with actual GitHub username
+  buyMeACoffee: "yourusername", // Replace with actual username
+  kofi: "yourusername", // Replace with actual Ko-fi username
+  patreon: "yourusername", // Replace with actual Patreon username
+  opencollective: "yourproject", // Replace with actual Open Collective project
+  
+  // Cryptocurrency (optional)
+  bitcoin: "", // Bitcoin address
+  ethereum: "", // Ethereum address
 }
 
 /**
