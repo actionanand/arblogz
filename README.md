@@ -233,28 +233,9 @@ import DonateButton from "@/components/DonateButton.astro";
 />
 ```
 
-### Features
+### Live sites
 
-- ✅ **Smart Controls**: Global + manual override system
-- ✅ **Regional Support**: Payment methods for India, China, and international
-- ✅ **Responsive Design**: Mobile-optimized with touch interactions
-- ✅ **QR Code Popups**: Interactive hover/touch QR code display
-- ✅ **Dark Theme**: Full support for light/dark themes
-- ✅ **No Underlines**: Clean button styling without text decorations
-- ✅ **TypeScript**: Full type safety and validation
+1. https://arblogz.pages.dev
+2. https://arblogz.vercel.app
+3. https://actionanand.github.io/arblogz (Skeleton)
 
-### Documentation
-
-- **Component Details**: See `src/components/readme.donation.md`
-- **Complete Guide**: See `DONATION_SYSTEM.md`
-- **Test Pages**: Visit `/blog/support-us-donation-demo` for demo
-
-This system helps content creators monetize their work while providing readers with convenient ways to show support!
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
