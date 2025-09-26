@@ -264,7 +264,10 @@ async function updatePageTranslations() {
     });
   });
   
-  // Translation update completed
+  // Translation update completed - dispatch event for other systems
+  document.dispatchEvent(new CustomEvent('translationComplete', { 
+    detail: { language: currentLang } 
+  }));
 }
 
 // Helper function to check if a word is too common to safely replace

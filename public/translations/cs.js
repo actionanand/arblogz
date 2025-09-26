@@ -70,7 +70,7 @@ const cs = {
   'faq.q4.question': 'Jak často je obsah aktualizován?',
   'faq.q4.answer': 'Obsah pravidelně aktualizujeme, abychom zajistili, že zůstane **aktuální a relevantní**. Nové příspěvky jsou publikovány podle našeho plánu obsahu.',
   'faq.q5.question': 'Mohu přispět obsahem nebo překlady?',
-  'faq.q5.answer': 'Ano! Toto je **open source projekt**. Můžete přispět obsahem, překlady nebo vylepšeními prostřednictvím našeho GitHub repozitáře.',
+  'faq.q5.answer': 'Ano, určitě! Můžete přispět odesíláním obsahu, překladů nebo návrhů na vylepšení prostřednictvím našeho kontaktního formuláře. Váš příspěvek posoudíme **a informujeme vás, pokud bude přijat**.',
   'faq.contact.title': 'Stále máte otázky?',
   'faq.contact.content': 'Pokud nemůžete najít odpověď, kterou hledáte, neváhejte nás **kontaktovat** prostřednictvím našeho kontaktního formuláře.',
   

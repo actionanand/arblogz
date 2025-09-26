@@ -45,59 +45,135 @@ function processMarkdown(text: string): string {
 </LegalPage>
 
 <script>
-  // Helper function to process markdown-like syntax
-  function processMarkdownText(text: string): string {
-    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  }
+  // Enhanced markdown processor that works WITH the translation system
+  class AboutPageManager {
+    private translatedContent = new Map<string, string>();
+    private isProcessing = false;
+    
+    constructor() {
+      this.init();
+    }
 
-  // Client-side translation update for about page (runs after global translation system)
-  function updateAboutMarkdown() {
-    // Find all about page content elements that might have markdown
-    const aboutContentElements = document.querySelectorAll('[data-translate^="about."]');
-    aboutContentElements.forEach(element => {
-      const text = element.textContent || '';
-      if (text.includes('**')) {
-        element.innerHTML = processMarkdownText(text);
+    // Comprehensive markdown processing with multiple formats
+    private processMarkdown(text: string): string {
+      let processed = text;
+      
+      // Process in specific order to avoid conflicts
+      
+      // 1. Code blocks (process first to protect content)
+      processed = processed.replace(/```([^`]+)```/g, '<pre><code>$1</code></pre>');
+      
+      // 2. Inline code (protect from other formatting)
+      processed = processed.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+      
+      // 3. Bold text: **text**
+      processed = processed.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+      
+      // 4. Italic text: *text* (avoid matching **text**)
+      processed = processed.replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
+      
+      // 5. Strikethrough: ~~text~~
+      processed = processed.replace(/~~([^~\n]+)~~/g, '<del>$1</del>');
+      
+      // 6. Links: [text](url)
+      processed = processed.replace(/\[([^\]\n]+)\]\(([^)\n\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+      
+      // 7. Simple line breaks: double newlines become <br><br>
+      processed = processed.replace(/\n\n/g, '<br><br>');
+      
+      // 8. Single line breaks in text
+      processed = processed.replace(/(?<!<br>)\n(?!<br>)/g, '<br>');
+      
+      return processed;
+    }
+
+    // Check if text contains any markdown patterns
+    private hasMarkdownPatterns(text: string): boolean {
+      const patterns = [
+        /\*\*[^*\n]+\*\*/,           // **bold**
+        /(?<!\*)\*[^*\n]+\*(?!\*)/,  // *italic*
+        /`[^`\n]+`/,                 // `code`
+        /~~[^~\n]+~~/,               // ~~strikethrough~~
+        /\[[^\]\n]+\]\([^)\n\s]+\)/, // [link](url)
+        /```[^`]+```/,               // ```code blocks```
+        /\n\n/                       // double line breaks
+      ];
+      
+      return patterns.some(pattern => pattern.test(text));
+    }
+
+    // Main translation handler - replaces all the setTimeout chaos
+    private async handleTranslationUpdate() {
+      if (this.isProcessing) return;
+      this.isProcessing = true;
+
+      try {
+        // Small delay to let the translation system finish
+        await new Promise(resolve => setTimeout(resolve, 50));
+        
+        // Process all about page elements
+        const aboutElements = document.querySelectorAll('[data-translate^="about."]');
+        
+        aboutElements.forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (!key) return;
+
+          // Get the current translated text
+          let currentText = element.textContent || '';
+          
+          // If text contains any markdown patterns, process them
+          if (this.hasMarkdownPatterns(currentText)) {
+            const processedText = this.processMarkdown(currentText);
+            
+            // Only update if content changed to prevent unnecessary updates
+            if (element.innerHTML !== processedText) {
+              // Smooth transition: brief opacity reduction during update
+              const htmlElement = element as HTMLElement;
+              htmlElement.style.opacity = '0.9';
+              
+              requestAnimationFrame(() => {
+                element.innerHTML = processedText;
+                htmlElement.style.opacity = '1';
+              });
+            }
+          }
+        });
+
+        // Dispatch completion event for any other systems that need to know
+        document.dispatchEvent(new CustomEvent('aboutPageTranslated'));
+        
+      } finally {
+        this.isProcessing = false;
       }
-    });
+    }
+
+    private init() {
+      // Single event listener that handles all translation updates
+      document.addEventListener('DOMContentLoaded', () => {
+        this.handleTranslationUpdate();
+      });
+
+      // Listen for the main translation system completion
+      document.addEventListener('translationComplete', () => {
+        this.handleTranslationUpdate();
+      });
+
+      // Fallback for language changes
+      document.addEventListener('languageChanged', () => {
+        this.handleTranslationUpdate();
+      });
+
+      // Clean up on visibility change
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+          this.handleTranslationUpdate();
+        }
+      });
+    }
   }
 
-  // Run markdown processing after DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    // Run immediately and with delays to catch different loading states
-    updateAboutMarkdown();
-    setTimeout(updateAboutMarkdown, 50);
-    setTimeout(updateAboutMarkdown, 100);
-    setTimeout(updateAboutMarkdown, 200);
-  });
-
-  // Listen for language changes
-  document.addEventListener('languageChanged', function() {
-    setTimeout(updateAboutMarkdown, 50);
-    setTimeout(updateAboutMarkdown, 150);
-  });
-
-  // Listen for language selector clicks
-  document.addEventListener('click', function(e) {
-    const target = e.target as HTMLElement;
-    if (target && target.closest('[data-language-link]')) {
-      setTimeout(updateAboutMarkdown, 50);
-      setTimeout(updateAboutMarkdown, 200);
-    }
-  });
-
-  // Listen for global translation updates
-  window.addEventListener('translationsUpdated', function() {
-    setTimeout(updateAboutMarkdown, 50);
-    setTimeout(updateAboutMarkdown, 100);
-  });
-
-  // Run on page visibility change (when tab becomes active)
-  document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) {
-      setTimeout(updateAboutMarkdown, 50);
-    }
-  });
+  // Initialize the manager
+  const aboutManager = new AboutPageManager();
 </script>
 
 <style>

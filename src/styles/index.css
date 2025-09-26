@@ -614,3 +614,133 @@ html[data-theme="dark"] .brand-logo:hover {
     color: #34d399;
   }
 }
+
+/* Anti-flicker CSS for smooth language transitions */
+[data-translate] {
+  transform: translateZ(0); /* Enable hardware acceleration */
+  backface-visibility: hidden; /* Prevent flickering during transforms */
+  -webkit-font-smoothing: antialiased; /* Smooth text rendering */
+  will-change: contents; /* Optimize for content changes */
+}
+
+/* Smooth transition for text content changes */
+[data-translate^="about."] {
+  transition: opacity 0.1s ease-out;
+}
+
+/* Prevent layout shift during translation updates */
+.about-content {
+  min-height: 1em; /* Prevents collapse during updates */
+}
+
+/* Optimize rendering for translated markdown content */
+[data-translate] strong,
+[data-translate] em,
+[data-translate] code,
+[data-translate] del,
+[data-translate] a,
+[data-translate] pre {
+  transform: translateZ(0); /* Hardware acceleration for formatted text */
+}
+
+/* Enhanced markdown styling for about page */
+[data-translate^="about."] strong {
+  font-weight: 700;
+  color: #000000; /* Normal black */
+}
+
+[data-translate^="about."] em {
+  font-style: italic;
+  color: #000000; /* Normal black */
+}
+
+[data-translate^="about."] code {
+  background: #f5f5f5; /* Light gray background */
+  color: #333333; /* Dark gray text */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
+  border: 1px solid #e0e0e0; /* Light border */
+}
+
+[data-translate^="about."] pre {
+  background: #f8f8f8; /* Light background */
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+}
+
+[data-translate^="about."] pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875em;
+  color: #333333; /* Dark gray for code blocks */
+}
+
+[data-translate^="about."] del {
+  text-decoration: line-through;
+  color: #666666; /* Medium gray for strikethrough */
+  opacity: 0.7;
+}
+
+[data-translate^="about."] a {
+  color: #0066cc; /* Standard blue for links */
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 102, 204, 0.3);
+  transition: all 0.2s ease;
+}
+
+[data-translate^="about."] a:hover {
+  color: #004499; /* Darker blue on hover */
+  border-bottom-color: #004499;
+}
+
+/* Line breaks in about content */
+[data-translate^="about."] br {
+  line-height: 1.6;
+}
+
+/* Dark theme adjustments */
+@media (prefers-color-scheme: dark) {
+  [data-translate^="about."] strong {
+    color: #ffffff; /* White for dark theme */
+  }
+  
+  [data-translate^="about."] em {
+    color: #ffffff; /* White for dark theme */
+  }
+  
+  [data-translate^="about."] code {
+    background: #2d2d2d; /* Dark background */
+    color: #e0e0e0; /* Light gray text */
+    border: 1px solid #404040; /* Dark border */
+  }
+  
+  [data-translate^="about."] pre {
+    background: #1e1e1e; /* Darker background */
+    border: 1px solid #404040; /* Dark border */
+  }
+  
+  [data-translate^="about."] pre code {
+    color: #e0e0e0; /* Light gray for code blocks */
+  }
+  
+  [data-translate^="about."] del {
+    color: #999999; /* Light gray for strikethrough */
+  }
+  
+  [data-translate^="about."] a {
+    color: #66b3ff; /* Light blue for dark theme */
+    border-bottom-color: rgba(102, 179, 255, 0.3);
+  }
+  
+  [data-translate^="about."] a:hover {
+    color: #99ccff; /* Lighter blue on hover */
+    border-bottom-color: #99ccff;
+  }
+}

@@ -70,7 +70,7 @@ const fr = {
   'faq.q4.question': 'À quelle fréquence le contenu est-il mis à jour?',
   'faq.q4.answer': 'Nous mettons à jour le contenu régulièrement pour nous assurer qu\'il reste **actuel et pertinent**. De nouveaux articles sont publiés selon notre calendrier de contenu.',
   'faq.q5.question': 'Puis-je contribuer du contenu ou des traductions?',
-  'faq.q5.answer': 'Oui! C\'est un **projet open source**. Vous pouvez contribuer du contenu, des traductions ou des améliorations via notre dépôt GitHub.',
+  'faq.q5.answer': 'Oui, absolument! Vous pouvez contribuer en soumettant du contenu, des traductions ou des suggestions d\'amélioration via notre formulaire de contact. Nous examinerons votre soumission **et vous informerons si votre contribution est acceptée**.',
   'faq.contact.title': 'Vous avez encore des questions?',
   'faq.contact.content': 'Si vous ne trouvez pas la réponse que vous cherchez, n\'hésitez pas à **nous contacter** via notre formulaire de contact.',
   
