@@ -16,11 +16,35 @@ Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 ├── public/
+│   ├── avatar.png
+│   ├── favicon.svg
+│   ├── robots.txt
+│   ├── images/
+│   │   ├── alipay.svg
+│   │   ├── paypal.svg
+│   │   ├── spinner.gif
+│   │   ├── wechat.svg
+│   │   └── donation/
+│   ├── javascript/
+│   │   ├── load-mathjax.js
+│   │   ├── toggle-language.js
+│   │   └── toggle-theme.js
+│   └── translations/
+│       ├── ar.js
+│       ├── cs.js
+│       ├── en.js
+│       ├── fr.js
+│       ├── hi.js
+│       ├── kn.js
+│       ├── README.md
+│       ├── ta.js
+│       ├── zh-cn.js
+│       └── zh-Hant.js
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
+│   ├── components/
+│   ├── content/
+│   ├── layouts/
+│   └── pages/
 ├── astro.config.mjs
 ├── README.md
 ├── package.json
