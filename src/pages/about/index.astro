@@ -96,10 +96,13 @@ const pageDonationConfig = {
       // 5. Strikethrough: ~~text~~
       processed = processed.replace(/~~([^~\n]+)~~/g, '<del>$1</del>');
       
-      // 6. Links: [text](url)
+      // 6. Images: ![alt](url)
+      processed = processed.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, '<img src="$2" alt="$1" style="max-width: 100%; height: auto; margin: auto;">');
+      
+      // 7. Links: [text](url)
       processed = processed.replace(/\[([^\]\n]+)\]\(([^)\n\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
       
-      // 7. Simple line breaks: double newlines become <br><br>
+      // 8. Simple line breaks: double newlines become <br><br>
       processed = processed.replace(/\n\n/g, '<br><br>');
       
       // 8. Single line breaks in text
