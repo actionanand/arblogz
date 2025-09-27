@@ -48,7 +48,9 @@ const en = {
   'nav.language': 'Language',
   'footer.copyright': 'Copyright',
   'about.website.title': 'About Website',
-  'about.website.content': 'This is a **modern** blog website built with **Astro** and featuring *multilingual* content. You can find the source code at [GitHub](https://github.com).',
+  'about.website.content': `Welcome to our **modern, multilingual blog**—a thoughtfully curated digital space where knowledge meets accessibility. Our platform is designed to empower everyday people through engaging content that spans awareness articles, consumer insights, scientific discoveries, Tamil literature, and comprehensive math and science tutorials that bring real-world relevance to complex theorems. We believe in making learning meaningful by connecting abstract concepts to practical applications, helping readers understand not just what discoveries were made, but why they matter in their daily lives.
+
+Our diverse content ecosystem includes language learning resources, reliable health information, fascinating celestial knowledge, and consumer awareness guides—all crafted to bridge the gap between expert knowledge and everyday understanding. Whether you're exploring the beauty of Tamil literature, decoding scientific breakthroughs, or seeking practical guidance for better decision-making, our blog transforms curiosity into actionable insights. Join a growing community of learners who value accessible, high-quality content that enriches their understanding of the world around them.`,
   'about.me.title': 'About Me',
   'about.me.content': 'I am a **software developer** passionate about *web technologies* and creating ~~static~~ **dynamic multilingual** experiences. I love working with `JavaScript`, `TypeScript`, and `Astro`.',
   'about.other.title': 'Our Language Choices and Global Reach',

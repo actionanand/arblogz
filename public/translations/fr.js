@@ -48,7 +48,9 @@ const fr = {
   'nav.language': 'Langue',
   'footer.copyright': 'Droits d\'auteur',
   'about.website.title': 'À propos du site',
-  'about.website.content': 'Ceci est un site de blog **moderne** construit avec **Astro** et proposant du contenu **multilingue**.',
+  'about.website.content': `**Bienvenue sur notre blog moderne et multilingue**—un espace numérique soigneusement conçu où la connaissance rencontre l'accessibilité. Notre plateforme est conçue pour autonomiser les gens ordinaires grâce à un contenu engageant qui couvre les articles de sensibilisation, les perspectives des consommateurs, les découvertes scientifiques, la littérature tamoule, et des tutoriels complets de mathématiques et de sciences qui apportent une pertinence réelle aux théorèmes complexes. Nous croyons à rendre l'apprentissage significatif en connectant les concepts abstraits aux applications pratiques, aidant les lecteurs à comprendre non seulement quelles découvertes ont été faites, mais pourquoi elles comptent dans leur vie quotidienne.
+
+Notre écosystème de contenu diversifié comprend des ressources d'apprentissage des langues, des informations de santé fiables, des connaissances célestes fascinantes, et des guides de sensibilisation des consommateurs—tous conçus pour combler le fossé entre les connaissances d'experts et la compréhension quotidienne. Que vous exploriez la beauté de la littérature tamoule, décodiez des percées scientifiques, ou cherchiez des conseils pratiques pour une meilleure prise de décision, notre blog transforme la curiosité en perspectives exploitables. Rejoignez une communauté croissante d'apprenants qui valorisent un contenu accessible et de haute qualité qui enrichit leur compréhension du monde qui les entoure.`,
   'about.me.title': 'À propos de moi',
   'about.me.content': 'Je suis un **développeur de logiciels** passionné par les **technologies web** et la création d\'expériences **multilingues**.',
   'about.other.title': 'Nos Choix Linguistiques et Portée Globale',

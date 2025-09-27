@@ -57,7 +57,9 @@ export  let cs = {
   'code.copied': 'Zkopírováno',
   'footer.copyright': 'Autorská práva',
   'about.website.title': 'O webové stránce',
-  'about.website.content': 'Toto je **moderní** blogová webová stránka postavená s **Astro** a obsahující **vícejazyčný** obsah.',
+  'about.website.content': `**Vítejte na našem moderním, vícejazyčném blogu**—pečlivě kurátorovaném digitálním prostoru, kde se setkává znalost s dostupností. Naše platforma je navržena tak, aby posílila obyčejné lidi prostřednictvím poutavého obsahu, který zahrnuje osvětové články, spotřebitelské pozorování, vědecké objevy, tamilskou literaturu a komplexní výukové programy matematiky a věd, které přinášejí skutečnou relevanci složitým teorémům. Věříme v to, že učení má smysl propojením abstraktních konceptů s praktickými aplikacemi, což pomáhá čtenářům pochopit nejen to, jaké objevy byly učiněny, ale také proč jsou důležité v jejich každodenním životě.
+
+Náš rozmanitý ekosystém obsahu zahrnuje zdroje pro výuku jazyků, spolehlivé zdravotní informace, fascinující nebeské znalosti a průvodce spotřebitelského povědomí—vše vytvořeno tak, aby překlenulo propast mezi odbornou znalostí a každodenním porozuměním. Ať už zkoumáte krásu tamilské literatury, dekódujete vědecké průlomy nebo hledáte praktické vedení pro lepší rozhodování, náš blog transformuje zvědavost v praktické pozorování. Připojte se k rostoucí komunitě studentů, kteří oceňují dostupný, kvalitní obsah, který obohacuje jejich chápání světa kolem nich.`,
   'about.me.title': 'O mně',
   'about.me.content': 'Jsem **vývojář softwaru** s vášní pro **webové technologie** a vytváření **vícejazyčných** zážitků.',
   'about.other.title': 'Naše Volby Jazyků a Globální Dosah',
