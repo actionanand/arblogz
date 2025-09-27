@@ -51,8 +51,22 @@ const cs = {
   'about.website.content': `**Vítejte na našem moderním, vícejazyčném blogu**—pečlivě kurátorovaném digitálním prostoru, kde se setkává znalost s dostupností. Naše platforma je navržena tak, aby posílila obyčejné lidi prostřednictvím poutavého obsahu, který zahrnuje osvětové články, spotřebitelské pozorování, vědecké objevy, tamilskou literaturu a komplexní výukové programy matematiky a věd, které přinášejí skutečnou relevanci složitým teorémům. Věříme v to, že učení má smysl propojením abstraktních konceptů s praktickými aplikacemi, což pomáhá čtenářům pochopit nejen to, jaké objevy byly učiněny, ale také proč jsou důležité v jejich každodenním životě.
 
 Náš rozmanitý ekosystém obsahu zahrnuje zdroje pro výuku jazyků, spolehlivé zdravotní informace, fascinující nebeské znalosti a průvodce spotřebitelského povědomí—vše vytvořeno tak, aby překlenulo propast mezi odbornou znalostí a každodenním porozuměním. Ať už zkoumáte krásu tamilské literatury, dekódujete vědecké průlomy nebo hledáte praktické vedení pro lepší rozhodování, náš blog transformuje zvědavost v praktické pozorování. Připojte se k rostoucí komunitě studentů, kteří oceňují dostupný, kvalitní obsah, který obohacuje jejich chápání světa kolem nich.`,
-  'about.me.title': 'O mně',
-  'about.me.content': 'Jsem **vývojář softwaru** s vášní pro **webové technologie** a vytváření **vícejazyčných** zážitků.',
+  'about.me.title': 'O mně: Život mimo kód',
+  'about.me.content': `Vítejte v mém koutku internetu! Profesně jsem vývojář softwaru, ale tento prostor je věnován všemu ostatnímu, co mě dělá tím, kým jsem. Zde nenajdete ani jeden řádek kódu nebo technický tutoriál. Místo toho je tento blog mým úložištěm životních zkušeností, osobních objevů a zvláštních návyků, které formují mou každodenní existenci.
+
+![about-anand](./about-ar.jpg)
+
+**Proč tento blog existuje**: Chtěl jsem vytvořit něco jiného než technický šum online. Toto je můj digitální deník pro ne-technické objevy - životní lekce, pozorování a zkušenosti, které mají význam mimo práci. Představte si to jako poznatky dostupné vám a budoucímu já, který by mohl potřebovat tato připomenutí.
+
+**Kroniky noční sovy**: Hudba je můj stálý společník během těch pozdních nočních hodin, kdy se svět zklidní. Nejsem vázán na konkrétní umělce; co mě zaujme, jsou smysluplné texty, které rezonují se životními zkušenostmi. Noc ve mně probouzí nejkreativnější myšlení - je něco magického na tichu, co dovoluje myšlenkám volně téct. Jsem noční tvor od dětství, často jsem spěchal na zkoušky po studování až do úsvitu.
+
+**Jednoduché radosti života**: Jsem nadšenec do člověče nezlob se a oddaný milovník jídla se závažnou slabostí pro autentické hydrabadské biryani - milostný příběh, který začal v Dillí díky populárním restauračním řetězcům jako Biryani Blues a Bikkgane Biryani. Vydal jsem se na pátrání po biryani, ochutnávám všechno od afghánského stylu Behrouz až po regionální odrůdy jako Ambur, Thalappakatti a Muradabadi. Mé kulinářské dobrodružství se rozšiřuje na pouliční speciality jako momos, vaječné koláčky, kachodi, chaap, vada pav a pav bhaji, i když přiznám, že vegetariánské jídlo a já se vzájemně zřídka kdy shodneme.
+
+**Jaký jsem člověk**: Organizace je klíčem k mému duševnímu klidu - všechno má své určené místo a musí se tam vrátit. Miluji zelené prostory a zeleň, nacházím radost ve hře s dětmi a věřím v učení ostatních tomu, co jsem se naučil. Má lenost je ve skutečnosti mou supersilou, nutí mě najít nejjednodušší trvalá řešení pro každodenní úkoly. Dokonce se vyhýbám psaní perem, protože jsem tak oddán efektivitě!
+
+**Má filosofie**: V vztazích jsem přizpůsobivý, zrcadlím energii těch kolem sebe. Raději inspiruji ostatní, než abych hledal inspiraci, a žiji podle jednoduchého pravidla: dokud neubližujete ostatním, cokoliv děláte, je platné. Důvěra a autenticita jsou v mých přátelstvích nepřekročitelné.
+
+**Co můžete očekávat**: Tento blog bude sdílet můj ne-technický svět - lekce naučené z každodenního života, chyby, které mě něčemu cennému naučily, a poznatky získané pouhým bytím člověkem. Vítám vaše myšlenky a návrhy prostřednictvím kontaktního formuláře. Děkuji za zastavení a doufám, že se ke mně připojíte na této cestě životem mimo profesní svět!`,
   'about.other.title': 'Naše Volby Jazyků a Globální Dosah',
   'about.other.content': `Jako někdo z Tamil Nadu jsem hluboce hrdý na to, že jsem rodilý mluvčí tamilštiny—tamilština není jen můj mateřský jazyk, ale také jazyk s bohatým dědictvím a globálním významem. Tamilština stojí jako nejstarší živý klasický jazyk světa s historií sahající přes 5000 let. Mluví jí miliony lidí v jižní Indii a má oficiální status v zemích jako Srí Lanka a Singapur. Toto živé dědictví je zdrojem obrovské hrdosti pro mě i pro všechny, kdo mluví tamilsky.
 
