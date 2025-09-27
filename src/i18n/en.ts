@@ -1,6 +1,6 @@
 export  const en = {
   'aside.caution': 'Caution',
-  'aside.danger':'Danger',
+  'aside.danger': 'Danger',
   'aside.note': 'Note',
   'aside.tip':'Tip',
   'blog.tableOfContent':'Table of Contents',
@@ -60,8 +60,26 @@ export  const en = {
   'about.website.content': 'This is a **modern** blog website built with **Astro** and featuring **multilingual** content.',
   'about.me.title': 'About Me',
   'about.me.content': 'I am a **software developer** passionate about **web technologies** and creating **multilingual** experiences.',
-  'about.other.title': 'Other Info',
-  'about.other.content': 'This website is **open source** and available on **GitHub**.',
+  'about.other.title': 'Our Language Choices and Global Reach',
+    'about.other.content': `As someone from Tamil Nadu, I am deeply proud to be a native Tamil speaker—Tamil is not just my mother tongue, but also a language with a rich heritage and global significance. Tamil stands as the world's oldest living classical language, with a history spanning over 5000 years. It is spoken by millions in South India and holds official status in countries like Sri Lanka and Singapore. This living legacy is a source of immense pride for me and for all who speak Tamil.
+
+When selecting languages for translation on my blog, I made a conscious decision to focus on languages that are actively spoken by people today—living languages. While there are many ancient and classical languages with remarkable histories, some are no longer used for daily communication. My goal was to ensure accessibility and relevance for a broad, contemporary audience.
+
+**English** was an essential choice, given its role as the global lingua franca and its widespread use in international communication, business, and technology.
+
+**Chinese** (both Simplified and Traditional) was included due to its status as the most spoken language in the world, covering vast populations in China, Taiwan, Hong Kong, and overseas communities.
+
+**Hindi** is spoken by a vast population across India, especially in regions where Hindi is the primary medium of communication (the northern part of India). Including Hindi ensures my content reaches a significant portion of the Indian population.
+
+**Kannada** deserves special mention. As someone working in Bangalore, the heart of Karnataka, I wanted to give preference to the local language. Kannada is a major South Indian language with a rich literary tradition and millions of speakers. Its inclusion reflects both my personal connection to the region and my respect for its vibrant culture.
+
+**French** was selected for its global reach, being spoken across Europe, Africa, North America, and parts of Asia. French is also a language of culture, diplomacy, and international relations.
+
+**Czech** represents my commitment to European diversity, connecting with audiences in Central Europe and acknowledging the Czech Republic's vibrant culture and history.
+
+**Arabic** was added for its importance across the Middle East and North Africa, as well as its role as a classical and living language with deep historical and religious significance.
+
+In summary, the languages I chose—Tamil, English, Chinese (Simplified and Traditional), Hindi, French, Czech, Arabic, and Kannada—are all living languages, actively spoken by millions around the world. Tamil, Kannada and Hindi are three of the 22 official languages in India. While I honor the legacy of ancient languages, my focus is on those that continue to connect people today, ensuring my blog is accessible, relevant, and inclusive for a truly global audience.`,
   'about.legal.title': 'Legal Pages',
   'about.legal.privacy': 'Privacy Policy',
   'about.legal.terms': 'Terms & Conditions', 

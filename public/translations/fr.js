@@ -51,8 +51,26 @@ const fr = {
   'about.website.content': 'Ceci est un site de blog **moderne** construit avec **Astro** et proposant du contenu **multilingue**.',
   'about.me.title': 'À propos de moi',
   'about.me.content': 'Je suis un **développeur de logiciels** passionné par les **technologies web** et la création d\'expériences **multilingues**.',
-  'about.other.title': 'Autres informations',
-  'about.other.content': 'Ce site web est **open source** et disponible sur **GitHub**.',
+  'about.other.title': 'Nos Choix Linguistiques et Portée Globale',
+  'about.other.content': `En tant que natif du Tamil Nadu, je suis profondément fier d'être un locuteur natif tamoul—le tamoul n'est pas seulement ma langue maternelle, mais aussi une langue au riche héritage et d'importance mondiale. Le tamoul se dresse comme la plus ancienne langue classique vivante du monde, avec une histoire s'étendant sur plus de 5000 ans. Elle est parlée par des millions de personnes en Inde du Sud et détient un statut officiel dans des pays comme le Sri Lanka et Singapour. Cet héritage vivant est une source d'immense fierté pour moi et pour tous ceux qui parlent tamoul.
+
+Lors de la sélection des langues pour la traduction sur mon blog, j'ai pris une décision consciente de me concentrer sur les langues qui sont activement parlées par les gens aujourd'hui—les langues vivantes. Bien qu'il existe de nombreuses langues anciennes et classiques aux histoires remarquables, certaines ne sont plus utilisées pour la communication quotidienne. Mon objectif était d'assurer l'accessibilité et la pertinence pour un public large et contemporain.
+
+**L'anglais** était un choix essentiel, étant donné son rôle de lingua franca mondiale et son usage répandu dans la communication internationale, les affaires et la technologie.
+
+**Le chinois** (simplifié et traditionnel) a été inclus en raison de son statut de langue la plus parlée au monde, couvrant de vastes populations en Chine, à Taïwan, à Hong Kong et dans les communautés d'outre-mer.
+
+**L'hindi** est parlé par une vaste population à travers l'Inde, particulièrement dans les régions où l'hindi est le moyen principal de communication (la partie nord de l'Inde). Inclure l'hindi assure que mon contenu atteigne une portion significative de la population indienne.
+
+**Le kannada** mérite une mention spéciale. En tant que quelqu'un travaillant à Bangalore, le cœur du Karnataka, je voulais donner la préférence à la langue locale. Le kannada est une langue majeure du sud de l'Inde avec une riche tradition littéraire et des millions de locuteurs. Son inclusion reflète à la fois ma connexion personnelle à la région et mon respect pour sa culture vibrante.
+
+**Le français** a été sélectionné pour sa portée mondiale, étant parlé à travers l'Europe, l'Afrique, l'Amérique du Nord et des parties de l'Asie. Le français est aussi une langue de culture, de diplomatie et de relations internationales.
+
+**Le tchèque** représente mon engagement envers la diversité européenne, se connectant avec les audiences en Europe centrale et reconnaissant la culture vibrante et l'histoire de la République tchèque.
+
+**L'arabe** a été ajouté pour son importance à travers le Moyen-Orient et l'Afrique du Nord, ainsi que pour son rôle en tant que langue classique et vivante avec une signification historique et religieuse profonde.
+
+En résumé, les langues que j'ai choisies—tamoul, anglais, chinois (simplifié et traditionnel), hindi, français, tchèque, arabe et kannada—sont toutes des langues vivantes, activement parlées par des millions de personnes à travers le monde. Le tamoul, le kannada et l'hindi sont trois des 22 langues officielles de l'Inde. Bien que j'honore l'héritage des langues anciennes, mon focus est sur celles qui continuent à connecter les gens aujourd'hui, assurant que mon blog soit accessible, pertinent et inclusif pour un public véritablement mondial.`,
   'about.legal.title': 'Pages légales',
   'about.legal.privacy': 'Politique de confidentialité',
   'about.legal.terms': 'Termes & Conditions',
