@@ -4,12 +4,13 @@ const {data, body, slug} = Astro.props.post;
 const {index} = Astro.props;
 import {t} from '@/i18n/utils'
 import getUrl from "@/utils/getUrl";
+const isDaily = data.isDaily || slug.startsWith('daily-');
 ---
 
 <div class="py-4">
   <!-- Feed Content -->
   <div class="mb-2">
-    <p class="text-skin-base text-base leading-relaxed break-words line-clamp-3 first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1">
+    <p class={`text-skin-base text-base leading-relaxed break-words first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1 whitespace-pre-line ${!isDaily ? 'line-clamp-3' : ''}`}>
       {
         body.replace(/^#+/gm, "").replace(/!?\[.*?\]\(.*?\)/g, "").trim()
       }
@@ -19,14 +20,22 @@ import getUrl from "@/utils/getUrl";
   <!-- Metadata and Actions -->
   <div class="flex items-center justify-between text-sm">
     <div class="flex items-center text-skin-muted">
+      {isDaily && (
+        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-skin-active/10 text-skin-active border border-skin-active/20 mr-2 animate-pulse shadow-lg shadow-skin-active/30">
+          <i class="ri-flashlight-line mr-1"></i>
+          Daily
+        </span>
+      )}
       <i class="ri-time-line mr-1.5 text-xs opacity-40"></i>
-      <FeedPostDate date={data.date} index={index}/>
+      <FeedPostDate date={data.date.toISOString()} index={index} isDaily={isDaily}/>
     </div>
-    <a 
-      class="text-skin-muted hover:text-skin-active transition-colors text-sm underline decoration-transparent hover:decoration-current underline-offset-2"
-      href={getUrl("/feed/") + slug}
-    >
-      <span data-translate="home.readMore">{t('home.readMore')}</span>
-    </a>
+    {!isDaily && (
+      <a 
+        class="text-skin-muted hover:text-skin-active transition-colors text-sm underline decoration-transparent hover:decoration-current underline-offset-2"
+        href={getUrl("/feed/") + slug}
+      >
+        <span data-translate="home.readMore">{t('home.readMore')}</span>
+      </a>
+    )}
   </div>
 </div>

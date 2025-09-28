@@ -6,12 +6,100 @@ import { sortPostsByDate } from "@/utils/sortPostsByDate";
 import { getCollectionByName } from "@/utils/getCollectionByName";
 import FeedPreview from "@/components/FeedPreview.astro";
 import getUrl from "@/utils/getUrl";
+import { getCollection } from 'astro:content';
+
 export async function getStaticPaths({ paginate }) {
   let posts = await getCollectionByName("feed");
   posts = sortPostsByDate(posts);
-  // 将根据宇航员数组生成两个页面
+  
+  // Parse daily updates
+  const dailyCollection = await getCollection('daily-status');
+  const dailyEntry = dailyCollection.find(entry => entry.slug === 'daily-updates');
+  const body = dailyEntry ? dailyEntry.body : '';
+  // Calculate today's date in IST (GMT +5:30)
+  const now = new Date();
+  const istOffset = 5.5 * 60 * 60 * 1000; // 5.5 hours in milliseconds
+  const istDate = new Date(now.getTime() + istOffset);
+  const today = istDate.toISOString().split('T')[0];
+  
+  // Parse multi-line content blocks starting with date
+  const todaysUpdates = [];
+  // Split by date lines and find content from last 24 hours
+  const lines = body.split('\n');
+  let currentContent = '';
+  let isValidContent = false;
+  let publishDate = null;
+  
+  for (const line of lines) {
+    const dateMatch = line.match(/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}):\s*(.*)$/);
+    if (dateMatch) {
+      // If we were collecting valid content, save it
+      if (isValidContent && currentContent.trim()) {
+        // Support maximum 1000 characters
+        let content = currentContent.trim();
+        if (content.length > 1000) {
+          content = content.substring(0, 1000) + '...';
+        }
+        todaysUpdates.push({
+          slug: `daily-${Date.now()}-${todaysUpdates.length}`,
+          data: {
+            title: 'Daily Update',
+            description: content.substring(0, 200) + (content.length > 200 ? '...' : ''),
+            date: publishDate || istDate, // Use parsed publish date
+            draft: false,
+            isDaily: true,
+          },
+          body: content,
+          rawContent: content,
+          render: () => ({ Content: () => content }),
+        });
+      }
+      
+      // Always include daily content - client-side will handle expiration
+      const fullDateTime = dateMatch[1];
+      const [datePart, timePart] = fullDateTime.split(' ');
+      const [year, month, day] = datePart.split('-').map(Number);
+      const [hours, minutes] = timePart.split(':').map(Number);
+      
+      // Create UTC timestamp for the IST time (IST = UTC + 5.5 hours)
+      const contentUtcTime = Date.UTC(year, month - 1, day, hours, minutes, 0) - istOffset;
+      
+      isValidContent = true;
+      publishDate = new Date(contentUtcTime); // Convert back to Date object for display
+      currentContent = dateMatch[2]; // Start with content after date
+    } else if (isValidContent) {
+      // Continue collecting content for valid entries
+      currentContent += '\n' + line;
+    }
+  }
+  
+  // Don't forget the last content block
+  if (isValidContent && currentContent.trim()) {
+    let content = currentContent.trim();
+    if (content.length > 1000) {
+      content = content.substring(0, 1000) + '...';
+    }
+    todaysUpdates.push({
+      slug: `daily-${Date.now()}-${todaysUpdates.length}`,
+      data: {
+        title: 'Daily Update',
+        description: content.substring(0, 200) + (content.length > 200 ? '...' : ''),
+        date: publishDate || istDate, // Use parsed publish date
+        draft: false,
+        isDaily: true,
+      },
+      body: content,
+      rawContent: content,
+      render: () => ({ Content: () => content }),
+    });
+  }
+  
+  // Prepend today's updates to posts
+  posts = [...todaysUpdates, ...posts];
+  
   return paginate(posts, { pageSize: site.feedPageSize });
 }
+
 // 所有分页数据都将传递给 "page" 参数
 
 const { page } = Astro.props;
