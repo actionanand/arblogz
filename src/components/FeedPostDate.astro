@@ -35,10 +35,22 @@ const { date, index, isDaily = false } = Astro.props;
       let postDateFromNow;
       
       if (isDaily) {
-        // For daily posts, calculate time until expiration (24 hours from publication)
+        // For daily posts, check publication time and expiration
         const publishDate = date ? dayjs(date) : dayjs();
-        const expirationDate = publishDate.add(24, 'hour');
         const now = dayjs();
+        
+        // Check if publication time is in the future
+        if (publishDate.isAfter(now)) {
+          // Hide the post until publication time
+          const postContainer = this.closest('.py-4') as HTMLElement;
+          if (postContainer) {
+            postContainer.style.display = 'none';
+          }
+          return; // Don't show anything until publication time
+        }
+        
+        // Publication time has passed, check expiration
+        const expirationDate = publishDate.add(24, 'hour');
         const timeDiff = dayjs.duration(expirationDate.diff(now));
         
         const hours = Math.floor(timeDiff.asHours());
