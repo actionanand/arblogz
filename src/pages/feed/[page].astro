@@ -6,12 +6,53 @@ import { sortPostsByDate } from "@/utils/sortPostsByDate";
 import { getCollectionByName } from "@/utils/getCollectionByName";
 import FeedPreview from "@/components/FeedPreview.astro";
 import getUrl from "@/utils/getUrl";
+import dailyRaw from '../../content/daily-status/daily-updates.md?raw';
+
 export async function getStaticPaths({ paginate }) {
   let posts = await getCollectionByName("feed");
   posts = sortPostsByDate(posts);
-  // 将根据宇航员数组生成两个页面
+  
+  // Parse daily updates
+  const parts = dailyRaw.split('---');
+  const body = parts[2] ? parts[2].trim() : '';
+  // Calculate today's date in IST (GMT +5:30)
+  const now = new Date();
+  const istOffset = 5.5 * 60 * 60 * 1000; // 5.5 hours in milliseconds
+  const istDate = new Date(now.getTime() + istOffset);
+  const today = istDate.toISOString().split('T')[0];
+  
+  // Parse lines for today's updates
+  const todaysUpdates = body.split('\n')
+    .map(line => line.trim())
+    .filter(line => line.startsWith(today + ':'))
+    .map((line, index) => {
+      let content = line.substring((today + ':').length).trim();
+      // Support maximum 1000 characters
+      if (content.length > 1000) {
+        content = content.substring(0, 1000) + '...';
+      }
+      return {
+        slug: `daily-${Date.now()}-${index}`, // unique slug
+        data: {
+          title: 'Daily Update',
+          description: content,
+          date: istDate, // Use IST date
+          draft: false,
+          isDaily: true, // Flag for daily posts
+        },
+        body: content,
+        rawContent: content,
+        // Add other required properties to mimic post structure
+        render: () => ({ Content: () => content }),
+      };
+    });
+  
+  // Prepend today's updates to posts
+  posts = [...todaysUpdates, ...posts];
+  
   return paginate(posts, { pageSize: site.feedPageSize });
 }
+
 // 所有分页数据都将传递给 "page" 参数
 
 const { page } = Astro.props;
