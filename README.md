@@ -74,7 +74,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## GitHub Pages deployment
 
-In /src/consts.ts, modify the contents of the site field:
+In `/src/consts.ts`, modify the contents of the site field:
 
 ```js
 export const site = {
@@ -82,6 +82,36 @@ export const site = {
   url: 'https://actionanand.github.io', // required,  website origin
   baseUrl: '/arblogz', // When using GitHubPages, you must enter the repository name startwith '/'
   // ...
+}
+```
+
+In `public/javascript/toggle-language.js`, Modify the content as below
+
+```js
+requiredLangs.forEach(lang => {
+  if (languageMap[lang]) {
+    // for github pages only
+    promises.push(fetch(`/arblogz/translations/${lang}.js`).then(r => r.text()));
+    // promises.push(fetch(`/translations/${lang}.js`).then(r => r.text()));
+    langCodes.push(lang);
+  }
+});
+```
+
+```javascript
+try {
+  // for github pages
+  const response = await fetch(`/arblogz/translations/${lang}.js`);
+  // const response = await fetch(`/translations/${lang}.js`);
+  const code = await response.text();
+  const varName = languageMap[lang];
+  
+  const func = new Function(code + `; return ${varName};`);
+  translations[lang] = func();
+  return translations[lang];
+} catch (error) {
+  console.error(`Failed to load language ${lang}:`, error);
+  return null;
 }
 ```
 
@@ -233,28 +263,9 @@ import DonateButton from "@/components/DonateButton.astro";
 />
 ```
 
-### Features
+### Live sites
 
-- ✅ **Smart Controls**: Global + manual override system
-- ✅ **Regional Support**: Payment methods for India, China, and international
-- ✅ **Responsive Design**: Mobile-optimized with touch interactions
-- ✅ **QR Code Popups**: Interactive hover/touch QR code display
-- ✅ **Dark Theme**: Full support for light/dark themes
-- ✅ **No Underlines**: Clean button styling without text decorations
-- ✅ **TypeScript**: Full type safety and validation
+1. https://arblogz.pages.dev
+2. https://arblogz.vercel.app
+3. https://actionanand.github.io/arblogz (Skeleton)
 
-### Documentation
-
-- **Component Details**: See `src/components/readme.donation.md`
-- **Complete Guide**: See `DONATION_SYSTEM.md`
-- **Test Pages**: Visit `/blog/support-us-donation-demo` for demo
-
-This system helps content creators monetize their work while providing readers with convenient ways to show support!
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
