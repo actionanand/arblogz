@@ -125,7 +125,9 @@ async function loadLanguageOnDemand(lang) {
   if (!languageMap[lang]) return null;
   
   try {
-    const response = await fetch(`/translations/${lang}.js`);
+    // for github pages
+    const response = await fetch(`/arblogz/translations/${lang}.js`);
+    // const response = await fetch(`/translations/${lang}.js`);
     const code = await response.text();
     const varName = languageMap[lang];
     
