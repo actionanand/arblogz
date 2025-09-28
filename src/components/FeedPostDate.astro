@@ -54,7 +54,12 @@ const { date, index, isDaily = false } = Astro.props;
           }
           return; // Don't update the time display
         } else {
-          postDateFromNow = `${hours}h ${minutes}m ${seconds}s`;
+          // Build countdown string, skipping zero units
+          let countdownParts = [];
+          if (hours > 0) countdownParts.push(`${hours}h`);
+          if (minutes > 0) countdownParts.push(`${minutes}m`);
+          countdownParts.push(`${seconds}s`);
+          postDateFromNow = countdownParts.join(' ');
         }
       } else {
         // For regular posts, show time since publication
