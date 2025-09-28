@@ -24,27 +24,68 @@ export async function getStaticPaths({ paginate }) {
   
   // Parse multi-line content blocks starting with date
   const todaysUpdates = [];
-  const pattern = '^' + today.replace(/-/g, '\\-') + ':\\s*(.*?)(?=^\\d{4}-\\d{2}-\\d{2}:|\\s*$)';
-  const datePattern = new RegExp(pattern, 'gms');
-  let match;
-  while ((match = datePattern.exec(body)) !== null) {
-    let content = match[1].trim();
-    // Support maximum 1000 characters
+  // Split by date lines and find today's content
+  const lines = body.split('\n');
+  let currentContent = '';
+  let isTodaysContent = false;
+  
+  for (const line of lines) {
+    const dateMatch = line.match(/^(\d{4}-\d{2}-\d{2}):\s*(.*)$/);
+    if (dateMatch) {
+      // If we were collecting today's content, save it
+      if (isTodaysContent && currentContent.trim()) {
+        // Support maximum 1000 characters
+        let content = currentContent.trim();
+        if (content.length > 1000) {
+          content = content.substring(0, 1000) + '...';
+        }
+        todaysUpdates.push({
+          slug: `daily-${Date.now()}-${todaysUpdates.length}`,
+          data: {
+            title: 'Daily Update',
+            description: content.substring(0, 200) + (content.length > 200 ? '...' : ''),
+            date: istDate,
+            draft: false,
+            isDaily: true,
+          },
+          body: content,
+          rawContent: content,
+          render: () => ({ Content: () => content }),
+        });
+      }
+      
+      // Check if this is today's date
+      const lineDate = dateMatch[1];
+      if (lineDate === today) {
+        isTodaysContent = true;
+        currentContent = dateMatch[2]; // Start with content after date
+      } else {
+        isTodaysContent = false;
+        currentContent = '';
+      }
+    } else if (isTodaysContent) {
+      // Continue collecting content for today
+      currentContent += '\n' + line;
+    }
+  }
+  
+  // Don't forget the last content block
+  if (isTodaysContent && currentContent.trim()) {
+    let content = currentContent.trim();
     if (content.length > 1000) {
       content = content.substring(0, 1000) + '...';
     }
     todaysUpdates.push({
-      slug: `daily-${Date.now()}-${todaysUpdates.length}`, // unique slug
+      slug: `daily-${Date.now()}-${todaysUpdates.length}`,
       data: {
         title: 'Daily Update',
-        description: content.substring(0, 200) + (content.length > 200 ? '...' : ''), // Short description
-        date: istDate, // Use IST date
+        description: content.substring(0, 200) + (content.length > 200 ? '...' : ''),
+        date: istDate,
         draft: false,
-        isDaily: true, // Flag for daily posts
+        isDaily: true,
       },
       body: content,
       rawContent: content,
-      // Add other required properties to mimic post structure
       render: () => ({ Content: () => content }),
     });
   }
