@@ -84,7 +84,9 @@ async function loadTranslations() {
     
     requiredLangs.forEach(lang => {
       if (languageMap[lang]) {
-        promises.push(fetch(`/translations/${lang}.js`).then(r => r.text()));
+        // for github pages only
+        promises.push(fetch(`/arblogz/translations/${lang}.js`).then(r => r.text()));
+        // promises.push(fetch(`/translations/${lang}.js`).then(r => r.text()));
         langCodes.push(lang);
       }
     });
@@ -123,7 +125,9 @@ async function loadLanguageOnDemand(lang) {
   if (!languageMap[lang]) return null;
   
   try {
-    const response = await fetch(`/translations/${lang}.js`);
+    // for github pages
+    const response = await fetch(`/arblogz/translations/${lang}.js`);
+    // const response = await fetch(`/translations/${lang}.js`);
     const code = await response.text();
     const varName = languageMap[lang];
     
