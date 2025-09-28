@@ -6,46 +6,48 @@ import { sortPostsByDate } from "@/utils/sortPostsByDate";
 import { getCollectionByName } from "@/utils/getCollectionByName";
 import FeedPreview from "@/components/FeedPreview.astro";
 import getUrl from "@/utils/getUrl";
-import dailyRaw from '../../content/daily-status/daily-updates.md?raw';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths({ paginate }) {
   let posts = await getCollectionByName("feed");
   posts = sortPostsByDate(posts);
   
   // Parse daily updates
-  const parts = dailyRaw.split('---');
-  const body = parts[2] ? parts[2].trim() : '';
+  const dailyCollection = await getCollection('daily-status');
+  const dailyEntry = dailyCollection.find(entry => entry.slug === 'daily-updates');
+  const body = dailyEntry ? dailyEntry.body : '';
   // Calculate today's date in IST (GMT +5:30)
   const now = new Date();
   const istOffset = 5.5 * 60 * 60 * 1000; // 5.5 hours in milliseconds
   const istDate = new Date(now.getTime() + istOffset);
   const today = istDate.toISOString().split('T')[0];
   
-  // Parse lines for today's updates
-  const todaysUpdates = body.split('\n')
-    .map(line => line.trim())
-    .filter(line => line.startsWith(today + ':'))
-    .map((line, index) => {
-      let content = line.substring((today + ':').length).trim();
-      // Support maximum 1000 characters
-      if (content.length > 1000) {
-        content = content.substring(0, 1000) + '...';
-      }
-      return {
-        slug: `daily-${Date.now()}-${index}`, // unique slug
-        data: {
-          title: 'Daily Update',
-          description: content,
-          date: istDate, // Use IST date
-          draft: false,
-          isDaily: true, // Flag for daily posts
-        },
-        body: content,
-        rawContent: content,
-        // Add other required properties to mimic post structure
-        render: () => ({ Content: () => content }),
-      };
+  // Parse multi-line content blocks starting with date
+  const todaysUpdates = [];
+  const pattern = '^' + today.replace(/-/g, '\\-') + ':\\s*(.*?)(?=^\\d{4}-\\d{2}-\\d{2}:|\\s*$)';
+  const datePattern = new RegExp(pattern, 'gms');
+  let match;
+  while ((match = datePattern.exec(body)) !== null) {
+    let content = match[1].trim();
+    // Support maximum 1000 characters
+    if (content.length > 1000) {
+      content = content.substring(0, 1000) + '...';
+    }
+    todaysUpdates.push({
+      slug: `daily-${Date.now()}-${todaysUpdates.length}`, // unique slug
+      data: {
+        title: 'Daily Update',
+        description: content.substring(0, 200) + (content.length > 200 ? '...' : ''), // Short description
+        date: istDate, // Use IST date
+        draft: false,
+        isDaily: true, // Flag for daily posts
+      },
+      body: content,
+      rawContent: content,
+      // Add other required properties to mimic post structure
+      render: () => ({ Content: () => content }),
     });
+  }
   
   // Prepend today's updates to posts
   posts = [...todaysUpdates, ...posts];

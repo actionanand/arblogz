@@ -48,4 +48,12 @@ const feed = defineCollection({
   })
 })
 
-export const collections = {blog, feed};
+const dailyStatus = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  })
+})
+
+export const collections = {blog, feed, 'daily-status': dailyStatus};
