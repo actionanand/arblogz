@@ -24,17 +24,17 @@ export async function getStaticPaths({ paginate }) {
   
   // Parse multi-line content blocks starting with date
   const todaysUpdates = [];
-  // Split by date lines and find today's content
+  // Split by date lines and find content from last 24 hours
   const lines = body.split('\n');
   let currentContent = '';
-  let isTodaysContent = false;
+  let isValidContent = false;
   let publishDate = null;
   
   for (const line of lines) {
     const dateMatch = line.match(/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}):\s*(.*)$/);
     if (dateMatch) {
-      // If we were collecting today's content, save it
-      if (isTodaysContent && currentContent.trim()) {
+      // If we were collecting valid content, save it
+      if (isValidContent && currentContent.trim()) {
         // Support maximum 1000 characters
         let content = currentContent.trim();
         if (content.length > 1000) {
@@ -55,26 +55,26 @@ export async function getStaticPaths({ paginate }) {
         });
       }
       
-      // Check if this is today's date (compare date part only)
+      // Always include daily content - client-side will handle expiration
       const fullDateTime = dateMatch[1];
-      const datePart = fullDateTime.split(' ')[0];
-      if (datePart === today) {
-        isTodaysContent = true;
-        publishDate = new Date(fullDateTime + ':00'); // Add seconds for proper parsing
-        currentContent = dateMatch[2]; // Start with content after date
-      } else {
-        isTodaysContent = false;
-        currentContent = '';
-        publishDate = null;
-      }
-    } else if (isTodaysContent) {
-      // Continue collecting content for today
+      const [datePart, timePart] = fullDateTime.split(' ');
+      const [year, month, day] = datePart.split('-').map(Number);
+      const [hours, minutes] = timePart.split(':').map(Number);
+      
+      // Create UTC timestamp for the IST time (IST = UTC + 5.5 hours)
+      const contentUtcTime = Date.UTC(year, month - 1, day, hours, minutes, 0) - istOffset;
+      
+      isValidContent = true;
+      publishDate = new Date(contentUtcTime); // Convert back to Date object for display
+      currentContent = dateMatch[2]; // Start with content after date
+    } else if (isValidContent) {
+      // Continue collecting content for valid entries
       currentContent += '\n' + line;
     }
   }
   
   // Don't forget the last content block
-  if (isTodaysContent && currentContent.trim()) {
+  if (isValidContent && currentContent.trim()) {
     let content = currentContent.trim();
     if (content.length > 1000) {
       content = content.substring(0, 1000) + '...';

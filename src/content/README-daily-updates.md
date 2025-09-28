@@ -1,14 +1,22 @@
 # Daily Status Updates
 
-This folder contains temporary daily status updates that appear at the top of the blog feed for 24 hours.
+This folder con```
+2025-09-28 10:30: Today's update will appear.
+
+This content will show since it's within 24 hours.
+
+2025-09-27 14:20: Yesterday's update.
+
+This might show if it's still within 24 hours of current time.
+```ns temporary status updates that appear at the top of the blog feed for 24 hours from their publish time.
 
 ## File: `daily-updates.md`
 
-This file contains the daily update content that gets displayed on the blog feed.
+This file contains the status update content that gets displayed on the blog feed.
 
 ### Format
 
-Each daily update follows this format:
+Each status update follows this format:
 
 ```
 YYYY-MM-DD HH:MM: Content goes here
@@ -23,7 +31,7 @@ More content...
 - **Date and Time**: Use format `YYYY-MM-DD HH:MM:` (24-hour time)
 - **Expiration**: Posts automatically expire 24 hours after the specified publish time
 - **Multi-paragraph**: Blank lines create separate paragraphs
-- **Today's Content Only**: Only content for the current date (in IST timezone) will be displayed
+- **24-Hour Window**: All content published within the last 24 hours will be displayed
 - **Character Limit**: Content is truncated at 1000 characters
 
 ### Examples
@@ -44,10 +52,10 @@ This content won't show today since it's for tomorrow.
 
 ### How It Works
 
-1. **Parsing**: The system reads the file and looks for today's date
-2. **Display**: Only today's content appears at the top of the feed
+1. **Parsing**: The system reads the file and checks publish times
+2. **Display**: All content published within the last 24 hours appears at the top of the feed
 3. **Expiration**: Content disappears exactly 24 hours after the publish time
-4. **Styling**: Daily updates have a special "Daily" badge and "Expires in X" timing
+4. **Styling**: Status updates have a special "Daily" badge and "Expires in X" timing
 
 ### Updating Content
 
@@ -63,7 +71,7 @@ All times are in IST (Indian Standard Time, UTC+5:30). The system automatically 
 
 ### Notes
 
-- Only one daily update per day is supported
+- Multiple status updates can appear if published within 24 hours
 - Content is displayed in full (not truncated like regular posts)
-- Daily updates appear above all regular blog posts
+- Status updates appear above all regular blog posts
 - The "Expires in" countdown shows remaining time until disappearance

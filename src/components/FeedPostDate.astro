@@ -9,15 +9,23 @@ const { date, index, isDaily = false } = Astro.props;
 <script>
   import dayjs from "dayjs";
   import relativeTime from "dayjs/plugin/relativeTime";
+  import durationPlugin from "dayjs/plugin/duration";
   import "dayjs/locale/zh-cn";
   import {t} from '../i18n/utils'
   import {config} from "../consts";
 
   dayjs.extend(relativeTime);
+  dayjs.extend(durationPlugin);
   dayjs.locale(config.lang || 'en');
   class FeedPostDate extends HTMLElement {
+    intervalId: ReturnType<typeof setInterval> | undefined;
+
     constructor() {
       super();
+      this.updateDisplay();
+    }
+
+    updateDisplay() {
       // 从 data（数据）属性中读取消息。
       const date = this.dataset.date;
       const index = this.dataset.index;
@@ -28,8 +36,26 @@ const { date, index, isDaily = false } = Astro.props;
       
       if (isDaily) {
         // For daily posts, calculate time until expiration (24 hours from publication)
-        const expirationDate = date ? dayjs(date).add(24, 'hour') : dayjs().add(24, 'hour');
-        postDateFromNow = expirationDate.fromNow(true); // true = without suffix
+        const publishDate = date ? dayjs(date) : dayjs();
+        const expirationDate = publishDate.add(24, 'hour');
+        const now = dayjs();
+        const timeDiff = dayjs.duration(expirationDate.diff(now));
+        
+        const hours = Math.floor(timeDiff.asHours());
+        const minutes = Math.floor(timeDiff.minutes());
+        const seconds = Math.floor(timeDiff.seconds());
+        
+        // Check if expired
+        if (timeDiff.asMilliseconds() <= 0) {
+          // Hide the entire daily post
+          const postContainer = this.closest('.py-4') as HTMLElement;
+          if (postContainer) {
+            postContainer.style.display = 'none';
+          }
+          return; // Don't update the time display
+        } else {
+          postDateFromNow = `${hours}h ${minutes}m ${seconds}s`;
+        }
       } else {
         // For regular posts, show time since publication
         postDateFromNow = date ? dayjs(date).fromNow() : dayjs().format("YYYY-MM-DD");
@@ -45,6 +71,21 @@ const { date, index, isDaily = false } = Astro.props;
       // Add translation key for dynamic updates
       timeSpan[index].setAttribute('data-translate-template', textKey);
       timeSpan[index].setAttribute('data-date-value', postDateFromNow);
+    }
+
+    connectedCallback() {
+      // Update every second for daily posts
+      if (this.dataset.isDaily === 'true') {
+        this.intervalId = setInterval(() => {
+          this.updateDisplay();
+        }, 1000);
+      }
+    }
+
+    disconnectedCallback() {
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+      }
     }
   }
   customElements.define("feed-post-date", FeedPostDate);
