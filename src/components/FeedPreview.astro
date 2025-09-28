@@ -27,7 +27,7 @@ const isDaily = data.isDaily || slug.startsWith('daily-');
         </span>
       )}
       <i class="ri-time-line mr-1.5 text-xs opacity-40"></i>
-      <FeedPostDate date={data.date} index={index}/>
+      <FeedPostDate date={data.date} index={index} isDaily={isDaily}/>
     </div>
     {!isDaily && (
       <a 

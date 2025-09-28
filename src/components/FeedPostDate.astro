@@ -1,8 +1,8 @@
 ---
-const { date, index } = Astro.props;
+const { date, index, isDaily = false } = Astro.props;
 ---
 
-<feed-post-date class="text-xs text-skin-muted" data-date={date} data-index={index}>
+<feed-post-date class="text-xs text-skin-muted" data-date={date} data-index={index} data-is-daily={isDaily}>
   <span class="postTimeEle"></span>
 </feed-post-date>
 
@@ -21,16 +21,29 @@ const { date, index } = Astro.props;
       // 从 data（数据）属性中读取消息。
       const date = this.dataset.date;
       const index = this.dataset.index;
+      const isDaily = this.dataset.isDaily === 'true';
 
       let timeSpan = document.getElementsByClassName("postTimeEle");
-      let postDateFromNow = date ? dayjs(date).fromNow() : dayjs().format("YYYY-MM-DD");
+      let postDateFromNow;
       
-      // Use client-side translation system for dynamic updates
-      const publishedText = window.getCurrentTranslation ? window.getCurrentTranslation('feed.publishedIn') : 'Published in';
-      timeSpan[index].innerHTML = `<span class="opacity-60">${publishedText}:</span> <span>${postDateFromNow}</span>`;
+      if (isDaily) {
+        // For daily posts, calculate time until expiration (24 hours from publication)
+        const expirationDate = date ? dayjs(date).add(24, 'hour') : dayjs().add(24, 'hour');
+        postDateFromNow = expirationDate.fromNow(true); // true = without suffix
+      } else {
+        // For regular posts, show time since publication
+        postDateFromNow = date ? dayjs(date).fromNow() : dayjs().format("YYYY-MM-DD");
+      }
+      
+      // Use different text for daily posts
+      const textKey = isDaily ? 'feed.expiresIn' : 'feed.publishedIn';
+      const defaultText = isDaily ? 'Expires in' : 'Published in';
+      const displayText = window.getCurrentTranslation ? window.getCurrentTranslation(textKey) : defaultText;
+      
+      timeSpan[index].innerHTML = `<span class="opacity-60">${displayText}:</span> <span>${postDateFromNow}</span>`;
       
       // Add translation key for dynamic updates
-      timeSpan[index].setAttribute('data-translate-template', 'feed.publishedIn');
+      timeSpan[index].setAttribute('data-translate-template', textKey);
       timeSpan[index].setAttribute('data-date-value', postDateFromNow);
     }
   }
