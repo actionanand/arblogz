@@ -7,6 +7,7 @@ export  const ta = {
   'feed.next': 'அடுத்தது',
   'feed.previous': 'முந்தியது',
   'feed.publishedIn':'பதிவிடப்பட்டது',
+  'feed.expiresIn':'காலாவதியாகும்',
   'footer.articleAuthor':'கட்டுரை ஆசிரியர்',
   'footer.articleTitle':'கட்டுரை தலைப்பு',
   'footer.busuanziSitePV':'பக்கப் பார்வைகள்:',

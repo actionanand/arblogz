@@ -18,6 +18,7 @@ const zhCn = {
   'feed.previous': '上一页',
   'feed.next': '下一页',
   'feed.publishedIn': '发布于',
+  'feed.expiresIn': '到期于',
   'blog.tableOfContent': '目录',
   'home.sticky': '置顶',
   'home.goBack': '返回',

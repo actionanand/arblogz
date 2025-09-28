@@ -7,6 +7,7 @@ export  const en = {
   'feed.next': 'Next',
   'feed.previous': 'Previous',
   'feed.publishedIn':'Published in',
+  'feed.expiresIn':'Expires in',
   'footer.articleAuthor':'Article author',
   'footer.articleTitle':'Article title',
   'footer.busuanziSitePV':'Page views:',

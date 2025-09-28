@@ -17,6 +17,7 @@ export const hi = {
   'feed.previous': 'पिछला',
   'feed.next': 'अगला',
   'feed.publishedIn': 'में प्रकाशित',
+  'feed.expiresIn': 'में समाप्ति',
   'blog.tableOfContent': 'विषय सूची',
   'home.sticky': 'स्टिकी',
   'home.goBack': 'वापस जाएं',

@@ -32,6 +32,7 @@ export const zhCn = {
   'footer.busuanziSiteUV': '总访客数',
   'footer.busuanziSiteUVUnit': '人次',
   'feed.publishedIn': '发表于',
+  'feed.expiresIn': '到期于',
   'pagination.total': '共',
   'pagination.unit': '页',
   'title.minutes': '分钟',

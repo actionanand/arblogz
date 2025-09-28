@@ -27,6 +27,7 @@ export  const zhHant = {
   'footer.busuanziSiteUV':'總訪客數',
   'footer.busuanziSiteUVUnit':'人次',
   'feed.publishedIn':'發表於',
+  'feed.expiresIn':'到期於',
   'pagination.total':'共',
   'pagination.unit': '頁',
   'title.minutes':'分鐘',

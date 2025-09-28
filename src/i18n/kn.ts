@@ -17,6 +17,7 @@ export const kn = {
   'feed.previous': 'ಹಿಂದಿನ',
   'feed.next': 'ಮುಂದಿನ',
   'feed.publishedIn': 'ನಲ್ಲಿ ಪ್ರಕಟಿಸಲಾಗಿದೆ',
+  'feed.expiresIn': 'ಅವಧಿ ಮುಗಿಯುತ್ತದೆ',
   'blog.tableOfContent': 'ವಿಷಯ ಪಟ್ಟಿ',
   'home.sticky': 'ಸ್ಟಿಕಿ',
   'home.goBack': 'ಹಿಂದೆ ಹೋಗಿ',

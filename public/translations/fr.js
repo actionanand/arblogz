@@ -18,6 +18,7 @@ const fr = {
   'feed.previous': 'Précédent',
   'feed.next': 'Suivant',
   'feed.publishedIn': 'Publié dans',
+  'feed.expiresIn': 'Expire dans',
   'blog.tableOfContent': 'Table des matières',
   'home.sticky': 'Épinglé',
   'home.goBack': 'Retour',

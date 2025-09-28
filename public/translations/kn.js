@@ -18,6 +18,7 @@ const kn = {
   'feed.previous': 'ಹಿಂದಿನ',
   'feed.next': 'ಮುಂದಿನ',
   'feed.publishedIn': 'ಪ್ರಕಟಿಸಲಾಗಿದೆ',
+  'feed.expiresIn': 'ಅವಧಿ ಮುಗಿಯುತ್ತದೆ',
   'blog.tableOfContent': 'ವಿಷಯ ಪಟ್ಟಿ',
   'home.sticky': 'ಅಂಟಿಕೊಂಡಿರುವ',
   'home.goBack': 'ಹಿಂದೆ ಹೋಗಿ',

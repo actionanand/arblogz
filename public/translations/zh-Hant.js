@@ -18,6 +18,7 @@ const zhHant = {
   'feed.previous': '上一頁',
   'feed.next': '下一頁',
   'feed.publishedIn': '發布於',
+  'feed.expiresIn': '到期於',
   'blog.tableOfContent': '目錄',
   'home.sticky': '置頂',
   'home.goBack': '返回',

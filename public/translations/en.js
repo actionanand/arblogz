@@ -18,6 +18,7 @@ const en = {
   'feed.previous': 'Previous',
   'feed.next': 'Next',
   'feed.publishedIn': 'Published in',
+  'feed.expiresIn': 'Expires in',
   'blog.tableOfContent': 'Table of Content',
   'home.sticky': 'Sticky',
   'home.goBack': 'Go Back',

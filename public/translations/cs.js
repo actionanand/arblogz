@@ -18,6 +18,7 @@ const cs = {
   'feed.previous': 'Předchozí',
   'feed.next': 'Další',
   'feed.publishedIn': 'Publikováno v',
+  'feed.expiresIn': 'Vyprší v',
   'blog.tableOfContent': 'Obsah',
   'home.sticky': 'Připnuto',
   'home.goBack': 'Zpět',

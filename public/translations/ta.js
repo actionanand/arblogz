@@ -18,6 +18,7 @@ const ta = {
   'feed.previous': 'முந்தியது',
   'feed.next': 'அடுத்தது',
   'feed.publishedIn': 'பதிவிடப்பட்டது',
+  'feed.expiresIn': 'காலாவதியாகும்',
   'blog.tableOfContent': 'உள்ளடக்கக் குறிப்பு',
   'home.sticky': 'ஒட்டியிருத்தல்',
   'home.goBack': 'பின்னால் செல்க',

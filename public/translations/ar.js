@@ -18,6 +18,7 @@ const ar = {
   'feed.previous': 'السابق',
   'feed.next': 'التالي',
   'feed.publishedIn': 'نُشر في',
+  'feed.expiresIn': 'ينتهي في',
   'blog.tableOfContent': 'جدول المحتويات',
   'home.sticky': 'مثبت',
   'home.goBack': 'العودة',
