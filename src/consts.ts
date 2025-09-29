@@ -34,8 +34,8 @@ export const site = {
   description: 'Welcome to my independent blog website! ',
   author: "Anand Raja", // required
   avatar: '/avatar.png', // required
-  url: 'https://actionanand.github.io', // required
-  baseUrl: '/arblogz', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
+  url: 'https://arblogz.pages.dev', // required
+  baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
   motto: `Don't just be Inspired, be Inspiring!`,
   recentBlogSize: 7,
   archivePageSize: 25,
@@ -61,6 +61,14 @@ export const config = {
     return 'en';
   })(),
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
+
+  // daily updates API config
+  dailyUpdatesApi: {
+    enabled: false, // Set to true to enable API fetching
+    url: '', // API endpoint URL
+    apiKey: '', // Optional API key for authentication
+    cacheTime: 5 * 60 * 1000, // Cache API responses for 5 minutes (in milliseconds)
+  },
 
   // memos config
   memosUrl: '', // https://xxxx.xxx.xx
