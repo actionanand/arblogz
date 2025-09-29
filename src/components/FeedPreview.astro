@@ -21,9 +21,13 @@ const isDaily = data.isDaily || slug.startsWith('daily-');
   <div class="flex items-center justify-between text-sm">
     <div class="flex items-center text-skin-muted">
       {isDaily && (
-        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-skin-active/10 text-skin-active border border-skin-active/20 mr-2 animate-pulse shadow-lg shadow-skin-active/30">
-          <i class="ri-flashlight-line mr-1"></i>
-          Daily
+        <span class={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium mr-2 animate-pulse shadow-lg ${
+          data.source === 'api' 
+            ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20 shadow-blue-500/30' 
+            : 'bg-skin-active/10 text-skin-active border border-skin-active/20 shadow-skin-active/30'
+        }`}>
+          <i class={`mr-1 ${data.source === 'api' ? 'ri-cloud-line' : 'ri-flashlight-line'}`}></i>
+          {data.source === 'api' ? 'Live' : 'Daily'}
         </span>
       )}
       <i class="ri-time-line mr-1.5 text-xs opacity-40"></i>

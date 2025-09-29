@@ -62,6 +62,14 @@ export const config = {
   })(),
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
 
+  // daily updates API config
+  dailyUpdatesApi: {
+    enabled: false, // Set to true to enable API fetching
+    url: '', // API endpoint URL
+    apiKey: '', // Optional API key for authentication
+    cacheTime: 5 * 60 * 1000, // Cache API responses for 5 minutes (in milliseconds)
+  },
+
   // memos config
   memosUrl: '', // https://xxxx.xxx.xx
   memosUsername: '', // login name
