@@ -12,7 +12,18 @@ const isDaily = data.isDaily || slug.startsWith('daily-');
   <div class="mb-2">
     <p class={`text-skin-base text-base leading-relaxed break-words first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1 whitespace-pre-line ${!isDaily ? 'line-clamp-3' : ''}`}>
       {
-        body.replace(/^#+/gm, "").replace(/!?\[.*?\]\(.*?\)/g, "").trim()
+        body
+          .replace(/^#+/gm, "") // Remove headers
+          .replace(/!?\[.*?\]\(.*?\)/g, "") // Remove images and links
+          .replace(/\*\*(.*?)\*\*/g, "$1") // Remove bold **
+          .replace(/__(.*?)__/g, "$1") // Remove bold __
+          .replace(/\*(.*?)\*/g, "$1") // Remove italic *
+          .replace(/_(.*?)_/g, "$1") // Remove italic _
+          .replace(/~~(.*?)~~/g, "$1") // Remove strikethrough
+          .replace(/`(.*?)`/g, "$1") // Remove inline code
+          .replace(/^\s*[-*+]\s+/gm, "") // Remove list markers
+          .replace(/^\s*\d+\.\s+/gm, "") // Remove numbered list markers
+          .trim()
       }
     </p>
   </div>
