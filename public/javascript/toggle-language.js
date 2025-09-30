@@ -1,5 +1,8 @@
 const primaryLanguage = "en"; // Default language
 
+// Get base path - only use in production builds
+const basePath = (window.IS_PRODUCTION && window.BASE_URL) ? window.BASE_URL : '';
+
 function getPreferLanguage() {
   // Get language data from local storage
   const currentLanguage = localStorage.getItem("language");
@@ -84,9 +87,7 @@ async function loadTranslations() {
     
     requiredLangs.forEach(lang => {
       if (languageMap[lang]) {
-        // for github pages only
-        // promises.push(fetch(`/arblogz/translations/${lang}.js`).then(r => r.text()));
-        promises.push(fetch(`/translations/${lang}.js`).then(r => r.text()));
+        promises.push(fetch(`${basePath}/translations/${lang}.js`).then(r => r.text()));
         langCodes.push(lang);
       }
     });
@@ -125,9 +126,7 @@ async function loadLanguageOnDemand(lang) {
   if (!languageMap[lang]) return null;
   
   try {
-    // for github pages
-    // const response = await fetch(`/arblogz/translations/${lang}.js`);
-    const response = await fetch(`/translations/${lang}.js`);
+    const response = await fetch(`${basePath}/translations/${lang}.js`);
     const code = await response.text();
     const varName = languageMap[lang];
     

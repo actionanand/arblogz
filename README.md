@@ -85,41 +85,11 @@ export const site = {
 }
 ```
 
-In `public/javascript/toggle-language.js`, Modify the content as below
-
-```js
-requiredLangs.forEach(lang => {
-  if (languageMap[lang]) {
-    // for github pages only
-    promises.push(fetch(`/arblogz/translations/${lang}.js`).then(r => r.text()));
-    // promises.push(fetch(`/translations/${lang}.js`).then(r => r.text()));
-    langCodes.push(lang);
-  }
-});
-```
-
-```javascript
-try {
-  // for github pages
-  const response = await fetch(`/arblogz/translations/${lang}.js`);
-  // const response = await fetch(`/translations/${lang}.js`);
-  const code = await response.text();
-  const varName = languageMap[lang];
-  
-  const func = new Function(code + `; return ${varName};`);
-  translations[lang] = func();
-  return translations[lang];
-} catch (error) {
-  console.error(`Failed to load language ${lang}:`, error);
-  return null;
-}
-```
-
 merge the changes to the branch `main-github`
 
 ## Vercel deployment
 
-In /src/consts.ts, modify the contents of the site field:
+In `/src/consts.ts`, modify the contents of the site field:
 
 ```js
 export const site = {
@@ -134,7 +104,7 @@ merge the changes to the branch `main-vercel`
 
 ## Cloudflare deployment
 
-In /src/consts.ts, modify the contents of the site field:
+In `/src/consts.ts`, modify the contents of the site field:
 
 ```js
 export const site = {
