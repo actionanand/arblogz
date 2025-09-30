@@ -46,6 +46,13 @@ let title = Astro.props.title ? `${Astro.props.title} - ${site.title}` : site.ti
 
   <link rel="sitemap" href={getUrl("/sitemap-0.xml")}>
   <title>{title}</title>
+  
+  <!-- Set base URL for client-side scripts -->
+  <script is:inline define:vars={{baseUrl: import.meta.env.PROD ? site.baseUrl : '', isProduction: import.meta.env.PROD}}>
+    window.BASE_URL = baseUrl;
+    window.IS_PRODUCTION = isProduction;
+  </script>
+  
   <script is:inline src={getUrl("/javascript/toggle-theme.js")}></script>
   <script is:inline src={getUrl("/javascript/toggle-language.js")}></script>
   {
