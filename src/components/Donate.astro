@@ -1,6 +1,6 @@
 ---
 import "@/styles/donate.css";
-import {donate} from "@/consts";
+import {donate, site} from "@/consts";
 
 // Accept donation configuration from page props
 const { 
@@ -13,6 +13,9 @@ const {
 const donateConfig = customDonateConfig || donate;
 const shouldShow = showDonate && donateConfig.enable;
 const tipMessage = donateMessage || donateConfig.tip;
+
+// Only use baseUrl in production builds, not in dev server
+const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
 ---
 
 {shouldShow && (
@@ -36,7 +39,7 @@ const tipMessage = donateMessage || donateConfig.tip;
           title="Donate via PayPal"
         >
           <div class="method-icon">
-            <img src="/images/paypal.svg" alt="PayPal" />
+            <img src={`${baseUrl}/images/paypal.svg`} alt="PayPal" />
           </div>
           <span class="method-label">PayPal</span>
         </a>
@@ -62,7 +65,7 @@ const tipMessage = donateMessage || donateConfig.tip;
       {donateConfig.paytmQRCode && (
         <div class="donation-method paytm" id="paytm-method" title="Scan QR Code for Paytm">
           <div class="method-icon">
-            <i class="ri-smartphone-fill"></i>
+            <img src={`${baseUrl}/images/paytm.svg`} alt="Paytm" />
           </div>
           <span class="method-label">Paytm</span>
           <div class="qr-popup" id="paytm-qr">
@@ -94,7 +97,7 @@ const tipMessage = donateMessage || donateConfig.tip;
       {donateConfig.alipayQRCode && (
         <div class="donation-method alipay" id="alipay-method" title="Scan QR Code for Alipay">
           <div class="method-icon">
-            <img src="/images/alipay.svg" alt="Alipay" />
+            <img src={`${baseUrl}/images/alipay.svg`} alt="Alipay" />
           </div>
           <span class="method-label">Alipay</span>
           <div class="qr-popup" id="alipay-qr">
@@ -110,7 +113,7 @@ const tipMessage = donateMessage || donateConfig.tip;
       {donateConfig.wechatQRCode && (
         <div class="donation-method wechat" id="wechat-method" title="Scan QR Code for WeChat Pay">
           <div class="method-icon">
-            <img src="/images/wechat.svg" alt="WeChat Pay" />
+            <img src={`${baseUrl}/images/wechat.svg`} alt="WeChat Pay" />
           </div>
           <span class="method-label">WeChat</span>
           <div class="qr-popup" id="wechat-qr">
@@ -327,6 +330,7 @@ const tipMessage = donateMessage || donateConfig.tip;
     width: 100%;
     height: 100%;
     filter: brightness(0) invert(1);
+    background-color: transparent !important;
   }
 
   .method-icon i {

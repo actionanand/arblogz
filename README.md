@@ -74,7 +74,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## GitHub Pages deployment
 
-In /src/consts.ts, modify the contents of the site field:
+In `/src/consts.ts`, modify the contents of the site field:
 
 ```js
 export const site = {
@@ -89,7 +89,7 @@ merge the changes to the branch `main-github`
 
 ## Vercel deployment
 
-In /src/consts.ts, modify the contents of the site field:
+In `/src/consts.ts`, modify the contents of the site field:
 
 ```js
 export const site = {
@@ -104,7 +104,7 @@ merge the changes to the branch `main-vercel`
 
 ## Cloudflare deployment
 
-In /src/consts.ts, modify the contents of the site field:
+In `/src/consts.ts`, modify the contents of the site field:
 
 ```js
 export const site = {
@@ -238,4 +238,3 @@ import DonateButton from "@/components/DonateButton.astro";
 1. https://arblogz.pages.dev
 2. https://arblogz.vercel.app
 3. https://actionanand.github.io/arblogz (Skeleton)
-

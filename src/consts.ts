@@ -62,6 +62,14 @@ export const config = {
   })(),
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
 
+  // daily updates API config
+  dailyUpdatesApi: {
+    enabled: true, // Set to true to enable API fetching
+    url: 'https://raw.githubusercontent.com/actionanand/json-server/main/db/api/arblogz/v1/daily-status.json', // API endpoint URL
+    apiKey: '', // Optional API key for authentication
+    cacheTime: 5 * 60 * 1000, // Cache API responses for 5 minutes (in milliseconds)
+  },
+
   // memos config
   memosUrl: '', // https://xxxx.xxx.xx
   memosUsername: '', // login name
@@ -252,19 +260,19 @@ export const donate = {
   
   // QR Code images (place in /public/images/donation/)
   // if you don't want some payment, comment it out
-  wechatQRCode: "/images/donation/wechat-qr.png",
-  alipayQRCode: "/images/donation/alipay-qr.png", 
+  // wechatQRCode: "/images/donation/wechat-qr.png",
+  // alipayQRCode: "/images/donation/alipay-qr.png", 
   gpayQRCode: "/images/donation/gpay-qr.png", // Google Pay for India
-  paytmQRCode: "/images/donation/paytm-qr.png", // Paytm for India
-  phonepeQRCode: "/images/donation/phonepe-qr.png", // PhonePe for India
+  // paytmQRCode: "/images/donation/paytm-qr.png", // Paytm for India
+  // phonepeQRCode: "/images/donation/phonepe-qr.png", // PhonePe for India
   
   // Direct payment URLs
-  paypalUrl: "https://paypal.me/yourusername", // Replace with actual
-  githubSponsors: "yourusername", // Replace with actual GitHub username
+  paypalUrl: "https://paypal.me/actionanand", // Replace with actual
+  // githubSponsors: "yourusername", // Replace with actual GitHub username
   buyMeACoffee: "yourusername", // Replace with actual username
   kofi: "yourusername", // Replace with actual Ko-fi username
-  patreon: "yourusername", // Replace with actual Patreon username
-  opencollective: "yourproject", // Replace with actual Open Collective project
+  // patreon: "yourusername", // Replace with actual Patreon username
+  // opencollective: "yourproject", // Replace with actual Open Collective project
   
   // Cryptocurrency (optional)
   bitcoin: "", // Bitcoin address

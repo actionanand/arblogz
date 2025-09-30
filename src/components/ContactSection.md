@@ -4,51 +4,51 @@
 
 <div class="contact-social-section">
   <div class="social-icons">
-    <a href="https://instagram.com/yourhandle" class="social-icon instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+    <a href="https://instagram.com/actionanand" class="social-icon instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
       <i class="ri-instagram-fill"></i>
     </a>
-    <a href="https://twitter.com/yourhandle" class="social-icon twitter" title="Twitter" target="_blank" rel="noopener noreferrer">
+    <!-- <a href="https://twitter.com/actionanand" class="social-icon twitter" title="Twitter" target="_blank" rel="noopener noreferrer">
       <i class="ri-twitter-fill"></i>
-    </a>
-    <a href="https://x.com/yourhandle" class="social-icon twitterx" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
+    </a> -->
+    <a href="https://x.com/actionanand" class="social-icon twitterx" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
       <i class="ri-twitter-x-fill"></i>
     </a>
-    <a href="https://facebook.com/yourpage" class="social-icon facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+    <a href="https://facebook.com/actionanand" class="social-icon facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
       <i class="ri-facebook-fill"></i>
     </a>
-    <a href="https://wa.me/1234567890" class="social-icon whatsapp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
+    <!-- <a href="https://wa.me/1234567890" class="social-icon whatsapp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
       <i class="ri-whatsapp-fill"></i>
-    </a>
-    <a href="https://t.me/yourhandle" class="social-icon telegram" title="Telegram" target="_blank" rel="noopener noreferrer">
+    </a> -->
+    <!-- <a href="https://t.me/yourhandle" class="social-icon telegram" title="Telegram" target="_blank" rel="noopener noreferrer">
       <i class="ri-telegram-fill"></i>
-    </a>
-    <a href="https://linkedin.com/in/yourprofile" class="social-icon linkedin" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+    </a> -->
+    <a href="https://www.linkedin.com/in/anand-ns" class="social-icon linkedin" title="LinkedIn" target="_blank" rel="noopener noreferrer">
       <i class="ri-linkedin-fill"></i>
     </a>
-    <a href="https://youtube.com/@yourchannel" class="social-icon youtube" title="YouTube" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.youtube.com/@actionanand13" class="social-icon youtube" title="YouTube" target="_blank" rel="noopener noreferrer">
       <i class="ri-youtube-fill"></i>
     </a>
-    <a href="https://weixin.qq.com/yourhandle" class="social-icon wechat" title="WeChat" target="_blank" rel="noopener noreferrer">
+    <!-- <a href="https://weixin.qq.com/yourhandle" class="social-icon wechat" title="WeChat" target="_blank" rel="noopener noreferrer">
       <i class="ri-wechat-fill"></i>
-    </a>
-    <a href="https://snapchat.com/add/yourhandle" class="social-icon snapchat" title="Snapchat" target="_blank" rel="noopener noreferrer">
+    </a> -->
+    <!-- <a href="https://snapchat.com/add/yourhandle" class="social-icon snapchat" title="Snapchat" target="_blank" rel="noopener noreferrer">
       <i class="ri-snapchat-fill"></i>
-    </a>
-    <a href="https://discord.gg/yourserver" class="social-icon discord" title="Discord" target="_blank" rel="noopener noreferrer">
+    </a> -->
+    <!-- <a href="https://discord.gg/yourserver" class="social-icon discord" title="Discord" target="_blank" rel="noopener noreferrer">
       <i class="ri-discord-fill"></i>
-    </a>
-    <a href="https://threads.net/@yourhandle" class="social-icon threads" title="Threads" target="_blank" rel="noopener noreferrer">
+    </a> -->
+    <a href="https://threads.net/@actionanand" class="social-icon threads" title="Threads" target="_blank" rel="noopener noreferrer">
       <i class="ri-threads-fill"></i>
     </a>
-    <a href="https://tiktok.com/@yourhandle" class="social-icon tiktok" title="TikTok" target="_blank" rel="noopener noreferrer">
+    <!-- <a href="https://tiktok.com/@yourhandle" class="social-icon tiktok" title="TikTok" target="_blank" rel="noopener noreferrer">
       <i class="ri-tiktok-fill"></i>
-    </a>
-    <a href="https://signal.me/#yourhandle" class="social-icon signal" title="Signal" target="_blank" rel="noopener noreferrer">
+    </a> -->
+    <!-- <a href="https://signal.me/#yourhandle" class="social-icon signal" title="Signal" target="_blank" rel="noopener noreferrer">
       <i class="ri-signal-tower-fill"></i>
-    </a>
-    <a href="mailto:contact@example.com" class="social-icon email" title="Email" rel="noopener noreferrer">
+    </a> -->
+    <!-- <a href="mailto:contact@example.com" class="social-icon email" title="Email" rel="noopener noreferrer">
       <i class="ri-mail-fill"></i>
-    </a>
+    </a> -->
   </div>
   
   <!-- Contact Us Button -->

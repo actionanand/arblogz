@@ -1,17 +1,176 @@
 ---
-import {site} from "@/consts";
+import { site, config } from "@/consts";
 import IndexPage from '@/layouts/IndexPage.astro'
 import Pagination from "@/components/Pagination.astro";
 import { sortPostsByDate } from "@/utils/sortPostsByDate";
 import { getCollectionByName } from "@/utils/getCollectionByName";
 import FeedPreview from "@/components/FeedPreview.astro";
 import getUrl from "@/utils/getUrl";
+import { getCollection } from 'astro:content';
+
 export async function getStaticPaths({ paginate }) {
   let posts = await getCollectionByName("feed");
   posts = sortPostsByDate(posts);
-  // 将根据宇航员数组生成两个页面
+  
+  // Parse daily updates
+  const dailyCollection = await getCollection('daily-status');
+  const dailyEntry = dailyCollection.find(entry => entry.slug === 'daily-updates');
+  const body = dailyEntry ? dailyEntry.body : '';
+  // Calculate today's date in IST (GMT +5:30)
+  const now = new Date();
+  const istOffset = 5.5 * 60 * 60 * 1000; // 5.5 hours in milliseconds
+  const istDate = new Date(now.getTime() + istOffset);
+  const today = istDate.toISOString().split('T')[0];
+  
+  // Parse multi-line content blocks starting with date
+  const todaysUpdates = [];
+  // Split by date lines and find content from last 24 hours
+  const lines = body.split('\n');
+  let currentContent = '';
+  let isValidContent = false;
+  let publishDate = null;
+  
+  for (const line of lines) {
+    const dateMatch = line.match(/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}):\s*(.*)$/);
+    if (dateMatch) {
+      // If we were collecting valid content, save it
+      if (isValidContent && currentContent.trim()) {
+        // Support maximum 1000 characters
+        let content = currentContent.trim();
+        if (content.length > 1000) {
+          content = content.substring(0, 1000) + '...';
+        }
+        todaysUpdates.push({
+          slug: `daily-${Date.now()}-${todaysUpdates.length}`,
+          data: {
+            title: 'Daily Update',
+            description: content.substring(0, 200) + (content.length > 200 ? '...' : ''),
+            date: publishDate || istDate, // Use parsed publish date
+            draft: false,
+            isDaily: true,
+          },
+          body: content,
+          rawContent: content,
+          render: () => ({ Content: () => content }),
+        });
+      }
+      
+      // Always include daily content - client-side will handle expiration
+      const fullDateTime = dateMatch[1];
+      const [datePart, timePart] = fullDateTime.split(' ');
+      const [year, month, day] = datePart.split('-').map(Number);
+      const [hours, minutes] = timePart.split(':').map(Number);
+      
+      // Create UTC timestamp for the IST time (IST = UTC + 5.5 hours)
+      const contentUtcTime = Date.UTC(year, month - 1, day, hours, minutes, 0) - istOffset;
+      
+      isValidContent = true;
+      publishDate = new Date(contentUtcTime); // Convert back to Date object for display
+      currentContent = dateMatch[2]; // Start with content after date
+    } else if (isValidContent) {
+      // Continue collecting content for valid entries
+      currentContent += '\n' + line;
+    }
+  }
+  
+  // Don't forget the last content block
+  if (isValidContent && currentContent.trim()) {
+    let content = currentContent.trim();
+    if (content.length > 1000) {
+      content = content.substring(0, 1000) + '...';
+    }
+    todaysUpdates.push({
+      slug: `daily-${Date.now()}-${todaysUpdates.length}`,
+      data: {
+        title: 'Daily Update',
+        description: content.substring(0, 200) + (content.length > 200 ? '...' : ''),
+        date: publishDate || istDate, // Use parsed publish date
+        draft: false,
+        isDaily: true,
+      },
+      body: content,
+      rawContent: content,
+      render: () => ({ Content: () => content }),
+    });
+  }
+  
+  // Fetch API updates if enabled
+  let apiUpdates = [];
+  if (config.dailyUpdatesApi.enabled && config.dailyUpdatesApi.url) {
+    try {
+      const apiUrl = config.dailyUpdatesApi.url;
+      const headers = config.dailyUpdatesApi.apiKey ? {
+        'Authorization': `Bearer ${config.dailyUpdatesApi.apiKey}`,
+        'Content-Type': 'application/json'
+      } : {
+        'Content-Type': 'application/json'
+      };
+
+      const response = await fetch(apiUrl, {
+        method: 'GET',
+        headers: headers,
+      });
+
+      if (response.ok) {
+        const apiData = await response.json();
+        
+        // Process API data (expected format: array of objects with date, content, etc.)
+        if (Array.isArray(apiData)) {
+          for (const item of apiData) {
+            // Expected API response format:
+            // { date: "2025-09-29 14:30", content: "API update content", title?: "Optional title" }
+            if (item.date && item.content) {
+              const apiDateMatch = item.date.match(/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2})$/);
+              if (apiDateMatch) {
+                const [datePart, timePart] = item.date.split(' ');
+                const [year, month, day] = datePart.split('-').map(Number);
+                const [hours, minutes] = timePart.split(':').map(Number);
+                
+                // Create UTC timestamp for the IST time
+                const apiUtcTime = Date.UTC(year, month - 1, day, hours, minutes, 0) - istOffset;
+                const apiPublishDate = new Date(apiUtcTime);
+                
+                // Check if this API update is within the valid time window
+                const timeDiff = (now.getTime() - apiUtcTime) / (1000 * 60 * 60); // hours ago
+                if (timeDiff >= 0 && timeDiff <= 24) { // Within last 24 hours
+                  let apiContent = item.content;
+                  if (apiContent.length > 1000) {
+                    apiContent = apiContent.substring(0, 1000) + '...';
+                  }
+                  
+                  apiUpdates.push({
+                    slug: `api-daily-${Date.now()}-${apiUpdates.length}`,
+                    data: {
+                      title: item.title || 'API Daily Update',
+                      description: apiContent.substring(0, 200) + (apiContent.length > 200 ? '...' : ''),
+                      date: apiPublishDate,
+                      draft: false,
+                      isDaily: true,
+                      source: 'api', // Mark as API source
+                    },
+                    body: apiContent,
+                    rawContent: apiContent,
+                    render: () => ({ Content: () => apiContent }),
+                  });
+                }
+              }
+            }
+          }
+        }
+      } else {
+        console.warn('Failed to fetch daily updates from API:', response.status, response.statusText);
+      }
+    } catch (error) {
+      console.warn('Error fetching daily updates from API:', error);
+    }
+  }
+  
+  // Prepend today's updates to posts (static + API)
+  posts = [...todaysUpdates, ...apiUpdates, ...posts];
+  
   return paginate(posts, { pageSize: site.feedPageSize });
 }
+
 // 所有分页数据都将传递给 "page" 参数
 
 const { page } = Astro.props;

@@ -4,14 +4,26 @@ const {data, body, slug} = Astro.props.post;
 const {index} = Astro.props;
 import {t} from '@/i18n/utils'
 import getUrl from "@/utils/getUrl";
+const isDaily = data.isDaily || slug.startsWith('daily-');
 ---
 
 <div class="py-4">
   <!-- Feed Content -->
   <div class="mb-2">
-    <p class="text-skin-base text-base leading-relaxed break-words line-clamp-3 first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1">
+    <p class={`text-skin-base text-base leading-relaxed break-words first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1 whitespace-pre-line ${!isDaily ? 'line-clamp-3' : ''}`}>
       {
-        body.replace(/^#+/gm, "").replace(/!?\[.*?\]\(.*?\)/g, "").trim()
+        body
+          .replace(/^#+/gm, "") // Remove headers
+          .replace(/!?\[.*?\]\(.*?\)/g, "") // Remove images and links
+          .replace(/\*\*(.*?)\*\*/g, "$1") // Remove bold **
+          .replace(/__(.*?)__/g, "$1") // Remove bold __
+          .replace(/\*(.*?)\*/g, "$1") // Remove italic *
+          .replace(/_(.*?)_/g, "$1") // Remove italic _
+          .replace(/~~(.*?)~~/g, "$1") // Remove strikethrough
+          .replace(/`(.*?)`/g, "$1") // Remove inline code
+          .replace(/^\s*[-*+]\s+/gm, "") // Remove list markers
+          .replace(/^\s*\d+\.\s+/gm, "") // Remove numbered list markers
+          .trim()
       }
     </p>
   </div>
@@ -19,14 +31,26 @@ import getUrl from "@/utils/getUrl";
   <!-- Metadata and Actions -->
   <div class="flex items-center justify-between text-sm">
     <div class="flex items-center text-skin-muted">
+      {isDaily && (
+        <span class={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium mr-2 animate-pulse shadow-lg ${
+          data.source === 'api' 
+            ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20 shadow-blue-500/30' 
+            : 'bg-skin-active/10 text-skin-active border border-skin-active/20 shadow-skin-active/30'
+        }`}>
+          <i class={`mr-1 ${data.source === 'api' ? 'ri-cloud-line' : 'ri-flashlight-line'}`}></i>
+          {data.source === 'api' ? 'Live' : 'Daily'}
+        </span>
+      )}
       <i class="ri-time-line mr-1.5 text-xs opacity-40"></i>
-      <FeedPostDate date={data.date} index={index}/>
+      <FeedPostDate date={data.date.toISOString()} index={index} isDaily={isDaily}/>
     </div>
-    <a 
-      class="text-skin-muted hover:text-skin-active transition-colors text-sm underline decoration-transparent hover:decoration-current underline-offset-2"
-      href={getUrl("/feed/") + slug}
-    >
-      <span data-translate="home.readMore">{t('home.readMore')}</span>
-    </a>
+    {!isDaily && (
+      <a 
+        class="text-skin-muted hover:text-skin-active transition-colors text-sm underline decoration-transparent hover:decoration-current underline-offset-2"
+        href={getUrl("/feed/") + slug}
+      >
+        <span data-translate="home.readMore">{t('home.readMore')}</span>
+      </a>
+    )}
   </div>
 </div>
