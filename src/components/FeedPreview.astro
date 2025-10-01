@@ -7,7 +7,7 @@ import getUrl from "@/utils/getUrl";
 const isDaily = data.isDaily || slug.startsWith('daily-');
 ---
 
-<div class="py-4">
+<div class="py-4" data-post-type={isDaily ? 'daily' : 'regular'} data-daily={isDaily}>
   <!-- Feed Content -->
   <div class="mb-2">
     <p class={`text-skin-base text-base leading-relaxed break-words first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1 whitespace-pre-line ${!isDaily ? 'line-clamp-3' : ''}`}>

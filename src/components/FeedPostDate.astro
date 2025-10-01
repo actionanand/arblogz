@@ -35,21 +35,9 @@ const { date, index, isDaily = false } = Astro.props;
       let postDateFromNow;
       
       if (isDaily) {
-        // For daily posts, check publication time and expiration
+        // For daily posts, show countdown to expiration
         const publishDate = date ? dayjs(date) : dayjs();
         const now = dayjs();
-        
-        // Check if publication time is in the future
-        if (publishDate.isAfter(now)) {
-          // Hide the post until publication time
-          const postContainer = this.closest('.py-4') as HTMLElement;
-          if (postContainer) {
-            postContainer.style.display = 'none';
-          }
-          return; // Don't show anything until publication time
-        }
-        
-        // Publication time has passed, check expiration
         const expirationDate = publishDate.add(24, 'hour');
         const timeDiff = dayjs.duration(expirationDate.diff(now));
         
@@ -57,7 +45,7 @@ const { date, index, isDaily = false } = Astro.props;
         const minutes = Math.floor(timeDiff.minutes());
         const seconds = Math.floor(timeDiff.seconds());
         
-        // Check if expired
+        // Check if expired (this should rarely happen due to server-side filtering)
         if (timeDiff.asMilliseconds() <= 0) {
           // Hide the entire daily post
           const postContainer = this.closest('.py-4') as HTMLElement;
@@ -83,11 +71,17 @@ const { date, index, isDaily = false } = Astro.props;
       const defaultText = isDaily ? 'Expires in' : 'Published in';
       const displayText = window.getCurrentTranslation ? window.getCurrentTranslation(textKey) : defaultText;
       
-      timeSpan[index].innerHTML = `<span class="opacity-60">${displayText}:</span> <span>${postDateFromNow}</span>`;
-      
-      // Add translation key for dynamic updates
-      timeSpan[index].setAttribute('data-translate-template', textKey);
-      timeSpan[index].setAttribute('data-date-value', postDateFromNow);
+      // Find the timeSpan element within this component
+      const timeSpanElement = this.querySelector('.postTimeEle');
+      if (timeSpanElement) {
+        timeSpanElement.innerHTML = `<span class="opacity-60">${displayText}:</span> <span>${postDateFromNow}</span>`;
+        
+        // Add translation key for dynamic updates
+        timeSpanElement.setAttribute('data-translate-template', textKey);
+        timeSpanElement.setAttribute('data-date-value', postDateFromNow);
+      } else {
+        console.warn('Could not find .postTimeEle element in FeedPostDate component');
+      }
     }
 
     connectedCallback() {
