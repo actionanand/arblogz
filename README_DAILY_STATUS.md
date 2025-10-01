@@ -6,16 +6,238 @@ This document explains how the daily status and updates system works in the blog
 
 The daily status system allows temporary, time-sensitive content to appear on the feed page. These updates automatically appear and disappear based on their publication time and a 24-hour expiration window.
 
-## 🏗️ Architecture
+## 🏗️ ArchitectuThis comprehensive rendering system ensures daily updates appear seamlessly in the feed with appropriate styling, timing, and user experience while maintaining performance and reliability.
 
+## 🔄 Client-Side API Integration (Real-Time Updates)
+
+The system now uses a hybrid approach: local markdown updates are processed server-side, while API updates are fetched client-side for real-time functionality.
+
+### **DailyStatusLoader Component**
+
+Location: `/src/components/DailyStatusLoader.astro`
+
+#### **A. Initialization & Auto-Refresh**
+```javascript
+// Initialize on page load
+new DailyStatusLoader();
+
+// Auto-refresh every 5 minutes (configurable)
+setInterval(() => this.loadApiUpdates(), this.config.dailyUpdatesApi.cacheTime || 300000);
+```
+
+#### **B. Client-Side API Fetching**
+```javascript
+// Real-time API call (visible in Network tab)
+const response = await fetch(this.config.dailyUpdatesApi.url, {
+  method: 'GET',
+  headers: {
+    'Authorization': `Bearer ${this.config.dailyUpdatesApi.apiKey}`,
+    'Content-Type': 'application/json'
+  }
+});
+```
+
+**Benefits:**
+- ✅ **Visible in Network Tab**: You can now see API calls in browser DevTools
+- ✅ **Real-Time Updates**: Changes appear without rebuilding
+- ✅ **No Build Dependency**: API updates work immediately
+- ✅ **Auto-Refresh**: Periodic checks for new content
+
+#### **C. Dynamic DOM Insertion**
+```javascript
+// Insert API updates before regular posts but after local daily updates
+const firstRegularPost = feedContainer.querySelector('[data-post-type="regular"]');
+if (firstRegularPost) {
+  feedContainer.insertBefore(updateElement, firstRegularPost);
+}
+```
+
+**Insertion Order:**
+1. **Local Daily Updates** (server-side, at build time)
+2. **API Daily Updates** (client-side, real-time)
+3. **Regular Blog Posts** (server-side, at build time)
+
+#### **D. Duplicate Prevention**
+```javascript
+// Track loaded updates to prevent duplicates
+this.loadedUpdates = new Set();
+const updateId = `api-${item.date}-${item.content.substring(0, 50)}`;
+
+if (!this.loadedUpdates.has(updateId)) {
+  this.loadedUpdates.add(updateId);
+  // Process update...
+}
+```
+
+#### **E. Content Processing & Styling**
+API updates receive the same content cleaning and styling as server-side updates:
+- Markdown formatting removal
+- 1000 character limit
+- Blue "Live" badge with cloud icon
+- Real-time countdown timer integration
+
+### **Network Debugging**
+
+Now you can easily debug API calls with multiple fallback methods:
+
+1. **Open Browser DevTools** → Network tab
+2. **Filter by XHR/Fetch** to see API calls
+3. **Look for these request patterns:**
+
+#### **Method 1: Internal API Route (Primary)**
+```
+Request: GET /api/daily-status (or /arblogz/api/daily-status for GitHub Pages)
+Status: 200 OK
+Response: JSON array of daily updates
+```
+- ✅ **No CORS issues** (same-origin request)
+- ✅ **Works in production** with proper base URL detection
+- ✅ **Fastest method** (direct server-side fetch)
+
+#### **Method 2: Direct API Call with Angular-like Headers (Secondary)**
+```
+Request: GET https://raw.githubusercontent.com/your-user/repo/main/path/daily-status.json
+Headers: Accept: application/json, text/plain, */*
+         Referer: current-page-url
+         User-Agent: browser-user-agent
+Status: Should work (mimics working Angular app)
+Response: JSON array
+```
+- ✅ **Same headers as your working Angular app**
+- ✅ **No proxy dependency** (direct connection)
+- ✅ **Fastest if successful** (no intermediary)
+- ⚠️ **CORS dependent** on GitHub's response headers
+
+#### **Method 3: Minimal Headers Direct Call (Tertiary)**
+```
+Request: GET https://raw.githubusercontent.com/your-user/repo/main/path/daily-status.json
+Headers: Accept: application/json
+Status: Fallback if full headers fail
+Response: JSON array
+```
+- ✅ **Simplified approach** for better compatibility
+- ✅ **Reduced header complexity** that might cause issues
+- ✅ **Still direct connection** (no proxy)
+
+#### **Method 4: AllOrigins CORS Proxy (Last Resort)**
+```
+Request: GET https://api.allorigins.win/get?url=https%3A//raw.githubusercontent.com/...
+Status: 200 OK
+Response: { contents: "JSON string", status: { ... } }
+```
+- ⚠️ **Rate limited** (used only as last resort)
+- ✅ **Bypasses CORS** using public proxy service
+- ⚠️ **Slower** due to proxy overhead
+- ⚠️ **External dependency** on AllOrigins service
+
+#### **Method 5: GitHub API (Final Fallback)**
+```
+Request: GET https://api.github.com/repos/user/repo/contents/path/daily-status.json
+Headers: Accept: application/vnd.github.v3+json
+Status: 200 OK
+Response: { content: "base64-encoded-json", ... }
+```
+- ✅ **Official GitHub API** with proper CORS headers
+- ✅ **Most reliable** for GitHub-hosted content
+- ⚠️ **Rate limited** (60 requests/hour for unauthenticated)
+- ✅ **Base64 decoded** automatically
+
+### **API Method Priority & Debugging**
+
+**Request Sequence (Updated to minimize proxy usage):**
+1. **Internal API** (`/api/daily-status`) → Same origin, no CORS
+2. **Direct GitHub with Angular headers** (`raw.githubusercontent.com`) → Mimics working app
+3. **Direct GitHub minimal headers** (`raw.githubusercontent.com`) → Simplified approach
+4. **AllOrigins Proxy** (`api.allorigins.win`) → Last resort due to rate limits
+5. **GitHub API** (`api.github.com`) → Official API with rate limits
+
+**Console Output Example (Updated):**
+```
+🔄 Fetching real-time daily updates from API...
+🔄 Trying internal API route: https://your-site.com/api/daily-status
+⚠️ Internal API route failed, trying direct fetch... Error: Internal API failed: HTTP 404
+🔄 Trying direct fetch with Angular-like headers...
+✅ Direct fetch successful
+✅ API Response received: [{ date: "2025-10-02 14:30", content: "..." }]
+📱 Rendering 1 new API daily updates
+```
+
+**If Angular-like headers also fail:**
+```
+🔄 Trying direct fetch with Angular-like headers...
+⚠️ Direct fetch failed, trying alternative method... Error: CORS policy blocks request
+🔄 Trying direct fetch with minimal headers...
+✅ Minimal headers fetch successful
+```
+
+**Only if all direct methods fail:**
+```
+🔄 Trying direct fetch with minimal headers...
+⚠️ Minimal headers fetch failed, trying CORS proxy... Error: CORS policy blocks request
+⚠️ Using AllOrigins proxy as fallback (has rate limits)
+🔄 Trying CORS proxy: https://api.allorigins.win/get?url=...
+✅ CORS proxy successful
+```
+
+### **Configuration for Client-Side**
+```typescript
+// In /src/consts.ts
+dailyUpdatesApi: {
+  enabled: true,
+  url: 'https://your-api-endpoint.com/daily-status.json',
+  apiKey: 'optional-bearer-token',
+  cacheTime: 5 * 60 * 1000 // 5 minutes refresh interval
+}
+```
+
+### **Production Deployment & URL Handling**
+
+The system automatically detects the correct base URL for different deployment scenarios:
+
+#### **Local Development**
+```
+Internal API: http://localhost:4321/api/daily-status
+Base URL: No prefix needed
+```
+
+#### **GitHub Pages Deployment**
+```
+Internal API: https://username.github.io/arblogz/api/daily-status
+Base URL: Auto-detected from current path (/arblogz)
+```
+
+#### **Custom Domain Deployment**
+```
+Internal API: https://your-domain.com/api/daily-status
+Base URL: No prefix needed
+```
+
+**Base URL Detection Logic:**
+```javascript
+// Automatic base URL detection
+const currentPath = window.location.pathname;
+const basePath = currentPath.includes('/arblogz') ? '/arblogz' : '';
+const internalApiUrl = `${window.location.origin}${basePath}/api/daily-status`;
+```
+
+This ensures the internal API route works correctly across all deployment environments without manual configuration.
+
+### **Error Handling**
+- Failed API calls are logged to console
+- Page continues to work with local updates only
+- Graceful degradation if API is unavailable
+- No impact on site performance or SEO
+
+## 🎨 Client-Side Behavior
 ### Components Involved
 
 1. **`/src/content/daily-status/daily-updates.md`** - Local markdown file for manual updates
-2. **`/src/pages/feed/[page].astro`** - Server-side processing and filtering
-3. **`/src/components/FeedPreview.astro`** - Daily post rendering with special styling
-4. **`/src/components/FeedPostDate.astro`** - Time display and countdown functionality
-5. **`/src/consts.ts`** - API configuration
-6. **External API** - Optional remote daily updates source
+2. **`/src/pages/feed/[page].astro`** - Server-side processing for local updates
+3. **`/src/components/DailyStatusLoader.astro`** - Client-side API fetching and real-time updates
+4. **`/src/components/FeedPreview.astro`** - Daily post rendering with special styling
+5. **`/src/components/FeedPostDate.astro`** - Time display and countdown functionality
+6. **`/src/consts.ts`** - API configuration
+7. **External API** - Remote daily updates source (fetched client-side)
 
 ## 📝 Local Updates (daily-updates.md)
 
@@ -99,25 +321,27 @@ dailyUpdatesApi: {
 
 ### Processing Logic
 
-1. **Parse Markdown Updates**
+1. **Parse Markdown Updates** (Server-side)
    - Read `daily-updates.md` content
    - Extract date-prefixed entries
    - Parse IST timestamps to UTC
+   - Filter and include valid updates at build time
 
-2. **Fetch API Updates** (if enabled)
-   - Make HTTP request to configured API endpoint
-   - Parse JSON response
+2. **Fetch API Updates** (Client-side - Real-time)
+   - Make HTTP request to configured API endpoint from browser
+   - Parse JSON response in real-time
    - Convert IST timestamps to UTC
+   - Insert valid updates dynamically into DOM
 
-3. **Server-Side Filtering**
-   - Only include updates where publication time has passed
-   - Exclude updates older than 24 hours
-   - Apply 1000 character content limit
+3. **Hybrid Filtering**
+   - Local updates: Server-side filtering during build
+   - API updates: Client-side filtering for real-time updates
+   - Apply 1000 character content limit to both
 
 4. **Content Preparation**
    - Generate slugs and metadata
    - Create description excerpts (200 chars)
-   - Mark entries with `isDaily: true` flag
+   - Mark entries with appropriate source flags
 
 ### Time Calculations
 ```javascript
@@ -455,16 +679,23 @@ This comprehensive rendering system ensures daily updates appear seamlessly in t
 
 ## 🚀 Performance Optimizations
 
-### Server-Side Benefits
-- **No Flash**: Only valid updates are sent to client
-- **Reduced Payload**: Expired content never reaches browser
-- **SEO Friendly**: Search engines only see relevant content
-- **Fast Rendering**: No client-side filtering delays
+### Server-Side Benefits (Local Updates)
+- **No Flash**: Local updates are pre-filtered and sent to client
+- **Reduced Build Payload**: Expired local content never reaches browser
+- **SEO Friendly**: Search engines see relevant local content
+- **Fast Initial Rendering**: No server-side API wait time
 
-### Client-Side Efficiency
-- **Minimal DOM Manipulation**: Only countdown updates
-- **Smart Intervals**: Updates only when page is visible
-- **Memory Management**: Cleanup on component unmount
+### Client-Side Benefits (API Updates)
+- **Real-Time Updates**: API changes appear without rebuild
+- **Automatic Refresh**: Updates fetched every 5 minutes
+- **Network Visibility**: API calls visible in browser Network tab
+- **No Build Dependency**: Independent of deployment pipeline
+
+### Hybrid Efficiency
+- **Best of Both**: Static local content + dynamic API content
+- **Minimal DOM Manipulation**: Only countdown and new API updates
+- **Smart Caching**: Prevents duplicate API update rendering
+- **Memory Management**: Proper cleanup and deduplication
 
 ## 🛠️ Development Workflow
 
@@ -565,16 +796,33 @@ site: {
 - Verify endpoint URL and authentication
 - Check API response format
 - Monitor network connectivity
+- **Check console for specific error messages:**
+  - `Internal API failed: HTTP 404` → API route not deployed
+  - `CORS policy blocks request` → Direct fetch blocked, using fallback
+  - `AllOrigins proxy failed` → Public proxy service down
+  - `GitHub API fallback failed` → Rate limit or invalid URL
 
 **Countdown not updating:**
 - Check browser console for JavaScript errors
 - Verify client-side timer initialization
 - Test with different browsers
+- **Common fixes:**
+  - `Cannot set properties of undefined (setting 'innerHTML')` → Fixed in latest version
+  - Empty "Expires in" → Component initialization timing issue
 
 **Performance issues:**
 - Review number of concurrent daily posts
 - Check for memory leaks in timers
 - Optimize content length and frequency
+- **Monitor network requests:**
+  - Too many API calls → Check refresh interval (default 5 minutes)
+  - Slow CORS proxy → Consider hosting your own proxy
+  - Rate limiting → GitHub API has 60 requests/hour limit
+
+**Production deployment issues:**
+- **Internal API 404 errors** → Ensure `/api/daily-status.js` is deployed
+- **Base URL problems** → Check automatic base URL detection in console
+- **HTTPS mixed content** → Ensure all API URLs use HTTPS
 
 ---
 

@@ -7,6 +7,7 @@ import { getCollectionByName } from "@/utils/getCollectionByName";
 import FeedPreview from "@/components/FeedPreview.astro";
 import getUrl from "@/utils/getUrl";
 import { getCollection } from 'astro:content';
+import DailyStatusLoader from "@/components/DailyStatusLoader.astro";
 
 export async function getStaticPaths({ paginate }) {
   let posts = await getCollectionByName("feed");
@@ -112,83 +113,11 @@ export async function getStaticPaths({ paginate }) {
     }
   }
   
-  // Fetch API updates if enabled
-  let apiUpdates = [];
-  if (config.dailyUpdatesApi.enabled && config.dailyUpdatesApi.url) {
-    try {
-      const apiUrl = config.dailyUpdatesApi.url;
-      const headers = config.dailyUpdatesApi.apiKey ? {
-        'Authorization': `Bearer ${config.dailyUpdatesApi.apiKey}`,
-        'Content-Type': 'application/json'
-      } : {
-        'Content-Type': 'application/json'
-      };
-
-      const response = await fetch(apiUrl, {
-        method: 'GET',
-        headers: headers,
-      });
-
-      if (response.ok) {
-        const apiData = await response.json();
-        
-        // Process API data (expected format: array of objects with date, content, etc.)
-        if (Array.isArray(apiData)) {
-          for (const item of apiData) {
-            // Expected API response format:
-            // { date: "2025-09-29 14:30", content: "API update content", title?: "Optional title" }
-            if (item.date && item.content) {
-              const apiDateMatch = item.date.match(/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2})$/);
-              if (apiDateMatch) {
-                const [datePart, timePart] = item.date.split(' ');
-                const [year, month, day] = datePart.split('-').map(Number);
-                const [hours, minutes] = timePart.split(':').map(Number);
-                
-                // Create UTC timestamp for the IST time
-                const apiUtcTime = Date.UTC(year, month - 1, day, hours, minutes, 0) - istOffset;
-                const apiPublishDate = new Date(apiUtcTime);
-                
-                // Check if this API update should be shown now (server-side filtering)
-                const now = new Date();
-                const currentTime = now.getTime();
-                const timeDiffHours = (currentTime - apiUtcTime) / (1000 * 60 * 60);
-                
-                // Only include if: published time has passed AND not expired (within 24 hours)
-                if (apiUtcTime <= currentTime && timeDiffHours <= 24) {
-                  let apiContent = item.content;
-                  if (apiContent.length > 1000) {
-                    apiContent = apiContent.substring(0, 1000) + '...';
-                  }
-                  
-                  apiUpdates.push({
-                    slug: `api-daily-${Date.now()}-${apiUpdates.length}`,
-                    data: {
-                      title: item.title || 'API Daily Update',
-                      description: apiContent.substring(0, 200) + (apiContent.length > 200 ? '...' : ''),
-                      date: apiPublishDate,
-                      draft: false,
-                      isDaily: true,
-                      source: 'api', // Mark as API source
-                    },
-                    body: apiContent,
-                    rawContent: apiContent,
-                    render: () => ({ Content: () => apiContent }),
-                  });
-                }
-              }
-            }
-          }
-        }
-      } else {
-        console.warn('Failed to fetch daily updates from API:', response.status, response.statusText);
-      }
-    } catch (error) {
-      console.warn('Error fetching daily updates from API:', error);
-    }
-  }
+  // Note: API updates now handled client-side for real-time updates
+  // Remove server-side API fetching to enable real-time updates without rebuild
   
-  // Prepend today's updates to posts (static + API)
-  posts = [...todaysUpdates, ...apiUpdates, ...posts];
+  // Prepend local daily updates to posts
+  posts = [...todaysUpdates, ...posts];
   
   return paginate(posts, { pageSize: site.feedPageSize });
 }
@@ -199,6 +128,9 @@ const { page } = Astro.props;
 ---
 
 <IndexPage>
+    <!-- Real-time API daily status loader -->
+    <DailyStatusLoader />
+    
     {page.data.map((post, index) => <FeedPreview post={post} index={index} />)}
   <Pagination
     currentPage={page.currentPage}

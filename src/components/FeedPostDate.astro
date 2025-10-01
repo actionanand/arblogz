@@ -71,11 +71,17 @@ const { date, index, isDaily = false } = Astro.props;
       const defaultText = isDaily ? 'Expires in' : 'Published in';
       const displayText = window.getCurrentTranslation ? window.getCurrentTranslation(textKey) : defaultText;
       
-      timeSpan[index].innerHTML = `<span class="opacity-60">${displayText}:</span> <span>${postDateFromNow}</span>`;
-      
-      // Add translation key for dynamic updates
-      timeSpan[index].setAttribute('data-translate-template', textKey);
-      timeSpan[index].setAttribute('data-date-value', postDateFromNow);
+      // Find the timeSpan element within this component
+      const timeSpanElement = this.querySelector('.postTimeEle');
+      if (timeSpanElement) {
+        timeSpanElement.innerHTML = `<span class="opacity-60">${displayText}:</span> <span>${postDateFromNow}</span>`;
+        
+        // Add translation key for dynamic updates
+        timeSpanElement.setAttribute('data-translate-template', textKey);
+        timeSpanElement.setAttribute('data-date-value', postDateFromNow);
+      } else {
+        console.warn('Could not find .postTimeEle element in FeedPostDate component');
+      }
     }
 
     connectedCallback() {
