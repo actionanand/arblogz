@@ -1,0 +1,317 @@
+---
+import { config } from "@/consts";
+---
+
+<!-- Container for dynamically loaded API daily updates -->
+<div id="daily-status-container" class="daily-status-updates">
+  <!-- API updates will be injected here -->
+</div>
+
+<script define:vars={{ config }}>
+  class DailyStatusLoader {
+    constructor() {
+      this.container = document.getElementById('daily-status-container');
+      this.config = config;
+      this.loadedUpdates = new Set(); // Prevent duplicates
+      
+      if (this.config.dailyUpdatesApi.enabled && this.config.dailyUpdatesApi.url) {
+        this.loadApiUpdates();
+        // Refresh every 5 minutes for real-time updates
+        setInterval(() => this.loadApiUpdates(), this.config.dailyUpdatesApi.cacheTime || 300000);
+      }
+    }
+    
+    async loadApiUpdates() {
+      try {
+        console.log('🔄 Fetching real-time daily updates from API...');
+        
+        // Try multiple methods to avoid CORS issues
+        const apiData = await this.fetchWithCORSFallback(this.config.dailyUpdatesApi.url);
+        
+        if (apiData && Array.isArray(apiData)) {
+          console.log('✅ API Response received:', apiData);
+          this.processApiUpdates(apiData);
+        }
+      } catch (error) {
+        console.warn('Error fetching daily updates from API:', error);
+      }
+    }
+    
+    async fetchWithCORSFallback(url) {
+      // Method 1: Try internal API route first (no CORS issues)
+      try {
+        // Get base URL from current path or site config
+        const currentPath = window.location.pathname;
+        const basePath = currentPath.includes('/arblogz') ? '/arblogz' : '';
+        const internalApiUrl = `${window.location.origin}${basePath}/api/daily-status`;
+        console.log('🔄 Trying internal API route:', internalApiUrl);
+        
+        const response = await fetch(internalApiUrl, {
+          method: 'GET',
+          cache: 'no-cache',
+        });
+
+        if (response.ok) {
+          console.log('✅ Internal API route successful');
+          return await response.json();
+        }
+        throw new Error(`Internal API failed: HTTP ${response.status}`);
+      } catch (error) {
+        console.warn('Internal API route failed, trying direct fetch...', error.message);
+      }
+      
+      // Method 2: Try direct fetch to external API with proper headers
+      try {
+        // Use headers similar to your working Angular app
+        const headers = {
+          'Accept': 'application/json, text/plain, */*',
+          'Referer': window.location.href,
+          'User-Agent': navigator.userAgent,
+          ...(this.config.dailyUpdatesApi.apiKey && {
+            'Authorization': `Bearer ${this.config.dailyUpdatesApi.apiKey}`
+          })
+        };
+
+        console.log('🔄 Trying direct fetch with Angular-like headers...');
+        
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: headers,
+          mode: 'cors',
+          cache: 'no-cache',
+          referrerPolicy: 'strict-origin-when-cross-origin'
+        });
+
+        if (response.ok) {
+          console.log('✅ Direct fetch successful');
+          return await response.json();
+        }
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      } catch (error) {
+        console.warn('Direct fetch failed, trying alternative method...', error.message);
+        
+        // Method 3: Try with minimal headers and different fetch options
+        try {
+          console.log('🔄 Trying direct fetch with minimal headers...');
+          
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json',
+            },
+            mode: 'cors',
+            credentials: 'omit',
+            cache: 'no-store'
+          });
+
+          if (response.ok) {
+            console.log('✅ Minimal headers fetch successful');
+            return await response.json();
+          }
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        } catch (minimalError) {
+          console.warn('Minimal headers fetch failed, trying CORS proxy...', minimalError.message);
+        }
+        
+        // Method 4: Only use AllOrigins as last resort
+        if (url.includes('raw.githubusercontent.com')) {
+          try {
+            console.warn('⚠️ Using AllOrigins proxy as fallback (has rate limits)');
+            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+            console.log('🔄 Trying CORS proxy:', proxyUrl);
+            
+            const proxyResponse = await fetch(proxyUrl);
+            
+            if (proxyResponse.ok) {
+              const proxyData = await proxyResponse.json();
+              console.log('✅ CORS proxy successful');
+              return JSON.parse(proxyData.contents);
+            }
+          } catch (proxyError) {
+            console.warn('CORS proxy failed:', proxyError.message);
+          }
+          
+          // Method 5: Try GitHub API as final fallback
+          try {
+            // Convert raw.githubusercontent.com URL to GitHub API URL
+            const apiUrl = url
+              .replace('https://raw.githubusercontent.com/', 'https://api.github.com/repos/')
+              .replace('/main/', '/contents/')
+              .replace('/master/', '/contents/');
+            
+            console.log('🔄 Trying GitHub API as final fallback:', apiUrl);
+            
+            const githubResponse = await fetch(apiUrl, {
+              headers: {
+                'Accept': 'application/vnd.github.v3+json'
+              }
+            });
+            
+            if (githubResponse.ok) {
+              const githubData = await githubResponse.json();
+              // GitHub API returns base64 encoded content
+              const decodedContent = atob(githubData.content);
+              console.log('✅ GitHub API successful');
+              return JSON.parse(decodedContent);
+            }
+          } catch (githubError) {
+            console.warn('GitHub API fallback failed:', githubError.message);
+          }
+        }
+        
+        throw error; // Re-throw original error if all methods fail
+      }
+    }
+    
+    processApiUpdates(apiData) {
+      const now = new Date();
+      const istOffset = 5.5 * 60 * 60 * 1000; // IST offset
+      const validUpdates = [];
+      
+      for (const item of apiData) {
+        if (item.date && item.content) {
+          const apiDateMatch = item.date.match(/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2})$/);
+          if (apiDateMatch) {
+            const [datePart, timePart] = item.date.split(' ');
+            const [year, month, day] = datePart.split('-').map(Number);
+            const [hours, minutes] = timePart.split(':').map(Number);
+            
+            // Create UTC timestamp for the IST time
+            const apiUtcTime = Date.UTC(year, month - 1, day, hours, minutes, 0) - istOffset;
+            const currentTime = now.getTime();
+            const timeDiffHours = (currentTime - apiUtcTime) / (1000 * 60 * 60);
+            
+            // Only include if: published time has passed AND not expired (within 24 hours)
+            if (apiUtcTime <= currentTime && timeDiffHours <= 24) {
+              const updateId = `api-${item.date}-${item.content.substring(0, 50)}`;
+              
+              if (!this.loadedUpdates.has(updateId)) {
+                this.loadedUpdates.add(updateId);
+                
+                let apiContent = item.content;
+                if (apiContent.length > 1000) {
+                  apiContent = apiContent.substring(0, 1000) + '...';
+                }
+                
+                validUpdates.push({
+                  id: updateId,
+                  title: item.title || 'API Daily Update',
+                  content: apiContent,
+                  date: new Date(apiUtcTime),
+                  source: 'api'
+                });
+              }
+            }
+          }
+        }
+      }
+      
+      // Sort by date (newest first)
+      validUpdates.sort((a, b) => b.date.getTime() - a.date.getTime());
+      
+      // Render new updates
+      this.renderUpdates(validUpdates);
+    }
+    
+    renderUpdates(updates) {
+      if (updates.length === 0) return;
+      
+      console.log(`📱 Rendering ${updates.length} new API daily updates`);
+      
+      updates.forEach((update, index) => {
+        const updateElement = this.createUpdateElement(update, index);
+        
+        // Insert at the beginning of the feed (after any existing daily updates)
+        let feedContainer = this.container.parentElement;
+        
+        // Try multiple selectors to find the feed container
+        if (!feedContainer) {
+          feedContainer = document.querySelector('main') || 
+                         document.querySelector('.feed-container') || 
+                         document.body;
+        }
+        
+        if (feedContainer) {
+          // Insert after local daily updates but before regular posts
+          const firstRegularPost = feedContainer.querySelector('[data-post-type="regular"]') || 
+                                   feedContainer.querySelector('.py-4:not([data-daily="true"])');
+          
+          if (firstRegularPost) {
+            feedContainer.insertBefore(updateElement, firstRegularPost);
+          } else {
+            // Insert after the DailyStatusLoader container
+            const insertTarget = this.container.nextElementSibling || feedContainer.firstElementChild;
+            if (insertTarget) {
+              feedContainer.insertBefore(updateElement, insertTarget);
+            } else {
+              feedContainer.appendChild(updateElement);
+            }
+          }
+        }
+      });
+    }
+    
+    createUpdateElement(update, index) {
+      const div = document.createElement('div');
+      div.className = 'py-4';
+      div.setAttribute('data-daily', 'true');
+      div.setAttribute('data-source', 'api');
+      
+      // Clean content (remove markdown formatting)
+      const cleanContent = update.content
+        .replace(/^#+/gm, "")
+        .replace(/!?\[.*?\]\(.*?\)/g, "")
+        .replace(/\*\*(.*?)\*\*/g, "$1")
+        .replace(/__(.*?)__/g, "$1")
+        .replace(/\*(.*?)\*/g, "$1")
+        .replace(/_(.*?)_/g, "$1")
+        .replace(/~~(.*?)~~/g, "$1")
+        .replace(/`(.*?)`/g, "$1")
+        .replace(/^\s*[-*+]\s+/gm, "")
+        .replace(/^\s*\d+\.\s+/gm, "")
+        .trim();
+      
+      div.innerHTML = `
+        <div class="mb-2">
+          <p class="text-skin-base text-base leading-relaxed break-words first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1 whitespace-pre-line">
+            ${cleanContent}
+          </p>
+        </div>
+        
+        <div class="flex items-center justify-between text-sm">
+          <div class="flex items-center text-skin-muted">
+            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium mr-2 animate-pulse shadow-lg bg-blue-500/10 text-blue-600 border border-blue-500/20 shadow-blue-500/30">
+              <i class="mr-1 ri-cloud-line"></i>
+              Live
+            </span>
+            <i class="ri-time-line mr-1.5 text-xs opacity-40"></i>
+            <feed-post-date class="text-xs text-skin-muted" data-date="${update.date.toISOString()}" data-index="${Date.now() + index}" data-is-daily="true">
+              <span class="postTimeEle"></span>
+            </feed-post-date>
+          </div>
+        </div>
+      `;
+      
+      return div;
+    }
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new DailyStatusLoader());
+  } else {
+    new DailyStatusLoader();
+  }
+</script>
+
+<style>
+  .daily-status-updates {
+    /* Ensures smooth integration with existing feed */
+  }
+  
+  /* Add loading indicator styles if needed */
+  .daily-status-loading {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+</style>
