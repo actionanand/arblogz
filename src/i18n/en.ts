@@ -64,7 +64,7 @@ Our diverse content ecosystem includes language learning resources, reliable hea
   'about.me.title': 'About Me: Life Beyond the Code',
   'about.me.content': `Welcome to my corner of the internet! I'm a software developer by profession, but this space is dedicated to everything else that makes me who I am. Here, you won't find a single line of code or technical tutorial. Instead, this blog is my repository for life experiences, personal discoveries, and the quirky habits that shape my everyday existence.
 
-![about-anand](./about-ar.jpg)
+![about-anand](/about-ar.jpg)
 
 **Why This Blog Exists**: I wanted to create something different from the technical noise online. This is my digital diary for non-technical discoveries – life lessons, observations, and experiences that matter beyond work. Think of it as insights accessible to you and future me who might need these reminders.
 

@@ -55,7 +55,7 @@ Notre écosystème de contenu diversifié comprend des ressources d'apprentissag
   'about.me.title': 'À propos de moi : La vie au-delà du code',
   'about.me.content': `Bienvenue dans mon coin d'internet ! Je suis développeur de logiciels de profession, mais cet espace est dédié à tout ce qui fait de moi ce que je suis. Ici, vous ne trouverez pas une seule ligne de code ou de tutoriel technique. Au lieu de cela, ce blog est mon répertoire d'expériences de vie, de découvertes personnelles et d'habitudes bizarres qui façonnent mon existence quotidienne.
 
-![about-anand](./about-ar.jpg)
+![about-anand](/about-ar.jpg)
 
 **Pourquoi ce blog existe** : Je voulais créer quelque chose de différent du bruit technique en ligne. C'est mon journal numérique pour les découvertes non techniques - les leçons de vie, les observations et les expériences qui comptent au-delà du travail. Pensez-y comme des aperçus accessibles à vous et au futur moi qui pourrait avoir besoin de ces rappels.
 

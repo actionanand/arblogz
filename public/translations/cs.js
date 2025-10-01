@@ -55,7 +55,7 @@ Náš rozmanitý ekosystém obsahu zahrnuje zdroje pro výuku jazyků, spolehliv
   'about.me.title': 'O mně: Život mimo kód',
   'about.me.content': `Vítejte v mém koutku internetu! Profesně jsem vývojář softwaru, ale tento prostor je věnován všemu ostatnímu, co mě dělá tím, kým jsem. Zde nenajdete ani jeden řádek kódu nebo technický tutoriál. Místo toho je tento blog mým úložištěm životních zkušeností, osobních objevů a zvláštních návyků, které formují mou každodenní existenci.
 
-![about-anand](./about-ar.jpg)
+![about-anand](/about-ar.jpg)
 
 **Proč tento blog existuje**: Chtěl jsem vytvořit něco jiného než technický šum online. Toto je můj digitální deník pro ne-technické objevy - životní lekce, pozorování a zkušenosti, které mají význam mimo práci. Představte si to jako poznatky dostupné vám a budoucímu já, který by mohl potřebovat tato připomenutí.
 
