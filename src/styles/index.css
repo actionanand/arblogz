@@ -355,6 +355,7 @@ menu {
 .language-dropdown-menu.open {
   max-height: 300px;
   opacity: 1;
+  overflow: auto;
 }
 
 .language-dropdown-item {
