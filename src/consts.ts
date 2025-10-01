@@ -268,9 +268,9 @@ export const donate = {
   
   // Direct payment URLs
   paypalUrl: "https://paypal.me/actionanand", // Replace with actual
-  // githubSponsors: "yourusername", // Replace with actual GitHub username
-  buyMeACoffee: "yourusername", // Replace with actual username
-  kofi: "yourusername", // Replace with actual Ko-fi username
+  githubSponsors: "actionanand", // Replace with actual GitHub username
+  buyMeACoffee: "actionanand", // Replace with actual username
+  kofi: "actionanand", // Replace with actual Ko-fi username
   // patreon: "yourusername", // Replace with actual Patreon username
   // opencollective: "yourproject", // Replace with actual Open Collective project
   
