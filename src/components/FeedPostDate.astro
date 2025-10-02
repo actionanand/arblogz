@@ -2,7 +2,7 @@
 const { date, index, isDaily = false } = Astro.props;
 ---
 
-<feed-post-date class="text-xs text-skin-muted" data-date={date} data-index={index} data-is-daily={isDaily}>
+<feed-post-date class="text-xs" data-date={date} data-index={index} data-is-daily={isDaily}>
   <span class="postTimeEle"></span>
 </feed-post-date>
 
@@ -22,7 +22,6 @@ const { date, index, isDaily = false } = Astro.props;
 
     constructor() {
       super();
-      this.updateDisplay();
     }
 
     updateDisplay() {
@@ -31,7 +30,6 @@ const { date, index, isDaily = false } = Astro.props;
       const index = this.dataset.index;
       const isDaily = this.dataset.isDaily === 'true';
 
-      let timeSpan = document.getElementsByClassName("postTimeEle");
       let postDateFromNow;
       
       if (isDaily) {
@@ -69,12 +67,12 @@ const { date, index, isDaily = false } = Astro.props;
       // Use different text for daily posts
       const textKey = isDaily ? 'feed.expiresIn' : 'feed.publishedIn';
       const defaultText = isDaily ? 'Expires in' : 'Published in';
-      const displayText = window.getCurrentTranslation ? window.getCurrentTranslation(textKey) : defaultText;
+      const displayText = (window as any).getCurrentTranslation ? (window as any).getCurrentTranslation(textKey) : defaultText;
       
       // Find the timeSpan element within this component
       const timeSpanElement = this.querySelector('.postTimeEle');
       if (timeSpanElement) {
-        timeSpanElement.innerHTML = `<span class="opacity-60">${displayText}:</span> <span>${postDateFromNow}</span>`;
+        timeSpanElement.innerHTML = `<span style="opacity: 0.6; color: #6b7280;">${displayText}:</span> <span style="opacity: 1;">${postDateFromNow}</span>`;
         
         // Add translation key for dynamic updates
         timeSpanElement.setAttribute('data-translate-template', textKey);
@@ -85,7 +83,10 @@ const { date, index, isDaily = false } = Astro.props;
     }
 
     connectedCallback() {
-      // Update every second for daily posts
+      // Update once when connected to DOM
+      this.updateDisplay();
+      
+      // Only daily posts need continuous updates for countdown and expiration
       if (this.dataset.isDaily === 'true') {
         this.intervalId = setInterval(() => {
           this.updateDisplay();

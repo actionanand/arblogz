@@ -30,7 +30,7 @@ const isDaily = data.isDaily || slug.startsWith('daily-');
   
   <!-- Metadata and Actions -->
   <div class="flex items-center justify-between text-sm">
-    <div class="flex items-center text-skin-muted">
+    <div class="flex items-center">
       {isDaily && (
         <span class={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium mr-2 animate-pulse shadow-lg ${
           data.source === 'api' 
@@ -41,7 +41,7 @@ const isDaily = data.isDaily || slug.startsWith('daily-');
           {data.source === 'api' ? 'Live' : 'Daily'}
         </span>
       )}
-      <i class="ri-time-line mr-1.5 text-xs opacity-40"></i>
+      <i class="ri-time-line mr-1.5 text-xs opacity-40 text-skin-muted"></i>
       <FeedPostDate date={data.date.toISOString()} index={index} isDaily={isDaily}/>
     </div>
     {!isDaily && (

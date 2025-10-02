@@ -271,26 +271,36 @@ import { config } from "@/consts";
         .replace(/^\s*\d+\.\s+/gm, "")
         .trim();
       
-      div.innerHTML = `
-        <div class="mb-2">
-          <p class="text-skin-base text-base leading-relaxed break-words first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1 whitespace-pre-line">
-            ${cleanContent}
-          </p>
-        </div>
-        
-        <div class="flex items-center justify-between text-sm">
-          <div class="flex items-center text-skin-muted">
-            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium mr-2 animate-pulse shadow-lg bg-blue-500/10 text-blue-600 border border-blue-500/20 shadow-blue-500/30">
-              <i class="mr-1 ri-cloud-line"></i>
-              Live
-            </span>
-            <i class="ri-time-line mr-1.5 text-xs opacity-40"></i>
-            <feed-post-date class="text-xs text-skin-muted" data-date="${update.date.toISOString()}" data-index="${Date.now() + index}" data-is-daily="true">
-              <span class="postTimeEle"></span>
-            </feed-post-date>
-          </div>
+      // Create the content container
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'mb-2';
+      
+      // Create the paragraph element with proper classes for first-letter styling
+      const paragraph = document.createElement('p');
+      paragraph.className = 'text-skin-base text-base leading-relaxed break-words first-letter:text-3xl first-letter:font-semibold first-letter:text-gray-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.8] first-letter:-mt-1 whitespace-pre-line';
+      paragraph.textContent = cleanContent;
+      
+      contentDiv.appendChild(paragraph);
+      div.appendChild(contentDiv);
+      
+      // Create metadata section
+      const metadataDiv = document.createElement('div');
+      metadataDiv.className = 'flex items-center justify-between text-sm';
+      
+      metadataDiv.innerHTML = `
+        <div class="flex items-center text-skin-muted">
+          <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium mr-2 animate-pulse shadow-lg bg-blue-500/10 text-blue-600 border border-blue-500/20 shadow-blue-500/30">
+            <i class="mr-1 ri-cloud-line"></i>
+            Live
+          </span>
+          <i class="ri-time-line mr-1.5 text-xs opacity-40"></i>
+          <feed-post-date class="text-xs" data-date="${update.date.toISOString()}" data-index="${Date.now() + index}" data-is-daily="true">
+            <span class="postTimeEle"></span>
+          </feed-post-date>
         </div>
       `;
+      
+      div.appendChild(metadataDiv);
       
       return div;
     }
