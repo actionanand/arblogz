@@ -38,29 +38,7 @@ import { config } from "@/consts";
     }
     
     async fetchWithCORSFallback(url) {
-      // Method 1: Try internal API route first (no CORS issues)
-      try {
-        // Get base URL from current path or site config
-        const currentPath = window.location.pathname;
-        const basePath = currentPath.includes('/arblogz') ? '/arblogz' : '';
-        const internalApiUrl = `${window.location.origin}${basePath}/api/daily-status`;
-        console.log('🔄 Trying internal API route:', internalApiUrl);
-        
-        const response = await fetch(internalApiUrl, {
-          method: 'GET',
-          cache: 'no-cache',
-        });
-
-        if (response.ok) {
-          console.log('✅ Internal API route successful');
-          return await response.json();
-        }
-        throw new Error(`Internal API failed: HTTP ${response.status}`);
-      } catch (error) {
-        console.warn('Internal API route failed, trying direct fetch...', error.message);
-      }
-      
-      // Method 2: Try direct fetch to external API with proper headers
+      // Method 1: Try direct fetch to external API with proper headers (PRIMARY METHOD)
       try {
         // Use headers similar to your working Angular app
         const headers = {
@@ -72,7 +50,7 @@ import { config } from "@/consts";
           })
         };
 
-        console.log('🔄 Trying direct fetch with Angular-like headers...');
+        console.log('🔄 Trying direct fetch with Angular-like headers (PRIMARY METHOD)...');
         
         const response = await fetch(url, {
           method: 'GET',
@@ -90,7 +68,7 @@ import { config } from "@/consts";
       } catch (error) {
         console.warn('Direct fetch failed, trying alternative method...', error.message);
         
-        // Method 3: Try with minimal headers and different fetch options
+        // Method 2: Try with minimal headers and different fetch options
         try {
           console.log('🔄 Trying direct fetch with minimal headers...');
           
@@ -113,7 +91,7 @@ import { config } from "@/consts";
           console.warn('Minimal headers fetch failed, trying CORS proxy...', minimalError.message);
         }
         
-        // Method 4: Only use AllOrigins as last resort
+        // Method 3: Only use AllOrigins as backup
         if (url.includes('raw.githubusercontent.com')) {
           try {
             console.warn('⚠️ Using AllOrigins proxy as fallback (has rate limits)');
@@ -131,7 +109,7 @@ import { config } from "@/consts";
             console.warn('CORS proxy failed:', proxyError.message);
           }
           
-          // Method 5: Try GitHub API as final fallback
+          // Method 4: Try GitHub API as alternative fallback
           try {
             // Convert raw.githubusercontent.com URL to GitHub API URL
             const apiUrl = url
@@ -139,7 +117,7 @@ import { config } from "@/consts";
               .replace('/main/', '/contents/')
               .replace('/master/', '/contents/');
             
-            console.log('🔄 Trying GitHub API as final fallback:', apiUrl);
+            console.log('🔄 Trying GitHub API as alternative fallback:', apiUrl);
             
             const githubResponse = await fetch(apiUrl, {
               headers: {
@@ -157,6 +135,28 @@ import { config } from "@/consts";
           } catch (githubError) {
             console.warn('GitHub API fallback failed:', githubError.message);
           }
+        }
+        
+        // Method 5: Try internal API route as LAST RESORT (uses build-time data)
+        try {
+          // Get base URL from current path or site config
+          const currentPath = window.location.pathname;
+          const basePath = currentPath.includes('/arblogz') ? '/arblogz' : '';
+          const internalApiUrl = `${window.location.origin}${basePath}/api/daily-status`;
+          console.log('🔄 Trying internal API route as last resort:', internalApiUrl);
+          
+          const response = await fetch(internalApiUrl, {
+            method: 'GET',
+            cache: 'no-cache',
+          });
+
+          if (response.ok) {
+            console.log('✅ Internal API route successful (build-time data)');
+            return await response.json();
+          }
+          throw new Error(`Internal API failed: HTTP ${response.status}`);
+        } catch (error) {
+          console.warn('Internal API route failed as final fallback:', error.message);
         }
         
         throw error; // Re-throw original error if all methods fail
