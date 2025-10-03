@@ -2,8 +2,10 @@
 const ar = {
   'aside.caution': 'تحذير',
   'aside.danger': 'خطر',
+  'aside.info': 'معلومات',
   'aside.note': 'ملاحظة',
   'aside.tip': 'نصيحة',
+  'aside.warning': 'تحذير',
   'sidebar.categories': 'الفئات',
   'sidebar.tags': 'العلامات',
   'sidebar.uncategorized': 'غير مصنف',

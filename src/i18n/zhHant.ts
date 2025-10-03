@@ -1,4 +1,10 @@
 export  const zhHant = {
+  'aside.caution': '注意',
+  'aside.danger': '危險',
+  'aside.info': '資訊',
+  'aside.note': '備註',
+  'aside.tip': '提示',
+  'aside.warning': '注意',
   'home.sticky': '置頂',
   'home.goBack': '返回',
   'home.moreArticles': '更多文章',
@@ -30,6 +36,7 @@ export  const zhHant = {
   'feed.expiresIn':'到期於',
   'pagination.total':'共',
   'pagination.unit': '頁',
+  'remark.open': '打開',
   'title.minutes':'分鐘',
   'title.words':'字',
   'title.draft': '草稿',

@@ -1,8 +1,10 @@
 export const fr = {
   'aside.caution': 'Attention',
   'aside.danger': 'Danger',
+  'aside.info': 'Information',
   'aside.note': 'Note',
   'aside.tip': 'Conseil',
+  'aside.warning': 'Attention',
   'sidebar.categories': 'Catégories',
   'sidebar.tags': 'Étiquettes',
   'sidebar.uncategorized': 'Non catégorisé',

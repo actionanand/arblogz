@@ -1,8 +1,10 @@
 export const hi = {
   'aside.caution': 'सावधान',
   'aside.danger': 'खतरा',
+  'aside.info': 'जानकारी',
   'aside.note': 'टिप्पणी',
   'aside.tip': 'सुझाव',
+  'aside.warning': 'सावधान',
   'sidebar.categories': 'श्रेणियां',
   'sidebar.tags': 'टैग्स',
   'sidebar.uncategorized': 'अवर्गीकृत',

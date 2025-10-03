@@ -1,9 +1,11 @@
 // Czech translations
 const cs = {
-  'aside.caution': 'Pozor',
-  'aside.danger': 'Nebezpečí',
-  'aside.note': 'Poznámka',
-  'aside.tip': 'Tip',
+  'aside.caution': 'varování',
+  'aside.danger': 'nouze',
+  'aside.info': 'informace',
+  'aside.note': 'poznámka',
+  'aside.tip': 'tip',
+  'aside.warning': 'varování',
   'sidebar.categories': 'Kategorie',
   'sidebar.tags': 'Štítky',
   'sidebar.uncategorized': 'Nezařazené',

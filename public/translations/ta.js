@@ -2,8 +2,10 @@
 const ta = {
   'aside.caution': 'எச்சரிக்கை',
   'aside.danger': 'ஆபத்து',
-  'aside.note': 'தகவல்',
-  'aside.tip': 'குறிப்பு',
+  'aside.info': 'தகவல்',
+  'aside.note': 'குறிப்பு',
+  'aside.tip': 'சிந்தனை',
+  'aside.warning': 'எச்சரிக்கை',
   'sidebar.categories': 'கட்டுரை வகைகள்',
   'sidebar.tags': 'குறிச்சொற்கள்',
   'sidebar.uncategorized': 'மற்றவை',

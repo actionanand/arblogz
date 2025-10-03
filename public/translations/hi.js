@@ -1,9 +1,11 @@
 // Hindi translations
 const hi = {
-  'aside.caution': 'सावधानी',
+  'aside.caution': 'सावधान',
   'aside.danger': 'खतरा',
-  'aside.note': 'नोट',
+  'aside.info': 'जानकारी',
+  'aside.note': 'टिप्पणी',
   'aside.tip': 'सुझाव',
+  'aside.warning': 'सावधान',
   'sidebar.categories': 'श्रेणियां',
   'sidebar.tags': 'टैग',
   'sidebar.uncategorized': 'अवर्गीकृत',

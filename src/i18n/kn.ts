@@ -1,8 +1,10 @@
 export const kn = {
   'aside.caution': 'ಎಚ್ಚರಿಕೆ',
   'aside.danger': 'ಅಪಾಯ',
+  'aside.info': 'ಮಾಹಿತಿ',
   'aside.note': 'ಟಿಪ್ಪಣಿ',
   'aside.tip': 'ಸಲಹೆ',
+  'aside.warning': 'ಎಚ್ಚರಿಕೆ',
   'sidebar.categories': 'ವರ್ಗಗಳು',
   'sidebar.tags': 'ಟ್ಯಾಗ್‌ಗಳು',
   'sidebar.uncategorized': 'ವರ್ಗೀಕರಿಸದ',

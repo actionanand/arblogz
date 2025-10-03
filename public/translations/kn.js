@@ -2,6 +2,12 @@
 const kn = {
   'aside.caution': 'ಎಚ್ಚರಿಕೆ',
   'aside.danger': 'ಅಪಾಯ',
+  'aside.info': 'ಮಾಹಿತಿ',
+  'aside.note': 'ಟಿಪ್ಪಣಿ',
+  'aside.tip': 'ಸಲಹೆ',
+  'aside.warning': 'ಎಚ್ಚರಿಕೆ',
+  'sidebar.categories': 'ವರ್ಗಗಳು',
+  'aside.danger': 'ಅಪಾಯ',
   'aside.note': 'ಗಮನಿಸಿ',
   'aside.tip': 'ಸಲಹೆ',
   'sidebar.categories': 'ವರ್ಗಗಳು',

@@ -1,8 +1,10 @@
 export  const ta = {
   'aside.caution': 'எச்சரிக்கை',
   'aside.danger':'ஆபத்து',
-  'aside.note': 'தகவல்',
-  'aside.tip':'குறிப்பு',
+  'aside.info': 'தகவல்',
+  'aside.note': 'குறிப்பு',
+  'aside.tip':'சிந்தனை',
+  'aside.warning': 'எச்சரிக்கை',
   'blog.tableOfContent':'உள்ளடக்கக் குறிப்பு',
   'feed.next': 'அடுத்தது',
   'feed.previous': 'முந்தியது',

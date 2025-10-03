@@ -2,8 +2,10 @@
 const zhHant = {
   'aside.caution': '注意',
   'aside.danger': '危險',
-  'aside.note': '注意',
+  'aside.info': '資訊',
+  'aside.note': '備註',
   'aside.tip': '提示',
+  'aside.warning': '注意',
   'sidebar.categories': '分類',
   'sidebar.tags': '標籤',
   'sidebar.uncategorized': '未分類',

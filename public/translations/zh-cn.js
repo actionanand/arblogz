@@ -2,8 +2,10 @@
 const zhCn = {
   'aside.caution': '注意',
   'aside.danger': '危险',
-  'aside.note': '注意',
+  'aside.info': '信息',
+  'aside.note': '备注',
   'aside.tip': '提示',
+  'aside.warning': '注意',
   'sidebar.categories': '分类',
   'sidebar.tags': '标签',
   'sidebar.uncategorized': '未分类',
