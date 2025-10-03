@@ -39,11 +39,8 @@ export function remarkAsides(options = {}) {
       const variant = node.name;
       if (!isAsideVariant(variant)) return;
 
-      // Store the original variant to ensure it doesn't get modified
-      const originalVariant = String(variant);
-
       // Get default title
-      let title = defaultLabel(originalVariant);
+      let title = defaultLabel(variant);
 
       // Check for custom title from directive label
       let hasCustomTitle = false;
@@ -74,21 +71,18 @@ export function remarkAsides(options = {}) {
       // Create the title span with conditional data-translate
       const titleSpan = hasCustomTitle 
         ? h("span", {}, [{ type: "text", value: title }])
-        : h("span", { "data-translate": `aside.${originalVariant}` }, [{ type: "text", value: title }]);
+        : h("span", { "data-translate": `aside.${variant}` }, [{ type: "text", value: title }]);
 
-      // Ensure we're using the exact original variant for all CSS classes and attributes
       const aside = h(
         "aside",
         {
-          "aria-label": originalVariant,
-          class: `remark-aside remark-aside--${originalVariant}`,
-          "data-variant": originalVariant, // Add explicit data attribute for debugging
+          "aria-label": variant,
+          class: `remark-aside remark-aside--${variant}`,
         },
         [
           h("h4", {class: "remark-aside__title", "aria-hidden": "true"}, [
             h("span", {
-              class: "remark-aside__icon",
-              "data-icon-variant": originalVariant, // Add explicit data attribute for debugging
+              class: "remark-aside__icon"
             }),
             titleSpan,
           ]),
