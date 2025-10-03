@@ -1,6 +1,6 @@
 ---
 date: 2025-08-24
-title: New features
+title: 'New features: Admonitions & Markdown Features'
 description: More new features specific to this theme.
 tags: [feature]
 category: astro
@@ -99,7 +99,7 @@ Child content
 
 :::tip[Deep Child]
 
-Deep child content
+**AST**(Abstract Syntax Tree) in Admonitions
 
 :::
 
@@ -152,7 +152,7 @@ Child content
 
 :::tip[Deep Child]
 
-Deep child content
+**AST**(Abstract Syntax Tree) in Admonitions
 
 :::
 

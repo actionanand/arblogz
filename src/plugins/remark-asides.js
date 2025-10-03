@@ -39,12 +39,20 @@ export function remarkAsides(options = {}) {
       const variant = node.name;
       if (!isAsideVariant(variant)) return;
 
+      // Store the original variant to ensure it doesn't get modified
+      const originalVariant = String(variant);
+
       // Get default title
-      let title = defaultLabel(variant);
+      let title = defaultLabel(originalVariant);
 
       // Check for custom title from directive label
       let hasCustomTitle = false;
-      remove(node, (child) => {
+      
+      // Create a copy of children to iterate over, since we'll be removing items
+      const childrenCopy = [...node.children];
+      
+      for (let i = 0; i < childrenCopy.length; i++) {
+        const child = childrenCopy[i];
         if (child.type === "paragraph" && child.data && child.data.directiveLabel === true) {
           if ("children" in child && Array.isArray(child.children)) {
             // The label is in a paragraph with children containing text nodes
@@ -54,26 +62,33 @@ export function remarkAsides(options = {}) {
               hasCustomTitle = true;
             }
           }
-          return true;
+          // Remove the label paragraph from the node's children
+          const originalIndex = node.children.indexOf(child);
+          if (originalIndex !== -1) {
+            node.children.splice(originalIndex, 1);
+          }
+          break;
         }
-        return false;
-      });
+      }
 
       // Create the title span with conditional data-translate
       const titleSpan = hasCustomTitle 
         ? h("span", {}, [{ type: "text", value: title }])
-        : h("span", { "data-translate": `aside.${variant}` }, [{ type: "text", value: title }]);
+        : h("span", { "data-translate": `aside.${originalVariant}` }, [{ type: "text", value: title }]);
 
+      // Ensure we're using the exact original variant for all CSS classes and attributes
       const aside = h(
         "aside",
         {
-          "aria-label": variant,
-          class: `remark-aside remark-aside--${variant}`,
+          "aria-label": originalVariant,
+          class: `remark-aside remark-aside--${originalVariant}`,
+          "data-variant": originalVariant, // Add explicit data attribute for debugging
         },
         [
           h("h4", {class: "remark-aside__title", "aria-hidden": "true"}, [
             h("span", {
-              class: "remark-aside__icon"
+              class: "remark-aside__icon",
+              "data-icon-variant": originalVariant, // Add explicit data attribute for debugging
             }),
             titleSpan,
           ]),
