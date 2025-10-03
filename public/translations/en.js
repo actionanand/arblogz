@@ -2,8 +2,10 @@
 const en = {
   'aside.caution': 'Caution',
   'aside.danger': 'Danger',
+  'aside.info': 'Info',
   'aside.note': 'Note',
   'aside.tip': 'Tip',
+  'aside.warning': 'Caution',
   'sidebar.categories': 'Categories',
   'sidebar.tags': 'Tags',
   'sidebar.uncategorized': 'Uncategorized',

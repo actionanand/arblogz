@@ -76,6 +76,37 @@ caution
 danger
 :::
 
+:::warning
+warning
+:::
+
+:::info
+info
+:::
+
+:::tip[New Tips]
+How is my new idea?
+:::
+
+
+:::::info[Parent]
+
+Parent content
+
+::::danger[Child]
+
+Child content
+
+:::tip[Deep Child]
+
+Deep child content
+
+:::
+
+::::
+
+:::::
+
 ```
 
 :::tip[Customized Title]
@@ -98,6 +129,36 @@ caution
 :::danger
 danger
 :::
+
+:::warning
+warning
+:::
+
+:::info
+info
+:::
+
+:::tip[New Tips]
+How is my new idea?
+:::
+
+:::::info[Parent]
+
+Parent content
+
+::::danger[Child]
+
+Child content
+
+:::tip[Deep Child]
+
+Deep child content
+
+:::
+
+::::
+
+:::::
 
 ### Support mermaid
 
@@ -228,3 +289,21 @@ for (let key of myObj) {
 }
 
 ```
+
+### Testing New Admonitions
+
+:::info[Custom Info Title]
+This is a new info admonition with custom title and blue styling.
+:::
+
+:::warning[Custom Warning Title]
+This is a warning admonition that should look like caution with orange styling.
+:::
+
+:::info
+This is a standard info admonition without custom title.
+:::
+
+:::warning
+This is a standard warning admonition without custom title.
+:::

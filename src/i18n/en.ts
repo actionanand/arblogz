@@ -1,8 +1,10 @@
 export  const en = {
   'aside.caution': 'Caution',
   'aside.danger': 'Danger',
+  'aside.info': 'Info',
   'aside.note': 'Note',
   'aside.tip':'Tip',
+  'aside.warning': 'Caution',
   'blog.tableOfContent':'Table of Contents',
   'feed.next': 'Next',
   'feed.previous': 'Previous',
