@@ -1,20 +1,24 @@
 html[data-theme="light"]{
-  --ra-color-note: #3d50f5;
-  --ra-color-note-bg: #cfd4fc;
-  --ra-color-tip: #bb3df5;
-  --ra-color-tip-bg: #edd1fa;
+  --ra-color-note: #bb3df5;
+  --ra-color-note-bg: #edd1fa;
+  --ra-color-tip: #22c55e;
+  --ra-color-tip-bg: #E6F6E6;
 
+  --ra-color-info: #3d9af5;
+  --ra-color-info-bg: #cfe7fc;
   --ra-color-caution: #f5bb3d;
   --ra-color-caution-bg: #fceac5;
   --ra-color-danger: #f53d7d;
   --ra-color-danger-bg: #fad1df;
 }
 html[data-theme="dark"]{
-  --ra-color-note: #3347ff;
-  --ra-color-note-bg: #171d4f;
-  --ra-color-tip: #bd53ee;
-  --ra-color-tip-bg: #40224e;
+  --ra-color-note: #bd53ee;
+  --ra-color-note-bg: #40224e;
+  --ra-color-tip: #16a34a;
+  --ra-color-tip-bg: #1a3a1a;
 
+  --ra-color-info: #339dff;
+  --ra-color-info-bg: #17344f;
   --ra-color-caution: #eebd53;
   --ra-color-caution-bg: #4e4022;
   --ra-color-danger: #ee5389;
@@ -40,10 +44,6 @@ html[data-theme="dark"]{
   background: var(--ra-color-note-bg);
 }
 
-.remark-aside--note svg {
-  fill: var(--ra-color-note);
-}
-
 .remark-aside--note .remark-aside__title {
   color: var(--ra-color-note) !important;
 }
@@ -53,12 +53,17 @@ html[data-theme="dark"]{
   background: var(--ra-color-tip-bg);
 }
 
-.remark-aside--tip svg {
-  fill: var(--ra-color-tip);
-}
-
 .remark-aside--tip .remark-aside__title {
   color: var(--ra-color-tip) !important;
+}
+
+.remark-aside--info {
+  border-left-color: var(--ra-color-info);
+  background: var(--ra-color-info-bg);
+}
+
+.remark-aside--info .remark-aside__title {
+  color: var(--ra-color-info) !important;
 }
 
 .remark-aside--caution {
@@ -66,21 +71,22 @@ html[data-theme="dark"]{
   background: var(--ra-color-caution-bg);
 }
 
-.remark-aside--caution svg {
-  fill: var(--ra-color-caution);
+.remark-aside--caution .remark-aside__title {
+  color: var(--ra-color-caution) !important;
 }
 
-.remark-aside--caution .remark-aside__title {
+.remark-aside--warning {
+  border-left-color: var(--ra-color-caution);
+  background: var(--ra-color-caution-bg);
+}
+
+.remark-aside--warning .remark-aside__title {
   color: var(--ra-color-caution) !important;
 }
 
 .remark-aside--danger {
   border-left-color: var(--ra-color-danger);
   background: var(--ra-color-danger-bg);
-}
-
-.remark-aside--danger svg {
-  fill: var(--ra-color-danger);
 }
 
 .remark-aside--danger .remark-aside__title {
@@ -98,8 +104,33 @@ html[data-theme="dark"]{
 
 .remark-aside__icon {
   font-size: 1.333em;
-  width: 1em;
-  height: 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.2em;
+  height: 1.2em;
+}
+
+/* Icon definitions using Unicode symbols */
+.remark-aside--note .remark-aside__icon::before {
+  content: "🔖"; /* Bookmark */
+}
+
+.remark-aside--tip .remark-aside__icon::before {
+  content: "💡"; /* Light bulb */
+}
+
+.remark-aside--info .remark-aside__icon::before {
+  content: "ℹ️"; /* Information */
+}
+
+.remark-aside--caution .remark-aside__icon::before,
+.remark-aside--warning .remark-aside__icon::before {
+  content: "⚠️"; /* Warning */
+}
+
+.remark-aside--danger .remark-aside__icon::before {
+  content: "🔥"; /* Fire/flame */
 }
 
 .remark-aside__title + .remark-aside__content {
