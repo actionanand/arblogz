@@ -1,0 +1,75 @@
+---
+export interface Props {
+  color?: string;
+  highlight?: 'bg' | 'fg' | 'format' | 'lightBg';
+  fontWeight?: string;
+  textDecoration?: string;
+  fontStyle?: string;
+  textAlign?: string;
+}
+
+const {
+  color = '#ffeb3b',
+  highlight = 'bg',
+  fontWeight = 'normal',
+  textDecoration = 'none',
+  fontStyle = 'normal',
+  textAlign = 'left'
+} = Astro.props;
+---
+
+{highlight === 'fg' && (
+  <span
+    style={{
+      color,
+      fontWeight,
+      textDecoration,
+      fontStyle,
+      textAlign
+    }}
+  >
+    <slot />
+  </span>
+)}
+
+{highlight === 'format' && (
+  <div
+    style={{
+      textAlign,
+      color,
+      fontWeight,
+      textDecoration,
+      fontStyle
+    }}
+  >
+    <slot />
+  </div>
+)}
+
+{highlight === 'lightBg' && (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#4B0082',
+      padding: '0.2rem',
+      paddingTop: '0'
+    }}
+  >
+    <slot />
+  </span>
+)}
+
+{highlight === 'bg' && (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+      paddingTop: '0'
+    }}
+  >
+    <slot />
+  </span>
+)}
