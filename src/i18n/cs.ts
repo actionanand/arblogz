@@ -49,7 +49,7 @@ export  let cs = {
   'sidebar.tags': 'Štítky',
   'sidebar.uncategorized': 'nekategorizované',
   'title.draft': 'návrh',
-  'title.minutes':' Minut',
+  'title.minutes':'Minut',
   'title.words':' Slov',
   'more': 'Více',
   'nav.blog': 'Blog',
