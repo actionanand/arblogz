@@ -53,8 +53,8 @@ const currentDate = dayjs();
     <!-- minutes -->
     {
       readingTime.minutes && readingTime.minutes !== 0 && (
-        <div class="mr-2 flex items-center"><i class="ri-hourglass-fill mr-1"/>{Math.ceil(readingTime.minutes)}<span data-translate="title.minutes">{t('title.minutes')}</span></div>
-        <div class="mr-2 flex items-center"><i class="ri-quill-pen-line mr-1"></i>{readingTime.words}<span data-translate="title.words">{t('title.words')}</span></div>
+        <div class="mr-2 flex items-center"><i class="ri-hourglass-fill mr-1"/>{Math.ceil(readingTime.minutes)} &nbsp; <span data-translate="title.minutes">{t('title.minutes')}</span></div>
+        <div class="mr-2 flex items-center"><i class="ri-quill-pen-line mr-1"></i>{readingTime.words} &nbsp; <span data-translate="title.words">{t('title.words')}</span></div>
       )
     }
   </div>
