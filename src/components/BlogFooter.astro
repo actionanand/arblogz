@@ -5,21 +5,46 @@ import {formatDate} from "@/utils/formatDate.js";
 const {title, date, url} = Astro.props;
 ---
 
-<div class="border-l-4 my-4 p-4 border-l-skin-base bg-skin-card break-all">
+<div class="border-l-4 my-4 p-4 border-l-skin-base bg-skin-card break-words space-y-3">
   {title ?
-    <div><span data-translate="footer.articleTitle">{t('footer.articleTitle')}</span>：{title}</div> : ''}
+    <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
+      <span class="text-sm font-medium text-skin-muted" data-translate="footer.articleTitle">{t('footer.articleTitle')}</span>
+      <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-800 shadow-md border border-slate-700 dark:border-slate-300 leading-relaxed">{title}</span>
+    </div> : ''}
   {
     site.author ?
-      <div><span data-translate="footer.articleAuthor">{t('footer.articleAuthor')}</span>：{site.author}</div> : ''
+      <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
+        <span class="text-sm font-medium text-skin-muted" data-translate="footer.articleAuthor">{t('footer.articleAuthor')}</span>
+        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-800 shadow-md border border-slate-700 dark:border-slate-300">{site.author}</span>
+      </div> : ''
   }
 
   {
     date ?
-      <div><span data-translate="footer.releaseTime">{t('footer.releaseTime')}</span>：{formatDate(date)}</div> : ''
+      <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
+        <span class="text-sm font-medium text-skin-muted" data-translate="footer.releaseTime">{t('footer.releaseTime')}</span>
+        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-800 shadow-md border border-slate-700 dark:border-slate-300 font-mono">{formatDate(date)}</span>
+      </div> : ''
   }
   {
-    site.url?   <div>
-      <span data-translate="footer.originalLink">{t('footer.originalLink')}</span>：<a href={site.url + url} class="hover:text-skin-active">{site.url + url}</a>
-    </div>: ''
+    site.url?   
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium text-skin-muted" data-translate="footer.originalLink">{t('footer.originalLink')}</span>
+        <div class="sm:ml-3">
+          <a 
+            href={site.url + url} 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-600 dark:bg-blue-500 text-white shadow-md border border-blue-700 dark:border-blue-400 hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200 break-all group"
+          >
+            <span class="mr-2">🔗</span>
+            <span>{site.url + url}</span>
+            <svg class="w-3 h-3 ml-2 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>: ''
   }
 </div>
