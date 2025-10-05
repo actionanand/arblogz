@@ -16,6 +16,7 @@ import {remarkGithubCard} from './src/plugins/remark-github-card.js'
 import {lazyLoadImage} from "./src/plugins/lazy-load-image.js";
 import {remarkButton} from "./src/plugins/remark-button.js";
 import {remarkHtml} from "./src/plugins/remark-html.js";
+import {remarkColorHighlight} from "./src/plugins/remark-simple-highlight.js";
 
 export default defineConfig({
   site: site.url,
@@ -34,7 +35,7 @@ export default defineConfig({
     themeCssSelector: (theme) => `[data-theme="${theme.type}"]`
   }), mdx()],
   markdown: {
-    remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}), remarkCollapse({}), remarkGithubCard(), remarkButton(), remarkHtml()],
+    remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}), remarkCollapse({}), remarkGithubCard(), remarkButton(), remarkHtml(), remarkColorHighlight],
     rehypePlugins: [lazyLoadImage],
   }
 });

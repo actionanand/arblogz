@@ -11,6 +11,7 @@ const blog = defineCollection({
     sticky: z.number().default(0).nullable(),
     mathjax: z.boolean().default(false).nullable(),
     mermaid: z.boolean().default(false).nullable(),
+    colorHighlight: z.boolean().default(false).nullable(),
     draft: z.boolean().default(false).nullable(),
     toc: z.boolean().default(true).nullable(),
     donate: z.boolean().default(true).nullable(),
