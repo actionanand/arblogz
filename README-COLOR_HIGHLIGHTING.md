@@ -19,7 +19,8 @@ This plugin allows you to add colored text highlights directly in your markdown 
 
 ### Features
 
-- ✅ Simple syntax: `==text|color==`
+- ✅ Simple syntax: `==text|color==` or `==text|color|mode==`
+- ✅ Two highlighting modes: background (default) and foreground
 - ✅ Performance optimized (only processes enabled posts)
 - ✅ No client-side JavaScript required
 - ✅ Supports hex colors, RGB, and named colors
@@ -46,8 +47,8 @@ export function remarkColorHighlight() {
     visit(tree, 'text', (node, index, parent) => {
       if (!node.value || !parent) return;
       
-      // Simple pattern: ==text|color==
-      const regex = /==(.*?)\|(.*?)==/g;
+      // Enhanced pattern: ==text|color== or ==text|color|mode==
+      const regex = /==(.*?)\|(.*?)(?:\|(.*?))?==/g;
       const matches = [...node.value.matchAll(regex)];
       
       if (matches.length === 0) return;
@@ -56,7 +57,7 @@ export function remarkColorHighlight() {
       let lastIndex = 0;
       
       for (const match of matches) {
-        const [fullMatch, text, color] = match;
+        const [fullMatch, text, color, mode = 'bg'] = match;
         const matchStart = match.index;
         const matchEnd = matchStart + fullMatch.length;
         
@@ -68,10 +69,20 @@ export function remarkColorHighlight() {
           });
         }
         
+        // Generate HTML based on mode
+        let html = '';
+        if (mode === 'fg') {
+          // Foreground mode: color text only, no background
+          html = `<span style="color: ${color};">${text}</span>`;
+        } else {
+          // Background mode (default): colored background with white text
+          html = `<span style="background-color: ${color}; color: white; padding: 0.2rem; border-radius: 4px;">${text}</span>`;
+        }
+        
         // Add colored text as HTML
         newNodes.push({
           type: 'html',
-          value: `<span style="background-color: ${color}; color: white; padding: 0.2rem; border-radius: 4px;">${text}</span>`
+          value: html
         });
         
         lastIndex = matchEnd;
@@ -154,69 +165,89 @@ colorHighlight: true
 
 ### 2. Use the Syntax
 
-In your markdown content, use the simple syntax:
+In your markdown content, use the enhanced syntax:
 
+#### Background Mode (Default)
 ```markdown
 This is normal text, but ==this is highlighted|#ff0000== with a red background.
+```
 
-You can have multiple colors: ==success|#28a745== and ==warning|#ffc107== in the same line.
+#### Foreground Mode
+```markdown
+This text has ==colored text|#ff0000|fg== with no background.
+```
+
+#### Mixed Usage
+```markdown
+You can have ==background highlights|#28a745== and ==foreground colors|#dc3545|fg== in the same line.
 ```
 
 ### 3. Result
 
-The text will be rendered with:
-- Colored background
-- White text (for readability)
-- Rounded corners
-- Padding for better appearance
+- **Background mode**: Text with colored background, white text, rounded corners, and padding
+- **Foreground mode**: Text with colored foreground only, no background styling
 
 ## 🎨 Color Palette
 
 ### Standard Colors
 
-| Color | Hex Code | Usage |
-|-------|----------|-------|
-| Red | `#ff0000` | `==Important|#ff0000==` |
-| Green | `#28a745` | `==Success|#28a745==` |
-| Blue | `#007bff` | `==Info|#007bff==` |
-| Yellow | `#ffc107` | `==Warning|#ffc107==` |
-| Purple | `#6f42c1` | `==Note|#6f42c1==` |
-| Orange | `#fd7e14` | `==Alert|#fd7e14==` |
-| Pink | `#e83e8c` | `==Special|#e83e8c==` |
-| Teal | `#20c997` | `==Tip|#20c997==` |
+| Color | Hex Code | Background Mode | Foreground Mode |
+|-------|----------|------------------|------------------|
+| Red | `#ff0000` | `==Important\|#ff0000==` | `==Important\|#ff0000\|fg==` |
+| Green | `#28a745` | `==Success\|#28a745==` | `==Success\|#28a745\|fg==` |
+| Blue | `#007bff` | `==Info\|#007bff==` | `==Info\|#007bff\|fg==` |
+| Yellow | `#ffc107` | `==Warning\|#ffc107==` | `==Warning\|#ffc107\|fg==` |
+| Purple | `#6f42c1` | `==Note\|#6f42c1==` | `==Note\|#6f42c1\|fg==` |
+| Orange | `#fd7e14` | `==Alert\|#fd7e14==` | `==Alert\|#fd7e14\|fg==` |
+| Pink | `#e83e8c` | `==Special\|#e83e8c==` | `==Special\|#e83e8c\|fg==` |
+| Teal | `#20c997` | `==Tip\|#20c997==` | `==Tip\|#20c997\|fg==` |
 
 ### Semantic Colors
 
-| Purpose | Color | Hex Code | Example |
-|---------|-------|----------|---------|
-| Important | Red | `#dc3545` | `==Important|#dc3545==` |
-| Success | Green | `#28a745` | `==Success|#28a745==` |
-| Warning | Yellow | `#ffc107` | `==Warning|#ffc107==` |
-| Info | Blue | `#17a2b8` | `==Info|#17a2b8==` |
-| Primary | Blue | `#007bff` | `==Primary|#007bff==` |
-| Secondary | Gray | `#6c757d` | `==Secondary|#6c757d==` |
-| Danger | Red | `#dc3545` | `==Danger|#dc3545==` |
+| Purpose | Color | Hex Code | Background Mode | Foreground Mode |
+|---------|-------|----------|------------------|------------------|
+| Important | Red | `#dc3545` | `==Important\|#dc3545==` | `==Important\|#dc3545\|fg==` |
+| Success | Green | `#28a745` | `==Success\|#28a745==` | `==Success\|#28a745\|fg==` |
+| Warning | Yellow | `#ffc107` | `==Warning\|#ffc107==` | `==Warning\|#ffc107\|fg==` |
+| Info | Blue | `#17a2b8` | `==Info\|#17a2b8==` | `==Info\|#17a2b8\|fg==` |
+| Primary | Blue | `#007bff` | `==Primary\|#007bff==` | `==Primary\|#007bff\|fg==` |
+| Secondary | Gray | `#6c757d` | `==Secondary\|#6c757d==` | `==Secondary\|#6c757d\|fg==` |
+| Danger | Red | `#dc3545` | `==Danger\|#dc3545==` | `==Danger\|#dc3545\|fg==` |
 
 ### Special Colors
 
-| Color | Hex Code | Usage |
-|-------|----------|-------|
-| WhatsApp Green | `#25c2a0` | `==WhatsApp|#25c2a0==` |
-| Silver | `#C0C0C0` | `==Silver|#C0C0C0==` |
-| Dark Gray | `#343a40` | `==Dark|#343a40==` |
-| Light Gray | `#f8f9fa` | `==Light|#f8f9fa==` |
+| Color | Hex Code | Background Mode | Foreground Mode |
+|-------|----------|------------------|------------------|
+| WhatsApp Green | `#25c2a0` | `==WhatsApp\|#25c2a0==` | `==WhatsApp\|#25c2a0\|fg==` |
+| Silver | `#C0C0C0` | `==Silver\|#C0C0C0==` | `==Silver\|#C0C0C0\|fg==` |
+| Dark Gray | `#343a40` | `==Dark\|#343a40==` | `==Dark\|#343a40\|fg==` |
+| Light Gray | `#f8f9fa` | `==Light\|#f8f9fa==` | `==Light\|#f8f9fa\|fg==` |
 
 ### Examples in Action
 
 ```markdown
 Here are some examples:
 
-- ==Important notice|#dc3545== - Red for important information
-- ==Success message|#28a745== - Green for positive feedback
-- ==Warning alert|#ffc107== - Yellow for caution
-- ==Info note|#17a2b8== - Blue for general information
-- ==WhatsApp contact|#25c2a0== - WhatsApp brand color
-- ==Silver badge|#C0C0C0== - Subtle silver highlighting
+**Background Mode (Default):**
+- ==Important notice|#dc3545== - Red background for important information
+- ==Success message|#28a745== - Green background for positive feedback
+- ==Warning alert|#ffc107== - Yellow background for caution
+- ==Info note|#17a2b8== - Blue background for general information
+
+**Foreground Mode:**
+- ==Important notice|#dc3545|fg== - Red text for important information
+- ==Success message|#28a745|fg== - Green text for positive feedback
+- ==Warning alert|#ffc107|fg== - Yellow text for caution
+- ==Info note|#17a2b8|fg== - Blue text for general information
+
+**Special Colors:**
+- ==WhatsApp contact|#25c2a0== - WhatsApp brand color background
+- ==WhatsApp contact|#25c2a0|fg== - WhatsApp brand color text
+- ==Silver badge|#C0C0C0== - Subtle silver background
+- ==Silver badge|#C0C0C0|fg== - Subtle silver text
+
+**Mixed Usage:**
+This tutorial covers ==HTML|#e34c26== (background), ==CSS|#1572b6|fg== (foreground), and ==JavaScript|#f7df1e== (background) fundamentals.
 ```
 
 ## 🔧 Technical Implementation
@@ -241,11 +272,20 @@ Markdown Input → Remark Parser → Plugin Processing → HTML Output
 
 ### Generated HTML
 
-Input: `==Important|#ff0000==`
+Input: `==Important|#ff0000==` (Background mode)
 
 Output: 
 ```html
 <span style="background-color: #ff0000; color: white; padding: 0.2rem; border-radius: 4px;">
+  Important
+</span>
+```
+
+Input: `==Important|#ff0000|fg==` (Foreground mode)
+
+Output:
+```html
+<span style="color: #ff0000;">
   Important
 </span>
 ```
@@ -269,23 +309,30 @@ if (!frontmatter?.colorHighlight) {
 ### 2. Pattern Matching
 
 ```javascript
-const regex = /==(.*?)\|(.*?)==/g;
+const regex = /==(.*?)\|(.*?)(?:\|(.*?))?==/g;
 const matches = [...node.value.matchAll(regex)];
 ```
 
-**Pattern Breakdown**:
+**Enhanced Pattern Breakdown**:
 - `==` - Start delimiter
 - `(.*?)` - Non-greedy capture for text content
 - `\|` - Pipe separator (escaped)
 - `(.*?)` - Non-greedy capture for color value
+- `(?:\|(.*?))?` - Optional non-capturing group for mode parameter
 - `==` - End delimiter
 - `g` - Global flag for multiple matches
+
+**Syntax Support**:
+- `==text|color==` - Background mode (default)
+- `==text|color|fg==` - Foreground mode
+- `==text|color|bg==` - Explicit background mode
 
 **Why This Pattern**:
 - Simple and intuitive
 - No conflicts with existing markdown
 - Easy to type and remember
 - Reliable parsing
+- Backward compatible with original syntax
 
 ### 3. Node Replacement
 
@@ -305,17 +352,28 @@ parent.children.splice(index, 1, ...newNodes);
 ### 4. HTML Generation
 
 ```javascript
-newNodes.push({
-  type: 'html',
-  value: `<span style="background-color: ${color}; color: white; padding: 0.2rem; border-radius: 4px;">${text}</span>`
-});
+// Generate HTML based on mode
+let html = '';
+if (mode === 'fg') {
+  // Foreground mode: color text only, no background
+  html = `<span style="color: ${color};">${text}</span>`;
+} else {
+  // Background mode (default): colored background with white text
+  html = `<span style="background-color: ${color}; color: white; padding: 0.2rem; border-radius: 4px;">${text}</span>`;
+}
 ```
 
 **Style Choices**:
+
+**Background Mode**:
 - `background-color`: User-specified color
 - `color: white`: Ensures readability on colored backgrounds
 - `padding: 0.2rem`: Comfortable spacing
 - `border-radius: 4px`: Modern rounded appearance
+
+**Foreground Mode**:
+- `color`: User-specified color
+- No background styling for clean text highlighting
 
 ## 🎯 Performance Considerations
 
@@ -422,20 +480,28 @@ colorHighlight: true
 
 Let me show you some ==amazing highlights|#ff6b6b==!
 
-## Status Messages
+## Status Messages (Background Mode)
 
 - ==Success|#28a745==: Operation completed successfully
 - ==Warning|#ffc107==: Please review your settings  
 - ==Error|#dc3545==: Something went wrong
 - ==Info|#17a2b8==: Here's some useful information
 
-## Social Media Colors
+## Text Highlighting (Foreground Mode)
 
-Contact me on ==WhatsApp|#25c2a0== for quick responses!
+- This is ==important text|#dc3545|fg== you should read
+- Contact me on ==WhatsApp|#25c2a0|fg== for quick responses
+- ==Silver|#C0C0C0|fg== members get early access
 
 ## Mixed Content
 
-This sentence has ==multiple|#ff0000== ==different|#00ff00== ==colored|#0000ff== words!
+This sentence has ==background highlights|#ff0000== and ==foreground colors|#00ff00|fg== together!
+
+### Comparison Examples
+
+- Background: ==Highlighted|#6f42c1== vs Foreground: ==Highlighted|#6f42c1|fg==
+- Background: ==Important|#dc3545== vs Foreground: ==Important|#dc3545|fg==
+- Background: ==Success|#28a745== vs Foreground: ==Success|#28a745|fg==
 
 Happy highlighting! 🎨
 ```
