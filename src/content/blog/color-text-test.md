@@ -23,6 +23,7 @@ Testing the three color modes with additional CSS styling: normal (background), 
 
 ## Normal/Background Mode with CSS Styling
 - `==Bold red background|#ff6b6b|bg|bold==` → ==Bold red background|#ff6b6b|bg|bold==
+- `==Bold red background|white|#ff6b6b|dual|bold==` → ==Bold red background|white|#ff6b6b|dual|bold==
 - `==Italic blue background|#4299e1|bg||italic==` → ==Italic blue background|#4299e1|bg||italic==
 - `==Bold italic green|#25c2a0|bg|bold|italic==` → ==Bold italic green|#25c2a0|bg|bold|italic==
 
@@ -34,6 +35,8 @@ Testing the three color modes with additional CSS styling: normal (background), 
 ## Dual Mode with CSS Styling
 - `==Bold purple on green|#4B0082|#D1FFBD|dual|bold==` → ==Bold purple on green|#4B0082|#D1FFBD|dual|bold==
 - `==Italic white on red|#ffffff|#ff0000|dual||italic==` → ==Italic white on red|#ffffff|#ff0000|dual||italic==
+- `==Caribbean green & white text|white|#25c2a0|dual==` → ==Caribbean green & white text|white|#25c2a0|dual==
+- `==Silver style|white|#C0C0C0|dual==` → ==Silver style|white|#C0C0C0|dual==
 
 ## Simplified Syntax (background mode)
 - `==Bold warning|#ffc107|bold==` → ==Bold warning|#ffc107|bold==
@@ -79,8 +82,7 @@ Text alignment requires block display, which is automatically applied when text-
 
 ==Center aligned foreground text|#d32f2f|fg|||center==
 
-### Dual Mode Text Alignment
-
+**Original test case:**
 `==Center aligned dual mode|#ffffff|#1976d2|dual|||center==`
 
 ==Center aligned dual mode|#ffffff|#1976d2|dual|||center==
