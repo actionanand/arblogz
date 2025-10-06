@@ -1,4 +1,12 @@
-# Color Highlighting Plugin for Astro
+# Color Highlightin### Features
+
+- ✅ Simple syntax: `==text|color==`, `==text|color|mode==`, or `==text|fgColor|bgColor|dual==`
+- ✅ Three highlighting modes: background (default), foreground, and dual
+- ✅ Performance optimized (only processes enabled posts)
+- ✅ No client-side JavaScript required
+- ✅ Supports hex colors, RGB, and named colors
+- ✅ Automatic white text on dark backgrounds
+- ✅ Responsive and accessible designor Astro
 
 A simple and reliable markdown plugin that adds color highlighting capabilities to your Astro blog posts.
 
@@ -19,8 +27,9 @@ This plugin allows you to add colored text highlights directly in your markdown 
 
 ### Features
 
-- ✅ Simple syntax: `==text|color==` or `==text|color|mode==`
-- ✅ Two highlighting modes: background (default) and foreground
+- ✅ Simple syntax: `==text|color==`, `==text|color|mode==`, or `==text|fgColor|bgColor|dual==`
+- ✅ Three highlighting modes: background (default), foreground, and dual
+- ✅ Inline markdown support: **bold**, *italic*, ***bold-italic***, __underline__, ~~strikethrough~~
 - ✅ Performance optimized (only processes enabled posts)
 - ✅ No client-side JavaScript required
 - ✅ Supports hex colors, RGB, and named colors
@@ -177,42 +186,43 @@ This is normal text, but ==this is highlighted|#ff0000== with a red background.
 This text has ==colored text|#ff0000|fg== with no background.
 ```
 
-#### Mixed Usage
+#### Dual Mode (Foreground + Background)
 ```markdown
-You can have ==background highlights|#28a745== and ==foreground colors|#dc3545|fg== in the same line.
+This has ==white text on red background|#ffffff|#ff0000|dual== styling.
 ```
 
 ### 3. Result
 
 - **Background mode**: Text with colored background, white text, rounded corners, and padding
-- **Foreground mode**: Text with colored foreground only, no background styling
+- **Foreground mode**: Text with colored foreground only, no background styling  
+- **Dual mode**: Custom foreground and background colors with full control
 
 ## 🎨 Color Palette
 
 ### Standard Colors
 
-| Color | Hex Code | Background Mode | Foreground Mode |
-|-------|----------|------------------|------------------|
-| Red | `#ff0000` | `==Important\|#ff0000==` | `==Important\|#ff0000\|fg==` |
-| Green | `#28a745` | `==Success\|#28a745==` | `==Success\|#28a745\|fg==` |
-| Blue | `#007bff` | `==Info\|#007bff==` | `==Info\|#007bff\|fg==` |
-| Yellow | `#ffc107` | `==Warning\|#ffc107==` | `==Warning\|#ffc107\|fg==` |
-| Purple | `#6f42c1` | `==Note\|#6f42c1==` | `==Note\|#6f42c1\|fg==` |
-| Orange | `#fd7e14` | `==Alert\|#fd7e14==` | `==Alert\|#fd7e14\|fg==` |
-| Pink | `#e83e8c` | `==Special\|#e83e8c==` | `==Special\|#e83e8c\|fg==` |
-| Teal | `#20c997` | `==Tip\|#20c997==` | `==Tip\|#20c997\|fg==` |
+| Color | Hex Code | Background Mode | Foreground Mode | Dual Mode |
+|-------|----------|------------------|------------------|-----------|
+| Red | `#ff0000` | `==Important\|#ff0000==` | `==Important\|#ff0000\|fg==` | `==Important\|#ffffff\|#ff0000\|dual==` |
+| Green | `#28a745` | `==Success\|#28a745==` | `==Success\|#28a745\|fg==` | `==Success\|#ffffff\|#28a745\|dual==` |
+| Blue | `#007bff` | `==Info\|#007bff==` | `==Info\|#007bff\|fg==` | `==Info\|#ffffff\|#007bff\|dual==` |
+| Yellow | `#ffc107` | `==Warning\|#ffc107==` | `==Warning\|#ffc107\|fg==` | `==Warning\|#000000\|#ffc107\|dual==` |
+| Purple | `#6f42c1` | `==Note\|#6f42c1==` | `==Note\|#6f42c1\|fg==` | `==Note\|#ffffff\|#6f42c1\|dual==` |
+| Orange | `#fd7e14` | `==Alert\|#fd7e14==` | `==Alert\|#fd7e14\|fg==` | `==Alert\|#ffffff\|#fd7e14\|dual==` |
+| Pink | `#e83e8c` | `==Special\|#e83e8c==` | `==Special\|#e83e8c\|fg==` | `==Special\|#ffffff\|#e83e8c\|dual==` |
+| Teal | `#20c997` | `==Tip\|#20c997==` | `==Tip\|#20c997\|fg==` | `==Tip\|#ffffff\|#20c997\|dual==` |
 
 ### Semantic Colors
 
-| Purpose | Color | Hex Code | Background Mode | Foreground Mode |
-|---------|-------|----------|------------------|------------------|
-| Important | Red | `#dc3545` | `==Important\|#dc3545==` | `==Important\|#dc3545\|fg==` |
-| Success | Green | `#28a745` | `==Success\|#28a745==` | `==Success\|#28a745\|fg==` |
-| Warning | Yellow | `#ffc107` | `==Warning\|#ffc107==` | `==Warning\|#ffc107\|fg==` |
-| Info | Blue | `#17a2b8` | `==Info\|#17a2b8==` | `==Info\|#17a2b8\|fg==` |
-| Primary | Blue | `#007bff` | `==Primary\|#007bff==` | `==Primary\|#007bff\|fg==` |
-| Secondary | Gray | `#6c757d` | `==Secondary\|#6c757d==` | `==Secondary\|#6c757d\|fg==` |
-| Danger | Red | `#dc3545` | `==Danger\|#dc3545==` | `==Danger\|#dc3545\|fg==` |
+| Purpose | Color | Hex Code | Background Mode | Foreground Mode | Dual Mode |
+|---------|-------|----------|------------------|------------------|-----------|
+| Important | Red | `#dc3545` | `==Important\|#dc3545==` | `==Important\|#dc3545\|fg==` | `==Important\|#ffffff\|#dc3545\|dual==` |
+| Success | Green | `#28a745` | `==Success\|#28a745==` | `==Success\|#28a745\|fg==` | `==Success\|#ffffff\|#28a745\|dual==` |
+| Warning | Yellow | `#ffc107` | `==Warning\|#ffc107==` | `==Warning\|#ffc107\|fg==` | `==Warning\|#000000\|#ffc107\|dual==` |
+| Info | Blue | `#17a2b8` | `==Info\|#17a2b8==` | `==Info\|#17a2b8\|fg==` | `==Info\|#ffffff\|#17a2b8\|dual==` |
+| Primary | Blue | `#007bff` | `==Primary\|#007bff==` | `==Primary\|#007bff\|fg==` | `==Primary\|#ffffff\|#007bff\|dual==` |
+| Secondary | Gray | `#6c757d` | `==Secondary\|#6c757d==` | `==Secondary\|#6c757d\|fg==` | `==Secondary\|#ffffff\|#6c757d\|dual==` |
+| Danger | Red | `#dc3545` | `==Danger\|#dc3545==` | `==Danger\|#dc3545\|fg==` | `==Danger\|#ffffff\|#dc3545\|dual==` |
 
 ### Special Colors
 
