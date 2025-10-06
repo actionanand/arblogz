@@ -1,20 +1,13 @@
-# Color Highlightin### Features
+# Color Highlighting for Astro
 
-- ✅ Simple syntax: `==text|color==`, `==text|color|mode==`, or `==text|fgColor|bgColor|dual==`
-- ✅ Three highlighting modes: background (default), foreground, and dual
-- ✅ Performance optimized (only processes enabled posts)
-- ✅ No client-side JavaScript required
-- ✅ Supports hex colors, RGB, and named colors
-- ✅ Automatic white text on dark backgrounds
-- ✅ Responsive and accessible designor Astro
-
-A simple and reliable markdown plugin that adds color highlighting capabilities to your Astro blog posts.
+A simple and reliable markdown plugin that adds color highlighting capabilities with CSS styling modes to your Astro blog posts.
 
 ## 📋 Table of Contents
 
 - [Overview](#overview)
 - [Installation & Configuration](#installation--configuration)
 - [Usage](#usage)
+- [CSS Styling Modes](#css-styling-modes)
 - [Color Palette](#color-palette)
 - [Technical Implementation](#technical-implementation)
 - [Plugin Logic](#plugin-logic)
@@ -23,13 +16,14 @@ A simple and reliable markdown plugin that adds color highlighting capabilities 
 
 ## 🎨 Overview
 
-This plugin allows you to add colored text highlights directly in your markdown content using a simple syntax. It's designed to be lightweight, reliable, and easy to use.
+This plugin allows you to add colored text highlights with additional CSS styling directly in your markdown content using a simple syntax. It's designed to be lightweight, reliable, and easy to use.
 
 ### Features
 
 - ✅ Simple syntax: `==text|color==`, `==text|color|mode==`, or `==text|fgColor|bgColor|dual==`
 - ✅ Three highlighting modes: background (default), foreground, and dual
-- ✅ Inline markdown support: **bold**, *italic*, ***bold-italic***, __underline__, ~~strikethrough~~
+- ✅ CSS styling modes: fontWeight, fontStyle, textAlign
+- ✅ Extended syntax: `==text|color|mode|fontWeight|fontStyle|textAlign==`
 - ✅ Performance optimized (only processes enabled posts)
 - ✅ No client-side JavaScript required
 - ✅ Supports hex colors, RGB, and named colors
@@ -197,7 +191,80 @@ This has ==white text on red background|#ffffff|#ff0000|dual== styling.
 - **Foreground mode**: Text with colored foreground only, no background styling  
 - **Dual mode**: Custom foreground and background colors with full control
 
-## 🎨 Color Palette
+## � CSS Styling Modes
+
+Beyond basic color highlighting, you can add CSS styling properties like font weight, font style, and text alignment.
+
+### Extended Syntax
+
+```markdown
+==text|color|mode|fontWeight|fontStyle|textAlign==
+```
+
+or for background mode (default):
+
+```markdown
+==text|color|fontWeight|fontStyle|textAlign==
+```
+
+### Font Weight Options
+
+- `bold` - Bold text
+- `bolder` - Bolder than parent
+- `lighter` - Lighter than parent  
+- `normal` - Normal weight
+- `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900` - Numeric weights
+
+**Examples:**
+```markdown
+==Bold background text|#ff6b6b|bold==
+==Bold foreground text|#800031|fg|bold==
+==Bold dual mode|#4B0082|#D1FFBD|dual|bold==
+```
+
+### Font Style Options
+
+- `italic` - Italic text
+- `oblique` - Oblique text
+- `normal` - Normal style
+
+**Examples:**
+```markdown
+==Italic background|#4299e1||italic==
+==Italic foreground|#004080|fg||italic==
+==Italic dual mode|#ffffff|#ff0000|dual||italic==
+```
+
+### Combined Styling
+
+You can combine multiple CSS properties:
+
+```markdown
+==Bold italic warning|#ffc107|bold|italic==
+==Light italic info|#17a2b8|lighter|italic==
+==Bold success message|#28a745|fg|bold==
+==Bold italic special|#000000|#ffd700|dual|bold|italic==
+```
+
+### Parameter Order
+
+1. **Text** - The content to highlight
+2. **Color** - Primary color (background color for bg mode, text color for fg mode)
+3. **Mode** - `bg`, `fg`, or for dual mode: second color parameter
+4. **Font Weight** - `bold`, `normal`, `lighter`, `bolder`, or numeric
+5. **Font Style** - `italic`, `oblique`, `normal`
+6. **Text Align** - `left`, `center`, `right`, `justify` (Note: text-align has limited effect on inline spans)
+
+### Skip Parameters
+
+Use empty values to skip parameters:
+```markdown
+==Just italic|#ff6b6b||italic==          # Skip fontWeight, add italic
+==Just bold|#4299e1|bold==               # Only add bold
+==Bold and italic|#25c2a0|bold|italic==  # Both bold and italic
+```
+
+## �🎨 Color Palette
 
 ### Standard Colors
 
