@@ -22,7 +22,7 @@ export function remarkColorHighlight() {
       let lastIndex = 0;
       
       for (const match of matches) {
-        const [fullMatch, rawText, param1, param2, param3, param4, param5] = match;
+        const [fullMatch, rawText, param1, param2, param3, param4, param5, param6] = match;
         const matchStart = match.index;
         const matchEnd = matchStart + fullMatch.length;
         
@@ -38,7 +38,7 @@ export function remarkColorHighlight() {
         let processedText = rawText;
         
         // Parse parameters for styling
-        const styleConfig = parseStyleParameters(param1, param2, param3, param4, param5);
+        const styleConfig = parseStyleParameters(param1, param2, param3, param4, param5, param6);
         const style = buildStyleString(styleConfig);
         
         // Create the final HTML
@@ -70,7 +70,7 @@ export function remarkColorHighlight() {
 }
 
 // Parse style parameters into a configuration object
-function parseStyleParameters(param1, param2, param3, param4, param5) {
+function parseStyleParameters(param1, param2, param3, param4, param5, param6) {
   const config = {
     mode: 'bg', // default mode
     fgColor: null,
@@ -86,9 +86,10 @@ function parseStyleParameters(param1, param2, param3, param4, param5) {
     config.mode = 'dual';
     config.fgColor = param1;
     config.bgColor = param2;
-    // Additional styles in param4, param5
+    // Additional styles in param4, param5, param6
     config.fontWeight = param4;
     config.fontStyle = param5;
+    config.textAlign = param6;
   } else if (param2 === 'fg') {
     // Foreground mode: param1=color, param2='fg'
     config.mode = 'fg';
@@ -171,6 +172,7 @@ function buildStyleString(config) {
   }
   
   if (config.textAlign) {
+    styles.push(`display: block`);
     styles.push(`text-align: ${config.textAlign}`);
   }
   

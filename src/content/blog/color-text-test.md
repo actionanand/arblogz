@@ -53,6 +53,42 @@ Testing the three color modes with additional CSS styling: normal (background), 
 - `==Italic style|#4299e1||italic==` → ==Italic style|#4299e1||italic==
 - `==Oblique style|#4299e1||oblique==` → ==Oblique style|#4299e1||oblique==
 
+## Text Alignment Examples
+
+Text alignment requires block display, which is automatically applied when text-align is used:
+
+`==Left aligned text|#e3f2fd||||left==`
+
+==Left aligned text|#e3f2fd||||left==
+
+`==Center aligned text|#fff3e0||||center==`
+
+==Center aligned text|#fff3e0||||center==
+
+`==Right aligned text|#f3e5f5||||right==`
+
+==Right aligned text|#f3e5f5||||right==
+
+`==Justified text with longer content|#e8f5e8||||justify==`
+
+==This is a longer text block that demonstrates justified alignment. When text is justified, it stretches to fill the full width of the container, creating even margins on both left and right sides. This alignment mode distributes spacing between words to achieve this effect.|#e8f5e8||||justify==
+
+### Foreground Mode Text Alignment
+
+`==Center aligned foreground text|#d32f2f|fg|||center==`
+
+==Center aligned foreground text|#d32f2f|fg|||center==
+
+### Dual Mode Text Alignment
+
+`==Center aligned dual mode|#ffffff|#1976d2|dual|||center==`
+
+==Center aligned dual mode|#ffffff|#1976d2|dual|||center==
+
+`==Right aligned dual with bold|#000000|#ffeb3b|dual|bold||right==`
+
+==Right aligned dual with bold|#000000|#ffeb3b|dual|bold||right==
+
 ## Combined Styling Examples
 - `==Bold italic warning|#ffc107|bold|italic==` → ==Bold italic warning|#ffc107|bold|italic==
 - `==Light italic info|#17a2b8|lighter|italic==` → ==Light italic info|#17a2b8|lighter|italic==
