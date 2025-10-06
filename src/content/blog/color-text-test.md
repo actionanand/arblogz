@@ -1,52 +1,68 @@
 ---
-title: "Color Highlighting Test"
-description: "Testing the color highlighting feature - three modes only"
+title: "Color Highlighting with CSS Styling Test"
+description: "Testing the enhanced color highlighting feature with CSS styling modes"
 date: 2025-10-05
 colorHighlight: true
-tags: ["test", "colors"]
+tags: ["test", "colors", "styling"]
 ---
 
-# Color Highlighting Test
+# Color Highlighting with CSS Styling Test
 
-Testing the three color modes: normal (background), foreground, and dual.
+Testing the three color modes with additional CSS styling: normal (background), foreground, and dual.
 
-## syntax: 
+## Basic Syntax: 
 
-`==your text|color==`, `==your text|color|mode==`, or `==your text|fgColor|bgColor|dual==`
+- `==your text|color==` - Default background mode
+- `==your text|color|fg==` - Foreground mode
+- `==your text|fgColor|bgColor|dual==` - Dual mode
 
-## Normal/Background Mode (default)
-- `==This is red background|#ff6b6b==` → ==This is red background|#ff6b6b==
-- `==This is blue background|#4299e1==` → ==This is blue background|#4299e1==
-- `==This is green background|#25c2a0==` → ==This is green background|#25c2a0==
+## Extended Syntax with CSS Styling:
 
-## Foreground Mode
-- `==Dark red text|#800031|fg==` → ==Dark red text|#800031|fg==
-- `==Navy blue text|#004080|fg==` → ==Navy blue text|#004080|fg==
-- `==Teal text|#006666|fg==` → ==Teal text|#006666|fg==
+- `==text|color|mode|fontWeight|fontStyle|textAlign==`
+- `==text|color|fontWeight|fontStyle|textAlign==` (default background mode)
 
-## Dual Mode (foreground + background)
-- `==Purple on light green|#4B0082|#D1FFBD|dual==` → ==Purple on light green|#4B0082|#D1FFBD|dual==
-- `==White on red|#ffffff|#ff0000|dual==` → ==White on red|#ffffff|#ff0000|dual==
-- `==Black on yellow|#000000|#ffff00|dual==` → ==Black on yellow|#000000|#ffff00|dual==
+## Normal/Background Mode with CSS Styling
+- `==Bold red background|#ff6b6b|bg|bold==` → ==Bold red background|#ff6b6b|bg|bold==
+- `==Italic blue background|#4299e1|bg||italic==` → ==Italic blue background|#4299e1|bg||italic==
+- `==Bold italic green|#25c2a0|bg|bold|italic==` → ==Bold italic green|#25c2a0|bg|bold|italic==
 
-## Test Cases for All Modes
+## Foreground Mode with CSS Styling
+- `==Bold dark red text|#800031|fg|bold==` → ==Bold dark red text|#800031|fg|bold==
+- `==Italic navy text|#004080|fg||italic==` → ==Italic navy text|#004080|fg||italic==
+- `==Bold italic teal|#006666|fg|bold|italic==` → ==Bold italic teal|#006666|fg|bold|italic==
 
-### Background Mode Tests
-- `==Success message|#28a745==` → ==Success message|#28a745==
-- `==Warning alert|#ffc107==` → ==Warning alert|#ffc107==
-- `==Error notice|#dc3545==` → ==Error notice|#dc3545==
-- `==Info text|#17a2b8==` → ==Info text|#17a2b8==
+## Dual Mode with CSS Styling
+- `==Bold purple on green|#4B0082|#D1FFBD|dual|bold==` → ==Bold purple on green|#4B0082|#D1FFBD|dual|bold==
+- `==Italic white on red|#ffffff|#ff0000|dual||italic==` → ==Italic white on red|#ffffff|#ff0000|dual||italic==
 
-### Foreground Mode Tests
-- `==Important note|#800031|fg==` → ==Important note|#800031|fg==
-- `==Technical detail|#004080|fg==` → ==Technical detail|#004080|fg==
-- `==Success indicator|#006666|fg==` → ==Success indicator|#006666|fg==
-- `==Secondary info|#6c757d|fg==` → ==Secondary info|#6c757d|fg==
+## Simplified Syntax (background mode)
+- `==Bold warning|#ffc107|bold==` → ==Bold warning|#ffc107|bold==
+- `==Italic success|#28a745||italic==` → ==Italic success|#28a745||italic==
+- `==Bold italic error|#dc3545|bold|italic==` → ==Bold italic error|#dc3545|bold|italic==
 
-### Dual Mode Tests
-- `==Main highlight|#4B0082|#D1FFBD|dual==` → ==Main highlight|#4B0082|#D1FFBD|dual==
-- `==Urgent alert|#ffffff|#dc3545|dual==` → ==Urgent alert|#ffffff|#dc3545|dual==
-- `==Success notification|#000000|#28a745|dual==` → ==Success notification|#000000|#28a745|dual==
-- `==Warning message|#000000|#ffc107|dual==` → ==Warning message|#000000|#ffc107|dual==
+## Font Weight Examples
+- `==Normal weight|#ff6b6b==` → ==Normal weight|#ff6b6b==
+- `==Bold weight|#ff6b6b|bold==` → ==Bold weight|#ff6b6b|bold==
+- `==Bold weight explicit bg|#ff6b6b|bg|bold==` → ==Bold weight explicit bg|#ff6b6b|bg|bold==
+- `==Lighter weight|#ff6b6b|lighter==` → ==Lighter weight|#ff6b6b|lighter==
+- `==Bolder weight|#ff6b6b|bolder==` → ==Bolder weight|#ff6b6b|bolder==
+- `==700 weight|#ff6b6b|700==` → ==700 weight|#ff6b6b|700==
 
-Perfect for simple color highlighting! 🎨
+## Font Style Examples
+- `==Normal style|#4299e1==` → ==Normal style|#4299e1==
+- `==Italic style|#4299e1||italic==` → ==Italic style|#4299e1||italic==
+- `==Oblique style|#4299e1||oblique==` → ==Oblique style|#4299e1||oblique==
+
+## Combined Styling Examples
+- `==Bold italic warning|#ffc107|bold|italic==` → ==Bold italic warning|#ffc107|bold|italic==
+- `==Light italic info|#17a2b8|lighter|italic==` → ==Light italic info|#17a2b8|lighter|italic==
+- `==Bold success message|#28a745|fg|bold==` → ==Bold success message|#28a745|fg|bold==
+- `==Italic error text|#dc3545|fg||italic==` → ==Italic error text|#dc3545|fg||italic==
+
+## Dual Mode Advanced Styling
+- `==Bold white on dark|#ffffff|#343a40|dual|bold==` → ==Bold white on dark|#ffffff|#343a40|dual|bold==
+- `==Italic light on primary|#ffffff|#007bff|dual||italic==` → ==Italic light on primary|#ffffff|#007bff|dual||italic==
+- `==Bold italic special|#000000|#ffd700|dual|bold|italic==` → ==Bold italic special|#000000|#ffd700|dual|bold|italic==
+- `==Normal dual colors|#4B0082|#D1FFBD|dual==` → ==Normal dual colors|#4B0082|#D1FFBD|dual==
+
+Perfect for enhanced color highlighting with CSS styling! 🎨✨

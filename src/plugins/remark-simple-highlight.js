@@ -11,8 +11,9 @@ export function remarkColorHighlight() {
     visit(tree, 'text', (node, index, parent) => {
       if (!node.value || !parent) return;
       
-      // Simple pattern: ==text|color== or ==text|color|mode== or ==text|fgColor|bgColor|dual==
-      const regex = /==(.*?)\|(.*?)(?:\|(.*?))?(?:\|(.*?))?==/g;
+      // Extended pattern: ==text|color== or ==text|color|mode== or ==text|fgColor|bgColor|dual== 
+      // or ==text|color|mode|fontWeight|fontStyle|textAlign== etc.
+      const regex = /==(.*?)\|([^|]*?)(?:\|([^|]*?))?(?:\|([^|]*?))?(?:\|([^|]*?))?(?:\|([^|]*?))?==/g;
       const matches = [...node.value.matchAll(regex)];
       
       if (matches.length === 0) return;
@@ -21,7 +22,7 @@ export function remarkColorHighlight() {
       let lastIndex = 0;
       
       for (const match of matches) {
-        const [fullMatch, rawText, param1, param2, param3] = match;
+        const [fullMatch, rawText, param1, param2, param3, param4, param5] = match;
         const matchStart = match.index;
         const matchEnd = matchStart + fullMatch.length;
         
@@ -36,18 +37,9 @@ export function remarkColorHighlight() {
         // Simple approach: just use the text as-is, no markdown processing
         let processedText = rawText;
         
-        // Determine styling
-        let style = '';
-        if (param3 === 'dual') {
-          // Dual mode: fg and bg colors
-          style = `color: ${param1} !important; background-color: ${param2}; padding: 0.2rem; border-radius: 4px;`;
-        } else if (param2 === 'fg') {
-          // Foreground mode
-          style = `color: ${param1} !important;`;
-        } else {
-          // Default background mode
-          style = `background-color: ${param1}; color: white !important; padding: 0.2rem; border-radius: 4px;`;
-        }
+        // Parse parameters for styling
+        const styleConfig = parseStyleParameters(param1, param2, param3, param4, param5);
+        const style = buildStyleString(styleConfig);
         
         // Create the final HTML
         const html = `<span style="${style}">${processedText}</span>`;
@@ -77,23 +69,78 @@ export function remarkColorHighlight() {
   };
 }
 
-// Apply color styling to text (which may already contain HTML formatting)
-function applyColorStyling(text, mode, fgColor, bgColor) {
-  let styles = [];
+// Parse style parameters into a configuration object
+function parseStyleParameters(param1, param2, param3, param4, param5) {
+  const config = {
+    mode: 'bg', // default mode
+    fgColor: null,
+    bgColor: null,
+    fontWeight: null,
+    fontStyle: null,
+    textAlign: null
+  };
   
-  switch (mode) {
+  // Determine the mode and colors based on parameters
+  if (param3 === 'dual') {
+    // Dual mode: param1=fgColor, param2=bgColor, param3='dual'
+    config.mode = 'dual';
+    config.fgColor = param1;
+    config.bgColor = param2;
+    // Additional styles in param4, param5
+    config.fontWeight = param4;
+    config.fontStyle = param5;
+  } else if (param2 === 'fg') {
+    // Foreground mode: param1=color, param2='fg'
+    config.mode = 'fg';
+    config.fgColor = param1;
+    // Additional styles in param3, param4, param5
+    config.fontWeight = param3;
+    config.fontStyle = param4;
+    config.textAlign = param5;
+  } else if (param2 === 'bg' || !param2) {
+    // Background mode: param1=color, param2='bg' or undefined
+    config.mode = 'bg';
+    config.bgColor = param1;
+    // Additional styles in param3, param4, param5
+    config.fontWeight = param3;
+    config.fontStyle = param4;
+    config.textAlign = param5;
+  } else {
+    // Assume param1=color, param2=fontWeight, param3=fontStyle, param4=textAlign
+    config.mode = 'bg'; // default
+    config.bgColor = param1;
+    config.fontWeight = param2;
+    config.fontStyle = param3;
+    config.textAlign = param4;
+  }
+  
+  return config;
+}
+
+// Build CSS style string from configuration
+function buildStyleString(config) {
+  const styles = [];
+  
+  // Check if any custom styling is applied
+  const hasCustomStyling = config.fontWeight || config.fontStyle || config.textAlign;
+  
+  // Apply color styling based on mode
+  switch (config.mode) {
     case 'fg':
       // Foreground mode: color text only
-      if (fgColor) {
-        styles.push(`color: ${fgColor} !important`);
+      if (config.fgColor) {
+        styles.push(`color: ${config.fgColor} !important`);
       }
       break;
       
     case 'bg':
-      // Background mode: colored background with white text
-      if (bgColor) {
-        styles.push(`background-color: ${bgColor}`);
-        styles.push('color: white !important');
+      // Background mode: colored background
+      if (config.bgColor) {
+        styles.push(`background-color: ${config.bgColor}`);
+        // Only force white text if no custom styling is applied
+        if (!hasCustomStyling) {
+          styles.push('color: white !important');
+        }
         styles.push('padding: 0.2rem');
         styles.push('border-radius: 4px');
       }
@@ -101,45 +148,31 @@ function applyColorStyling(text, mode, fgColor, bgColor) {
       
     case 'dual':
       // Dual mode: both foreground and background colors
-      if (fgColor) {
-        styles.push(`color: ${fgColor} !important`);
+      if (config.fgColor && !hasCustomStyling) {
+        styles.push(`color: ${config.fgColor} !important`);
+      } else if (config.fgColor && hasCustomStyling) {
+        styles.push(`color: ${config.fgColor}`);
       }
-      if (bgColor) {
-        styles.push(`background-color: ${bgColor}`);
+      if (config.bgColor) {
+        styles.push(`background-color: ${config.bgColor}`);
       }
       styles.push('padding: 0.2rem');
       styles.push('border-radius: 4px');
       break;
-      
-    default:
-      // Default to background mode
-      const color = bgColor || fgColor;
-      if (color) {
-        styles.push(`background-color: ${color}`);
-        styles.push('color: white !important');
-        styles.push('padding: 0.2rem');
-        styles.push('border-radius: 4px');
-      }
   }
   
-  const styleString = styles.join('; ');
+  // Apply additional CSS styling
+  if (config.fontWeight) {
+    styles.push(`font-weight: ${config.fontWeight}`);
+  }
   
-  // Wrap the text (which may contain HTML) with the color span
-  // The !important declaration should override any default styles
-  return `<span style="${styleString}">${text}</span>`;
-}
-
-// Process inline markdown formatting on plain text
-function processInlineMarkdown(text) {
-  return text
-    // Bold and italic: ***text*** → <strong><em>text</em></strong>
-    .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
-    // Bold: **text** → <strong>text</strong>
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    // Italic: *text* → <em>text</em>
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    // Underline: __text__ → <u>text</u>
-    .replace(/__(.*?)__/g, '<u>$1</u>')
-    // Strikethrough: ~~text~~ → <s>text</s>
-    .replace(/~~(.*?)~~/g, '<s>$1</s>');
+  if (config.fontStyle) {
+    styles.push(`font-style: ${config.fontStyle}`);
+  }
+  
+  if (config.textAlign) {
+    styles.push(`text-align: ${config.textAlign}`);
+  }
+  
+  return styles.join('; ');
 }
