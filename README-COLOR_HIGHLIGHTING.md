@@ -253,7 +253,19 @@ You can combine multiple CSS properties:
 3. **Mode** - `bg`, `fg`, or for dual mode: second color parameter
 4. **Font Weight** - `bold`, `normal`, `lighter`, `bolder`, or numeric
 5. **Font Style** - `italic`, `oblique`, `normal`
-6. **Text Align** - `left`, `center`, `right`, `justify` (Note: text-align has limited effect on inline spans)
+6. **Text Align** - `left`, `center`, `right`, `justify` (automatically sets `display: block` for proper alignment)
+
+### Text Alignment Behavior
+
+When `text-align` is specified, the element automatically gets `display: block` to ensure proper alignment:
+
+```markdown
+==Centered text|#e3f2fd||||center==
+==Right aligned|#fff3e0||||right==
+==Justified longer text content|#e8f5e8||||justify==
+```
+
+This creates block-level elements that can be properly aligned, unlike inline spans which don't respond to text-align properties.
 
 ### Skip Parameters
 
