@@ -52,11 +52,16 @@ export function remarkCollapse(options) {
           class: "remark-collapse"
         }, [
           h("summary", {class: "remark-collapse__summary"}, [
-            h("span", {
-              "data-translate": "remark.open"
-            }, [
-              {type: "text", value: title}
-            ])
+            // Only add data-translate if using default label, not custom title
+            title === options.label 
+              ? h("span", {
+                  "data-translate": "remark.open"
+                }, [
+                  {type: "text", value: title}
+                ])
+              : h("span", {}, [
+                  {type: "text", value: title}
+                ])
           ]),
           h("div", {class: "remark-collapse__content"}, node.children),
         ]);
