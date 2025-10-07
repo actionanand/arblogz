@@ -1,6 +1,6 @@
 ---
 date: 2025-08-24
-title: 'New features: Admonitions & Markdown Features'
+title: 'New features: Admonitions/Callouts & Markdown Features'
 description: More new features specific to this theme.
 tags: [feature]
 category: astro
@@ -47,6 +47,7 @@ ogImage: https://astro-yi.obs.cn-east-3.myhuaweicloud.com/avatar.png
 
 ### Support collapse
 
+**Basic collapse (default title):**
 ```bash
 :::collapse
 Hello World!
@@ -57,7 +58,109 @@ Hello World!
 Hello World!
 :::
 
-### Support admonitions
+**Collapse with custom title:**
+```bash
+:::collapse[Custom Title Here]
+This is content inside a collapse with a custom title!
+:::
+```
+
+:::collapse[Custom Title Here]
+This is content inside a collapse with a custom title!
+:::
+
+**Another example with a longer title:**
+```bash
+:::collapse[Click to expand detailed information]
+This collapse section has a descriptive title that explains what's inside.
+
+You can put any content here:
+- Lists
+- Code blocks
+- Images
+- Any markdown content
+:::
+```
+
+:::collapse[Click to expand detailed information]
+This collapse section has a descriptive title that explains what's inside.
+
+You can put any content here:
+- Lists
+- Code blocks  
+- Images
+- Any markdown content
+
+**Testing overlapping fix:** This content should not overlap with the elements below when the collapse is expanded. The new CSS styling should provide proper spacing and container behavior.
+
+```javascript
+// This code block should be properly contained
+function testFunction() {
+  console.log("Testing collapse content");
+  return "No overlap should occur";
+}
+```
+
+1. First item in a list
+2. Second item with more content to test spacing
+3. Third item to ensure proper layout
+:::
+
+**Using 'details' syntax (alternative):**
+```bash
+:::details[Technical Details]
+The collapse feature also supports the `:::details` syntax as an alternative to `:::collapse`.
+:::
+```
+
+:::details[Technical Details]
+The collapse feature also supports the `:::details` syntax as an alternative to `:::collapse`.
+:::
+
+### Testing Custom Titles and SVG Arrows
+
+:::collapse[🎯 Custom Title with Emoji]
+This collapse has a custom title with an emoji and should show a nice SVG arrow that rotates smoothly when expanded.
+
+The arrow changes color based on the theme (light/dark mode) and has a subtle scale effect on hover.
+:::
+
+:::collapse[📋 Technical Features Demo]
+**Features of the new SVG arrow:**
+
+1. **Smooth rotation animation** (90 degrees)
+2. **Theme-aware colors** (dark/light mode support)
+3. **Hover effects** with subtle scaling
+4. **Cubic-bezier easing** for professional feel
+5. **No overlap issues** with proper spacing
+
+```javascript
+// Example code to test formatting
+function testCollapse() {
+  console.log("SVG arrow animation working!");
+  return "Perfect spacing and animation";
+}
+```
+
+**List items work perfectly:**
+- First item
+- Second item with longer content
+- Third item to test spacing
+:::
+
+:::collapse[🎨 Visual Design Improvements]
+The new design includes:
+
+- **SVG-based arrow icon** instead of Unicode character
+- **Flexbox layout** for better alignment  
+- **Theme-aware styling** with proper contrast
+- **Smooth animations** with easing functions
+- **Hover interactions** for better UX
+
+> This blockquote should also be properly spaced within the collapse content.
+:::
+
+### Support admonitions/Callouts 
 
 ```markdown
 :::tip[Customized Title]
@@ -290,7 +393,7 @@ for (let key of myObj) {
 
 ```
 
-### Testing New Admonitions
+### Testing New Admonitions/Callouts 
 
 :::info[Custom Info Title]
 This is a new info admonition with custom title and blue styling.

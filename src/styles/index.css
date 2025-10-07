@@ -11,6 +11,94 @@
   src: url('./JetBrainsMono-Regular.ttf');
 }
 
+/* Collapse/Details Component Styling */
+.remark-collapse {
+  margin: 1rem 0;
+  border: 1px solid rgb(var(--color-fill));
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.remark-collapse__summary {
+  padding: 0.75rem 1rem;
+  background-color: rgb(var(--color-fill-secondary));
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.remark-collapse__summary:hover {
+  background-color: rgb(var(--color-card));
+}
+
+.remark-collapse__summary:hover::before {
+  transform: scale(1.1);
+}
+
+.remark-collapse__summary::-webkit-details-marker {
+  display: none;
+}
+
+.remark-collapse__summary::marker {
+  content: none;
+}
+
+.remark-collapse__summary::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 0.5rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+/* Light theme arrow */
+:root .remark-collapse__summary::before,
+html[data-theme="light"] .remark-collapse__summary::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23666666'%3E%3Cpath d='M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z'/%3E%3C/svg%3E");
+}
+
+/* Dark theme arrow */
+html[data-theme="dark"] .remark-collapse__summary::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23a3a3a3'%3E%3Cpath d='M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z'/%3E%3C/svg%3E");
+}
+
+.remark-collapse[open] .remark-collapse__summary::before {
+  transform: rotate(90deg);
+}
+
+.remark-collapse[open] .remark-collapse__summary:hover::before {
+  transform: rotate(90deg) scale(1.1);
+}
+
+.remark-collapse__content {
+  padding: 1rem;
+  background-color: rgb(var(--color-fill-secondary));
+  border-top: 1px solid rgb(var(--color-fill));
+}
+
+.remark-collapse__content > *:first-child {
+  margin-top: 0;
+}
+
+.remark-collapse__content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure proper spacing and no overlap */
+.remark-collapse + * {
+  margin-top: 1rem;
+}
+
 /**
 覆写tailwindcss 默认样式
  */
