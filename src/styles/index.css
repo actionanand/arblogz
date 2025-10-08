@@ -248,6 +248,1107 @@ menu {
   background-color: inherit;
 }
 
+/* ===============================================
+   AWESOME TABLE DESIGN SYSTEM
+   =============================================== */
+
+/* Base Table Styling - Clean Foundation */
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0 !important;
+  margin: 1.5rem 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background: rgb(var(--color-fill-secondary)) !important;
+  border-radius: 8px;
+  overflow-x: auto !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  table-layout: auto !important;
+  word-wrap: break-word !important;
+}
+
+/* Default Headers - Enhanced */
+.markdown-body table th {
+  background: linear-gradient(135deg, 
+    rgb(var(--color-text) / 0.12), 
+    rgb(var(--color-text) / 0.08)) !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+  padding: 14px 16px !important;
+  border: none !important;
+  border-bottom: 3px solid rgb(var(--color-border) / 0.3) !important;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  word-wrap: break-word !important;
+}
+
+/* Default Cells */
+.markdown-body table td {
+  padding: 12px 16px !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(var(--color-fill) / 0.3) !important;
+  vertical-align: top;
+  background: transparent !important;
+  transition: all 0.2s ease;
+  word-wrap: break-word !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Default Row Styling with Strong Alternation */
+.markdown-body table tbody tr {
+  background: rgb(var(--color-fill-secondary)) !important;
+  transition: all 0.2s ease;
+}
+
+.markdown-body table tbody tr:nth-child(even) {
+  background: rgb(var(--color-fill)) !important;
+}
+
+.markdown-body table tbody tr:hover {
+  background: rgb(var(--color-border) / 0.15) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* default with grid */
+
+.table-default-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.table-default-grid table th {
+  border: 1px solid #D0D7DE !important;
+}
+
+.table-default-grid table td {
+  border: 1px solid #D0D7DE !important;
+}
+
+/* ===============================================
+   AWESOME TABLE VARIANTS
+   =============================================== */
+
+/* 1. APP THEME GREEN - ENHANCED WITH GREEN ALTERNATING ROWS */
+.table-green {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-green table {
+  background: rgb(var(--color-fill-secondary)) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2) !important;
+  border: none !important;
+}
+
+.table-green th {
+  background: linear-gradient(135deg, 
+    rgb(var(--color-border)), 
+    rgb(var(--color-border-active))) !important;
+  color: white !important;
+  font-weight: 800 !important;
+  padding: 16px 20px !important;
+  border: none !important;
+  text-transform: capitalize;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid rgb(var(--color-border-active)) !important;
+}
+
+.table-green td {
+  padding: 14px 20px !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2) !important;
+  background: rgb(var(--color-fill-secondary)) !important;
+}
+
+.table-green tbody tr:nth-child(odd) {
+  background: rgb(var(--color-fill-secondary)) !important;
+}
+
+.table-green tbody tr:nth-child(even) {
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+.table-green tbody tr:nth-child(even) td {
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+.table-green tbody tr:hover {
+  background: rgba(16, 185, 129, 0.15) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.table-green tbody tr:hover td {
+  background: rgba(16, 185, 129, 0.15) !important;
+}
+
+/* 2. NEON CYBER STYLE - FIXED */
+.table-cyber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-cyber-border table {
+  border: 2px solid #00ff88 !important;
+}
+
+.table-cyber table {
+  background: #1a1a1a !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.4) !important;
+}
+
+.table-cyber th {
+  background: linear-gradient(135deg, #00ff88, #00cc6a) !important;
+  color: #000000 !important;
+  font-weight: 900 !important;
+  padding: 16px 20px !important;
+  border: none !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid #00ff88 !important;
+}
+
+.table-cyber td {
+  padding: 14px 20px !important;
+  border: none !important;
+  border-bottom: 1px solid #333 !important;
+  color: #00ff88 !important;
+  background: #1a1a1a !important;
+  font-weight: 500;
+}
+
+.table-cyber tbody tr:nth-child(odd) {
+  background: #1a1a1a !important;
+}
+
+.table-cyber tbody tr:nth-child(even) {
+  background: #242424 !important;
+}
+
+.table-cyber tbody tr:hover {
+  background: rgba(0, 255, 136, 0.2) !important;
+  box-shadow: inset 0 0 15px rgba(0, 255, 136, 0.3);
+  transform: translateY(-1px);
+}
+
+.table-cyber tbody tr:nth-child(even) td {
+  background: #242424 !important;
+}
+
+.table-cyber tbody tr:hover td {
+  background: rgba(0, 255, 136, 0.2) !important;
+}
+
+/* 3. LUXURY GOLD THEME */
+.table-luxury {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-luxury table {
+  background: linear-gradient(135deg, #fff9e6, #fef7e0) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2) !important;
+}
+
+.table-luxury th {
+  background: linear-gradient(135deg, #d4af37, #b8941f) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  padding: 18px 24px !important;
+  border: none !important;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.table-luxury td {
+  padding: 16px 24px !important;
+  border: none !important;
+  border-bottom: 1px solid #f0e68c !important;
+  color: #5d4e37 !important;
+}
+
+.table-luxury tbody tr:nth-child(odd) {
+  background: #fff9e6 !important;
+}
+
+.table-luxury tbody tr:nth-child(even) {
+  background: rgba(212, 175, 55, 0.12) !important;
+}
+
+.table-luxury tbody tr:hover {
+  background: rgba(212, 175, 55, 0.25) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* 4. OCEAN BLUE THEME */
+.table-ocean {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-ocean-border table {
+  border: 2px solid #3b82f6 !important;
+}
+
+.table-ocean table {
+  background: linear-gradient(135deg, #e6f3ff, #cce6ff) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15) !important;
+  /* border: none !important; */
+}
+
+.table-ocean th {
+  background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  padding: 16px 20px !important;
+  border: none !important;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+.table-ocean td {
+  padding: 14px 20px !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2) !important;
+  color: #1e40af !important;
+}
+
+.table-ocean tbody tr:nth-child(odd) {
+  background: #f0f9ff !important;
+}
+
+.table-ocean tbody tr:nth-child(even) {
+  background: rgba(59, 130, 246, 0.1) !important;
+}
+
+.table-ocean tbody tr:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.2);
+}
+
+/* 5. SUNSET ORANGE THEME */
+.table-sunset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-sunset-border table {
+  border: 2px solid #fb923c !important;
+}
+
+.table-sunset table {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(251, 146, 60, 0.15) !important;
+  /* border: none !important; */
+}
+
+.table-sunset th {
+  background: linear-gradient(135deg, #fb923c, #ea580c) !important;
+  color: white !important;
+  font-weight: 800 !important;
+  padding: 16px 20px !important;
+  border: none !important;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+}
+
+.table-sunset td {
+  padding: 14px 20px !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(251, 146, 60, 0.2) !important;
+  color: #9a3412 !important;
+}
+
+.table-sunset tbody tr:nth-child(odd) {
+  background: #fff7ed !important;
+}
+
+.table-sunset tbody tr:nth-child(even) {
+  background: rgba(251, 146, 60, 0.12) !important;
+}
+
+.table-sunset tbody tr:hover {
+  background: rgba(251, 146, 60, 0.25) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(251, 146, 60, 0.2);
+}
+
+/* 6. PURPLE ROYAL THEME */
+.table-royal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-royal-border table {
+  border: 1px solid #9333ea !important;
+}
+
+.table-royal table {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.15) !important;
+  /* border: none !important; */
+}
+
+.table-royal th {
+  background: linear-gradient(135deg, #9333ea, #7c3aed) !important;
+  color: white !important;
+  font-weight: 800 !important;
+  padding: 16px 20px !important;
+  border: none !important;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.table-royal td {
+  padding: 14px 20px !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(147, 51, 234, 0.2) !important;
+  color: #581c87 !important;
+}
+
+.table-royal tbody tr:nth-child(odd) {
+  background: #faf5ff !important;
+}
+
+.table-royal tbody tr:nth-child(even) {
+  background: rgba(147, 51, 234, 0.1) !important;
+}
+
+.table-royal tbody tr:hover {
+  background: rgba(147, 51, 234, 0.2) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(147, 51, 234, 0.2);
+}
+
+/* 7. MINIMAL LINES THEME */
+.table-lines table {
+  background: transparent !important;
+  border-radius: 0 !important;
+  overflow: visible;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.table-lines th {
+  background: transparent !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 700 !important;
+  padding: 16px 16px !important;
+  border: none !important;
+  border-bottom: 3px solid rgb(var(--color-border)) !important;
+  text-transform: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+.table-lines td {
+  padding: 14px 16px !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(var(--color-text) / 0.15) !important;
+}
+
+.table-lines tbody tr:nth-child(odd) {
+  background: transparent !important;
+}
+
+.table-lines tbody tr:nth-child(even) {
+  background: rgb(var(--color-fill) / 0.3) !important;
+}
+
+.table-lines tbody tr:hover {
+  background: rgb(var(--color-text) / 0.08) !important;
+}
+
+/* 8. GRID TABLE WITH VERTICAL LINES - ENHANCED */
+.table-grid table {
+  background: rgb(var(--color-fill-secondary)) !important;
+  border-radius: 0 !important;
+  overflow: visible;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid rgb(var(--color-text) / 0.3) !important;
+}
+
+.table-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-grid th {
+  background: linear-gradient(135deg, 
+    rgb(var(--color-text) / 0.15), 
+    rgb(var(--color-text) / 0.1)) !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 700 !important;
+  padding: 14px 16px !important;
+  border-right: 2px solid rgb(var(--color-text) / 0.3) !important;
+  border-bottom: 3px solid rgb(var(--color-text) / 0.4) !important;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.table-grid th:last-child {
+  border-right: 2px solid rgb(var(--color-text) / 0.3) !important;
+}
+
+.table-grid td {
+  padding: 12px 16px !important;
+  border-right: 2px solid rgb(var(--color-text) / 0.2) !important;
+  border-bottom: 1px solid rgb(var(--color-text) / 0.2) !important;
+  background: rgb(var(--color-fill-secondary)) !important;
+}
+
+.table-grid td:last-child {
+  border-right: 2px solid rgb(var(--color-text) / 0.2) !important;
+}
+
+.table-grid tbody tr:nth-child(odd) {
+  background: rgb(var(--color-fill-secondary)) !important;
+}
+
+.table-grid tbody tr:nth-child(even) {
+  background: rgb(var(--color-fill)) !important;
+}
+
+.table-grid tbody tr:nth-child(even) td {
+  background: rgb(var(--color-fill)) !important;
+}
+
+.table-grid tbody tr:hover {
+  background: rgb(var(--color-text) / 0.08) !important;
+}
+
+.table-grid tbody tr:hover td {
+  background: rgb(var(--color-text) / 0.08) !important;
+}
+
+/* EXCEL-STYLE GRID TABLE */
+.table-excel table {
+  background: rgb(var(--color-fill-secondary)) !important;
+  border-radius: 0 !important;
+  overflow: visible;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  border: 2px solid rgb(var(--color-text) / 0.4) !important;
+}
+
+.table-excel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-excel th {
+  background: rgb(var(--color-text) / 0.12) !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 600 !important;
+  padding: 10px 12px !important;
+  border-right: 1px solid rgb(var(--color-text) / 0.3) !important;
+  border-bottom: 2px solid rgb(var(--color-text) / 0.4) !important;
+  text-align: center !important;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.table-excel th:last-child {
+  border-right: 1px solid rgb(var(--color-text) / 0.3) !important;
+}
+
+.table-excel td {
+  padding: 8px 12px !important;
+  border-right: 1px solid rgb(var(--color-text) / 0.25) !important;
+  border-bottom: 1px solid rgb(var(--color-text) / 0.2) !important;
+  text-align: center !important;
+  font-size: 0.85rem;
+  background: rgb(var(--color-fill-secondary)) !important;
+}
+
+.table-excel td:last-child {
+  border-right: 1px solid rgb(var(--color-text) / 0.25) !important;
+}
+
+.table-excel tbody tr:nth-child(odd) {
+  background: rgb(var(--color-fill-secondary)) !important;
+}
+
+.table-excel tbody tr:nth-child(even) {
+  background: rgb(var(--color-fill)) !important;
+}
+
+.table-excel tbody tr:nth-child(even) td {
+  background: rgb(var(--color-fill)) !important;
+}
+
+.table-excel tbody tr:hover {
+  background: rgb(var(--color-text) / 0.06) !important;
+}
+
+.table-excel tbody tr:hover td {
+  background: rgb(var(--color-text) / 0.06) !important;
+}
+
+/* GRID COLOR VARIANTS */
+
+/* Red Grid Variant */
+.table-grid-red {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .table-grid-red table {
+  border: 2px solid #dc2626 !important;
+} */
+
+.table-grid-red th {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  color: white !important;
+  border-right: 2px solid #b91c1c !important;
+  border-bottom: 3px solid #991b1b !important;
+}
+
+.table-grid-red td {
+  border-right: 1px solid #fecaca !important;
+  border-bottom: 1px solid #fecaca !important;
+}
+
+.table-grid-red tbody tr:nth-child(even) {
+  background: rgba(220, 38, 38, 0.05) !important;
+}
+
+.table-grid-red tbody tr:nth-child(even) td {
+  background: rgba(220, 38, 38, 0.05) !important;
+}
+
+.table-grid-red tbody tr:hover {
+  background: rgba(220, 38, 38, 0.1) !important;
+}
+
+.table-grid-red tbody tr:hover td {
+  background: rgba(220, 38, 38, 0.1) !important;
+}
+
+/* Blue Grid Variant */
+.table-grid-blue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .table-grid-blue table {
+  border: 2px solid #2563eb !important;
+} */
+
+.table-grid-blue th {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: white !important;
+  border-right: 2px solid #1d4ed8 !important;
+  border-bottom: 3px solid #1e40af !important;
+}
+
+.table-grid-blue td {
+  border-right: 1px solid #bfdbfe !important;
+  border-bottom: 1px solid #bfdbfe !important;
+}
+
+.table-grid-blue tbody tr:nth-child(even) {
+  background: rgba(37, 99, 235, 0.05) !important;
+}
+
+.table-grid-blue tbody tr:nth-child(even) td {
+  background: rgba(37, 99, 235, 0.05) !important;
+}
+
+.table-grid-blue tbody tr:hover {
+  background: rgba(37, 99, 235, 0.1) !important;
+}
+
+.table-grid-blue tbody tr:hover td {
+  background: rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Purple Grid Variant */
+.table-grid-purple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .table-grid-purple table {
+  border: 2px solid #7c3aed !important;
+} */
+
+.table-grid-purple th {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+  color: white !important;
+  border-right: 2px solid #6d28d9 !important;
+  border-bottom: 3px solid #5b21b6 !important;
+}
+
+.table-grid-purple td {
+  border-right: 1px solid #c4b5fd !important;
+  border-bottom: 1px solid #c4b5fd !important;
+}
+
+.table-grid-purple tbody tr:nth-child(even) {
+  background: rgba(124, 58, 237, 0.05) !important;
+}
+
+.table-grid-purple tbody tr:nth-child(even) td {
+  background: rgba(124, 58, 237, 0.05) !important;
+}
+
+.table-grid-purple tbody tr:hover {
+  background: rgba(124, 58, 237, 0.1) !important;
+}
+
+.table-grid-purple tbody tr:hover td {
+  background: rgba(124, 58, 237, 0.1) !important;
+}
+
+/* ===============================================
+   GRID VARIANTS FOR ALL THEMES
+   =============================================== */
+
+/* Green Grid Variant */
+.table-green-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-green-border table {
+  border: 2px solid rgb(var(--color-border)) !important;
+}
+
+.table-green-grid table td, .table-green-grid table th {
+  border: 1px solid rgb(var(--color-border)) !important;
+}
+
+.table-green-grid table {
+  background: rgb(var(--color-fill-secondary)) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2) !important;
+  border: 1.5px solid rgb(var(--color-border)) !important;
+}
+
+.table-green-grid th {
+  background: linear-gradient(135deg, 
+    rgb(var(--color-border)), 
+    rgb(var(--color-border-active))) !important;
+  color: white !important;
+  font-weight: 800 !important;
+  padding: 16px 20px !important;
+  border-right: 2px solid rgb(var(--color-border-active)) !important;
+  border-bottom: 3px solid rgb(var(--color-border-active)) !important;
+  text-transform: capitalize;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.table-green-grid td {
+  padding: 14px 20px !important;
+  border-right: 2px solid rgba(16, 185, 129, 0.3) !important;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2) !important;
+  background: rgb(var(--color-fill-secondary)) !important;
+}
+
+.table-green-grid tbody tr:nth-child(odd) {
+  background: rgb(var(--color-fill-secondary)) !important;
+}
+
+.table-green-grid tbody tr:nth-child(even) {
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+.table-green-grid tbody tr:nth-child(even) td {
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+.table-green-grid tbody tr:hover {
+  background: rgba(16, 185, 129, 0.15) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.table-green-grid tbody tr:hover td {
+  background: rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Cyber Grid Variant */
+.table-cyber-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-cyber-grid table td, .table-cyber-grid table th {
+  border: 1px solid #00ff88 !important;
+}
+
+.table-cyber-grid table {
+  background: #1a1a1a !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.4) !important;
+  border: 1.5px solid #00ff88 !important;
+}
+
+.table-cyber-grid th {
+  background: linear-gradient(135deg, #00ff88, #00cc6a) !important;
+  color: #000000 !important;
+  font-weight: 900 !important;
+  padding: 16px 20px !important;
+  border-right: 2px solid #00cc6a !important;
+  border-bottom: 2px solid #00ff88 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.table-cyber-grid td {
+  padding: 14px 20px !important;
+  border-right: 2px solid #333 !important;
+  border-bottom: 1px solid #333 !important;
+  color: #00ff88 !important;
+  background: #1a1a1a !important;
+  font-weight: 500;
+}
+
+.table-cyber-grid tbody tr:nth-child(odd) {
+  background: #1a1a1a !important;
+}
+
+.table-cyber-grid tbody tr:nth-child(even) {
+  background: #242424 !important;
+}
+
+.table-cyber-grid tbody tr:nth-child(even) td {
+  background: #242424 !important;
+}
+
+.table-cyber-grid tbody tr:hover {
+  background: rgba(0, 255, 136, 0.2) !important;
+  box-shadow: inset 0 0 15px rgba(0, 255, 136, 0.3);
+  transform: translateY(-1px);
+}
+
+.table-cyber-grid tbody tr:hover td {
+  background: rgba(0, 255, 136, 0.2) !important;
+}
+
+/* Luxury Grid Variant */
+.table-luxury-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-luxury-border table {
+  border: 2px solid #d4af37 !important;
+}
+
+.table-luxury-grid table td, .table-luxury-grid table th {
+  border: 1px solid #d4af37 !important;
+}
+
+.table-luxury-grid table {
+  background: linear-gradient(135deg, #fff9e6, #fef7e0) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2) !important;
+  border: 1.5px solid #d4af37 !important;
+}
+
+.table-luxury-grid th {
+  background: linear-gradient(135deg, #d4af37, #b8941f) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  padding: 18px 24px !important;
+  border-right: 2px solid #b8941f !important;
+  border-bottom: 3px solid #b8941f !important;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.table-luxury-grid td {
+  padding: 16px 24px !important;
+  border-right: 2px solid #f0e68c !important;
+  border-bottom: 1px solid #f0e68c !important;
+  color: #5d4e37 !important;
+}
+
+.table-luxury-grid tbody tr:nth-child(odd) {
+  background: #fff9e6 !important;
+}
+
+.table-luxury-grid tbody tr:nth-child(even) {
+  background: rgba(212, 175, 55, 0.12) !important;
+}
+
+.table-luxury-grid tbody tr:nth-child(even) td {
+  background: rgba(212, 175, 55, 0.12) !important;
+}
+
+.table-luxury-grid tbody tr:hover {
+  background: rgba(212, 175, 55, 0.25) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.table-luxury-grid tbody tr:hover td {
+  background: rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Ocean Grid Variant */
+.table-ocean-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-ocean-grid table td, .table-ocean-grid table th {
+  border: 1px solid #3b82f6 !important;
+}
+
+.table-ocean-grid table {
+  background: linear-gradient(135deg, #e6f3ff, #cce6ff) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15) !important;
+  border: 1.5px solid #3b82f6 !important;
+}
+
+.table-ocean-grid th {
+  background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  padding: 16px 20px !important;
+  border-right: 2px solid #2563eb !important;
+  border-bottom: 3px solid #2563eb !important;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+.table-ocean-grid td {
+  padding: 14px 20px !important;
+  border-right: 2px solid rgba(59, 130, 246, 0.3) !important;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2) !important;
+  color: #1e40af !important;
+}
+
+.table-ocean-grid tbody tr:nth-child(odd) {
+  background: #f0f9ff !important;
+}
+
+.table-ocean-grid tbody tr:nth-child(even) {
+  background: rgba(59, 130, 246, 0.1) !important;
+}
+
+.table-ocean-grid tbody tr:nth-child(even) td {
+  background: rgba(59, 130, 246, 0.1) !important;
+}
+
+.table-ocean-grid tbody tr:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.2);
+}
+
+.table-ocean-grid tbody tr:hover td {
+  background: rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Sunset Grid Variant */
+.table-sunset-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-sunset-grid table td, .table-sunset-grid table th {
+  border: 1px solid #fb923c !important;
+}
+
+.table-sunset-grid table {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(251, 146, 60, 0.15) !important;
+  border: 1.5px solid #fb923c !important;
+}
+
+.table-sunset-grid th {
+  background: linear-gradient(135deg, #fb923c, #ea580c) !important;
+  color: white !important;
+  font-weight: 800 !important;
+  padding: 16px 20px !important;
+  border-right: 2px solid #ea580c !important;
+  border-bottom: 3px solid #ea580c !important;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+}
+
+.table-sunset-grid td {
+  padding: 14px 20px !important;
+  border-right: 2px solid rgba(251, 146, 60, 0.3) !important;
+  border-bottom: 1px solid rgba(251, 146, 60, 0.2) !important;
+  color: #9a3412 !important;
+}
+
+.table-sunset-grid tbody tr:nth-child(odd) {
+  background: #fff7ed !important;
+}
+
+.table-sunset-grid tbody tr:nth-child(even) {
+  background: rgba(251, 146, 60, 0.12) !important;
+}
+
+.table-sunset-grid tbody tr:nth-child(even) td {
+  background: rgba(251, 146, 60, 0.12) !important;
+}
+
+.table-sunset-grid tbody tr:hover {
+  background: rgba(251, 146, 60, 0.25) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(251, 146, 60, 0.2);
+}
+
+.table-sunset-grid tbody tr:hover td {
+  background: rgba(251, 146, 60, 0.25) !important;
+}
+
+/* Royal Grid Variant */
+.table-royal-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-royal-grid table th, .table-royal-grid table td {
+  border: 1px solid #9333ea !important;
+}
+
+.table-royal-grid table {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.15) !important;
+  border: 1.5px solid #9333ea !important;
+}
+
+.table-royal-grid th {
+  background: linear-gradient(135deg, #9333ea, #7c3aed) !important;
+  color: white !important;
+  font-weight: 800 !important;
+  padding: 16px 20px !important;
+  border-right: 2px solid #7c3aed !important;
+  border-bottom: 3px solid #7c3aed !important;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.table-royal-grid td {
+  padding: 14px 20px !important;
+  border-right: 2px solid rgba(147, 51, 234, 0.3) !important;
+  border-bottom: 1px solid rgba(147, 51, 234, 0.2) !important;
+  color: #581c87 !important;
+}
+
+.table-royal-grid tbody tr:nth-child(odd) {
+  background: #faf5ff !important;
+}
+
+.table-royal-grid tbody tr:nth-child(even) {
+  background: rgba(147, 51, 234, 0.1) !important;
+}
+
+.table-royal-grid tbody tr:nth-child(even) td {
+  background: rgba(147, 51, 234, 0.1) !important;
+}
+
+.table-royal-grid tbody tr:hover {
+  background: rgba(147, 51, 234, 0.2) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(147, 51, 234, 0.2);
+}
+
+.table-royal-grid tbody tr:hover td {
+  background: rgba(147, 51, 234, 0.2) !important;
+}
+
+/* ===============================================
+   RESPONSIVE TABLE BEHAVIOR
+   =============================================== */
+
+/* Container wrapper for overflow when needed */
+.table-green, .table-cyber, .table-luxury, .table-ocean, 
+.table-sunset, .table-royal, .table-lines, .table-grid, 
+.table-excel, .table-default-grid, .table-green-grid, 
+.table-cyber-grid, .table-luxury-grid, .table-ocean-grid, 
+.table-sunset-grid, .table-royal-grid {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Keep tables full width with auto-adjusting columns */
+.table-green table, .table-cyber table, .table-luxury table, 
+.table-ocean table, .table-sunset table, .table-royal table, 
+.table-lines table, .table-grid table, .table-excel table,
+.table-default-grid table, .table-green-grid table, 
+.table-cyber-grid table, .table-luxury-grid table, 
+.table-ocean-grid table, .table-sunset-grid table, 
+.table-royal-grid table {
+  /* width: 100% !important; */
+  table-layout: auto !important;
+}
+
+
 .markdown-body p,
 li,
 ul,
