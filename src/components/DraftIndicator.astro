@@ -1,0 +1,82 @@
+---
+const { isDraft = false, variant = 'default' } = Astro.props;
+
+// Only show draft indicators in development mode
+const showDraftIndicator = isDraft && import.meta.env.DEV;
+
+interface Props {
+  isDraft?: boolean;
+  variant?: 'default' | 'small' | 'large';
+}
+---
+
+{showDraftIndicator && (
+  <div class={`draft-indicator draft-indicator--${variant}`}>
+    <span class="draft-indicator__icon">🚧</span>
+    <span class="draft-indicator__text">Draft</span>
+  </div>
+)}
+
+<style>
+  .draft-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1f2937;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #fbbf24;
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  .draft-indicator--small {
+    padding: 0.125rem 0.375rem;
+    font-size: 0.625rem;
+    border-radius: 0.25rem;
+  }
+
+  .draft-indicator--large {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+  }
+
+  .draft-indicator__icon {
+    font-size: 1em;
+    line-height: 1;
+  }
+
+  .draft-indicator__text {
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+    100% {
+      box-shadow: 0 4px 14px 0 rgba(251, 191, 36, 0.4), 0 2px 4px 0 rgba(245, 158, 11, 0.3);
+    }
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .draft-indicator {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #111827;
+      border-color: #fbbf24;
+    }
+  }
+
+  /* Hover effect for interactive elements */
+  .draft-indicator:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px 0 rgba(251, 191, 36, 0.4), 0 2px 4px 0 rgba(245, 158, 11, 0.3);
+  }
+</style>
