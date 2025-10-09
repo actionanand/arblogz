@@ -47,7 +47,7 @@ if (totalPage === 1) {
 <div class="flex items-center justify-center my-16 text-skin-base">
   {
     pager.length > 4 && (
-      <a href={prefixUrl + "1"} class="menu-item-wavy" style="font-size:18px;line-height:32px;">
+      <a href={prefixUrl + "1"} class="pagination-item pagination-nav" style="font-size:18px;line-height:32px;">
         <i class="ri-skip-left-line"></i>
       </a>
     )
@@ -57,14 +57,14 @@ if (totalPage === 1) {
     pager.map((i) =>
       currentPage === i ? (
         <a
-          class="text-skin-active menu-item-wavy active"
+          class="pagination-item pagination-active"
           href={prefixUrl + i}
           style="line-height:32px;"
         >
           {i}
         </a>
       ) : (
-        <a href={prefixUrl + i} class="menu-item-wavy" style="line-height:32px;">
+        <a href={prefixUrl + i} class="pagination-item" style="line-height:32px;">
           {i}
         </a>
       )
@@ -74,7 +74,7 @@ if (totalPage === 1) {
     pager.length > 4 && (
       <a
         href={prefixUrl + totalPage}
-        class="menu-item-wavy"
+        class="pagination-item pagination-nav"
         style="font-size:18px;line-height:32px;"
       >
         <i class="ri-skip-right-line"></i>
@@ -85,7 +85,58 @@ if (totalPage === 1) {
 </div>
 
 <style>
-  a {
-    @apply border mr-2 h-8 w-8 text-center leading-8 rounded cursor-pointer hover:text-skin-active transition-all duration-300;
+  .pagination-item {
+    @apply border mr-2 h-8 w-8 text-center leading-8 rounded cursor-pointer transition-all duration-300;
+    text-decoration: none !important;
+    border-color: rgb(var(--color-border));
+    color: rgb(var(--color-text));
+    background: rgb(var(--color-fill-secondary));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pagination-item:hover {
+    color: rgb(var(--color-text-active)) !important;
+    border-color: rgb(var(--color-border-active)) !important;
+    background: rgb(var(--color-fill)) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none !important;
+  }
+
+  .pagination-active {
+    color: white !important;
+    background: rgb(var(--color-text-active)) !important;
+    border-color: rgb(var(--color-text-active)) !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    box-shadow: 0 2px 8px rgba(var(--color-text-active), 0.3);
+  }
+
+  .pagination-active:hover {
+    background: rgb(var(--color-text-active)) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(var(--color-text-active), 0.4);
+  }
+
+  .pagination-nav {
+    width: 36px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Remove any text decoration for all states */
+  .pagination-item,
+  .pagination-item:hover,
+  .pagination-item:focus,
+  .pagination-item:active,
+  .pagination-item:visited {
+    text-decoration: none !important;
+  }
+
+  /* Ensure no underlines from parent elements */
+  .pagination-item * {
+    text-decoration: none !important;
   }
 </style>
