@@ -10,6 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@analogjs/astro-angular": "^1.21.2",
+    "@angular-devkit/build-angular": "^20.3.5",
+    "@angular/animations": "^20.3.4",
+    "@angular/common": "^20.3.4",
+    "@angular/compiler": "^20.3.4",
+    "@angular/compiler-cli": "^20.3.4",
+    "@angular/core": "^20.3.4",
+    "@angular/language-service": "^20.3.4",
+    "@angular/platform-browser": "^20.3.4",
+    "@angular/platform-browser-dynamic": "^20.3.4",
+    "@angular/platform-server": "^20.3.4",
     "@astrojs/mdx": "^4.3.1",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.2",
@@ -30,11 +41,14 @@
     "reading-time": "^1.5.0",
     "remark-directive": "^3.0.0",
     "remixicon": "^4.6.0",
+    "rxjs": "^7.8.2",
     "tailwindcss": "^3.4.1",
     "tocbot": "^4.25.0",
+    "tslib": "^2.8.1",
     "typescript": "^5.4.2",
     "unist-util-remove": "^4.0.0",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "zone.js": "^0.15.1"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
