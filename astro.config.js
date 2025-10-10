@@ -41,7 +41,7 @@ export default defineConfig({
       uiFontFamily: "jetbrains-mono",
     },
     themeCssSelector: (theme) => `[data-theme="${theme.type}"]`
-  }), mdx(), angular(), react()],
+  }), mdx(), react()],
   markdown: {
     remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}), remarkCollapse({}), remarkGithubCard(), remarkButton(), remarkHtml(), remarkColorHighlight],
     rehypePlugins: [lazyLoadImage],
