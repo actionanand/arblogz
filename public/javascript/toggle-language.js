@@ -487,14 +487,13 @@ async function init() {
     subtree: true
   });
 
-  // Listen for clicks on language dropdown items
-  document.addEventListener('click', async (e) => {
-    console.log('Click detected on:', e.target);
-    const target = e.target.closest('[data-language-link]');
-    console.log('Found language link target:', target);
-    
-    if (target) {
+  // Listen for clicks on language dropdown items ONLY
+  document.querySelectorAll('[data-language-link]').forEach(link => {
+    link.addEventListener('click', async (e) => {
+      console.log('Language link clicked:', e.target);
       e.preventDefault();
+      
+      const target = e.currentTarget;
       const newLanguage = target.getAttribute('data-language-code');
       console.log('New language from data-language-code:', newLanguage);
       
@@ -508,26 +507,7 @@ async function init() {
       } else {
         console.log('No language change needed. Current:', languageValue, 'New:', newLanguage);
       }
-    }
-  });
-
-  // Also handle clicks on spans and icons inside language links
-  document.addEventListener('click', async (e) => {
-    if (e.target.tagName === 'SPAN' || e.target.tagName === 'I') {
-      const parentLink = e.target.closest('[data-language-link]');
-      if (parentLink) {
-        e.preventDefault();
-        const newLanguage = parentLink.getAttribute('data-language-code');
-        
-        if (newLanguage && newLanguage !== languageValue) {
-          languageValue = newLanguage;
-          setLanguagePreference();
-          
-          // Force complete translation update to catch all elements
-          await forceCompleteTranslationUpdate();
-        }
-      }
-    }
+    });
   });
 }
 
