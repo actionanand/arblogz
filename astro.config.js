@@ -20,6 +20,8 @@ import {remarkColorHighlight} from "./src/plugins/remark-simple-highlight.js";
 
 import angular from "@analogjs/astro-angular";
 
+import react from "@astrojs/react";
+
 export default defineConfig({
   site: site.url,
   base: import.meta.env.PROD ? site.baseUrl : '',
@@ -27,13 +29,11 @@ export default defineConfig({
     allowedHosts: true // Allows all hosts
   },
   trailingSlash: "never",
-  integrations: [
-    angular({
-      vite: {
-        inlineStylesExtension: 'scss|sass|less',
-      },
-    }),
-    sitemap(), tailwind(), expressiveCode({
+  integrations: [angular({
+    vite: {
+      inlineStylesExtension: 'scss|sass|less',
+    },
+  }), sitemap(), tailwind(), expressiveCode({
     plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
     themes: ["github-dark", "github-light"],
     styleOverrides: {
@@ -41,7 +41,7 @@ export default defineConfig({
       uiFontFamily: "jetbrains-mono",
     },
     themeCssSelector: (theme) => `[data-theme="${theme.type}"]`
-  }), mdx(), angular()],
+  }), mdx(), angular(), react()],
   markdown: {
     remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}), remarkCollapse({}), remarkGithubCard(), remarkButton(), remarkHtml(), remarkColorHighlight],
     rehypePlugins: [lazyLoadImage],

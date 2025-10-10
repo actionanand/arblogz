@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
-  standalone: true,
   imports: [],
   styles: [`
     .btn-toggle {
