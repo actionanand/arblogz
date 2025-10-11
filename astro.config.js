@@ -33,7 +33,11 @@ export default defineConfig({
     vite: {
       inlineStylesExtension: 'scss|sass|less',
     },
-  }), sitemap(), tailwind(), expressiveCode({
+  }),
+  react({
+    experimentalReactChildren: true,
+  }),
+  sitemap(), tailwind(), expressiveCode({
     plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
     themes: ["github-dark", "github-light"],
     styleOverrides: {
@@ -41,7 +45,7 @@ export default defineConfig({
       uiFontFamily: "jetbrains-mono",
     },
     themeCssSelector: (theme) => `[data-theme="${theme.type}"]`
-  }), mdx(), react()],
+  }), mdx()],
   markdown: {
     remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}), remarkCollapse({}), remarkGithubCard(), remarkButton(), remarkHtml(), remarkColorHighlight],
     rehypePlugins: [lazyLoadImage],

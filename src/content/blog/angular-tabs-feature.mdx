@@ -1,0 +1,379 @@
+---
+title: "Docusaurus-style Tabs in Angular"
+description: "Build beautiful, interactive tabs just like Docusaurus using Angular components with ContentChildren."
+date: 2025-10-11
+tags: [angular, components, ui, tabs, docusaurus]
+category: tutorial
+---
+
+import { TabsComponent } from "../../angular/tabs.component.ts";
+import { TabComponent } from "../../angular/tab.component.ts";
+
+# Docusaurus-style Tabs in Angular
+
+Recreate the beloved Docusaurus tab experience in Angular! These components provide the exact same API and styling as Docusaurus tabs, perfect for documentation sites, code examples, and content organization.
+
+## Live Demo
+
+### Basic Usage with Default Tab
+
+<TabsComponent client:load>
+  <TabComponent value="apple" label="Apple" default>
+    🍎 **Apple**
+    
+    Apples are crisp, sweet fruits packed with fiber and vitamin C. Perfect for snacking, baking, or making fresh juice.
+    
+    **Benefits:**
+    - Rich in antioxidants
+    - Great for heart health  
+    - Helps with digestion
+  </TabComponent>
+  <TabComponent value="orange" label="Orange">
+    🍊 **Orange**
+    
+    Oranges are citrus powerhouses loaded with vitamin C and natural energy. Refreshing and perfect for boosting immunity.
+    
+    **Benefits:**
+    - Immune system boost
+    - High in vitamin C
+    - Natural energy source
+  </TabComponent>
+  <TabComponent value="banana" label="Banana">
+    🍌 **Banana**
+    
+    Bananas are nature's energy bars! Rich in potassium and perfect for pre or post-workout fuel.
+    
+    **Benefits:**
+    - High potassium content
+    - Natural sugars for energy
+    - Great for muscle recovery
+  </TabComponent>
+</TabsComponent>
+
+### Code Examples Tabs
+
+Perfect for showing different programming languages:
+
+<TabsComponent client:load>
+  <TabComponent value="typescript" label="TypeScript" default>
+```typescript
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
+
+const createUser = (userData: Partial<User>): User => {
+  return {
+    id: Math.random(),
+    isActive: true,
+    ...userData
+  } as User;
+};
+
+const user = createUser({
+  name: "John Doe",
+  email: "john@example.com"
+});
+
+console.log(\`Welcome, \${user.name}!\`);
+```
+  </TabComponent>
+  <TabComponent value="javascript" label="JavaScript">
+```javascript
+const createUser = (userData) => {
+  return {
+    id: Math.random(),
+    isActive: true,
+    ...userData
+  };
+};
+
+const user = createUser({
+  name: "John Doe",
+  email: "john@example.com"
+});
+
+console.log(\`Welcome, \${user.name}!\`);
+```
+  </TabComponent>
+  <TabComponent value="python" label="Python">
+```python
+from dataclasses import dataclass
+from typing import Optional
+import uuid
+
+@dataclass
+class User:
+    name: str
+    email: str
+    id: str = None
+    is_active: bool = True
+    
+    def __post_init__(self):
+        if self.id is None:
+            self.id = str(uuid.uuid4())
+
+user = User(
+    name="John Doe",
+    email="john@example.com"
+)
+
+print(f"Welcome, {user.name}!")
+```
+  </TabComponent>
+</TabsComponent>
+
+### Framework Comparison
+
+<TabsComponent 
+  client:load
+  defaultValue="react"
+  values={[
+    {label: 'React', value: 'react'},
+    {label: 'Vue.js', value: 'vue'},
+    {label: 'Angular', value: 'angular'},
+    {label: 'Svelte', value: 'svelte'}
+  ]}>
+  <TabComponent value="react">
+    ## React
+    
+    **The Library for Web and Native User Interfaces**
+    
+    React is a JavaScript library for building user interfaces, maintained by Meta (Facebook). It uses a component-based architecture and virtual DOM for efficient rendering.
+    
+    ### Key Features
+    - Component-based architecture
+    - Virtual DOM for performance
+    - Huge ecosystem and community
+    - JSX syntax
+    - Hooks for state management
+    
+    ### Perfect For
+    - Single Page Applications
+    - Dynamic user interfaces
+    - Large-scale applications
+    - Teams already using JavaScript
+  </TabComponent>
+  <TabComponent value="vue">
+    ## Vue.js
+    
+    **The Progressive JavaScript Framework**
+    
+    Vue.js is designed to be incrementally adoptable. The core library focuses on the view layer only, making it easy to pick up and integrate.
+    
+    ### Key Features
+    - Progressive framework
+    - Template syntax
+    - Reactive data binding
+    - Component-based
+    - Excellent documentation
+    
+    ### Perfect For
+    - Gradual adoption in existing projects
+    - Developers new to frameworks
+    - Rapid prototyping
+    - Small to medium applications
+  </TabComponent>
+  <TabComponent value="angular">
+    ## Angular
+    
+    **Platform for Building Mobile and Desktop Web Applications**
+    
+    Angular is a full-featured framework developed by Google. It provides everything you need to build large-scale applications out of the box.
+    
+    ### Key Features
+    - Full framework with CLI
+    - TypeScript by default
+    - Dependency injection
+    - RxJS for reactive programming
+    - Comprehensive testing tools
+    
+    ### Perfect For
+    - Enterprise applications
+    - Teams that prefer TypeScript
+    - Large-scale projects
+    - Applications requiring robust architecture
+  </TabComponent>
+  <TabComponent value="svelte">
+    ## Svelte
+    
+    **Cybernetically Enhanced Web Apps**
+    
+    Svelte is a radical new approach to building user interfaces. Instead of doing work in the browser, Svelte shifts that work into a compile step.
+    
+    ### Key Features
+    - Compile-time optimizations
+    - No virtual DOM
+    - Smaller bundle sizes
+    - Simple, intuitive syntax
+    - Built-in state management
+    
+    ### Perfect For
+    - Performance-critical applications
+    - Developers who want simplicity
+    - Projects with strict bundle size requirements
+    - Modern web applications
+  </TabComponent>
+</TabsComponent>
+
+## API Reference
+
+### Tabs Component
+
+The `Tabs` component is the wrapper that manages tab state and renders the tab navigation.
+
+#### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultValue` | `string` | - | The value of the tab that should be active by default |
+| `values` | `Array<{label: string, value: string}>` | - | Array of tab definitions (alternative to using Tab components) |
+
+#### Usage Patterns
+
+**Pattern 1: ContentChildren (Recommended)**
+```html
+<Tabs>
+  <Tab value="tab1" label="Tab 1" default>Content 1</Tab>
+  <Tab value="tab2" label="Tab 2">Content 2</Tab>
+</Tabs>
+```
+
+**Pattern 2: Values Array**
+```html
+<Tabs values={[
+  {label: 'Tab 1', value: 'tab1'},
+  {label: 'Tab 2', value: 'tab2'}
+]}>
+  <Tab value="tab1">Content 1</Tab>
+  <Tab value="tab2">Content 2</Tab>
+</Tabs>
+```
+
+### Tab Component
+
+The `Tab` component represents individual tab content.
+
+#### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | **Required** | Unique identifier for the tab |
+| `label` | `string` | **Required** | Display label for the tab button |
+| `default` | `boolean` | `false` | Whether this tab should be active by default |
+
+## Implementation Details
+
+### Component Architecture
+
+```typescript
+// Tabs Component (tabs.component.ts)
+@Component({
+  selector: 'Tabs',
+  template: \`
+    <div class="tabs-container">
+      <div class="tabs-header">
+        <button *ngFor="let tab of getTabsArray()"
+                [class.active]="tab.value === selectedValue"
+                (click)="selectTab(tab.value)">
+          {{ tab.label }}
+        </button>
+      </div>
+      <div class="tabs-content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  \`
+})
+export class TabsComponent {
+  @ContentChildren(TabComponent) tabs!: QueryList<TabComponent>;
+  // ... implementation
+}
+```
+
+```typescript
+// Tab Component (tab.component.ts)  
+@Component({
+  selector: 'Tab',
+  template: \`
+    <div *ngIf="active">
+      <ng-content></ng-content>
+    </div>
+  \`
+})
+export class TabComponent {
+  @Input() value!: string;
+  @Input() label!: string;
+  @Input() default: boolean = false;
+  active: boolean = false;
+}
+```
+
+### Styling
+
+The components include Docusaurus-inspired styling:
+
+- Clean, modern tab buttons
+- Smooth hover effects
+- Active tab highlighting
+- Responsive design
+- Accessible focus states
+
+## Best Practices
+
+### 1. Use Semantic Values
+```html
+<!-- Good -->
+<Tab value="installation" label="Installation">
+
+<!-- Avoid -->
+<Tab value="tab1" label="Tab 1">
+```
+
+### 2. Provide Meaningful Labels
+```html
+<!-- Good -->
+<Tab value="npm" label="npm">
+<Tab value="yarn" label="Yarn">
+
+<!-- Avoid -->
+<Tab value="npm" label="Option 1">
+```
+
+### 3. Mark Default Tabs Clearly
+```html
+<Tabs>
+  <Tab value="overview" label="Overview" default>
+  <Tab value="api" label="API Reference">
+  <Tab value="examples" label="Examples">
+</Tabs>
+```
+
+## Use Cases
+
+### 📚 Documentation
+Perfect for API references, code examples, and multi-step tutorials.
+
+### 🛠️ Code Examples  
+Show the same functionality in different languages or frameworks.
+
+### 📊 Data Presentation
+Organize related information into digestible sections.
+
+### 🎯 Feature Comparisons
+Compare different options, plans, or approaches side-by-side.
+
+## Conclusion
+
+These Docusaurus-style tabs bring familiar, professional tabbed interfaces to Angular applications. With support for both ContentChildren and values array patterns, they're flexible enough for any use case while maintaining the clean API that makes Docusaurus tabs so popular.
+
+Perfect for:
+- ✅ Documentation sites
+- ✅ Code example showcases  
+- ✅ Content organization
+- ✅ Interactive tutorials
+- ✅ Framework comparisons
+
+The components are fully typed, accessible, and styled to match modern design standards!
