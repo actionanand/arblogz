@@ -6,7 +6,7 @@
 
 tasks:
   - name: Astro Blog
-    before: nvm install v22.11.1
+    before: nvm install v22.16.0
     init: npm install && npm run build
     command: npm run dev
 vscode:
