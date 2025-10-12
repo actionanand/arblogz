@@ -151,7 +151,6 @@ const Tabs = ({ children, defaultValue }) => {
                 : (isDarkMode ? '#9ca3af' : '#6b7280'),
               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
               position: 'relative',
-              borderBottom: 'none',
               outline: 'none',
               borderRadius: '12px 12px 0 0',
               backgroundColor: activeTab === tab.value 
