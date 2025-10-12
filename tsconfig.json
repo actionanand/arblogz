@@ -25,8 +25,8 @@
     "types": [
       "astro/env"
     ],
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "include": [
     ".astro/types.d.ts",

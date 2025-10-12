@@ -18,6 +18,8 @@ import {remarkButton} from "./src/plugins/remark-button.js";
 import {remarkHtml} from "./src/plugins/remark-html.js";
 import {remarkColorHighlight} from "./src/plugins/remark-simple-highlight.js";
 
+import react from "@astrojs/react";
+
 export default defineConfig({
   site: site.url,
   base: import.meta.env.PROD ? site.baseUrl : '',
@@ -25,7 +27,11 @@ export default defineConfig({
     allowedHosts: true // Allows all hosts
   },
   trailingSlash: "never",
-  integrations: [sitemap(), tailwind(), expressiveCode({
+  integrations: [
+    react({
+      experimentalReactChildren: true,
+    }),
+    sitemap(), tailwind(), expressiveCode({
     plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
     themes: ["github-dark", "github-light"],
     styleOverrides: {
