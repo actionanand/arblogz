@@ -28,9 +28,7 @@ export default defineConfig({
   },
   trailingSlash: "never",
   integrations: [
-    react({
-      experimentalReactChildren: true,
-    }),
+    react(),
     sitemap(), tailwind(), expressiveCode({
     plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
     themes: ["github-dark", "github-light"],

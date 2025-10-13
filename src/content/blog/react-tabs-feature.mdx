@@ -7,7 +7,6 @@ category: tutorial
 ---
 
 import Tabs, { Tab } from "../../react/Tabs/Tabs.jsx";
-import CodeBlock from '../../components/CodeBlock.astro';
 
 # Docusaurus-style Tabs in React
 
@@ -25,7 +24,9 @@ Here is some content with interactive tabs.
     This is the ***content*** for the second tab.
   </Tab>
   <Tab value="third" label="Plain JS">
+    :::tip
     This is the ~content~ for the third tab.
+    :::
   </Tab>
   <Tab value="fourth" label="Complex JS">
     ## This is the Test for the fourth tab.
@@ -98,28 +99,35 @@ Here is some content with interactive tabs.
 
 <Tabs defaultValue="java" client:load>
   <Tab value="java" label="Java Code">
-    <CodeBlock
-      lang="java"
-      code={`public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println("Hello, World!");
+  ```java
+  public class HelloWorld {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+    }
   }
-}`}
-    />
+  ```
   </Tab>
 
   <Tab value="js" label="JavaScript">
-    <CodeBlock
-      lang="js"
-      code={`let x = 10;
-console.log(x);`}
-    />
+  ```js
+  let score = 85;
+  if (score >= 90) {
+    console.log("Excellent!");
+  } else if (score >= 70) {
+    console.log("Good job!");
+  } else {
+    console.log("Needs improvement.");
+  }
+  ```
   </Tab>
 
   <Tab value="py" label="Python">
-    <CodeBlock
-      lang="python"
-      code={`print("Hello, world!")`}
-    />
+  ```python
+  num = int(input("Enter a number: "))
+  if (num % 2) == 0:
+    print(f"{num} is an even number")
+  else:
+    print(f"{num} is an odd number")
+```
   </Tab>
 </Tabs>
