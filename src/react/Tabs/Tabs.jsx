@@ -173,7 +173,7 @@ const Tabs = ({ children, defaultValue }) => {
                   : '1px solid transparent',
               marginRight: '4px',
               transform: activeTab === tab.value ? 'translateY(0)' : 'translateY(2px)',
-              zIndex: activeTab === tab.value ? 10 : 1,
+              zIndex: activeTab === tab.value ? 5 : 1,
               boxShadow:
                 activeTab === tab.value
                   ? isDarkMode
@@ -197,7 +197,7 @@ const Tabs = ({ children, defaultValue }) => {
             transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
             transform: `translateX(${underlineStyle.left - 4}px)`,
             width: `${underlineStyle.width}px`,
-            zIndex: 20
+            zIndex: 5
           }}
         />
       </div>
