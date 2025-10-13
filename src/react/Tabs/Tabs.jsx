@@ -225,8 +225,8 @@ const Tabs = ({ children, defaultValue }) => {
   );
 };
 
-// 🧩 Tab component – emits real DOM attributes Astro preserves
-export const Tab = ({ children, value, label }) => {
+// 🧩 TabItem component – emits real DOM attributes Astro preserves
+export const TabItem = ({ children, value, label }) => {
   return (
     <div data-tab data-value={value} data-label={label}>
       {children}
@@ -235,3 +235,4 @@ export const Tab = ({ children, value, label }) => {
 };
 
 export default Tabs;
+export { TabItem as Tab }; // Keep backward compatibility

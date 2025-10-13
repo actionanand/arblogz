@@ -6,7 +6,7 @@ tags: [react, components, ui, tabs, docusaurus, javascript]
 category: tutorial
 ---
 
-import Tabs, { Tab } from "../../react/Tabs/Tabs.jsx";
+import Tabs, { TabItem } from "../../react/Tabs/Tabs.jsx";
 
 # Docusaurus-style Tabs in React
 
@@ -16,25 +16,42 @@ Recreate the beloved Docusaurus tab experience using React! These components pro
 
 Here is some content with interactive tabs.
 
-<Tabs defaultValue="second" client:load>
-  <Tab value="mine" label="Angular Logic">
-    This is the content for the first tab. It can contain **Markdown** and even other React components.
-  </Tab>
-  <Tab value="second" label="React Logic">
-    This is the ***content*** for the second tab.
-  </Tab>
-  <Tab value="third" label="Plain JS">
-    :::tip
-    This is the ~content~ for the third tab.
-    :::
-  </Tab>
-  <Tab value="fourth" label="Complex JS">
-    ## This is the Test for the fourth tab.
-  </Tab>
+<Tabs defaultValue="first" client:load>
+  <TabItem value="first" label="Getting Started">
+    ## Welcome!
+    
+    This is your first tab. You can use **Markdown** formatting like:
+    
+    - **Bold text**
+    - *Italic text*
+    - `inline code`
+    - Lists and more!
+  </TabItem>
+  <TabItem value="second" label="Features">
+    ## What's Included
+    
+    **Key Features:**
+    - Full Markdown support
+    - Code syntax highlighting
+    - Dark mode support
+    - Copy to clipboard
+    - Easy integration with Astro
+  </TabItem>
+  <TabItem value="third" label="Example Code">
+    Here's a simple JavaScript example:
+    
+    ```js
+    function greet(name) {
+      return `Hello, ${name}!`;
+    }
+    
+    console.log(greet("World"));
+    ```
+  </TabItem>
 </Tabs>
 
-<Tabs defaultValue="overview" client:load>
-  <Tab value="overview" label="📋 Overview">
+<Tabs defaultValue="features" client:load>
+  <TabItem value="overview" label="📋 Overview">
     ## Project Architecture
 
     ### System Components
@@ -52,8 +69,8 @@ Here is some content with interactive tabs.
     - **Developer experience** optimized for productivity
 
     > **Note:** This modular approach allows teams to work independently while maintaining system cohesion.
-  </Tab>
-  <Tab value="features" label="✨ Features">
+  </TabItem>
+  <TabItem value="features" label="✨ Features">
     ## Feature Comparison
 
     | Feature Category | Basic Plan | Pro Plan | Enterprise |
@@ -70,8 +87,8 @@ Here is some content with interactive tabs.
     - **Advanced security** with enterprise-grade encryption
     - **Mobile-first design** for on-the-go access
     - **Integration ecosystem** with 100+ popular tools
-  </Tab>
-  <Tab value="pricing" label="💰 Pricing">
+  </TabItem>
+  <TabItem value="pricing" label="💰 Pricing">
     ## Flexible Pricing Options
 
     ### Monthly Plans
@@ -91,14 +108,17 @@ Here is some content with interactive tabs.
     - Custom integrations and **SLA guarantees**
 
     ### Annual Discounts
-    > **Save 20%** with annual billing on all plans! Lock in today's pricing and get two months free.
+    
+    :::tip
+    **Save 20%** with annual billing on all plans! Lock in today's pricing and get two months free.
+    :::
 
     [Contact our sales team](mailto:sales@example.com) for custom enterprise solutions.
-  </Tab>
+  </TabItem>
 </Tabs>
 
 <Tabs defaultValue="java" client:load>
-  <Tab value="java" label="Java Code">
+  <TabItem value="java" label="Java Code">
   ```java
   public class HelloWorld {
     public static void main(String[] args) {
@@ -106,9 +126,9 @@ Here is some content with interactive tabs.
     }
   }
   ```
-  </Tab>
+  </TabItem>
 
-  <Tab value="js" label="JavaScript">
+  <TabItem value="js" label="JavaScript">
   ```js
   let score = 85;
   if (score >= 90) {
@@ -119,9 +139,9 @@ Here is some content with interactive tabs.
     console.log("Needs improvement.");
   }
   ```
-  </Tab>
+  </TabItem>
 
-  <Tab value="py" label="Python">
+  <TabItem value="py" label="Python">
   ```python
   num = int(input("Enter a number: "))
   if (num % 2) == 0:
@@ -129,5 +149,19 @@ Here is some content with interactive tabs.
   else:
     print(f"{num} is an odd number")
 ```
-  </Tab>
+  </TabItem>
+</Tabs>
+
+### Without tab names
+
+<Tabs  client:load>
+  <TabItem>
+    test without Tab name 1
+  </TabItem>
+  <TabItem>
+    test without Tab name 2
+  </TabItem>
+  <TabItem>
+    test without Tab name 3
+  </TabItem>
 </Tabs>
