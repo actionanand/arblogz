@@ -28,29 +28,72 @@ const Tabs = ({ children, defaultValue }) => {
     }
   }, [children, defaultValue]);
 
-  // 🌓 Detect dark mode
+  // 🌓 Enhanced theme detection for real-time switching
   useEffect(() => {
     const checkTheme = () => {
-      const theme = localStorage.getItem('theme');
-      setIsDarkMode(
-        theme === 'dark' || document.documentElement.classList.contains('dark')
-      );
+      const htmlElement = document.documentElement;
+      const bodyElement = document.body;
+      
+      // Check multiple sources for theme detection
+      const localStorageTheme = localStorage.getItem('theme');
+      const htmlHasDark = htmlElement.classList.contains('dark');
+      const bodyHasDark = bodyElement?.classList.contains('dark');
+      const htmlDataTheme = htmlElement.getAttribute('data-theme');
+      const bodyDataTheme = bodyElement?.getAttribute('data-theme');
+      
+      const isDark = 
+        localStorageTheme === 'dark' ||
+        htmlHasDark ||
+        bodyHasDark ||
+        htmlDataTheme === 'dark' ||
+        bodyDataTheme === 'dark';
+      
+      setIsDarkMode(isDark);
     };
+    
+    // Initial check
     checkTheme();
 
+    // Listen for storage changes (other tabs/windows)
     window.addEventListener('storage', checkTheme);
+    
+    // Listen for custom theme events
     window.addEventListener('themeChanged', checkTheme);
-
+    window.addEventListener('theme-change', checkTheme);
+    window.addEventListener('astro:theme-change', checkTheme);
+    
+    // Watch for DOM changes on html and body elements
     const observer = new MutationObserver(checkTheme);
+    
+    // Observe both html and body for class/attribute changes
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['class']
+      attributeFilter: ['class', 'data-theme', 'theme']
     });
+    
+    if (document.body) {
+      observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'data-theme', 'theme']
+      });
+    }
+    
+    // Intercept localStorage.setItem to catch theme changes
+    const originalSetItem = localStorage.setItem;
+    localStorage.setItem = function(key, value) {
+      originalSetItem.apply(this, arguments);
+      if (key === 'theme') {
+        setTimeout(checkTheme, 0); // Async to ensure DOM updates first
+      }
+    };
 
     return () => {
       window.removeEventListener('storage', checkTheme);
       window.removeEventListener('themeChanged', checkTheme);
+      window.removeEventListener('theme-change', checkTheme);
+      window.removeEventListener('astro:theme-change', checkTheme);
       observer.disconnect();
+      localStorage.setItem = originalSetItem;
     };
   }, []);
 
