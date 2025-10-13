@@ -1,0 +1,32 @@
+---
+// CodeBlock.astro
+const { lang, code: progCode } = Astro.props;
+import { Code } from 'astro-expressive-code/components'
+---
+
+<!-- <pre class={`expressive-code language-${lang}`}><code>{progCode}</code></pre> -->
+ <Code code="console.log('Hello world!')" lang="js" />
+
+<script is:inline>
+  // import { runExpressiveCode } from 'astro-expressive-code';
+  // Run syntax highlighting after DOM update
+  // const pre = document.currentScript.closest('pre');
+  // runExpressiveCode(pre);
+</script>
+
+<style>
+pre.expressive-code {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  background-color: var(--code-bg, #f5f5f5);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: pre;
+}
+:root.dark pre.expressive-code {
+  background-color: #1e293b;
+  color: #e5e7eb;
+}
+</style>
