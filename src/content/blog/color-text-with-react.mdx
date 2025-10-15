@@ -1,0 +1,52 @@
+---
+title: "Color Highlighting with React Component"
+description: "Testing the enhanced color highlighting feature React Componnet"
+date: 2025-10-06
+tags: ["test", "colors", "styling"]
+---
+
+import Highlight from "@/react/Highlight/Highlight.jsx";
+
+# Color Highlighting with React Highlight Component
+
+### 1. Import the Components
+
+```jsx
+import Highlight from "@/react/Highlight/Highlight.jsx";
+```
+
+or
+
+```jsx
+import Highlight from "../../react/Highlight/Highlight.jsx";
+```
+
+> Make sure to use `.mdx` instead of `.md` while working with react components like `Tabs` react componet.
+
+## Example 
+
+format is 
+
+```jsx
+<Highlight> text </Highlight>
+```
+
+# <Highlight color='#004080' highlight='fg' fontWeight='bold'> Foreground Blue `#004080` with markdown H1 format </Highlight>
+## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Forground Brown `#800031` with markdown H2 format </Highlight>
+- `<Highlight color='#f44336'> text </Highlight>` -> <Highlight color='#f44336'> My test color `#f44336` </Highlight>
+- <Highlight color='#25c2a0'> My test color `#25c2a0` </Highlight>
+- <Highlight color='#C0C0C0'> Silver color `#C0C0C0` </Highlight>
+- <Highlight highlight='lightBg' color='#D1FFBD'> My test color `#D1FFBD` </Highlight>
+- <Highlight color='#800031' highlight='fg' fontWeight='bold'> Foreground font color `#800031` with bold </Highlight>
+- <Highlight color='#1877F2' highlight='fg' fontStyle='italic'> Foreground font color `#1877F2` with italic </Highlight>
+- <Highlight color='#004080' highlight='fg'> Foreground font color `#800031` with markdown **bold** `**bold**` </Highlight>
+- <Highlight> Default will be white color. change theme to dark </Highlight>
+- <Highlight color='#1877F2'> test </Highlight>
+- <Highlight color='#ff1b68'> Test </Highlight>
+- `<Highlight highlight='lightBg'> Test </Highlight>` -> <Highlight highlight='lightBg' > Default with `highlight='lightBg'` </Highlight>
+
+<Highlight highlight='format' color='red' textAlign='right' display='block' fontWeight='bolder' textDecoration='underline wavy red' fontStyle='oblique' fontSize='22px'> custom format </Highlight>
+
+<Highlight color='#006666' highlight='fg' textAlign='justify' display='block'> my forground color `#006666` with justify text alignment and `<br></br>` <br></br> test it </Highlight>
+
+

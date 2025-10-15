@@ -6,7 +6,7 @@ tags: [astro, mdx, react, tabs, markdown, expressive-code, tutorial]
 category: tutorial
 ---
 
-import Tabs, { TabItem } from "../../react/Tabs/Tabs.jsx";
+import Tabs, { TabItem } from "@/react/Tabs/Tabs.jsx";
 
 # Complete Guide to Tabs in Astro MDX
 
@@ -26,10 +26,20 @@ Create beautiful, feature-rich tabs in your Astro MDX files with full Markdown s
 ### 1. Import the Components
 
 ```jsx
+import Tabs, { TabItem } from "@/react/Tabs/Tabs.jsx";
+// or use backward compatible import
+import Tabs, { Tab } from "@/react/Tabs/Tabs.jsx";
+```
+
+or
+
+```jsx
 import Tabs, { TabItem } from "../../react/Tabs/Tabs.jsx";
 // or use backward compatible import
 import Tabs, { Tab } from "../../react/Tabs/Tabs.jsx";
 ```
+
+> Make sure to use `.mdx` instead of `.md` while working with react components like `Tabs` react componet.
 
 ### 2. Basic Usage
 

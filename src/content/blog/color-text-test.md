@@ -10,6 +10,18 @@ tags: ["test", "colors", "styling"]
 
 Testing the three color modes with additional CSS styling: normal (background), foreground, and dual.
 
+## How to enable `CSS Color Highlight`
+
+To enable this feature, please add the property `colorHighlight: true` to the **Front matter** section like below
+
+```md title="color-text-test.md" {4}
+---
+titile: 'title of the page'
+date: yyyy-mm-dd
+colorHighlight: true
+---
+```
+
 ## Basic Syntax: 
 
 - `==your text|color==` - Default background mode
