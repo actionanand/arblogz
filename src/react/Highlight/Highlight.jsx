@@ -49,6 +49,7 @@ export default function Highlight({
           color: '#4B0082',
           padding: '0.2rem',
           paddingTop: '0',
+          fontStyle,
         }}
       >
         {children}
@@ -63,6 +64,7 @@ export default function Highlight({
           color: '#fff',
           padding: '0.2rem',
           paddingTop: '0',
+          fontStyle
         }}
       >
         {children}

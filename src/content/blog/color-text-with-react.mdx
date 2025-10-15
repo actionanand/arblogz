@@ -1,53 +1,339 @@
 ---
 title: "Color Highlighting with React Component"
-description: "Testing the enhanced color highlighting feature React Componnet"
+description: "Complete guide to using the React Highlight component for advanced text styling and color highlighting"
 date: 2025-10-06
-tags: ["test", "colors", "styling"]
+tags: ["react", "highlight", "styling", "colors", "tutorial"]
 sticky: 1
 ---
 
 import Highlight from "@/react/Highlight/Highlight.jsx";
 
-# Color Highlighting with React Highlight Component
+# Complete Guide to React Highlight Component
 
-### 1. Import the Components
+Master the React Highlight component for beautiful text styling, color highlighting, and advanced typography in your Astro MDX files.
+
+## 🚀 Quick Start
+
+### Import the Component
 
 ```jsx
 import Highlight from "@/react/Highlight/Highlight.jsx";
 ```
-
 or
 
 ```jsx
 import Highlight from "../../react/Highlight/Highlight.jsx";
 ```
 
-> Make sure to use `.mdx` instead of `.md` while working with react components like `Tabs` react componet.
+> **Important:** Use `.mdx` extension (not `.md`) when working with React components.
 
-## Example 
-
-format is 
+### Basic Usage
 
 ```jsx
-<Highlight> text </Highlight>
+<Highlight> Your highlighted text </Highlight>
 ```
 
-# <Highlight color='#004080' highlight='fg' fontWeight='bold'> Foreground Blue `#004080` with markdown H1 format </Highlight>
-## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Forground Brown `#800031` with markdown H2 format </Highlight>
-- `<Highlight color='#f44336'> text </Highlight>` -> <Highlight color='#f44336'> My test color `#f44336` </Highlight>
-- <Highlight color='#25c2a0'> My test color `#25c2a0` </Highlight>
-- <Highlight color='#C0C0C0'> Silver color `#C0C0C0` </Highlight>
-- <Highlight highlight='lightBg' color='#D1FFBD'> My test color `#D1FFBD` </Highlight>
-- <Highlight color='#800031' highlight='fg' fontWeight='bold'> Foreground font color `#800031` with bold </Highlight>
-- <Highlight color='#1877F2' highlight='fg' fontStyle='italic'> Foreground font color `#1877F2` with italic </Highlight>
-- <Highlight color='#004080' highlight='fg'> Foreground font color `#800031` with markdown **bold** `**bold**` </Highlight>
-- <Highlight> Default will be white color. change theme to dark </Highlight>
-- <Highlight color='#1877F2'> test </Highlight>
-- <Highlight color='#ff1b68'> Test </Highlight>
-- `<Highlight highlight='lightBg'> Test </Highlight>` -> <Highlight highlight='lightBg' > Default with `highlight='lightBg'` </Highlight>
+<Highlight> Your highlighted text </Highlight>
 
-<Highlight highlight='format' color='red' textAlign='right' display='block' fontWeight='bolder' textDecoration='underline wavy red' fontStyle='oblique' fontSize='22px'> custom format </Highlight>
+## 🎨 Color Modes Explained
 
-<Highlight color='#006666' highlight='fg' textAlign='justify' display='block'> my forground color `#006666` with justify text alignment and `<br></br>` <br></br> test it </Highlight>
+### Background Mode (Default - `highlight='bg'`)
 
+**How it works:** Uses the `color` prop for background color with white text. If no `highlight` mode is specified, it defaults to background mode.
 
+```jsx
+<Highlight color='#ff6b6b'> Red background with white text </Highlight>
+```
+
+<Highlight color='#ff6b6b'> Red background with white text </Highlight>
+
+```jsx
+<Highlight color='#4299e1'> Blue background with white text </Highlight>
+```
+
+<Highlight color='#4299e1'> Blue background with white text </Highlight>
+
+### Foreground Mode (`highlight='fg'`)
+
+**How it works:** Uses the `color` prop for text color only. No background styling.
+
+```jsx
+<Highlight color='#800031' highlight='fg'> Red text color </Highlight>
+```
+
+<Highlight color='#800031' highlight='fg'> Red text color </Highlight>
+
+```jsx
+<Highlight color='#004080' highlight='fg'> Navy text color </Highlight>
+```
+
+<Highlight color='#004080' highlight='fg'> Navy text color </Highlight>
+
+### Light Background Mode (`highlight='lightBg'`)
+
+**How it works:** Uses the `color` prop for light background with purple text (`#4B0082`).
+
+```jsx
+<Highlight highlight='lightBg'> Light background with purple text </Highlight>
+```
+
+<Highlight highlight='lightBg'> Light background with purple text </Highlight>
+
+```jsx
+<Highlight highlight='lightBg' color='#D1FFBD'> Custom light background with purple text </Highlight>
+```
+
+<Highlight highlight='lightBg' color='#D1FFBD'> Custom light background with purple text </Highlight>
+
+## 🎯 Typography Controls
+
+### Font Weight
+
+```jsx
+<Highlight color='#ff6b6b' highlight='fg' fontWeight='bold'> Bold text </Highlight>
+```
+
+<Highlight color='#ff6b6b' highlight='fg' fontWeight='bold'> Bold text </Highlight>
+
+```jsx
+<Highlight color='#ff6b6b' highlight='fg' fontWeight='lighter'> Light text </Highlight>
+```
+
+<Highlight color='#ff6b6b' highlight='fg' fontWeight='lighter'> Light text </Highlight>
+
+### Font Style
+
+```jsx
+<Highlight color='#4299e1' highlight='fg' fontStyle='italic'> Italic text </Highlight>
+```
+
+<Highlight color='#4299e1' highlight='fg' fontStyle='italic'> Italic text </Highlight>
+
+```jsx
+<Highlight color='#4299e1' highlight='fg' fontStyle='oblique'> Oblique text </Highlight>
+```
+
+<Highlight color='#4299e1' highlight='fg' fontStyle='oblique'> Oblique text </Highlight>
+
+## 📐 Text Alignment
+
+### Block Display Alignment
+
+```jsx
+<Highlight color='#2d5aa0' highlight='format' textAlign='left' display='block'> Left aligned </Highlight>
+```
+
+<Highlight color='#2d5aa0' highlight='format' textAlign='left' display='block'> Left aligned </Highlight>
+
+```jsx
+<Highlight color='#c41e3a' highlight='format' textAlign='center' display='block'> Center aligned </Highlight>
+```
+
+<Highlight color='#c41e3a' highlight='format' textAlign='center' display='block'> Center aligned </Highlight>
+
+```jsx
+<Highlight color='#0d7f3f' highlight='format' textAlign='right' display='block'> Right aligned </Highlight>
+```
+
+<Highlight color='#0d7f3f' highlight='format' textAlign='right' display='block'> Right aligned </Highlight>
+
+### Justified Text
+
+```jsx
+<Highlight color='#8b5a3c' highlight='format' textAlign='justify' display='block'>
+This is justified text that stretches to fill the full width of the container, <br></br> creating even margins on both sides.
+</Highlight>
+```
+
+<Highlight color='#8b5a3c' highlight='format' textAlign='justify' display='block'>
+This is justified text that stretches to fill the full width of the container, <br></br> creating even margins on both sides.
+</Highlight>
+
+## 🎨 Advanced Examples
+
+### Headers with Highlight
+
+```mdx
+# <Highlight color='#004080' highlight='fg' fontWeight='bold'> Foreground Blue Header </Highlight>
+```
+
+# <Highlight color='#004080' highlight='fg' fontWeight='bold'> Foreground Blue Header </Highlight>
+
+```mdx
+## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Foreground Brown Header </Highlight>
+```
+
+## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Foreground Brown Header </Highlight>
+
+### Combined Styling
+
+```jsx
+<Highlight color='#ffc107' highlight='fg' fontWeight='bold' fontStyle='italic'> Bold italic warning </Highlight>
+```
+
+<Highlight color='#ffc107' highlight='fg' fontWeight='bold' fontStyle='italic'> Bold italic warning </Highlight>
+
+```jsx
+<Highlight color='#28a745' highlight='fg' fontWeight='bold'> Bold success message </Highlight>
+```
+
+<Highlight color='#28a745' highlight='fg' fontWeight='bold'> Bold success message </Highlight>
+
+### Custom Format Mode
+
+```jsx
+<Highlight highlight='format' color='red' textAlign='right' display='block' fontWeight='bolder' textDecoration='underline wavy red' fontStyle='oblique' fontSize='22px'> Advanced styling </Highlight>
+```
+
+<Highlight highlight='format' color='red' textAlign='right' display='block' fontWeight='bolder' textDecoration='underline wavy red' fontStyle='oblique' fontSize='22px'> Advanced styling </Highlight>
+
+## 🎨 Mixed Markdown Examples
+
+### Bold Text with Highlight
+
+```jsx
+You can combine <Highlight color='#ff6b6b'> **bold** markdown</Highlight> with the Highlight component for emphasis.
+```
+You can combine <Highlight color='#ff6b6b'> **bold** markdown</Highlight> with the Highlight component for emphasis.
+
+### Headers and Lists
+
+## <Highlight color='#004080' highlight='fg'>Important Notice</Highlight>
+
+- This is a **<Highlight color='#28a745'>highlighted list item</Highlight>** using markdown
+- Another item with <Highlight color='#1877F2' highlight='fg'>*italic* emphasis</Highlight> and highlighting
+- <Highlight color='#ffc107'>Warning:</Highlight> Always test your combinations
+
+### Inline Code and Links
+
+Check out this `<Highlight color='#6f42c1'>inline code</Highlight>` example and visit [our docs](https://example.com) for more <Highlight highlight='lightBg' color='#D1FFBD'>information</Highlight>.
+
+## 📋 Component Props Reference
+
+| Prop | Type | Description | Supported Modes | Default |
+|------|------|-------------|----------------|---------|
+| `color` | string | Hex color code | All modes | - |
+| `highlight` | string | Mode: 'bg', 'fg', 'lightBg', 'format' | All | 'bg' |
+| `fontWeight` | string | 'normal', 'bold', 'lighter', 'bolder' | 'fg', 'format' | 'normal' |
+| `fontStyle` | string | 'normal', 'italic', 'oblique' | All modes | 'normal' |
+| `textAlign` | string | 'left', 'center', 'right', 'justify' | 'fg', 'format' | 'left' |
+| `display` | string | 'inline', 'block' | 'fg', 'format' | 'inline' |
+| `textDecoration` | string | CSS text-decoration | 'fg', 'format' | 'none' |
+| `fontSize` | string | Size in pixels | 'format' only | 'inherit' |
+
+## 🎯 Mode-Specific Behavior
+
+### Background Mode (`highlight='bg'`)
+- Uses `color` for **background color**
+- Fixed **white text color** (`#fff`)
+- Supports `fontStyle` only
+- Rounded corners and padding applied automatically
+- **Default mode** when no `highlight` prop is provided
+
+### Foreground Mode (`highlight='fg'`)
+- Uses `color` for **text color only**
+- Supports all typography props: `fontWeight`, `fontStyle`, `textAlign`, `display`, `textDecoration`
+- No background styling
+
+### Light Background Mode (`highlight='lightBg'`)
+- Uses `color` for **light background color**
+- Fixed **purple text color** (`#4B0082`)
+- Supports `fontStyle` only
+- Subtle padding and rounded corners
+
+### Format Mode (`highlight='format'`)
+- Uses `color` for **text color**
+- Supports all props including `fontSize`
+- Block-level display by default
+- Advanced styling capabilities
+
+## 🎨 Color Suggestions
+
+### For Background Mode (with white text)
+- `#ff6b6b` - <Highlight color="#ff6b6b"> Vibrant red </Highlight>
+- `#4299e1` - <Highlight color="#4299e1"> Professional blue </Highlight>
+- `#28a745` - <Highlight color="#28a745"> Success green </Highlight>
+- `#ffc107` - <Highlight color="#ffc107"> Warning yellow </Highlight>
+- `#dc3545` - <Highlight color="#dc3545"> Danger red </Highlight>
+- `#6f42c1` - <Highlight color="#6f42c1"> Purple </Highlight>
+- `#20c997` - <Highlight color="#20c997"> Teal </Highlight>
+- `#fd7e14` - <Highlight color="#fd7e14"> Orange </Highlight>
+
+### For Foreground Mode (text colors)
+- `#800031` - <Highlight color="#800031" highlight="fg"> Burgundy </Highlight>
+- `#004080` - <Highlight color="#004080" highlight="fg"> Navy blue </Highlight>
+- `#0d7f3f` - <Highlight color="#0d7f3f" highlight="fg"> Forest green </Highlight>
+- `#c41e3a` - <Highlight color="#c41e3a" highlight="fg"> Crimson </Highlight>
+- `#8b5a3c` - <Highlight color="#8b5a3c" highlight="fg"> Brown </Highlight>
+- `#2d5aa0` - <Highlight color="#2d5aa0" highlight="fg"> Royal blue </Highlight>
+- `#1877F2` - <Highlight color="#1877F2" highlight="fg"> Facebook blue </Highlight>
+- `#ff6b6b` - <Highlight color="#ff6b6b" highlight="fg"> Coral </Highlight>
+
+### For Light Background Mode (with purple text)
+- `#D1FFBD` - <Highlight highlight="lightBg" color="#D1FFBD"> Light green </Highlight>
+- `#FFE4B5` - <Highlight highlight="lightBg" color="#FFE4B5"> Light orange </Highlight>
+- `#E6E6FA` - <Highlight highlight="lightBg" color="#E6E6FA"> Lavender </Highlight>
+- `#F0FFF0` - <Highlight highlight="lightBg" color="#F0FFF0"> Honeydew </Highlight>
+- `#FFFACD` - <Highlight highlight="lightBg" color="#FFFACD"> Lemon chiffon </Highlight>
+- `#F5DEB3` - <Highlight highlight="lightBg" color="#F5DEB3"> Wheat </Highlight>
+
+## 🎯 Best Practices
+
+### ✅ Do's
+- Use meaningful color combinations for accessibility
+- Combine multiple props for rich styling
+- Use `display='block'` for text alignment
+- Test in both light and dark themes
+- Choose appropriate colors from the suggestions above
+
+### ❌ Don'ts
+- Avoid using too many props on single elements
+- Don't rely on default colors without theme testing
+- Avoid very small font sizes with complex styling
+- Don't use light colors for background mode (use foreground mode instead)
+
+## 🚀 Ready to Use Examples
+
+### Error Messages
+```jsx
+<Highlight color='#f44336'> Error message in red background </Highlight>
+```
+<Highlight color='#f44336'> Error message in red background </Highlight>
+
+### Success Messages
+```jsx
+<Highlight color='#28a745'> Success message in green background </Highlight>
+```
+<Highlight color='#28a745'> Success message in green background </Highlight>
+
+### Muted Text
+```jsx
+<Highlight color='#C0C0C0'> Muted text in silver background </Highlight>
+```
+<Highlight color='#C0C0C0'> Muted text in silver background </Highlight>
+
+### Highlighted Notes
+```jsx
+<Highlight highlight='lightBg' color='#D1FFBD'> Highlighted note with light background </Highlight>
+```
+<Highlight highlight='lightBg' color='#D1FFBD'> Highlighted note with light background </Highlight>
+
+### Important Text
+```jsx
+<Highlight color='#800031' highlight='fg' fontWeight='bold'> Important bold text </Highlight>
+```
+<Highlight color='#800031' highlight='fg' fontWeight='bold'> Important bold text </Highlight>
+
+### Emphasized Text
+```jsx
+<Highlight color='#1877F2' highlight='fg' fontStyle='italic'> Emphasized italic text </Highlight>
+```
+<Highlight color='#1877F2' highlight='fg' fontStyle='italic'> Emphasized italic text </Highlight>
+
+### Default Highlight
+```jsx
+<Highlight> Default highlight - works in any theme </Highlight>
+```
+<Highlight> Default highlight - works in any theme </Highlight>
+
+Perfect for creating beautiful, accessible highlighted text in your Astro MDX content! 🎨⚛️
