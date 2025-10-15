@@ -22,7 +22,7 @@ const ta = {
   'feed.publishedIn': 'பதிவிடப்பட்டது',
   'feed.expiresIn': 'காலாவதியாகும்',
   'blog.tableOfContent': 'உள்ளடக்கக் குறிப்பு',
-  'home.sticky': 'ஒட்டியிருத்தல்',
+  'home.sticky': 'ஒட்டிய',
   'home.goBack': 'பின்னால் செல்க',
   'home.moreArticles': 'மேலும் பல கட்டுரைகள்',
   'home.readMore': 'மேலும் படிக்க',
