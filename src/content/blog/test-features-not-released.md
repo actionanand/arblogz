@@ -1,7 +1,7 @@
 ---
 title: Emoji using text
 date: 2025-10-18
-description: test
+description: 'Learn how to use emojis in markdown with literal characters or GitHub shortcodes! This guide shows easy ways to add expressive icons to your posts, improve accessibility with span tags, and includes handy examples for making your content more engaging and fun.'
 ---
 
 > Note: This feature is not released to prod. blog
