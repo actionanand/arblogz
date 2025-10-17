@@ -344,6 +344,17 @@ export const comment = {
   //
 }
 
+// These are characters available for the character chat feature.
+// To add your own character, add an image file to the top-level `/public/admonitions/` directory
+// Make sure to compress the image to a web-friendly size (<100kb)
+// Try using the excellent https://squoosh.app web app for creating small webp files
+
+export const characters = {
+  owl: '/admonitions/owl.webp',
+  unicorn: '/admonitions/unicorn.webp',
+  duck: '/admonitions/duck.webp',
+}
+
 /**
  * Analytics Feature Configuration
  *

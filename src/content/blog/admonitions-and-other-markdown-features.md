@@ -10,7 +10,7 @@ sticky: 2
 ogImage: https://astro-yi.obs.cn-east-3.myhuaweicloud.com/avatar.png
 ---
 
-### Support Remixicon
+### Support <a href="https://remixicon.com" target="_blank"> Remixicon </a>
 
 ```text
 :i{class="ri-poker-hearts-fill"}
@@ -118,7 +118,7 @@ The collapse feature also supports the `:::details` syntax as an alternative to 
 The collapse feature also supports the `:::details` syntax as an alternative to `:::collapse`.
 :::
 
-### Testing Custom Titles and SVG Arrows
+### Support collapse with Custom Title
 
 :::collapse[🎯 Custom Title with Emoji]
 This collapse has a custom title with an emoji and should show a nice SVG arrow that rotates smoothly when expanded.
@@ -264,9 +264,82 @@ Child content
 
 :::::
 
+:::info[Custom Info Title]
+This is a new info admonition with custom title and blue styling.
+:::
+
+:::warning[Custom Warning Title]
+This is a warning admonition that should look like caution with orange styling.
+:::
+
+:::info
+This is a standard info admonition without custom title.
+:::
+
+:::warning
+This is a standard warning admonition without custom title.
+:::
+
+## Character Chats
+
+```md title="Custom character chat" wrap
+:::duck
+**Did you know?** You can easily create custom character chats for your blog!
+:::
+```
+
+:::duck
+**Did you know?** You can easily create custom character chats for your blog!
+:::
+
+### Adding Your Own
+
+To add your own character, first add an image files to the directory `/public/admonitions` in your  repo. Astro cannot automatically optimize image assets from markdown plugins, so make sure to compress the image to a web-friendly size (<100kb).
+
+I recommend Google's free [Squoosh](https://squoosh.app) web app for creating super small webp files. The characters here have been resized to 300 pixels wide and exported to webp with 75% quality using Squoosh.
+
+After you've added your image, update the exported constant `characters` in `consts.ts` with your newly added image file and restart the development server.
+
+### Character Conversations
+
+When there are multiple character chats in a row, the order of the chat image and chat bubble reverses to give the chat more of a back-and-forth appearance.
+
+```md title="Sequential character chats"
+:::owl
+This is a cool feature!
+:::
+
+:::unicorn
+I agree!
+:::
+```
+
+:::owl
+This is a cool feature!
+:::
+
+:::unicorn
+I agree!
+:::
+
+You can specify the alignment (`left` or `right`) to override the default `left, right, left, ...` ordering.
+
+```md wrap title="Character chats with specific alignment"
+:::unicorn{align="right"}
+Over here, to the right!
+:::
+```
+
+:::unicorn{align="right"}
+Over here, to the right!
+:::
+
+
 ### Support mermaid
 
-Use:
+A [Mermaid](https://mermaid.js.org/intro/) diagram is a diagram and flowcharting tool that allows users to create visualizations using simple text and code. It is based on JavaScript and uses a Markdown-inspired syntax to dynamically create and modify diagrams. This approach of **diagrams as code** allows for easy version control and maintenance of visual documentation. 
+
+How to Use:
 
 + start with **```mermaid**
 + end with **```**
@@ -328,9 +401,11 @@ classDiagram
     }
 ```
 
-### Support mathjax
+### SupportSupport mathjax (LaTeX/KaTeX)
 
 + set markdown frontmatter `mathjax: true`.
+
+You can also display inline math via [remark-math and rehype-katex](https://github.com/remarkjs/remark-math). Check out the [KaTeX docs](https://katex.org/docs/supported) to learn about the syntax.
 
 #### Block Mode
 
@@ -347,6 +422,19 @@ hello!
 $$ \sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t $$
 hello!
 
+```md title="Rendering a block of KaTeX"
+---
+mathjax: true
+---
+$$
+a + ar + ar^2 + ar^3 + \dots + ar^{n-1} = \displaystyle\sum_{k=0}^{n - 1}ar^k = a \bigg(\dfrac{1 - r^n}{1 -r}\bigg)
+$$
+```
+
+$$
+a + ar + ar^2 + ar^3 + \dots + ar^{n-1} = \displaystyle\sum_{k=0}^{n - 1}ar^k = a \bigg(\dfrac{1 - r^n}{1 -r}\bigg)
+$$
+
 #### Inline Mode
 
 ```yaml title="Mathjax.md"
@@ -358,9 +446,20 @@ hello! $ \sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t $ hello!
 
 hello! $ \sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t $ hello!
 
+```txt title="Rendering inline math with KaTeX"
+---
+mathjax: true
+---
+Make those equations pretty! $ \frac{a}{b} \cdot b = a $
+```
+
+Make those equations pretty! $ \frac{a}{b} \cdot b = a $
+
+
 ### Integration with Expressive Code
 
-For more usage, please refer to the official website [expressive-code](https://expressive-code.com/).
+See the [Expressive Code Docs](https://expressive-code.com/key-features/syntax-highlighting/) for more information on available features like wrapping text, line highlighting, diffs, etc. [Expressive Code](https://expressive-code.com/) has several advanced features that go beyond the basic syntax highlighting offered by [Prism](https://prismjs.com/), positioning it as a more modern and powerful tool for developers and technical writers. While Prism is known for being lightweight and simple to use, Expressive Code builds on this foundation with rich annotations and UI elements. 
+
 
 ```js title="line-markers.js" del={2} ins={3-4} {6}
 function demo() {
@@ -394,20 +493,3 @@ for (let key of myObj) {
 
 ```
 
-### Testing New Admonitions/Callouts 
-
-:::info[Custom Info Title]
-This is a new info admonition with custom title and blue styling.
-:::
-
-:::warning[Custom Warning Title]
-This is a warning admonition that should look like caution with orange styling.
-:::
-
-:::info
-This is a standard info admonition without custom title.
-:::
-
-:::warning
-This is a standard warning admonition without custom title.
-:::
