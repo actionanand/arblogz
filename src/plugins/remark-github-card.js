@@ -28,7 +28,7 @@ export function remarkGithubCard() {
        * {
        *   type: 'leafDirective',
        *   name: 'github',
-       *   attributes: { repo: 'cirry/astro-yi' },
+       *   attributes: { repo: 'actionanand/arblogz' },
        *   children: [],
        *   position: {
        *     start: { line: 6, column: 1, offset: 49 },

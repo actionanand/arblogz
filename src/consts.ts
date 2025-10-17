@@ -31,11 +31,11 @@ import type {AnalyticsConfig} from "./types/analyticsTypes"
 export const site = {
   title: 'AR Blogz', // required
   favicon: '/favicon.svg', // required
-  description: 'My corner of the internet for everything beyond code - life, learning & discoveries 💡 ',
+  description: 'Welcome to my independent blog website! ',
   author: "Anand Raja", // required
   avatar: '/avatar.png', // required
-  url: 'https://arblogz.pages.dev', // required
-  baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
+  url: 'https://actionanand.github.io', // required
+  baseUrl: '/arblogz', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
   motto: `Don't just be Inspired, be Inspiring!`,
   recentBlogSize: 7,
   archivePageSize: 25,
@@ -260,19 +260,19 @@ export const donate = {
   
   // QR Code images (place in /public/images/donation/)
   // if you don't want some payment, comment it out
-  // wechatQRCode: "/images/donation/wechat-qr.png",
-  // alipayQRCode: "/images/donation/alipay-qr.png", 
+  wechatQRCode: "/images/donation/wechat-qr.png",
+  alipayQRCode: "/images/donation/alipay-qr.png", 
   gpayQRCode: "/images/donation/gpay-qr.png", // Google Pay for India
-  // paytmQRCode: "/images/donation/paytm-qr.png", // Paytm for India
-  // phonepeQRCode: "/images/donation/phonepe-qr.png", // PhonePe for India
+  paytmQRCode: "/images/donation/paytm-qr.png", // Paytm for India
+  phonepeQRCode: "/images/donation/phonepe-qr.png", // PhonePe for India
   
   // Direct payment URLs
-  paypalUrl: "https://paypal.me/actionanand", // Replace with actual
-  githubSponsors: "actionanand", // Replace with actual GitHub username
-  buyMeACoffee: "actionanand", // Replace with actual username
-  kofi: "actionanand", // Replace with actual Ko-fi username
-  // patreon: "yourusername", // Replace with actual Patreon username
-  // opencollective: "yourproject", // Replace with actual Open Collective project
+  paypalUrl: "https://paypal.me/yourusername", // Replace with actual
+  githubSponsors: "yourusername", // Replace with actual GitHub username
+  buyMeACoffee: "yourusername", // Replace with actual username
+  kofi: "yourusername", // Replace with actual Ko-fi username
+  patreon: "yourusername", // Replace with actual Patreon username
+  opencollective: "yourproject", // Replace with actual Open Collective project
   
   // Cryptocurrency (optional)
   bitcoin: "", // Bitcoin address
@@ -342,6 +342,17 @@ export const comment = {
   }
 
   //
+}
+
+// These are characters available for the character chat feature.
+// To add your own character, add an image file to the top-level `/public/admonitions/` directory
+// Make sure to compress the image to a web-friendly size (<100kb)
+// Try using the excellent https://squoosh.app web app for creating small webp files
+
+export const characters = {
+  owl: '/admonitions/owl.webp',
+  unicorn: '/admonitions/unicorn.webp',
+  duck: '/admonitions/duck.webp',
 }
 
 /**
