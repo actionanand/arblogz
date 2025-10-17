@@ -35,14 +35,36 @@ aside.character-dialogue:has(+ aside.character-dialogue) {
   }
 }
 
-/* Alternate right alignment for even dialogue boxes */
-aside.character-dialogue + aside.character-dialogue:nth-of-type(even):not(.align-left),
+/* Alternate right alignment for consecutive dialogue boxes */
+aside.character-dialogue + aside.character-dialogue:not(.align-left),
 aside.character-dialogue.align-right {
   flex-direction: row-reverse;
 }
 
-aside.character-dialogue + aside.character-dialogue:nth-of-type(even):not(.align-left) .character-dialogue-content::after,
+aside.character-dialogue + aside.character-dialogue:not(.align-left) .character-dialogue-content::after,
 aside.character-dialogue.align-right .character-dialogue-content::after {
+  right: -0.75rem;
+  left: auto;
+  transform: rotate(-90deg);
+}
+
+/* Reset alignment for third consecutive dialogue (left again) */
+aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-right) {
+  flex-direction: row;
+}
+
+aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-right) .character-dialogue-content::after {
+  left: -0.75rem;
+  right: auto;
+  transform: rotate(90deg);
+}
+
+/* Right alignment for fourth consecutive dialogue */
+aside.character-dialogue + aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-left) {
+  flex-direction: row-reverse;
+}
+
+aside.character-dialogue + aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-left) .character-dialogue-content::after {
   right: -0.75rem;
   left: auto;
   transform: rotate(-90deg);

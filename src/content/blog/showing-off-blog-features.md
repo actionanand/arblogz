@@ -1,7 +1,7 @@
 ---
 date: 2025-08-24
-title: 'New features: Admonitions/Callouts & Markdown Features'
-description: More new features specific to this theme.
+title: Showing Off Blog Features
+description: 'This blog demonstrates advanced markdown features: Remix icons, GitHub cards, collapsible sections, callouts/admonitions, Character Chats, Mermaid diagrams, math formulas (LaTeX/KaTeX), and Expressive Code (Prism) for syntax highlighting, and more—making your content interactive and beautiful!'
 tags: [feature]
 category: astro
 mermaid: true
