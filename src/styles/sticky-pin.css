@@ -1,0 +1,127 @@
+.post-sticky {
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+}
+
+.post-sticky .sticky-pin {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: no-repeat center/contain;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  filter: drop-shadow(0 1px 2px rgba(16, 185, 129, 0.1));
+}
+
+/* Light mode pin - outlined with #10B981 */
+.post-sticky .sticky-pin {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 17v5'/%3E%3Cpath d='M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z'/%3E%3C/svg%3E");
+}
+
+/* Dark mode pin - brighter #10B981 with glow */
+html[data-theme="dark"] .post-sticky .sticky-pin {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 17v5'/%3E%3Cpath d='M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z'/%3E%3C/svg%3E");
+  filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.4)) drop-shadow(0 1px 2px rgba(16, 185, 129, 0.2));
+}
+
+/* Pin hover animation - rotation and scale */
+.post-sticky:hover .sticky-pin {
+  transform: rotate(-15deg) scale(1.15);
+  animation: pin-wiggle 0.6s ease-in-out;
+}
+
+@keyframes pin-wiggle {
+  0%, 100% { transform: rotate(-15deg) scale(1.15); }
+  25% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(-10deg) scale(1.15); }
+  75% { transform: rotate(-18deg) scale(1.17); }
+}
+
+/* Subtle pulse animation when not hovering */
+.sticky-pin {
+  animation: pin-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pin-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.post-sticky:hover .sticky-pin {
+  animation: pin-wiggle 0.6s ease-in-out;
+  opacity: 1;
+}
+
+/* Tooltip styling - modern card design */
+.post-sticky .sticky-tooltip {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(0.5rem) scale(0.95);
+  margin-left: 0.25rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Light theme tooltip */
+  background: #10B981;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25), 
+              0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark theme tooltip - enhanced visibility */
+html[data-theme="dark"] .post-sticky .sticky-tooltip {
+  background: #10B981;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4), 
+              0 2px 8px rgba(16, 185, 129, 0.2),
+              0 0 0 1px rgba(16, 185, 129, 0.1);
+}
+
+/* Tooltip arrow */
+.post-sticky .sticky-tooltip::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: #10B981;
+}
+
+/* Tooltip hover state - slide in with scale */
+.post-sticky:hover .sticky-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0.75rem) scale(1);
+}
+
+/* Subtle shine effect on tooltip hover */
+.post-sticky .sticky-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  border-radius: 0.5rem;
+  transition: left 0.6s ease;
+}
+
+.post-sticky:hover .sticky-tooltip::after {
+  left: 100%;
+}
