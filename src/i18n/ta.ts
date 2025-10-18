@@ -25,7 +25,7 @@ export  const ta = {
   'home.goBack': 'பின்னால் செல்க',
   'home.moreArticles': 'மேலும் பல கட்டுரைகள்',
   'home.readMore': 'மேலும் படிக்க',
-  'home.sticky': 'ஒட்டிய',
+  'home.sticky': 'நிலைத்த பதிவு',
   'message.welcome': 'நல்வரவு',
   'message.welcomeTips': 'தடம் விட்டு செல்லவும்!',
   'memos.loadMore': '"மேலும்"ஏற்றுக',

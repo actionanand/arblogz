@@ -5,7 +5,7 @@ export const zhCn = {
   'aside.note': '备注',
   'aside.tip': '提示',
   'aside.warning': '警告',
-  'home.sticky': '置顶',
+  'home.sticky': '置顶帖子',
   'home.goBack': '返回',
   'home.moreArticles': '更多文章',
   'home.readMore': '阅读全文',

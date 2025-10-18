@@ -21,7 +21,7 @@ export const fr = {
   'feed.publishedIn': 'Publié dans',
   'feed.expiresIn': 'Expire dans',
   'blog.tableOfContent': 'Table des matières',
-  'home.sticky': 'Épinglé',
+  'home.sticky': 'publication épinglée',
   'home.goBack': 'Retour',
   'home.moreArticles': 'Plus d\'articles',
   'home.readMore': 'Lire la suite',

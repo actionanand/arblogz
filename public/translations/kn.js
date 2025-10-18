@@ -26,7 +26,7 @@ const kn = {
   'feed.publishedIn': 'ಪ್ರಕಟಿಸಲಾಗಿದೆ',
   'feed.expiresIn': 'ಅವಧಿ ಮುಗಿಯುತ್ತದೆ',
   'blog.tableOfContent': 'ವಿಷಯ ಪಟ್ಟಿ',
-  'home.sticky': 'ಅಂಟಿಕೊಂಡಿರುವ',
+  'home.sticky': 'ನಿಲುವಾದ ಪೋಸ್ಟ್',
   'home.goBack': 'ಹಿಂದೆ ಹೋಗಿ',
   'home.moreArticles': 'ಹೆಚ್ಚಿನ ಲೇಖನಗಳು',
   'home.readMore': 'ಹೆಚ್ಚು ಓದಿ',

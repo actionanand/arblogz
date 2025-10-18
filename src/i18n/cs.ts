@@ -27,7 +27,7 @@ export  let cs = {
   'home.goBack': 'Jít zpět',
   'home.moreArticles': 'Více článků',
   'home.readMore': 'Číst dál',
-  'home.sticky': 'Připíchnuto',
+  'home.sticky': 'připnutý příspěvek',
   'message.welcomeTips': 'Zanechte stopu!',
   'message.welcome': 'Vítejte',
   'pagination.total':'Celkem',
