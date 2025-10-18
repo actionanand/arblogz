@@ -35,61 +35,69 @@ aside.character-dialogue:has(+ aside.character-dialogue) {
   }
 }
 
-/* Alternate right alignment for consecutive dialogue boxes */
-aside.character-dialogue + aside.character-dialogue:not(.align-left),
-aside.character-dialogue.align-right {
-  flex-direction: row-reverse;
-}
-
-/* Right-aligned dialogues - adjust triangle */
-aside.character-dialogue + aside.character-dialogue:not(.align-left) .character-dialogue-content::after,
-aside.character-dialogue.align-right .character-dialogue-content::after {
-  right: -0.9rem;
-  left: auto;
-  transform: translateY(-50%) rotate(-90deg);
-}
-
-@media (min-width: 640px) {
-  aside.character-dialogue + aside.character-dialogue:not(.align-left) .character-dialogue-content::after,
-  aside.character-dialogue.align-right .character-dialogue-content::after {
-    right: -0.75rem;
-    transform: rotate(-90deg);
-  }
-}
-
-/* Reset alignment for third consecutive dialogue (left again) */
-aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-right) {
+/* Alternate right alignment for consecutive dialogue boxes using :nth-child */
+aside.character-dialogue:nth-child(odd) {
   flex-direction: row;
 }
 
-aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-right) .character-dialogue-content::after {
+aside.character-dialogue:nth-child(odd) .character-dialogue-content::after {
   left: -0.9rem;
   right: auto;
   transform: translateY(-50%) rotate(90deg);
 }
 
-@media (min-width: 640px) {
-  aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-right) .character-dialogue-content::after {
-    left: -0.75rem;
-    transform: rotate(90deg);
-  }
-}
-
-/* Right alignment for fourth consecutive dialogue */
-aside.character-dialogue + aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-left) {
+aside.character-dialogue:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-aside.character-dialogue + aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-left) .character-dialogue-content::after {
+aside.character-dialogue:nth-child(even) .character-dialogue-content::after {
   right: -0.9rem;
   left: auto;
   transform: translateY(-50%) rotate(-90deg);
 }
 
 @media (min-width: 640px) {
-  aside.character-dialogue + aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-left) .character-dialogue-content::after {
+  aside.character-dialogue:nth-child(odd) .character-dialogue-content::after {
+    left: -0.75rem;
+    transform: rotate(90deg);
+  }
+  
+  aside.character-dialogue:nth-child(even) .character-dialogue-content::after {
     right: -0.75rem;
     transform: rotate(-90deg);
+  }
+}
+
+/* Manual override classes */
+aside.character-dialogue.align-left {
+  flex-direction: row !important;
+}
+
+aside.character-dialogue.align-left .character-dialogue-content::after {
+  left: -0.9rem !important;
+  right: auto !important;
+  transform: translateY(-50%) rotate(90deg) !important;
+}
+
+aside.character-dialogue.align-right {
+  flex-direction: row-reverse !important;
+}
+
+aside.character-dialogue.align-right .character-dialogue-content::after {
+  right: -0.9rem !important;
+  left: auto !important;
+  transform: translateY(-50%) rotate(-90deg) !important;
+}
+
+@media (min-width: 640px) {
+  aside.character-dialogue.align-left .character-dialogue-content::after {
+    left: -0.75rem !important;
+    transform: rotate(90deg) !important;
+  }
+  
+  aside.character-dialogue.align-right .character-dialogue-content::after {
+    right: -0.75rem !important;
+    transform: rotate(-90deg) !important;
   }
 }
 
