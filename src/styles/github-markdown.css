@@ -33,7 +33,8 @@
    --color-fg-default: #c9d1d9;
    --color-fg-muted: #8b949e;
    --color-fg-subtle: #484f58;
-   --color-canvas-default: #343A40;
+   /* --color-canvas-default: #343A40; */
+   --color-canvas-default: transparent;
    --color-canvas-subtle: #161b22;
    --color-border-default: #30363d;
    --color-border-muted: #21262d;

@@ -35,39 +35,70 @@ aside.character-dialogue:has(+ aside.character-dialogue) {
   }
 }
 
-/* Alternate right alignment for consecutive dialogue boxes */
-aside.character-dialogue + aside.character-dialogue:not(.align-left),
-aside.character-dialogue.align-right {
-  flex-direction: row-reverse;
-}
-
-aside.character-dialogue + aside.character-dialogue:not(.align-left) .character-dialogue-content::after,
-aside.character-dialogue.align-right .character-dialogue-content::after {
-  right: -0.75rem;
-  left: auto;
-  transform: rotate(-90deg);
-}
-
-/* Reset alignment for third consecutive dialogue (left again) */
-aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-right) {
+/* Alternate right alignment for consecutive dialogue boxes using :nth-child */
+aside.character-dialogue:nth-child(odd) {
   flex-direction: row;
 }
 
-aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-right) .character-dialogue-content::after {
-  left: -0.75rem;
+aside.character-dialogue:nth-child(odd) .character-dialogue-content::after {
+  left: -0.9rem;
   right: auto;
-  transform: rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
 }
 
-/* Right alignment for fourth consecutive dialogue */
-aside.character-dialogue + aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-left) {
+aside.character-dialogue:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-aside.character-dialogue + aside.character-dialogue + aside.character-dialogue + aside.character-dialogue:not(.align-left) .character-dialogue-content::after {
-  right: -0.75rem;
+aside.character-dialogue:nth-child(even) .character-dialogue-content::after {
+  right: -0.9rem;
   left: auto;
-  transform: rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+@media (min-width: 640px) {
+  aside.character-dialogue:nth-child(odd) .character-dialogue-content::after {
+    left: -0.75rem;
+    transform: rotate(90deg);
+  }
+  
+  aside.character-dialogue:nth-child(even) .character-dialogue-content::after {
+    right: -0.75rem;
+    transform: rotate(-90deg);
+  }
+}
+
+/* Manual override classes */
+aside.character-dialogue.align-left {
+  flex-direction: row !important;
+}
+
+aside.character-dialogue.align-left .character-dialogue-content::after {
+  left: -0.9rem !important;
+  right: auto !important;
+  transform: translateY(-50%) rotate(90deg) !important;
+}
+
+aside.character-dialogue.align-right {
+  flex-direction: row-reverse !important;
+}
+
+aside.character-dialogue.align-right .character-dialogue-content::after {
+  right: -0.9rem !important;
+  left: auto !important;
+  transform: translateY(-50%) rotate(-90deg) !important;
+}
+
+@media (min-width: 640px) {
+  aside.character-dialogue.align-left .character-dialogue-content::after {
+    left: -0.75rem !important;
+    transform: rotate(90deg) !important;
+  }
+  
+  aside.character-dialogue.align-right .character-dialogue-content::after {
+    right: -0.75rem !important;
+    transform: rotate(-90deg) !important;
+  }
 }
 
 /* Spacing between consecutive dialogues */
@@ -104,11 +135,16 @@ img.character-dialogue-image {
   margin: 0 0.375rem;
   border-radius: 0.75rem;
   max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.06);
+  overflow: visible;
+}
+
+html[data-theme="dark"] .character-dialogue-content {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 @media (min-width: 640px) {
   .character-dialogue-content {
-    background-color: rgba(0, 0, 0, 0.06);
     padding: 1.5rem;
     margin-top: 0.125rem;
     min-width: 12.5%;
@@ -118,21 +154,34 @@ img.character-dialogue-image {
 /* Speech bubble pointer (triangle) */
 .character-dialogue-content::after {
   content: '';
-  display: none;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -0.9rem;
+  transform: translateY(-50%) rotate(90deg);
+  width: 0;
+  height: 0;
+  border-left: 0.625rem solid transparent;
+  border-right: 0.625rem solid transparent;
+  border-top: 0.625rem solid rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="dark"] .character-dialogue-content::after {
+  border-top-color: rgba(255, 255, 255, 0.08);
 }
 
 @media (min-width: 640px) {
   .character-dialogue-content::after {
-    display: block;
-    position: absolute;
     top: 2rem;
     left: -0.75rem;
     transform: rotate(90deg);
-    width: 0;
-    height: 0;
     border-left: 0.5rem solid transparent;
     border-right: 0.5rem solid transparent;
     border-top: 0.5rem solid rgba(0, 0, 0, 0.06);
+  }
+  
+  html[data-theme="dark"] .character-dialogue-content::after {
+    border-top-color: rgba(255, 255, 255, 0.08);
   }
 }
 
