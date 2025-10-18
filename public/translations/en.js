@@ -22,7 +22,7 @@ const en = {
   'feed.publishedIn': 'Published in',
   'feed.expiresIn': 'Expires in',
   'blog.tableOfContent': 'Table of Content',
-  'home.sticky': 'Sticky',
+  'home.sticky': 'Sticky post',
   'home.goBack': 'Go Back',
   'home.moreArticles': 'More Articles',
   'home.readMore': 'Read More',

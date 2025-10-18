@@ -5,7 +5,7 @@ export  const zhHant = {
   'aside.note': '備註',
   'aside.tip': '提示',
   'aside.warning': '注意',
-  'home.sticky': '置頂',
+  'home.sticky': '置頂帖子',
   'home.goBack': '返回',
   'home.moreArticles': '更多文章',
   'home.readMore': '閱讀全文',

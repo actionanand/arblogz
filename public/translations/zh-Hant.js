@@ -22,7 +22,7 @@ const zhHant = {
   'feed.publishedIn': '發布於',
   'feed.expiresIn': '到期於',
   'blog.tableOfContent': '目錄',
-  'home.sticky': '置頂',
+  'home.sticky': '置頂帖子',
   'home.goBack': '返回',
   'home.moreArticles': '更多文章',
   'home.readMore': '閱讀更多',

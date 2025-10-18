@@ -22,7 +22,7 @@ const cs = {
   'feed.publishedIn': 'Publikováno v',
   'feed.expiresIn': 'Vyprší v',
   'blog.tableOfContent': 'Obsah',
-  'home.sticky': 'Připnuto',
+  'home.sticky': 'připnutý příspěvek',
   'home.goBack': 'Zpět',
   'home.moreArticles': 'Více článků',
   'home.readMore': 'Číst více',

@@ -22,7 +22,7 @@ const zhCn = {
   'feed.publishedIn': '发布于',
   'feed.expiresIn': '到期于',
   'blog.tableOfContent': '目录',
-  'home.sticky': '置顶',
+  'home.sticky': '置顶帖子',
   'home.goBack': '返回',
   'home.moreArticles': '更多文章',
   'home.readMore': '阅读更多',

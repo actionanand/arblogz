@@ -25,7 +25,7 @@ export  const en = {
   'home.goBack': 'Go back',
   'home.moreArticles': 'More articles',
   'home.readMore': 'Read more',
-  'home.sticky': 'Sticky',
+  'home.sticky': 'Sticky post',
   'message.welcome': 'Welcome',
   'message.welcomeTips': 'Leave a footprint!',
   'memos.loadMore': 'Load more',

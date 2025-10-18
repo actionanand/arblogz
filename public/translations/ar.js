@@ -22,7 +22,7 @@ const ar = {
   'feed.publishedIn': 'نُشر في',
   'feed.expiresIn': 'ينتهي في',
   'blog.tableOfContent': 'جدول المحتويات',
-  'home.sticky': 'مثبت',
+  'home.sticky': 'منشور مثبت',
   'home.goBack': 'العودة',
   'home.moreArticles': 'المزيد من المقالات',
   'home.readMore': 'اقرأ المزيد',

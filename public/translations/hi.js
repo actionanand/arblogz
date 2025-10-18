@@ -22,7 +22,7 @@ const hi = {
   'feed.publishedIn': 'में प्रकाशित',
   'feed.expiresIn': 'में समाप्ति',
   'blog.tableOfContent': 'विषय सूची',
-  'home.sticky': 'चिपकाया गया',
+  'home.sticky': 'निश्चित पोस्ट',
   'home.goBack': 'वापस जाएं',
   'home.moreArticles': 'और लेख',
   'home.readMore': 'और पढ़ें',
