@@ -54,6 +54,9 @@ export const site = {
  * memosUsername {string} memos login name
  * memosPageSize {number} 10
  */
+
+const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
+
 export const config = {
   lang: (() => {
     // For server-side and initial render, always use English as default
@@ -260,12 +263,12 @@ export const donate = {
   
   // QR Code images (place in /public/images/donation/)
   // if you don't want some payment, comment it out
-  wechatQRCode: `${site.baseUrl}/images/donation/wechat-qr.png`,
-  alipayQRCode: `${site.baseUrl}/images/donation/alipay-qr.png`, 
-  gpayQRCode: `${site.baseUrl}/images/donation/gpay-qr.png`, // Google Pay for India
-  paytmQRCode: `${site.baseUrl}/images/donation/paytm-qr.png`, // Paytm for India
-  phonepeQRCode: `${site.baseUrl}/images/donation/phonepe-qr.png`, // PhonePe for India
-  
+  wechatQRCode: `${baseUrl}/images/donation/wechat-qr.png`,
+  alipayQRCode: `${baseUrl}/images/donation/alipay-qr.png`, 
+  gpayQRCode: `${baseUrl}/images/donation/gpay-qr.png`, // Google Pay for India
+  paytmQRCode: `${baseUrl}/images/donation/paytm-qr.png`, // Paytm for India
+  phonepeQRCode: `${baseUrl}/images/donation/phonepe-qr.png`, // PhonePe for India
+
   // Direct payment URLs
   paypalUrl: "https://paypal.me/yourusername", // Replace with actual
   githubSponsors: "yourusername", // Replace with actual GitHub username
@@ -349,10 +352,11 @@ export const comment = {
 // Make sure to compress the image to a web-friendly size (<100kb)
 // Try using the excellent https://squoosh.app web app for creating small webp files
 
+
 export const characters = {
-  owl: `${site.baseUrl}/admonitions/owl.webp`,
-  unicorn: `${site.baseUrl}/admonitions/unicorn.webp`,
-  duck: `${site.baseUrl}/admonitions/duck.webp`,
+  owl: `${baseUrl}/admonitions/owl.webp`,
+  unicorn: `${baseUrl}/admonitions/unicorn.webp`,
+  duck: `${baseUrl}/admonitions/duck.webp`,
 }
 
 /**
