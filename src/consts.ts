@@ -244,7 +244,7 @@ export const infoLinks = [
   {
     icon: 'ri-rss-fill',
     name: 'rss',
-    outlink: '/rss.xml',
+    outlink: `${baseUrl}/rss.xml`,
   }
 ]
 
