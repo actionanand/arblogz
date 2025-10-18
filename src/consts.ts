@@ -34,8 +34,8 @@ export const site = {
   description: 'Welcome to my independent blog website! ',
   author: "Anand Raja", // required
   avatar: '/avatar.png', // required
-  url: 'https://actionanand.github.io', // required
-  baseUrl: '/arblogz', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
+  url: 'https://arblogz.pages.dev', // required
+  baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
   motto: `Don't just be Inspired, be Inspiring!`,
   recentBlogSize: 7,
   archivePageSize: 25,
@@ -244,7 +244,7 @@ export const infoLinks = [
   {
     icon: 'ri-rss-fill',
     name: 'rss',
-    outlink: '/rss.xml',
+    outlink: `${baseUrl}/rss.xml`,
   }
 ]
 
