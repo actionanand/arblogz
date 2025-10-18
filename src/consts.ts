@@ -54,6 +54,9 @@ export const site = {
  * memosUsername {string} memos login name
  * memosPageSize {number} 10
  */
+
+const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
+
 export const config = {
   lang: (() => {
     // For server-side and initial render, always use English as default
@@ -260,11 +263,11 @@ export const donate = {
   
   // QR Code images (place in /public/images/donation/)
   // if you don't want some payment, comment it out
-  wechatQRCode: "/images/donation/wechat-qr.png",
-  alipayQRCode: "/images/donation/alipay-qr.png", 
-  gpayQRCode: "/images/donation/gpay-qr.png", // Google Pay for India
-  paytmQRCode: "/images/donation/paytm-qr.png", // Paytm for India
-  phonepeQRCode: "/images/donation/phonepe-qr.png", // PhonePe for India
+  wechatQRCode: `${baseUrl}/images/donation/wechat-qr.png`,
+  alipayQRCode: `${baseUrl}/images/donation/alipay-qr.png`, 
+  gpayQRCode: `${baseUrl}/images/donation/gpay-qr.png`, // Google Pay for India
+  paytmQRCode: `${baseUrl}/images/donation/paytm-qr.png`, // Paytm for India
+  phonepeQRCode: `${baseUrl}/images/donation/phonepe-qr.png`, // PhonePe for India
   
   // Direct payment URLs
   paypalUrl: "https://paypal.me/yourusername", // Replace with actual
@@ -289,9 +292,9 @@ export const donate = {
 export const friendshipLinks =
   [
     // {
-    //   name: "Cirry's Blog",
-    //   url: 'https://cirry.cn',
-    //   avatar: "https://cirry.cn/avatar.png",
+    //   name: "Anand's Blog",
+    //   url: 'https://anand.cn',
+    //   avatar: "https://anand.cn/avatar.png",
     //   description: '前端开发的日常'
     // },
   ]
@@ -350,9 +353,9 @@ export const comment = {
 // Try using the excellent https://squoosh.app web app for creating small webp files
 
 export const characters = {
-  owl: '/admonitions/owl.webp',
-  unicorn: '/admonitions/unicorn.webp',
-  duck: '/admonitions/duck.webp',
+  owl: `${baseUrl}/admonitions/owl.webp`,
+  unicorn: `${baseUrl}/admonitions/unicorn.webp`,
+  duck: `${baseUrl}/admonitions/duck.webp`,
 }
 
 /**
