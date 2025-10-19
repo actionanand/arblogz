@@ -31,7 +31,7 @@ import type {AnalyticsConfig} from "./types/analyticsTypes"
 export const site = {
   title: 'AR Blogz', // required
   favicon: '/favicon.svg', // required
-  description: 'Welcome to my independent blog website! ',
+  description: 'My corner of the internet for everything beyond code - life, learning & discoveries 💡 ',
   author: "Anand Raja", // required
   avatar: '/avatar.png', // required
   url: 'https://arblogz.pages.dev', // required
