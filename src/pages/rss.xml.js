@@ -15,6 +15,7 @@ export async function GET(context) {
     title: site.title,
     description: site.description,
     site: `${site.url}${site.baseUrl}`,
+    trailingSlash: false,
     items: blog.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
@@ -23,6 +24,11 @@ export async function GET(context) {
       // This example assumes all posts are rendered as `/blog/[slug]` routes
       author: site.author,
       link: `${getUrl("/blog/")}${post.slug}`,
+      // Add image field for RSS feed
+      customData: post.data.ogImage 
+        ? `<enclosure url="${post.data.ogImage.startsWith('http') ? post.data.ogImage : `${site.url}${site.baseUrl}${post.data.ogImage}`}" type="image/jpeg"/>` 
+        : `<enclosure url="${site.avatar.startsWith('http') ? site.avatar : `${site.url}${site.baseUrl}${site.avatar}`}" type="image/jpeg"/>`,
     })),
+    customData: `<language>en-us</language>`,
   });
 }

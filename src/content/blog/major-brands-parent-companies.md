@@ -4,6 +4,7 @@ date: 2025-09-27
 description: Unlock the definitive guide to India's corporate giants and their brand empires in 2025! From Tata's retail powerhouses (Zudio, Westside, Titan) to Unilever (Horlicks, Surf Excel) and P&G (Ariel, Pampers), uncover hidden connections shaping FMCG, fashion, and consumer markets. Perfect for savvy shoppers!
 tags: ['FMCG', 'Consumer Goods']
 category: Consumer Insights
+ogImage: /images/year-2025/fmcg.jpg
 ---
 
 Ever wondered who owns your favorite brands? Many products we use daily are owned by massive conglomerates that control multiple brands across different categories. Here's a comprehensive and verified look at major parent companies and their diverse product portfolios, organized by company with special focus on the Indian market.
