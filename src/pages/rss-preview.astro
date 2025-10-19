@@ -1,0 +1,323 @@
+---
+import BaseHead from '@/components/BaseHead.astro';
+import {site} from "../consts";
+import getUrl from "../utils/getUrl.js";
+import {getCollectionByName} from "@/utils/getCollectionByName";
+import {sortPostsByDate} from "@/utils/sortPostsByDate";
+import {config} from "@/consts";
+
+const blogs = await getCollectionByName('blog');
+let sortPosts = await sortPostsByDate(blogs);
+let blog = sortPosts.splice(0, 20);
+
+const feedUrl = `${Astro.site}rss.xml`;
+---
+
+<html lang={config.lang}>
+<BaseHead title='RSS Feed' />
+
+<body class="rss-body">
+  <div class="rss-container">
+    <!-- Header Section -->
+    <div class="rss-header">
+      <div class="rss-header-content">
+        <svg class="rss-icon" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
+        </svg>
+        <h1 class="rss-title">RSS Feed</h1>
+      </div>
+      <a href={getUrl("/")} class="rss-back-link">
+        <svg class="rss-back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Back to {site.title}
+      </a>
+    </div>
+
+    <!-- Subscribe Card -->
+    <div class="rss-card">
+      <div class="rss-profile">
+        {site.avatar && (
+          <img 
+            src={site.avatar} 
+            alt={site.author} 
+            class="rss-avatar" 
+          />
+        )}
+        <div class="rss-profile-info">
+          <div class="rss-profile-title">
+            <h2 class="rss-subscribe-text">Subscribe to</h2>
+            <span class="rss-site-title">
+              {site.title}
+            </span>
+          </div>
+          {site.author && (
+            <p class="rss-author">by <span class="rss-author-name">{site.author}</span></p>
+          )}
+          <p class="rss-description">{site.description}</p>
+        </div>
+      </div>
+      
+      <!-- Feed URL Box -->
+      <div class="rss-feed-box">
+        <label class="rss-feed-label">
+          <svg class="rss-feed-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+          </svg>
+          RSS Feed URL
+        </label>
+        <div class="rss-feed-input-group">
+          <input 
+            type="text" 
+            value={feedUrl} 
+            readonly 
+            class="rss-feed-input"
+            id="feedUrl"
+          />
+          <button 
+            onclick="copyFeedUrl()"
+            class="rss-copy-button"
+            id="copyButton"
+          >
+            <svg class="rss-button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+            <span>Copy</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- What is RSS Section -->
+      <div class="rss-section">
+        <div class="rss-section-header">
+          <span class="rss-emoji">📰</span>
+          <h3 class="rss-section-title">What is an RSS feed?</h3>
+        </div>
+        <p class="rss-section-text">
+          An RSS feed is like a personalized news channel for websites you care about. Instead of visiting multiple sites to check for updates, 
+          a feed reader does it for you automatically. Think of it as subscribing to a newsletter, but better – you control everything in one place, 
+          with no tracking or algorithms deciding what you see.
+        </p>
+        <div class="rss-tip">
+          <p class="rss-tip-text">
+            <strong>Pro tip:</strong> RSS feeds give you control over your content consumption. No ads, no algorithms, just pure content updates when they happen.
+          </p>
+        </div>
+      </div>
+
+      <!-- How to Subscribe Section -->
+      <div class="rss-section">
+        <div class="rss-section-header">
+          <span class="rss-emoji">🚀</span>
+          <h3 class="rss-section-title">How to subscribe</h3>
+        </div>
+        <div class="rss-steps">
+          <div class="rss-step">
+            <div class="rss-step-number">1</div>
+            <div class="rss-step-content">
+              <h4 class="rss-step-title">Choose a feed reader</h4>
+              <p class="rss-step-text">Pick a feed reader app from the recommendations below (most are free!)</p>
+            </div>
+          </div>
+          <div class="rss-step">
+            <div class="rss-step-number">2</div>
+            <div class="rss-step-content">
+              <h4 class="rss-step-title">Copy the feed URL</h4>
+              <p class="rss-step-text">Click the "Copy" button above to copy the RSS feed URL to your clipboard</p>
+            </div>
+          </div>
+          <div class="rss-step">
+            <div class="rss-step-number">3</div>
+            <div class="rss-step-content">
+              <h4 class="rss-step-title">Add to your reader</h4>
+              <p class="rss-step-text">Look for "Add Feed" or "Subscribe" in your feed reader and paste the URL</p>
+            </div>
+          </div>
+          <div class="rss-step">
+            <div class="rss-step-number">4</div>
+            <div class="rss-step-content">
+              <h4 class="rss-step-title">Enjoy automatic updates</h4>
+              <p class="rss-step-text">New posts will appear automatically in your feed reader. No more checking back!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popular Feed Readers -->
+      <div class="rss-section">
+        <div class="rss-section-header">
+          <span class="rss-emoji">📱</span>
+          <h3 class="rss-section-title">Popular Feed Readers</h3>
+        </div>
+        <div class="rss-readers-grid">
+          <a href="https://feedly.com" target="_blank" rel="noopener noreferrer" class="rss-reader-card rss-reader-feedly">
+            <div class="rss-reader-header">
+              <div class="rss-reader-icon-box rss-reader-icon-green">
+                <svg class="rss-reader-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="rss-reader-name">Feedly</div>
+                <div class="rss-reader-platform">Web, iOS, Android</div>
+              </div>
+            </div>
+            <p class="rss-reader-description">Popular and user-friendly with great organization features</p>
+          </a>
+          
+          <a href="https://www.inoreader.com" target="_blank" rel="noopener noreferrer" class="rss-reader-card rss-reader-inoreader">
+            <div class="rss-reader-header">
+              <div class="rss-reader-icon-box rss-reader-icon-blue">
+                <svg class="rss-reader-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="rss-reader-name">Inoreader</div>
+                <div class="rss-reader-platform">Web, iOS, Android</div>
+              </div>
+            </div>
+            <p class="rss-reader-description">Powerful features for power users and researchers</p>
+          </a>
+          
+          <a href="https://netnewswire.com" target="_blank" rel="noopener noreferrer" class="rss-reader-card rss-reader-netnewswire">
+            <div class="rss-reader-header">
+              <div class="rss-reader-icon-box rss-reader-icon-purple">
+                <svg class="rss-reader-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.5 12c0 3.04-2.46 5.5-5.5 5.5S6.5 15.04 6.5 12 8.96 6.5 12 6.5s5.5 2.46 5.5 5.5zm-1.5 0c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="rss-reader-name">NetNewsWire</div>
+                <div class="rss-reader-platform">Mac, iOS (Free & Open Source)</div>
+              </div>
+            </div>
+            <p class="rss-reader-description">Native Apple experience with privacy focus</p>
+          </a>
+          
+          <a href="https://reederapp.com" target="_blank" rel="noopener noreferrer" class="rss-reader-card rss-reader-reeder">
+            <div class="rss-reader-header">
+              <div class="rss-reader-icon-box rss-reader-icon-orange">
+                <svg class="rss-reader-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="rss-reader-name">Reeder</div>
+                <div class="rss-reader-platform">Mac, iOS</div>
+              </div>
+            </div>
+            <p class="rss-reader-description">Beautiful design with seamless sync across devices</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Learn More Link -->
+      <div class="rss-section rss-learn-more">
+        <a 
+          href="https://aboutfeeds.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="rss-learn-link"
+        >
+          <span>Learn more about RSS feeds</span>
+          <svg class="rss-learn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Recent Posts Preview -->
+    <div class="rss-card">
+      <div class="rss-section-header">
+        <span class="rss-emoji">📝</span>
+        <h3 class="rss-section-title">Recent Posts</h3>
+        <span class="rss-posts-badge">{blog.length} posts</span>
+      </div>
+      <div class="rss-posts">
+        {blog.slice(0, 10).map((post, index) => (
+          <article class="rss-post">
+            <a href={`${getUrl("/blog/")}${post.slug}`} class="rss-post-link">
+              <h4 class="rss-post-title">
+                {post.data.title}
+              </h4>
+              {post.data.description && (
+                <p class="rss-post-description">{post.data.description}</p>
+              )}
+              <div class="rss-post-meta">
+                <time class="rss-post-date">
+                  <svg class="rss-post-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
+                  {new Date(post.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="rss-footer">
+      <div class="rss-footer-info">
+        <svg class="rss-footer-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p class="rss-footer-text">This is a web-friendly preview of your RSS feed</p>
+      </div>
+      <p class="rss-footer-subtext">Feed readers will automatically receive the XML feed</p>
+    </div>
+  </div>
+
+  <script is:inline>
+    function copyFeedUrl() {
+      const input = document.getElementById('feedUrl');
+      const button = document.getElementById('copyButton');
+      
+      if (!input || !button) return;
+      
+      const textToCopy = input.value;
+      
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalHTML = button.innerHTML;
+        button.innerHTML = `
+          <svg class="rss-button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span>Copied!</span>
+        `;
+        button.classList.add('rss-copied');
+        
+        setTimeout(() => {
+          button.innerHTML = originalHTML;
+          button.classList.remove('rss-copied');
+        }, 2000);
+      }).catch((err) => {
+        // Fallback for older browsers
+        input.select();
+        input.setSelectionRange(0, 99999);
+        try {
+          document.execCommand('copy');
+          const originalHTML = button.innerHTML;
+          button.innerHTML = `
+            <svg class="rss-button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Copied!</span>
+          `;
+          button.classList.add('rss-copied');
+          
+          setTimeout(() => {
+            button.innerHTML = originalHTML;
+            button.classList.remove('rss-copied');
+          }, 2000);
+        } catch (e) {
+          console.error('Copy failed', e);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
