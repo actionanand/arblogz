@@ -4,6 +4,7 @@
 @import "remark-aside.css";
 @import "characters.css";
 @import "sticky-pin.css";
+@import "rss.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
