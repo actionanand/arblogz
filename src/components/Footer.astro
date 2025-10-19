@@ -28,15 +28,12 @@ let displayDate = new Date().getFullYear() === initialDate ? `${initialDate}` : 
       <i class="ri-copyright-line align-middle"></i>
       <span class="align-middle">{displayDate}</span>
     </div>
-    {
-      site.beian && (
-        <div class="divider-vertical hidden sm:block"></div>
-        <a rel="nofollow" target="_blank" href="https://beian.miit.gov.cn/">
-          {site.beian}
-        </a>
-      )
-    }
     <div class="divider-vertical"></div>
-    <a href={getUrl("/sitemap-0.xml")}><span data-translate="footer.sitemap">{t('footer.sitemap')}</span></a>
+    <a href={getUrl("/rss-preview")} target="_blank">
+      <i class="ri-rss-line align-middle"></i>
+      <span class="align-middle" data-translate="footer.rss">{t('footer.rss')}</span>
+    </a>
+    <div class="divider-vertical"></div>
+    <a href={getUrl("/sitemap-0.xml")} target="_blank"><span data-translate="footer.sitemap">{t('footer.sitemap')}</span></a>
   </div>
 </div>

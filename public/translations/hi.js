@@ -38,6 +38,7 @@ const hi = {
   'footer.articleAuthor': 'लेख लेखक',
   'footer.releaseTime': 'प्रकाशन समय',
   'footer.originalLink': 'मूल लिंक',
+  'footer.rss':'RSS फ़ीड',
   'footer.sitemap': 'साइट मैप',
   'footer.busuanziSitePV': 'पृष्ठ दृश्य:',
   'footer.busuanziSitePVUnit': '',

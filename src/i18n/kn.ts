@@ -37,6 +37,7 @@ export const kn = {
   'footer.articleAuthor': 'ಲೇಖನ ಲೇಖಕ',
   'footer.releaseTime': 'ಪ್ರಕಟಣೆ ಸಮಯ',
   'footer.originalLink': 'ಮೂಲ ಲಿಂಕ್',
+  'footer.rss':'RSS ಫೀಡ್',
   'footer.sitemap': 'ಸೈಟ್ಮ್ಯಾಪ್',
   'footer.busuanziSitePV': 'ಪುಟ ವೀಕ್ಷಣೆಗಳು:',
   'footer.busuanziSitePVUnit': '',

@@ -21,6 +21,7 @@ export  const en = {
   'footer.copyrightTwo': '「Attribution-NonCommercial-ShareAlike 4.0 International」',
   'footer.originalLink':'Original link',
   'footer.releaseTime':'Release time',
+  'footer.rss':'RSS Feed',
   'footer.sitemap':'Sitemap',
   'home.goBack': 'Go back',
   'home.moreArticles': 'More articles',

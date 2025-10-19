@@ -38,6 +38,7 @@ const ta = {
   'footer.articleAuthor': 'கட்டுரை ஆசிரியர்',
   'footer.releaseTime': 'வெளியீட்டு நேரம்',
   'footer.originalLink': 'மூல இணைப்பு',
+  'footer.rss':'வலையோடை',
   'footer.sitemap': 'தள வரைபடம்',
   'footer.busuanziSitePV': 'பக்கப் பார்வைகள்:',
   'footer.busuanziSitePVUnit': '',

@@ -38,6 +38,7 @@ const zhHant = {
   'footer.articleAuthor': '文章作者',
   'footer.releaseTime': '發布時間',
   'footer.originalLink': '原始鏈接',
+  'footer.rss':'RSS 訂閱',
   'footer.sitemap': '站點地圖',
   'footer.busuanziSitePV': '總訪問量',
   'footer.busuanziSitePVUnit': '次',

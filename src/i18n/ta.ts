@@ -21,6 +21,7 @@ export  const ta = {
   'footer.copyrightTwo': '「Attribution-NonCommercial-ShareAlike 4.0 International」',
   'footer.originalLink':'மூல இணைப்பு',
   'footer.releaseTime':'வெளியீட்டு நேரம்',
+  'footer.rss':'வலையோடை',
   'footer.sitemap':'தள வரைபடம்',
   'home.goBack': 'பின்னால் செல்க',
   'home.moreArticles': 'மேலும் பல கட்டுரைகள்',

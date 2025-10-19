@@ -23,6 +23,7 @@ export  let cs = {
   'footer.copyrightTwo': '„Attribution-NonCommercial-ShareAlike 4.0 International“',
   'footer.originalLink':'Původní odkaz',
   'footer.releaseTime':'Čas vydání',
+  'footer.rss':'RSS kanál',
   'footer.sitemap':'Mapa stránek',
   'home.goBack': 'Jít zpět',
   'home.moreArticles': 'Více článků',

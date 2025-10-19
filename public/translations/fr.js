@@ -38,6 +38,7 @@ const fr = {
   'footer.articleAuthor': 'Auteur de l\'article',
   'footer.releaseTime': 'Date de publication',
   'footer.originalLink': 'Lien original',
+  'footer.rss':'Flux RSS',
   'footer.sitemap': 'Plan du site',
   'footer.busuanziSitePV': 'Vues de la page:',
   'footer.busuanziSitePVUnit': '',

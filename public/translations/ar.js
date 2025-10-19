@@ -38,6 +38,7 @@ const ar = {
   'footer.articleAuthor': 'مؤلف المقال',
   'footer.releaseTime': 'وقت النشر',
   'footer.originalLink': 'الرابط الأصلي',
+  'footer.rss':'تغذية RSS',
   'footer.sitemap': 'خريطة الموقع',
   'footer.busuanziSitePV': 'مشاهدات الصفحة:',
   'footer.busuanziSitePVUnit': '',

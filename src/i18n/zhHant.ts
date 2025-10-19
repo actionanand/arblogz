@@ -27,6 +27,7 @@ export  const zhHant = {
   'footer.copyrightOne': '版權聲明：本作品采用',
   'footer.copyrightTwo': '「署名-非商業性使用-相同方式共享 4.0 國際」',
   'footer.copyrightThree': '許可協議進行許可',
+  'footer.rss':'RSS 訂閱',
   'footer.sitemap':'站點地圖',
   'footer.busuanziSitePV':'總訪問量',
   'footer.busuanziSitePVUnit':'次',

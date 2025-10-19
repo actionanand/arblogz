@@ -38,6 +38,7 @@ const cs = {
   'footer.articleAuthor': 'Autor článku',
   'footer.releaseTime': 'Čas vydání',
   'footer.originalLink': 'Původní odkaz',
+  'footer.rss':'RSS kanál',
   'footer.sitemap': 'Mapa stránek',
   'footer.busuanziSitePV': 'Zobrazení stránky:',
   'footer.busuanziSitePVUnit': '',

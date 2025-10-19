@@ -38,6 +38,7 @@ const zhCn = {
   'footer.articleAuthor': '文章作者',
   'footer.releaseTime': '发布时间',
   'footer.originalLink': '原始链接',
+  'footer.rss':'RSS 订阅',
   'footer.sitemap': '站点地图',
   'footer.busuanziSitePV': '总访问量',
   'footer.busuanziSitePVUnit': '次',
