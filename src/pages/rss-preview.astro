@@ -10,7 +10,8 @@ const blogs = await getCollectionByName('blog');
 let sortPosts = await sortPostsByDate(blogs);
 let blog = sortPosts.splice(0, 20);
 
-const feedUrl = `${Astro.site}rss.xml`;
+const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
+const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
 ---
 
 <html lang={config.lang}>
@@ -39,7 +40,7 @@ const feedUrl = `${Astro.site}rss.xml`;
       <div class="rss-profile">
         {site.avatar && (
           <img 
-            src={site.avatar} 
+            src={`${baseUrl}${site.avatar}`} 
             alt={site.author} 
             class="rss-avatar" 
           />
