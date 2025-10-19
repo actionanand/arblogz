@@ -28,6 +28,7 @@ export const zhCn = {
   'footer.copyrightOne': '版权声明：本作品采用',
   'footer.copyrightTwo': '「署名-非商业性使用-相同方式共享 4.0 国际」',
   'footer.copyrightThree': '许可协议进行许可',
+  'footer.rss':'RSS 订阅',
   'footer.sitemap': '站点地图',
   'footer.busuanziSitePV': '总访问量',
   'footer.busuanziSitePVUnit': '次',

@@ -37,6 +37,7 @@ export const hi = {
   'footer.articleAuthor': 'लेख लेखक',
   'footer.releaseTime': 'प्रकाशन समय',
   'footer.originalLink': 'मूल लिंक',
+  'footer.rss':'RSS फ़ीड',
   'footer.sitemap': 'साइटमैप',
   'footer.busuanziSitePV': 'पृष्ठ दृश्य:',
   'footer.busuanziSitePVUnit': '',

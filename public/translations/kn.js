@@ -42,6 +42,7 @@ const kn = {
   'footer.articleAuthor': 'ಲೇಖನದ ಲೇಖಕ',
   'footer.releaseTime': 'ಬಿಡುಗಡೆ ಸಮಯ',
   'footer.originalLink': 'ಮೂಲ ಲಿಂಕ್',
+  'footer.rss':'RSS ಫೀಡ್',
   'footer.sitemap': 'ಜಾಲತಾಣ ನಕ್ಷೆ',
   'footer.busuanziSitePV': 'ಪುಟ ವೀಕ್ಷಣೆಗಳು:',
   'footer.busuanziSitePVUnit': '',

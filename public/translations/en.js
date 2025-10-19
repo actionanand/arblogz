@@ -38,6 +38,7 @@ const en = {
   'footer.articleAuthor': 'Article author',
   'footer.releaseTime': 'Release time',
   'footer.originalLink': 'Original link',
+  'footer.rss':'RSS Feed',
   'footer.sitemap': 'Sitemap',
   'footer.busuanziSitePV': 'Page views:',
   'footer.busuanziSitePVUnit': '',
