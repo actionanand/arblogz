@@ -5,6 +5,7 @@ import getUrl from "../utils/getUrl.js";
 import {getCollectionByName} from "@/utils/getCollectionByName";
 import {sortPostsByDate} from "@/utils/sortPostsByDate";
 import {config} from "@/consts";
+import {t} from '@/i18n/utils';
 
 const blogs = await getCollectionByName('blog');
 let sortPosts = await sortPostsByDate(blogs);
@@ -15,7 +16,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
 ---
 
 <html lang={config.lang}>
-<BaseHead title='RSS Feed' />
+<BaseHead title={t('rss.pageTitle')} />
 
 <body class="rss-body">
   <div class="rss-container">
@@ -25,13 +26,13 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
         <svg class="rss-icon" fill="currentColor" viewBox="0 0 24 24">
           <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
         </svg>
-        <h1 class="rss-title">RSS Feed</h1>
+        <h1 class="rss-title" data-translate="rss.title">{t('rss.title')}</h1>
       </div>
       <a href={getUrl("/")} class="rss-back-link">
         <svg class="rss-back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
         </svg>
-        Back to {site.title}
+        <span data-translate="rss.backTo">{t('rss.backTo')}</span> {site.title}
       </a>
     </div>
 
@@ -47,13 +48,13 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
         )}
         <div class="rss-profile-info">
           <div class="rss-profile-title">
-            <h2 class="rss-subscribe-text">Subscribe to</h2>
+            <h2 class="rss-subscribe-text" data-translate="rss.subscribeTo">{t('rss.subscribeTo')}</h2>
             <span class="rss-site-title">
               {site.title}
             </span>
           </div>
           {site.author && (
-            <p class="rss-author">by <span class="rss-author-name">{site.author}</span></p>
+            <p class="rss-author"><span data-translate="rss.by">{t('rss.by')}</span> <span class="rss-author-name">{site.author}</span></p>
           )}
           <p class="rss-description">{site.description}</p>
         </div>
@@ -65,7 +66,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
           <svg class="rss-feed-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
           </svg>
-          RSS Feed URL
+          <span data-translate="rss.feedUrl">{t('rss.feedUrl')}</span>
         </label>
         <div class="rss-feed-input-group">
           <input 
@@ -83,7 +84,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
             <svg class="rss-button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
             </svg>
-            <span>Copy</span>
+            <span data-translate="rss.copy">{t('rss.copy')}</span>
           </button>
         </div>
       </div>
@@ -92,16 +93,14 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
       <div class="rss-section">
         <div class="rss-section-header">
           <span class="rss-emoji">📰</span>
-          <h3 class="rss-section-title">What is an RSS feed?</h3>
+          <h3 class="rss-section-title" data-translate="rss.whatIsRss">{t('rss.whatIsRss')}</h3>
         </div>
-        <p class="rss-section-text">
-          An RSS feed is like a personalized news channel for websites you care about. Instead of visiting multiple sites to check for updates, 
-          a feed reader does it for you automatically. Think of it as subscribing to a newsletter, but better – you control everything in one place, 
-          with no tracking or algorithms deciding what you see.
+        <p class="rss-section-text" data-translate="rss.whatIsRssDesc">
+          {t('rss.whatIsRssDesc')}
         </p>
         <div class="rss-tip">
           <p class="rss-tip-text">
-            <strong>Pro tip:</strong> RSS feeds give you control over your content consumption. No ads, no algorithms, just pure content updates when they happen.
+            <strong data-translate="rss.proTip">{t('rss.proTip')}</strong> <span data-translate="rss.proTipDesc">{t('rss.proTipDesc')}</span>
           </p>
         </div>
       </div>
@@ -110,35 +109,35 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
       <div class="rss-section">
         <div class="rss-section-header">
           <span class="rss-emoji">🚀</span>
-          <h3 class="rss-section-title">How to subscribe</h3>
+          <h3 class="rss-section-title" data-translate="rss.howToSubscribe">{t('rss.howToSubscribe')}</h3>
         </div>
         <div class="rss-steps">
           <div class="rss-step">
             <div class="rss-step-number">1</div>
             <div class="rss-step-content">
-              <h4 class="rss-step-title">Choose a feed reader</h4>
-              <p class="rss-step-text">Pick a feed reader app from the recommendations below (most are free!)</p>
+              <h4 class="rss-step-title" data-translate="rss.step1Title">{t('rss.step1Title')}</h4>
+              <p class="rss-step-text" data-translate="rss.step1Desc">{t('rss.step1Desc')}</p>
             </div>
           </div>
           <div class="rss-step">
             <div class="rss-step-number">2</div>
             <div class="rss-step-content">
-              <h4 class="rss-step-title">Copy the feed URL</h4>
-              <p class="rss-step-text">Click the "Copy" button above to copy the RSS feed URL to your clipboard</p>
+              <h4 class="rss-step-title" data-translate="rss.step2Title">{t('rss.step2Title')}</h4>
+              <p class="rss-step-text" data-translate="rss.step2Desc">{t('rss.step2Desc')}</p>
             </div>
           </div>
           <div class="rss-step">
             <div class="rss-step-number">3</div>
             <div class="rss-step-content">
-              <h4 class="rss-step-title">Add to your reader</h4>
-              <p class="rss-step-text">Look for "Add Feed" or "Subscribe" in your feed reader and paste the URL</p>
+              <h4 class="rss-step-title" data-translate="rss.step3Title">{t('rss.step3Title')}</h4>
+              <p class="rss-step-text" data-translate="rss.step3Desc">{t('rss.step3Desc')}</p>
             </div>
           </div>
           <div class="rss-step">
             <div class="rss-step-number">4</div>
             <div class="rss-step-content">
-              <h4 class="rss-step-title">Enjoy automatic updates</h4>
-              <p class="rss-step-text">New posts will appear automatically in your feed reader. No more checking back!</p>
+              <h4 class="rss-step-title" data-translate="rss.step4Title">{t('rss.step4Title')}</h4>
+              <p class="rss-step-text" data-translate="rss.step4Desc">{t('rss.step4Desc')}</p>
             </div>
           </div>
         </div>
@@ -148,7 +147,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
       <div class="rss-section">
         <div class="rss-section-header">
           <span class="rss-emoji">📱</span>
-          <h3 class="rss-section-title">Popular Feed Readers</h3>
+          <h3 class="rss-section-title" data-translate="rss.popularReaders">{t('rss.popularReaders')}</h3>
         </div>
         <div class="rss-readers-grid">
           <a href="https://feedly.com" target="_blank" rel="noopener noreferrer" class="rss-reader-card rss-reader-feedly">
@@ -163,7 +162,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
                 <div class="rss-reader-platform">Web, iOS, Android</div>
               </div>
             </div>
-            <p class="rss-reader-description">Popular and user-friendly with great organization features</p>
+            <p class="rss-reader-description" data-translate="rss.feedlyDesc">{t('rss.feedlyDesc')}</p>
           </a>
           
           <a href="https://www.inoreader.com" target="_blank" rel="noopener noreferrer" class="rss-reader-card rss-reader-inoreader">
@@ -178,7 +177,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
                 <div class="rss-reader-platform">Web, iOS, Android</div>
               </div>
             </div>
-            <p class="rss-reader-description">Powerful features for power users and researchers</p>
+            <p class="rss-reader-description" data-translate="rss.inoreaderDesc">{t('rss.inoreaderDesc')}</p>
           </a>
           
           <a href="https://netnewswire.com" target="_blank" rel="noopener noreferrer" class="rss-reader-card rss-reader-netnewswire">
@@ -193,7 +192,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
                 <div class="rss-reader-platform">Mac, iOS (Free & Open Source)</div>
               </div>
             </div>
-            <p class="rss-reader-description">Native Apple experience with privacy focus</p>
+            <p class="rss-reader-description" data-translate="rss.netnewswireDesc">{t('rss.netnewswireDesc')}</p>
           </a>
           
           <a href="https://reederapp.com" target="_blank" rel="noopener noreferrer" class="rss-reader-card rss-reader-reeder">
@@ -208,7 +207,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
                 <div class="rss-reader-platform">Mac, iOS</div>
               </div>
             </div>
-            <p class="rss-reader-description">Beautiful design with seamless sync across devices</p>
+            <p class="rss-reader-description" data-translate="rss.reederDesc">{t('rss.reederDesc')}</p>
           </a>
         </div>
       </div>
@@ -221,7 +220,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
           rel="noopener noreferrer"
           class="rss-learn-link"
         >
-          <span>Learn more about RSS feeds</span>
+          <span data-translate="rss.learnMore">{t('rss.learnMore')}</span>
           <svg class="rss-learn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
@@ -233,8 +232,8 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
     <div class="rss-card">
       <div class="rss-section-header">
         <span class="rss-emoji">📝</span>
-        <h3 class="rss-section-title">Recent Posts</h3>
-        <span class="rss-posts-badge">{blog.length} posts</span>
+        <h3 class="rss-section-title" data-translate="rss.recentPosts">{t('rss.recentPosts')}</h3>
+        <span class="rss-posts-badge">{blog.length} <span data-translate="rss.posts">{t('rss.posts')}</span></span>
       </div>
       <div class="rss-posts">
         {blog.slice(0, 10).map((post, index) => (
@@ -266,9 +265,9 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
         <svg class="rss-footer-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
         </svg>
-        <p class="rss-footer-text">This is a preview page to help you subscribe to the RSS feed</p>
+        <p class="rss-footer-text" data-translate="rss.footerInfo">{t('rss.footerInfo')}</p>
       </div>
-      <p class="rss-footer-subtext">Copy the feed URL above and paste it into your favorite RSS reader</p>
+      <p class="rss-footer-subtext" data-translate="rss.footerSubtext">{t('rss.footerSubtext')}</p>
     </div>
   </div>
 
@@ -280,6 +279,9 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
       if (!input || !button) return;
       
       const textToCopy = input.value;
+      const copiedText = button.querySelector('span').getAttribute('data-translate') === 'rss.copy' 
+        ? document.querySelector('[data-translate="rss.copied"]')?.textContent || 'Copied!'
+        : 'Copied!';
       
       navigator.clipboard.writeText(textToCopy).then(() => {
         const originalHTML = button.innerHTML;
@@ -287,7 +289,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
           <svg class="rss-button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
           </svg>
-          <span>Copied!</span>
+          <span data-translate="rss.copied">${copiedText}</span>
         `;
         button.classList.add('rss-copied');
         
@@ -306,7 +308,7 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
             <svg class="rss-button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
             </svg>
-            <span>Copied!</span>
+            <span data-translate="rss.copied">${copiedText}</span>
           `;
           button.classList.add('rss-copied');
           
@@ -320,5 +322,8 @@ const feedUrl = `${site.url}${site.baseUrl}/rss.xml`;
       });
     }
   </script>
+  
+  <!-- Hidden span for copied text translation -->
+  <span style="display: none;" data-translate="rss.copied">{t('rss.copied')}</span>
 </body>
 </html>
