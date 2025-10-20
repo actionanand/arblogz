@@ -919,3 +919,18 @@ html[data-theme="dark"] .rss-footer-subtext {
     font-size: 1.25rem;
   }
 }
+
+/* Fix for layout shift issues in development */
+.rss-body * {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Ensure text doesn't shift */
+.rss-section-text,
+.rss-tip-text,
+.rss-author,
+.rss-posts-badge {
+  will-change: auto;
+  transform: translateZ(0);
+}
