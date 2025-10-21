@@ -1,0 +1,594 @@
+---
+title: "Dropdown Component - Quick Usage Guide"
+description: "Simple guide to using the Dropdown component in Astro MDX with examples and best practices"
+date: 2025-10-22
+tags: [astro, mdx, react, dropdown]
+category: tutorial
+---
+
+import Dropdown, { DropdownOption, DropdownRef } from "@/react/Dropdown/Dropdown.jsx";
+import Tabs, { TabItem } from "@/react/Tabs/Tabs.jsx";
+
+# Dropdown Component - Quick Usage Guide
+
+Dynamic dropdown component for Astro MDX that switches content based on user selection. Perfect for language translations, code examples, and documentation.
+
+## 📦 Import the Components
+
+```jsx
+import Dropdown, { DropdownOption, DropdownRef } from "@/react/Dropdown/Dropdown.jsx";
+// or use backward compatible import
+import Dropdown, { Option, DropdownRef } from "@/react/Dropdown/Dropdown.jsx";
+```
+or with relative path:
+
+```jsx
+import Dropdown, { DropdownOption, DropdownRef } from "../../react/Dropdown/Dropdown.jsx";
+```
+
+## 🚀 Basic Usage
+
+### Simple Dropdown
+
+<Dropdown defaultValue="english" placeholder="Choose your language..." client:load>
+  <DropdownOption value="english" label="🇬🇧 English">
+    ## Welcome!
+    
+    This is the English content with full Markdown support.
+    
+    - Lists work
+    - **Bold** and *italic* text
+    - `code snippets`
+  </DropdownOption>
+  <DropdownOption value="spanish" label="🇪🇸 Español">
+    ## ¡Bienvenido!
+    
+    Este es el contenido en español con soporte completo de Markdown.
+    
+    - Las listas funcionan
+    - Texto en **negrita** y *cursiva*
+    - `fragmentos de código`
+  </DropdownOption>
+  <DropdownOption value="french" label="🇫🇷 Français">
+    ## Bienvenue!
+    
+    Ceci est le contenu en français avec support Markdown complet.
+    
+    - Les listes fonctionnent
+    - Texte en **gras** et *italique*
+    - `extraits de code`
+  </DropdownOption>
+</Dropdown>
+
+```jsx
+<Dropdown defaultValue="english" placeholder="Choose your language..." client:load>
+  <DropdownOption value="english" label="🇬🇧 English">
+    ## Welcome!
+    Your content here...
+  </DropdownOption>
+  <DropdownOption value="spanish" label="🇪🇸 Español">
+    ## ¡Bienvenido!
+    Tu contenido aquí...
+  </DropdownOption>
+</Dropdown>
+```
+
+**Key Points:**
+- Always include `client:load` for interactivity
+- Each option needs unique `value` and `label`
+- Full Markdown support inside options
+
+---
+
+## ⚙️ Component Props
+
+### Dropdown Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultValue` | string | First option | Which option to show initially |
+| `placeholder` | string | "Select an option..." | Text shown before selection |
+| `stripCss` | boolean | false | Remove background styling |
+| `client:load` | directive | - | **Required** for Astro |
+
+### DropdownOption Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `value` | string | Yes | Unique identifier |
+| `label` | string | No | Display text (auto-generated if omitted) |
+| `children` | content | Yes | Content to display |
+
+---
+
+## 🎯 Features & Examples
+
+### 1. Default Value
+
+Set which option shows first:
+
+<Dropdown defaultValue="python" client:load>
+  <DropdownOption value="javascript" label="JavaScript">
+    ```js
+    console.log("Hello from JavaScript!");
+    ```
+  </DropdownOption>
+  <DropdownOption value="python" label="Python">
+    ```py
+    print("Hello from Python!")
+    ```
+  </DropdownOption>
+  <DropdownOption value="ruby" label="Ruby">
+    ```ruby
+    puts "Hello from Ruby!"
+    ```
+  </DropdownOption>
+</Dropdown>
+
+```jsx
+<Dropdown defaultValue="python" client:load>
+  <DropdownOption value="python" label="Python">
+    Content...
+  </DropdownOption>
+</Dropdown>
+```
+
+### 2. Custom Placeholder
+
+<Dropdown placeholder="Pick your favorite framework..." client:load>
+  <DropdownOption value="react" label="⚛️ React">
+    React is a JavaScript library for building user interfaces.
+  </DropdownOption>
+  <DropdownOption value="vue" label="💚 Vue">
+    Vue is a progressive framework for building user interfaces.
+  </DropdownOption>
+  <DropdownOption value="svelte" label="🧡 Svelte">
+    Svelte is a radical new approach to building user interfaces.
+  </DropdownOption>
+</Dropdown>
+
+```jsx
+<Dropdown placeholder="Pick your favorite framework..." client:load>
+  <DropdownOption value="react" label="⚛️ React">
+    Content...
+  </DropdownOption>
+</Dropdown>
+```
+
+### 3. Auto-Generated Labels
+
+When you omit the `label` prop, options get automatic names:
+
+<Dropdown client:load>
+  <DropdownOption value="opt1">
+    ## First Option
+    This automatically gets labeled as "Option 1"
+  </DropdownOption>
+  <DropdownOption value="opt2">
+    ## Second Option
+    This automatically gets labeled as "Option 2"
+  </DropdownOption>
+  <DropdownOption value="opt3">
+    ## Third Option
+    This automatically gets labeled as "Option 3"
+  </DropdownOption>
+</Dropdown>
+
+```jsx
+<Dropdown client:load>
+  <DropdownOption value="opt1">
+    Content here... (becomes "Option 1")
+  </DropdownOption>
+  <DropdownOption value="opt2">
+    Content here... (becomes "Option 2")
+  </DropdownOption>
+</Dropdown>
+```
+
+When you omit both `label` & `value` props, options get automatic names:
+
+<Dropdown client:load>
+  <DropdownOption>
+    ## First Option without value
+    This automatically gets labeled as "Option 1"
+  </DropdownOption>
+  <DropdownOption>
+    ## Second Option without value
+    This automatically gets labeled as "Option 2"
+  </DropdownOption>
+  <DropdownOption>
+    ## Third Option without value
+    This automatically gets labeled as "Option 3"
+  </DropdownOption>
+</Dropdown>
+
+```jsx
+<Dropdown client:load>
+  <DropdownOption>
+    Content here... (becomes "Option 1")
+  </DropdownOption>
+  <DropdownOption>
+    Content here... (becomes "Option 2")
+  </DropdownOption>
+</Dropdown>
+```
+
+**Note:** Only use auto-generated labels for prototyping. Always provide meaningful labels in production.
+
+### 4. Strip CSS for Clean Look
+
+Use `stripCss` to remove background styling - great for nesting components:
+
+<Dropdown stripCss defaultValue="example" placeholder="Select example..." client:load>
+  <DropdownOption value="example" label="Clean Example">
+    ## No Background Box
+    
+    With `stripCss={true}`, the content appears without any background color, border, or padding.
+    
+    Perfect for when you want the content to blend with your page design.
+    
+    ```js
+    const example = "Clean and minimal";
+    ```
+  </DropdownOption>
+  <DropdownOption value="normal" label="Normal Example">
+    ## With Background
+    
+    This is how it looks with default styling (when stripCss is not used).
+  </DropdownOption>
+</Dropdown>
+
+```jsx
+<Dropdown stripCss client:load>
+  <DropdownOption value="example" label="Example">
+    Content without background box styling
+  </DropdownOption>
+</Dropdown>
+```
+
+---
+
+## 🔗 Reference Dropdown (DropdownRef)
+
+For lengthy content, keep it organized by using references:
+
+### Basic Reference Example
+
+<Dropdown defaultValue=":::drop javascript-ref" placeholder="Select language..." client:load>
+  <DropdownOption value=":::drop javascript-ref" label="JavaScript" />
+  <DropdownOption value=":::drop python-ref" label="Python" />
+  <DropdownOption value=":::drop typescript-ref" label="TypeScript" />
+</Dropdown>
+
+<DropdownRef type="drop" id="javascript-ref">
+## JavaScript Complete Guide
+
+JavaScript is a versatile programming language used for web development.
+
+### Variables
+
+```js title="variables.js" showLineNumbers
+// Modern variable declarations
+const API_KEY = "your-key-here";
+let counter = 0;
+
+// Arrow functions
+const increment = () => counter++;
+
+// Template literals
+console.log(`Counter: ${counter}`);
+```
+
+### Functions
+
+```js title="functions.js" showLineNumbers
+// Function declaration
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+// Arrow function
+const greetArrow = (name) => `Hello, ${name}!`;
+
+// Usage
+console.log(greet("World"));
+```
+
+### Arrays & Objects
+
+```js
+const users = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" }
+];
+
+const filtered = users.filter(u => u.id > 1);
+console.log(filtered);
+```
+</DropdownRef>
+
+<DropdownRef type="drop" id="python-ref">
+## Python Complete Guide
+
+Python is a high-level, interpreted programming language known for its simplicity.
+
+### Variables
+
+```py title="variables.py" showLineNumbers
+# Variable declarations
+API_KEY = "your-key-here"
+counter = 0
+
+# Functions
+def increment():
+    global counter
+    counter += 1
+
+# String formatting
+print(f"Counter: {counter}")
+```
+
+### Functions
+
+```py title="functions.py" showLineNumbers
+# Function definition
+def greet(name):
+    return f"Hello, {name}!"
+
+# Lambda function
+greet_lambda = lambda name: f"Hello, {name}!"
+
+# Usage
+print(greet("World"))
+```
+
+### Lists & Dictionaries
+
+```py
+users = [
+    {"id": 1, "name": "Alice"},
+    {"id": 2, "name": "Bob"}
+]
+
+filtered = [u for u in users if u["id"] > 1]
+print(filtered)
+```
+</DropdownRef>
+
+<DropdownRef type="drop" id="typescript-ref">
+## TypeScript Complete Guide
+
+TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+
+### Types & Interfaces
+
+```ts title="types.ts" showLineNumbers
+// Type annotations
+const API_KEY: string = "your-key-here";
+let counter: number = 0;
+
+// Interface
+interface User {
+  id: number;
+  name: string;
+  email?: string; // Optional
+}
+
+// Function with types
+const increment = (): void => {
+  counter++;
+};
+```
+
+### Functions
+
+```ts title="functions.ts" showLineNumbers
+// Typed function
+function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+
+// Arrow function with types
+const greetArrow = (name: string): string => `Hello, ${name}!`;
+
+// Generic function
+function identity<T>(arg: T): T {
+  return arg;
+}
+```
+
+### Arrays & Objects
+
+```ts
+interface User {
+  id: number;
+  name: string;
+}
+
+const users: User[] = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" }
+];
+
+const filtered = users.filter((u: User) => u.id > 1);
+```
+</DropdownRef>
+
+### How to Use References
+
+**Step 1:** Define dropdown with reference pattern `:::drop <id>`
+
+```jsx
+<Dropdown defaultValue=":::drop javascript-ref" client:load>
+  <DropdownOption value=":::drop javascript-ref" label="JavaScript" />
+  <DropdownOption value=":::drop python-ref" label="Python" />
+</Dropdown>
+```
+
+**Step 2:** Define content separately with `<DropdownRef>`
+
+```jsx
+<DropdownRef type="drop" id="javascript-ref">
+  ## Your lengthy content here
+  Multiple sections, code blocks, etc.
+</DropdownRef>
+
+<DropdownRef type="drop" id="python-ref">
+  ## More lengthy content
+  More sections, code blocks, etc.
+</DropdownRef>
+```
+
+**Benefits:**
+- ✅ Better organization for long content
+- ✅ Easier to maintain and edit
+- ✅ Cleaner dropdown definitions
+- ✅ Perfect for extensive documentation
+
+---
+
+## ⚠️ Important Limitations
+
+### React Components Inside Dropdown
+
+**React components (like Tabs) may not work reliably inside dropdowns** due to how content is rendered.
+
+<Dropdown stripCss defaultValue="tabs-inline" placeholder="Select example..." client:load>
+  <DropdownOption value="tabs-inline" label="Tabs Inside (May Not Work)">
+    <Tabs defaultValue="tab1" client:load>
+      <TabItem value="tab1" label="Tab 1">
+        ## First Tab
+        This may not work properly after page reload.
+      </TabItem>
+      <TabItem value="tab2" label="Tab 2">
+        ## Second Tab
+        React interactivity might be lost.
+      </TabItem>
+    </Tabs>
+  </DropdownOption>
+  <DropdownOption value="markdown" label="Markdown (Works Fine)">
+    ## Regular Markdown Content
+    
+    Static Markdown content works perfectly:
+    
+    - Lists
+    - **Bold text**
+    - `Code snippets`
+    
+    ```js
+    console.log("Code blocks work great!");
+    ```
+  </DropdownOption>
+</Dropdown>
+
+**What Works:**
+- ✅ Markdown (text, lists, tables)
+- ✅ Code blocks with syntax highlighting
+- ✅ Images, links, quotes
+- ✅ Static HTML content
+
+**What May Not Work:**
+- ⚠️ React Tabs component
+- ⚠️ Custom React components with state
+- ⚠️ Interactive elements requiring event handlers
+- ⚠️ Any component using `client:load` inside dropdown
+
+**Recommendation:** Use dropdowns primarily for static Markdown content and code examples. For complex interactive content, consider alternative layouts.
+
+---
+
+## 💡 Best Practices
+
+### 1. When to Use Basic Dropdown
+
+```jsx
+// ✅ Good for short content (< 30 lines)
+<Dropdown client:load>
+  <DropdownOption value="opt1" label="Quick Example">
+    Short content here...
+  </DropdownOption>
+</Dropdown>
+```
+
+### 2. When to Use Reference Dropdown
+
+```jsx
+// ✅ Good for long content (> 30 lines)
+<Dropdown client:load>
+  <DropdownOption value=":::drop long-content" label="Documentation" />
+</Dropdown>
+
+<DropdownRef type="drop" id="long-content">
+  Extensive documentation here...
+  Multiple sections...
+  Many code blocks...
+</DropdownRef>
+```
+
+### 3. Provide Meaningful Labels
+
+```jsx
+// ❌ Bad
+<DropdownOption value="a" label="A">
+
+// ✅ Good
+<DropdownOption value="javascript" label="🟨 JavaScript">
+```
+
+### 4. Use stripCss for Nested Content
+
+```jsx
+// ✅ Good for clean integration
+<Dropdown stripCss client:load>
+  <DropdownOption value="opt1" label="Clean Look">
+    Content blends with page...
+  </DropdownOption>
+</Dropdown>
+```
+
+---
+
+## 📝 Quick Reference
+
+### Basic Dropdown Template
+
+```jsx
+<Dropdown defaultValue="option1" placeholder="Select..." client:load>
+  <DropdownOption value="option1" label="Option 1">
+    Content for option 1
+  </DropdownOption>
+  <DropdownOption value="option2" label="Option 2">
+    Content for option 2
+  </DropdownOption>
+</Dropdown>
+```
+
+### Reference Dropdown Template
+
+```jsx
+<Dropdown defaultValue=":::drop ref1" placeholder="Select..." client:load>
+  <DropdownOption value=":::drop ref1" label="First" />
+  <DropdownOption value=":::drop ref2" label="Second" />
+</Dropdown>
+
+<DropdownRef type="drop" id="ref1">
+  Content for first option
+</DropdownRef>
+
+<DropdownRef type="drop" id="ref2">
+  Content for second option
+</DropdownRef>
+```
+
+---
+
+## 🎯 Summary
+
+- ✅ Perfect for language translations and code examples
+- ✅ Full Markdown and syntax highlighting support
+- ✅ Auto theme switching (light/dark)
+- ✅ Reference system for organizing long content
+- ✅ `stripCss` prop for clean integration
+- ⚠️ Use for static content only (React components may not work)
+
+Start using dropdowns to create dynamic, multilingual content in your Astro blog! 🚀
