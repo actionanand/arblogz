@@ -7,6 +7,7 @@ category: tutorial
 ---
 
 import Dropdown, { DropdownOption, DropdownRef } from "@/react/Dropdown/Dropdown.jsx";
+import Tabs, { TabItem } from "@/react/Tabs/Tabs.jsx";
 
 # Dropdown Reference Feature (:::drop)
 
@@ -38,7 +39,14 @@ When your dropdown options contain extensive content (long code examples, detail
 
 {/* Content defined separately below */}
 <DropdownRef type="drop" id="javascript">
-  {/* 500+ lines of content here */}
+    <Tabs defaultValue="imp" client:load>
+    <TabItem value="basic" label="✅ Basic Example">
+        ## Your First Tabs
+    </TabItem>
+    <TabItem value="imp" label="✅ Imp Example">
+        Second Tab
+    </TabItem>
+    </Tabs>
 </DropdownRef>
 
 <DropdownRef type="drop" id="python">
@@ -48,36 +56,21 @@ When your dropdown options contain extensive content (long code examples, detail
 
 ## 📚 Basic Usage Example
 
-<Dropdown defaultValue=":::drop english" placeholder="Choose language..." client:load>
-  <DropdownOption value=":::drop english" label="🇬🇧 English" />
+<Dropdown defaultValue=":::drop test" placeholder="Choose language..." client:load>
+  <DropdownOption value=":::drop test" label="Testing Tab" />
   <DropdownOption value=":::drop spanish" label="🇪🇸 Español" />
   <DropdownOption value=":::drop french" label="🇫🇷 Français" />
 </Dropdown>
 
-<DropdownRef type="drop" id="english">
-## Welcome to the Reference System!
-
-This content is defined **outside** the dropdown component using `<DropdownRef>`.
-
-### Benefits:
-- **Better organization** - Keep dropdown definitions concise
-- **Easier editing** - Content is not nested deeply
-- **Reusability** - Reference the same content from multiple places
-- **Cleaner code** - Separate structure from content
-
-### Full Markdown Support:
-- **Bold** and *italic* text
-- `inline code`
-- [Links](https://astro.build)
-- Lists and more!
-
-```js title="example.js"
-// Code blocks work perfectly!
-const greeting = "Hello from English!";
-console.log(greeting);
-```
-
-> 💡 **Pro Tip:** Use references for any content longer than 20-30 lines!
+<DropdownRef type="drop" id="test">
+  <Tabs defaultValue="imp" client:load>
+    <TabItem value="basic" label="✅ Basic Example">
+      ## Your First Tabs
+    </TabItem>
+    <TabItem value="imp" label="✅ Imp Example">
+      Second Tab
+    </TabItem>
+  </Tabs>
 </DropdownRef>
 
 <DropdownRef type="drop" id="spanish">
