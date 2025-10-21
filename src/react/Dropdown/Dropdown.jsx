@@ -12,11 +12,29 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
   useEffect(() => {
     if (containerRef.current) {
       const optionNodes = containerRef.current.querySelectorAll('[data-dropdown-option]');
-      const parsedOptions = Array.from(optionNodes).map((node, index) => ({
-        value: node.getAttribute('data-value') || `option-${index}`,
-        label: node.getAttribute('data-label') || `Option ${index + 1}`,
-        content: node.innerHTML
-      }));
+      const parsedOptions = Array.from(optionNodes).map((node, index) => {
+        const value = node.getAttribute('data-value') || `option-${index}`;
+        const label = node.getAttribute('data-label') || `Option ${index + 1}`;
+        let content = node.innerHTML;
+
+        // Check if value contains a reference pattern (e.g., ":::drop apple")
+        const referenceMatch = value.match(/^:::(\w+)\s+(.+)$/);
+        if (referenceMatch) {
+          const [, refType, refId] = referenceMatch;
+          // Look for the referenced content in the document
+          const refElement = document.querySelector(`[data-dropdown-ref="${refType}"][data-ref-id="${refId}"]`);
+          if (refElement) {
+            content = refElement.innerHTML;
+          }
+        }
+
+        return {
+          value,
+          label,
+          content,
+          isReference: !!referenceMatch
+        };
+      });
 
       setOptions(parsedOptions);
 
@@ -107,6 +125,7 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
   const selectedOption = options.find((o) => o.value === selectedValue);
   const selectedLabel = selectedOption?.label || placeholder;
   const selectedContent = selectedOption?.content || '';
+  const hasOptions = options.length > 0;
 
   return (
     <div
@@ -124,7 +143,8 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
       {/* Dropdown Selector */}
       <div ref={dropdownRef} style={{ position: 'relative', marginBottom: '16px' }}>
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => hasOptions && setIsOpen(!isOpen)}
+          disabled={!hasOptions}
           style={{
             width: '100%',
             display: 'flex',
@@ -137,9 +157,10 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
             backgroundColor: isDarkMode ? '#1e293b' : '#ffffff',
             border: `2px solid ${isDarkMode ? '#374151' : '#e5e7eb'}`,
             borderRadius: '12px',
-            cursor: 'pointer',
+            cursor: hasOptions ? 'pointer' : 'not-allowed',
             transition: 'all 0.2s ease',
             outline: 'none',
+            opacity: hasOptions ? 1 : 0.6,
             boxShadow: isOpen
               ? isDarkMode
                 ? '0 0 0 3px rgba(16, 185, 129, 0.3)'
@@ -147,12 +168,12 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
               : 'none'
           }}
           onMouseEnter={(e) => {
-            if (!isOpen) {
+            if (!isOpen && hasOptions) {
               e.currentTarget.style.borderColor = isDarkMode ? '#10b981' : '#059669';
             }
           }}
           onMouseLeave={(e) => {
-            if (!isOpen) {
+            if (!isOpen && hasOptions) {
               e.currentTarget.style.borderColor = isDarkMode ? '#374151' : '#e5e7eb';
             }
           }}
@@ -162,32 +183,34 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
               fontSize: '18px',
               lineHeight: '1'
             }}>
-              {selectedOption ? '🌐' : '📋'}
+              📋
             </span>
             {selectedLabel}
           </span>
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            style={{
-              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-              transition: 'transform 0.3s ease'
-            }}
-          >
-            <path
-              d="M5 7.5L10 12.5L15 7.5"
-              stroke={isDarkMode ? '#10b981' : '#059669'}
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          {hasOptions && (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              style={{
+                transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                transition: 'transform 0.3s ease'
+              }}
+            >
+              <path
+                d="M5 7.5L10 12.5L15 7.5"
+                stroke={isDarkMode ? '#10b981' : '#059669'}
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )}
         </button>
 
         {/* Dropdown Menu */}
-        {isOpen && (
+        {isOpen && hasOptions && (
           <div
             style={{
               position: 'absolute',
@@ -206,7 +229,7 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
               animation: 'dropdownSlideIn 0.2s ease-out'
             }}
           >
-            {options.map((option) => (
+            {options.map((option, index) => (
               <div
                 key={option.value}
                 onClick={() => handleSelect(option.value)}
@@ -222,7 +245,7 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
                     : 'transparent',
                   cursor: 'pointer',
                   transition: 'all 0.15s ease',
-                  borderBottom: `1px solid ${isDarkMode ? '#334155' : '#f3f4f6'}`,
+                  borderBottom: index < options.length - 1 ? `1px solid ${isDarkMode ? '#334155' : '#f3f4f6'}` : 'none',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px'
@@ -262,22 +285,24 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
       </div>
 
       {/* Selected Content */}
-      <div
-        style={{
-          backgroundColor: isDarkMode ? '#1e293b' : '#f8fafc',
-          borderRadius: '12px',
-          padding: '32px',
-          border: `1px solid ${isDarkMode ? '#374151' : '#e5e7eb'}`,
-          boxShadow: isDarkMode
-            ? '0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.25)'
-            : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-          minHeight: '120px',
-          color: isDarkMode ? '#e5e7eb' : '#374151',
-          lineHeight: '1.6',
-          fontSize: '15px'
-        }}
-        dangerouslySetInnerHTML={{ __html: selectedContent }}
-      />
+      {hasOptions && (
+        <div
+          style={{
+            backgroundColor: isDarkMode ? '#1e293b' : '#f8fafc',
+            borderRadius: '12px',
+            padding: '32px',
+            border: `1px solid ${isDarkMode ? '#374151' : '#e5e7eb'}`,
+            boxShadow: isDarkMode
+              ? '0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.25)'
+              : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            minHeight: '120px',
+            color: isDarkMode ? '#e5e7eb' : '#374151',
+            lineHeight: '1.6',
+            fontSize: '15px'
+          }}
+          dangerouslySetInnerHTML={{ __html: selectedContent }}
+        />
+      )}
 
       {/* Animation styles */}
       <style dangerouslySetInnerHTML={{
@@ -302,6 +327,15 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
 export const DropdownOption = ({ children, value, label }) => {
   return (
     <div data-dropdown-option data-value={value} data-label={label}>
+      {children}
+    </div>
+  );
+};
+
+// 🔗 DropdownRef component — for external content references
+export const DropdownRef = ({ children, type = "drop", id }) => {
+  return (
+    <div data-dropdown-ref={type} data-ref-id={id} style={{ display: 'none' }}>
       {children}
     </div>
   );
