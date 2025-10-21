@@ -1,0 +1,387 @@
+---
+title: "Horizontal Ruler Component - Decorative Section Dividers"
+description: "Beautiful animated section dividers for your Astro MDX blog posts"
+date: 2025-10-22
+tags: [astro, mdx, react, ui, design]
+category: tutorial
+---
+
+import HorizontalRuler from "@/react/HorizontalRuler/HorizontalRuler.jsx";
+
+# Horizontal Ruler Component
+
+Add elegant, animated section dividers to your Astro MDX blog posts. Perfect for separating sections or adding visual breaks.
+
+<HorizontalRuler />
+
+## 📦 Installation
+
+```jsx
+import HorizontalRuler from "@/react/HorizontalRuler/HorizontalRuler.jsx";
+```
+
+## 🚀 Basic Usage
+
+Simply add the component anywhere in your MDX:
+
+```jsx
+<HorizontalRuler />
+```
+
+<HorizontalRuler variant="flowers" />
+
+That's it! The ruler automatically adapts to your site's theme (light/dark mode).
+
+---
+
+## 🎨 Variants
+
+Choose from 6 beautiful styles:
+
+### Flowers (Default)
+
+<HorizontalRuler variant="flowers" />
+
+```jsx
+<HorizontalRuler variant="flowers" />
+```
+
+Delicate floral design with 🌸🌼🌺🌻🌷
+
+<HorizontalRuler variant="flowers" />
+
+### Stars
+
+<HorizontalRuler variant="stars" />
+
+```jsx
+<HorizontalRuler variant="stars" />
+```
+
+Celestial theme with ⭐✨💫🌟
+
+<HorizontalRuler variant="stars" />
+
+### Hearts
+
+<HorizontalRuler variant="hearts" />
+
+```jsx
+<HorizontalRuler variant="hearts" />
+```
+
+Colorful hearts with 💚💛💙💜
+
+<HorizontalRuler variant="hearts" />
+
+### Geometric
+
+<HorizontalRuler variant="geometric" />
+
+```jsx
+<HorizontalRuler variant="geometric" />
+```
+
+Clean geometric shapes with ◆◇
+
+<HorizontalRuler variant="geometric" />
+
+### Dots
+
+<HorizontalRuler variant="dots" />
+
+```jsx
+<HorizontalRuler variant="dots" />
+```
+
+Minimalist dot pattern
+
+<HorizontalRuler variant="dots" />
+
+### Minimal
+
+<HorizontalRuler variant="minimal" />
+
+```jsx
+<HorizontalRuler variant="minimal" />
+```
+
+Ultra-minimal dash style
+
+<HorizontalRuler variant="minimal" />
+
+---
+
+## 📏 Sizes
+
+Control the height and icon size:
+
+### Small
+
+<HorizontalRuler size="small" />
+
+```jsx
+<HorizontalRuler size="small" />
+```
+
+### Medium (Default)
+
+<HorizontalRuler size="medium" />
+
+```jsx
+<HorizontalRuler size="medium" />
+```
+
+### Large
+
+<HorizontalRuler size="large" />
+
+```jsx
+<HorizontalRuler size="large" />
+```
+
+---
+
+## 📐 Spacing
+
+Adjust the vertical spacing around the ruler:
+
+### Tight
+
+<HorizontalRuler spacing="tight" />
+
+```jsx
+<HorizontalRuler spacing="tight" />
+```
+
+Less vertical space (20px top/bottom)
+
+### Normal (Default)
+
+<HorizontalRuler spacing="normal" />
+
+```jsx
+<HorizontalRuler spacing="normal" />
+```
+
+Standard spacing (40px top/bottom)
+
+### Loose
+
+<HorizontalRuler spacing="loose" />
+
+```jsx
+<HorizontalRuler spacing="loose" />
+```
+
+More vertical space (60px top/bottom)
+
+---
+
+## 🎨 Custom Colors
+
+### Auto Color (Default)
+
+Adapts to theme automatically:
+
+<HorizontalRuler color="auto" />
+
+```jsx
+<HorizontalRuler color="auto" />
+```
+
+### Custom Colors
+
+<HorizontalRuler color="#ec4899" variant="hearts" />
+
+```jsx
+<HorizontalRuler color="#ec4899" variant="hearts" />
+```
+
+<HorizontalRuler color="#3b82f6" variant="stars" />
+
+```jsx
+<HorizontalRuler color="#3b82f6" variant="stars" />
+```
+
+<HorizontalRuler color="#8b5cf6" variant="geometric" />
+
+```jsx
+<HorizontalRuler color="#8b5cf6" variant="geometric" />
+```
+
+---
+
+## ⚙️ Props Reference
+
+| Prop | Type | Default | Options | Description |
+|------|------|---------|---------|-------------|
+| `variant` | string | "flowers" | flowers, stars, dots, hearts, geometric, minimal | Visual style |
+| `size` | string | "medium" | small, medium, large | Height and icon size |
+| `spacing` | string | "normal" | tight, normal, loose | Vertical spacing |
+| `color` | string | "auto" | auto, any hex color | Icon color |
+
+---
+
+## 💡 Usage Examples
+
+### Blog Post Header
+
+Use after the title to separate header from content:
+
+```mdx
+---
+title: "My Awesome Blog Post"
+---
+
+# My Awesome Blog Post
+
+<HorizontalRuler variant="flowers" spacing="tight" />
+
+Your blog content starts here...
+```
+
+<HorizontalRuler variant="flowers" spacing="tight" />
+
+### Section Dividers
+
+Separate major sections in long posts:
+
+```mdx
+## Introduction
+
+Content here...
+
+<HorizontalRuler variant="stars" />
+
+## Main Content
+
+More content...
+
+<HorizontalRuler variant="stars" />
+
+## Conclusion
+
+Final thoughts...
+```
+
+### End of Post
+
+Mark the end of your blog post:
+
+```mdx
+Thanks for reading!
+
+<HorizontalRuler variant="hearts" size="large" />
+
+*Published on October 22, 2025*
+```
+
+<HorizontalRuler variant="hearts" />
+
+### Combine with Other Components
+
+Works great with other components:
+
+```mdx
+<Tabs defaultValue="tab1" client:load>
+  <TabItem value="tab1" label="First">
+    Content...
+  </TabItem>
+</Tabs>
+
+<HorizontalRuler variant="geometric" spacing="loose" />
+
+<Dropdown client:load>
+  <DropdownOption value="opt1" label="Option">
+    Content...
+  </DropdownOption>
+</Dropdown>
+```
+
+---
+
+## 🎯 Design Tips
+
+### 1. Match Your Theme
+
+Choose variants that complement your blog's aesthetic:
+
+- **Modern/Tech blogs**: `geometric` or `minimal`
+- **Creative/Art blogs**: `flowers` or `stars`
+- **Personal blogs**: `hearts` or `flowers`
+- **Professional blogs**: `dots` or `minimal`
+
+### 2. Consistent Usage
+
+Pick 1-2 variants and use them consistently throughout your blog for a cohesive look.
+
+### 3. Size Matters
+
+- **Headers**: Use `size="small"` with `spacing="tight"`
+- **Section breaks**: Use `size="medium"` with `spacing="normal"`
+- **Dramatic breaks**: Use `size="large"` with `spacing="loose"`
+
+### 4. Color Coordination
+
+Let the ruler use `color="auto"` to match your theme, or set custom colors to match your brand.
+
+---
+
+## ✨ Features
+
+- ✅ **Auto theme detection** - Adapts to light/dark mode
+- ✅ **Smooth animations** - Gentle floating effect
+- ✅ **Fully customizable** - Variants, sizes, spacing, colors
+- ✅ **Responsive** - Works on all screen sizes
+- ✅ **Zero dependencies** - Pure React
+- ✅ **Lightweight** - Minimal performance impact
+
+<HorizontalRuler variant="stars" size="large" />
+
+## 🎨 Creative Combinations
+
+Mix different props for unique styles:
+
+<HorizontalRuler variant="flowers" size="large" spacing="loose" />
+
+<HorizontalRuler variant="stars" size="small" spacing="tight" color="#fbbf24" />
+
+<HorizontalRuler variant="hearts" size="medium" spacing="normal" color="#f43f5e" />
+
+<HorizontalRuler variant="geometric" size="large" spacing="loose" color="#8b5cf6" />
+
+---
+
+## 📝 Quick Reference
+
+### Common Patterns
+
+```jsx
+// After title
+<HorizontalRuler variant="flowers" spacing="tight" />
+
+// Between sections
+<HorizontalRuler variant="stars" />
+
+// End of post
+<HorizontalRuler variant="hearts" size="large" />
+
+// Minimal divider
+<HorizontalRuler variant="minimal" size="small" />
+
+// Custom themed
+<HorizontalRuler variant="geometric" color="#3b82f6" />
+```
+
+---
+
+<HorizontalRuler variant="flowers" size="large" spacing="loose" />
+
+## 🎉 Start Using Today!
+
+Add beautiful, animated section dividers to your Astro MDX blog posts with just one line of code. Perfect for creating visual hierarchy and improving readability.
+
+<HorizontalRuler variant="hearts" />
+
+**Happy blogging!** ✨
