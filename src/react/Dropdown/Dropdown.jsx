@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." }) => {
+const Dropdown = ({ children, defaultValue, placeholder = "Select an option...", stripCss = false }) => {
   const containerRef = useRef(null);
   const dropdownRef = useRef(null);
   const [options, setOptions] = useState([]);
@@ -291,7 +291,11 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
       {/* Selected Content */}
       {hasOptions && (
         <div
-          style={{
+          style={stripCss ? {
+            color: isDarkMode ? '#e5e7eb' : '#374151',
+            lineHeight: '1.6',
+            fontSize: '15px'
+          } : {
             backgroundColor: isDarkMode ? '#1e293b' : '#f8fafc',
             borderRadius: '12px',
             padding: '32px',
