@@ -125,6 +125,15 @@ console.log(salutation);
 > 💡 **Astuce :** Utilisez des références pour tout contenu de plus de 20-30 lignes !
 </DropdownRef>
 
+<Dropdown stripCss defaultValue="test" client:load>
+  <DropdownOption value="test" label="With Tabs">
+    <Tabs defaultValue="imp" client:load>
+      <TabItem value="basic" label="Tab 1">Content</TabItem>
+      <TabItem value="imp" label="Tab 2">Content</TabItem>
+    </Tabs>
+  </DropdownOption>
+</Dropdown>
+
 ## 🔧 How It Works
 
 ### Step 1: Define Your Dropdown with References
