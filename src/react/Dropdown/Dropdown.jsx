@@ -123,7 +123,9 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
   };
 
   const selectedOption = options.find((o) => o.value === selectedValue);
-  const selectedLabel = selectedOption?.label || placeholder;
+  // Show placeholder if no selection has been made yet (when selectedValue is empty or matches first option on mount)
+  const isInitialState = !selectedValue || (selectedValue === options[0]?.value && !defaultValue);
+  const selectedLabel = (isInitialState && placeholder) ? placeholder : (selectedOption?.label || placeholder);
   const selectedContent = selectedOption?.content || '';
   const hasOptions = options.length > 0;
 
@@ -179,12 +181,14 @@ const Dropdown = ({ children, defaultValue, placeholder = "Select an option..." 
           }}
         >
           <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ 
-              fontSize: '18px',
-              lineHeight: '1'
-            }}>
-              📋
-            </span>
+            {!hasOptions && (
+              <span style={{ 
+                fontSize: '18px',
+                lineHeight: '1'
+              }}>
+                📋
+              </span>
+            )}
             {selectedLabel}
           </span>
           {hasOptions && (

@@ -1000,6 +1000,21 @@ Start creating dynamic, interactive content in your blog today! 🚀
 
 **Need help?** Check out the [Tabs component guide](./react-tabs-feature.mdx) for similar patterns and examples.
 
+<Dropdown
+  placeholder="Choose your favorite framework..."
+  client:load
+>
+  <DropdownOption value="react" label="React" defaultValue="ng">
+    Content here...
+  </DropdownOption>
+  <DropdownOption value="vue" label="Vue">
+    Content here...
+  </DropdownOption>
+  <DropdownOption value="ng" label="My Angular">
+    Content here... Angular
+  </DropdownOption>
+</Dropdown>
+
     <Dropdown client:load placeholder="Choose your favorite framework...">
       <DropdownOption>
         First option content
@@ -1011,4 +1026,7 @@ Start creating dynamic, interactive content in your blog today! 🚀
         Third option content
       </DropdownOption>
     </Dropdown>
-    
+
+    <Dropdown client:load>
+
+    </Dropdown>
