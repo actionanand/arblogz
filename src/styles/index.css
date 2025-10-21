@@ -2,6 +2,9 @@
 @import "remixicon/fonts/remixicon.css";
 @import "tocbot/dist/tocbot.css";
 @import "remark-aside.css";
+@import "characters.css";
+@import "sticky-pin.css";
+@import "rss.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -1405,7 +1408,7 @@ menu {
 }
 
 /* 置顶文字样式 */
-.post-sticky {
+/* .post-sticky {
   font-weight: 400;
   height: 20px;
   padding: 0 6px;
@@ -1418,7 +1421,7 @@ menu {
   background-color: rgb(var(--color-text));
   opacity: 0.8;
   border-radius: 2px 6px;
-}
+} */
 
 /* 修复toc 样式问题*/
 /*  覆写toc选中的链接文字颜色 */

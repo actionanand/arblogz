@@ -54,6 +54,9 @@ export const site = {
  * memosUsername {string} memos login name
  * memosPageSize {number} 10
  */
+
+const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
+
 export const config = {
   lang: (() => {
     // For server-side and initial render, always use English as default
@@ -241,7 +244,7 @@ export const infoLinks = [
   {
     icon: 'ri-rss-fill',
     name: 'rss',
-    outlink: '',
+    outlink: `${baseUrl}/rss-preview`,
   }
 ]
 
@@ -260,19 +263,19 @@ export const donate = {
   
   // QR Code images (place in /public/images/donation/)
   // if you don't want some payment, comment it out
-  // wechatQRCode: "/images/donation/wechat-qr.png",
-  // alipayQRCode: "/images/donation/alipay-qr.png", 
-  gpayQRCode: "/images/donation/gpay-qr.png", // Google Pay for India
-  // paytmQRCode: "/images/donation/paytm-qr.png", // Paytm for India
-  // phonepeQRCode: "/images/donation/phonepe-qr.png", // PhonePe for India
+  wechatQRCode: `${baseUrl}/images/donation/wechat-qr.png`,
+  alipayQRCode: `${baseUrl}/images/donation/alipay-qr.png`, 
+  gpayQRCode: `${baseUrl}/images/donation/gpay-qr.png`, // Google Pay for India
+  paytmQRCode: `${baseUrl}/images/donation/paytm-qr.png`, // Paytm for India
+  phonepeQRCode: `${baseUrl}/images/donation/phonepe-qr.png`, // PhonePe for India
   
   // Direct payment URLs
-  paypalUrl: "https://paypal.me/actionanand", // Replace with actual
-  githubSponsors: "actionanand", // Replace with actual GitHub username
-  buyMeACoffee: "actionanand", // Replace with actual username
-  kofi: "actionanand", // Replace with actual Ko-fi username
-  // patreon: "yourusername", // Replace with actual Patreon username
-  // opencollective: "yourproject", // Replace with actual Open Collective project
+  paypalUrl: "https://paypal.me/yourusername", // Replace with actual
+  githubSponsors: "yourusername", // Replace with actual GitHub username
+  buyMeACoffee: "yourusername", // Replace with actual username
+  kofi: "yourusername", // Replace with actual Ko-fi username
+  patreon: "yourusername", // Replace with actual Patreon username
+  opencollective: "yourproject", // Replace with actual Open Collective project
   
   // Cryptocurrency (optional)
   bitcoin: "", // Bitcoin address
@@ -289,9 +292,9 @@ export const donate = {
 export const friendshipLinks =
   [
     // {
-    //   name: "Cirry's Blog",
-    //   url: 'https://cirry.cn',
-    //   avatar: "https://cirry.cn/avatar.png",
+    //   name: "Anand's Blog",
+    //   url: 'https://anand.cn',
+    //   avatar: "https://anand.cn/avatar.png",
     //   description: '前端开发的日常'
     // },
   ]
@@ -342,6 +345,17 @@ export const comment = {
   }
 
   //
+}
+
+// These are characters available for the character chat feature.
+// To add your own character, add an image file to the top-level `/public/admonitions/` directory
+// Make sure to compress the image to a web-friendly size (<100kb)
+// Try using the excellent https://squoosh.app web app for creating small webp files
+
+export const characters = {
+  owl: `${baseUrl}/admonitions/owl.webp`,
+  unicorn: `${baseUrl}/admonitions/unicorn.webp`,
+  duck: `${baseUrl}/admonitions/duck.webp`,
 }
 
 /**

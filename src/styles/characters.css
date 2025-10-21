@@ -1,0 +1,218 @@
+aside.character-dialogue {
+  background-color: rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 0.5rem;
+}
+
+@media (min-width: 640px) {
+  aside.character-dialogue {
+    background-color: transparent;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  aside.character-dialogue {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Spacing between consecutive dialogue boxes */
+aside.character-dialogue:has(+ aside.character-dialogue) {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  aside.character-dialogue:has(+ aside.character-dialogue) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Alternate right alignment for consecutive dialogue boxes using :nth-child */
+aside.character-dialogue:nth-child(odd) {
+  flex-direction: row;
+}
+
+aside.character-dialogue:nth-child(odd) .character-dialogue-content::after {
+  left: -0.9rem;
+  right: auto;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+aside.character-dialogue:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+aside.character-dialogue:nth-child(even) .character-dialogue-content::after {
+  right: -0.9rem;
+  left: auto;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+@media (min-width: 640px) {
+  aside.character-dialogue:nth-child(odd) .character-dialogue-content::after {
+    left: -0.75rem;
+    transform: rotate(90deg);
+  }
+  
+  aside.character-dialogue:nth-child(even) .character-dialogue-content::after {
+    right: -0.75rem;
+    transform: rotate(-90deg);
+  }
+}
+
+/* Manual override classes */
+aside.character-dialogue.align-left {
+  flex-direction: row !important;
+}
+
+aside.character-dialogue.align-left .character-dialogue-content::after {
+  left: -0.9rem !important;
+  right: auto !important;
+  transform: translateY(-50%) rotate(90deg) !important;
+}
+
+aside.character-dialogue.align-right {
+  flex-direction: row-reverse !important;
+}
+
+aside.character-dialogue.align-right .character-dialogue-content::after {
+  right: -0.9rem !important;
+  left: auto !important;
+  transform: translateY(-50%) rotate(-90deg) !important;
+}
+
+@media (min-width: 640px) {
+  aside.character-dialogue.align-left .character-dialogue-content::after {
+    left: -0.75rem !important;
+    transform: rotate(90deg) !important;
+  }
+  
+  aside.character-dialogue.align-right .character-dialogue-content::after {
+    right: -0.75rem !important;
+    transform: rotate(-90deg) !important;
+  }
+}
+
+/* Spacing between consecutive dialogues */
+aside.character-dialogue + aside.character-dialogue {
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  aside.character-dialogue + aside.character-dialogue {
+    margin-top: 0.75rem;
+    padding-top: 0;
+  }
+}
+
+/* Character image styling */
+img.character-dialogue-image {
+  margin: 0;
+  border: none;
+  flex-shrink: 1;
+  width: 5rem;
+}
+
+@media (min-width: 640px) {
+  img.character-dialogue-image {
+    width: 6.25rem;
+  }
+}
+
+/* Speech bubble content */
+.character-dialogue-content {
+  position: relative;
+  flex-shrink: 5;
+  padding: 0.25rem;
+  margin: 0 0.375rem;
+  border-radius: 0.75rem;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.06);
+  overflow: visible;
+}
+
+html[data-theme="dark"] .character-dialogue-content {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 640px) {
+  .character-dialogue-content {
+    padding: 1.5rem;
+    margin-top: 0.125rem;
+    min-width: 12.5%;
+  }
+}
+
+/* Speech bubble pointer (triangle) */
+.character-dialogue-content::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -0.9rem;
+  transform: translateY(-50%) rotate(90deg);
+  width: 0;
+  height: 0;
+  border-left: 0.625rem solid transparent;
+  border-right: 0.625rem solid transparent;
+  border-top: 0.625rem solid rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="dark"] .character-dialogue-content::after {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 640px) {
+  .character-dialogue-content::after {
+    top: 2rem;
+    left: -0.75rem;
+    transform: rotate(90deg);
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-top: 0.5rem solid rgba(0, 0, 0, 0.06);
+  }
+  
+  html[data-theme="dark"] .character-dialogue-content::after {
+    border-top-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Admonition title styling (if needed) */
+aside p.admonition-title {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-weight: 600;
+  position: relative;
+  margin-left: 1.625rem;
+}
+
+@media (min-width: 768px) {
+  aside p.admonition-title {
+    margin-left: 2.125rem;
+  }
+}
+
+aside p.admonition-title::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background-color: #3b82f6;
+  left: -1.5rem;
+  top: 0.375rem;
+  position: absolute;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+
+aside p:not(.admonition-title):first-child {
+  margin-top: 0;
+}

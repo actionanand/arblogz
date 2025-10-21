@@ -10,10 +10,13 @@ const {title, date, slug, category, tags, sticky = false, draft = false} = Astro
   <!-- title -->
   <div class="flex items-center">
     {sticky > 0 &&
-      <div class="post-sticky select-none"><span data-translate="home.sticky">{t('home.sticky')}</span></div>}
-    <a class="flex text-xl font-bold hover:text-skin-active transition-colors" href={slug}>
-      {title}
-    </a>
+      <div class="post-sticky select-none group relative flex items-center">
+        <span class="sticky-pin" aria-hidden="true"></span>
+        <span class="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 rounded bg-skin-fill text-xs text-skin-base opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 shadow-lg pointer-events-none" data-translate="home.sticky">{t('home.sticky')}</span>
+      </div>}
+      <a class="flex text-xl font-bold hover:text-skin-active transition-colors" href={slug}>
+        {title}
+      </a>
   </div>
 
   <div class="flex flex-wrap items-center my-2 text-skin-dodge">
