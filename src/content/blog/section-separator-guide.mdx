@@ -1,0 +1,606 @@
+---
+title: "Section Separator - Stylish Ribbon Dividers"
+description: "Beautiful CSS ribbon-style separators for subsections in your Astro MDX blog"
+date: 2025-10-22
+tags: [astro, mdx, react, ui, design]
+category: tutorial
+---
+
+import SectionSeparator from "@/react/SectionSeparator/SectionSeparator.jsx";
+import HorizontalRuler from "@/react/HorizontalRuler/HorizontalRuler.jsx";
+
+# Section Separator - Ribbon Dividers
+
+Elegant CSS ribbon-style separators inspired by classic design patterns. Perfect for subsections and content organization.
+
+<SectionSeparator />
+
+## 📦 Import the Components
+
+```jsx
+import SectionSeparator from "@/react/SectionSeparator/SectionSeparator.jsx";
+```
+or with relative path:
+
+```jsx
+import SectionSeparator from "../../react/SectionSeparator/SectionSeparator.jsx";
+```
+
+## 🚀 Quick Start
+
+```jsx
+<SectionSeparator />
+```
+
+<SectionSeparator />
+
+The separator automatically adapts to your theme and creates a stylish ribbon effect.
+
+<HorizontalRuler variant="dots" spacing="loose" />
+
+## 🎨 Ribbon Styles
+
+### Ribbon (Default)
+
+Classic ribbon with arrow point:
+
+<SectionSeparator style="ribbon" />
+
+```jsx
+<SectionSeparator style="ribbon" />
+```
+
+<SectionSeparator style="ribbon" color="blue" />
+<SectionSeparator style="ribbon" color="purple" />
+<SectionSeparator style="ribbon" color="pink" />
+
+### Folded
+
+Ribbon with 3D folded corner:
+
+<SectionSeparator style="folded" />
+
+```jsx
+<SectionSeparator style="folded" />
+```
+
+<SectionSeparator style="folded" color="orange" />
+<SectionSeparator style="folded" color="teal" />
+
+### Notched
+
+Sharp notched ends:
+
+<SectionSeparator style="notched" />
+
+```jsx
+<SectionSeparator style="notched" />
+```
+
+<SectionSeparator style="notched" color="purple" />
+<SectionSeparator style="notched" color="cyan" />
+
+### Bookmark
+
+Bookmark-style pointer:
+
+<SectionSeparator style="bookmark" />
+
+```jsx
+<SectionSeparator style="bookmark" />
+```
+
+<SectionSeparator style="bookmark" color="red" />
+<SectionSeparator style="bookmark" color="indigo" />
+
+### Tag
+
+Price tag with hole:
+
+<SectionSeparator style="tag" />
+
+```jsx
+<SectionSeparator style="tag" />
+```
+
+<SectionSeparator style="tag" color="yellow" />
+<SectionSeparator style="tag" color="green" />
+
+### Stitched
+
+Stitched edge effect:
+
+<SectionSeparator style="stitched" />
+
+```jsx
+<SectionSeparator style="stitched" />
+```
+
+<SectionSeparator style="stitched" color="rose" />
+<SectionSeparator style="stitched" color="emerald" />
+
+### Zigzag
+
+Zigzag edge pattern:
+
+<SectionSeparator style="zigzag" />
+
+```jsx
+<SectionSeparator style="zigzag" />
+```
+
+<SectionSeparator style="zigzag" color="blue" />
+<SectionSeparator style="zigzag" color="pink" />
+
+<HorizontalRuler variant="geometric" spacing="loose" />
+
+## 📍 Position
+
+Control ribbon alignment:
+
+### Left (Default)
+
+<SectionSeparator position="left" color="blue" />
+
+```jsx
+<SectionSeparator position="left" />
+```
+
+Natural reading flow, arrow points right.
+
+<SectionSeparator position="left" color="purple" width="long" />
+
+### Center
+
+<SectionSeparator position="center" color="pink" />
+
+```jsx
+<SectionSeparator position="center" />
+```
+
+Centered ribbon, arrows on both ends (for ribbon/stitched styles).
+
+<SectionSeparator position="center" color="orange" width="long" />
+
+### Right
+
+<SectionSeparator position="right" color="teal" />
+
+```jsx
+<SectionSeparator position="right" />
+```
+
+Right-aligned, arrow points left.
+
+<SectionSeparator position="right" color="indigo" width="long" />
+
+<HorizontalRuler variant="stars" spacing="loose" />
+
+## 📏 Width
+
+Control ribbon length:
+
+### Normal(25%) - default
+
+<SectionSeparator />
+
+```jsx
+<SectionSeparator />
+```
+
+Compact accent for subtle breaks.
+
+### 20% length
+
+<SectionSeparator length={20} color="blue" />
+
+```jsx
+<SectionSeparator length={20} color="blue" />
+```
+
+Balanced size for short title type cases.
+
+### 70% length
+
+<SectionSeparator length={70} color="purple" />
+
+```jsx
+<SectionSeparator length={70} color="purple" />
+```
+
+Prominent divider for major subsections.
+
+
+<HorizontalRuler variant="flowers" spacing="loose" />
+
+## 📏 height
+
+```jsx
+// 20px
+<SectionSeparator height="thin" />
+```
+
+<SectionSeparator height="thin" />
+
+```jsx
+// 32px (default)
+<SectionSeparator height="normal" />
+```
+
+<SectionSeparator height="normal" />
+
+```jsx
+// 48px
+<SectionSeparator height="thick" />
+```
+
+<SectionSeparator height="thick" />
+
+```jsx
+<SectionSeparator 
+  title="Step 1: Setup" 
+  style="folded" 
+  color="emerald" 
+  length={35} 
+/>
+```
+
+<SectionSeparator 
+  title="Step 1: Setup" 
+  style="folded" 
+  color="emerald" 
+  length={35} 
+/>
+
+```jsx
+<SectionSeparator 
+  title="Configuration" 
+  style="ribbon" 
+  color="blue" 
+  height="thick"
+  length={30}
+/>
+```
+
+<SectionSeparator 
+  title="Configuration" 
+  style="ribbon" 
+  color="blue" 
+  height="thick"
+  length={30}
+/>
+
+## 🎨 Colors
+
+### Auto (Default)
+
+Theme-aware emerald color:
+
+<SectionSeparator color="auto" />
+
+```jsx
+<SectionSeparator color="auto" />
+```
+
+### Preset Colors
+
+12 beautiful color options:
+
+<SectionSeparator color="emerald" style="ribbon" />
+
+**Emerald** • `color="emerald"`
+
+<SectionSeparator color="blue" style="notched" />
+
+**Blue** • `color="blue"`
+
+<SectionSeparator color="purple" style="bookmark" />
+
+**Purple** • `color="purple"`
+
+<SectionSeparator color="pink" style="tag" />
+
+**Pink** • `color="pink"`
+
+<SectionSeparator color="orange" style="folded" />
+
+**Orange** • `color="orange"`
+
+<SectionSeparator color="red" style="ribbon" />
+
+**Red** • `color="red"`
+
+<SectionSeparator color="yellow" style="stitched" />
+
+**Yellow** • `color="yellow"`
+
+<SectionSeparator color="green" style="zigzag" />
+
+**Green** • `color="green"`
+
+<SectionSeparator color="indigo" style="notched" />
+
+**Indigo** • `color="indigo"`
+
+<SectionSeparator color="teal" style="bookmark" />
+
+**Teal** • `color="teal"`
+
+<SectionSeparator color="cyan" style="ribbon" />
+
+**Cyan** • `color="cyan"`
+
+<SectionSeparator color="rose" style="tag" />
+
+**Rose** • `color="rose"`
+
+### Custom Hex Colors
+
+<SectionSeparator color="#8b5cf6" style="ribbon" />
+
+```jsx
+<SectionSeparator color="#8b5cf6" />
+```
+
+<SectionSeparator color="#f59e0b" style="folded" />
+
+```jsx
+<SectionSeparator color="#f59e0b" />
+```
+
+<HorizontalRuler variant="hearts" spacing="loose" />
+
+## 📐 Spacing
+
+### Tight (16px)
+
+<SectionSeparator spacing="tight" />
+
+```jsx
+<SectionSeparator spacing="tight" />
+```
+
+Minimal vertical space.
+
+### Normal (24px) - Default
+
+<SectionSeparator spacing="normal" color="blue" />
+
+```jsx
+<SectionSeparator spacing="normal" />
+```
+
+Standard spacing for most content.
+
+### Loose (40px)
+
+<SectionSeparator spacing="loose" color="purple" />
+
+```jsx
+<SectionSeparator spacing="loose" />
+```
+
+Extra breathing room.
+
+<HorizontalRuler variant="minimal" spacing="loose" />
+
+## ⚙️ Props Reference
+
+| Prop | Type | Default | Options |
+|------|------|---------|---------|
+| `style` | string | "ribbon" | ribbon, folded, notched, bookmark, tag, stitched, zigzag |
+| `position` | string | "left" | left, center, right |
+| `width` | string | "medium" | short, medium, long, full |
+| `color` | string | "auto" | auto, emerald, blue, purple, pink, orange, red, yellow, green, indigo, teal, cyan, rose, or hex |
+| `spacing` | string | "normal" | tight, normal, loose |
+
+<HorizontalRuler variant="geometric" spacing="loose" />
+
+## 💡 Usage Examples
+
+### Subsection Breaks
+
+Organize content with visual hierarchy:
+
+```jsx
+<SectionSeparator title="Introduction" />
+```
+<SectionSeparator title="Introduction" />
+
+```jsx
+<SectionSeparator title="Getting Started" color="blue" />
+```
+
+<SectionSeparator title="Getting Started" color="blue" />
+
+```jsx
+<SectionSeparator title="Advanced Topics" length={40} height="thick" color="purple" />
+```
+
+<SectionSeparator title="Advanced Topics" length={40} height="thick" color="purple" />
+
+
+<HorizontalRuler variant="dots" />
+
+
+### Position Variations
+
+Mix positions for creative layouts:
+
+```jsx
+<SectionSeparator position="left" color="blue" style="ribbon" />
+```
+
+<SectionSeparator position="left" color="blue" style="ribbon" />
+
+Left-aligned content with arrow pointing right.
+
+```jsx
+<SectionSeparator position="center" color="purple" style="folded" />
+```
+
+<SectionSeparator position="center" color="purple" style="folded" />
+
+Centered content for balanced design.
+
+```jsx
+<SectionSeparator position="right" color="pink" style="bookmark" />
+```
+
+<SectionSeparator position="right" color="pink" style="bookmark" />
+
+Right-aligned content with arrow pointing left.
+
+<HorizontalRuler variant="geometric" spacing="loose" />
+
+## 🎯 Style Showcase
+
+### All Styles in Action
+
+<SectionSeparator style="ribbon" color="blue" title="blue ribbon" />
+<SectionSeparator style="folded" color="purple" title="purple folded" />
+<SectionSeparator style="notched" color="pink" title="pink notched" />
+<SectionSeparator style="bookmark" color="orange" title="orange bookmark" />
+<SectionSeparator style="tag" color="teal" title="teal tag" />
+<SectionSeparator style="stitched" color="red" title="red stitched" />
+<SectionSeparator style="zigzag" color="green" title="green zigzag" />
+
+### Width Comparison
+
+<SectionSeparator length={35} color="blue" title="35%" />
+<SectionSeparator length={50} color="purple" title="50%" />
+<SectionSeparator length={83} color="pink" title="83%" />
+<SectionSeparator length={15} color="orange" title="15%" />
+
+### Position Comparison
+
+```jsx
+<SectionSeparator position="left" color="emerald" length="60" title="left aligned 60% emerald" />
+```
+
+<SectionSeparator position="left" color="emerald" length="60" title="left aligned 60% emerald" />
+<SectionSeparator position="center" color="blue" length="73" title="center aligned 73% blue" />
+<SectionSeparator position="right" color="purple" length="76" title="right aligned 76% purple" />
+
+<HorizontalRuler variant="hearts" spacing="loose" />
+
+
+## 📝 Best Practices
+
+### 1. Consistent Styling
+
+Choose 1-2 ribbon styles for your entire blog:
+
+```jsx
+// ✅ Good - Consistent
+<SectionSeparator style="ribbon" />
+<SectionSeparator style="ribbon" color="blue" />
+<SectionSeparator style="ribbon" color="purple" />
+
+// ❌ Inconsistent
+<SectionSeparator style="ribbon" />
+<SectionSeparator style="tag" />
+<SectionSeparator style="zigzag" />
+```
+
+### 2. Color Meaning
+
+Assign semantic meaning to colors:
+
+- **Blue** → Information, tips
+- **Yellow** → Warnings, cautions
+- **Red** → Errors, important alerts
+- **Green** → Success, go-ahead
+- **Purple** → Premium, advanced topics
+- **Orange** → Updates, changes
+
+### 3. Position Guidelines
+
+- **Left** → Best for blog posts (natural reading)
+- **Center** → Good for formal documentation
+- **Right** → Creative layouts, unique designs
+
+### 5. Height Selection
+
+- **thin** → Suitable for lengthy ribbon without title or for section completion
+- **normal** → Standard/default width
+- **thick** → Important subsections
+
+<HorizontalRuler variant="flowers" spacing="loose" />
+
+## ✨ Features
+
+- ✅ **7 ribbon styles** - Inspired by CSS ribbon patterns
+- ✅ **3 positions** - Left, center, right alignment
+- ✅ **2 height options** - thin, normal & thick
+- ✅ **12 preset colors** + custom hex colors
+- ✅ **Auto theme detection** - Adapts to light/dark mode
+- ✅ **Pure CSS** - No images, all CSS shapes
+- ✅ **Lightweight** - Minimal performance impact
+- ✅ **Responsive** - Works on all screen sizes
+
+<SectionSeparator style="ribbon" color="emerald" spacing="loose" width="long" />
+
+## 🎨 Style Guide
+
+### Ribbon Styles Overview
+
+| Style | Best For | Complexity |
+|-------|----------|------------|
+| **ribbon** | General use, versatile | Simple |
+| **folded** | Premium content, depth | Medium |
+| **notched** | Modern, clean design | Simple |
+| **bookmark** | Navigation, markers | Simple |
+| **tag** | Labels, categories | Medium |
+| **stitched** | Handcrafted, personal | Medium |
+| **zigzag** | Playful, creative | Complex |
+
+<HorizontalRuler variant="dots" />
+
+### When to Use Each Style
+
+**Ribbon** - Classic and versatile
+```jsx
+<SectionSeparator style="ribbon" />
+```
+Use for: General subsections, neutral content
+
+**Folded** - Premium feel
+```jsx
+<SectionSeparator style="folded" />
+```
+Use for: Important sections, premium content
+
+**Notched** - Modern and sharp
+```jsx
+<SectionSeparator style="notched" />
+```
+Use for: Tech blogs, minimalist design
+
+**Bookmark** - Directional
+```jsx
+<SectionSeparator style="bookmark" />
+```
+Use for: Navigation hints, progress indicators
+
+**Tag** - Labeled content
+```jsx
+<SectionSeparator style="tag" />
+```
+Use for: Categories, labels, prices
+
+**Stitched** - Handcrafted
+```jsx
+<SectionSeparator style="stitched" />
+```
+Use for: Personal blogs, creative content
+
+**Zigzag** - Playful
+```jsx
+<SectionSeparator style="zigzag" />
+```
+Use for: Fun content, children's themes
+
+**Happy blogging!** ✨
+
+<HorizontalRuler variant="stars" size="large" spacing="loose" />
