@@ -26,6 +26,8 @@ or with relative path:
 import SectionSeparator from "../../react/SectionSeparator/SectionSeparator.jsx";
 ```
 
+> **Important:** Use `.mdx` extension (not `.md`) when working with React components.
+
 ## 🚀 Quick Start
 
 ```jsx
@@ -269,6 +271,36 @@ Prominent divider for major subsections.
   height="thick"
   length={30}
 />
+
+## Passing Markdown heading
+
+- Make sure to use `client:load` when passing markdown heading as title
+
+```jsx
+<SectionSeparator style="ribbon" length={40} client:load>
+  ## Anand wrote
+</SectionSeparator>
+```
+
+<SectionSeparator style="ribbon" length={40} client:load>
+  ## Anand wrote
+</SectionSeparator>
+
+```jsx
+<SectionSeparator title="My Title" style="folded" />
+```
+
+<SectionSeparator title="My Title" style="folded" />
+
+```jsx
+<SectionSeparator title="Ignored" style="stitched" client:load>
+  ### My title
+</SectionSeparator>
+```
+
+<SectionSeparator title="Ignored" style="stitched" client:load>
+  ### My title
+</SectionSeparator>
 
 ## 🎨 Colors
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const SectionSeparator = ({ 
   position = "left",
@@ -7,9 +7,85 @@ const SectionSeparator = ({
   height = "normal",
   style = "ribbon",
   spacing = "normal",
-  title = ""
+  title = "",
+  children
 }) => {
+  const containerRef = useRef(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [extractedTitle, setExtractedTitle] = useState('');
+
+  // 🧠 Extract title from markdown heading or plain text in children
+  useEffect(() => {
+    let textContent = '';
+    
+    if (children) {
+      // Direct string
+      if (typeof children === 'string') {
+        textContent = children;
+      }
+      // React element - check for props.value first (Astro passes HTML here)
+      else if (React.isValidElement(children)) {
+        if (children.props?.value) {
+          // Astro passes rendered HTML in props.value
+          // Extract text from HTML string
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = children.props.value;
+          textContent = tempDiv.textContent || tempDiv.innerText || '';
+        } else if (typeof children.props?.children === 'string') {
+          textContent = children.props.children;
+        } else if (children.props?.children) {
+          textContent = String(children.props.children);
+        }
+      }
+      // Array of children
+      else if (Array.isArray(children)) {
+        textContent = children.map(child => {
+          if (typeof child === 'string') return child;
+          if (React.isValidElement(child)) {
+            if (child.props?.value) {
+              const tempDiv = document.createElement('div');
+              tempDiv.innerHTML = child.props.value;
+              return tempDiv.textContent || '';
+            }
+            if (child.props?.children) {
+              return String(child.props.children);
+            }
+          }
+          return '';
+        }).join('');
+      }
+      
+      // Always try DOM as final fallback
+      if (!textContent && containerRef.current) {
+        textContent = containerRef.current.textContent || containerRef.current.innerText || '';
+      }
+      
+      // Clean up the text
+      textContent = textContent.trim();
+      
+      // Parse markdown heading (## Title or ### Title, etc.) from raw text
+      const headingMatch = textContent.match(/^#{1,6}\s+(.+)$/);
+      if (headingMatch) {
+        const newTitle = headingMatch[1].trim();
+        if (newTitle !== extractedTitle) {
+          setExtractedTitle(newTitle);
+        }
+      } else if (textContent) {
+        // If no markdown heading found, use the text as-is
+        if (textContent !== extractedTitle) {
+          setExtractedTitle(textContent);
+        }
+      } else {
+        if (extractedTitle !== '') {
+          setExtractedTitle('');
+        }
+      }
+    } else {
+      if (extractedTitle !== '') {
+        setExtractedTitle('');
+      }
+    }
+  }, [children, extractedTitle]);
 
   // 🌓 Theme detection
   useEffect(() => {
@@ -94,8 +170,9 @@ const SectionSeparator = ({
   
   const ribbonLength = `${numericLength}%`;
   
-  // Determine if there's text content
-  const hasTitle = title && title.trim().length > 0;
+  // Determine if there's text content - prioritize extracted title from children
+  const finalTitle = extractedTitle || title;
+  const hasTitle = finalTitle && finalTitle.trim().length > 0;
 
   // Color determination
   const getColor = () => {
@@ -179,7 +256,7 @@ const SectionSeparator = ({
               ...titleStyle
             }}
           >
-            {hasTitle && title}
+            {hasTitle && finalTitle}
           </div>
         );
 
@@ -271,7 +348,7 @@ const SectionSeparator = ({
               } : {})
             }}
           >
-            {hasTitle && title}
+            {hasTitle && finalTitle}
           </div>
         );
 
@@ -294,7 +371,7 @@ const SectionSeparator = ({
               ...titleStyle
             }}
           >
-            {hasTitle && title}
+            {hasTitle && finalTitle}
           </div>
         );
 
@@ -316,7 +393,7 @@ const SectionSeparator = ({
               ...titleStyle
             }}
           >
-            {hasTitle && title}
+            {hasTitle && finalTitle}
           </div>
         );
 
@@ -337,7 +414,7 @@ const SectionSeparator = ({
               ...titleStyle
             }}
           >
-            {hasTitle && title}
+            {hasTitle && finalTitle}
             {!isFullWidth && (
               <div
                 style={{
@@ -378,7 +455,7 @@ const SectionSeparator = ({
               ...titleStyle
             }}
           >
-            {hasTitle && title}
+            {hasTitle && finalTitle}
           </div>
         );
 
@@ -413,7 +490,7 @@ const SectionSeparator = ({
               ...titleStyle
             }}
           >
-            {hasTitle && title}
+            {hasTitle && finalTitle}
           </div>
         );
 
@@ -423,16 +500,23 @@ const SectionSeparator = ({
   };
 
   return (
-    <div
-      style={{
-        marginTop: `${currentSpacing.marginTop}px`,
-        marginBottom: `${currentSpacing.marginBottom}px`,
-        width: '100%',
-        display: 'flex'
-      }}
-    >
-      {renderStyle()}
-    </div>
+    <>
+      {/* Hidden container for extracting text from children */}
+      <div ref={containerRef} style={{ display: 'none' }}>
+        {children}
+      </div>
+      
+      <div
+        style={{
+          marginTop: `${currentSpacing.marginTop}px`,
+          marginBottom: `${currentSpacing.marginBottom}px`,
+          width: '100%',
+          display: 'flex'
+        }}
+      >
+        {renderStyle()}
+      </div>
+    </>
   );
 };
 
