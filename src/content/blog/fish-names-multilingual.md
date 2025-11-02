@@ -53,7 +53,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Catla** | கட்லா (Katla) | ಕಟ್ಲಾ (Katla) | कतला (Katla) |
 | **Catfish** | கெளுத்தி/ கெள்ளு / மாங்குரு (Kellu / Maanguru) | ಜೇಲೆ (Jele) | मांगुर / सिंगी (Mangur / Singi) |
 | **Tilapia** | ஜிலாபி / கருவாடு (Jilabi / Karuvaadu) | ತಿಲಾಪಿಯಾ (Tilapia) | तिलापिया (Tilapia) |
-| **Murrel / Snake Head** | வேரால் (Veraal) | ಹರಳು (Haralu) | मुर्रल / सोल (Murrel / Sohl) |
+| **Murrel / Snake Head** | வேரால் / விரால் (Veraal / Viraal) | ಹರಳು (Haralu) | मुर्रल / सोल (Murrel / Sohl) |
 | **Indian Carp** | சாளை (Chalai) | ಕರಿ (Kari) | कार्प / सिंघी (Carp / Singhi) |
 | **Climbing Perch** | பனை மீன் (Panai Meen) | ಕೂಬೆ (Koobe) | कोबी / कुई (Kobi / Kui) |
 | **Wallago** | வாலா (Vaalaa) | ಬೇಲೆ (Bele) | बाल्ला / पाभू (Balla / Pabhu) |
@@ -64,6 +64,8 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Eel** | விலாங்கு (Vilaangu) | ಬಾವಳಿ (Baavali) | बाम मछली (Baam Machli) |
 | **Walking Catfish** | தேளி மீன் (Theli Meen) | ನಡೆಯುವ ಜೇಲೆ (Nadeyuva Jele) | चलने वाली मछली (Chalne Wali Machli) |
 | **Basa Fish** | பாசா மீன் (Basa Meen) | ಬಾಸಾ ಮೀನು (Basa Meenu) | बासा मछली (Basa Machli) |
+| **Pangasius** | பங்காசியஸ் மீன் (Pangasius Meen) | ಪಂಗಾಸಿಯಸ್ (Pangasius) | पंगेसियस (Pangasius) |
+| **Roop Chand / Silver Pomfret** | ரூப் சாந்த் (Roop Chand) | ರೂಪ್ ಚಂದ್ / ಬೆಳ್ಳಿ ಪಾಪ್ಲೆಟ್ (Roop Chand / Belli Paplet) | रूप चाँद / चांदी पॉम्फ्रेट (Roop Chand / Chandi Pomfret) |
 
 </div>
 
