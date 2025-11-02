@@ -39,6 +39,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Sole Fish** | நாக்கு மீன்/ மாந்தல் மீன் (Naakku Meen) | ನಾಲಿಗೆ ಮೀನು (Nalige Meenu) | जीभ मछली (Jeebh Machli) |
 | **Hilsa** | உள்ளம் /ஊலம் /வெங்கண்ணை/ இலிஷ் (Ullam) | ಇಲಿಶಾ (Ilisha) | इलिशा / हिलसा (Ilisha / Hilsa) |
 | **Croaker** | கோரல் (Koral) | ಘೋಳ (Ghol) | ढोल / घोल (Dhol / Ghol) |
+| **Dry Fish** | கருவாடு (Karuvaadu) | ಒಣ ಮೀನು (Ona Meenu) | सूखी मछली (Sookhi Machli) |
 
 </div>
 
@@ -60,6 +61,9 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Grass Carp** | புல் மீன் (Pul Meen) | ಹುಲ್ ಮೀನು (Hul Meenu) | घास कार्प (Ghaas Carp) |
 | **Silver Carp** | வெள்ளி மீன் (Velli Meen) | ಬೆಳ್ಳಿ ಮೀನು (Belli Meenu) | चांदी कार्प (Chandi Carp) |
 | **Freshwater Prawn** | உளுந்து இறால் (Ulundhu Iraal) | ನೀರು ಸಂಡು (Neeru Sandu) | नदी का झींगा (Nadi Ka Jhinga) |
+| **Eel** | விலாங்கு (Vilaangu) | ಬಾವಳಿ (Baavali) | बाम मछली (Baam Machli) |
+| **Walking Catfish** | தேளி மீன் (Theli Meen) | ನಡೆಯುವ ಜೇಲೆ (Nadeyuva Jele) | चलने वाली मछली (Chalne Wali Machli) |
+| **Basa Fish** | பாசா மீன் (Basa Meen) | ಬಾಸಾ ಮೀನು (Basa Meenu) | बासा मछली (Basa Machli) |
 
 </div>
 
@@ -77,6 +81,8 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Travelly** | பாரை (Parai) | ಪಾರೈ (Parai) | तारली / पारा (Tarli / Para) |
 | **Stingray** | திருக்கை (Thirukkai) | ತಿರುಕ್ಕೈ (Thirukkai) | स्टिंगरे (Stingray) |
 | **Golden Anchovy** | தங்க நெத்திலி (Thanga Nethili) | ಚಿನ್ನದ ನೆತ್ತಿಲಿ (Chinnada Nethili) | सुनहरा एंकोवी (Sunehra Anchovy) |
+| **Goat Fish / Red Mullet** | நவரை மீன் / நகரை (Navarai Meen / Nagarai) | ನವರೈ ಮೀನು / ಕೆಂಪು ಮುಲ್ಲೆಟ್ (Navarai Meenu / Kempu Mullet) | बकरी मछली / लाल मुल्लेट (Bakri Machli / Laal Mullet) |
+| **Milk Shark** | பிள்ளை சுறா மீன் (Pillai Sura Meen) | ಹಾಲು ಶಾರ್ಕ್ (Haalu Shark) | दूध शार्क (Doodh Shark) |
 
 </div>
 
