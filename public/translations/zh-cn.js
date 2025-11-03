@@ -32,6 +32,7 @@ const zhCn = {
   'pagination.total': '总共',
   'pagination.unit': '页',
   'post.lastUpdated': '最后更新',
+  'post.footnotes': '脚注',
   'remark.open': '打开',
   'more': '更多',
   'footer.articleTitle': '本文标题',

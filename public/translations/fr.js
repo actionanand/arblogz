@@ -32,6 +32,7 @@ const fr = {
   'pagination.total': 'Total',
   'pagination.unit': 'pages',
   'post.lastUpdated': 'Dernière mise à jour',
+  'post.footnotes': 'Notes de bas de page',
   'remark.open': 'Ouvrir',
   'more': 'Plus',
   'footer.articleTitle': 'Titre de l\'article',

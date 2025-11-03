@@ -4,6 +4,7 @@ description: "This post is for testing and listing a number of different markdow
 date: 2024-03-19
 tags: ["test", "markdown"]
 category: astro
+lastUpdated: 2025-10-03
 ---
 
 ## This is a H2 Heading
@@ -154,5 +155,3 @@ Right aligned columns
 ## Links
 
 [Content from markdown-it](https://markdown-it.github.io/)
-
-*Last Updated: November 2, 2025*

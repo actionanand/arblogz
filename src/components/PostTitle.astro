@@ -5,12 +5,15 @@ import {dealLabel} from "@/utils/dealLabel";
 import {t} from '@/i18n/utils'
 import DraftIndicator from '@/components/DraftIndicator.astro'
 import getUrl from "@/utils/getUrl";
-const {title, date, category, tags, lastModified = '', draft = false, readingTime = {}} = Astro.props
-const lastModifiedDate = dayjs(lastModified === '' ? date : lastModified);
+const {title, date, lastUpdated, category, tags, lastModified = '', draft = false, readingTime = {}} = Astro.props
+// Use lastUpdated if provided, otherwise fall back to date
+const effectiveLastUpdated = lastUpdated || date;
+const lastModifiedDate = dayjs(lastModified === '' ? effectiveLastUpdated : lastModified);
 const publishDate = dayjs(date);
 const mostRecentDate = lastModifiedDate.isAfter(publishDate) ? lastModifiedDate : publishDate;
 const mostRecent = mostRecentDate.format('YYYY-MM-DD');
 const currentDate = dayjs();
+const showLastUpdatedDate = lastUpdated || lastModified;
 ---
 
 <div class={draft ? 'draft-post-title' : ''}>
@@ -25,6 +28,12 @@ const currentDate = dayjs();
     {
       date &&
       <div class="mr-2"><i class="ri-calendar-2-fill mr-1"/>{formatDate(date)}</div>
+    }
+
+    <!-- last updated -->
+    {
+      showLastUpdatedDate &&
+      <div class="mr-2"><i class="ri-calendar-check-fill mr-1"/><span data-translate="post.lastUpdated">{t('post.lastUpdated')}</span>: {formatDate(effectiveLastUpdated)}</div>
     }
 
     <!-- draft -->

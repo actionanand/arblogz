@@ -32,6 +32,7 @@ const hi = {
   'pagination.total': 'कुल',
   'pagination.unit': 'पृष्ठ',
   'post.lastUpdated': 'अंतिम अपडेट',
+  'post.footnotes': 'फुटनोट्स',
   'remark.open': 'खोलें',
   'more': 'और',
   'footer.articleTitle': 'लेख शीर्षक',

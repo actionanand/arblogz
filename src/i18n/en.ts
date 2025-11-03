@@ -36,6 +36,7 @@ export  const en = {
   'post.lastUpdated': 'Last Updated',
   'post.lastUpdatedTip1':'This article was last updated on',
   'post.lastUpdatedTip2':' and some of the information may no longer be applicable due to the passage of time.',
+  'post.footnotes': 'Footnotes',
   'remark.open': 'Open',
   'search.labelOne':'Viewing articles under the ',
   'search.labelTwo':'',

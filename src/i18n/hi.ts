@@ -31,6 +31,7 @@ export const hi = {
   'pagination.total': 'कुल',
   'pagination.unit': 'पृष्ठ',
   'post.lastUpdated': 'अंतिम अपडेट',
+  'post.footnotes': 'फुटनोट्स',
   'remark.open': 'खोलें',
   'more': 'अधिक',
   'footer.articleTitle': 'लेख का शीर्षक',
