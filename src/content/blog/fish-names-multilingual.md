@@ -19,9 +19,9 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
-| **Sardine** | மத்தி / சாளை (Mathi / Chalai) | ಮತಿ ಮೀನು (Mathi Meenu) | सार्डिन / पेडवे (Sardine / Pedve) |
-| **Mackerel** | ஆயிலை / காணாங்கெளுத்தி (Ayilai / Kanangeluthi) | ಬಂಗುಡೆ (Bangude) | बांगड़ा (Bangda) |
-| **Pomfret (White)** | வௌவால் மீன் (Vavval/Vaaval Meen) | ಪಾಪ್ಲೆಟ್ (Paplet) | पापलेट / चांदी मछली (Paplet / Chandi Machli) |
+| **Sardine** | மத்தி / சாளை (Mathi / Chalai/ Salai) | ಮತಿ ಮೀನು (Mathi Meenu) | सार्डिन / पेडवे (Sardine / Pedve) |
+| **Mackerel** | ஆயிலை / காணாங்கெளுத்தி /ஆயில் மீன்/ வெக்கடா (Ayilai / Kanangeluthi) | ಬಂಗುಡೆ (Bangude) | बांगड़ा (Bangda) |
+| **Pomfret (White)/ silver pomfret** | வௌவால் மீன்/ வெள்ளை வவ்வல்/ வாவல்/  (Vavval/Vaaval Meen) | ಪಾಪ್ಲೆಟ್ (Paplet) | पापलेट / चांदी मछली (Paplet / Chandi Machli) |
 | **Pomfret (Black)** | கருப்பு வௌவால் (Karuppu Vaaval) | ಕಪ್ಪು ಪಾಪ್ಲೆಟ್ (Kappu Paplet) | काला पापलेट (Kala Paplet) |
 | **Tuna** | சூரை / கெண்டை (Soorai / Kendai) | ಚೂರೈ (Churai) | चूरा / टूना (Chura / Tuna) |
 | **Seer Fish / King Fish** | வஞ்சிரம் / நெய்மீன் / சீரா (Vanchiram / Neimeen / Seera) | ಸೀರ್ ಮೀನು / ಅಂಜಲ್ (Anjal) | सुरमई (Surmai) |
@@ -29,7 +29,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Ribbon Fish** | வாளை மீன்/ சாவாளை மீன் (Vaalai / Savaalai) | ಸವಾಲ (Saval) | पट्टी मछली (Patti Machli) |
 | **Barracuda / Sea Pike** | சீலா /ஊலா / ஊளி / திரியன் (Seela) | Obantol, Kanaki, Suruli, Kandai(ಕಂಡಾಯಿ/ಕನಕಿ/ಒಬಂಟೊಲ್) | कांटा (Kanta) |
 | **Indian Salmon** | கிழங்கான் மீன்/ கானமீன் / காளா மீன் (Kizhangan / Kaana Meen) |  Arkoli/ Rumus (ಅರ್ಕೊಲಿ/ರುಮುಸ್) | रावस / हिलसा (Ravas / Hilsa) |
-| **Grouper** | கலவா மீன் / கல்லு மீன் (Kalava meen / Kallu Meen) | ಗರೋಪ (Garopa) | गरूपा (Garupa) |
+| **Grouper/ Reef cod** | கலவா மீன் / கல்லு மீன்/ கலவான் (Kalava meen / Kallu Meen) | ಗರೋಪ (Garopa) | गरूपा (Garupa) |
 | **Red Snapper** | சங்கரா / ரத்த மீன் (Sankara / Ratha Meen) | ಕೆಂಪು ಸ್ನಾಪರ (Kempu Snaper) | रानी मछली / लाल मछली (Rani Machli / Lal Machli) |
 | **Shark** | சுறா (Sura) | ಶಾರ್ಕ್ (Shark) | शार्क / मोरी (Shark / Mori) |
 | **Squid** | கணவாய் / ஊசி (Kanavai / Oosi) | ಸ್ಕ್ವಿಡ್ (Squid) | स्क्विड / झींगा (Squid / Jhinga) |
@@ -39,6 +39,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Sole Fish** | நாக்கு மீன்/ மாந்தல் மீன் (Naakku Meen) | ನಾಲಿಗೆ ಮೀನು (Nalige Meenu) | जीभ मछली (Jeebh Machli) |
 | **Hilsa** | உள்ளம் /ஊலம் /வெங்கண்ணை/ இலிஷ் (Ullam) | ಇಲಿಶಾ (Ilisha) | इलिशा / हिलसा (Ilisha / Hilsa) |
 | **Croaker** | கோரல் (Koral) | ಘೋಳ (Ghol) | ढोल / घोल (Dhol / Ghol) |
+| **Pink Perch** | ரத்தின் மீன் / வெள்ளை சங்கரா (Rathin Meen / Vellai Sankara) | ಗುಲಾಬಿ ಪರ್ಚ್ (Gulabi Perch) | गुलाबी पर्च (Gulabi Perch) |
 | **Dry Fish** | கருவாடு (Karuvaadu) | ಒಣ ಮೀನು (Ona Meenu) | सूखी मछली (Sookhi Machli) |
 
 </div>
@@ -51,9 +52,9 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 |--------------|------------|--------------|------------|
 | **Rohu** | கெண்டை (Kendai) | ರೊಹು (Rohu) | रोहू (Rohu) |
 | **Catla** | கட்லா (Katla) | ಕಟ್ಲಾ (Katla) | कतला (Katla) |
-| **Catfish** | கெளுத்தி/ கெள்ளு / மாங்குரு (Kellu / Maanguru) | ಜೇಲೆ (Jele) | मांगुर / सिंगी (Mangur / Singi) |
+| **Catfish** | கெளுத்தி/ கெள்ளு / மாங்குரு (Keluthi / Kellu / Maanguru) | ಜೇಲೆ (Jele) | मांगुर / सिंगी (Mangur / Singi) |
 | **Tilapia** | ஜிலாபி / கருவாடு (Jilabi / Karuvaadu) | ತಿಲಾಪಿಯಾ (Tilapia) | तिलापिया (Tilapia) |
-| **Murrel / Snake Head** | வேரால் / விரால் (Veraal / Viraal) | ಹರಳು (Haralu) | मुर्रल / सोल (Murrel / Sohl) |
+| **Murrel / Snake Head** | வேரால் / விரால் (Veraal / Viraal / Viral) | ಹರಳು (Haralu) | मुर्रल / सोल (Murrel / Sohl) |
 | **Indian Carp** | சாளை (Chalai) | ಕರಿ (Kari) | कार्प / सिंघी (Carp / Singhi) |
 | **Climbing Perch** | பனை மீன் (Panai Meen) | ಕೂಬೆ (Koobe) | कोबी / कुई (Kobi / Kui) |
 | **Wallago** | வாலா (Vaalaa) | ಬೇಲೆ (Bele) | बाल्ला / पाभू (Balla / Pabhu) |
