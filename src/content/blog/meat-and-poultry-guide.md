@@ -1,9 +1,10 @@
 ---
-title: "Complete Meat & Poultry Guide: Multilingual Names & Famous Dishes"
+title: "Complete Meat & Poultry Guide: Multilingual Guide"
 description: "Comprehensive guide to meat, poultry, and non-veg dishes with names in Tamil, English, Kannada, and Hindi. Learn about different cuts, parts, and famous preparations like Shawarma, Tandoori, and more!"
-date: 2025-11-03
+date: 2025-11-01
 tags: ["meat", "poultry", "multilingual", "indian cuisine", "reference", "non-veg"]
 category: Indian Cuisine
+ogImage: /images/year-2025/chicken-parts.webp
 ---
 
 A complete reference guide for meat and poultry terms across Tamil, English, Kannada, and Hindi languages, plus detailed explanations of popular non-veg dishes and cooking styles!
@@ -13,6 +14,8 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 :::
 
 ## 🐐 Goat & Mutton (Lamb/Sheep)
+
+![goat mutton](/images/year-2025/goat.png)
 
 <div class="table-luxury-grid">
 
@@ -41,6 +44,8 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 </div>
 
 ## 🐔 Chicken & Poultry
+
+![chicke parts](/images/year-2025/chicken-parts.webp)
 
 <div class="table-ocean-grid">
 
@@ -75,10 +80,39 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 | **Quail** | காடை (Kaadai) | ಲಾವಕ (Laavaka) | बटेर (Bater) |
 | **Turkey** | வான்கோழி (Vaankkozhi) | ಟರ್ಕಿ (Turkey) | टर्की (Turkey) |
 
+</div>
+
+## 🐄 Animal to Meat Terminology
+
+Understanding the proper culinary terms for different animal meats:
+
+<div class="table-sunset">
+
+| Animal Source | Meat Name | Notes |
+|---------------|-----------|-------|
+| **Cattle (Cow/Bull)** | **Beef** | Adult cattle meat |
+| **Calf** | **Veal** | Young cattle, tender and pale |
+| **Pig** | **Pork** | Fresh pig meat |
+| **Sheep (Adult)** | **Mutton** | Stronger flavor, darker meat |
+| **Sheep (Young)** | **Lamb** | Tender, mild flavor |
+| **Goat** | **Chevon or Goat Meat** | Also called mutton in India |
+| **Deer** | **Venison** | Game meat, lean and rich |
+| **Pigeon** | **Squab** | Young pigeon, delicacy |
+| **Chicken** | **Chicken** | Most common poultry |
+| **Turkey** | **Turkey** | Large bird, holiday favorite |
+| **Duck** | **Duck** | Rich, fatty meat |
+| **Rabbit** | **Rabbit Meat or Lapin** | Lapin is French term |
+| **Buffalo** | **Buffalo Meat or Bison** | Lean, similar to beef |
 
 </div>
 
+:::note[Indian Context]
+In India, the term "mutton" commonly refers to **goat meat**, while in Western countries it typically means **adult sheep meat**. This can cause confusion when ordering or cooking!
+:::
+
 ## 🥓 Understanding Processed Meats & Special Cuts
+
+![pig pork](/images/year-2025/pig.png)
 
 ### **Ham**
 **What is Ham**: 
@@ -152,9 +186,15 @@ The lean white meat from the chest area of the chicken. Low in fat, high in prot
 Boneless, skinless breast meat that's been butterflied or sliced thin. Very versatile and cooks quickly. Used in stir-fries, rolls, and quick-cooking dishes.
 
 ### **Chicken Lollipop**
-A popular appetizer where the drumette (upper wing portion) is cut and meat is pushed down to form a lollipop shape. Typically marinated, fried, and served with sauce.
+
+![chicken wing](/images/year-2025/chicken-wing.webp)
+
+A popular appetizer/starter where the drumette (upper wing portion) is cut and meat is pushed down to form a lollipop shape. Typically marinated, fried, and served with sauce.
 
 ### **Giblets**
+
+![chicken giblets](/images/year-2025/giblets.webp)
+
 A collective term for the edible internal organs of poultry including:
 - **Heart**: Small, muscular organ
 - **Liver**: Largest organ, rich and flavorful
@@ -304,6 +344,41 @@ Kuzhi means "pit" in Malayalam/Tamil. Traditional preparation involves cooking i
 - Rice becomes aromatic and flavorful from meat juices
 
 **Serving**: Rice and meat served together, often with raita and pickle
+
+**Essential Accompaniment - Spicy Tomato Chutney (Sahawiq/Dakoos)**:
+
+Kuzhi Manthi is traditionally served with a fiery spicy tomato-based chutney that's essential to the authentic experience.
+
+**What is Sahawiq/Dakoos**:
+- **Sahawiq** (سحاوق): Yemeni-style hot sauce/chutney
+- **Dakoos** (دقوس): Another name for the same spicy condiment
+- Made with fresh tomatoes, green chilies, garlic, and coriander
+
+**Ingredients**:
+- Ripe tomatoes
+- Green chilies (bird's eye or Thai chilies)
+- Garlic cloves
+- Fresh coriander (cilantro)
+- Cumin seeds
+- Salt
+- Lemon juice
+
+**Characteristics**:
+- Bright red color from tomatoes
+- Extremely spicy and tangy
+- Chunky or smooth texture
+- Fresh, vibrant flavor
+
+**How It's Served**:
+- Small bowl on the side with Kuzhi Manthi
+- Mix a spoonful with rice for extra heat
+- Balances the rich, aromatic rice and meat
+- Can also be used as a dip for bread
+
+**Similar To**: 
+- Mexican salsa cruda
+- Indian green chutney (but tomato-based)
+- Yemeni zhoug (but with tomatoes)
 
 ---
 
