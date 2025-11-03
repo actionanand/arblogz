@@ -49,7 +49,6 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 | **Chicken** | கோழி (Kozhi) | ಕೋಳಿ (Kooli) | मुर्गी (Murgi) |
 | **Skinless Chicken** | தோல் இல்லாத கோழி (Thol Illaatha Kozhi) | ಚರ್ಮ ಇಲ್ಲದ ಕೋಳಿ (Charma Illada Kooli) | बिना त्वचा मुर्गी (Bina Tvacha Murgi) |
 | **Chicken with Skin** | தோலுடன் கோழி (Tholudan Kozhi) | ಚರ್ಮದೊಂದಿಗೆ ಕೋಳಿ (Charmadondige Kooli) | त्वचा के साथ मुर्गी (Tvacha Ke Saath Murgi) |
-| **Drumstick** | கால் துண்டு (Kaal Thundu) | ಕೋಳಿ ಕಾಲು (Kooli Kaalu) | ड्रमस्टिक / पैर (Drumstick / Pair) |
 | **Thigh** | தொடை (Thodai) | ತೊಡೆ (Thode) | जांघ (Jaangh) |
 | **Leg Piece** | கால் துண்டு (Kaal Thundu) | ಲೆಗ್ ಪೀಸ್ (Leg Piece) | लेग पीस (Leg Piece) |
 | **Chicken Breast** | மார்பகம் (Maarbagam) | ಎದೆ (Ede) | सीना / ब्रेस्ट (Seena / Breast) |
@@ -57,25 +56,83 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 | **Chicken Lollipop** | சிக்கன் லாலிபாப் (Chicken Lollipop) | ಚಿಕನ್ ಲಾಲಿಪಾಪ್ (Chicken Lollipop) | चिकन लॉलीपॉप (Chicken Lollipop) |
 | **Gizzard** | உணவுப் பை (Unavup Pai) | ಗಿಜಾರ್ಡ್ (Gizzard) | पेड़ू (Pedu) |
 | **Liver** | ஈரல் (Eeral) | ಕಲ್ಲೀರಲು (Kalleeralu) | कलेजी (Kaleji) |
-| **Giblets** | கோழி உட்புறம் (Kozhi Utpuram) | ಗಿಬ್ಲೆಟ್ಸ್ (Giblets) | गिब्लेट्स (Giblets) |
 | **Egg** | முட்டை (Muttai) | ಮೊಟ್ಟೆ (Motte) | अंडा (Anda) |
 | **Wings** | சிறகு (Siragu) | ರೆಕ್ಕೆ (Rekke) | पंख (Pankh) |
 
 </div>
 
-## 🐷 Pork & Other Meats
+## 🦌 Other Meats & Specialty Items
 
 <div class="table-green-grid">
 
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
 | **Pork** | பன்றி இறைச்சி (Panri Iraichi) | ಹಂದಿ ಮಾಂಸ (Handi Maansa) | सूअर का मांस (Suar Ka Maans) |
-| **Ham** | ஹாம் (Ham) | ಹ್ಯಾಮ್ (Ham) | हैम (Ham) |
 | **Beef** | மாட்டு இறைச்சி (Maattu Iraichi) | ದನದ ಮಾಂಸ (Danada Maansa) | गोमांस (Gomaans) |
-| **Bacon** | பன்றி இறைச்சி துண்டு (Panri Iraichi Thundu) | ಬೇಕನ್ (Bacon) | बेकन (Bacon) |
-| **Sausage** | தொத்திறைச்சி (Thoththiraichi) | ಸಾಸೇಜ್ (Sausage) | सॉसेज (Sausage) |
+| **Venison (Deer)** | மான் இறைச்சி (Maan Iraichi) | ಜಿಂಕೆ ಮಾಂಸ (Jinke Maansa) | हिरण का मांस (Hiran Ka Maans) |
+| **Rabbit** | முயல் இறைச்சி (Muyal Iraichi) | ಮೊಲದ ಮಾಂಸ (Molada Maansa) | खरगोश का मांस (Khargosh Ka Maans) |
+| **Duck** | வாத்து (Vaathu) | ಬಾತುಕೋಳಿ (Baathukooli) | बत्तख (Battakh) |
+| **Quail** | காடை (Kaadai) | ಲಾವಕ (Laavaka) | बटेर (Bater) |
+| **Turkey** | வான்கோழி (Vaankkozhi) | ಟರ್ಕಿ (Turkey) | टर्की (Turkey) |
+
 
 </div>
+
+## 🥓 Understanding Processed Meats & Special Cuts
+
+### **Ham**
+**What is Ham**: 
+Ham is pork meat from the hind leg of a pig that has been preserved through curing, smoking, or salting. The curing process gives it a distinctive pink color and salty-sweet flavor.
+
+**Types**:
+- **Smoked Ham**: Cured and smoked for deep flavor
+- **Honey Glazed Ham**: Sweet coating, popular for holidays
+- **Black Forest Ham**: German-style, heavily smoked
+- **Prosciutto**: Italian dry-cured ham, thinly sliced
+
+**Uses**: Sandwiches, breakfast, pizza toppings, charcuterie boards
+
+**Popular in**: Western cuisine, breakfast platters, Christmas dinners
+
+---
+
+### **Bacon**
+**What is Bacon**: 
+Salt-cured pork belly sliced into thin strips. When cooked, it becomes crispy and releases savory fat.
+
+**Types**:
+- **Streaky Bacon**: Fatty strips with meat streaks (American style)
+- **Back Bacon**: Leaner, from the loin (British/Canadian style)
+- **Turkey Bacon**: Healthier alternative made from turkey
+
+**Uses**: Breakfast, burgers, wraps, pasta carbonara
+
+---
+
+### **Keema (Minced Meat)**
+**What is Keema**: 
+Ground or minced meat (usually mutton, lamb, beef, or chicken). The word comes from Turkish "kıyma" meaning minced.
+
+**Popular Dishes**:
+- **Keema Curry**: Spiced minced meat gravy
+- **Keema Pav**: Mumbai street food with bread
+- **Keema Samosa**: Fried pastry filled with spiced keema
+- **Keema Paratha**: Flatbread stuffed with keema
+
+**Uses**: Curries, kebabs, stuffings, pasta sauces (Bolognese)
+
+---
+
+### **Sausage**
+Ground meat mixed with spices and stuffed into casings. Can be fresh, smoked, or cured.
+
+**Types**: Chorizo (Spanish), Bratwurst (German), Italian sausage, Breakfast sausage, Hot dogs
+
+---
+
+### **Salami**
+Cured and fermented sausage that's air-dried. Hard texture, can be sliced thin. Popular in sandwiches and pizza.
+
 
 ## 🍗 Understanding Chicken Parts
 
@@ -108,6 +165,102 @@ Often used to make rich gravies, stocks, or fried as appetizers.
 
 ### **Gizzards**
 The muscular stomach of the chicken. Chewy texture when cooked. Often marinated and fried, or slow-cooked in curries. Popular in Southern and Asian cuisines.
+
+---
+
+## 🥫 Non-Veg Related Condiments & Items
+
+### **Mayonnaise**
+**What is Mayonnaise**: 
+A thick, creamy condiment made from egg yolks, oil, and vinegar or lemon juice. The egg yolk acts as an emulsifier, binding the oil and liquid together.
+
+**Ingredients**:
+- Egg yolks (the non-veg component)
+- Vegetable oil or olive oil
+- Vinegar or lemon juice
+- Salt and sometimes mustard
+
+**Common Uses**:
+- Sandwich spread
+- Burger and wrap dressing
+- Salad base (coleslaw, potato salad)
+- Dipping sauce
+- Base for other sauces (ranch, aioli, tartar sauce)
+
+**Note**: While mayonnaise contains eggs, some brands make eggless versions using milk proteins or soy.
+
+**Popular Brands**: Hellmann's, Kraft, Veeba, Del Monte
+
+---
+
+### **Fish Sauce**
+**What is it**: Fermented fish condiment, salty and umami-rich. Essential in Southeast Asian cuisine (Thai, Vietnamese).
+
+**Uses**: Curries, stir-fries, dipping sauces, marinades
+
+---
+
+### **Oyster Sauce**
+**What is it**: Thick, dark brown sauce made from oyster extracts. Sweet and savory flavor.
+
+**Uses**: Chinese stir-fries, noodles, marinades
+
+---
+
+### **Worcestershire Sauce**
+**What is it**: Fermented liquid condiment containing anchovies (fish), vinegar, molasses, and spices.
+
+**Uses**: Marinades, Caesar salad, Bloody Mary cocktails, meat dishes
+
+---
+
+### **Anchovy Paste**
+**What is it**: Ground anchovies (small fish) in a paste form. Very salty and intensely flavored.
+
+**Uses**: Caesar dressing, pasta sauces, pizza toppings
+
+---
+
+### **Gelatin**
+**What is it**: Protein derived from collagen in animal bones and skin (usually pork or beef).
+
+**Uses**: 
+- Jello and desserts
+- Gummy candies
+- Marshmallows
+- Thickening agent in soups and sauces
+- Yogurt and dairy products
+
+**Note**: Vegetarian alternatives include agar-agar (seaweed-based) and pectin (fruit-based).
+
+---
+
+### **Lard**
+**What is it**: Rendered pork fat, solid at room temperature.
+
+**Uses**: Baking (flaky pie crusts), frying, traditional cooking
+
+**Alternative**: Vegetable shortening, butter, or oil
+
+---
+
+### **Bone Broth / Stock**
+**What is it**: Liquid made by simmering animal bones (chicken, beef, fish) with vegetables and herbs for hours.
+
+**Uses**: 
+- Base for soups and curries
+- Cooking rice and risotto
+- Health drink (rich in collagen and minerals)
+- Gravies and sauces
+
+---
+
+### **Ghee from Non-Veg Sources**
+While traditional ghee is vegetarian (clarified butter from milk), some cultures use animal fats:
+- **Mutton Fat**: Used in some regional cooking
+- **Chicken Fat (Schmaltz)**: Used in Jewish cuisine
+
+---
 
 ## 🍖 Famous Non-Veg Dishes & Cooking Styles
 
