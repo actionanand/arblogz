@@ -30,12 +30,6 @@ const showLastUpdatedDate = lastUpdated || lastModified;
       <div class="mr-2"><i class="ri-calendar-2-fill mr-1"/>{formatDate(date)}</div>
     }
 
-    <!-- last updated -->
-    {
-      showLastUpdatedDate &&
-      <div class="mr-2"><i class="ri-calendar-check-fill mr-1"/><span data-translate="post.lastUpdated">{t('post.lastUpdated')}</span>: {formatDate(effectiveLastUpdated)}</div>
-    }
-
     <!-- draft -->
     {
       draft &&
@@ -54,6 +48,12 @@ const showLastUpdatedDate = lastUpdated || lastModified;
       tags && dealLabel(tags).map((tagName) =>
         <a href={getUrl("/tags/") + tagName} class="text-wrap break-all hover:text-skin-active mr-2"><i class="ri-hashtag mr-1"/>{tagName}</a>
       )
+    }
+
+    <!-- last updated -->
+    {
+      showLastUpdatedDate &&
+      <div class="mr-2"><i class="ri-calendar-check-fill mr-1"/><span data-translate="post.lastUpdated">{t('post.lastUpdated')}</span>: {formatDate(effectiveLastUpdated)}</div>
     }
 
     <!-- update -->
