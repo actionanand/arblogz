@@ -32,6 +32,7 @@ const cs = {
   'pagination.total': 'Celkem',
   'pagination.unit': 'stránek',
   'post.lastUpdated': 'Naposledy aktualizováno',
+  'post.footnotes': 'Poznámky pod čarou',
   'remark.open': 'Otevřít',
   'more': 'Více',
   'footer.articleTitle': 'Název článku',

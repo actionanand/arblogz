@@ -32,6 +32,7 @@ const ta = {
   'pagination.total': 'மொத்தம்',
   'pagination.unit': 'பக்கங்கள்',
   'post.lastUpdated': 'கடைசியாக புதுப்பிக்கப்பட்டது',
+  'post.footnotes': 'அடிக்குறிப்புகள்',
   'remark.open': 'திறக்கவும்',
   'more': 'மேலும்',
   'footer.articleTitle': 'கட்டுரை தலைப்பு',

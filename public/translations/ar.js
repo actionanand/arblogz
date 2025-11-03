@@ -32,6 +32,7 @@ const ar = {
   'pagination.total': 'المجموع',
   'pagination.unit': 'صفحات',
   'post.lastUpdated': 'آخر تحديث',
+  'post.footnotes': 'الحواشي السفلية',
   'remark.open': 'افتح',
   'more': 'المزيد',
   'footer.articleTitle': 'عنوان المقال',

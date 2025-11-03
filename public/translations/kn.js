@@ -36,6 +36,7 @@ const kn = {
   'pagination.total': 'ಒಟ್ಟು',
   'pagination.unit': 'ಪುಟಗಳು',
   'post.lastUpdated': 'ಕೊನೆಯ ಬಾರಿ ನವೀಕರಿಸಲಾಗಿದೆ',
+  'post.footnotes': 'ಅಡಿಟಿಪ್ಪಣಿಗಳು',
   'remark.open': 'ತೆರೆಯಿರಿ',
   'more': 'ಹೆಚ್ಚು',
   'footer.articleTitle': 'ಲೇಖನದ ಶೀರ್ಷಿಕೆ',

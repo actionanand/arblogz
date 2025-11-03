@@ -36,6 +36,7 @@ export  const ta = {
   'post.lastUpdated': 'கடைசியாக புதுப்பிக்கப்பட்டது',
   'post.lastUpdatedTip1':'இந்தக் கட்டுரை கடைசியாக புதுப்பிக்கப்பட்டது',
   'post.lastUpdatedTip2':' மற்றும் காலப்போக்கால் சில தகவல்கள் பொருந்தாமல் போகலாம்.',
+  'post.footnotes': 'அடிக்குறிப்புகள்',
   'remark.open': 'திறக்கவும்',
   'search.labelOne':'பின்வரும் வகையின் கீழுள்ள கட்டுரைகளை காண்கிறீர்கள்: ',
   'search.labelTwo':'இல்',

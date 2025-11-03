@@ -32,6 +32,7 @@ const zhHant = {
   'pagination.total': '總共',
   'pagination.unit': '頁',
   'post.lastUpdated': '最後更新',
+  'post.footnotes': '腳註',
   'remark.open': '打開',
   'more': '更多',
   'footer.articleTitle': '本文標題',
