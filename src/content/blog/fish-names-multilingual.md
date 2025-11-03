@@ -2,7 +2,9 @@
 title: "Famous Sea & River Fish Names: Multilingual Guide"
 description: "Complete multilingual guide to popular sea and river fish names in Tamil, English, Kannada, and Hindi. Learn fish varieties with regional names, perfect for shopping, cooking, and cultural understanding."
 date: 2025-11-02
-tags: ["fish", "multilingual", "seafood", "indian-cuisine", "reference"]
+tags: ["fish", "multilingual", "seafood", "indian cuisine", "reference"]
+category: Indian Cuisine
+ogImage: /images/year-2025/sea-fish.webp
 ---
 
 A comprehensive reference guide for popular sea and river fish names across Tamil, English, Kannada, and Hindi languages. Perfect for seafood lovers, home cooks, and anyone interested in regional fish varieties!
@@ -10,6 +12,8 @@ A comprehensive reference guide for popular sea and river fish names across Tami
 :::tip[Quick Navigation]
 Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred language!
 :::
+
+![sea food](/images/year-2025/sea-fish.webp)
 
 ## 🌊 Popular Sea Fish
 

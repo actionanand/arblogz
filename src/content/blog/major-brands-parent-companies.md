@@ -2,7 +2,7 @@
 title: 'FMCG: Complete Guide for Indian Market 2025'
 date: 2025-09-27
 description: Unlock the definitive guide to India's corporate giants and their brand empires in 2025! From Tata's retail powerhouses (Zudio, Westside, Titan) to Unilever (Horlicks, Surf Excel) and P&G (Ariel, Pampers), uncover hidden connections shaping FMCG, fashion, and consumer markets. Perfect for savvy shoppers!
-tags: ['FMCG', 'Consumer Goods']
+tags: ['fmcg', 'consumer goods']
 category: Consumer Insights
 ogImage: /images/year-2025/fmcg.jpg
 ---
