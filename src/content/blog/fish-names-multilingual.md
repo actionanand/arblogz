@@ -1,11 +1,9 @@
 ---
-title: "Famous Sea & River Fish Names: Tamil, English, Kannada & Hindi Guide"
+title: "Famous Sea & River Fish Names: Multilingual Guide"
 description: "Complete multilingual guide to popular sea and river fish names in Tamil, English, Kannada, and Hindi. Learn fish varieties with regional names, perfect for shopping, cooking, and cultural understanding."
 date: 2025-11-02
-tags: ["fish", "tamil", "kannada", "hindi", "food", "multilingual", "seafood", "indian-cuisine", "reference"]
+tags: ["fish", "multilingual", "seafood", "indian-cuisine", "reference"]
 ---
-
-# 🐟 Famous Sea & River Fish Names: Multilingual Guide
 
 A comprehensive reference guide for popular sea and river fish names across Tamil, English, Kannada, and Hindi languages. Perfect for seafood lovers, home cooks, and anyone interested in regional fish varieties!
 
@@ -20,7 +18,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
 | **Sardine** | மத்தி / சாளை (Mathi / Chalai/ Salai) | ಮತಿ ಮೀನು (Mathi Meenu) | सार्डिन / पेडवे (Sardine / Pedve) |
-| **Mackerel** | ஆயிலை / காணாங்கெளுத்தி /ஆயில் மீன்/ வெக்கடா (Ayilai / Kanangeluthi) | ಬಂಗುಡೆ (Bangude) | बांगड़ा (Bangda) |
+| **Mackerel** | ஆயிலை / காணாங்கெளுத்தி /ஆயில் மீன்/ வெக்கடா (Ayilai / Kanangeluthi / Vekkata) | ಬಂಗುಡೆ (Bangude) | बांगड़ा (Bangda) |
 | **Pomfret (White)/ silver pomfret** | வௌவால் மீன்/ வெள்ளை வவ்வல்/ வாவல்/  (Vavval/Vaaval Meen) | ಪಾಪ್ಲೆಟ್ (Paplet) | पापलेट / चांदी मछली (Paplet / Chandi Machli) |
 | **Pomfret (Black)** | கருப்பு வௌவால் (Karuppu Vaaval) | ಕಪ್ಪು ಪಾಪ್ಲೆಟ್ (Kappu Paplet) | काला पापलेट (Kala Paplet) |
 | **Tuna** | சூரை / கெண்டை (Soorai / Kendai) | ಚೂರೈ (Churai) | चूरा / टूना (Chura / Tuna) |
@@ -39,6 +37,9 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Sole Fish** | நாக்கு மீன்/ மாந்தல் மீன் (Naakku Meen) | ನಾಲಿಗೆ ಮೀನು (Nalige Meenu) | जीभ मछली (Jeebh Machli) |
 | **Hilsa** | உள்ளம் /ஊலம் /வெங்கண்ணை/ இலிஷ் (Ullam) | ಇಲಿಶಾ (Ilisha) | इलिशा / हिलसा (Ilisha / Hilsa) |
 | **Croaker** | கோரல் (Koral) | ಘೋಳ (Ghol) | ढोल / घोल (Dhol / Ghol) |
+| **Sea Bass** | குடுவா / குடுவை (Kuduvaa / Kuduvai) | ಸೀ ಬಾಸ್ (Sea Bass) | समुद्री बास (Samudri Bass) |
+| **Rabbit Fish** | ஓரா மீன் (Ora Meen / Oora) | ಮೊಲದ ಮೀನು (Molada Meenu) | खरगोश मछली (Khargosh Machli) |
+| **Mussel / Clam / Oyster** | சிப்பி / தோடு (Sippi / Thodu) | ಮಸ್ಸೆಲ್ / ಶಿಪ್ಪಿ (Mussel / Shippi) | सीप / शंख (Seep / Shankh) |
 | **Pink Perch** | ரத்தின் மீன் / வெள்ளை சங்கரா (Rathin Meen / Vellai Sankara) | ಗುಲಾಬಿ ಪರ್ಚ್ (Gulabi Perch) | गुलाबी पर्च (Gulabi Perch) |
 | **Dry Fish** | கருவாடு (Karuvaadu) | ಒಣ ಮೀನು (Ona Meenu) | सूखी मछली (Sookhi Machli) |
 
@@ -53,7 +54,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Rohu** | கெண்டை (Kendai) | ರೊಹು (Rohu) | रोहू (Rohu) |
 | **Catla** | கட்லா (Katla) | ಕಟ್ಲಾ (Katla) | कतला (Katla) |
 | **Catfish** | கெளுத்தி/ கெள்ளு / மாங்குரு (Keluthi / Kellu / Maanguru) | ಜೇಲೆ (Jele) | मांगुर / सिंगी (Mangur / Singi) |
-| **Tilapia** | ஜிலாபி / கருவாடு (Jilabi / Karuvaadu) | ತಿಲಾಪಿಯಾ (Tilapia) | तिलापिया (Tilapia) |
+| **Tilapia** | ஜிலாபி / ஜிலேபி / சிலோபி / கறி மீன் / திலாப்பி (Jilabi / Jilebi / Silobi / Kari Meen / Thilappi) | ತಿಲಾಪಿಯಾ (Tilapia) | तिलापिया (Tilapia) |
 | **Murrel / Snake Head** | வேரால் / விரால் (Veraal / Viraal / Viral) | ಹರಳು (Haralu) | मुर्रल / सोल (Murrel / Sohl) |
 | **Indian Carp** | சாளை (Chalai) | ಕರಿ (Kari) | कार्प / सिंघी (Carp / Singhi) |
 | **Climbing Perch** | பனை மீன் (Panai Meen) | ಕೂಬೆ (Koobe) | कोबी / कुई (Kobi / Kui) |
@@ -62,6 +63,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Grass Carp** | புல் மீன் (Pul Meen) | ಹುಲ್ ಮೀನು (Hul Meenu) | घास कार्प (Ghaas Carp) |
 | **Silver Carp** | வெள்ளி மீன் (Velli Meen) | ಬೆಳ್ಳಿ ಮೀನು (Belli Meenu) | चांदी कार्प (Chandi Carp) |
 | **Freshwater Prawn** | உளுந்து இறால் (Ulundhu Iraal) | ನೀರು ಸಂಡು (Neeru Sandu) | नदी का झींगा (Nadi Ka Jhinga) |
+| **Common Indian Spiny Loach** | அயிரை (Ayirai) | ಭಾರತೀಯ ಸ್ಪೈನಿ ಲೋಚ್ (Bharatiya Spiny Loach) | भारतीय स्पाइनी लोच (Bharatiya Spiny Loach) |
 | **Eel** | விலாங்கு (Vilaangu) | ಬಾವಳಿ (Baavali) | बाम मछली (Baam Machli) |
 | **Walking Catfish** | தேளி மீன் (Theli Meen) | ನಡೆಯುವ ಜೇಲೆ (Nadeyuva Jele) | चलने वाली मछली (Chalne Wali Machli) |
 | **Basa Fish** | பாசா மீன் (Basa Meen) | ಬಾಸಾ ಮೀನು (Basa Meenu) | बासा मछली (Basa Machli) |
@@ -80,7 +82,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Mullet** | மடவை (Madavai) | ಮದ್ದಾಳ (Maddala) | मुल्लेट (Mullet) |
 | **Sailfish** | மயில் மீன் (Mayil Meen) | ಸೈಲ್ ಫಿಶ್ (Sail Fish) | पाल मछली (Paal Machli) |
 | **Marlin** | கத்தி மீன் (Kathi Meen) | ಮಾರ್ಲಿನ್ (Marlin) | मार्लिन (Marlin) |
-| **Emperor Fish** | ராஜா மீன் (Raja Meen) | ರಾಜ ಮೀನು (Raja Meenu) | राजा मछली (Raja Machli) |
+| **Emperor Fish** | விள மீன்/ விளை மீன் /ஓரியா மீன் (Vila Meen / Vilai Meen / Oriya Meen) | ರಾಜ ಮೀನು (Raja Meenu) | शाही मछली (Shahi Machli) |
 | **Travelly** | பாரை (Parai) | ಪಾರೈ (Parai) | तारली / पारा (Tarli / Para) |
 | **Stingray** | திருக்கை (Thirukkai) | ತಿರುಕ್ಕೈ (Thirukkai) | स्टिंगरे (Stingray) |
 | **Golden Anchovy** | தங்க நெத்திலி (Thanga Nethili) | ಚಿನ್ನದ ನೆತ್ತಿಲಿ (Chinnada Nethili) | सुनहरा एंकोवी (Sunehra Anchovy) |
@@ -133,23 +135,6 @@ Different regions may use different names for the same fish. This guide provides
 2. **Cooking**: Find the right fish for authentic regional recipes
 3. **Learning**: Expand your multilingual vocabulary
 4. **Travel**: Order fish dishes confidently across different states
-
-## 📚 Additional Resources
-
-:::tip[Pro Tips]
-- Download this page for offline reference
-- Bookmark for quick access at the market
-- Share with friends learning regional languages
-- Use the search function (Ctrl+F) to find fish quickly
-:::
-
-## 🎯 Quick Reference
-
-**Most Common Sea Fish**: Sardine, Mackerel, Pomfret, Seer Fish
-**Most Common River Fish**: Rohu, Catla, Catfish, Tilapia
-**Premium Varieties**: Pearl Spot, Seer Fish, Grouper, Red Snapper
-
----
 
 :::note[Note]
 Fish names may vary by region and local dialects. This guide uses the most widely recognized names in each language. If you know additional regional names, feel free to share!
