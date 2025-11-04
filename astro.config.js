@@ -20,6 +20,7 @@ import {remarkButton} from './src/plugins/remark-button.js';  /* Add admonitions
 import remarkCharacterDialogue from './src/plugins/remark-character-dialogue' /* Custom plugin to handle character admonitions */
 import {remarkHtml} from './src/plugins/remark-html.js';
 import {remarkColorHighlight} from './src/plugins/remark-simple-highlight.js';
+import rehypeRaw from 'rehype-raw'; /* Allow raw HTML in markdown */
 
 import react from '@astrojs/react';
 
@@ -54,6 +55,6 @@ export default defineConfig({
       remarkColorHighlight,
       [remarkCharacterDialogue, { characters }],
     ],
-    rehypePlugins: [lazyLoadImage],
+    rehypePlugins: [rehypeRaw, lazyLoadImage],
   }
 });

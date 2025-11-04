@@ -95,6 +95,77 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 
 </div>
 
+
+## ⚠️ FORMALIN AWARENESS - Critical Health Alert
+
+**What is Formalin?**
+Formalin is a toxic chemical solution (37-40% formaldehyde in water) illegally used by some unethical vendors to preserve fish and prevent decay. **It is extremely dangerous for human consumption and is classified as a carcinogen.**
+
+**Why is it used?**
+- Extends shelf life of fish artificially
+- Makes old/stale fish appear fresh
+- Prevents decomposition during transport
+- Increases profits by reducing wastage
+
+**Health Risks:**
+- **Cancer**: Formaldehyde is a known carcinogen (cancer-causing agent)
+- **Immediate effects**: Nausea, vomiting, abdominal pain, diarrhea
+- **Long-term effects**: Liver damage, kidney problems, respiratory issues, skin allergies
+- **Severe cases**: Can cause blindness, neurological damage, even death
+
+**How to Identify Formalin-Treated Fish:**
+
+🔴 **Warning Signs:**
+1. **Unnaturally firm flesh** - Too hard/rubbery texture even after days
+2. **No fishy smell** - Fresh fish has a mild ocean smell; formalin fish has no smell or chemical odor
+3. **Overly bright appearance** - Looks "too fresh" even after 2-3 days
+4. **White coating** - Powdery white substance on the surface
+5. **Eyes remain clear** - Eyes don't cloud over even after extended time
+6. **No flies/insects** - Flies avoid formalin-treated fish
+7. **Burns sensation** - Touching may cause skin irritation or burning
+8. **Water test** - If fish is soaked in water and water becomes milky/cloudy, possible formalin presence
+
+**Simple Tests at Home:**
+- **Turmeric Test**: Apply turmeric paste on fish skin; if it turns red/pink, formalin may be present
+- **Smell Test**: Put fish in warm water for 5-10 minutes; pungent chemical smell indicates formalin
+- **Burn Test**: A small piece when burned produces acrid, chemical smell (not recommended for safety)
+
+**How to Stay Safe:**
+
+✅ **Do's:**
+- Buy from trusted, reputable vendors
+- Check for natural freshness indicators (clear eyes, red gills, ocean smell)
+- Buy live fish when possible (especially for freshwater fish)
+- Shop at regulated markets with quality checks
+- Ask vendors about fish source and arrival time
+- Prefer locally caught fish over transported fish
+- Wash fish thoroughly in running water before cooking
+- Buy whole fish rather than pre-cut pieces when possible
+
+❌ **Don'ts:**
+- Don't buy fish that looks "too perfect" after many hours/days
+- Avoid fish with no smell at all
+- Don't purchase from vendors with poor hygiene
+- Avoid suspiciously cheap prices for premium fish
+- Don't ignore signs of formalin treatment
+
+**If You Suspect Formalin Contamination:**
+1. **Do not consume** the fish
+2. Report to local food safety authorities
+3. Inform the health department
+4. Warn others in your community
+5. Switch to a different, trusted vendor
+
+**Government Action:**
+Many countries including India have banned formalin use in food. Food Safety and Standards Authority of India (FSSAI) regularly conducts raids and testing. Report violations to FSSAI helpline: 1800-112-100
+
+**Regional Names for Formalin:**
+- Tamil: பார்மலின் (Formalin) / இரசாயன மீன் (Rasayana Meen)
+- Hindi: फॉर्मलिन (Formalin) / रसायनिक मछली (Rasayanik Machli)
+- Kannada: ಫಾರ್ಮಲಿನ್ (Formalin) / ರಾಸಾಯನಿಕ ಮೀನು (Rasayanika Meenu)
+
+**Remember**: Your health is more important than saving a few rupees. Always prioritize safety over price!
+
 ## 📝 Usage Tips
 
 :::tip[Shopping Guide]
@@ -107,6 +178,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 - **Sea Fish**: Generally has a stronger flavor, best for grilling, frying, and curries
 - **River Fish**: Milder taste, often preferred for steaming and light preparations
 - **Storage**: Fresh fish keeps 1-2 days refrigerated, 2-3 months frozen
+- **Pre-cooking wash**: Always wash fish thoroughly in running water, especially if buying from unknown sources
 :::
 
 ## 🌍 Regional Variations
@@ -144,6 +216,3 @@ Different regions may use different names for the same fish. This guide provides
 Fish names may vary by region and local dialects. This guide uses the most widely recognized names in each language. If you know additional regional names, feel free to share!
 :::
 
-**Related Topics**: Seafood Nutrition, Indian Fish Recipes, Coastal Cuisine, Sustainable Fishing
-
-*Last Updated: November 2, 2025*

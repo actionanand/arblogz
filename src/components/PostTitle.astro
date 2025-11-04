@@ -5,12 +5,37 @@ import {dealLabel} from "@/utils/dealLabel";
 import {t} from '@/i18n/utils'
 import DraftIndicator from '@/components/DraftIndicator.astro'
 import getUrl from "@/utils/getUrl";
-const {title, date, category, tags, lastModified = '', draft = false, readingTime = {}} = Astro.props
-const lastModifiedDate = dayjs(lastModified === '' ? date : lastModified);
-const publishDate = dayjs(date);
-const mostRecentDate = lastModifiedDate.isAfter(publishDate) ? lastModifiedDate : publishDate;
+const {title, date, lastUpdated, outdated = 0, category, tags, lastModified = '', draft = false, readingTime = {}} = Astro.props
+// Use lastUpdated if provided, otherwise fall back to date
+const effectiveLastUpdated = lastUpdated || date;
+
+// Normalize outdated value (handle null/undefined)
+const outdatedValue = outdated ?? 0;
+
+// Determine the most recent update date for outdated logic
+// For the 6-month check, we should use lastUpdated or date (NOT lastModified from git)
+// because git modification time will always be recent and defeat the purpose
+let mostRecentDate = null;
+if (lastUpdated) {
+  mostRecentDate = dayjs(lastUpdated);
+} else {
+  mostRecentDate = dayjs(date);
+}
 const mostRecent = mostRecentDate.format('YYYY-MM-DD');
 const currentDate = dayjs();
+const showLastUpdatedDate = lastUpdated || lastModified;
+// For legacy warning, always use effectiveLastUpdated (not today's date)
+const legacyDate = dayjs(effectiveLastUpdated).format('YYYY-MM-DD');
+
+// Outdated status logic:
+// 0 = auto check (show warning if > 6 months old)
+// 1 = never show outdated warning (evergreen content)
+// 2 = legacy/immediately outdated (show legacy badge)
+const sixMonthsLater = mostRecentDate.add(6, 'month');
+const isOlderThan6Months = currentDate.isAfter(sixMonthsLater);
+
+const showOutdatedWarning = (outdatedValue === 0 && isOlderThan6Months) || outdatedValue === 2;
+const isLegacy = outdatedValue === 2;
 ---
 
 <div class={draft ? 'draft-post-title' : ''}>
@@ -47,6 +72,21 @@ const currentDate = dayjs();
       )
     }
 
+    <!-- last updated -->
+    {
+      showLastUpdatedDate &&
+      <div class="mr-2"><i class="ri-calendar-check-fill mr-1"/><span data-translate="post.lastUpdated">{t('post.lastUpdated')}</span>: {formatDate(effectiveLastUpdated)}</div>
+    }
+
+    <!-- legacy badge -->
+    {
+      isLegacy &&
+      <div class="legacy-badge mr-2 px-2 py-1 rounded text-xs font-semibold border flex items-center gap-1">
+        <i class="ri-archive-line legacy-icon mr-1"></i>
+        <span data-translate="post.legacy">{t('post.legacy')}</span>
+      </div>
+    }
+
     <!-- update -->
     <!--{-->
     <!--  lastModified && (-->
@@ -62,9 +102,31 @@ const currentDate = dayjs();
       )
     }
   </div>
+  
+  <!-- Outdated warning -->
   {
-    currentDate.isAfter(mostRecentDate.add(6, 'month')) &&
-    <div class="shadow w-auto flex bg-skin-card p-2 rounded text-sm"><i class="ri-error-warning-line mr-1"/>{t('post.lastUpdatedTip1')} {formatDate(mostRecent)} {t('post.lastUpdatedTip2')} </div>
+    showOutdatedWarning && (
+      <div class={`outdated-warning shadow w-auto flex items-center p-3 rounded text-sm ${isLegacy ? 'legacy-warning' : 'bg-skin-card'}`}>
+        <i class={`mr-2 ${isLegacy ? 'ri-archive-line legacy-warning-icon text-lg' : 'ri-error-warning-line'}`}></i>
+        <div class="outdated-text">
+          {isLegacy ? (
+            <>
+              <strong class="font-semibold legacy-warning-title" data-translate="post.legacyWarning">{t('post.legacyWarning')}</strong>
+              <br/>
+              <span data-translate="post.legacyTip1">{t('post.legacyTip1')}</span>
+              <span class="font-medium"> {formatDate(legacyDate)} </span>
+              <span data-translate="post.legacyTip2">{t('post.legacyTip2')}</span>
+            </>
+          ) : (
+            <>
+              <span data-translate="post.lastUpdatedTip1">{t('post.lastUpdatedTip1')}</span>
+              <span class="font-medium"> {formatDate(mostRecent)} </span>
+              <span data-translate="post.lastUpdatedTip2">{t('post.lastUpdatedTip2')}</span>
+            </>
+          )}
+        </div>
+      </div>
+    )
   }
 </div>
 
@@ -104,5 +166,66 @@ const currentDate = dayjs();
       background: linear-gradient(135deg, #fbbf24, #f59e0b);
       color: #111827;
     }
+  }
+
+  /* Legacy badge styling */
+  .legacy-badge {
+    background: linear-gradient(to right, #fcd34d, #fbbf24, #fcd34d);
+    color: #78350f;
+    border-color: #fbbf24;
+  }
+
+  .legacy-icon {
+    color: #b45309;
+  }
+
+  /* Legacy warning styling */
+  .legacy-warning {
+    background: linear-gradient(to right, #fffbeb, #fef3c7, #fffbeb);
+    border: 2px solid #fbbf24;
+  }
+
+  .legacy-warning-icon {
+    color: #b45309;
+  }
+
+  .legacy-warning-title {
+    color: #92400e;
+  }
+
+  /* Dark mode styles using html[data-theme="dark"] */
+  html[data-theme="dark"] .legacy-badge {
+    background: linear-gradient(to right, #3b2c1a, #4b3a22, #3b2c1a);
+    color: #fcd34d;
+    border-color: #b45309;
+  }
+
+  html[data-theme="dark"] .legacy-icon {
+    color: #fcd34d;
+  }
+
+  html[data-theme="dark"] .legacy-warning {
+    background: linear-gradient(to right, #2c1c0a, #3b2c1a, #2c1c0a);
+    border-color: #b45309;
+  }
+
+  html[data-theme="dark"] .legacy-warning-icon {
+    color: #fcd34d;
+  }
+
+  html[data-theme="dark"] .legacy-warning-title {
+    color: #fcd34d;
+  }
+
+  html[data-theme="dark"] .outdated-text {
+    color: #d1d5db;
+  }
+
+  html[data-theme="dark"] .outdated-text span {
+    color: #d1d5db;
+  }
+
+  html[data-theme="dark"] .outdated-text .font-medium {
+    color: #f3f4f6;
   }
 </style>

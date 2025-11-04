@@ -7,6 +7,7 @@ import {sortPostsByDate} from "@/utils/sortPostsByDate";
 import Donate from '@/components/Donate.astro'
 import {donate} from "@/consts";
 import getUrl from "@/utils/getUrl";
+import {t} from '@/i18n/utils'
 
 export async function getStaticPaths() {
   const blogEntries = await getCollectionByName("blog");
@@ -40,11 +41,18 @@ if (sortPosts[currentPostIndex - 1]) {
 <BlogPost frontmatter={entry.data}>
   <div>
     <PostTitle {...entry.data} lastModified={lastModified} readingTime={readingTime}></PostTitle>
-    <div class="divider-horizontal"></div>
+    {!entry.data.hideDivider && <div class="divider-horizontal"></div>}
     <article class="markdown-body">
       <Content/>
     </article>
-    <div class="divider-horizontal"></div>
+    {!entry.data.hideDivider && (
+      <div class="divider-end">
+        <div>
+          <span class="divider-end-text">{t('post.thanksForReading')}</span>
+          <span class="divider-end-icon">✨</span>
+        </div>
+      </div>
+    )}
     <div class="flex justify-between items-center h-8 text-skin-base">
       {prevPost ? (
         <a
