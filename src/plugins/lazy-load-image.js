@@ -1,49 +1,44 @@
 import {visit} from "unist-util-visit";
 import getUrl from "../utils/getUrl.js";
 
+// Check if path is relative (not external URL)
+const isRelativePath = (path) => path && 
+  path.startsWith('/') && 
+  !path.startsWith('//') &&
+  !path.startsWith('http://') && 
+  !path.startsWith('https://') &&
+  !path.startsWith('data:');
+
+// Process path: add base URL if relative, otherwise return as-is
+const processPath = (path) => isRelativePath(path) ? getUrl(path) : path;
+
 export function lazyLoadImage() {
   return function (tree) {
-    visit(tree, function (node) {
-      if (node.tagName === 'img') {
-        const originalSrc = node.properties.src;
-        // Check both camelCase and hyphenated versions for data-src
-        const existingDataSrc = node.properties.dataSrc || node.properties['data-src'];
-        
-        // Check if it's a relative path (starts with / but not //)
-        // and not an external URL (http://, https://, data:, etc.)
-        const isRelativePath = (path) => path && 
-          path.startsWith('/') && 
-          !path.startsWith('//') &&
-          !path.startsWith('http://') && 
-          !path.startsWith('https://') &&
-          !path.startsWith('data:');
-        
-        // If data-src already exists (manually written in HTML), preserve and process it
-        if (existingDataSrc) {
-          // Process the existing data-src to add base URL if needed
-          const processedDataSrc = isRelativePath(existingDataSrc) ? getUrl(existingDataSrc) : existingDataSrc;
-          node.properties.dataSrc = processedDataSrc;
-          node.properties['data-src'] = processedDataSrc;
-          
-          // Also process the src attribute if it's relative
-          if (isRelativePath(originalSrc)) {
-            node.properties.src = getUrl(originalSrc);
-          }
-        } else {
-          // No data-src exists (markdown images), create it from src
-          const processedSrc = isRelativePath(originalSrc) ? getUrl(originalSrc) : originalSrc;
-          node.properties.dataSrc = processedSrc;
-          node.properties['data-src'] = processedSrc;
-          // Replace src with spinner
-          node.properties.src = getUrl('/images/spinner.gif');
-        }
-        
-        // Preserve alt attributes
-        if (node.properties.alt) {
-          node.properties.dataAlt = node.properties.alt;
-          node.properties['data-alt'] = node.properties.alt;
-          node.properties.alt = 'default';
-        }
+    visit(tree, (node) => {
+      if (node.tagName !== 'img') return;
+      
+      const props = node.properties;
+      const existingDataSrc = props.dataSrc || props['data-src'];
+      
+      if (existingDataSrc) {
+        // HTML with data-src: process both src and data-src
+        const processedDataSrc = processPath(existingDataSrc);
+        props.dataSrc = processedDataSrc;
+        props['data-src'] = processedDataSrc;
+        props.src = processPath(props.src);
+      } else {
+        // Markdown image: move src to data-src, replace src with spinner
+        const processedSrc = processPath(props.src);
+        props.dataSrc = processedSrc;
+        props['data-src'] = processedSrc;
+        props.src = getUrl('/images/spinner.gif');
+      }
+      
+      // Preserve alt attributes
+      if (props.alt) {
+        props.dataAlt = props.alt;
+        props['data-alt'] = props.alt;
+        props.alt = 'default';
       }
     })
   }
