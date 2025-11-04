@@ -81,8 +81,8 @@ const isLegacy = outdatedValue === 2;
     <!-- legacy badge -->
     {
       isLegacy &&
-      <div class="mr-2 px-2 py-1 bg-gradient-to-r from-amber-200 via-amber-100 to-amber-200 dark:from-[#3b2c1a] dark:via-[#4b3a22] dark:to-[#3b2c1a] text-amber-900 dark:text-amber-200 rounded text-xs font-semibold border border-amber-300 dark:border-amber-700 flex items-center gap-1">
-        <i class="ri-archive-line text-amber-700 dark:text-amber-200 mr-1"></i>
+      <div class="legacy-badge mr-2 px-2 py-1 rounded text-xs font-semibold border flex items-center gap-1">
+        <i class="ri-archive-line legacy-icon mr-1"></i>
         <span data-translate="post.legacy">{t('post.legacy')}</span>
       </div>
     }
@@ -106,12 +106,12 @@ const isLegacy = outdatedValue === 2;
   <!-- Outdated warning -->
   {
     showOutdatedWarning && (
-      <div class={`shadow w-auto flex items-center p-3 rounded text-sm ${isLegacy ? 'bg-gradient-to-r from-amber-50 via-amber-100 to-amber-50 dark:from-[#2c1c0a] dark:via-[#3b2c1a] dark:to-[#2c1c0a] border-2 border-amber-300 dark:border-amber-700' : 'bg-skin-card'}`}>
-        <i class={`mr-2 ${isLegacy ? 'ri-archive-line text-amber-700 dark:text-amber-200 text-lg' : 'ri-error-warning-line'}`}></i>
-        <div>
+      <div class={`outdated-warning shadow w-auto flex items-center p-3 rounded text-sm ${isLegacy ? 'legacy-warning' : 'bg-skin-card'}`}>
+        <i class={`mr-2 ${isLegacy ? 'ri-archive-line legacy-warning-icon text-lg' : 'ri-error-warning-line'}`}></i>
+        <div class="outdated-text">
           {isLegacy ? (
             <>
-              <strong class="font-semibold text-amber-800 dark:text-amber-200" data-translate="post.legacyWarning">{t('post.legacyWarning')}</strong>
+              <strong class="font-semibold legacy-warning-title" data-translate="post.legacyWarning">{t('post.legacyWarning')}</strong>
               <br/>
               <span data-translate="post.legacyTip1">{t('post.legacyTip1')}</span>
               <span class="font-medium"> {formatDate(legacyDate)} </span>
@@ -166,5 +166,66 @@ const isLegacy = outdatedValue === 2;
       background: linear-gradient(135deg, #fbbf24, #f59e0b);
       color: #111827;
     }
+  }
+
+  /* Legacy badge styling */
+  .legacy-badge {
+    background: linear-gradient(to right, #fcd34d, #fbbf24, #fcd34d);
+    color: #78350f;
+    border-color: #fbbf24;
+  }
+
+  .legacy-icon {
+    color: #b45309;
+  }
+
+  /* Legacy warning styling */
+  .legacy-warning {
+    background: linear-gradient(to right, #fffbeb, #fef3c7, #fffbeb);
+    border: 2px solid #fbbf24;
+  }
+
+  .legacy-warning-icon {
+    color: #b45309;
+  }
+
+  .legacy-warning-title {
+    color: #92400e;
+  }
+
+  /* Dark mode styles using html[data-theme="dark"] */
+  html[data-theme="dark"] .legacy-badge {
+    background: linear-gradient(to right, #3b2c1a, #4b3a22, #3b2c1a);
+    color: #fcd34d;
+    border-color: #b45309;
+  }
+
+  html[data-theme="dark"] .legacy-icon {
+    color: #fcd34d;
+  }
+
+  html[data-theme="dark"] .legacy-warning {
+    background: linear-gradient(to right, #2c1c0a, #3b2c1a, #2c1c0a);
+    border-color: #b45309;
+  }
+
+  html[data-theme="dark"] .legacy-warning-icon {
+    color: #fcd34d;
+  }
+
+  html[data-theme="dark"] .legacy-warning-title {
+    color: #fcd34d;
+  }
+
+  html[data-theme="dark"] .outdated-text {
+    color: #d1d5db;
+  }
+
+  html[data-theme="dark"] .outdated-text span {
+    color: #d1d5db;
+  }
+
+  html[data-theme="dark"] .outdated-text .font-medium {
+    color: #f3f4f6;
   }
 </style>
