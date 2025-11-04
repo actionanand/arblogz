@@ -38,6 +38,7 @@ export const hi = {
   'post.legacyTip1': 'यह लेख अंतिम बार अपडेट किया गया',
   'post.legacyTip2': '. जानकारी पुरानी है और केवल ऐतिहासिक संदर्भ के लिए रखी गई है।',
   'post.footnotes': 'फुटनोट्स',
+  'post.thanksForReading': 'पढ़ने के लिए धन्यवाद!',
   'remark.open': 'खोलें',
   'more': 'अधिक',
   'footer.articleTitle': 'लेख का शीर्षक',

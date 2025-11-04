@@ -38,6 +38,7 @@ export const kn = {
   'post.legacyTip1': 'ಈ ಲೇಖನವನ್ನು ಕೊನೆಯ ಬಾರಿ ನವೀಕರಿಸಲಾಗಿದೆ',
   'post.legacyTip2': '. ಮಾಹಿತಿ ಹಳತಾಗಿದೆ ಮತ್ತು ಐತಿಹಾಸಿಕ ಉಲ್ಲೇಖಕ್ಕಾಗಿ ಮಾತ್ರ ಇರಿಸಲಾಗಿದೆ.',
   'post.footnotes': 'ಅಡಿಟಿಪ್ಪಣಿಗಳು',
+  'post.thanksForReading': 'ಓದಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು!',
   'remark.open': 'ತೆರೆಯಿರಿ',
   'more': 'ಹೆಚ್ಚು',
   'footer.articleTitle': 'ಲೇಖನ ಶೀರ್ಷಿಕೆ',

@@ -216,6 +216,3 @@ Different regions may use different names for the same fish. This guide provides
 Fish names may vary by region and local dialects. This guide uses the most widely recognized names in each language. If you know additional regional names, feel free to share!
 :::
 
-**Related Topics**: Seafood Nutrition, Indian Fish Recipes, Coastal Cuisine, Sustainable Fishing
-
-*Last Updated: November 2, 2025*

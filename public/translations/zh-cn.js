@@ -39,6 +39,7 @@ const zhCn = {
   'post.legacyTip1': '本文最后更新于',
   'post.legacyTip2': '。信息已过时，仅供历史参考。',
   'post.footnotes': '脚注',
+  'post.thanksForReading': '感谢阅读！',
   'remark.open': '打开',
   'more': '更多',
   'footer.articleTitle': '本文标题',
