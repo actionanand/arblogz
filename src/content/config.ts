@@ -20,7 +20,7 @@ const blog = defineCollection({
     comment: z.boolean().default(true).nullable(),
     hideDivider: z.boolean().default(false).nullable(),
     //  Open Graph (OG) images
-    ogImage: z.string().optional(),
+  ogImage: z.string().optional(),p
     
     // Enhanced donation system fields
     showDonate: z.boolean().optional(),

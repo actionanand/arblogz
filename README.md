@@ -1,4 +1,4 @@
-# Astro Starter Kit: Blog
+\# Astro Starter Kit: Blog
 
 ```sh
 npm create astro@latest -- --template blog
@@ -232,6 +232,25 @@ import DonateButton from "@/components/DonateButton.astro";
   style="card"
 />
 ```
+
+### Testing OG Images
+
+> Open Graph (OG) images is the preview image that appears when you share your blog post on social media platforms and messaging apps.
+
+1. **Build your site:** `npm run build`
+2. **Deploy** to GitHub Pages/ other location
+3. **Test with validators:**
+   - Facebook: https://developers.facebook.com/tools/debug/
+   - Twitter: https://cards-dev.twitter.com/validator
+   - OpenGraph.xyz: https://www.opengraph.xyz/
+4. **Share on WhatsApp/Instagram** to verify
+
+#### ⚠️ Important Notes:
+
+- Social platforms **cache images** - use debugger tools to refresh
+- Images must be **publicly accessible** (deployed, not localhost)
+- Recommended size: **1200x630px**
+- Keep file size **under 1MB**
 
 ### Live sites
 
