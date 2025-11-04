@@ -6,7 +6,8 @@ export function lazyLoadImage() {
     visit(tree, function (node) {
       if (node.tagName === 'img') {
         const originalSrc = node.properties.src;
-        const existingDataSrc = node.properties['dataSrc'] || node.properties['data-src'];
+        // In rehype, data-src becomes dataSrc in properties
+        const existingDataSrc = node.properties.dataSrc;
         
         // Check if it's a relative path (starts with / but not //)
         // and not an external URL (http://, https://, data:, etc.)
@@ -21,7 +22,7 @@ export function lazyLoadImage() {
         if (existingDataSrc) {
           // Apply base URL to existing data-src if it's a relative path
           const processedDataSrc = isRelativePath(existingDataSrc) ? getUrl(existingDataSrc) : existingDataSrc;
-          node.properties['data-src'] = processedDataSrc;
+          node.properties.dataSrc = processedDataSrc;
           
           // Also process the src (spinner) if it's relative
           if (isRelativePath(originalSrc)) {
@@ -30,13 +31,15 @@ export function lazyLoadImage() {
         } else {
           // No data-src exists, create it from src (for markdown images)
           const processedSrc = isRelativePath(originalSrc) ? getUrl(originalSrc) : originalSrc;
-          node.properties['data-src'] = processedSrc;
+          node.properties.dataSrc = processedSrc;
           node.properties.src = getUrl('/images/spinner.gif');
         }
         
-        // Preserve alt attributes
-        node.properties['data-alt'] = node.properties.alt;
-        node.properties.alt = 'default';
+        // Preserve alt attributes (data-alt becomes dataAlt)
+        if (node.properties.alt) {
+          node.properties.dataAlt = node.properties.alt;
+          node.properties.alt = 'default';
+        }
       }
     })
   }
