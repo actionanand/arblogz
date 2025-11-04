@@ -18,6 +18,8 @@ const blog = defineCollection({
     toc: z.boolean().default(true).nullable(),
     donate: z.boolean().default(true).nullable(),
     comment: z.boolean().default(true).nullable(),
+    hideDivider: z.boolean().default(false).nullable(),
+    //  Open Graph (OG) images
     ogImage: z.string().optional(),
     
     // Enhanced donation system fields

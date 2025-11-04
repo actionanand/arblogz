@@ -5,6 +5,8 @@ description: Showcase your favorite images in more ways than one!
 tags: [feature]
 category: astro
 outdated: 2
+hideDivider: true
+toc: false
 ---
 
 ### Display remote links
