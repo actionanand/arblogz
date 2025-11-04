@@ -246,6 +246,180 @@ menu {
   background-color: rgba(var(--color-text), .2);
 }
 
+/* ===============================================
+   CREATIVE END DIVIDER - "Thanks for Reading"
+   =============================================== */
+
+.divider-end {
+  clear: both;
+  width: 100%;
+  min-width: 100%;
+  margin: 40px 0 32px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Decorative lines on sides */
+.divider-end::before,
+.divider-end::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(var(--color-border), 0.4) 50%,
+    transparent
+  );
+  animation: divider-glow 3s ease-in-out infinite;
+}
+
+/* Center badge with text */
+.divider-end > * {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 25px;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-border), 0.15),
+    rgba(var(--color-border), 0.08)
+  );
+  border: 2px solid rgba(var(--color-border), 0.3);
+  box-shadow: 
+    0 4px 12px rgba(var(--color-border), 0.15),
+    0 0 20px rgba(var(--color-border), 0.1);
+  animation: badge-float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.divider-end-text {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--color-border)),
+    rgb(var(--color-border-active)),
+    rgb(var(--color-border))
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.divider-end-icon {
+  display: inline-block;
+  animation: sparkle-rotate 4s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes badge-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes divider-glow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes sparkle-rotate {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+  75% {
+    transform: rotate(10deg) scale(1.1);
+  }
+}
+
+/* Hover effect */
+.divider-end:hover > * {
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 20px rgba(var(--color-border), 0.25),
+    0 0 30px rgba(var(--color-border), 0.2);
+  border-color: rgba(var(--color-border), 0.5);
+}
+
+.divider-end:hover::before,
+.divider-end:hover::after {
+  animation: divider-glow 1.5s ease-in-out infinite;
+}
+
+/* Dark theme adjustments */
+html[data-theme="dark"] .divider-end::before,
+html[data-theme="dark"] .divider-end::after {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(var(--color-border), 0.3) 50%,
+    transparent
+  );
+}
+
+html[data-theme="dark"] .divider-end > * {
+  background: linear-gradient(
+    135deg,
+    rgba(52, 211, 153, 0.15),
+    rgba(16, 185, 129, 0.1)
+  );
+  border-color: rgba(52, 211, 153, 0.4);
+  box-shadow: 
+    0 4px 15px rgba(52, 211, 153, 0.2),
+    0 0 25px rgba(52, 211, 153, 0.15);
+}
+
+html[data-theme="dark"] .divider-end-text {
+  background: linear-gradient(
+    135deg,
+    #34d399,
+    #10b981,
+    #34d399
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html[data-theme="dark"] .divider-end:hover > * {
+  box-shadow: 
+    0 6px 25px rgba(52, 211, 153, 0.3),
+    0 0 35px rgba(52, 211, 153, 0.25);
+  border-color: rgba(52, 211, 153, 0.6);
+}
+
 /* 重写markdown样式 */
 .markdown-body {
   background-color: inherit;

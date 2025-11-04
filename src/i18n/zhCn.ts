@@ -20,6 +20,7 @@ export const zhCn = {
   'post.legacyTip1': '本文最后更新于',
   'post.legacyTip2': '。信息已过时，仅供历史参考。',
   'post.footnotes': '脚注',
+  'post.thanksForReading': '感谢阅读！',
   'remark.open': '展开',
   'sidebar.categories': '分类',
   'sidebar.uncategorized': '未分类',

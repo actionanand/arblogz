@@ -39,6 +39,7 @@ const cs = {
   'post.legacyTip1': 'Tento článek byl naposledy aktualizován',
   'post.legacyTip2': '. Informace jsou zastaralé a jsou uchovány pouze pro historickou referenci.',
   'post.footnotes': 'Poznámky pod čarou',
+  'post.thanksForReading': 'Děkujeme za přečtení!',
   'remark.open': 'Otevřít',
   'more': 'Více',
   'footer.articleTitle': 'Název článku',

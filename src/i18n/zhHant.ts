@@ -20,6 +20,7 @@ export  const zhHant = {
   'post.legacyTip1': '本文最後更新於',
   'post.legacyTip2': '。資訊已過時，僅供歷史參考。',
   'post.footnotes': '腳註',
+  'post.thanksForReading': '感謝閱讀！',
   'sidebar.categories': '分類',
   'sidebar.uncategorized': '未分類',
   'sidebar.tags': '標簽',

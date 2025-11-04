@@ -39,6 +39,7 @@ const fr = {
   'post.legacyTip1': 'Cet article a été mis à jour pour la dernière fois le',
   'post.legacyTip2': '. Les informations sont obsolètes et conservées uniquement à titre de référence historique.',
   'post.footnotes': 'Notes de bas de page',
+  'post.thanksForReading': 'Merci d\'avoir lu!',
   'remark.open': 'Ouvrir',
   'more': 'Plus',
   'footer.articleTitle': 'Titre de l\'article',

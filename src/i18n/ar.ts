@@ -38,6 +38,7 @@ export const ar = {
   'post.legacyTip1': 'تم تحديث هذا المقال آخر مرة في',
   'post.legacyTip2': '. المعلومات قديمة ويتم الاحتفاظ بها للإشارة التاريخية فقط.',
   'post.footnotes': 'الحواشي السفلية',
+  'post.thanksForReading': 'شكراً للقراءة!',
   'remark.open': 'افتح',
   'more': 'المزيد',
   'footer.articleTitle': 'عنوان المقال',

@@ -43,6 +43,7 @@ export  let cs = {
   'post.legacyTip1': 'Tento článek byl naposledy aktualizován',
   'post.legacyTip2': '. Informace jsou zastaralé a jsou uchovány pouze pro historickou referenci.',
   'post.footnotes': 'Poznámky pod čarou',
+  'post.thanksForReading': 'Děkujeme za přečtení!',
   'search.labelOne':'Zobrazení článků pod',
   'search.labelTwo':'',
   'search.placeholder': 'Zadejte klíčová slova názvu nebo abstraktu',
