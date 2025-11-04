@@ -1,6 +1,10 @@
 import {visit} from "unist-util-visit";
 import getUrl from "../utils/getUrl.js";
 
+// Lazy load identifiers
+const LAZY_LOAD_TRIGGER = 'lazy';  // For HTML: <img src="lazy" data-src="...">
+const LAZY_LOAD_ALT = 'lazy';      // For Markdown: ![lazy](/image.jpg)
+
 // Check if path is relative (not external URL)
 const isRelativePath = (path) => path && 
   path.startsWith('/') && 
@@ -18,27 +22,36 @@ export function lazyLoadImage() {
       if (node.tagName !== 'img') return;
       
       const props = node.properties;
+      const src = props.src;
+      const alt = props.alt;
       const existingDataSrc = props.dataSrc || props['data-src'];
       
-      if (existingDataSrc) {
-        // HTML with data-src: process both src and data-src
-        const processedDataSrc = processPath(existingDataSrc);
-        props.dataSrc = processedDataSrc;
-        props['data-src'] = processedDataSrc;
-        props.src = processPath(props.src);
-      } else {
-        // Markdown image: move src to data-src, replace src with spinner
-        const processedSrc = processPath(props.src);
-        props.dataSrc = processedSrc;
-        props['data-src'] = processedSrc;
-        props.src = getUrl('/images/spinner.gif');
-      }
+      // Check if lazy loading is explicitly requested
+      const isLazyLoadHTML = src === LAZY_LOAD_TRIGGER && existingDataSrc;
+      const isLazyLoadMarkdown = alt === LAZY_LOAD_ALT && !existingDataSrc;
       
-      // Preserve alt attributes
-      if (props.alt) {
-        props.dataAlt = props.alt;
-        props['data-alt'] = props.alt;
+      if (isLazyLoadHTML) {
+        // HTML: <img src="lazy" data-src="...">
+        props.dataSrc = processPath(existingDataSrc);
+        props['data-src'] = processPath(existingDataSrc);
+        props.src = getUrl('/images/spinner.gif');
         props.alt = 'default';
+      } else if (isLazyLoadMarkdown) {
+        // Markdown: ![lazy](/image.jpg)
+        props.dataSrc = processPath(src);
+        props['data-src'] = processPath(src);
+        props.src = getUrl('/images/spinner.gif');
+        props.dataAlt = alt;
+        props['data-alt'] = alt;
+        props.alt = 'default';
+      } else if (existingDataSrc) {
+        // HTML with data-src but no lazy trigger: process paths only
+        props.dataSrc = processPath(existingDataSrc);
+        props['data-src'] = processPath(existingDataSrc);
+        props.src = processPath(src);
+      } else {
+        // Regular image: just process src path
+        props.src = processPath(src);
       }
     })
   }
