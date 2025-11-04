@@ -6,8 +6,8 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string().optional().nullable(),
     date: z.date(),
-    lastUpdated: z.date().optional().nullable(),
     outdated: z.number().int().min(0).max(2).default(0).nullable(), // 0=auto (6 months), 1=never outdated, 2=legacy/immediately outdated
+    lastUpdated: z.date().optional().nullable(),
     tags: z.array(z.string()).or(z.string()).optional().nullable(),
     category: z.array(z.string()).or(z.string()).default('uncategorized').nullable(),
     sticky: z.number().default(0).nullable(),
@@ -20,7 +20,7 @@ const blog = defineCollection({
     comment: z.boolean().default(true).nullable(),
     hideDivider: z.boolean().default(false).nullable(),
     //  Open Graph (OG) images
-  ogImage: z.string().optional(),p
+    ogImage: z.string().optional(),
     
     // Enhanced donation system fields
     showDonate: z.boolean().optional(),
