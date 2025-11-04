@@ -15,7 +15,7 @@ toc: false
 <img src="/images/spinner.gif" data-src="/avatar.png" style="width:200px;">
 ```
 
-<img src="/images/spinner.gif" data-src="/avatar1.png" style="width:200px;">
+<img src="/images/spinner.gif" data-src="/avatar.png" style="width:200px;">
 
 ### Display remote links
 
