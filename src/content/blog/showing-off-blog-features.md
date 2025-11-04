@@ -7,6 +7,10 @@ category: astro
 mermaid: true
 mathjax: true
 sticky: 2
+# outdated: 0 = auto check (show warning if > 6 months old)
+# outdated: 1 = never show outdated warning (evergreen content)
+# outdated: 2 = legacy/immediately outdated (show legacy badge)
+outdated: 2 
 ogImage: https://astro-yi.obs.cn-east-3.myhuaweicloud.com/avatar.png
 ---
 
