@@ -21,6 +21,7 @@ import remarkCharacterDialogue from './src/plugins/remark-character-dialogue' /*
 import {remarkHtml} from './src/plugins/remark-html.js';
 import {remarkColorHighlight} from './src/plugins/remark-simple-highlight.js';
 import remarkGemoji from './src/plugins/remark-gemoji' /* for shortcode emoji support */
+import rehypeRaw from 'rehype-raw'; /* Allow raw HTML in markdown */
 
 import react from '@astrojs/react';
 
@@ -56,6 +57,6 @@ export default defineConfig({
       [remarkCharacterDialogue, { characters }],
       remarkGemoji,
     ],
-    rehypePlugins: [lazyLoadImage],
+    rehypePlugins: [rehypeRaw, lazyLoadImage],
   }
 });
