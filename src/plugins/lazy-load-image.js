@@ -6,8 +6,8 @@ export function lazyLoadImage() {
     visit(tree, function (node) {
       if (node.tagName === 'img') {
         const originalSrc = node.properties.src;
-        // In rehype, data-src becomes dataSrc in properties
-        const existingDataSrc = node.properties.dataSrc;
+        // Check both camelCase and hyphenated versions for data-src
+        const existingDataSrc = node.properties.dataSrc || node.properties['data-src'];
         
         // Check if it's a relative path (starts with / but not //)
         // and not an external URL (http://, https://, data:, etc.)
@@ -18,26 +18,30 @@ export function lazyLoadImage() {
           !path.startsWith('https://') &&
           !path.startsWith('data:');
         
-        // If data-src already exists (manually set), process it
+        // If data-src already exists (manually written in HTML), preserve and process it
         if (existingDataSrc) {
-          // Apply base URL to existing data-src if it's a relative path
+          // Process the existing data-src to add base URL if needed
           const processedDataSrc = isRelativePath(existingDataSrc) ? getUrl(existingDataSrc) : existingDataSrc;
           node.properties.dataSrc = processedDataSrc;
+          node.properties['data-src'] = processedDataSrc;
           
-          // Also process the src (spinner) if it's relative
+          // Also process the src attribute if it's relative
           if (isRelativePath(originalSrc)) {
             node.properties.src = getUrl(originalSrc);
           }
         } else {
-          // No data-src exists, create it from src (for markdown images)
+          // No data-src exists (markdown images), create it from src
           const processedSrc = isRelativePath(originalSrc) ? getUrl(originalSrc) : originalSrc;
           node.properties.dataSrc = processedSrc;
+          node.properties['data-src'] = processedSrc;
+          // Replace src with spinner
           node.properties.src = getUrl('/images/spinner.gif');
         }
         
-        // Preserve alt attributes (data-alt becomes dataAlt)
+        // Preserve alt attributes
         if (node.properties.alt) {
           node.properties.dataAlt = node.properties.alt;
+          node.properties['data-alt'] = node.properties.alt;
           node.properties.alt = 'default';
         }
       }
