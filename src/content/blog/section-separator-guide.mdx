@@ -30,6 +30,7 @@ import SectionSeparator from "../../react/SectionSeparator/SectionSeparator.jsx"
 
 ## 🚀 Quick Start
 
+
 ```jsx
 <SectionSeparator />
 ```
@@ -131,12 +132,12 @@ Zigzag edge pattern:
 <SectionSeparator style="zigzag" />
 ```
 <SectionSeparator style="zigzag" client:load>
-## THE CODE BLOCK TUTORIAL GUIDE
+## THE CODE BLOCK TUTORIAL
 </SectionSeparator>
 
 ```jsx
 <SectionSeparator style="zigzag" client:load>
-## THE CODE BLOCK TUTORIAL GUIDE
+## THE CODE BLOCK TUTORIAL
 </SectionSeparator>
 ```
 
@@ -164,7 +165,7 @@ Control ribbon alignment:
 
 Natural reading flow, arrow points right.
 
-<SectionSeparator position="left" color="purple" width="long" />
+<SectionSeparator position="left" color="purple" />
 
 ### Center
 
@@ -174,9 +175,9 @@ Natural reading flow, arrow points right.
 <SectionSeparator position="center" />
 ```
 
-Centered ribbon, arrows on both ends (for ribbon/stitched styles).
+Centered ribbon, arrow like style (left side inward v cut and right side outward v cut) (for default/ribbon/stitched/notched & tag styles).
 
-<SectionSeparator position="center" color="orange" width="long" />
+<SectionSeparator position="center" color="orange" style="tag" />
 
 ### Right
 
@@ -188,7 +189,7 @@ Centered ribbon, arrows on both ends (for ribbon/stitched styles).
 
 Right-aligned, arrow points left.
 
-<SectionSeparator position="right" color="indigo" width="long" />
+<SectionSeparator position="right" color="indigo" />
 
 <HorizontalRuler variant="stars" spacing="loose" />
 
@@ -436,7 +437,7 @@ Extra breathing room.
 |------|------|---------|---------|
 | `style` | string | "ribbon" | ribbon, folded, notched, bookmark, tag, stitched, zigzag |
 | `position` | string | "left" | left, center, right |
-| `width` | string | "medium" | short, medium, long, full |
+| `width` | string | "25%" | use the number which will be calculated in percentage |
 | `color` | string | "auto" | auto, emerald, blue, purple, pink, orange, red, yellow, green, indigo, teal, cyan, rose, or hex |
 | `spacing` | string | "normal" | tight, normal, loose |
 
@@ -586,7 +587,7 @@ Assign semantic meaning to colors:
 - ✅ **Lightweight** - Minimal performance impact
 - ✅ **Responsive** - Works on all screen sizes
 
-<SectionSeparator style="ribbon" color="emerald" spacing="loose" width="long" />
+<SectionSeparator style="ribbon" color="emerald" spacing="loose" length={60} />
 
 ## 🎨 Style Guide
 

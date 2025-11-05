@@ -249,7 +249,7 @@ const SectionSeparator = ({
                 : !isFullWidth && position === "right"
                 ? `polygon(0 0, 100% 0, 100% 100%, 0 100%, ${s/2}px 50%)`
                 : !isFullWidth && position === "center"
-                ? `polygon(${s/2}px 0, calc(100% - ${s/2}px) 0, 100% 50%, calc(100% - ${s/2}px) 100%, ${s/2}px 100%, 0 50%)`
+                ? `polygon(0 0, calc(100% - ${s/2}px) 0, 100% 50%, calc(100% - ${s/2}px) 100%, 0 100%, ${s/2}px 50%)`
                 : 'none',
               boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
               ...getPositionStyles(),
@@ -365,7 +365,7 @@ const SectionSeparator = ({
                 : !isFullWidth && position === "right"
                 ? `polygon(${s/2}px 0, 100% 0, 100% 100%, ${s/2}px 100%, 0 50%)`
                 : !isFullWidth && position === "center"
-                ? `polygon(${s/2}px 0, calc(100% - ${s/2}px) 0, 100% 50%, calc(100% - ${s/2}px) 100%, ${s/2}px 100%, 0 50%)`
+                ? `polygon(0 0, calc(100% - ${s/2}px) 0, 100% 50%, calc(100% - ${s/2}px) 100%, 0 100%, ${s/2}px 50%)`
                 : 'none',
               ...getPositionStyles(),
               ...titleStyle
@@ -387,6 +387,8 @@ const SectionSeparator = ({
                 ? `polygon(0 0, 100% 0, calc(100% - ${s/2}px) 50%, 100% 100%, 0 100%)`
                 : !isFullWidth && position === "right"
                 ? `polygon(0 0, 100% 0, 100% 100%, 0 100%, ${s/2}px 50%)`
+                : !isFullWidth && position === "center"
+                ? `polygon(0 0, calc(100% - ${s/2}px) 0, 100% 50%, calc(100% - ${s/2}px) 100%, 0 100%, ${s/2}px 50%)`
                 : 'none',
               boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
               ...getPositionStyles(),
@@ -409,6 +411,8 @@ const SectionSeparator = ({
                 ? `polygon(0 0, calc(100% - ${s/2}px) 0, 100% 50%, calc(100% - ${s/2}px) 100%, 0 100%, ${c}px 50%)`
                 : !isFullWidth && position === "right"
                 ? `polygon(${s/2}px 0, 100% 0, calc(100% - ${c}px) 50%, 100% 100%, ${s/2}px 100%, 0 50%)`
+                : !isFullWidth && position === "center"
+                ? `polygon(0 0, calc(100% - ${s/2}px) 0, 100% 50%, calc(100% - ${s/2}px) 100%, 0 100%, ${s/2}px 50%)`
                 : 'none',
               ...getPositionStyles(),
               ...titleStyle
@@ -449,7 +453,7 @@ const SectionSeparator = ({
                 : !isFullWidth && position === "right"
                 ? `polygon(0 0, 100% 0, 100% 100%, 0 100%, ${s/2}px 50%)`
                 : !isFullWidth && position === "center"
-                ? `polygon(${s/2}px 0, calc(100% - ${s/2}px) 0, 100% 50%, calc(100% - ${s/2}px) 100%, ${s/2}px 100%, 0 50%)`
+                ? `polygon(0 0, calc(100% - ${s/2}px) 0, 100% 50%, calc(100% - ${s/2}px) 100%, 0 100%, ${s/2}px 50%)`
                 : 'none',
               ...getPositionStyles(),
               ...titleStyle
