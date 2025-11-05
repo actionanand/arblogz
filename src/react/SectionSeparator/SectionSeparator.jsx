@@ -518,7 +518,6 @@ const SectionSeparator = ({
                           fontSize: height === 'thin' ? '14px' : height === 'thick' ? '20px' : '16px',
                           fontWeight: '700',
                           color: '#ffffff',
-                          transform: isEven ? `skewY(-${skewAngle}deg)` : `skewY(${skewAngle}deg)`,
                           display: 'block',
                           whiteSpace: 'nowrap',
                           textShadow: '0 2px 4px rgba(0,0,0,0.3)',
