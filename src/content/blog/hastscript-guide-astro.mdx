@@ -1,0 +1,466 @@
+---
+title: "Understanding hastscript: Building HAST Nodes in Astro"
+description: "A comprehensive guide to hastscript - learn how to programmatically create HTML Abstract Syntax Trees (HAST) for Markdown processing in Astro projects"
+date: 2025-11-05
+category: "web-development"
+tags: ["astro", "hastscript", "markdown", "remark", "rehype", "ast"]
+draft: false
+---
+
+## Introduction
+
+When working with Markdown in Astro, you'll often need to transform or create HTML elements programmatically. This is where **hastscript** comes in - a powerful utility that allows you to build HTML Abstract Syntax Trees (HAST) using a JSX-like syntax.
+
+In this guide, we'll explore how hastscript is used in Astro projects, particularly in custom remark and rehype plugins.
+
+## What is hastscript?
+
+**hastscript** (Hypertext Abstract Syntax Tree Script) is a utility that creates HAST nodes - the same structure used by rehype and remark plugins to represent HTML. Think of it as a way to write HTML in JavaScript without using strings.
+
+### Why Use hastscript?
+
+- **Type-safe**: Creates proper HAST nodes with correct structure
+- **Clean syntax**: Similar to JSX but in pure JavaScript
+- **Integration**: Works seamlessly with remark/rehype ecosystem
+- **Maintainable**: Easier to modify than string concatenation
+
+## Installation
+
+```bash
+npm install hastscript
+```
+
+## Basic Syntax
+
+The basic syntax of hastscript is:
+
+```javascript
+h(tagName, properties, children)
+```
+
+Where:
+- `tagName`: HTML element name (string)
+- `properties`: Object containing attributes (optional)
+- `children`: Array of child nodes or text content (optional)
+
+## Simple Examples
+
+### Creating a Div Element
+
+```javascript
+import { h } from 'hastscript';
+
+// Simple div
+const node = h('div', 'Hello World');
+
+// Result (HAST):
+// {
+//   type: 'element',
+//   tagName: 'div',
+//   properties: {},
+//   children: [{ type: 'text', value: 'Hello World' }]
+// }
+```
+
+### Adding Classes and Attributes
+
+```javascript
+// Div with class
+const divWithClass = h('div', { className: 'container' }, 'Content');
+
+// Multiple classes
+const multiClass = h('div', { className: ['card', 'shadow-lg'] }, 'Card content');
+
+// With ID and data attributes
+const withAttrs = h('div', {
+  id: 'main',
+  className: 'wrapper',
+  dataTheme: 'dark'
+}, 'Content');
+```
+
+### Creating Links
+
+```javascript
+// Simple link
+const link = h('a', { href: 'https://example.com' }, 'Click here');
+
+// Link with target and rel
+const externalLink = h('a', {
+  href: 'https://example.com',
+  target: '_blank',
+  rel: 'noopener noreferrer'
+}, 'External link');
+```
+
+## Nested Elements
+
+You can create complex nested structures by passing arrays of child elements:
+
+```javascript
+import { h } from 'hastscript';
+
+const card = h('div', { className: 'card' }, [
+  h('h2', { className: 'card-title' }, 'Card Title'),
+  h('p', { className: 'card-description' }, 'This is a description'),
+  h('button', { className: 'btn' }, 'Click Me')
+]);
+```
+
+## Real-World Usage in Astro
+
+### Custom Remark Plugin Example
+
+Here's how hastscript is used in a custom remark plugin to create custom components:
+
+```javascript
+import { h } from 'hastscript';
+import { visit } from 'unist-util-visit';
+
+export function remarkCustomButton() {
+  return (tree) => {
+    visit(tree, 'text', (node, index, parent) => {
+      const match = node.value.match(/\[button:(.+?)\]\((.+?)\)/);
+      
+      if (match) {
+        const [, text, href] = match;
+        
+        // Create button element using hastscript
+        const buttonNode = h('a', {
+          href: href,
+          className: ['btn', 'btn-primary'],
+          role: 'button'
+        }, text);
+        
+        parent.children[index] = buttonNode;
+      }
+    });
+  };
+}
+```
+
+### Creating Alert/Admonition Boxes
+
+```javascript
+function createAdmonition(type, title, content) {
+  const iconMap = {
+    note: '📝',
+    tip: '💡',
+    warning: '⚠️',
+    danger: '🚨'
+  };
+  
+  return h('div', {
+    className: ['admonition', `admonition-${type}`],
+    dataType: type
+  }, [
+    h('div', { className: 'admonition-title' }, [
+      h('span', { className: 'admonition-icon' }, iconMap[type]),
+      h('strong', title)
+    ]),
+    h('div', { className: 'admonition-content' }, content)
+  ]);
+}
+
+// Usage
+const noteBox = createAdmonition('note', 'Important Note', 'This is a note');
+```
+
+## Working with Custom Elements
+
+### Creating Code Blocks with Syntax Highlighting
+
+```javascript
+function createCodeBlock(code, language) {
+  return h('div', { className: 'code-wrapper' }, [
+    h('div', { className: 'code-header' }, [
+      h('span', { className: 'language-badge' }, language),
+      h('button', { 
+        className: 'copy-button',
+        dataCode: code 
+      }, 'Copy')
+    ]),
+    h('pre', [
+      h('code', { className: `language-${language}` }, code)
+    ])
+  ]);
+}
+```
+
+### Creating Cards with Images
+
+```javascript
+function createImageCard(imgSrc, title, description, linkUrl) {
+  return h('div', { className: 'image-card' }, [
+    h('img', {
+      src: imgSrc,
+      alt: title,
+      className: 'card-image',
+      loading: 'lazy'
+    }),
+    h('div', { className: 'card-body' }, [
+      h('h3', { className: 'card-title' }, title),
+      h('p', { className: 'card-description' }, description),
+      h('a', {
+        href: linkUrl,
+        className: 'card-link'
+      }, 'Read more →')
+    ])
+  ]);
+}
+```
+
+## hastscript in Astro Plugin Example
+
+Here's a complete example of a remark plugin using hastscript in an Astro project:
+
+```javascript
+// plugins/remark-github-card.js
+import { h } from 'hastscript';
+import { visit } from 'unist-util-visit';
+
+export function remarkGithubCard() {
+  return (tree) => {
+    visit(tree, 'text', (node, index, parent) => {
+      // Match pattern: [github:username/repo]
+      const match = node.value.match(/\[github:([^/]+)\/([^\]]+)\]/);
+      
+      if (match) {
+        const [, username, repo] = match;
+        const repoUrl = `https://github.com/${username}/${repo}`;
+        
+        // Create GitHub card using hastscript
+        const githubCard = h('div', { className: 'github-card' }, [
+          h('div', { className: 'github-card-header' }, [
+            h('svg', {
+              className: 'github-icon',
+              viewBox: '0 0 16 16',
+              width: '16',
+              height: '16'
+            }, [
+              h('path', {
+                fill: 'currentColor',
+                d: 'M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'
+              })
+            ]),
+            h('span', { className: 'github-repo-name' }, `${username}/${repo}`)
+          ]),
+          h('a', {
+            href: repoUrl,
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            className: 'github-link'
+          }, 'View on GitHub →')
+        ]);
+        
+        parent.children[index] = githubCard;
+      }
+    });
+  };
+}
+```
+
+### Using the Plugin in Astro Config
+
+```javascript
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
+import { remarkGithubCard } from './src/plugins/remark-github-card.js';
+
+export default defineConfig({
+  markdown: {
+    remarkPlugins: [
+      remarkGithubCard
+    ]
+  }
+});
+```
+
+## Common Patterns
+
+### Creating Containers with Multiple Children
+
+```javascript
+// Creating a tab container
+const tabs = h('div', { className: 'tabs' }, [
+  h('div', { className: 'tab-headers' }, [
+    h('button', { className: 'tab-button active', dataTab: 'tab1' }, 'Tab 1'),
+    h('button', { className: 'tab-button', dataTab: 'tab2' }, 'Tab 2'),
+    h('button', { className: 'tab-button', dataTab: 'tab3' }, 'Tab 3')
+  ]),
+  h('div', { className: 'tab-content' }, [
+    h('div', { className: 'tab-pane active', id: 'tab1' }, 'Content 1'),
+    h('div', { className: 'tab-pane', id: 'tab2' }, 'Content 2'),
+    h('div', { className: 'tab-pane', id: 'tab3' }, 'Content 3')
+  ])
+]);
+```
+
+### Conditional Attributes
+
+```javascript
+function createButton(text, options = {}) {
+  const { href, disabled, variant = 'primary' } = options;
+  
+  const props = {
+    className: ['btn', `btn-${variant}`],
+    ...(disabled && { disabled: true }),
+    ...(href && { href })
+  };
+  
+  return h(href ? 'a' : 'button', props, text);
+}
+
+// Usage
+const linkButton = createButton('Click', { href: '/page', variant: 'secondary' });
+const disabledButton = createButton('Disabled', { disabled: true });
+```
+
+## hastscript Shortcuts
+
+### Using Selectors (CSS-like syntax)
+
+```javascript
+// Instead of:
+h('div', { className: 'container' })
+
+// You can write:
+h('div.container')
+
+// Multiple classes:
+h('div.card.shadow-lg')
+
+// With ID:
+h('div#main.container')
+
+// Combination:
+h('section#about.section.dark-theme')
+```
+
+## Tips and Best Practices
+
+### 1. **Keep Components Reusable**
+
+```javascript
+// Good - reusable function
+function createHighlight(text, color) {
+  return h('span', { 
+    className: 'highlight',
+    style: `background-color: ${color}` 
+  }, text);
+}
+
+// Bad - hardcoded values
+const highlight = h('span', { 
+  className: 'highlight',
+  style: 'background-color: yellow' 
+}, 'hardcoded text');
+```
+
+### 2. **Type Safety with TypeScript**
+
+```typescript
+import { h } from 'hastscript';
+import type { Element } from 'hast';
+
+function createAlert(message: string, type: 'info' | 'warning' | 'error'): Element {
+  return h('div', { 
+    className: ['alert', `alert-${type}`],
+    role: 'alert'
+  }, message);
+}
+```
+
+### 3. **Handle Text Safely**
+
+```javascript
+// Safe text handling
+function createParagraph(text) {
+  return h('p', { className: 'paragraph' }, 
+    typeof text === 'string' ? text : String(text)
+  );
+}
+```
+
+### 4. **Compose Complex Structures**
+
+```javascript
+function createArticle({ title, author, date, content }) {
+  return h('article', { className: 'blog-post' }, [
+    createHeader(title, author, date),
+    createContent(content),
+    createFooter()
+  ]);
+}
+
+function createHeader(title, author, date) {
+  return h('header', { className: 'post-header' }, [
+    h('h1', title),
+    h('div', { className: 'post-meta' }, [
+      h('span', { className: 'author' }, author),
+      h('time', { dateTime: date }, formatDate(date))
+    ])
+  ]);
+}
+```
+
+## Debugging hastscript Nodes
+
+To see what HAST structure is created:
+
+```javascript
+import { h } from 'hastscript';
+import { toHtml } from 'hast-util-to-html';
+
+const node = h('div.container', [
+  h('h1', 'Hello'),
+  h('p', 'World')
+]);
+
+// Convert to HTML string for debugging
+console.log(toHtml(node));
+// Output: <div class="container"><h1>Hello</h1><p>World</p></div>
+
+// Inspect HAST structure
+console.log(JSON.stringify(node, null, 2));
+```
+
+## Common Use Cases in Astro
+
+### 1. **Custom Markdown Syntax**
+Create custom syntax that transforms into HTML components
+
+### 2. **Plugin Development**
+Build remark/rehype plugins for content transformation
+
+### 3. **Component Wrapping**
+Wrap existing content with custom containers
+
+### 4. **Dynamic Content Generation**
+Generate HTML structures based on frontmatter or external data
+
+### 5. **Accessibility Enhancements**
+Add ARIA attributes and semantic HTML programmatically
+
+## Resources
+
+- [hastscript GitHub](https://github.com/syntax-tree/hastscript)
+- [HAST Specification](https://github.com/syntax-tree/hast)
+- [unified Collective](https://unifiedjs.com/)
+- [Astro Markdown Documentation](https://docs.astro.build/en/guides/markdown-content/)
+
+## Conclusion
+
+hastscript is an essential tool when working with Markdown processing in Astro. It provides a clean, type-safe way to create HTML structures programmatically, making your plugins more maintainable and reliable.
+
+By mastering hastscript, you can:
+- Create custom Markdown extensions
+- Build reusable content components
+- Transform content dynamically
+- Maintain clean, readable code
+
+Start experimenting with hastscript in your next Astro project, and you'll discover how powerful it can be for content transformation!
+
+---
+
+**Have questions or suggestions?** Feel free to reach out or leave a comment below. Happy coding! 🚀
