@@ -493,6 +493,22 @@ const SectionSeparator = ({
               {(hasWords ? words : [...Array(numSections)]).map((item, index) => {
                 const isEven = index % 2 === 0;
                 const word = hasWords ? item : null;
+                const cutSize = Math.floor(sectionHeight / 2);
+                const isFirst = index === 0;
+                const isLast = index === (hasWords ? words.length : numSections) - 1;
+                
+                // Determine clipPath based on position - INWARD cuts
+                let clipPath = 'none';
+                if (isFirst && isLast) {
+                  // Only one section - inward notches on both sides
+                  clipPath = `polygon(0 0, calc(100% - ${cutSize}px) 0, 100% 50%, calc(100% - ${cutSize}px) 100%, 0 100%, ${cutSize}px 50%)`;
+                } else if (isFirst) {
+                  // First section - inward notch on left only
+                  clipPath = `polygon(0 0, 100% 0, 100% 100%, 0 100%, ${cutSize}px 50%)`;
+                } else if (isLast) {
+                  // Last section - inward notch on right only
+                  clipPath = `polygon(0 0, calc(100% - ${cutSize}px) 0, 100% 50%, calc(100% - ${cutSize}px) 100%, 0 100%)`;
+                }
                 
                 return (
                   <div
@@ -504,11 +520,13 @@ const SectionSeparator = ({
                       lineHeight: `${sectionHeight}px`,
                       textAlign: 'center',
                       transform: isEven ? `skewY(${skewAngle}deg)` : `skewY(-${skewAngle}deg)`,
+                      clipPath: clipPath,
                       zIndex: isEven ? 1 : 2,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      position: 'relative'
+                      position: 'relative',
+                      boxShadow: '0 2px 4px rgba(0,0,0,0.15)'
                     }}
                   >
                     {hasWords && (
