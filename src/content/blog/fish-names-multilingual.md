@@ -4,6 +4,7 @@ description: "Complete multilingual guide to popular sea and river fish names in
 date: 2025-11-02
 tags: ["fish", "multilingual", "seafood", "indian cuisine", "reference"]
 category: Indian Cuisine
+outdated: 1
 ogImage: /images/year-2025/sea-fish.webp
 ---
 
@@ -13,7 +14,7 @@ A comprehensive reference guide for popular sea and river fish names across Tami
 Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred language!
 :::
 
-![sea food](/images/year-2025/sea-fish.webp)
+![lazy](/images/year-2025/sea-fish.webp)
 
 ## 🌊 Popular Sea Fish
 

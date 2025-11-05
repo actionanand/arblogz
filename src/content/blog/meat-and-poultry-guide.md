@@ -4,6 +4,7 @@ description: "Comprehensive guide to meat, poultry, and non-veg dishes with name
 date: 2025-11-01
 tags: ["meat", "poultry", "multilingual", "indian cuisine", "reference", "non-veg"]
 category: Indian Cuisine
+outdated: 1
 ogImage: /images/year-2025/chicken-parts.webp
 ---
 
@@ -15,7 +16,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 
 ## 🐐 Goat & Mutton (Lamb/Sheep)
 
-![goat mutton](/images/year-2025/goat.png)
+![lazy](/images/year-2025/goat.png)
 
 <div class="table-luxury-grid">
 
@@ -45,7 +46,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 
 ## 🐔 Chicken & Poultry
 
-![chicke parts](/images/year-2025/chicken-parts.webp)
+![lazy](/images/year-2025/chicken-parts.webp)
 
 <div class="table-ocean-grid">
 
@@ -112,7 +113,7 @@ In India, the term "mutton" commonly refers to **goat meat**, while in Western c
 
 ## 🥓 Understanding Processed Meats & Special Cuts
 
-![pig pork](/images/year-2025/pig.png)
+![lazy](/images/year-2025/pig.png)
 
 ### **Ham**
 **What is Ham**: 
@@ -187,13 +188,13 @@ Boneless, skinless breast meat that's been butterflied or sliced thin. Very vers
 
 ### **Chicken Lollipop**
 
-![chicken wing](/images/year-2025/chicken-wing.webp)
+![lazy](/images/year-2025/chicken-wing.webp)
 
 A popular appetizer/starter where the drumette (upper wing portion) is cut and meat is pushed down to form a lollipop shape. Typically marinated, fried, and served with sauce.
 
 ### **Giblets**
 
-![chicken giblets](/images/year-2025/giblets.webp)
+![lazy](/images/year-2025/giblets.webp)
 
 A collective term for the edible internal organs of poultry including:
 - **Heart**: Small, muscular organ

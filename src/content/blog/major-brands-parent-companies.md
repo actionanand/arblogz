@@ -9,7 +9,7 @@ ogImage: /images/year-2025/fmcg.jpg
 
 Ever wondered who owns your favorite brands? Many products we use daily are owned by massive conglomerates that control multiple brands across different categories. Here's a comprehensive and verified look at major parent companies and their diverse product portfolios, organized by company with special focus on the Indian market.
 
-![FMCG](/images/year-2025/fmcg.jpg)
+![lazy](/images/year-2025/fmcg.jpg)
 
 ## Major Retail Conglomerates & Fashion Brands
 
