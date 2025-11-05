@@ -1622,17 +1622,25 @@ menu {
   border-radius: 2px 6px;
 } */
 
-/* 修复toc 样式问题*/
-/*  覆写toc选中的链接文字颜色 */
+/* Fix TOC styles */
+/* Override active link text color */
 .is-active-link {
   color: rgb(var(--color-text-active)) !important;
 }
 
-#toc a:hover {
-  color: rgb(var(--color-text-active));
+#toc a {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
-/* tocbot自带的border样式会穿透有问题，以被覆写 */
+#toc a:hover {
+  color: rgb(var(--color-text-active));
+  background: rgba(var(--color-border), 0.1);
+}
+
+/* Remove tocbot's default border (it causes issues) */
 .toc-link::before {
   display: none !important;
 }

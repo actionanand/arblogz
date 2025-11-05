@@ -40,6 +40,101 @@ import {t} from '@/i18n/utils'
     white-space: nowrap;
     overflow: hidden;
   }
+
+  /* Timeline-style TOC */
+  #toc :global(.toc-list) {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  /* Main vertical timeline line */
+  #toc :global(.toc-list) {
+    border-left: 2px solid #635C59;
+    padding-left: 1rem;
+  }
+
+  #toc :global(.toc-list .toc-list) {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    padding-left: 1.25rem;
+  }
+
+  #toc :global(.toc-list-item) {
+    position: relative;
+    padding: 0.2rem 0;
+    margin-left: 0;
+  }
+
+  /* Horizontal connector line with rounded corner (branch-like) */
+  #toc :global(.toc-list-item::before) {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    width: 0.75rem;
+    height: 2px;
+    background: #635C59;
+    transform: translateY(-50%);
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* Dot at the connection point */
+  #toc :global(.toc-list-item::after) {
+    content: '';
+    position: absolute;
+    left: -1.375rem;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background: rgb(var(--color-fill));
+    border: 2px solid #635C59;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+  }
+
+  /* Active item styling */
+  #toc :global(.is-active-link) {
+    font-weight: 600;
+    color: rgb(var(--color-text-active)) !important;
+  }
+
+  #toc :global(.is-active-link)::after {
+    background: rgb(var(--color-border-active));
+    border-color: rgb(var(--color-border-active));
+    box-shadow: 0 0 0 3px rgba(var(--color-border-active), 0.2);
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Hover effect */
+  #toc :global(.toc-link:hover) {
+    color: rgb(var(--color-text-active));
+  }
+
+  /* Different colors for different depths */
+  #toc :global(.is-collapsible .toc-list-item::after) {
+    background: rgb(var(--color-fill-secondary));
+  }
+
+  #toc :global(.is-collapsible .is-active-link)::after {
+    background: rgb(var(--color-border-active));
+  }
+
+  /* Nested list styling */
+  #toc :global(.toc-list .toc-list .toc-list-item::before) {
+    width: 0.5rem;
+    left: -1.25rem;
+    border-radius: 0 2px 2px 0;
+  }
+
+  #toc :global(.toc-list .toc-list .toc-list-item::after) {
+    left: -1.625rem;
+    width: 6px;
+    height: 6px;
+  }
 </style>
 
 <script>
