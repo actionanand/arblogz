@@ -464,8 +464,9 @@ const SectionSeparator = ({
         const words = finalTitle ? finalTitle.split(' ').filter(w => w.trim()) : [];
         const hasWords = words.length > 0;
         
-        // Calculate number of sections needed (minimum 3 folds for proper zigzag)
-        const numSections = hasWords ? Math.max(3, words.length) : 3;
+        // Calculate number of sections: each word needs an outer section + inner sections between
+        // For n words, we need 2n-1 sections (word, inner, word, inner, word)
+        const numSections = hasWords ? Math.max(3, words.length * 2 - 1) : 3;
         
         // Base skew angle
         const skewAngle = 11;
@@ -490,12 +491,11 @@ const SectionSeparator = ({
                 width: '100%'
               }}
             >
-              {(hasWords ? words : [...Array(numSections)]).map((item, index) => {
+              {[...Array(numSections)].map((_, index) => {
                 const isEven = index % 2 === 0;
-                const word = hasWords ? item : null;
                 const cutSize = Math.floor(sectionHeight / 2);
                 const isFirst = index === 0;
-                const isLast = index === (hasWords ? words.length : numSections) - 1;
+                const isLast = index === numSections - 1;
                 
                 // Determine clipPath based on position - INWARD cuts
                 let clipPath = 'none';
@@ -509,6 +509,10 @@ const SectionSeparator = ({
                   // Last section - inward notch on right only
                   clipPath = `polygon(0 0, calc(100% - ${cutSize}px) 0, 100% 50%, calc(100% - ${cutSize}px) 100%, 0 100%)`;
                 }
+                
+                // Get word for outer sections only (even indices)
+                const wordIndex = Math.floor(index / 2);
+                const word = (hasWords && isEven && wordIndex < words.length) ? words[wordIndex] : null;
                 
                 return (
                   <div
@@ -529,7 +533,7 @@ const SectionSeparator = ({
                       boxShadow: '0 2px 4px rgba(0,0,0,0.15)'
                     }}
                   >
-                    {hasWords && (
+                    {word && (
                       <span
                         style={{
                           fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif',
