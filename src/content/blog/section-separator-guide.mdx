@@ -175,7 +175,7 @@ Natural reading flow, arrow points right.
 <SectionSeparator position="center" />
 ```
 
-Centered ribbon, arrow like style (left side inward v cut and right side outward v cut) (for default/ribbon/stitched/notched & tag styles).
+Centered ribbon, asymmetric V-cuts (left side inward, right side outward) for default, ribbon, notched, bookmark, tag, and stitched styles.
 
 <SectionSeparator position="center" color="orange" style="tag" />
 
@@ -437,9 +437,12 @@ Extra breathing room.
 |------|------|---------|---------|
 | `style` | string | "ribbon" | ribbon, folded, notched, bookmark, tag, stitched, zigzag |
 | `position` | string | "left" | left, center, right |
-| `width` | string | "25%" | use the number which will be calculated in percentage |
+| `length` | number | 25 | any number (calculated as percentage) |
+| `height` | string | "normal" | thin, normal, thick |
 | `color` | string | "auto" | auto, emerald, blue, purple, pink, orange, red, yellow, green, indigo, teal, cyan, rose, or hex |
 | `spacing` | string | "normal" | tight, normal, loose |
+| `title` | string | "" | any text string |
+| `children` | node | - | markdown heading (requires `client:load`) |
 
 <HorizontalRuler variant="geometric" spacing="loose" />
 
@@ -570,22 +573,25 @@ Assign semantic meaning to colors:
 
 ### 5. Height Selection
 
-- **thin** → Suitable for lengthy ribbon without title or for section completion
-- **normal** → Standard/default width
-- **thick** → Important subsections
+- **thin** → Compact design, subtle separators
+- **normal** → Standard size for most use cases (default)
+- **thick** → Prominent separators for important sections
 
 <HorizontalRuler variant="flowers" spacing="loose" />
 
 ## ✨ Features
 
-- ✅ **7 ribbon styles** - Inspired by CSS ribbon patterns
-- ✅ **3 positions** - Left, center, right alignment
-- ✅ **2 height options** - thin, normal & thick
+- ✅ **7 ribbon styles** - Ribbon, folded, notched, bookmark, tag, stitched, zigzag
+- ✅ **3 positions** - Left, center, right alignment with smart V-cuts
+- ✅ **3 height options** - Thin (20px), normal (32px), thick (48px)
+- ✅ **3 spacing options** - Tight (16px), normal (24px), loose (40px)
 - ✅ **12 preset colors** + custom hex colors
 - ✅ **Auto theme detection** - Adapts to light/dark mode
-- ✅ **Pure CSS** - No images, all CSS shapes
+- ✅ **Text support** - Via `title` prop or markdown heading (with `client:load`)
+- ✅ **Pure CSS** - No images, all CSS shapes and gradients
 - ✅ **Lightweight** - Minimal performance impact
 - ✅ **Responsive** - Works on all screen sizes
+- ✅ **Zigzag special** - Dynamic word-based folding with gradient depth effect
 
 <SectionSeparator style="ribbon" color="emerald" spacing="loose" length={60} />
 
@@ -643,11 +649,11 @@ Use for: Categories, labels, prices
 ```
 Use for: Personal blogs, creative content
 
-**Zigzag** - Playful
+**Zigzag** - Playful and dynamic
 ```jsx
 <SectionSeparator style="zigzag" />
 ```
-Use for: Fun content, children's themes
+Use for: Fun content, creative sections. Text displays on outer (non-gradient) zigzag folds. Minimum 3 folds, increases with word count.
 
 **Happy blogging!** ✨
 
