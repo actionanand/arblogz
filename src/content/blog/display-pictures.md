@@ -17,6 +17,8 @@ This blog supports multiple ways to display images with optional lazy loading fo
 
 Lazy loading defers image loading until they're visible in the viewport, improving page load speed. Use the identifier `src="lazy"` for HTML or `![lazy](...)` for Markdown.
 
+> Lazy loaded images always will be center aligned
+
 ### HTML Lazy Load (Recommended)
 
 ```html
