@@ -14,6 +14,23 @@
   src: url('./JetBrainsMono-Regular.ttf');
 }
 
+/* Lazy loading spinner - center the spinner image */
+img[src*="spinner.svg"] {
+  display: block !important;
+  margin: 2rem auto !important;
+  width: 100px !important;
+  height: 100px !important;
+}
+
+/* For grid layouts, center spinner in the grid cell */
+.image-cols-2 img[src*="spinner.svg"],
+.image-cols-3 img[src*="spinner.svg"],
+.image-cols-4 img[src*="spinner.svg"] {
+  margin: auto !important;
+  width: 80px !important;
+  height: 80px !important;
+}
+
 /* Collapse/Details Component Styling */
 .remark-collapse {
   margin: 1rem 0;
