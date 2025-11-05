@@ -460,37 +460,80 @@ const SectionSeparator = ({
         );
 
       case "zigzag":
-        const zigzagSize = Math.max(8, s/2);
+        // Split title into words for zigzag effect
+        const words = finalTitle ? finalTitle.split(' ').filter(w => w.trim()) : [];
+        const hasWords = words.length > 0;
+        
+        // Calculate number of sections needed (minimum 3 folds for proper zigzag)
+        const numSections = hasWords ? Math.max(3, words.length) : 3;
+        
+        // Base skew angle
+        const skewAngle = 11;
+        
+        // Calculate dimensions
+        const sectionHeight = Math.max(s, 40);
+        
         return (
           <div
             style={{
-              width: ribbonLength,
-              height: `${s}px`,
-              background: ribbonColor,
               position: 'relative',
-              maskImage: !isFullWidth && position === "left"
-                ? `linear-gradient(135deg, ${ribbonColor} 25%, transparent 25%), 
-                   linear-gradient(225deg, ${ribbonColor} 25%, transparent 25%),
-                   linear-gradient(to left, ${ribbonColor}, ${ribbonColor})`
-                : !isFullWidth && position === "right"
-                ? `linear-gradient(135deg, transparent 25%, ${ribbonColor} 25%), 
-                   linear-gradient(225deg, transparent 25%, ${ribbonColor} 25%),
-                   linear-gradient(to right, ${ribbonColor}, ${ribbonColor})`
-                : 'none',
-              maskPosition: !isFullWidth && position === "left"
-                ? `right 0, right ${zigzagSize}px, 0 0`
-                : !isFullWidth && position === "right"
-                ? `left 0, left ${zigzagSize}px, 0 0`
-                : 'none',
-              maskSize: !isFullWidth && (position === "left" || position === "right")
-                ? `${zigzagSize}px ${zigzagSize}px, ${zigzagSize}px ${zigzagSize}px, calc(100% - ${zigzagSize * 2}px) 100%`
-                : 'none',
-              maskRepeat: 'repeat-y, repeat-y, no-repeat',
-              ...getPositionStyles(),
-              ...titleStyle
+              width: ribbonLength,
+              margin: position === 'center' ? '0 auto' : position === 'right' ? '0 0 0 auto' : '0 auto 0 0',
+              ...getPositionStyles()
             }}
           >
-            {hasTitle && finalTitle}
+            {/* Zigzag sections */}
+            <div
+              style={{
+                display: 'grid',
+                gridAutoRows: `${sectionHeight}px`,
+                width: '100%'
+              }}
+            >
+              {(hasWords ? words : [...Array(numSections)]).map((item, index) => {
+                const isEven = index % 2 === 0;
+                const word = hasWords ? item : null;
+                
+                return (
+                  <div
+                    key={index}
+                    style={{
+                      background: isEven 
+                        ? ribbonColor
+                        : `linear-gradient(135deg, ${ribbonColor} 0%, ${isDarkMode ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.15)'} 100%)`,
+                      lineHeight: `${sectionHeight}px`,
+                      textAlign: 'center',
+                      transform: isEven ? `skewY(${skewAngle}deg)` : `skewY(-${skewAngle}deg)`,
+                      zIndex: isEven ? 1 : 2,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      position: 'relative'
+                    }}
+                  >
+                    {hasWords && (
+                      <span
+                        style={{
+                          fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif',
+                          fontSize: height === 'thin' ? '14px' : height === 'thick' ? '20px' : '16px',
+                          fontWeight: '700',
+                          color: '#ffffff',
+                          transform: isEven ? `skewY(-${skewAngle}deg)` : `skewY(${skewAngle}deg)`,
+                          display: 'block',
+                          whiteSpace: 'nowrap',
+                          textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          padding: '0 20px'
+                        }}
+                      >
+                        {word}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         );
 
