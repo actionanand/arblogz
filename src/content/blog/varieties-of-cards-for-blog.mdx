@@ -23,6 +23,7 @@ Notebook Cards are React components that mimic the appearance of a physical note
 - **Vertical margin line** - Red left margin just like real notebooks
 - **Binding holes** - Circular cutouts on the left side
 - **Tape effect** - Decorative tape elements at top and bottom
+- **Text-only mode** - Optional image prop for pure note-taking experience
 - **Automatic dark mode** - Seamlessly adapts to your theme
 - **Responsive grid layout** - Works perfectly on all screen sizes
 
@@ -90,6 +91,30 @@ import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
 >
   <p>You can also use cards individually without a container for a full-width display.</p>
 </NotebookCard>
+
+#### Text-Only Card (No Image)
+
+You can skip the `image` prop to create a text-only notebook card - perfect when you don't have an image or want a pure note-taking experience:
+
+<NotebookCard 
+  title="Pure Text Notes"
+>
+  <p>This notebook card has no image, giving you more space for your content. Perfect for notes, thoughts, or text-heavy content.</p>
+  <p>The classic lined paper effect with the red margin line and binding holes creates that authentic notebook feel, even without an image.</p>
+  <p>Use this format for documentation, study notes, or any content where the text is the main focus.</p>
+</NotebookCard>
+
+**Text-Only Code Example:**
+
+```jsx
+<NotebookCard title="Your Notes">
+  <p>Your text content here - no image needed!</p>
+</NotebookCard>
+```
+
+**Design Credit:** Notebook design inspired by <cite>Codepen[^1]</cite>
+
+[^1]: Notebook design from [Codepen - Notebook Design](https://codepen.io/t_afif/pen/JjyBWqG)
 
 ---
 
@@ -190,6 +215,10 @@ import { FancyCard, FancyCardContainer } from '@/react/Cards';
   <p className="upcharge">Add premium features for $3 more.</p>
 </FancyCard>
 
+**Design Credit:** Fancy card design inspired by <cite>Codepen[^2]</cite>
+
+[^2]: Fancy card design from [Codepen - Fancy Design](https://codepen.io/brucebrotherton/pen/wvqjORe)
+
 ---
 
 ## 📄 Simple Cards
@@ -282,6 +311,10 @@ You can omit the `readMoreUrl` prop to display cards without the "Read more" lin
 </SimpleCard>
 ```
 
+**Design Credit:** Simple card design inspired by <cite>Codepen[^3]</cite>
+
+[^3]: Simple card design from [Codepen - Simple Article Cards](https://codepen.io/utilitybend/pen/bGvjLba)
+
 ---
 
 ---
@@ -298,7 +331,7 @@ You can omit the `readMoreUrl` prop to display cards without the "Read more" lin
 
 | Prop | Type | Required | Default | Description |
 |------|------|----------|---------|-------------|
-| `image` | string | Yes | - | URL or path to the image |
+| `image` | string | Notebook: No<br/>Fancy: Yes<br/>Simple: Yes | - | URL or path to the image. Optional for Notebook cards (text-only mode) |
 | `title` | string | Yes | - | Card heading/title |
 | `imageAlt` | string | No | `title` value | Alt text for accessibility |
 | `children` | ReactNode | Yes | - | Card content (paragraphs, HTML, etc.) |
@@ -345,13 +378,14 @@ You can omit the `readMoreUrl` prop to display cards without the "Read more" lin
 1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles
 2. **Consistent styling** - Stick to one card type per blog post
 3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum)
-4. **Descriptive alt text** - Improve accessibility and SEO
-5. **Concise titles** - Keep titles short and impactful
-6. **Balanced content** - Avoid overly long text in cards
-7. **Test both themes** - Preview in light and dark mode
-8. **Mobile-first** - Cards are responsive but test on mobile devices
-9. **Read more links** - Use meaningful URLs instead of '#' for Simple cards
-10. **Mix and match** - Combine single cards with containers for variety
+4. **Text-only notebooks** - Skip the image prop on Notebook cards for pure text content
+5. **Descriptive alt text** - Improve accessibility and SEO
+6. **Concise titles** - Keep titles short and impactful
+7. **Balanced content** - Avoid overly long text in cards
+8. **Test both themes** - Preview in light and dark mode
+9. **Mobile-first** - Cards are responsive but test on mobile devices
+10. **Read more links** - Use meaningful URLs instead of '#' for Simple cards
+11. **Mix and match** - Combine single cards with containers for variety
 
 ## 🚀 Coming Soon
 
@@ -361,16 +395,3 @@ We're working on additional card varieties:
 - **Info Cards** - Quick fact boxes
 - **Testimonial Cards** - Customer reviews
 - And more!
-
-## 🙏 Credits
-
-The designs were inspired by creative work on Codepen:
-- Notebook design inspired by <cite>Codepen[^1]</cite>
-- Fancy card design inspired by <cite>Codepen[^2]</cite>
-- Simple card design inspired by <cite>Codepen[^3]</cite>
-
-We've adapted and enhanced them with React, dark mode support, full responsiveness, and additional features.
-
-[^1]: Notebook design from [Codepen - Notebook Design](https://codepen.io/t_afif/pen/JjyBWqG)
-[^2]: Fancy card design from [Codepen - Fancy Design](https://codepen.io/brucebrotherton/pen/wvqjORe)
-[^3]: Simple card design from [Codepen - Simple Article Cards](https://codepen.io/utilitybend/pen/bGvjLba)

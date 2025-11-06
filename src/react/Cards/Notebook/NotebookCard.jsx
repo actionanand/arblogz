@@ -134,11 +134,13 @@ const NotebookCard = ({ image, title, children, imageAlt = '' }) => {
   return (
     <li style={cardItemStyle}>
       <div style={cardStyle}>
-        <div style={imageContainerStyle}>
-          <div style={tapeTopStyle}></div>
-          <div style={tapeBottomStyle}></div>
-          <img src={image} alt={imageAlt || title} style={imageStyle} />
-        </div>
+        {image && (
+          <div style={imageContainerStyle}>
+            <div style={tapeTopStyle}></div>
+            <div style={tapeBottomStyle}></div>
+            <img src={image} alt={imageAlt || title} style={imageStyle} />
+          </div>
+        )}
         <div style={contentStyle}>
           <h2 style={titleStyle}>{title}</h2>
           <div style={textStyle}>
