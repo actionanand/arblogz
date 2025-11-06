@@ -8,6 +8,7 @@ category: tutorial
 
 import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
 import { FancyCard, FancyCardContainer } from '@/react/Cards';
+import { SimpleCard, SimpleCardContainer } from '@/react/Cards';
 
 Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer two distinct card styles: **Notebook Cards** for a classic paper aesthetic and **Fancy Cards** for vibrant, animated displays. Let's explore both!
 
@@ -250,3 +251,34 @@ We've adapted and enhanced them with React, dark mode support, full responsivene
 [^1]: Notebook design from [Codepen - Notebook Design](https://codepen.io/t_afif/pen/JjyBWqG)
 [^2]: Fancy card design from [Codepen - Fancy Design](https://codepen.io/brucebrotherton/pen/wvqjORe)
 
+Simple card examples
+
+<SimpleCardContainer>
+  <SimpleCard 
+    image="https://picsum.photos/id/1011/800/450"
+    title="Mountain Adventure"
+    readMoreUrl="/blog/mountain-adventure"
+    imageAlt="Scenic mountain landscape"
+  >
+    <p>Explore the breathtaking views and challenging trails of the Rocky Mountains. 
+    Perfect for both beginners and experienced hikers.</p>
+  </SimpleCard>
+  
+  <SimpleCard 
+    image="https://picsum.photos/id/1005/800/450"
+    title="Ocean Retreat"
+    readMoreUrl="/blog/ocean-retreat"
+  >
+    <p>Discover tranquil beaches and crystal-clear waters. An ideal destination 
+    for relaxation and water sports enthusiasts.</p>
+  </SimpleCard>
+</SimpleCardContainer>
+
+  <SimpleCard 
+    image="https://picsum.photos/id/1005/800/450"
+    title="Ocean Retreat"
+    readMoreUrl="/blog/ocean-retreat"
+  >
+    <p>Discover tranquil beaches and crystal-clear waters. An ideal destination 
+    for relaxation and water sports enthusiasts.</p>
+  </SimpleCard>
