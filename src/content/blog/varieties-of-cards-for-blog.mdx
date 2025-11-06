@@ -1,6 +1,6 @@
 ---
 title: Beautiful Card Components for Your Blog Posts
-description: Learn how to use stunning card components including notebook-style and fancy animated cards to create visually appealing content displays in your MDX blog posts with automatic dark mode support.
+description: Learn how to use stunning card components including notebook-style, fancy animated cards, and simple article cards to create visually appealing content displays in your MDX blog posts with automatic dark mode support.
 date: 2025-11-06
 tags: [astro, react, cards, ui, design, mdx, animations]
 category: tutorial
@@ -10,7 +10,7 @@ import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
 import { FancyCard, FancyCardContainer } from '@/react/Cards';
 import { SimpleCard, SimpleCardContainer } from '@/react/Cards';
 
-Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer two distinct card styles: **Notebook Cards** for a classic paper aesthetic and **Fancy Cards** for vibrant, animated displays. Let's explore both!
+Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer three distinct card styles: **Notebook Cards** for a classic paper aesthetic, **Fancy Cards** for vibrant displays, and **Simple Cards** for clean, professional article layouts. Let's explore all three!
 
 ---
 
@@ -81,14 +81,23 @@ import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
 </NotebookCardContainer>
 ```
 
+#### Single Card Example
+
+<NotebookCard 
+  image="https://assets.codepen.io/652/photo-1544510808-91bcbee1df55.jpeg" 
+  title="Standalone Notebook Card"
+  imageAlt="Example of a single card"
+>
+  <p>You can also use cards individually without a container for a full-width display.</p>
+</NotebookCard>
+
 ---
 
 ## ✨ Fancy Cards
 
 ### What are Fancy Cards?
 
-Fancy Cards bring vibrant colors and smooth animations to your content displays:
-- **Animated title** - Flies down and enlarges when you hover over the card
+Fancy Cards bring vibrant colors to your content displays:
 - **Scale effect** - Card grows slightly on hover for emphasis
 - **Vibrant colors** - Purple, aqua, and violet color scheme
 - **Special styling** - Built-in support for upcharge and note elements
@@ -170,19 +179,122 @@ import { FancyCard, FancyCardContainer } from '@/react/Cards';
 <strong>This text will be aqua colored</strong>
 ```
 
+#### Single Card Example
+
+<FancyCard 
+  image="https://assets.codepen.io/652/photo-1468777675496-5782faaea55b.jpeg" 
+  title="Standalone Fancy Card • $12"
+  imageAlt="Single fancy card example"
+>
+  <p>You can use a single Fancy Card for <strong>featured content</strong> without a container.</p>
+  <p className="upcharge">Add premium features for $3 more.</p>
+</FancyCard>
+
+---
+
+## 📄 Simple Cards
+
+### What are Simple Cards?
+
+Simple Cards provide a clean, professional article-style layout perfect for content displays:
+- **Clean design** - Professional article-style layout
+- **Smooth animations** - Image zoom and icon slide effects on hover
+- **Read more link** - Optional call-to-action with animated arrow icon
+- **Responsive grid** - Automatically adjusts to available space
+- **Dark mode support** - Seamless theme switching
+- **Keyboard accessible** - Full tab navigation support
+- **Customizable** - Optional read more URL and alt text
+
+### 📦 Importing Simple Cards
+
+```jsx
+import { SimpleCard, SimpleCardContainer } from '@/react/Cards';
+```
+
+### 🎯 Simple Card Usage
+
+#### Multiple Cards in a Grid
+
+<SimpleCardContainer>
+  <SimpleCard 
+    image="https://picsum.photos/id/1011/800/450"
+    title="Mountain Adventure"
+    readMoreUrl="/blog/mountain-adventure"
+    imageAlt="Scenic mountain landscape"
+  >
+    <p>Explore the breathtaking views and challenging trails of the Rocky Mountains. Perfect for both beginners and experienced hikers.</p>
+  </SimpleCard>
+  
+  <SimpleCard 
+    image="https://picsum.photos/id/1005/800/450"
+    title="Ocean Retreat"
+    readMoreUrl="/blog/ocean-retreat"
+    imageAlt="Beautiful ocean view"
+  >
+    <p>Discover tranquil beaches and crystal-clear waters. An ideal destination for relaxation and water sports enthusiasts.</p>
+  </SimpleCard>
+
+  <SimpleCard 
+    image="https://picsum.photos/id/103/800/450"
+    title="City Exploration"
+    imageAlt="Urban cityscape"
+  >
+    <p>Experience vibrant city life with museums, restaurants, and cultural attractions. No read more link needed for this card.</p>
+  </SimpleCard>
+</SimpleCardContainer>
+
+**Code Example:**
+
+```jsx
+<SimpleCardContainer>
+  <SimpleCard 
+    image="image-url.jpg" 
+    title="Card Title"
+    readMoreUrl="/your-link"
+    imageAlt="Description"
+  >
+    <p>Your content here...</p>
+  </SimpleCard>
+</SimpleCardContainer>
+```
+
+#### Single Card Example
+
+<SimpleCard 
+  image="https://picsum.photos/id/1015/800/450"
+  title="Featured Article"
+  readMoreUrl="/blog/featured"
+  imageAlt="Featured content"
+>
+  <p>A standalone Simple Card works great for highlighting individual articles or featured content on your page.</p>
+</SimpleCard>
+
+#### Without Read More Button
+
+You can omit the `readMoreUrl` prop to display cards without the "Read more" link:
+
+```jsx
+<SimpleCard 
+  image="image.jpg" 
+  title="No Link Card"
+>
+  <p>This card has no read more button.</p>
+</SimpleCard>
+```
+
 ---
 
 ---
 
 ## 📋 Component Props Reference
 
-### Card Containers (Both Types)
+### Card Containers (All Types)
 
 | Prop | Type | Description |
 |------|------|-------------|
 | `children` | ReactNode | Card components to display in grid |
 
-### Card Components (Both Types)
+### Card Components (All Types)
 
 | Prop | Type | Required | Default | Description |
 |------|------|----------|---------|-------------|
@@ -190,20 +302,21 @@ import { FancyCard, FancyCardContainer } from '@/react/Cards';
 | `title` | string | Yes | - | Card heading/title |
 | `imageAlt` | string | No | `title` value | Alt text for accessibility |
 | `children` | ReactNode | Yes | - | Card content (paragraphs, HTML, etc.) |
+| `readMoreUrl` | string | No (Simple only) | - | Link URL for "Read more" button (Simple cards only) |
 
 ## ✨ Feature Comparison
 
-| Feature | Notebook Cards | Fancy Cards |
-|---------|---------------|-------------|
-| **Style** | Classic notebook paper | Modern vibrant design |
-| **Animations** | None | Title animation on hover |
-| **Colors** | Blue lines, red margin | Purple, aqua, violet |
-| **Special Classes** | No | `upcharge`, `note` |
-| **Typography** | Monospace | Georgia + Sans-serif |
-| **Best For** | Documentation, tutorials | Products, menus, promotions |
-| **Hover Effect** | None | Card scale + title animation |
-| **Dark Mode** | ✅ Yes | ✅ Yes |
-
+| Feature | Notebook Cards | Fancy Cards | Simple Cards |
+|---------|---------------|-------------|--------------|
+| **Style** | Classic notebook paper | Modern vibrant design | Clean professional |
+| **Animations** | None | Card scale on hover | Image zoom + icon slide |
+| **Colors** | Blue lines, red margin | Purple, aqua, violet | Theme-based minimal |
+| **Special Classes** | No | `upcharge`, `note` | No |
+| **Typography** | Monospace | Georgia + Sans-serif | System fonts |
+| **Best For** | Documentation, tutorials | Products, menus, promotions | Articles, blogs, news |
+| **Hover Effect** | None | Card scale | Image zoom + arrow animation |
+| **Read More Link** | No | No | Yes (optional) |
+| **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes |
 ## 💡 Use Cases
 
 ### Notebook Cards Perfect For:
@@ -220,9 +333,16 @@ import { FancyCard, FancyCardContainer } from '@/react/Cards';
 - **Event highlights** - Special occasions
 - **Premium content** - Featured items
 
+### Simple Cards Perfect For:
+- **Blog posts** - Article previews and summaries
+- **News items** - Latest updates and announcements
+- **Portfolio pieces** - Work samples and projects
+- **Resource links** - External content references
+- **General content** - Versatile for any use case
+
 ## 🎨 Tips for Best Results
 
-1. **Choose the right card** - Notebook for documentation, Fancy for products
+1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles
 2. **Consistent styling** - Stick to one card type per blog post
 3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum)
 4. **Descriptive alt text** - Improve accessibility and SEO
@@ -230,6 +350,8 @@ import { FancyCard, FancyCardContainer } from '@/react/Cards';
 6. **Balanced content** - Avoid overly long text in cards
 7. **Test both themes** - Preview in light and dark mode
 8. **Mobile-first** - Cards are responsive but test on mobile devices
+9. **Read more links** - Use meaningful URLs instead of '#' for Simple cards
+10. **Mix and match** - Combine single cards with containers for variety
 
 ## 🚀 Coming Soon
 
@@ -245,41 +367,10 @@ We're working on additional card varieties:
 The designs were inspired by creative work on Codepen:
 - Notebook design inspired by <cite>Codepen[^1]</cite>
 - Fancy card design inspired by <cite>Codepen[^2]</cite>
+- Simple card design inspired by <cite>Codepen[^3]</cite>
 
 We've adapted and enhanced them with React, dark mode support, full responsiveness, and additional features.
 
 [^1]: Notebook design from [Codepen - Notebook Design](https://codepen.io/t_afif/pen/JjyBWqG)
 [^2]: Fancy card design from [Codepen - Fancy Design](https://codepen.io/brucebrotherton/pen/wvqjORe)
-
-Simple card examples
-
-<SimpleCardContainer>
-  <SimpleCard 
-    image="https://picsum.photos/id/1011/800/450"
-    title="Mountain Adventure"
-    readMoreUrl="/blog/mountain-adventure"
-    imageAlt="Scenic mountain landscape"
-  >
-    <p>Explore the breathtaking views and challenging trails of the Rocky Mountains. 
-    Perfect for both beginners and experienced hikers.</p>
-  </SimpleCard>
-  
-  <SimpleCard 
-    image="https://picsum.photos/id/1005/800/450"
-    title="Ocean Retreat"
-    readMoreUrl="/blog/ocean-retreat"
-  >
-    <p>Discover tranquil beaches and crystal-clear waters. An ideal destination 
-    for relaxation and water sports enthusiasts.</p>
-  </SimpleCard>
-</SimpleCardContainer>
-
-without read more
-
-  <SimpleCard 
-    image="https://picsum.photos/id/1005/800/450"
-    title="Ocean Retreat"
-  >
-    <p>Discover tranquil beaches and crystal-clear waters. An ideal destination 
-    for relaxation and water sports enthusiasts.</p>
-  </SimpleCard>
+[^3]: Simple card design from [Codepen - Simple Article Cards](https://codepen.io/utilitybend/pen/bGvjLba)
