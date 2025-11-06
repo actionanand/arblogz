@@ -14,6 +14,22 @@
   src: url('./JetBrainsMono-Regular.ttf');
 }
 
+/* Mark/Highlight element styling */
+mark,
+.markdown-body mark {
+  background-color: #d4f4dd; /* Light green for light mode */
+  color: inherit;
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}
+
+/* Dark mode mark styling */
+html[data-theme="dark"] mark,
+html[data-theme="dark"] .markdown-body mark {
+  background-color: #1a4d2e; /* Dark green for dark mode */
+  color: #d4f4dd; /* Light green text for better contrast */
+}
+
 /* Lazy loading spinner - center the spinner image */
 img[data-src] {
   display: block !important;
