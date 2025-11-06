@@ -1,12 +1,46 @@
 ---
-title: Different varieties of cards for blog
+title: Beautiful Card Components for Your Blog Posts
+description: Learn how to use notebook-style card components to create visually stunning content displays in your MDX blog posts with automatic dark mode support.
 date: 2025-11-06
-tags: [astro, react, cards, ui, design]
+tags: [astro, react, cards, ui, design, mdx]
 category: tutorial
 ---
 
 import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
 
+Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in a visually appealing, organized manner. Let's explore the Notebook Card component – a beautiful way to display content with a unique paper-like aesthetic.
+
+## What are Notebook Cards?
+
+Notebook Cards are React components that mimic the appearance of a physical notebook page, complete with:
+- **Lined paper effect** - Horizontal blue lines for that classic notebook look
+- **Vertical margin line** - Red left margin just like real notebooks
+- **Binding holes** - Circular cutouts on the left side
+- **Tape effect** - Decorative tape elements at top and bottom
+- **Automatic dark mode** - Seamlessly adapts to your theme
+- **Responsive grid layout** - Works perfectly on all screen sizes
+
+## 📦 Importing the Components
+
+To use Notebook Cards in your MDX files, import both the card and container components:
+
+```jsx
+import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
+```
+
+**Alternative import with relative path:**
+
+```jsx
+import { NotebookCard, NotebookCardContainer } from "../../react/Cards";
+```
+
+> **Important:** Always use the `.mdx` file extension (not `.md`) when working with React components in your blog posts.
+
+## 🎯 Basic Usage
+
+### Multiple Cards in a Grid
+
+Wrap multiple `NotebookCard` components inside a `NotebookCardContainer` to create a responsive grid layout:
 
 <NotebookCardContainer>
   <NotebookCard 
@@ -40,16 +74,105 @@ import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
   </NotebookCard>
 </NotebookCardContainer>
 
-Single Notbook card
+**Code Example:**
 
+```jsx
+<NotebookCardContainer>
   <NotebookCard 
-    image="/avatar.png" 
-    title="Farmstand Salad • $9"
-    imageAlt="Mixed vegetable salad in a mason jar"
+    image="your-image-url.jpg" 
+    title="Card Title"
+    imageAlt="Description of the image"
   >
-    <p>Dig into the freshest veggies of the season! This salad-in-a-jar features a mixture of leafy greens and seasonal vegetables, fresh from the farmer's market.</p>
-    <p>Served with your choice of dressing on the side: housemade ranch, cherry balsamic vinaigrette, creamy chipotle, avocado green goddess, or honey mustard. Add your choice of protein for $2 more.</p>
+    <p>Your content here...</p>
   </NotebookCard>
 
-  The above notebook style was inspired from <cite>Codepen[^1]</cite>
-  [^1]: I got from [codepen](https://codepen.io/t_afif/pen/JjyBWqG)
+  <NotebookCard 
+    image="another-image.jpg" 
+    title="Another Card"
+    imageAlt="Another description"
+  >
+    <p>More content...</p>
+  </NotebookCard>
+</NotebookCardContainer>
+```
+
+### Single Card Display
+
+You can also use a single Notebook Card without the container for standalone displays:
+
+<NotebookCard 
+  image="/avatar.png" 
+  title="Featured Content"
+  imageAlt="Sample featured image"
+>
+  <p>Dig into the freshest veggies of the season! This salad-in-a-jar features a mixture of leafy greens and seasonal vegetables, fresh from the farmer's market.</p>
+  <p>Served with your choice of dressing on the side: housemade ranch, cherry balsamic vinaigrette, creamy chipotle, avocado green goddess, or honey mustard. Add your choice of protein for $2 more.</p>
+</NotebookCard>
+
+**Code Example:**
+
+```jsx
+<NotebookCard 
+  image="/your-image.png" 
+  title="Your Title"
+  imageAlt="Your alt text"
+>
+  <p>Your content here...</p>
+</NotebookCard>
+```
+
+## 📋 Component Props
+
+### NotebookCardContainer
+
+The container creates a responsive grid layout for multiple cards.
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `children` | ReactNode | NotebookCard components to display |
+
+### NotebookCard
+
+Individual card component with notebook styling.
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `image` | string | Yes | - | URL or path to the image |
+| `title` | string | Yes | - | Card heading/title |
+| `imageAlt` | string | No | `title` value | Alt text for accessibility |
+| `children` | ReactNode | Yes | - | Card content (paragraphs, HTML, etc.) |
+
+## ✨ Key Features
+
+- **Responsive Design**: Automatically adjusts to screen size with grid auto-fit
+- **Dark Mode Support**: Seamlessly switches colors based on your theme
+- **Accessibility**: Proper alt text support for images
+- **Flexible Content**: Accepts any valid JSX/HTML in the content area
+- **Monospace Font**: Classic notebook aesthetic with monospace typography
+- **No CSS Conflicts**: Uses inline styles following best practices
+
+## 💡 Use Cases
+
+Notebook Cards are perfect for:
+- **Product showcases** - Display items with images and descriptions
+- **Recipe collections** - Share cooking recipes with beautiful photos
+- **Portfolio pieces** - Highlight your work with project cards
+- **Team members** - Introduce your team with profile cards
+- **Resource listings** - Curate tools, books, or articles
+- **Tutorial steps** - Break down complex processes visually
+
+## 🎨 Coming Soon
+
+We're working on additional card varieties to give you even more design options:
+- Profile Cards
+- Gallery Cards
+- Info Cards
+- and more!
+
+Stay tuned for updates as we expand our card component library.
+
+## 🙏 Credits
+
+The notebook-style design was inspired by creative work on <cite>Codepen[^1]</cite>. We've adapted and enhanced it with React, dark mode support, and full responsiveness.
+
+[^1]: Original inspiration from [Codepen - Notebook Design](https://codepen.io/t_afif/pen/JjyBWqG)
