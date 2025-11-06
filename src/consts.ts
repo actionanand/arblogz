@@ -265,7 +265,7 @@ export const donate = {
   // if you don't want some payment, comment it out
   // wechatQRCode: `${baseUrl}/images/donation/wechat-qr.png`,
   // alipayQRCode: `${baseUrl}/images/donation/alipay-qr.png`, 
-  gpayQRCode: `/images/donation/gpay-qr.png`, // Google Pay for India
+  gpayQRCode: `${baseUrl}/images/donation/gpay-qr.png`, // Google Pay for India
   // paytmQRCode: `${baseUrl}/images/donation/paytm-qr.png`, // Paytm for India
   // phonepeQRCode: `${baseUrl}/images/donation/phonepe-qr.png`, // PhonePe for India
   
