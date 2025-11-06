@@ -989,20 +989,24 @@
    position: relative;
  }
 
+ /* Removed blue border on footnote target - replaced with green highlight via JavaScript */
  .markdown-body .footnotes li:target::before {
-   position: absolute;
-   top: -8px;
-   right: -8px;
-   bottom: -8px;
-   left: -24px;
-   pointer-events: none;
-   content: "";
-   border: 2px solid var(--color-accent-emphasis);
-   border-radius: 6px;
+   display: none;
  }
 
  .markdown-body .footnotes li:target {
    color: var(--color-fg-default);
+ }
+ 
+ /* Style footnote references and back arrows - remove underlines */
+ .markdown-body [data-footnote-ref],
+ .markdown-body [data-footnote-backref] {
+   text-decoration: none !important;
+ }
+ 
+ .markdown-body [data-footnote-ref]:hover,
+ .markdown-body [data-footnote-backref]:hover {
+   text-decoration: none !important;
  }
 
  .markdown-body .footnotes .data-footnote-backref g-emoji {
