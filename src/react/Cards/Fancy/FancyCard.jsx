@@ -126,7 +126,6 @@ const FancyCard = ({ image, title, children, imageAlt = '' }) => {
     fontFamily: 'Georgia, Times, serif',
     fontWeight: '600',
     fontSize: isHovered ? '2rem' : '1.325rem',
-    position: 'relative',
     overflow: 'hidden',
     zIndex: 1,
     backgroundColor: 'rgba(253, 73, 160, 0.75)',
