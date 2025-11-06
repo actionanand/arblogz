@@ -997,6 +997,17 @@
  .markdown-body .footnotes li:target {
    color: var(--color-fg-default);
  }
+ 
+ /* Style footnote references and back arrows - remove underlines */
+ .markdown-body [data-footnote-ref],
+ .markdown-body [data-footnote-backref] {
+   text-decoration: none !important;
+ }
+ 
+ .markdown-body [data-footnote-ref]:hover,
+ .markdown-body [data-footnote-backref]:hover {
+   text-decoration: none !important;
+ }
 
  .markdown-body .footnotes .data-footnote-backref g-emoji {
    font-family: monospace;
