@@ -1,17 +1,21 @@
 ---
 title: Beautiful Card Components for Your Blog Posts
-description: Learn how to use notebook-style card components to create visually stunning content displays in your MDX blog posts with automatic dark mode support.
+description: Learn how to use stunning card components including notebook-style and fancy animated cards to create visually appealing content displays in your MDX blog posts with automatic dark mode support.
 date: 2025-11-06
-tags: [astro, react, cards, ui, design, mdx]
+tags: [astro, react, cards, ui, design, mdx, animations]
 category: tutorial
 ---
 
 import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
 import { FancyCard, FancyCardContainer } from '@/react/Cards';
 
-Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in a visually appealing, organized manner. Let's explore the Notebook Card component – a beautiful way to display content with a unique paper-like aesthetic.
+Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer two distinct card styles: **Notebook Cards** for a classic paper aesthetic and **Fancy Cards** for vibrant, animated displays. Let's explore both!
 
-## What are Notebook Cards?
+---
+
+## 📒 Notebook Cards
+
+### What are Notebook Cards?
 
 Notebook Cards are React components that mimic the appearance of a physical notebook page, complete with:
 - **Lined paper effect** - Horizontal blue lines for that classic notebook look
@@ -21,27 +25,17 @@ Notebook Cards are React components that mimic the appearance of a physical note
 - **Automatic dark mode** - Seamlessly adapts to your theme
 - **Responsive grid layout** - Works perfectly on all screen sizes
 
-## 📦 Importing the Components
-
-To use Notebook Cards in your MDX files, import both the card and container components:
+### 📦 Importing Notebook Cards
 
 ```jsx
 import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
 ```
 
-**Alternative import with relative path:**
-
-```jsx
-import { NotebookCard, NotebookCardContainer } from "../../react/Cards";
-```
-
 > **Important:** Always use the `.mdx` file extension (not `.md`) when working with React components in your blog posts.
 
-## 🎯 Basic Usage
+### 🎯 Notebook Card Usage
 
-### Multiple Cards in a Grid
-
-Wrap multiple `NotebookCard` components inside a `NotebookCardContainer` to create a responsive grid layout:
+#### Multiple Cards in a Grid
 
 <NotebookCardContainer>
   <NotebookCard 
@@ -60,8 +54,6 @@ Wrap multiple `NotebookCard` components inside a `NotebookCardContainer` to crea
   >
     <p>All great meals take time, but this one takes it to the next level! More than 650 hours of fermenting, brining, aging, and curing goes into each and every one of our legendary Reuben sandwiches.</p>
     <p>Every element of this extraordinary sandwich is handcrafted in our kitchens, from the rye bread baked from our secret recipe to the cave-aged Swiss cheese, right down to the pickle.</p>
-    <p>This unforgettable sandwich has all of the classic Reuben elements: corned beef, rye bread, creamy Russian dressing, sauerkraut, plus a sweet gherkin pickle. No substitutions please!</p>
-    <p>Add a side of french fries or sweet potato fries for $2 more, or our housemade pub chips for $1.</p>
   </NotebookCard>
 
   <NotebookCard 
@@ -69,7 +61,6 @@ Wrap multiple `NotebookCard` components inside a `NotebookCardContainer` to crea
     title="Fig & Berry Plate • $16"
     imageAlt="A side view of a plate of figs and berries"
   >
-    <p><strong>Seasonal.</strong></p>
     <p>A succulent sextet of fresh figs join with a selection of bodacious seasonal berries in this refreshing, shareable dessert.</p>
     <p>Choose your drizzle: cherry-balsamic vinegar, local honey, or housemade chocolate sauce.</p>
   </NotebookCard>
@@ -86,97 +77,32 @@ Wrap multiple `NotebookCard` components inside a `NotebookCardContainer` to crea
   >
     <p>Your content here...</p>
   </NotebookCard>
-
-  <NotebookCard 
-    image="another-image.jpg" 
-    title="Another Card"
-    imageAlt="Another description"
-  >
-    <p>More content...</p>
-  </NotebookCard>
 </NotebookCardContainer>
 ```
 
-### Single Card Display
+---
 
-You can also use a single Notebook Card without the container for standalone displays:
+## ✨ Fancy Cards
 
-<NotebookCard 
-  image="/avatar.png" 
-  title="Featured Content"
-  imageAlt="Sample featured image"
->
-  <p>Dig into the freshest veggies of the season! This salad-in-a-jar features a mixture of leafy greens and seasonal vegetables, fresh from the farmer's market.</p>
-  <p>Served with your choice of dressing on the side: housemade ranch, cherry balsamic vinaigrette, creamy chipotle, avocado green goddess, or honey mustard. Add your choice of protein for $2 more.</p>
-</NotebookCard>
+### What are Fancy Cards?
 
-**Code Example:**
+Fancy Cards bring vibrant colors and smooth animations to your content displays:
+- **Animated title** - Flies down and enlarges when you hover over the card
+- **Scale effect** - Card grows slightly on hover for emphasis
+- **Vibrant colors** - Purple, aqua, and violet color scheme
+- **Special styling** - Built-in support for upcharge and note elements
+- **Drop cap** - First letter of first paragraph is enlarged
+- **Scrollable content** - Custom scrollbar for longer content
+- **Dark mode support** - Automatically adapts colors
+- **Keyboard accessible** - Full tab navigation support
+
+### 📦 Importing Fancy Cards
 
 ```jsx
-<NotebookCard 
-  image="/your-image.png" 
-  title="Your Title"
-  imageAlt="Your alt text"
->
-  <p>Your content here...</p>
-</NotebookCard>
+import { FancyCard, FancyCardContainer } from '@/react/Cards';
 ```
 
-## 📋 Component Props
-
-### NotebookCardContainer
-
-The container creates a responsive grid layout for multiple cards.
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ReactNode | NotebookCard components to display |
-
-### NotebookCard
-
-Individual card component with notebook styling.
-
-| Prop | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| `image` | string | Yes | - | URL or path to the image |
-| `title` | string | Yes | - | Card heading/title |
-| `imageAlt` | string | No | `title` value | Alt text for accessibility |
-| `children` | ReactNode | Yes | - | Card content (paragraphs, HTML, etc.) |
-
-## ✨ Key Features
-
-- **Responsive Design**: Automatically adjusts to screen size with grid auto-fit
-- **Dark Mode Support**: Seamlessly switches colors based on your theme
-- **Accessibility**: Proper alt text support for images
-- **Flexible Content**: Accepts any valid JSX/HTML in the content area
-- **Monospace Font**: Classic notebook aesthetic with monospace typography
-- **No CSS Conflicts**: Uses inline styles following best practices
-
-## 💡 Use Cases
-
-Notebook Cards are perfect for:
-- **Product showcases** - Display items with images and descriptions
-- **Recipe collections** - Share cooking recipes with beautiful photos
-- **Portfolio pieces** - Highlight your work with project cards
-- **Team members** - Introduce your team with profile cards
-- **Resource listings** - Curate tools, books, or articles
-- **Tutorial steps** - Break down complex processes visually
-
-## 🎨 Coming Soon
-
-We're working on additional card varieties to give you even more design options:
-- Profile Cards
-- Gallery Cards
-- Info Cards
-- and more!
-
-Stay tuned for updates as we expand our card component library.
-
-## 🙏 Credits
-
-The notebook-style design was inspired by creative work on <cite>Codepen[^1]</cite>. We've adapted and enhanced it with React, dark mode support, and full responsiveness.
-
-[^1]: Original inspiration from [Codepen - Notebook Design](https://codepen.io/t_afif/pen/JjyBWqG)
+### 🎯 Fancy Card Usage
 
 <FancyCardContainer>
   <FancyCard 
@@ -211,17 +137,116 @@ The notebook-style design was inspired by creative work on <cite>Codepen[^1]</ci
   </FancyCard>
 </FancyCardContainer>
 
-  <FancyCard 
-    image="https://assets.codepen.io/652/photo-1544510808-91bcbee1df55.jpeg" 
-    title="Fig & Berry Plate • $16"
-    imageAlt="A side view of a plate of figs and berries"
-  >
-    <span className="note">Seasonal.</span>
-    <p>A succulent sextet of fresh figs join with a selection of bodacious seasonal berries in this refreshing, shareable dessert.</p>
-    <p>Choose your drizzle: <strong>cherry-balsamic vinegar, local honey, or housemade chocolate sauce.</strong></p>
-  </FancyCard>
-  
-  The fancy card design was inspired by creative work on <cite>Codepen[^2]</cite>.
+**Code Example:**
 
-  [^2]: Original inspiration from [Codepen - Fancy Design](https://codepen.io/brucebrotherton/pen/wvqjORe)
+```jsx
+<FancyCardContainer>
+  <FancyCard 
+    image="image-url.jpg" 
+    title="Card Title • $9"
+  >
+    <p>Regular text with <strong>highlighted text in aqua</strong>.</p>
+    <p className="upcharge">Additional cost information.</p>
+    <span className="note">Special seasonal note.</span>
+  </FancyCard>
+</FancyCardContainer>
+```
+
+### Special Classes for Fancy Cards
+
+**Upcharge Class** - Highlight pricing information:
+```jsx
+<p className="upcharge">Add extra toppings for $2 more.</p>
+```
+
+**Note Class** - Display important seasonal or special notes:
+```jsx
+<span className="note">Limited Time Only!</span>
+```
+
+**Strong Tags** - Automatically styled in aqua color:
+```jsx
+<strong>This text will be aqua colored</strong>
+```
+
+---
+
+---
+
+## 📋 Component Props Reference
+
+### Card Containers (Both Types)
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `children` | ReactNode | Card components to display in grid |
+
+### Card Components (Both Types)
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `image` | string | Yes | - | URL or path to the image |
+| `title` | string | Yes | - | Card heading/title |
+| `imageAlt` | string | No | `title` value | Alt text for accessibility |
+| `children` | ReactNode | Yes | - | Card content (paragraphs, HTML, etc.) |
+
+## ✨ Feature Comparison
+
+| Feature | Notebook Cards | Fancy Cards |
+|---------|---------------|-------------|
+| **Style** | Classic notebook paper | Modern vibrant design |
+| **Animations** | None | Title animation on hover |
+| **Colors** | Blue lines, red margin | Purple, aqua, violet |
+| **Special Classes** | No | `upcharge`, `note` |
+| **Typography** | Monospace | Georgia + Sans-serif |
+| **Best For** | Documentation, tutorials | Products, menus, promotions |
+| **Hover Effect** | None | Card scale + title animation |
+| **Dark Mode** | ✅ Yes | ✅ Yes |
+
+## 💡 Use Cases
+
+### Notebook Cards Perfect For:
+- **Documentation** - Technical guides and tutorials
+- **Notes and tips** - Educational content
+- **Code snippets** - Programming examples
+- **Study materials** - Learning resources
+- **Journal entries** - Blog posts with personal touch
+
+### Fancy Cards Perfect For:
+- **Product showcases** - E-commerce displays
+- **Restaurant menus** - Food and drink items
+- **Service offerings** - Business promotions
+- **Event highlights** - Special occasions
+- **Premium content** - Featured items
+
+## 🎨 Tips for Best Results
+
+1. **Choose the right card** - Notebook for documentation, Fancy for products
+2. **Consistent styling** - Stick to one card type per blog post
+3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum)
+4. **Descriptive alt text** - Improve accessibility and SEO
+5. **Concise titles** - Keep titles short and impactful
+6. **Balanced content** - Avoid overly long text in cards
+7. **Test both themes** - Preview in light and dark mode
+8. **Mobile-first** - Cards are responsive but test on mobile devices
+
+## 🚀 Coming Soon
+
+We're working on additional card varieties:
+- **Profile Cards** - Team member showcases
+- **Gallery Cards** - Image-focused displays
+- **Info Cards** - Quick fact boxes
+- **Testimonial Cards** - Customer reviews
+- And more!
+
+## 🙏 Credits
+
+The designs were inspired by creative work on Codepen:
+- Notebook design inspired by <cite>Codepen[^1]</cite>
+- Fancy card design inspired by <cite>Codepen[^2]</cite>
+
+We've adapted and enhanced them with React, dark mode support, full responsiveness, and additional features.
+
+[^1]: Notebook design from [Codepen - Notebook Design](https://codepen.io/t_afif/pen/JjyBWqG)
+[^2]: Fancy card design from [Codepen - Fancy Design](https://codepen.io/brucebrotherton/pen/wvqjORe)
 
