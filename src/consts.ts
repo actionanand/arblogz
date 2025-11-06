@@ -265,7 +265,7 @@ export const donate = {
   // if you don't want some payment, comment it out
   // wechatQRCode: `${baseUrl}/images/donation/wechat-qr.png`,
   // alipayQRCode: `${baseUrl}/images/donation/alipay-qr.png`, 
-  gpayQRCode: `${baseUrl}/images/donation/gpay-qr.png`, // Google Pay for India
+  gpayQRCode: `/images/donation/gpay-qr.png`, // Google Pay for India
   // paytmQRCode: `${baseUrl}/images/donation/paytm-qr.png`, // Paytm for India
   // phonepeQRCode: `${baseUrl}/images/donation/phonepe-qr.png`, // PhonePe for India
   
@@ -353,9 +353,9 @@ export const comment = {
 // Try using the excellent https://squoosh.app web app for creating small webp files
 
 export const characters = {
-  owl: `${baseUrl}/admonitions/owl.webp`,
-  unicorn: `${baseUrl}/admonitions/unicorn.webp`,
-  duck: `${baseUrl}/admonitions/duck.webp`,
+  owl: `/admonitions/owl.webp`,
+  unicorn: `/admonitions/unicorn.webp`,
+  duck: `/admonitions/duck.webp`,
 }
 
 /**
