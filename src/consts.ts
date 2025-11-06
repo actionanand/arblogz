@@ -263,11 +263,11 @@ export const donate = {
   
   // QR Code images (place in /public/images/donation/)
   // if you don't want some payment, comment it out
-  wechatQRCode: `/images/donation/wechat-qr.png`,
-  alipayQRCode: `/images/donation/alipay-qr.png`, 
-  gpayQRCode: `/images/donation/gpay-qr.png`, // Google Pay for India
-  paytmQRCode: `/images/donation/paytm-qr.png`, // Paytm for India
-  phonepeQRCode: `/images/donation/phonepe-qr.png`, // PhonePe for India
+  wechatQRCode: `${baseUrl}/images/donation/wechat-qr.png`,
+  alipayQRCode: `${baseUrl}/images/donation/alipay-qr.png`, 
+  gpayQRCode: `${baseUrl}/images/donation/gpay-qr.png`, // Google Pay for India
+  paytmQRCode: `${baseUrl}/images/donation/paytm-qr.png`, // Paytm for India
+  phonepeQRCode: `${baseUrl}/images/donation/phonepe-qr.png`, // PhonePe for India
 
   // Direct payment URLs
   paypalUrl: "https://paypal.me/yourusername", // Replace with actual
