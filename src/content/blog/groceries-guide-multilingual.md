@@ -1,13 +1,13 @@
 ---
 title: "Complete Groceries Guide - Multilingual"
-description: "Comprehensive guide to groceries including rice varieties, pulses (dal), spices, and vegetables with names in Tamil, English, Kannada, and Hindi. Learn to identify different pulses and understand regional terminology!"
+description: "Comprehensive guide to groceries including rice varieties, pulses (dal), spices, vegetables, fruits, nuts, and sprouts with names in Tamil, English, Kannada, and Hindi. Learn to identify different pulses and understand regional terminology!"
 date: 2025-11-07
-tags: ["groceries", "pulses", "spices", "vegetables", "multilingual", "indian cuisine", "reference", "fruites"]
+tags: ["groceries", "pulses", "spices", "vegetables", "fruits", "multilingual", "indian cuisine", "reference"]
 category: Indian Cuisine
 ogImage: /images/year-2025/groceries.webp
 ---
 
-A complete reference guide for grocery items including rice, pulses (dal), spices, and vegetables across Tamil, English, Kannada, and Hindi languages. Perfect for shopping, cooking, and expanding your culinary vocabulary!
+A complete reference guide for grocery items including rice, pulses (dal), spices, vegetables, fruits, nuts, and more across Tamil, English, Kannada, and Hindi languages. Perfect for shopping, cooking, and expanding your culinary vocabulary!
 
 :::tip[Quick Navigation]
 Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred language!
@@ -22,6 +22,8 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
 | **Rice (General)** | அரிசி (Arisi) | ಅಕ್ಕಿ (Akki) | चावल (Chawal) |
+| **Raw Rice / Unboiled Rice** | பச்சை அரிசி (Pachai Arisi) | ಹಸಿ ಅಕ್ಕಿ (Hasi Akki) | कच्चा चावल (Kaccha Chawal) |
+| **Paddy / Unhusked Rice** | நெல் (Nel) | ಧಾನ್ಯ (Dhaanya) | धान (Dhaan) |
 | **Brown Rice** | கைக்குத்தல் அரிசி (Kaikutthal Arisi) | ಕಂದು ಅಕ್ಕಿ (Kandu Akki) | ब्राउन चावल (Brown Chawal) |
 | **Red Rice** | சிவப்பு அரிசி (Sivappu Arisi) | ಕೆಂಪು ಅಕ್ಕಿ (Kempu Akki) | लाल चावल (Laal Chawal) |
 | **Black Rice** | கருப்பு அரிசி (Karuppu Arisi) | ಕಪ್ಪು ಅಕ್ಕಿ (Kappu Akki) | काला चावल (Kaala Chawal) |
@@ -32,9 +34,9 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 
 </div>
 
-Various rices types are Basmati Rice, Sona Masoori Rice, Ponni Rice, Chengalpattu rice, Jaya rice, chamba rice, karuppu kavuni
+There are various types of rice, including Basmati, Sona Masoori, Ponni, Chengalpattu, Jaya, Matta (Champa), Karuppu Kavuni, Seeraga Samba, Mapillai Samba, and more.
 
-> Rice is used to prepare rice pudding / Payasam (பாயசம்) / kheer (खीर) / payasa (ಪಾಯಸ)
+> **Beyond the bowl**: Rice isn't just a staple food—it transforms into heavenly desserts like Payasam (பாயசம்) / Kheer (खीर) / Payasa (ಪಾಯಸ) / Creamy Rice Pudding!
 
 ## 🫘 Pulses / Lentils / Dal (பருப்பு / ಬೇಳೆ / दाल)
 
@@ -54,25 +56,28 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 <div class="table-ocean-grid">
 
-| English Name | Tamil Name | Kannada Name | Hindi Name | Identification |
-|--------------|------------|--------------|------------|----------------|
-| **Toor Dal / Pigeon Pea** | துவரம் பருப்பு (Thuvaram Paruppu) | ತೊಗರಿ ಬೇಳೆ (Togari Bele) | तूर/अरहर दाल (Toor/Arhar Dal) | **Yellow, split, flat** - Most common dal, oily coating |
-| **Chana Dal / Bengal Gram** | கடலை பருப்பு (Kadalai Paruppu) | ಕಡಲೆ ಬೇಳೆ (Kadale Bele) | चना दाल (Chana Dal) | **Yellow, split, larger than toor** - Looks like split chickpea |
-| **Moong Dal (Split Yellow)** | பயத்தம் பருப்பு/பாசிப்பருப்பு/சிறு பருப்பு  (Payatham Paruppu) | ಹೆಸರು ಬೇಳೆ (Hesaru Bele) | मूंग दाल (Moong Dal) | **Small, yellow, split** - Tiny, light yellow, cooks fast |
-| **Green Moong (Green Gram)** | பச்சை பயறு (Pachai Payaru) | ಹಸಿರು ಹೆಸರು (Hasiru Hesaru) | साबुत मूंग (Saabut Moong) | **Small, green, oval** - Green skin, white inside |
-| **Urad Dal (Split White)** | உடைத்த உளுந்தம் பருப்பு/உடைத்த உருட்டு உளுந்து  (uluththam Paruppu/ Uruttu Ulunthu) | ಉದ್ದು ಬೇಳೆ (Uddu Bele) | उड़द दाल (Urad Dal) | **White, split, sticky** - Used for idli/dosa |
-| **Urad Dal (Whole Black)** | கருப்பு உளுந்து (Karuppu Ulundhu) | ಕಪ್ಪು ಉದ್ದು (Kappu Uddu) | साबुत उड़द (Saabut Urad) | **Black, small, oval** - Black skin, white inside |
-| **Masoor Dal (Red Lentils)** | மைசூர் பருப்பு/ சிவப்புப் பருப்பு/ கேசரி பருப்பு (Mysoor Paruppu) | ಮಸೂರ ಬೇಳೆ (Masoora Bele) | मसूर दाल (Masoor Dal) | **Orange-red, split, tiny** - Salmon/coral color |
-| **Whole Masoor (Brown)** | முழு மைசூர் பருப்பு (Muzhu Mysoor) | ಪೂರ್ಣ ಮಸೂರ (Poorna Masoora) | साबुत मसूर (Saabut Masoor) | **Brown, small, flat** - Greenish-brown skin |
-| **Rajma / Kidney Beans** | ராஜ்மா/ சிவப்பு காராமணி/ சிவப்பு தட்டைப்பயறு/ கிட்னி பீன்ஸ் (Rajma) | ರಾಜ್ಮಾ (Rajma) | राजमा (Rajma) | **Dark red, kidney-shaped, large** - Shiny surface |
-| **White Rajma** | வெள்ளை ராஜ்மா (Vellai Rajma) | ಬಿಳಿ ರಾಜ್ಮಾ (Bili Rajma) | सफेद राजमा (Safed Rajma) | **White, kidney-shaped** - Creamy white color |
-| **Chickpeas / Garbanzo** | கொண்டைக் கடலை (Kondai Kadalai) | ಕಡಲೆಕಾಳು (Kadalekalu) | काबुली चना (Kabuli Chana) | **Beige, round, bumpy** - Larger than other pulses |
-| **Black Chickpeas** | கருப்பு கடலை (Karuppu Kadalai) | ಕಪ್ಪು ಕಡಲೆ (Kappu Kadale) | काला चना (Kaala Chana) | **Dark brown, small, wrinkled** - Desi chickpea |
-| **Horse Gram** | கொள்ளு/ காணம்/ குதிரைப்பயறு (Kollu) | ಹುರುಳಿ (Huruli) | कुलथी (Kulthi) | **Brown, small, oval** - Used for rasam |
-| **Moth Beans** | நரிப்பயறு/ மோத் பீன்ஸ் (Moth Beans) | ಮಡಿಕೆ ಕಾಳು / ಮಡಕಿ ಕಾಳು (Madike kaalu/ Madaki kaalu) | मोठ (Moth) | **Small, oval, brown** - Tiny beans |
-| **Green Peas (Dried)** | பட்டாணி (Pattani) | ಬಟಾಣಿ (Batani) | मटर (Matar) | **Green, round, wrinkled** - Dried green peas |
-| **Black Eyed Peas** | காராமணி (Kaaramani) | ಅಲಸಂಡೆ (Alasande) | लोबिया (Lobia) | **White with black eye** - Distinctive black spot |
-| **Soya Chunks** | சோயா துண்டுகள் (Soya Thundugal) | ಸೋಯಾ ತುಂಡುಗಳು (Soya Thundugalu) | सोया चंक्स (Soya Chunks) | **Beige, porous, irregular** - Textured vegetable protein |
+| English Name | Tamil Name | Kannada Name | Hindi Name | Identification | Mostly Used For |
+|--------------|------------|--------------|------------|----------------|-----------------|
+| **Toor Dal / Pigeon Pea** | துவரம் பருப்பு (Thuvaram Paruppu) | ತೊಗರಿ ಬೇಳೆ (Togari Bele) | तूर/अरहर दाल (Toor/Arhar Dal) | **Yellow, split, flat** - Most common dal, oily coating | **Sambar, Dal Fry, Rasam** |
+| **Chana Dal / Bengal Gram** | கடலை பருப்பு (Kadalai Paruppu) | ಕಡಲೆ ಬೇಳೆ (Kadale Bele) | चना दाल (Chana Dal) | **Yellow, split, larger than toor** - Looks like split chickpea | **Dal, Halwa, Vada, Poriyal** |
+| **Moong Dal (Split Yellow)** | பயத்தம் பருப்பு/பாசிப்பருப்பு/சிறு பருப்பு  (Payatham Paruppu) | ಹೆಸರು ಬೇಳೆ (Hesaru Bele) | मूंग दाल (Moong Dal) | **Small, yellow, split** - Tiny, light yellow, cooks fast | **Khichdi, Dal, Dosa, Payasam** |
+| **Green Moong (Green Gram)** | பச்சை பயறு (Pachai Payaru) | ಹಸಿರು ಹೆಸರು (Hasiru Hesaru) | साबुत मूंग (Saabut Moong) | **Small, green, oval** - Green skin, white inside | **Sundal, Sprouts, Usili** |
+| **Urad Dal (Split White)** | உடைத்த உளுந்தம் பருப்பு/உடைத்த உருட்டு உளுந்து  (uluththam Paruppu/ Uruttu Ulunthu) | ಉದ್ದು ಬೇಳೆ (Uddu Bele) | उड़द दाल (Urad Dal) | **White, split, sticky** - Used for idli/dosa | **Idli, Dosa, Vada, Papad** |
+| **Urad Dal (Whole Black)** | முழு உளுந்து / கருப்பு உளுந்து / முழு உருட்டு உளுந்து (Karuppu Ulundhu / Muzhu Ulundhu) | ಕಪ್ಪು ಉದ್ದು (Kappu Uddu) | साबुत उड़द (Saabut Urad) | **Black, small, oval** - Black skin, white inside | **Dal Makhani, Tempering** |
+| **Masoor Dal (Red Lentils)** | மைசூர் பருப்பு/ சிவப்புப் பருப்பு/ கேசரி பருப்பு (Mysoor Paruppu) | ಮಸೂರ ಬೇಳೆ (Masoora Bele) | मसूर दाल (Masoor Dal) | **Orange-red, split, tiny** - Salmon/coral color | **Dal, Soup, Sambar** |
+| **Whole Masoor (Brown)** | முழு மைசூர் பருப்பு (Muzhu Mysoor) | ಪೂರ್ಣ ಮಸೂರ (Poorna Masoora) | साबुत मसूर (Saabut Masoor) | **Brown, small, flat** - Greenish-brown skin | **Dal, Curry** |
+| **Rajma / Kidney Beans** | ராஜ்மா/ சிவப்பு காராமணி/ சிவப்பு தட்டைப்பயறு/ கிட்னி பீன்ஸ் (Rajma) | ರಾಜ್ಮಾ (Rajma) | राजमा (Rajma) | **Dark red, kidney-shaped, large** - Shiny surface | **Rajma Masala, Curry** |
+| **White Rajma** | வெள்ளை ராஜ்மா (Vellai Rajma) | ಬಿಳಿ ರಾಜ್ಮಾ (Bili Rajma) | सफेद राजमा (Safed Rajma) | **White, kidney-shaped** - Creamy white color | **Salads, Soups, Curry** |
+| **Chickpeas / Garbanzo** | கொண்டைக் கடலை (Kondai Kadalai) | ಕಡಲೆಕಾಳು (Kadalekalu) | काबुली चना (Kabuli Chana) | **Beige, round, bumpy** - Larger than other pulses | **Chana Masala, Salads** |
+| **Black Chickpeas** | கருப்பு கடலை (Karuppu Kadalai) | ಕಪ್ಪು ಕಡಲೆ (Kappu Kadale) | काला चना (Kaala Chana) | **Dark brown, small, wrinkled** - Desi chickpea | **Sundal, Chaat, Curry** |
+| **Roasted Chickpeas** | பொட்டு கடலை (Pottu Kadalai) | ಪುಟಾಣಿ (Putani) | भुना चना (Bhuna Chana) | **Brown, roasted, crunchy** - Roasted Bengal gram | **Snacks, Chutney, Ladoo** |
+| **Horse Gram** | கொள்ளு/ காணம்/ குதிரைப்பயறு (Kollu) | ಹುರುಳಿ (Huruli) | कुलथी (Kulthi) | **Brown, small, oval** - Used for rasam | **Rasam, Soup, Salad** |
+| **Moth Beans** | நரிப்பயறு/ மோத் பீன்ஸ் (Moth Beans) | ಮಡಿಕೆ ಕಾಳು / ಮಡಕಿ ಕಾಳು (Madike kaalu/ Madaki kaalu) | मोठ (Moth) | **Small, oval, brown** - Tiny beans | **Curry, Sprouts** |
+| **Green Peas (Dried)** | பட்டாணி (Pattani) | ಬಟಾಣಿ (Batani) | मटर (Matar) | **Green, round, wrinkled** - Dried green peas | **Peas Masala, Pulao** |
+| **Black Eyed Peas** | காராமணி (Kaaramani) | ಅಲಸಂಡೆ (Alasande) | लोबिया (Lobia) | **White with black eye** - Distinctive black spot | **Sundal, Curry, Salad** |
+| **Lima Beans / Butter Beans** | மொச்சை பயறு (Mochai Payaru) | ಅವಳಕ್ಕಿ (Avalakki) | सेम की फली (Sem Ki Phali) | **Large, flat, white/green** - Creamy texture | **Curry, Stew** |
+| **Hyacinth Beans** | பெரும்பயறு (Perumpayaru) | ಅವರೆ ಕಾಳು (Avare Kaalu) | सेम (Sem) | **Large, flat, brown/white** - Field bean | **Curry, Sundal** |
+| **Soya Chunks** | சோயா துண்டுகள் (Soya Thundugal) | ಸೋಯಾ ತುಂಡುಗಳು (Soya Thundugalu) | सोया चंक्स (Soya Chunks) | **Beige, porous, irregular** - Textured vegetable protein | **Biryani, Curry, Stir-fry** |
 
 </div>
 
@@ -98,6 +103,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Mustard Seeds** | கடுகு (Kadugu) | ಸಾಸಿವೆ (Saasive) | राई / सरसों (Rai / Sarson) |
 | **Fenugreek Seeds** | வெந்தயம் (Vendhayam) | ಮೆಂತೆ (Menthe) | मेथी (Methi) |
 | **Fennel Seeds** | சோம்பு (Sombu) | ಸೋಂಪು (Sompu) | सौंफ (Saunf) |
+| **Anise / Aniseed** | பெருஞ்சீரகம் (Perunjeeragam) | ಸೋಂಪು (Sompu) | सौंफ़ (Saunf) |
 | **Black Pepper** | மிளகு/ நல்ல மிளகு / குறு மிளகு  (Milagu) | ಮೆಣಸು (Menasu) | काली मिर्च (Kaali Mirch) |
 | **Cardamom** | ஏலக்காய் (Elakai) | ಏಲಕ್ಕಿ (Elakki) | इलायची (Elaichi) |
 | **Cloves** | கிராம்பு (Kirambu) | ಲವಂಗ (Lavanga) | लौंग (Laung) |
@@ -109,6 +115,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Asafoetida** | பெருங்காயம் (Perungaayam) | ಹಿಂಗು (Hingu) | हींग (Hing) |
 | **Curry Leaves** | கறிவேப்பிலை (Kariveppilai) | ಕರಿಬೇವು (Karibevu) | करी पत्ता (Curry Patta) |
 | **Dry Mango Powder** | மாங்காய் தூள் (Maangai Thool) | ಮಾವಿನ ಪುಡಿ (Maavina Pudi) | आमचूर (Aamchur) |
+| **Dried Chillies** | மிளகாய் வற்றல் (Milagai Vatral) | ಒಣ ಮೆಣಸಿನಕಾಯಿ (Ona Menasinakayi) | सूखी मिर्च (Sukhi Mirch) |
 | **Garam Masala** | கரம் மசாலா (Garam Masala) | ಗರಂ ಮಸಾಲೆ (Garam Masale) | गरम मसाला (Garam Masala) |
 | **Sambar Powder** | சாம்பார் பொடி (Sambar Podi) | ಸಾಂಬಾರ್ ಪುಡಿ (Saambaru Pudi) | सांभर मसाला (Sambhar Masala) |
 | **Rasam Powder** | ரசப் பொடி (Rasam Podi) | ರಸಂ ಪುಡಿ (Rasam Pudi) | रसम पाउडर (Rasam Powder) |
@@ -154,6 +161,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Tomato** | தக்காளி (Thakkaali) | ಟೊಮೇಟೊ (Tomato) | टमाटर (Tamatar) |
 | **Potato** | உருளைக்கிழங்கு (Urulaikizhangu) | ಆಲೂಗೆಡ್ಡೆ (Aalugedde) | आलू (Aloo) |
 | **Onion** | வெங்காயம் (Vengayam) | ಈರುಳ್ಳಿ (Eerulli) | प्याज (Pyaaz) |
+| **Small Onions / Shallots** | சின்ன வெங்காயம் / சாம்பார் வெங்காயம் (Chinna Vengayam / Sambar Vengayam) | ಸಣ್ಣ ಈರುಳ್ಳಿ (Sanna Eerulli) | छोटा प्याज (Chhota Pyaaz) |
 | **Carrot** | கேரட் (Carrot) | ಕ್ಯಾರೆಟ್ (Carrot) | गाजर (Gaajar) |
 | **Beetroot** | பீட்ரூட் (Beetroot) | ಬೀಟ್ರೂಟ್ (Beetroot) | चुकंदर (Chukandar) |
 | **Radish** | முள்ளங்கி (Mullangi) | ಮೂಲಂಗಿ (Moolangi) | मूली (Mooli) |
@@ -170,6 +178,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Garlic** | பூண்டு (Poondu) | ಬೆಳ್ಳುಳ್ಳಿ (Bellulli) | लहसुन (Lahsun) |
 | **Ginger** | இஞ்சி (Inji) | ಶುಂಠಿ (Shunthi) | अदरक (Adrak) |
 | **Corn / Maize** | சோளம் (Solam) | ಮೆಕ್ಕೆಜೋಳ (Mekkejola) | मक्का (Makka) |
+| **Sambar Cucumber / Mangalore Cucumber** | சாம்பார் வெள்ளரி / மாங்காய் வெள்ளரி (Sambar Vellari) | ಸೌತೆಕಾಯಿ (Soutekayi) | खीरा (Kheera) |
 | **Sweet Potato** | சர்க்கரை வள்ளிக்கிழங்கு / சீனிக் கிழங்கு / வற்றாளை கிழங்கு (Sakkarai Vallikizhangu) | ಗೆಣಸು (Genasu) | शकरकंद (Shakarkand) |
 | **Yam / suran** | சேனைக்கிழங்கு (Senaikiizhangu) | ಸುರಣ (Surana) | जिमीकंद (Jimikand) |
 | **Tapioca / Cassava** | மரச்சினி கிழங்கு / மரவள்ளிக்கிழங்கு (Maravallikizhangu) | ಮರಗೆಣಸು (Maragenasu) | टैपिओका (Tapioca) |
@@ -187,7 +196,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 |--------------|------------|--------------|------------|
 | **Spinach** | பசலைக்கீரை (Pasalai Keerai) | ಸೊಪ್ಪು (Soppu) | पालक (Palak) |
 | **Fenugreek Leaves** | வெந்தயக்கீரை (Vendhaya Keerai) | ಮೆಂತೆ ಸೊಪ್ಪು (Menthe Soppu) | मेथी साग (Methi Saag) |
-| **Amaranth Leaves** | அரைக்கீரை (Arai Keerai) | ದಂಟು ಸೊಪ್ಪು (Dantu Soppu) | लाल साग (Laal Saag) |
+| **Amaranth Leaves / Red Spinach** | அரைக்கீரை / தண்டுக்கீரை (Arai Keerai / Thandu Keerai) | ದಂಟು ಸೊಪ್ಪು (Dantu Soppu) | लाल साग / चौलाई (Laal Saag / Chaulai) |
 | **Colocasia Leaves** | சேப்பங்கிழங்கு இலை (Seppan Keerai) | ಕೇಸವಿನ ಎಲೆ (Kesavina Ele) | अरबी पत्ता (Arbi Patta) |
 | **Dill Leaves** | சதகுப்பை (Sadhakuppai) | ಸಬ್ಬಸಿಗೆ ಸೊಪ್ಪು (Sabbasige Soppu) | सोआ (Sowa) |
 | **Moringa Leaves** | முருங்கைக்கீரை (Murungai Keerai) | ನುಗ್ಗೆ ಸೊಪ್ಪು (Nugge Soppu) | सहजन पत्ता (Sahjan Patta) |
@@ -230,6 +239,54 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 </div>
 
+### 🥜 Nuts & Seeds
+
+<div class="table-green-grid">
+
+| English Name | Tamil Name | Kannada Name | Hindi Name |
+|--------------|------------|--------------|------------|
+| **Cashew Nuts** | முந்திரி (Mundhiri) | ಗೋಡಂಬಿ (Godambi) | काजू (Kaju) |
+| **Almonds** | பாதாம் (Baadham) | ಬಾದಾಮಿ (Baadami) | बादाम (Badam) |
+| **Pistachios** | பிஸ்தா (Pista) | ಪಿಸ್ತಾ (Pista) | पिस्ता (Pista) |
+| **Walnuts** | அக்ரூட் (Akroot) | ಅಕ್ರೋಟು (Akrotu) | अखरोट (Akhrot) |
+| **Groundnuts / Peanuts** | நிலக்கடலை / வேர்க்கடலை (Nilakadalai) | ಕಡಲೆಕಾಯಿ (Kadalekayi) | मूंगफली (Moongphali) |
+| **Sesame Seeds** | எள் (Ellu) | ಎಳ್ಳು (Ellu) | तिल (Til) |
+| **Sunflower Seeds** | சூரியகாந்தி விதை (Sooriyakanthi Vidhai) | ಸೂರ್ಯಕಾಂತಿ ಬೀಜ (Sooryakanthi Beeja) | सूरजमुखी के बीज (Surajmukhi Ke Beej) |
+| **Pumpkin Seeds** | பூசணி விதை (Poosani Vidhai) | ಕುಂಬಳಕಾಯಿ ಬೀಜ (Kumbalakayi Beeja) | कद्दू के बीज (Kaddu Ke Beej) |
+| **Flax Seeds** | ஆளி விதை (Aali Vidhai) | ಅಗಸೆ ಬೀಜ (Agase Beeja) | अलसी (Alsi) |
+| **Chia Seeds** | சியா விதை (Chia Vidhai) | ಚಿಯಾ ಬೀಜ (Chia Beeja) | चिया बीज (Chia Beej) |
+
+</div>
+
+### 🌱 Sprouts (முளைக்கட்டிய பயறு / ಮೊಳಕೆ / अंकुरित)
+
+<div class="table-luxury-grid">
+
+| English Name | Tamil Name | Kannada Name | Hindi Name |
+|--------------|------------|--------------|------------|
+| **Moong Sprouts** | முளைக்கட்டிய பயறு (Mulaikattiya Payaru) | ಹಸಿರು ಹೆಸರು ಮೊಳಕೆ (Hasiru Hesaru Molake) | मूंग अंकुरित (Moong Ankurit) |
+| **Chickpea Sprouts** | முளைகட்டிய கொண்டைக்கடலை (Mulaikattiya Kondaikadalai) | ಕಡಲೆಕಾಳು ಮೊಳಕೆ (Kadalekalu Molake) | चना अंकुरित (Chana Ankurit) |
+| **Mixed Sprouts** | கலவை முளை (Kalavai Mulai) | ಮಿಶ್ರ ಮೊಳಕೆ (Mishra Molake) | मिक्स अंकुरित (Mix Ankurit) |
+| **Lentil Sprouts** | முளைகட்டிய பருப்பு (Mulaikattiya Paruppu) | ಬೇಳೆ ಮೊಳಕೆ (Bele Molake) | दाल अंकुरित (Dal Ankurit) |
+
+</div>
+
+### 🥒 Pickles & Preserves (ஊறுகாய் / ಉಪ್ಪಿನಕಾಯಿ / अचार)
+
+<div class="table-ocean-grid">
+
+| English Name | Tamil Name | Kannada Name | Hindi Name |
+|--------------|------------|--------------|------------|
+| **Pickle (General)** | ஊறுகாய் (Oorugai) | ಉಪ್ಪಿನಕಾಯಿ (Uppinakayi) | अचार (Achaar) |
+| **Mango Pickle** | மாங்காய் ஊறுகாய் (Maangai Oorugai) | ಮಾವಿನ ಉಪ್ಪಿನಕಾಯಿ (Maavina Uppinakayi) | आम का अचार (Aam Ka Achaar) |
+| **Lemon Pickle** | எலுமிச்சை ஊறுகாய் (Elumichai Oorugai) | ನಿಂಬೆ ಉಪ್ಪಿನಕಾಯಿ (Nimbe Uppinakayi) | नींबू अचार (Neembu Achaar) |
+| **Mixed Pickle** | கலவை ஊறுகாய் (Kalavai Oorugai) | ಮಿಶ್ರ ಉಪ್ಪಿನಕಾಯಿ (Mishra Uppinakayi) | मिक्स अचार (Mix Achaar) |
+| **Chili Pickle** | மிளகாய் ஊறுகாய் (Milagai Oorugai) | ಮೆಣಸಿನಕಾಯಿ ಉಪ್ಪಿನಕಾಯಿ (Menasinakayi Uppinakayi) | मिर्च अचार (Mirch Achaar) |
+| **Ginger Pickle** | இஞ்சி ஊறுகாய் (Inji Oorugai) | ಶುಂಠಿ ಉಪ್ಪಿನಕಾಯಿ (Shunthi Uppinakayi) | अदरक अचार (Adrak Achaar) |
+| **Garlic Pickle** | பூண்டு ஊறுகாய் (Poondu Oorugai) | ಬೆಳ್ಳುಳ್ಳಿ ಉಪ್ಪಿನಕಾಯಿ (Bellulli Uppinakayi) | लहसुन अचार (Lahsun Achaar) |
+
+</div>
+
 ### 🧂 Salt & Sugar
 
 <div class="table-luxury-grid">
@@ -241,6 +298,48 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Sugar** | சர்க்கரை (Sakkarai) | ಸಕ್ಕರೆ (Sakkare) | चीनी (Cheeni) |
 | **Jaggery** | வெல்லம் (Vellam) | ಬೆಲ್ಲ (Bella) | गुड़ (Gud) |
 | **Palm Jaggery** | பனங்கற்கண்டு (Panankarkandu) | ತಾಳೆ ಬೆಲ್ಲ (Taale Bella) | ताड़ गुड़ (Taad Gud) |
+
+</div>
+
+## 🍎 Fruits (பழங்கள் / ಹಣ್ಣುಗಳು / फल)
+
+### 🍊 Common Fruits
+
+<div class="table-sunset">
+
+| English Name | Tamil Name | Kannada Name | Hindi Name |
+|--------------|------------|--------------|------------|
+| **Apple** | ஆப்பிள் (Apple) | ಸೇಬು (Sebu) | सेब (Seb) |
+| **Banana** | வாழைப்பழம் (Vazhaipaazham) | ಬಾಳೆಹಣ್ಣು (Baalehannnu) | केला (Kela) |
+| **Mango** | மாம்பழம் (Maampazham) | ಮಾವಿನ ಹಣ್ಣು (Maavina Hannu) | आम (Aam) |
+| **Orange** | ஆரஞ்சு / ஆரஞ்சு பழம் (Orange) | ಕಿತ್ತಳೆ (Kitthale) | संतरा (Santara) |
+| **Grapes** | திராட்சை (Thiratchai) | ದ್ರಾಕ್ಷಿ (Draakshi) | अंगूर (Angoor) |
+| **Watermelon** | தர்பூசணி (Tharpoosani) | ಕಲ್ಲಂಗಡಿ (Kallangadi) | तरबूज (Tarbooz) |
+| **Muskmelon** | முலாம்பழம் (Mulaampazham) | ಮೋಸಂಬಿ (Mosambi) | खरबूज (Kharbooj) |
+| **Papaya** | பப்பாளி (Pappaali) | ಪರಂಗಿ (Parangi) | पपीता (Papita) |
+| **Pineapple** | அன்னாசிப்பழம் (Annaasippazham) | ಅನಾನಸ್ (Anaanas) | अनानास (Ananas) |
+| **Pomegranate** | மாதுளை (Maathulai) | ದಾಳಿಂಬೆ (Daalimbe) | अनार (Anaar) |
+| **Guava** | கொய்யா (Koyyaa) | ಸೀಬೆ (Seebe) | अमरूद (Amrud) |
+| **Sapota / Chikoo** | சப்போட்டா (Sapota) | ಸಪೋಟಾ (Sapota) | चीकू (Cheekoo) |
+| **Custard Apple** | சீதாப்பழம் (Seethappazham) | ಸೀತಾಫಲ (Seetaaphala) | सीताफल / शरीफा (Sitaphal / Sharifa) |
+| **Dragon Fruit** | டிராகன் பழம் (Dragon Fruit) | ಡ್ರಾಗನ್ ಫ್ರೂಟ್ (Dragon Fruit) | ड्रैगन फ्रूट (Dragon Fruit) |
+| **Strawberry** | ஸ்ட்ராபெரி (Strawberry) | ಸ್ಟ್ರಾಬೆರಿ (Strawberry) | स्ट्रॉबेरी (Strawberry) |
+| **Lychee** | லிச்சி (Litchi) | ಲಿಚಿ (Lichi) | लीची (Lychee) |
+| **Jackfruit** | பலாப்பழம் (Palaappazham) | ಹಲಸಿನ ಹಣ್ಣು (Halasina Hannu) | कटहल (Kathal) |
+| **Sweet Lime** | மோசம்பி (Mosambi) | ಮೋಸಂಬಿ (Mosambi) | मोसंबी (Mosambi) |
+| **Lemon** | எலுமிச்சை (Elumichai) | ನಿಂಬೆ (Nimbe) | नींबू (Neembu) |
+| **Coconut** | தேங்காய் (Thengai) | ತೆಂಗಿನಕಾಯಿ (Tenginakayi) | नारियल (Nariyal) |
+| **Tender Coconut** | இளநீர் (Ilaneer) | ಎಳನೀರು (Elaneeru) | नारियल पानी (Nariyal Paani) |
+| **Dates** | பேரீச்சம்பழம் (Perichampaazham) | ಖರ್ಜೂರ (Kharjura) | खजूर (Khajoor) |
+| **Fig** | அத்திப்பழம் (Aththippazham) | ಅಂಜೂರ (Anjoora) | अंजीर (Anjeer) |
+| **Peach** | பீச் (Peach) | ಪೀಚ್ (Peach) | आड़ू (Aadoo) |
+| **Plum** | ப்ளம் (Plum) | ಆಲೂಬುಖಾರಾ (Aaloobukhara) | आलूबुखारा (Aloo Bukhara) |
+| **Pear** | பேரிக்காய் (Perikkai) | ನಾಶಪಾತಿ (Naashpaati) | नाशपाती (Nashpati) |
+| **Kiwi** | கிவி (Kiwi) | ಕಿವಿ (Kivi) | कीवी (Kiwi) |
+| **Avocado** | வெண்ணெய் பழம் (Vennai Pazham) | ಬೆಣ್ಣೆ ಹಣ್ಣು (Benne Hannu) | एवोकाडो (Avocado) |
+| **Cherry** | செர்ரி (Cherry) | ಚೆರ್ರಿ (Cherry) | चेरी (Cherry) |
+| **Blackberry** | கருப்பு நெல்லிக்காய் (Karuppu Nellikkai) | ಕರಿ ಸೇಬು (Kari Sebu) | जामुन (Jamun) |
+| **Indian Gooseberry** | நெல்லிக்காய் (Nellikkai) | ನೆಲ್ಲಿಕಾಯಿ (Nellikayi) | आंवला (Amla) |
 
 </div>
 
