@@ -29,6 +29,10 @@ const COLOR_SCHEMES = {
   pink: {
     light: { bg: '#e91e63', dark: '#c2185b' },
     dark: { bg: '#a81650', dark: '#7a103a' }
+  },
+  gray: {
+    light: { bg: '#95a5a6', dark: '#7f8c8d' },
+    dark: { bg: '#5a6266', dark: '#4a5054' }
   }
 };
 

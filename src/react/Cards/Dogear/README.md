@@ -7,10 +7,10 @@ A unique text-only card component with distinctive folded corner (dogear) effect
 - **Text-Only Design** - Clean, focused content presentation without images
 - **Dogear Corners** - Distinctive folded corner effects (top-right and bottom-left)
 - **Shadow Effects** - Realistic drop shadows on dogear corners
-- **Customizable Colors** - 7 predefined color schemes + custom color support
+- **Customizable Colors** - 8 predefined color schemes + custom color support
+- **Background Matching** - Dogears adapt to your page background
 - **Dark Mode Support** - Automatic theme switching with adjusted colors
 - **Responsive Grid Layout** - Side-by-side cards that adapt to screen size
-- **No Background Override** - Works with your existing page background
 - **Typography** - Marvel font family with elegant styling
 
 ## Usage
@@ -21,34 +21,36 @@ A unique text-only card component with distinctive folded corner (dogear) effect
 import { DogearCard, DogearCardContainer } from '@/react/Cards';
 
 <DogearCardContainer>
-  <DogearCard title="Important Note">
+  <DogearCard title="Important Note" bgColor="#ffd700">
     <p>Your content goes here. This card is perfect for highlighting key information, notes, or text-heavy content.</p>
   </DogearCard>
   
-  <DogearCard title="Another Card">
+  <DogearCard title="Another Card" bgColor="#ffd700">
     <p>Add multiple cards to create a grid layout. Each card will have the distinctive dogear corners.</p>
   </DogearCard>
 </DogearCardContainer>
 ```
 
+**Important:** Set `bgColor` to match your page/container background for the dogear effect to work properly!
+
 ### With Predefined Colors
 
 ```jsx
 <DogearCardContainer>
-  <DogearCard title="Teal Card" color="teal">
+  <DogearCard title="Teal Card" color="teal" bgColor="white">
     <p>Default teal color scheme.</p>
   </DogearCard>
   
-  <DogearCard title="Blue Card" color="blue">
+  <DogearCard title="Gray Card" color="gray" bgColor="white">
+    <p>Neutral gray for general content.</p>
+  </DogearCard>
+  
+  <DogearCard title="Blue Card" color="blue" bgColor="white">
     <p>Beautiful blue color scheme.</p>
   </DogearCard>
   
-  <DogearCard title="Purple Card" color="purple">
+  <DogearCard title="Purple Card" color="purple" bgColor="white">
     <p>Elegant purple color scheme.</p>
-  </DogearCard>
-  
-  <DogearCard title="Orange Card" color="orange">
-    <p>Vibrant orange color scheme.</p>
   </DogearCard>
 </DogearCardContainer>
 ```
@@ -56,7 +58,7 @@ import { DogearCard, DogearCardContainer } from '@/react/Cards';
 ### With Custom Color
 
 ```jsx
-<DogearCard title="Custom Color" customColor="#ff6b6b">
+<DogearCard title="Custom Color" customColor="#ff6b6b" bgColor="#f0f0f0">
   <p>Use any custom color you want!</p>
 </DogearCard>
 ```
@@ -65,12 +67,13 @@ import { DogearCard, DogearCardContainer } from '@/react/Cards';
 
 ### DogearCard
 
-| Prop | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| `title` | string | Yes | - | Card heading/title (uppercase) |
-| `children` | ReactNode | Yes | - | Card content (text/paragraphs) |
-| `color` | string | No | `'teal'` | Predefined color scheme: `'teal'`, `'blue'`, `'purple'`, `'orange'`, `'green'`, `'red'`, `'pink'` |
-| `customColor` | string | No | - | Custom hex/rgb color (overrides `color` prop) |
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | string | required | The title text displayed at the top of the card |
+| `children` | ReactNode | required | The content of the card |
+| `color` | string | `'teal'` | Predefined color scheme (see available colors below) |
+| `customColor` | string | `undefined` | Custom hex color to override predefined schemes |
+| `bgColor` | string | `'transparent'` | **Important:** Set to match your page/container background for the dogear effect to work properly |
 
 ### DogearCardContainer
 
@@ -82,13 +85,14 @@ import { DogearCard, DogearCardContainer } from '@/react/Cards';
 
 | Color Name | Light Mode | Dark Mode |
 |------------|------------|-----------|
-| `teal` (default) | Teal | Dark Teal |
+| `teal` | #008080 | #2d5f5d |
 | `blue` | #3498db | #2c5f7f |
 | `purple` | #9b59b6 | #6c4a7f |
 | `orange` | #e67e22 | #a85f1a |
 | `green` | #27ae60 | #1e7e4a |
 | `red` | #e74c3c | #a83830 |
 | `pink` | #e91e63 | #a81650 |
+| `gray` | #95a5a6 | #5a6266 |
 
 ## Single Card Example
 

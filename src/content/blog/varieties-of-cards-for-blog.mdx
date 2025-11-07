@@ -1,6 +1,6 @@
 ---
 title: Beautiful Card Components for Your Blog Posts
-description: Learn how to use stunning card components including notebook-style, fancy animated cards, and simple article cards to create visually appealing content displays in your MDX blog posts with automatic dark mode support.
+description: Learn how to use stunning card components including notebook-style, fancy animated cards, simple article cards, and dogear bookmark cards to create visually appealing content displays in your MDX blog posts with automatic dark mode support.
 date: 2025-11-06
 tags: [astro, react, cards, ui, design, mdx, animations]
 category: tutorial
@@ -11,7 +11,7 @@ import { FancyCard, FancyCardContainer } from '@/react/Cards';
 import { SimpleCard, SimpleCardContainer } from '@/react/Cards';
 import { DogearCard, DogearCardContainer } from '@/react/Cards';
 
-Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer three distinct card styles: **Notebook Cards** for a classic paper aesthetic, **Fancy Cards** for vibrant displays, and **Simple Cards** for clean, professional article layouts. Let's explore all three!
+Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer four distinct card styles: **Notebook Cards** for a classic paper aesthetic, **Fancy Cards** for vibrant displays, **Simple Cards** for clean, professional article layouts, and **Dogear Cards** for bookmarked highlights. Let's explore all four!
 
 ---
 
@@ -318,6 +318,101 @@ You can omit the `readMoreUrl` prop to display cards without the "Read more" lin
 
 ---
 
+## 🔖 Dogear Cards
+
+### What are Dogear Cards?
+
+Dogear Cards are text-focused React components that mimic the appearance of a bookmarked page with distinctive folded corners:
+- **Folded corner effects** - Top-right and bottom-left dogears (like bookmarks)
+- **8 predefined color schemes** - Teal, blue, purple, orange, green, red, pink, and gray
+- **Custom colors** - Use any hex color you want
+- **Text-only design** - Perfect for notes, quotes, and highlights
+- **Background matching** - Dogears adapt to your page background
+- **Automatic dark mode** - Seamlessly adapts to your theme
+- **Responsive grid layout** - Works perfectly on all screen sizes
+
+### 📦 Importing Dogear Cards
+
+```jsx
+import { DogearCard, DogearCardContainer } from '@/react/Cards';
+```
+
+> **Important:** Always set the `bgColor` prop to match your page/container background color for the dogear effect to work properly!
+
+### 🎯 Dogear Card Usage
+
+#### Multiple Cards in a Grid
+
+<div style={{ backgroundColor: '#f5f5f5', padding: '2rem' }}>
+  <DogearCardContainer>
+    <DogearCard title="Important Note" color="teal" bgColor="#f5f5f5">
+      <p>The teal color scheme provides a professional, trustworthy appearance - perfect for important information and key points.</p>
+    </DogearCard>
+    
+    <DogearCard title="Fun Fact" color="blue" bgColor="#f5f5f5">
+      <p>Blue cards are great for informative content and educational material. The color evokes trust and calmness.</p>
+    </DogearCard>
+    
+    <DogearCard title="Pro Tip" color="purple" bgColor="#f5f5f5">
+      <p>Purple works wonderfully for creative content and premium features. It stands out while maintaining elegance.</p>
+    </DogearCard>
+    
+    <DogearCard title="Warning" color="orange" bgColor="#f5f5f5">
+      <p>Orange is perfect for warnings or attention-grabbing content that needs to stand out from the rest.</p>
+    </DogearCard>
+    
+    <DogearCard title="Success" color="green" bgColor="#f5f5f5">
+      <p>Green cards are ideal for success messages, positive feedback, and environmental topics.</p>
+    </DogearCard>
+    
+    <DogearCard title="Alert" color="red" bgColor="#f5f5f5">
+      <p>Red grabs attention for critical information, errors, or urgent messages that need immediate action.</p>
+    </DogearCard>
+    
+    <DogearCard title="Highlight" color="pink" bgColor="#f5f5f5">
+      <p>Pink adds a fun, playful touch - great for creative content, celebrations, or personal highlights.</p>
+    </DogearCard>
+    
+    <DogearCard title="General Note" color="gray" bgColor="#f5f5f5">
+      <p>Gray provides a neutral, professional appearance for general content that doesn't need color emphasis.</p>
+    </DogearCard>
+  </DogearCardContainer>
+</div>
+
+**Code Example:**
+
+```jsx
+<div style={{ backgroundColor: '#f5f5f5', padding: '2rem' }}>
+  <DogearCardContainer>
+    <DogearCard title="Card Title" color="teal" bgColor="#f5f5f5">
+      <p>Your content here...</p>
+    </DogearCard>
+  </DogearCardContainer>
+</div>
+```
+
+#### Single Card Example
+
+> **Tip:** Keep `DogearCardContainer` even for single cards to prevent them from stretching to the edge.
+
+<DogearCardContainer>
+  <DogearCard title="Standalone Card" color="green" bgColor="white">
+    <p>You can also use cards individually within a container for a centered display that doesn't stretch to full width.</p>
+  </DogearCard>
+</DogearCardContainer>
+
+#### Custom Color Card
+
+```jsx
+<DogearCard title="Custom Brand Color" customColor="#ff6b6b" bgColor="white">
+  <p>Use any custom hex color to match your brand!</p>
+</DogearCard>
+```
+
+**Design Credit:** Dogear card design inspired by <cite>Codepen[^4]</cite>
+
+[^4]: Dogear card design from [Codepen - Folding Corner Effect](https://codepen.io/jhkepa/details/vddwYE)
+
 ---
 
 ## 📋 Component Props Reference
@@ -332,25 +427,29 @@ You can omit the `readMoreUrl` prop to display cards without the "Read more" lin
 
 | Prop | Type | Required | Default | Description |
 |------|------|----------|---------|-------------|
-| `image` | string | Notebook: No<br/>Fancy: Yes<br/>Simple: Yes | - | URL or path to the image. Optional for Notebook cards (text-only mode) |
+| `image` | string | Notebook: No<br/>Fancy: Yes<br/>Simple: Yes<br/>Dogear: N/A | - | URL or path to the image. Optional for Notebook cards (text-only mode). Not used in Dogear cards |
 | `title` | string | Yes | - | Card heading/title |
-| `imageAlt` | string | No | `title` value | Alt text for accessibility |
+| `imageAlt` | string | No | `title` value | Alt text for accessibility (not applicable to Dogear cards) |
 | `children` | ReactNode | Yes | - | Card content (paragraphs, HTML, etc.) |
 | `readMoreUrl` | string | No (Simple only) | - | Link URL for "Read more" button (Simple cards only) |
+| `color` | string | No (Dogear only) | `'teal'` | Predefined color scheme: `teal`, `blue`, `purple`, `orange`, `green`, `red`, `pink`, `gray` (Dogear cards only) |
+| `customColor` | string | No (Dogear only) | - | Custom hex color to override predefined schemes (Dogear cards only) |
+| `bgColor` | string | No (Dogear only) | `'transparent'` | **Important:** Set to match your page/container background for the dogear effect to work properly (Dogear cards only) |
 
 ## ✨ Feature Comparison
 
-| Feature | Notebook Cards | Fancy Cards | Simple Cards |
-|---------|---------------|-------------|--------------|
-| **Style** | Classic notebook paper | Modern vibrant design | Clean professional |
-| **Animations** | None | Card scale on hover | Image zoom + icon slide |
-| **Colors** | Blue lines, red margin | Purple, aqua, violet | Theme-based minimal |
-| **Special Classes** | No | `upcharge`, `note` | No |
-| **Typography** | Monospace | Georgia + Sans-serif | System fonts |
-| **Best For** | Documentation, tutorials | Products, menus, promotions | Articles, blogs, news |
-| **Hover Effect** | None | Card scale | Image zoom + arrow animation |
-| **Read More Link** | No | No | Yes (optional) |
-| **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes |
+| Feature | Notebook Cards | Fancy Cards | Simple Cards | Dogear Cards |
+|---------|---------------|-------------|--------------|--------------|
+| **Style** | Classic notebook paper | Modern vibrant design | Clean professional | Bookmarked page |
+| **Animations** | None | Card scale on hover | Image zoom + icon slide | None |
+| **Colors** | Blue lines, red margin | Purple, aqua, violet | Theme-based minimal | 8 predefined + custom |
+| **Special Classes** | No | `upcharge`, `note` | No | No |
+| **Typography** | Monospace | Georgia + Sans-serif | System fonts | Marvel |
+| **Best For** | Documentation, tutorials | Products, menus, promotions | Articles, blogs, news | Notes, quotes, highlights |
+| **Hover Effect** | None | Card scale | Image zoom + arrow animation | None |
+| **Read More Link** | No | No | Yes (optional) | No |
+| **Images** | Optional | Required | Required | Text-only |
+| **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
 ## 💡 Use Cases
 
 ### Notebook Cards Perfect For:
@@ -374,9 +473,16 @@ You can omit the `readMoreUrl` prop to display cards without the "Read more" lin
 - **Resource links** - External content references
 - **General content** - Versatile for any use case
 
+### Dogear Cards Perfect For:
+- **Quick notes** - Important reminders and tips
+- **Quotes** - Highlighted quotations and testimonials
+- **Key points** - Summary highlights and takeaways
+- **Bookmarks** - Saved references and favorites
+- **Alerts** - Warnings, tips, and special notices
+
 ## 🎨 Tips for Best Results
 
-1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles
+1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles, Dogear for notes
 2. **Consistent styling** - Stick to one card type per blog post
 3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum)
 4. **Text-only notebooks** - Skip the image prop on Notebook cards for pure text content
@@ -387,6 +493,8 @@ You can omit the `readMoreUrl` prop to display cards without the "Read more" lin
 9. **Mobile-first** - Cards are responsive but test on mobile devices
 10. **Read more links** - Use meaningful URLs instead of '#' for Simple cards
 11. **Mix and match** - Combine single cards with containers for variety
+12. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
+13. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
 
 ## 🚀 Coming Soon
 
@@ -396,36 +504,3 @@ We're working on additional card varieties:
 - **Info Cards** - Quick fact boxes
 - **Testimonial Cards** - Customer reviews
 - And more!
-
-<div style={{ backgroundColor: '#f5f5f5', padding: '2rem' }}>
-  <DogearCardContainer>
-    {/* All cards should use bgColor="#f5f5f5" to match the container */}
-    <DogearCard title="Teal" color="teal" bgColor="#f5f5f5">
-      <p>Default teal color.</p>
-    </DogearCard>
-    
-    <DogearCard title="Blue" color="blue" bgColor="#f5f5f5">
-      <p>Blue color scheme.</p>
-    </DogearCard>
-    
-    <DogearCard title="Purple" color="purple" bgColor="#f5f5f5">
-      <p>Purple color scheme.</p>
-    </DogearCard>
-    
-    <DogearCard title="Orange" color="orange" bgColor="#f5f5f5">
-      <p>Orange color scheme.</p>
-    </DogearCard>
-    
-    <DogearCard title="Custom" customColor="#ff6b6b" bgColor="#f5f5f5">
-      <p>Any custom hex color!</p>
-    </DogearCard>
-  </DogearCardContainer>
-</div>
-
-keep DogearCardContainer while using single card also or the card will go till edge which won't look good.
-
-<DogearCardContainer>
-  <DogearCard title="Teal" color="green" bgColor="#f5f5f5">
-    <p>Default teal color.</p>
-  </DogearCard>
-</DogearCardContainer>
