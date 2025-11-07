@@ -317,8 +317,7 @@ You can omit the `readMoreUrl` prop to display cards without the "Read more" lin
 [^3]: Simple card design from [Codepen - Simple Article Cards](https://codepen.io/utilitybend/pen/bGvjLba)
 
 ---
-
-## 🔖 Dogear Cards
+## 🐶 Dogear Cards
 
 ### What are Dogear Cards?
 
@@ -339,42 +338,55 @@ import { DogearCard, DogearCardContainer } from '@/react/Cards';
 
 > **Important:** Always set the `bgColor` prop to match your page/container background color for the dogear effect to work properly!
 
+### 🎨 Predefined Color Schemes
+
+| Color | Light Mode | Dark Mode | Best For |
+|-------|------------|-----------|----------|
+| `teal` | #008080 | #2d5f5d | Default, professional content |
+| `blue` | #3498db | #2c5f7f | Informative, educational material |
+| `purple` | #9b59b6 | #6c4a7f | Creative, premium features |
+| `orange` | #e67e22 | #a85f1a | Warnings, attention-grabbing |
+| `green` | #27ae60 | #1e7e4a | Success, positive feedback |
+| `red` | #e74c3c | #a83830 | Alerts, critical information |
+| `pink` | #e91e63 | #a81650 | Fun, playful, creative |
+| `gray` | #95a5a6 | #5a6266 | Neutral, general content |
+
 ### 🎯 Dogear Card Usage
 
-#### Multiple Cards in a Grid
+#### All Color Schemes
 
 <div style={{ backgroundColor: '#f5f5f5', padding: '2rem' }}>
   <DogearCardContainer>
-    <DogearCard title="Important Note" color="teal" bgColor="#f5f5f5">
-      <p>The teal color scheme provides a professional, trustworthy appearance - perfect for important information and key points.</p>
+    <DogearCard title="Teal" color="teal" bgColor="#f5f5f5">
+      <p>Default teal color scheme - professional and trustworthy.</p>
     </DogearCard>
     
-    <DogearCard title="Fun Fact" color="blue" bgColor="#f5f5f5">
-      <p>Blue cards are great for informative content and educational material. The color evokes trust and calmness.</p>
+    <DogearCard title="Blue" color="blue" bgColor="#f5f5f5">
+      <p>Blue scheme - great for informative content.</p>
     </DogearCard>
     
-    <DogearCard title="Pro Tip" color="purple" bgColor="#f5f5f5">
-      <p>Purple works wonderfully for creative content and premium features. It stands out while maintaining elegance.</p>
+    <DogearCard title="Purple" color="purple" bgColor="#f5f5f5">
+      <p>Purple scheme - elegant and creative.</p>
     </DogearCard>
     
-    <DogearCard title="Warning" color="orange" bgColor="#f5f5f5">
-      <p>Orange is perfect for warnings or attention-grabbing content that needs to stand out from the rest.</p>
+    <DogearCard title="Orange" color="orange" bgColor="#f5f5f5">
+      <p>Orange scheme - perfect for warnings.</p>
     </DogearCard>
     
-    <DogearCard title="Success" color="green" bgColor="#f5f5f5">
-      <p>Green cards are ideal for success messages, positive feedback, and environmental topics.</p>
+    <DogearCard title="Green" color="green" bgColor="#f5f5f5">
+      <p>Green scheme - ideal for success messages.</p>
     </DogearCard>
     
-    <DogearCard title="Alert" color="red" bgColor="#f5f5f5">
-      <p>Red grabs attention for critical information, errors, or urgent messages that need immediate action.</p>
+    <DogearCard title="Red" color="red" bgColor="#f5f5f5">
+      <p>Red scheme - grabs attention for alerts.</p>
     </DogearCard>
     
-    <DogearCard title="Highlight" color="pink" bgColor="#f5f5f5">
-      <p>Pink adds a fun, playful touch - great for creative content, celebrations, or personal highlights.</p>
+    <DogearCard title="Pink" color="pink" bgColor="#f5f5f5">
+      <p>Pink scheme - fun and playful.</p>
     </DogearCard>
     
-    <DogearCard title="General Note" color="gray" bgColor="#f5f5f5">
-      <p>Gray provides a neutral, professional appearance for general content that doesn't need color emphasis.</p>
+    <DogearCard title="Gray" color="gray" bgColor="#f5f5f5">
+      <p>Gray scheme - neutral professional look.</p>
     </DogearCard>
   </DogearCardContainer>
 </div>
@@ -391,6 +403,34 @@ import { DogearCard, DogearCardContainer } from '@/react/Cards';
 </div>
 ```
 
+#### Custom Color Example
+
+You can use any custom hex color instead of predefined schemes:
+
+<div style={{ backgroundColor: '#fff8dc', padding: '2rem' }}>
+  <DogearCardContainer>
+    <DogearCard title="Custom Brand Color" customColor="#ff6b6b" bgColor="#fff8dc">
+      <p>Use any custom hex color to match your brand! This example uses #ff6b6b with a cornsilk background.</p>
+    </DogearCard>
+    
+    <DogearCard title="Another Custom" customColor="#4ecdc4" bgColor="#fff8dc">
+      <p>Another custom color example with #4ecdc4 - the possibilities are endless!</p>
+    </DogearCard>
+  </DogearCardContainer>
+</div>
+
+**Code Example:**
+
+```jsx
+<div style={{ backgroundColor: '#fff8dc', padding: '2rem' }}>
+  <DogearCardContainer>
+    <DogearCard title="Custom Color" customColor="#ff6b6b" bgColor="#fff8dc">
+      <p>Use any custom hex color to match your brand!</p>
+    </DogearCard>
+  </DogearCardContainer>
+</div>
+```
+
 #### Single Card Example
 
 > **Tip:** Keep `DogearCardContainer` even for single cards to prevent them from stretching to the edge.
@@ -400,14 +440,6 @@ import { DogearCard, DogearCardContainer } from '@/react/Cards';
     <p>You can also use cards individually within a container for a centered display that doesn't stretch to full width.</p>
   </DogearCard>
 </DogearCardContainer>
-
-#### Custom Color Card
-
-```jsx
-<DogearCard title="Custom Brand Color" customColor="#ff6b6b" bgColor="white">
-  <p>Use any custom hex color to match your brand!</p>
-</DogearCard>
-```
 
 **Design Credit:** Dogear card design inspired by <cite>Codepen[^4]</cite>
 
@@ -495,6 +527,7 @@ import { DogearCard, DogearCardContainer } from '@/react/Cards';
 11. **Mix and match** - Combine single cards with containers for variety
 12. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
 13. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
+
 
 ## 🚀 Coming Soon
 
