@@ -32,7 +32,7 @@ const COLOR_SCHEMES = {
   }
 };
 
-const DogearCard = ({ title, children, color = 'teal', customColor }) => {
+const DogearCard = ({ title, children, color = 'teal', customColor, bgColor = 'transparent' }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Theme detection
@@ -128,8 +128,8 @@ const DogearCard = ({ title, children, color = 'teal', customColor }) => {
     right: '0px',
     borderBottom: `20px solid ${theme.cardBgDark}`,
     borderLeft: `20px solid ${theme.cardBgDark}`,
-    borderRight: '20px solid transparent',
-    borderTop: '20px solid transparent',
+    borderRight: `20px solid ${bgColor}`,
+    borderTop: `20px solid ${bgColor}`,
     position: 'absolute',
     filter: 'drop-shadow(-5px 5px 3px rgba(0,0,0,0.5))'
   };
@@ -142,8 +142,8 @@ const DogearCard = ({ title, children, color = 'teal', customColor }) => {
     height: '0px',
     borderTop: `40px solid ${theme.cardBgDark}`,
     borderRight: `40px solid ${theme.cardBgDark}`,
-    borderLeft: '40px solid transparent',
-    borderBottom: '40px solid transparent',
+    borderLeft: `40px solid ${bgColor}`,
+    borderBottom: `40px solid ${bgColor}`,
     bottom: '0px',
     left: '0px',
     position: 'absolute',

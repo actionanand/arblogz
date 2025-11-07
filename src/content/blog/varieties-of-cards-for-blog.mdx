@@ -397,57 +397,35 @@ We're working on additional card varieties:
 - **Testimonial Cards** - Customer reviews
 - And more!
 
-<DogearCardContainer>
-  <DogearCard title="Feature One" color="teal">
-    <p>Describe your first feature or important information here.</p>
-  </DogearCard>
-  
-  <DogearCard title="Feature Two" color="blue">
-    <p>Add another card to create a two-column layout automatically.</p>
-  </DogearCard>
-  
-  <DogearCard title="Feature Three" color="purple">
-    <p>Continue adding cards - they'll wrap into rows as needed.</p>
-  </DogearCard>
-  
-  <DogearCard title="Feature Four" color="orange">
-    <p>Perfect for organizing multiple pieces of related content.</p>
-  </DogearCard>
-</DogearCardContainer>
+<div style={{ backgroundColor: '#f5f5f5', padding: '2rem' }}>
+  <DogearCardContainer>
+    {/* All cards should use bgColor="#f5f5f5" to match the container */}
+    <DogearCard title="Teal" color="teal" bgColor="#f5f5f5">
+      <p>Default teal color.</p>
+    </DogearCard>
+    
+    <DogearCard title="Blue" color="blue" bgColor="#f5f5f5">
+      <p>Blue color scheme.</p>
+    </DogearCard>
+    
+    <DogearCard title="Purple" color="purple" bgColor="#f5f5f5">
+      <p>Purple color scheme.</p>
+    </DogearCard>
+    
+    <DogearCard title="Orange" color="orange" bgColor="#f5f5f5">
+      <p>Orange color scheme.</p>
+    </DogearCard>
+    
+    <DogearCard title="Custom" customColor="#ff6b6b" bgColor="#f5f5f5">
+      <p>Any custom hex color!</p>
+    </DogearCard>
+  </DogearCardContainer>
+</div>
 
+keep DogearCardContainer while using single card also or the card will go till edge which won't look good.
 
 <DogearCardContainer>
-  {/* Predefined colors */}
-  <DogearCard title="Teal" color="teal">
+  <DogearCard title="Teal" color="green" bgColor="#f5f5f5">
     <p>Default teal color.</p>
-  </DogearCard>
-  
-  <DogearCard title="Blue" color="blue">
-    <p>Blue color scheme.</p>
-  </DogearCard>
-  
-  <DogearCard title="Purple" color="purple">
-    <p>Purple color scheme.</p>
-  </DogearCard>
-  
-  <DogearCard title="Orange" color="orange">
-    <p>Orange color scheme.</p>
-  </DogearCard>
-  
-  <DogearCard title="Green" color="green">
-    <p>Green color scheme.</p>
-  </DogearCard>
-  
-  <DogearCard title="Red" color="red">
-    <p>Red color scheme.</p>
-  </DogearCard>
-  
-  <DogearCard title="Pink" color="pink">
-    <p>Pink color scheme.</p>
-  </DogearCard>
-  
-  {/* Custom color */}
-  <DogearCard title="Custom" customColor="#ff6b6b">
-    <p>Any custom hex color!</p>
   </DogearCard>
 </DogearCardContainer>
