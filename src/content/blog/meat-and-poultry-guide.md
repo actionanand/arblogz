@@ -64,6 +64,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 | **Liver** | ஈரல் (Eeral) | ಕಲ್ಲೀರಲು (Kalleeralu) | कलेजी (Kaleji) |
 | **Egg** | முட்டை (Muttai) | ಮೊಟ್ಟೆ (Motte) | अंडा (Anda) |
 | **Wings** | சிறகு (Siragu) | ರೆಕ್ಕೆ (Rekke) | पंख (Pankh) |
+| **Country Chicken / Desi Chicken** | நாட்டுக் கோழி (Naattu Kozhi) | ನಾಟಿ ಕೋಳಿ (Naati Kooli) | देसी मुर्गी (Desi Murgi) |
 
 </div>
 
@@ -560,4 +561,3 @@ Dumplings made with thin wheat or flour dough filled with meat or vegetables.
 :::note[Note]
 Meat terminology may vary by region and local dialects. Some communities may have religious or cultural dietary restrictions. Always respect local customs and preferences.
 :::
-
