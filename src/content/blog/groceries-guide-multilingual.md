@@ -260,7 +260,66 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 </div>
 
-### 🥜 Nuts & Seeds
+### 🥛 Dairy Products (பால் பொருட்கள் / ಹಾಲು ಉತ್ಪನ್ನಗಳು / डेयरी उत्पाद)
+
+<div class="table-luxury-grid">
+
+| English Name | Tamil Name | Kannada Name | Hindi Name |
+|--------------|------------|--------------|------------|
+| **Milk** | பால் (Paal) | ಹಾಲು (Haalu) | दूध (Doodh) |
+| **Cow Milk** | பசும்பால் (Pasumpaal) | ಹಸುವಿನ ಹಾಲು (Hasuvina Haalu) | गाय का दूध (Gaay Ka Doodh) |
+| **Buffalo Milk** | எருமைப்பால் (Erumaippaal) | ಎಮ್ಮೆ ಹಾಲು (Emme Haalu) | भैंस का दूध (Bhains Ka Doodh) |
+| **Curd / Yogurt** | தயிர் (Thayir) | ಮೊಸರು (Mosaru) | दही (Dahi) |
+| **Buttermilk** | மோர் (Mor) | ಮಜ್ಜಿಗೆ (Majjige) | छाछ / मट्ठा (Chhaach / Mattha) |
+| **Butter** | வெண்ணெய் (Vennai) | ಬೆಣ್ಣೆ (Benne) | मक्खन (Makkan) |
+| **Ghee / Clarified Butter** | நெய் (Nei) | ತುಪ್ಪ (Tuppa) | घी (Ghee) |
+| **Paneer / Cottage Cheese** | பனீர் (Paneer) | ಪನೀರ್ (Paneer) | पनीर (Paneer) |
+| **Cheese** | பாலாடைக்கட்டி (Paalaadaikatti) | ಚೀಸ್ (Cheese) | चीज़ (Cheese) |
+| **Cream** | க்ரீம் / பால் கொழுப்பு (Cream / Paal Kozhuppu) | ಕೆನೆ (Kene) | मलाई (Malai) |
+| **Condensed Milk** | சுண்டப்பால் (Sundappaal) | ದಟ್ಟ ಹಾಲು (Datta Haalu) | कंडेंस्ड मिल्क (Condensed Milk) |
+
+</div>
+
+### 🥤 Beverages (பானங்கள் / ಪಾನೀಯಗಳು / पेय पदार्थ)
+
+<div class="table-ocean-grid">
+
+| English Name | Tamil Name | Kannada Name | Hindi Name |
+|--------------|------------|--------------|------------|
+| **Water** | தண்ணீர் (Thanneer) | ನೀರು (Neeru) | पानी (Paani) |
+| **Drinking Water** | குடிநீர் (Kudineer) | ಕುಡಿಯುವ ನೀರು (Kudiyuva Neeru) | पीने का पानी (Peene Ka Paani) |
+| **Hot Water** | சூடான தண்ணீர் (Soodana Thanneer) | ಬಿಸಿ ನೀರು (Bisi Neeru) | गर्म पानी (Garam Paani) |
+| **Cold Water** | குளிர்ந்த தண்ணீர் (Kulirndha Thanneer) | ತಣ್ಣನೆಯ ನೀರು (Thannaneya Neeru) | ठंडा पानी (Thanda Paani) |
+| **Sugarcane Juice** | கரும்பு சாறு (Karumbu Saaru) | ಕಬ್ಬಿನ ರಸ (Kabbina Rasa) | गन्ने का रस (Ganne Ka Ras) |
+| **Lemon Juice** | எலுமிச்சை சாறு (Elumichai Saaru) | ನಿಂಬೆ ರಸ (Nimbe Rasa) | नींबू का रस (Neembu Ka Ras) |
+| **Lime Water / Lemonade** | எலுமிச்சைப் பானம் / போஞ்சி / எலுமிச்சை தண்ணீர் (Elumichchap Baanam / Elumichai Thanneer) | ನಿಂಬೆ ನೀರು (Nimbe Neeru) | नींबू पानी (Neembu Paani) |
+| **Coconut Water** | இளநீர் (Ilaneer) | ಎಳನೀರು (Elaneeru) | नारियल पानी (Nariyal Paani) |
+| **Tea** | தேநீர் / டீ (Theneer / Tea) | ಚಹಾ (Chahaa) | चाय (Chaay) |
+| **Coffee** | காபி (Kaapi) | ಕಾಫಿ (Kaafi) | कॉफी (Coffee) |
+| **Fruit Juice** | பழச்சாறு (Pazhach Chaaru) | ಹಣ್ಣಿನ ರಸ (Hannina Rasa) | फलों का रस (Phalon Ka Ras) |
+
+</div>
+
+### 🍽️ Food & Meals (உணவு / ಆಹಾರ / भोजन)
+
+<div class="table-green-grid">
+
+| English Name | Tamil Name | Kannada Name | Hindi Name |
+|--------------|------------|--------------|------------|
+| **Food** | உணவு / சாப்பாடு (Unavu / Saapadu) | ಆಹಾರ (Aahaara) | भोजन / खाना (Bhojan / Khaana) |
+| **Breakfast** | காலை உணவு (Kaalai Unavu) | ಬೆಳಗಿನ ಊಟ (Belagina Oota) | नाश्ता (Naashta) |
+| **Lunch** | மதிய உணவு (Madhiya Unavu) | ಮಧ್ಯಾಹ್ನ ಊಟ (Madhyaahna Oota) | दोपहर का खाना (Dopahar Ka Khaana) |
+| **Dinner** | இரவு உணவு (Iravu Unavu) | ರಾತ್ರಿ ಊಟ (Raathri Oota) | रात का खाना (Raat Ka Khaana) |
+| **Snack** | சிற்றுண்டி (Sittundi) | ತಿಂಡಿ (Thindi) | नाश्ता / स्नैक (Naashta / Snack) |
+| **Meal** | சாப்பாடு / போஜனம் (Saappaadu / Bojanam) | ಊಟ (Oota) | भोजन (Bhojan) |
+| **Rice (Cooked)** | சோறு  / சாதம் (Sooru / Saadham) | ಅನ್ನ (Anna) | भात / चावल (Bhaat / Chawal) |
+| **Curry** | குழம்பு / கறி (Kuzhambu / Kari) | ಕಾಳು / ಸಾರು (Kaalu / Saaru) | सब्जी / करी (Sabzi / Curry) |
+| **Bread** | ரொட்டி (Rotti) | ರೊಟ್ಟಿ (Rotti) | रोटी (Roti) |
+| **Chapati / Roti** | சப்பாத்தி (Chapathi) | ಚಪಾತಿ (Chapaati) | चपाती (Chapati) |
+
+</div>
+
+###  🥜 Nuts & Seeds
 
 <div class="table-green-grid">
 
