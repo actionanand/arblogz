@@ -1,6 +1,6 @@
 ---
 title: "Complete Groceries Guide - Multilingual"
-description: "Comprehensive guide to groceries including rice varieties, pulses (dal), spices, vegetables, fruits, nuts, and sprouts with names in Tamil, English, Kannada, and Hindi. Learn to identify different pulses and understand regional terminology!"
+description: "Comprehensive guide to groceries including rice, pulses (dal), spices, vegetables, fruits, nuts, dairy, and beverages with names in Tamil, English, Kannada, and Hindi. Learn to identify different pulses and regional terms!"
 date: 2025-11-07
 tags: ["groceries", "pulses", "spices", "vegetables", "fruits", "multilingual", "indian cuisine", "reference"]
 category: Indian Cuisine
@@ -215,6 +215,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Colocasia Leaves** | சேப்பங்கிழங்கு இலை (Seppan Keerai) | ಕೇಸವಿನ ಎಲೆ (Kesavina Ele) | अरबी पत्ता (Arbi Patta) |
 | **Dill Leaves** | சதகுப்பை (Sadhakuppai) | ಸಬ್ಬಸಿಗೆ ಸೊಪ್ಪು (Sabbasige Soppu) | सोआ (Sowa) |
 | **Moringa Leaves** | முருங்கைக்கீரை (Murungai Keerai) | ನುಗ್ಗೆ ಸೊಪ್ಪು (Nugge Soppu) | सहजन पत्ता (Sahjan Patta) |
+| **Black Nightshade Leaves** | மணத்தக்காளி கீரை / மணித்தக்காளி கீரை (Manathakkali Keerai) | ಗಣಿಕೆ ಸೊಪ್ಪು / ಕಾಗೆ ಸೊಪ್ಪು / ಕಾಮನಿ ಸೊಪ್ಪು (Ganike Soppu / Kaage Soppu / Kamani Soppu) | मकोय साग (Makoy Saag) |
 
 </div>
 
@@ -297,6 +298,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Tea** | தேநீர் / டீ (Theneer / Tea) | ಚಹಾ (Chahaa) | चाय (Chaay) |
 | **Coffee** | காபி (Kaapi) | ಕಾಫಿ (Kaafi) | कॉफी (Coffee) |
 | **Fruit Juice** | பழச்சாறு (Pazhach Chaaru) | ಹಣ್ಣಿನ ರಸ (Hannina Rasa) | फलों का रस (Phalon Ka Ras) |
+| **Panakam / Tamarind Panakam** | பானகாரம் / பானகம் (Paanakaaram / Paanagam) | ಪಾನಕ (Paanaka) | पानक (Paanak) |
 
 </div>
 
@@ -423,6 +425,9 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Cherry** | செர்ரி (Cherry) | ಚೆರ್ರಿ (Cherry) | चेरी (Cherry) |
 | **Blackberry** | கருப்பு நெல்லிக்காய் (Karuppu Nellikkai) | ಕರಿ ಸೇಬು (Kari Sebu) | जामुन (Jamun) |
 | **Indian Gooseberry** | நெல்லிக்காய் (Nellikkai) | ನೆಲ್ಲಿಕಾಯಿ (Nellikayi) | आंवला (Amla) |
+| **Wood Apple** | விளாம்பழம் (Vilaampazham) | ಬೇಲದ ಹಣ್ಣು (Belada Hannu) | बेल / कैथा (Bel / Kaitha) |
+| **Indian Jujube / Ber** | இலந்தைப்பழம் (Ilandhaippazham) | ಎಲಚಿ ಹಣ್ಣು (Elachi Hannu) | बेर (Ber) |
+| **Java Plum / Jamun** | நாவல் பழம் (Naaval Pazham) | ನೀರಲಿ ಹಣ್ಣು (Neerali Hannu) | जामुन (Jamun) |
 
 </div>
 
