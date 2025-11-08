@@ -34,7 +34,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 
 </div>
 
-There are various types of rice, including Basmati, Sona Masoori, Ponni, Chengalpattu, Jaya, Matta (Champa), Karuppu Kavuni, Seeraga Samba, Mapillai Samba, and more.
+> **Rice varieties and their characteristics**: **Basmati** (பாஸ்மதி / ಬಾಸ್ಮತಿ / बासमती) - Fragrant long-grain rice from Punjab/Haryana, aged 1-2 years for best aroma, ideal for biryanis and pulaos; **Sona Masoori** (சோனா மசூரி / ಸೋನಾ ಮಸೂರಿ / सोना मसूरी) - Lightweight aromatic medium-grain from Andhra Pradesh/Karnataka, perfect for daily meals, less starchy; **Ponni** (பொன்னி / ಪೊನ್ನಿ / पोन्नी) - Tamil Nadu's staple rice, fluffy texture, versatile for all South Indian dishes; **Seeraga Samba** (சீரகச் சம்பா / ಸೀರಗ ಸಂಬಾ / सीरगा संबा) - Aromatic small-grain rice resembling cumin seeds, premium choice for biryanis and special occasions; **Mapillai Samba** (மாப்பிள்ளைச் சம்பா / ಮಾಪಿಲ್ಲೈ ಸಂಬಾ / मापिल्लै संबा) - Traditional Tamil heirloom red rice, known for strength and stamina building, nutty flavor; **Karuppu Kavuni** (கருப்பு கவுனி / ಕರುಪ್ಪು ಕವುನಿ / करुप्पु कवुनी) - Black rice rich in antioxidants, used for payasam and special dishes, slightly sweet taste; **Matta Rice / Rosematta** (மட்ட அரிசி  / മട്ട / ಮಟ್ಟಾ / मट्टा) - Kerala's popular parboiled red rice, high nutritional value, slightly chewy texture, excellent with curries; **Jaya** (ஜெயா / ജയ / ಜಯ / जया) - High-yield hybrid variety developed for South India, widely cultivated, good for daily consumption; **Chengalpattu** (செங்கல்பட்டு / ಚೆಂಗಲಪಟ್ಟು / चेंगलपट्टु) - Traditional Tamil Nadu variety, short-grain, ideal for idli and dosa preparation; **Champa Rice** (చంప / ಚಂಪಾ / चंपा) - Short-grain aromatic rice similar to Basmati, popular in Kerala and coastal regions. **Shopping Tip**: For daily cooking choose Sona Masoori or Ponni; for special occasions and biryanis opt for aged Basmati or Seeraga Samba; for health-conscious meals select Matta or traditional varieties like Mapillai Samba and Karuppu Kavuni.
 
 > **Beyond the bowl**: Rice isn't just a staple food—it transforms into heavenly desserts like Payasam (பாயசம்) / Kheer (खीर) / Payasa (ಪಾಯಸ) / Creamy Rice Pudding!
 
@@ -157,6 +157,8 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Drumstick** | முருங்கைக்காய் (Murungaikkai) | ನುಗ್ಗೆಕಾಯಿ (Nuggekayi) | सहजन (Sahjan) |
 | **Ladies Finger / Okra** | வெண்டைக்காய் (Vendaikkai) | ಬೆಂಡೆಕಾಯಿ (Bendekayi) | भिंडी (Bhindi) |
 | **Bitter Gourd** | பாகற்காய் (Paagarkkai) | ಹಾಗಲಕಾಯಿ (Haagalakayi) | करेला (Karela) |
+| **Forest Bitter Gourd / Kartoli** | காட்டு பாகற்காய் (Kaattu Paagarkkai) | ಕಾಡು ಹಾಗಲಕಾಯಿ (Kaadu Haagalakayi) | कर्तोली (Kartoli) |
+| **Pointed Gourd / Ivy Gourd / Parwal** | கோவக்காய் / சுட்டக்காய் / பரவல் (Kovakkai / Parval) | ಪಡವಲಕಾಯಿ (Padavalakayi) | परवल (Parwal) |
 | **Bottle Gourd** | சுரைக்காய் (Suraikkai) | ಸೋರೆಕಾಯಿ (Sorekayi) | लौकी (Lauki) |
 | **Ridge Gourd** | பீர்க்கங்காய் (Peerkkangai) | ಹೀರೆಕಾಯಿ (Heerekayi) | तोरी (Tori) |
 | **Snake Gourd** | புடலங்காய் (Pudalangai) | ಪಡವಲಕಾಯಿ (Padavalakayi) | चिचिंडा (Chichinda) |
@@ -171,6 +173,8 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Radish** | முள்ளங்கி (Mullangi) | ಮೂಲಂಗಿ (Moolangi) | मूली (Mooli) |
 | **Cabbage** | முட்டைக்கோஸ் (Muttaikose) | ಎಲೆಕೋಸು (Elekosu) | पत्तागोभी (Pattagobhi) |
 | **Cauliflower** | காலிஃப்ளவர் (Cauliflower) | ಹೂಕೋಸು (Hookosu) | फूलगोभी (Phulgobhi) |
+| **Knol Khol / Kohlrabi** | நூல்கோல் / கோஸ் கிழங்கு (Noolkol / Kose Kizhangu) | ನೂಲ್ಕೋಲ್ (Noolkol) | गांठगोभी (Gaanthgobhi) |
+| **Chow Chow / Chayote** | சௌசௌ / சீமைப் பலாக்காய் (Chowchow / Seemai Palaakkai) | ಸೀಮೆ ಬದನೆಕಾಯಿ (Seeme Badanekayi) | चायोटी (Chayote) |
 | **Beans (Green)** | பீன்ஸ் (Beans) | ಬೀನ್ಸ್ (Beans) | फली (Phali) |
 | **French Beans** | பிரெஞ்சு பீன்ஸ் (French Beans) | ಫ್ರೆಂಚ್ ಬೀನ್ಸ್ (French Beans) | फ्रेंच बीन्स (French Beans) |
 | **Bush Beans / Snap Beans** | புஷ் பீன்ஸ் (Bush Beans) | ಬುಷ್ ಬೀನ್ಸ್ (Bush Beans) | झाड़ीदार फली (Jhadidar Phali) |
@@ -178,6 +182,9 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Broad Beans** | கோழி அவரை / அவரைக்காய் (Kozhi Avarai / Avaraikkai) | ಅವರೆಕಾಯಿ (Avarekayi) | सेम फली (Sem Phali) |
 | **Capsicum / Bell Pepper** | குடமிளகாய் (Kudamilagai) | ದೊಣ್ಣೆ ಮೆಣಸಿನಕಾಯಿ (Donne Menasinakayi) | शिमला मिर्च (Shimla Mirch) |
 | **Green Chili** | பச்சை மிளகாய் (Pachai Milagai) | ಹಸಿರು ಮೆಣಸಿನಕಾಯಿ (Hasiru Menasinakayi) | हरी मिर्च (Hari Mirch) |
+| **Chilli Picador Green / Bajji Chilli** | பஜ்ஜி மிளகாய் (Bajji Milagai) | ಬಜ್ಜಿ ಮೆಣಸಿನಕಾಯಿ (Bajji Menasinakayi) | भज्जी मिर्च (Bhajji Mirch) |
+| **Curd Chillies / Buttermilk Chillies** | மோர் மிளகாய் (Mor Milagai) | ಮೋರು ಮೆಣಸಿನಕಾಯಿ (Moru Menasinakayi) | मोर मिर्च (Mor Mirch) |
+| **Eye Bird Chilli / Kanthari Chilli** | கந்தாரி மிளகாய் / சீனி மிளகாய் (Kanthari Milagai / Cheeni Milagai) | ಕಂತಾರಿ ಮೆಣಸಿನಕಾಯಿ (Kanthari Menasinakayi) | कांटारी मिर्च (Kanthari Mirch) |
 | **Spinach** | கீரை (Keerai) | ಸೊಪ್ಪು (Soppu) | पालक (Palak) |
 | **Coriander Leaves** | கொத்தமல்லி (Kothamalli) | ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು (Kothambari Soppu) | हरा धनिया (Hara Dhaniya) |
 | **Mint Leaves** | புதினா (Pudhina) | ಪುದೀನ (Pudeena) | पुदीना (Pudeena) |
@@ -226,7 +233,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Corn Flour** | சோள மாவு (Sola Maavu) | ಮೆಕ್ಕೆಜೋಳದ ಹಿಟ್ಟು (Mekkejolada Hittu) | मक्के का आटा (Makke Ka Aata) |
 | **Rice Flour** | அரிசி மாவு (Arisi Maavu) | ಅಕ್ಕಿ ಹಿಟ್ಟು (Akki Hittu) | चावल का आटा (Chawal Ka Aata) |
 | **Gram Flour / Besan** | கடலை மாவு (Kadalai Maavu) | ಕಡಲೆ ಹಿಟ್ಟು (Kadale Hittu) | बेसन (Besan) |
-| **Arrowroot Powder** | அரரூட் பவுடர் (Arrowroot Powder) | ಅರರೂಟ್ ಪುಡಿ (Arrowroot Pudi) | अरारोट पाउडर (Arrowroot Powder) |
+| **Arrowroot Powder** | கூகைக் கிழங்கு மாவு / கூம்புகிழங்கு மாவு / அரரூட் மாவு (Arrowroot maavu) | ಅರರೂಟ್ ಪುಡಿ (Arrowroot Pudi) | अरारोट पाउडर (Arrowroot Powder) |
 | **Jowar / Sorghum** | சோளம் (Cholam) | ಜೋಳ (Jola) | ज्वार (Jwar) |
 | **Bajra / Pearl Millet** | கம்பு (Kambu) | ಸಜ್ಜೆ (Sajje) | बाजरा (Bajra) |
 | **Ragi / Finger Millet** | கேழ்வரகு / ராகி (Kelvaragu) | ರಾಗಿ (Raagi) | नाचनी / रागी (Nachni / Ragi) |
@@ -369,6 +376,16 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 > **Crisp Apples** (firm, crunchy bite, refreshing): **Fuji** (very sweet, firm), **Gala** (sweet, crisp), **Honeycrisp** (extremely crisp, juicy), **Granny Smith** (tart, firm), **Pink Lady/Cripps Pink** (sweet-tart, crisp), **Cosmic Crisp** (firm, juicy), **Envy** (sweet, crunchy), **Jazz** (crisp, tangy), and **Ambrosia** (sweet, crisp). Best for fresh eating, salads, and snacking.
 >
 > **Soft/Mealy Apples** (tender, less crisp, floury texture): **Red Delicious** (soft when ripe), **Golden Delicious** (soft, sweet), **McIntosh** (soft, breaks down easily), **Cortland** (soft, white flesh), **Rome** (soft, holds shape when cooked), and **Jonathan** (soft, aromatic). Best for applesauce, baking, and cooking as they break down easily. Note: Many apples become softer/mealier with storage time.
+
+> **Jackfruit varieties**: Jackfruit (பலாப்பழம் / ಹಲಸಿನಹಣ್ಣು / कटहल) is the world's largest tree fruit, with different varieties suited for specific uses:
+>
+> **Cooking Varieties** (firm texture, mild flavor): **Varikka / Varukkai** (வரிக்க / ವರಿಕ್ಕಾ / वरिक्का) - Firm, fibrous texture, light yellow color, best for curries, stir-fries, and chips when raw/unripe; holds shape well during cooking. **Champaruthi / Singapore Jack** (சம்பருத்தி / ಚಂಪರುತ್ತಿ / चंपरुत्ती) - Medium-firm texture, versatile for both cooking (when raw) and eating (when ripe), moderate sweetness, multipurpose variety.
+>
+> **Eating Varieties** (soft, sweet, aromatic): **Koozha / Koozha Pazham** (கூழை / ಕೂಳ / कूळ) - Extremely soft, sweet, custard-like texture when ripe, melts in mouth, very aromatic, best eaten fresh; not suitable for cooking. **Sindura** (सिन्दूर / ಸಿಂದೂರ / சிந்தூர) - Red-tinged flesh, exceptionally sweet, soft texture, rich flavor, premium eating variety.
+>
+> **Hybrid/Regional**: **Muthu Koozha** (முத்து கூழை) - Pearl-like soft flesh, Tamil Nadu favorite. **Palakkad Varikka** (பாலக்காடு வருக்கை / പാലക്കാട് വരിയ്ക്ക) - Kerala cooking variety, firm and fibrous. **Muttom Varikka** (முட்டம்  வருக்கை / മുട്ടം വരിയ്ക്ക) - Kerala premium cooking variety, ideal for chips and curry.
+>
+> **Selection Tips**: For cooking (curries, chips, papad), choose **Varikka** when raw/green with firm texture; the flesh should be white/light yellow. For fresh eating, choose **Koozha or Champaruthi** when fully ripe with strong sweet aroma and slight give when pressed; bulbs should be golden yellow and easily separable. **Ripeness indicator**: Tap the fruit - a dull, hollow sound indicates ripeness; a sharp sound means it's raw. Raw jackfruit has firm, white flesh; ripe has soft, golden-yellow, aromatic bulbs.
 
 ## 📝 Shopping Tips
 
