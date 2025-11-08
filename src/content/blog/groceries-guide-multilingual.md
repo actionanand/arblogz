@@ -63,7 +63,8 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Moong Dal (Split Yellow)** | பயத்தம் பருப்பு/பாசிப்பருப்பு/சிறு பருப்பு  (Payatham Paruppu) | ಹೆಸರು ಬೇಳೆ (Hesaru Bele) | मूंग दाल (Moong Dal) | **Small, yellow, split** - Tiny, light yellow, cooks fast | **Khichdi, Dal, Dosa, Payasam** |
 | **Green Moong (Green Gram)** | பச்சை பயறு (Pachai Payaru) | ಹಸಿರು ಹೆಸರು (Hasiru Hesaru) | साबुत मूंग (Saabut Moong) | **Small, green, oval** - Green skin, white inside | **Sundal, Sprouts, Usili** |
 | **Urad Dal (Split White)** | உடைத்த உளுந்தம் பருப்பு/உடைத்த உருட்டு உளுந்து  (uluththam Paruppu/ Uruttu Ulunthu) | ಉದ್ದು ಬೇಳೆ (Uddu Bele) | उड़द दाल (Urad Dal) | **White, split, sticky** - Used in idli/dosa batter | **Idli, Dosai, medu Vada/ soft fritter, Papad** |
-| **Urad Dal (Whole Black)** | முழு உளுந்து (தோல் உடன்) / கருப்பு உளுந்து / முழு உருட்டு உளுந்து (தோல் உடன்) (Karuppu Ulundhu / Muzhu Ulundhu) | ಕಪ್ಪು ಉದ್ದು (Kappu Uddu) | साबुत उड़द (Saabut Urad) | **Black, small, oval** - Black skin, white inside | **Dal Makhani, Tempering** |
+| **Urad Dal (Whole Black with skin)** | முழு உளுந்து (தோல் உடன்) / கருப்பு உளுந்து / முழு உருட்டு உளுந்து (தோல் உடன்) (Karuppu Ulundhu / Muzhu Ulundhu) | ಕಪ್ಪು ಉದ್ದು (Kappu Uddu) | साबुत उड़द (Saabut Urad) | **Black, small, oval** - Black skin, white inside | **Dal Makhani, Tempering** |
+| **Urad Dal (Whole White without skin)** | முழு உளுந்து (தோல் இல்லாமல்) / முழு உருட்டு உளுந்து (தோல் இல்லாமல்) (Muzhu Ulundhu / Muzhu Uruttu Ulunthu) | ಬಿಳಿ ಉದ್ದು (Bili Uddu) | साबुत सफेद उड़द (Saabut Safed Urad) | **White, whole, oval** - Skinless whole urad | **Payasam, Ladoo, Kozhukattai** |
 | **Masoor Dal (Red Lentils)** | மைசூர் பருப்பு/ சிவப்புப் பருப்பு/ கேசரி பருப்பு (Mysoor Paruppu / Kesari Paruppu) | ಮಸೂರ ಬೇಳೆ (Masoora Bele) | मसूर दाल (Masoor Dal) | **Orange-red, split, tiny** - Salmon/coral color | **Dal, Soup, Sambar** |
 | **Whole Masoor (Brown)** | முழு மைசூர் பருப்பு (Muzhu Mysoor) | ಪೂರ್ಣ ಮಸೂರ (Poorna Masoora) | साबुत मसूर (Saabut Masoor) | **Brown, small, flat** - Greenish-brown skin | **Dal, Curry** |
 | **Rajma / Kidney Beans** | ராஜ்மா/ சிவப்பு காராமணி/ சிவப்பு தட்டைப்பயறு/ கிட்னி பீன்ஸ் (Rajma/ Sivappu Karamani/ Sivappu Thattai payiru) | ರಾಜ್ಮಾ (Rajma) | राजमा (Rajma) | **Dark red, kidney-shaped, large** - Shiny surface | **Rajma Masala, Curry** |
@@ -113,6 +114,9 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Mace** | ஜாதிபத்ரி (Jaathipathri) | ಜಾಯಿಪತ್ರಿ (Jaayipathri) | जावित्री (Javitri) |
 | **Asafoetida** | பெருங்காயம் (Perungaayam) | ಹಿಂಗು (Hingu) | हींग (Hing) |
 | **Curry Leaves** | கறிவேப்பிலை (Kariveppilai) | ಕರಿಬೇವು (Karibevu) | करी पत्ता (Curry Patta) |
+| **Pandan Leaf / Rampa Leaf / Screw Pine Leaf** | ரம்பை இலை (Rambai Ilai) | ರಂಪೆ ಎಲೆ (Rampe Ele) | पांडन पत्ता (Pandan Patta) |
+| **Allspice Leaf** | சர்வ சுகந்தி இலை (Sarva Sugandhi Ilai) | ಆಲ್ಸ್ಪೈಸ್ ಎಲೆ (Allspice Ele) | ऑलस्पाइस पत्ता (Allspice Patta) |
+| **Long Pepper** | திப்பிலி (Thippili) | ಹಿಪ್ಪಲಿ (Hippali) | पिप्पली (Pippali) |
 | **Dry Mango Powder** | மாங்காய் தூள் (Maangai Thool) | ಮಾವಿನ ಪುಡಿ (Maavina Pudi) | आमचूर (Aamchur) |
 | **Dried Chillies** | மிளகாய் வற்றல் (Milagai Vatral) | ಒಣ ಮೆಣಸಿನಕಾಯಿ (Ona Menasinakayi) | सूखी मिर्च (Sukhi Mirch) |
 | **Garam Masala** | கரம் மசாலா (Garam Masala) | ಗರಂ ಮಸಾಲೆ (Garam Masale) | गरम मसाला (Garam Masala) |
@@ -148,6 +152,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
 | **Brinjal / Aubergine** | கத்தரிக்காய் (Kathirikkai) | ಬದನೆಕಾಯಿ (Badanekayi) | बैंगन (Baingan) |
+| **Eggplant** | வழுதனங்காய் (Vazhudhanangai) | ಬದನೆಕಾಯಿ (Badanekayi) | बैंगन (Baingan) |
 | **Cucumber** | வெள்ளரிக்காய் (Vellarikkai) | ಸೌತೆಕಾಯಿ (Soutekayi) | खीरा (Kheera) |
 | **Drumstick** | முருங்கைக்காய் (Murungaikkai) | ನುಗ್ಗೆಕಾಯಿ (Nuggekayi) | सहजन (Sahjan) |
 | **Ladies Finger / Okra** | வெண்டைக்காய் (Vendaikkai) | ಬೆಂಡೆಕಾಯಿ (Bendekayi) | भिंडी (Bhindi) |
@@ -167,6 +172,8 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Cabbage** | முட்டைக்கோஸ் (Muttaikose) | ಎಲೆಕೋಸು (Elekosu) | पत्तागोभी (Pattagobhi) |
 | **Cauliflower** | காலிஃப்ளவர் (Cauliflower) | ಹೂಕೋಸು (Hookosu) | फूलगोभी (Phulgobhi) |
 | **Beans (Green)** | பீன்ஸ் (Beans) | ಬೀನ್ಸ್ (Beans) | फली (Phali) |
+| **French Beans** | பிரெஞ்சு பீன்ஸ் (French Beans) | ಫ್ರೆಂಚ್ ಬೀನ್ಸ್ (French Beans) | फ्रेंच बीन्स (French Beans) |
+| **Bush Beans / Snap Beans** | புஷ் பீன்ஸ் (Bush Beans) | ಬುಷ್ ಬೀನ್ಸ್ (Bush Beans) | झाड़ीदार फली (Jhadidar Phali) |
 | **Cluster Beans** | சீனி அவரை / கொத்தவரங்காய் (Cheeni Avarai / Kothavarangai) | ಗೋರೆಕಾಯಿ (Gorekayi) | ग्वार फली (Gwar Phali) |
 | **Broad Beans** | கோழி அவரை / அவரைக்காய் (Kozhi Avarai / Avaraikkai) | ಅವರೆಕಾಯಿ (Avarekayi) | सेम फली (Sem Phali) |
 | **Capsicum / Bell Pepper** | குடமிளகாய் (Kudamilagai) | ದೊಣ್ಣೆ ಮೆಣಸಿನಕಾಯಿ (Donne Menasinakayi) | शिमला मिर्च (Shimla Mirch) |
@@ -176,14 +183,16 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Mint Leaves** | புதினா (Pudhina) | ಪುದೀನ (Pudeena) | पुदीना (Pudeena) |
 | **Garlic** | பூண்டு (Poondu) | ಬೆಳ್ಳುಳ್ಳಿ (Bellulli) | लहसुन (Lahsun) |
 | **Ginger** | இஞ்சி (Inji) | ಶುಂಠಿ (Shunthi) | अदरक (Adrak) |
-| **Corn / Maize** | சோளம் (Solam) | ಮೆಕ್ಕೆಜೋಳ (Mekkejola) | मक्का (Makka) |
+| **Raw Mango / Tender Mango** | மாங்காய் (Maangai) | ಮಾವಿನಕಾಯಿ (Maavina kaayi) | कच्चा आम (Kacha Aam) |
+| **Citron Fruit** | நாரத்தங்காய் / நாரந்தி காய் (Narathankai / Naranthi kaay) | ನಾರಂಗಿ (Narangi) | सिट्रॉन (Citron) |
+| **Corn / Maize** | மக்காச்சோளம் (Makka cholam) | ಮೆಕ್ಕೆಜೋಳ (Mekkejola) | मक्का (Makka) |
 | **Sambar Cucumber / Mangalore Cucumber** | சாம்பார் வெள்ளரி (Sambar Vellari) | ಸೌತೆಕಾಯಿ (Soutekayi) | खीरा (Kheera) |
 | **Sweet Potato** | சர்க்கரை வள்ளிக்கிழங்கு / சீனிக் கிழங்கு / வற்றாளை கிழங்கு (Sakkarai Vallikizhangu) | ಗೆಣಸು (Genasu) | शकरकंद (Shakarkand) |
 | **Yam / suran** | சேனைக்கிழங்கு (Senaikiizhangu) | ಸುರಣ (Surana) | जिमीकंद (Jimikand) |
 | **Tapioca / Cassava** | மரச்சினி கிழங்கு / மரவள்ளிக்கிழங்கு (Maravallikizhangu) | ಮರಗೆಣಸು (Maragenasu) | टैपिओका (Tapioca) |
 | **Raw Banana** | வாழைக்காய் (Vazhaikkai) | ಬಾಳೆಕಾಯಿ (Baalekayi) | कच्चा केला (Kaccha Kela) |
 | **Raw Jackfruit** | பலாப்பழம் (Palaappazham) | ಹಲಸಿನಕಾಯಿ (Halasinakayi) | कटहल (Kathal) |
-| **Colocasia / Taro Root** | சேப்பங்கிழங்கு (Seppankizhangu) | ಕೇಸವು (Kesavu) | अरबी (Arbi) |
+| **Arvi / Colocasia / Taro Root** | சேப்பங்கிழங்கு (Seppankizhangu) | ಕೇಸವು (Kesavu) | अरबी (Arbi) |
 
 </div>
 
@@ -217,9 +226,15 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Corn Flour** | சோள மாவு (Sola Maavu) | ಮೆಕ್ಕೆಜೋಳದ ಹಿಟ್ಟು (Mekkejolada Hittu) | मक्के का आटा (Makke Ka Aata) |
 | **Rice Flour** | அரிசி மாவு (Arisi Maavu) | ಅಕ್ಕಿ ಹಿಟ್ಟು (Akki Hittu) | चावल का आटा (Chawal Ka Aata) |
 | **Gram Flour / Besan** | கடலை மாவு (Kadalai Maavu) | ಕಡಲೆ ಹಿಟ್ಟು (Kadale Hittu) | बेसन (Besan) |
+| **Arrowroot Powder** | அரரூட் பவுடர் (Arrowroot Powder) | ಅರರೂಟ್ ಪುಡಿ (Arrowroot Pudi) | अरारोट पाउडर (Arrowroot Powder) |
 | **Jowar / Sorghum** | சோளம் (Cholam) | ಜೋಳ (Jola) | ज्वार (Jwar) |
 | **Bajra / Pearl Millet** | கம்பு (Kambu) | ಸಜ್ಜೆ (Sajje) | बाजरा (Bajra) |
 | **Ragi / Finger Millet** | கேழ்வரகு / ராகி (Kelvaragu) | ರಾಗಿ (Raagi) | नाचनी / रागी (Nachni / Ragi) |
+| **Barley** | பார்லி / வாற்கோதுமை (Barley / Vaarkodhumai) | ಜವೆಗೋಧಿ (Javegodhi) | जौ (Jau) |
+| **Puffed Rice** | பொரி / புரி அரிசி (Pori / Puri Arisi) | ಪುರಿ (Puri) | मुरमुरा / खील (Murmura / Kheel) |
+| **Flattened Rice / Poha** | அவல் (Aval) | ಅವಲಕ್ಕಿ (Avalakki) | पोहा / चिवड़ा (Poha / Chivda) |
+| **Sabudana / Sago / Tapioca Pearls** | சவ்வரிசி / ஜவ்வரிசி (Savvarisi / Javvarisi) | ಸಾಬುದಾಣ (Saabudaana) | साबूदाना (Sabudana) |
+| **Nylon Sago / Artificial Sago** | நைலான் சவ்வரிசி (Nylon Savvarisi) | ನೈಲಾನ್ ಸಾಬು (Nylon Saabu) | नायलॉन साबूदाना (Nylon Sabudana) |
 
 </div>
 
@@ -254,6 +269,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Pumpkin Seeds** | பூசணி விதை (Poosani Vidhai) | ಕುಂಬಳಕಾಯಿ ಬೀಜ (Kumbalakayi Beeja) | कद्दू के बीज (Kaddu Ke Beej) |
 | **Flax Seeds** | ஆளி விதை (Aali Vidhai) | ಅಗಸೆ ಬೀಜ (Agase Beeja) | अलसी (Alsi) |
 | **Chia Seeds** | சியா விதை (Chia Vidhai) | ಚಿಯಾ ಬೀಜ (Chia Beeja) | चिया बीज (Chia Beej) |
+| **Fox Nuts / Lotus Seeds** | தாமரை விதை / தாமரை நட்டு / மகானா (Thamarai Vidhai / Thamarai Nattu / Makhana) | ಕಮಲದ ಬೀಜ (Kamalada Beeja) | मखाना / फूल मखाना (Makhana / Phool Makhana) |
 
 </div>
 
@@ -279,10 +295,12 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Pickle (General)** | ஊறுகாய் (Oorugai) | ಉಪ್ಪಿನಕಾಯಿ (Uppinakayi) | अचार (Achaar) |
 | **Mango Pickle** | மாங்காய் ஊறுகாய் (Maangai Oorugai) | ಮಾವಿನ ಉಪ್ಪಿನಕಾಯಿ (Maavina Uppinakayi) | आम का अचार (Aam Ka Achaar) |
 | **Lemon Pickle** | எலுமிச்சை ஊறுகாய் (Elumichai Oorugai) | ನಿಂಬೆ ಉಪ್ಪಿನಕಾಯಿ (Nimbe Uppinakayi) | नींबू अचार (Neembu Achaar) |
+| **Citron Pickle** | நாரத்தங்காய் ஊறுகாய் (Narathankai Oorugai) | ನಾರಂಗಿ ಉಪ್ಪಿನಕಾಯಿ (Narangi Uppinakayi) | सिट्रॉन अचार (Citron Achaar) |
 | **Mixed Pickle** | கலவை ஊறுகாய் (Kalavai Oorugai) | ಮಿಶ್ರ ಉಪ್ಪಿನಕಾಯಿ (Mishra Uppinakayi) | मिक्स अचार (Mix Achaar) |
 | **Chili Pickle** | மிளகாய் ஊறுகாய் (Milagai Oorugai) | ಮೆಣಸಿನಕಾಯಿ ಉಪ್ಪಿನಕಾಯಿ (Menasinakayi Uppinakayi) | मिर्च अचार (Mirch Achaar) |
 | **Ginger Pickle** | இஞ்சி ஊறுகாய் (Inji Oorugai) | ಶುಂಠಿ ಉಪ್ಪಿನಕಾಯಿ (Shunthi Uppinakayi) | अदरक अचार (Adrak Achaar) |
 | **Garlic Pickle** | பூண்டு ஊறுகாய் (Poondu Oorugai) | ಬೆಳ್ಳುಳ್ಳಿ ಉಪ್ಪಿನಕಾಯಿ (Bellulli Uppinakayi) | लहसुन अचार (Lahsun Achaar) |
+| **Gongura Pickle / Sorrel Leaves Pickle** | புளிச்சைக்கீரை ஊறுகாய் (Pulichcha Keerai Oorugai) | ಹುಳಿ ಸೊಪ್ಪು ಉಪ್ಪಿನಕಾಯಿ (Huli Soppu Uppinakayi) | गोंगुरा अचार (Gongura Achaar) |
 
 </div>
 
@@ -342,9 +360,15 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 </div>
 
-> Banana is a nutritious fruit enjoyed worldwide, available in many varieties, colors, and flavors such as Nendran, Red Banana, Matti Banana, Chingan, Yelakki, Robusta, and more.
+> **Banana varieties**: Banana is a nutritious tropical fruit enjoyed worldwide. Popular varieties include **Nendran / Ethapazham** (cooking banana), **Red Banana** (sweet, reddish skin), **Matti** (small, sweet), **Poovan**, **Yelakki** (aromatic, Karnataka favorite), **Robusta** (common table banana), **Rasthali** (sweet, aromatic), **Karpooravalli** (large, firm), **Chingan** (Kerala variety), and **Cavendish** (most common export variety). Each variety has unique taste, texture, and culinary uses.
 
-> Mango is a delicious tropical fruit enjoyed worldwide, available in many varieties such as Neelam, Sindhura, Banginapalli, Mallika, Malgova, Totapuri, Raspuri, Alphonso, Chausa, Amrapali, Kesar, and more.
+> **Mango varieties**: Mango, the "King of Fruits," is a delicious tropical treasure with hundreds of varieties. Popular ones include **Alphonso/Hapus** (aromatic, smooth), **Banginapalli** (large, fiberless), **Totapuri** (tangy, used for pickles), **Neelam** (sweet, affordable), **Sindhura/Sindoora** (vibrant, sweet), **Malgova** (rich, creamy), **Mallika** (hybrid, aromatic), **Raspuri** (Karnataka favorite), **Kesar** (saffron-colored, Gujarat), **Chausa** (aromatic, North India), **Dasheri** (sweet, North India), **Langra** (green even when ripe), **Amrapali** (hybrid, disease-resistant), and **Badami** (aromatic, Karnataka). Each has distinct flavor, texture, and regional popularity.
+
+> **Apple varieties by texture**: Apples come in different textures that affect their eating experience and culinary uses:
+> 
+> **Crisp Apples** (firm, crunchy bite, refreshing): **Fuji** (very sweet, firm), **Gala** (sweet, crisp), **Honeycrisp** (extremely crisp, juicy), **Granny Smith** (tart, firm), **Pink Lady/Cripps Pink** (sweet-tart, crisp), **Cosmic Crisp** (firm, juicy), **Envy** (sweet, crunchy), **Jazz** (crisp, tangy), and **Ambrosia** (sweet, crisp). Best for fresh eating, salads, and snacking.
+>
+> **Soft/Mealy Apples** (tender, less crisp, floury texture): **Red Delicious** (soft when ripe), **Golden Delicious** (soft, sweet), **McIntosh** (soft, breaks down easily), **Cortland** (soft, white flesh), **Rome** (soft, holds shape when cooked), and **Jonathan** (soft, aromatic). Best for applesauce, baking, and cooking as they break down easily. Note: Many apples become softer/mealier with storage time.
 
 ## 📝 Shopping Tips
 
