@@ -22,6 +22,9 @@ const blog = defineCollection({
     //  Open Graph (OG) images
     ogImage: z.string().optional(),
     
+    // Related articles feature - max 5 articles
+    relatedArticles: z.array(z.string()).max(5).optional().nullable(),
+    
     // Enhanced donation system fields
     showDonate: z.boolean().optional(),
     donateMessage: z.string().optional(),

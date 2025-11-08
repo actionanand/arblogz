@@ -5,6 +5,7 @@ date: 2025-11-07
 tags: ["groceries", "pulses", "spices", "vegetables", "fruits", "multilingual", "indian cuisine", "reference"]
 category: Indian Cuisine
 ogImage: /images/year-2025/groceries.webp
+relatedArticles: ["fish-names-multilingual", "meat-and-poultry-guide"]
 ---
 
 A complete reference guide for grocery items including rice, pulses (dal), spices, vegetables, fruits, nuts, and more across Tamil, English, Kannada, and Hindi languages. Perfect for shopping, cooking, and expanding your culinary vocabulary!

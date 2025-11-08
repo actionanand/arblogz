@@ -6,6 +6,7 @@ import Profile from '@/components/Profile.astro'
 import Comment from '@/components/Comment.astro'
 import Toc from '@/components/Toc.astro'
 import Donate from '@/components/Donate.astro';
+import RelatedArticles from '@/components/RelatedArticles.astro';
 import {comment, config, donate} from "@/consts";
 import ScrollToTop from '@/components/ScrollToTop.astro'
 import {t} from '@/i18n/utils'
@@ -53,6 +54,13 @@ const shouldShowDonate = donate.enable && (
         <span data-translate="home.goBack">{t('home.goBack')}</span>
       </button>
       <slot/>
+      
+      <!-- Related Articles Section -->
+      {
+        frontmatter.relatedArticles && frontmatter.relatedArticles.length > 0 && (
+          <RelatedArticles relatedSlugs={frontmatter.relatedArticles} />
+        )
+      }
       
       <!-- Donation Section - Show based on global and manual controls -->
       {
