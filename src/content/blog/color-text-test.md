@@ -4,6 +4,7 @@ description: "Testing the enhanced color highlighting feature with CSS styling m
 date: 2025-10-05
 colorHighlight: true
 tags: ["test", "colors", "styling"]
+relatedArticles: ['color-text-with-react', 'display-pictures', 'display-pictures', 'display-pictures', 'display-pictures']
 ---
 
 # Color Highlighting with CSS Styling Test
