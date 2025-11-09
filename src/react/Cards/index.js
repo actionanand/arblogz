@@ -4,3 +4,4 @@ export { FancyCard, FancyCardContainer } from './Fancy';
 export { SimpleCard, SimpleCardContainer } from './Simple';
 export { DogearCard, DogearCardContainer } from './Dogear';
 export { HoverCard, HoverCardContainer } from './Hover';
+export { BookCard, BookCardContainer } from './Book';

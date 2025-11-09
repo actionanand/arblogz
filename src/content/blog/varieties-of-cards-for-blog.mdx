@@ -1,6 +1,6 @@
 ---
 title: Beautiful Card Components for Your Blog Posts
-description: Learn how to use stunning card components including notebook-style, fancy animated cards, simple article cards, and dogear bookmark cards to create visually appealing content displays in your MDX blog posts with automatic dark mode support.
+description: Learn how to use stunning card components including notebook-style, fancy animated cards, simple article cards, dogear bookmark cards, hover reveal cards, and flip book cards to create visually appealing content displays in your MDX blog posts with automatic dark mode support.
 date: 2025-11-06
 tags: [astro, react, cards, ui, design, mdx, animations]
 category: tutorial
@@ -11,8 +11,9 @@ import { FancyCard, FancyCardContainer } from '@/react/Cards';
 import { SimpleCard, SimpleCardContainer } from '@/react/Cards';
 import { DogearCard, DogearCardContainer } from '@/react/Cards';
 import { HoverCard, HoverCardContainer } from '@/react/Cards';
+import { BookCard, BookCardContainer } from '@/react/Cards';
 
-Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer four distinct card styles: **Notebook Cards** for a classic paper aesthetic, **Fancy Cards** for vibrant displays, **Simple Cards** for clean, professional article layouts, and **Dogear Cards** for bookmarked highlights. Let's explore all four!
+Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer six distinct card styles: **Notebook Cards** for a classic paper aesthetic, **Fancy Cards** for vibrant displays, **Simple Cards** for clean, professional article layouts, **Dogear Cards** for bookmarked highlights, **Hover Cards** for image galleries, and **Book Cards** for interactive flip animations. Let's explore all six!
 
 ---
 
@@ -613,7 +614,150 @@ import { HoverCard, HoverCardContainer } from '@/react/Cards';
 
 ---
 
-## 📋 Component Props Reference
+## � Book Cards
+
+### What are Book Cards?
+
+Book Cards are interactive flip cards with expandable content, featuring:
+- **Flip animation** - Card flips to reveal gradient background on hover
+- **Expandable width** - Card doubles in width to show inside page
+- **Remix Icons** - Beautiful icon library integration
+- **4 color themes** - City, Ski, Beach, Camping gradients
+- **Optional CTA** - Include button only when needed
+- **Automatic dark mode** - Seamlessly adapts to your theme
+
+### 📦 Importing Book Cards
+
+```jsx
+import { BookCard, BookCardContainer } from '@/react/Cards';
+```
+
+> **Important:** Always use the `.mdx` file extension (not `.md`) when working with React components in your blog posts.
+
+> **Hydration Required:** Add `client:load` directive to each `BookCard` component for interactivity.[^6]
+
+> **Remix Icons:** Ensure Remix Icon CSS is loaded in your project.
+
+### 🎯 Book Card Usage
+
+#### Multiple Cards in a Grid
+
+<BookCardContainer>
+  <BookCard
+    client:load
+    icon="ri-map-pin-line"
+    title="City break"
+    subtitle="Urban adventure"
+    heading="For urban lovers"
+    buttonText="View more"
+    buttonUrl="#"
+    color="city"
+  >
+    <p>
+      As cities never sleep, there are always something going on, no matter what time! 
+      Explore vibrant nightlife, cultural landmarks, and endless entertainment.
+    </p>
+  </BookCard>
+
+  <BookCard
+    client:load
+    icon="ri-snowflake-line"
+    title="Ski trip"
+    subtitle="Mountain escape"
+    heading="For snow lovers"
+    buttonText="View more"
+    buttonUrl="#"
+    color="ski"
+  >
+    <p>
+      Love snow? Why not take up exciting ski-in sessions and hit the slope? 
+      Experience breathtaking mountain views and adrenaline-pumping adventures.
+    </p>
+  </BookCard>
+
+  <BookCard
+    client:load
+    icon="ri-sun-line"
+    title="Beach time"
+    subtitle="Tropical paradise"
+    heading="For sun lovers"
+    color="beach"
+  >
+    <p>
+      Relax and get sun-kissed tan in the sea or take up surfing for an adventure! 
+      Enjoy crystal clear waters and pristine sandy beaches.
+    </p>
+  </BookCard>
+</BookCardContainer>
+
+**Code Example:**
+
+```jsx
+<BookCardContainer>
+  <BookCard 
+    client:load
+    icon="ri-map-pin-line"
+    title="City break"
+    subtitle="Urban adventure"
+    heading="For urban lovers"
+    buttonText="View more"
+    buttonUrl="/deals"
+    color="city"
+  >
+    <p>Description here...</p>
+  </BookCard>
+
+  <BookCard 
+    client:load
+    icon="ri-snowflake-line"
+    title="Ski trip"
+    subtitle="Mountain escape"
+    heading="For snow lovers"
+    color="ski"
+  >
+    <p>No button example...</p>
+  </BookCard>
+</BookCardContainer>
+```
+
+### 🎨 Book Card Features
+
+- **Flip Animation**: Card rotates 180° to show gradient background
+- **Expandable Design**: Card width doubles (15rem → 30rem) to reveal content
+- **Remix Icons**: Use any icon from [remixicon.com](https://remixicon.com/)
+- **4 Color Themes**: City (pink), Ski (cyan), Beach (coral), Camping (green)
+- **Optional Button**: Show CTA only when needed
+- **Dark Mode Support**: Automatically adjusts colors
+
+### ⚙️ Props
+
+- `icon` - Remix Icon class name (e.g., `ri-map-pin-line`) - defaults to `ri-book-open-line`
+- `title` - Title displayed on the card **(required)**
+- `subtitle` - Subtitle text below title (optional)
+- `heading` - Heading for inside page **(required)**
+- `children` - Inside page content **(required)**
+- `buttonText` - Button text (optional, button hidden if not provided)
+- `buttonUrl` - Button URL (optional, button hidden if not provided)
+- `color` - Color scheme: `city`, `ski`, `beach`, `camping` (defaults to `city`)
+- `client:load` - Astro directive to enable interactivity **(required)**[^6]
+
+### Book Cards Perfect For:
+- **Services & Offerings** - Feature different service packages
+- **Travel Destinations** - Showcase vacation options
+- **Product Categories** - Display product lines
+- **Event Types** - Highlight different event packages
+- **Course Offerings** - Present educational programs
+- **Membership Tiers** - Show subscription levels
+
+**Design Credit:** Book card design inspired by <cite>Codepen - Maza designDev[^7]</cite>
+
+[^6]: **Astro Client Directives**: BookCard requires `client:load` to enable React hydration for interactive flip and expansion functionality. Learn more about [Astro client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives).
+
+[^7]: Flip card design from [Codepen - Maza designDev's flip card](https://codepen.io/).
+
+---
+
+## �📋 Component Props Reference
 
 ### Card Containers (All Types)
 
@@ -625,36 +769,49 @@ import { HoverCard, HoverCardContainer } from '@/react/Cards';
 
 | Prop | Type | Required | Default | Description |
 |------|------|----------|---------|-------------|
-| `image` | string | Notebook: No<br/>Fancy: Yes<br/>Simple: Yes<br/>Dogear: N/A<br/> Hover: Yes | - | URL or path to the image. Optional for Notebook cards (text-only mode). Not used in Dogear cards. **Required for Hover cards** |
+| `image` | string | Notebook: No<br/>Fancy: Yes<br/>Simple: Yes<br/>Dogear: N/A<br/>Hover: Yes<br/>Book: N/A | - | URL or path to the image. Optional for Notebook cards (text-only mode). Not used in Dogear/Book cards. **Required for Hover cards** |
+| `icon` | string | Book only | `'ri-book-open-line'` | Remix Icon class name (e.g., `ri-map-pin-line`) for Book cards |
 | `title` | string | Yes | - | Card heading/title |
-| `imageAlt` | string | No | `title` value | Alt text for accessibility (not applicable to Dogear cards) |
+| `subtitle` | string | Book only | - | Subtitle text for Book cards |
+| `imageAlt` | string | No | `title` value | Alt text for accessibility (not applicable to Dogear/Book cards) |
+| `heading` | string | Book only | - | Inside page heading for Book cards **(required for Book cards)** |
 | `children` | ReactNode | Yes | - | Card content (paragraphs, HTML, etc.) |
-| `client:load` | directive | No <br/> Hover: Yes | - | **Required for Hover cards** to enable React hydration for interactivity. Not needed for other card types |
+| `client:load` | directive | Hover: Yes<br/>Book: Yes | - | **Required for Hover/Book cards** to enable React hydration for interactivity |
 | `readMoreUrl` | string | No (Simple only) | - | Link URL for "Read more" button (Simple cards only) |
-| `color` | string | No (Dogear only) | `'teal'` | Predefined color scheme: `teal`, `blue`, `purple`, `orange`, `green`, `red`, `pink`, `gray` (Dogear cards only) |
+| `buttonText` | string | Book only | - | Button text for Book cards (optional) |
+| `buttonUrl` | string | Book only | - | Button URL for Book cards (optional) |
+| `color` | string | Dogear/Book | Dogear: `'teal'`<br/>Book: `'city'` | Dogear: `teal`, `blue`, `purple`, `orange`, `green`, `red`, `pink`, `gray`<br/>Book: `city`, `ski`, `beach`, `camping` |
 | `customColor` | string | No (Dogear only) | - | Custom hex color to override predefined schemes (Dogear cards only) |
 | `bgColor` | string | No (Dogear only) | `'transparent'` | **Important:** Set to match your page/container background for the dogear effect to work properly (Dogear cards only) |
 
 > **⚠️ Important Notes:**
-> - **Hover Cards** require `client:load` directive for interactive hover functionality
+> - **Hover & Book Cards** require `client:load` directive for interactive functionality
 > - **Image** prop is mandatory for Hover cards - component will not render properly without it
+> - **Book Cards** button is optional - only shown if both `buttonText` and `buttonUrl` are provided
 > - Single Hover card is automatically centered; multiple cards display in responsive grid
 
 ## ✨ Feature Comparison
 
-| Feature | Notebook Cards | Fancy Cards | Simple Cards | Dogear Cards | Hover Cards |
-|---------|---------------|-------------|--------------|--------------|-----------------|
+| Feature | Notebook Cards | Fancy Cards | Simple Cards | Dogear Cards | Hover Cards | Book Cards |
+|---------|---------------|-------------|--------------|--------------|-----------------|-------------|
 | **Style** | Classic notebook paper | Modern vibrant design | Clean professional | Bookmarked page | **Image reveal** |
 | **Animations** | None | Card scale on hover | Image zoom + icon slide | None | **Slide-up reveal** |
 | **Colors** | Blue lines, red margin | Purple, aqua, violet | Theme-based minimal | 8 predefined + custom | **Theme-adaptive** |
-| **Special Classes** | No | `upcharge`, `note` | No | No | **No** |
-| **Typography** | Monospace | Georgia + Sans-serif | System fonts | Marvel | **System fonts** |
-| **Best For** | Documentation, tutorials | Products, menus, promotions | Articles, blogs, news | Notes, quotes, highlights | **Galleries, wildlife, portfolios** |
-| **Hover Effect** | None | Card scale | Image zoom + arrow animation | None | **Description overlay** |
-| **Read More Link** | No | No | Yes (optional) | No | **No** |
-| **Images** | Optional | Required | Required | Text-only | **Required** |
-| **Client Hydration** | No | No | No | No | **Yes (required)** |
-| **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | **✅ Yes** |
+| Feature | Notebook Cards | Fancy Cards | Simple Cards | Dogear Cards | Hover Cards | Book Cards |
+|---------|---------------|-------------|--------------|--------------|-----------------|-------------|
+| **Style** | Classic notebook paper | Modern vibrant design | Clean professional | Bookmarked page | **Image reveal** | **Flip animation** |
+| **Animations** | None | Card scale on hover | Image zoom + icon slide | None | **Slide-up reveal** | **Flip + expand** |
+| **Colors** | Blue lines, red margin | Purple, aqua, violet | Theme-based minimal | 8 predefined + custom | **Theme-adaptive** | **4 gradients** |
+| **Special Classes** | No | `upcharge`, `note` | No | No | **No** | **No** |
+| **Typography** | Monospace | Georgia + Sans-serif | System fonts | Marvel | **System fonts** | **System fonts** |
+| **Best For** | Documentation, tutorials | Products, menus, promotions | Articles, blogs, news | Notes, quotes, highlights | **Galleries, wildlife, portfolios** | **Services, travel, products** |
+| **Hover Effect** | None | Card scale | Image zoom + arrow animation | None | **Description overlay** | **Flip + width expand** |
+| **Read More Link** | No | No | Yes (optional) | No | **No** | **Yes (optional)** |
+| **Images** | Optional | Required | Required | Text-only | **Required** | **No (uses icons)** |
+| **Icons** | No | No | No | No | **No** | **Yes (Remix Icons)** |
+| **Client Hydration** | No | No | No | No | **Yes (required)** | **Yes (required)** |
+| **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | **✅ Yes** | **✅ Yes** |
+
 ## 💡 Use Cases
 
 ### Notebook Cards Perfect For:
@@ -693,9 +850,17 @@ import { HoverCard, HoverCardContainer } from '@/react/Cards';
 - **Image Galleries** - Photo descriptions and context
 - **Educational Content** - Learning materials with images and descriptions
 
+### Book Cards Perfect For:
+- **Services & Offerings** - Business services with detailed descriptions
+- **Travel Destinations** - Location showcases with features and booking options
+- **Product Categories** - Product lines with specifications
+- **Event Types** - Event offerings with details and registration
+- **Course Offerings** - Educational courses with enrollment options
+- **Membership Tiers** - Subscription levels with benefit details
+
 ## 🎨 Tips for Best Results
 
-1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles, Dogear for notes, Hover for image-heavy content
+1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles, Dogear for notes, Hover for image-heavy content, Book for services/offerings
 2. **Consistent styling** - Stick to one card type per blog post
 3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum)
 4. **Text-only notebooks** - Skip the image prop on Notebook cards for pure text content
@@ -706,6 +871,10 @@ import { HoverCard, HoverCardContainer } from '@/react/Cards';
 9. **Mobile-first** - Cards are responsive but test on mobile devices
 10. **Read more links** - Use meaningful URLs instead of '#' for Simple cards
 11. **Mix and match** - Combine single cards with containers for variety
+12. **Remix Icons** - Book cards require Remix Icons CSS to be loaded in your project
+13. **Optional buttons** - Book cards work great with or without buttons; only include when you have a clear call-to-action
+14. **Client hydration** - Remember to add `client:load` to Hover and Book cards for interactivity
+15. **Color consistency** - Book card gradient colors (city, ski, beach, camping) match their thematic content
 12. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
 13. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
 14. **Hover card images** - Use compelling images that work well with text overlays
