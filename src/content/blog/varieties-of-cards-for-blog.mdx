@@ -614,7 +614,7 @@ import { HoverCard, HoverCardContainer } from '@/react/Cards';
 
 ---
 
-## � Book Cards
+## 📖 Book Cards
 
 ### What are Book Cards?
 
@@ -634,7 +634,7 @@ import { BookCard, BookCardContainer } from '@/react/Cards';
 
 > **Important:** Always use the `.mdx` file extension (not `.md`) when working with React components in your blog posts.
 
-> **Hydration Required:** Add `client:load` directive to each `BookCard` component for interactivity.[^6]
+> **Hydration Required:** Add `client:load` directive to each `BookCard` component for interactivity.
 
 > **Remix Icons:** Ensure Remix Icon CSS is loaded in your project.
 
@@ -690,6 +690,23 @@ import { BookCard, BookCardContainer } from '@/react/Cards';
   </BookCard>
 </BookCardContainer>
 
+Single book Card
+
+<BookCardContainer>
+  <BookCard
+    client:load
+    icon="ri-leaf-line"
+    title="Camping Trek"
+    subtitle="Natural adventure"
+    heading="For Nature lovers"
+    color="camping"
+  >
+    <p>
+    Get your boots on for some hiking and explore all the beautiful scenery of nature!
+    </p>
+  </BookCard>
+</BookCardContainer>
+
 **Code Example:**
 
 ```jsx
@@ -739,7 +756,7 @@ import { BookCard, BookCardContainer } from '@/react/Cards';
 - `buttonText` - Button text (optional, button hidden if not provided)
 - `buttonUrl` - Button URL (optional, button hidden if not provided)
 - `color` - Color scheme: `city`, `ski`, `beach`, `camping` (defaults to `city`)
-- `client:load` - Astro directive to enable interactivity **(required)**[^6]
+- `client:load` - Astro directive to enable interactivity **(required)**
 
 ### Book Cards Perfect For:
 - **Services & Offerings** - Feature different service packages
@@ -749,15 +766,14 @@ import { BookCard, BookCardContainer } from '@/react/Cards';
 - **Course Offerings** - Present educational programs
 - **Membership Tiers** - Show subscription levels
 
-**Design Credit:** Book card design inspired by <cite>Codepen - Maza designDev[^7]</cite>
+**Design Credit:** Book card design inspired by <cite>Codepen - Maza designDev[^6]</cite>
 
-[^6]: **Astro Client Directives**: BookCard requires `client:load` to enable React hydration for interactive flip and expansion functionality. Learn more about [Astro client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives).
 
-[^7]: Flip card design from [Codepen - Maza designDev's flip card](https://codepen.io/).
+[^6]: Flip card design from [Codepen - Maza designDev's flip card](https://codepen.io/Maza-designDev/pen/KKdmyGb).
 
 ---
 
-## �📋 Component Props Reference
+## 📋 Component Props Reference
 
 ### Card Containers (All Types)
 

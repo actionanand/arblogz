@@ -214,7 +214,8 @@ const BookCard = ({
     right: 0,
     transition: 'all 1s ease',
     width: '15rem',
-    zIndex: 1
+    zIndex: 1,
+    overflow: 'auto'
   };
 
   const insidePageContainerStyle = {
@@ -224,7 +225,8 @@ const BookCard = ({
     height: '100%',
     textAlign: 'center',
     width: '100%',
-    justifyContent: 'center'
+    justifyContent: 'space-between',
+    overflow: 'hidden'
   };
 
   const insideHeadingStyle = {
@@ -242,10 +244,8 @@ const BookCard = ({
     lineHeight: '1.5'
   };
 
-  const [isButtonHovered, setIsButtonHovered] = useState(false);
-
   const buttonStyle = {
-    backgroundColor: isButtonHovered ? currentColor.buttonHover : 'transparent',
+    backgroundColor: 'transparent',
     border: `3px solid ${currentColor.button}`,
     borderRadius: '.5rem',
     fontSize: '1.2rem',
@@ -257,8 +257,9 @@ const BookCard = ({
     textDecoration: 'none',
     transition: 'all .3s ease',
     width: '90%',
+    maxWidth: '12rem',
     zIndex: 10,
-    color: isButtonHovered ? '#fafbfa' : currentColor.button,
+    color: currentColor.button,
     display: 'inline-block',
     cursor: 'pointer'
   };
@@ -269,6 +270,16 @@ const BookCard = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      <style>{`
+        .book-card-button-${color} {
+          background-color: transparent;
+          color: ${currentColor.button};
+        }
+        .book-card-button-${color}:hover {
+          background-color: ${currentColor.buttonHover} !important;
+          color: #fafbfa !important;
+        }
+      `}</style>
       <div style={flipCardStyle}>
         <div style={{ visibility: 'visible' }}>
           <div style={flipCardContainerStyle}>
@@ -300,9 +311,8 @@ const BookCard = ({
           {buttonText && buttonUrl && (
             <a 
               href={buttonUrl} 
+              className={`book-card-button-${color}`}
               style={buttonStyle}
-              onMouseEnter={() => setIsButtonHovered(true)}
-              onMouseLeave={() => setIsButtonHovered(false)}
             >
               {buttonText}
             </a>
