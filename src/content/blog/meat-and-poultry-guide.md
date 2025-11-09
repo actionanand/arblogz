@@ -6,6 +6,7 @@ tags: ["meat", "poultry", "multilingual", "indian cuisine", "reference", "non-ve
 category: Indian Cuisine
 outdated: 1
 ogImage: /images/year-2025/chicken-parts.webp
+relatedArticles: ['groceries-guide-multilingual', 'fish-names-multilingual']
 ---
 
 A complete reference guide for meat and poultry terms across Tamil, English, Kannada, and Hindi languages, plus detailed explanations of popular non-veg dishes and cooking styles!
