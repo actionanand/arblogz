@@ -62,7 +62,8 @@ const HoverCard = ({ image, title, children, imageAlt = '' }) => {
   const cardItemStyle = {
     position: 'relative',
     width: '100%',
-    maxWidth: '250px',
+    maxWidth: '350px',
+    height: '100%',
     maxHeight: '350px',
     boxShadow: isHovered 
       ? '0 45px 70px -6px rgba(0, 0, 0, 0.7)' 

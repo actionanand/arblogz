@@ -1,8 +1,6 @@
 import React from 'react';
 
 const HoverCardContainer = ({ children }) => {
-  const childCount = React.Children.count(children);
-  
   const containerStyle = {
     maxWidth: '1200px',
     margin: '0 auto',
@@ -14,11 +12,9 @@ const HoverCardContainer = ({ children }) => {
     listStyle: 'none',
     margin: '0',
     padding: '0',
-    gridTemplateColumns: childCount === 1 
-      ? '1fr' 
-      : 'repeat(auto-fit, minmax(250px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
     gap: '2rem',
-    justifyItems: childCount === 1 ? 'center' : 'center'
+    justifyItems: 'center'
   };
 
   return (
