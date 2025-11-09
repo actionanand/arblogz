@@ -116,6 +116,11 @@ const formatDate = (date: Date) => {
       color: #635C59;
     }
   }
+  
+  /* Dark mode specific heading color */
+  html[data-theme="dark"] .related-articles-title {
+    color: white;
+  }
 
   .related-icon {
     width: 2rem;
@@ -128,6 +133,7 @@ const formatDate = (date: Date) => {
     font-size: 1rem;
     color: rgb(var(--color-text-muted));
     font-weight: 400;
+    font-style: italic;
   }
 
   .related-articles-grid {
@@ -146,11 +152,24 @@ const formatDate = (date: Date) => {
     .related-articles-grid {
       grid-template-columns: repeat(3, 1fr);
     }
+    
+    /* 2 articles - each occupies 50% of space */
+    .related-articles-grid:has(> :nth-child(2):last-child) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 5 articles - 2-2-1 layout, last one takes full width */
+    .related-articles-grid:has(> :nth-child(5):last-child) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .related-articles-grid:has(> :nth-child(5):last-child) > :nth-child(5) {
+      grid-column: 1 / -1;
+    }
   }
 
-  /* Adjust for 4 or 5 items to make better use of space */
-  .related-articles-grid:has(> :nth-child(4):last-child),
-  .related-articles-grid:has(> :nth-child(5):last-child) {
+  /* Adjust for 4 items to make better use of space */
+  .related-articles-grid:has(> :nth-child(4):last-child) {
     @media (min-width: 1024px) {
       grid-template-columns: repeat(2, 1fr);
     }
