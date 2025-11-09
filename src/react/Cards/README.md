@@ -45,6 +45,27 @@ import { FancyCard, FancyCardContainer } from '@/react/Cards';
 
 ---
 
+### 3. Hover Cards (`/Hover`)
+Beautiful cards that reveal detailed descriptions on hover with smooth animations.
+
+**Features:**
+- Image with description overlay on hover
+- Smooth slide-up animation
+- Scrollable content area
+- Custom scrollbar styling
+- Auto dark/light mode detection
+- Fully responsive
+- No container needed
+
+**Import:**
+```jsx
+import { HoverCard } from '@/react/Cards';
+```
+
+[View Hover Card Documentation](./Hover/README.md)
+
+---
+
 ## General Usage Pattern
 
 All card components follow the same pattern:

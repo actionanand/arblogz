@@ -10,6 +10,7 @@ import { NotebookCard, NotebookCardContainer } from '@/react/Cards';
 import { FancyCard, FancyCardContainer } from '@/react/Cards';
 import { SimpleCard, SimpleCardContainer } from '@/react/Cards';
 import { DogearCard, DogearCardContainer } from '@/react/Cards';
+import { HoverCard, HoverCardContainer } from '@/react/Cards';
 
 Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer four distinct card styles: **Notebook Cards** for a classic paper aesthetic, **Fancy Cards** for vibrant displays, **Simple Cards** for clean, professional article layouts, and **Dogear Cards** for bookmarked highlights. Let's explore all four!
 
@@ -512,9 +513,17 @@ You can use any custom hex color instead of predefined schemes:
 - **Bookmarks** - Saved references and favorites
 - **Alerts** - Warnings, tips, and special notices
 
+### Hover Cards Perfect For:
+- **Wildlife & Nature** - Animal descriptions and detailed facts
+- **Product Showcases** - Detailed product information and specifications
+- **Portfolio Items** - Project descriptions and implementation details
+- **Team Members** - Bio and background information
+- **Image Galleries** - Photo descriptions and context
+- **Educational Content** - Learning materials with images and descriptions
+
 ## 🎨 Tips for Best Results
 
-1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles, Dogear for notes
+1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles, Dogear for notes, Hover for image-heavy content
 2. **Consistent styling** - Stick to one card type per blog post
 3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum)
 4. **Text-only notebooks** - Skip the image prop on Notebook cards for pure text content
@@ -527,7 +536,125 @@ You can use any custom hex color instead of predefined schemes:
 11. **Mix and match** - Combine single cards with containers for variety
 12. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
 13. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
+14. **Hover card images** - Use compelling images that work well with text overlays
 
+---
+
+## 🎴 Hover Cards
+
+### What are Hover Cards?
+
+Hover Cards are interactive React components that reveal detailed descriptions on hover, featuring:
+- **Image with overlay** - Beautiful images that show descriptions on hover
+- **Smooth animations** - Elegant slide-up effect with fade transitions
+- **Scrollable content** - Long descriptions are scrollable with custom scrollbar
+- **Lift effect** - Cards elevate with enhanced shadow on hover
+- **Automatic dark mode** - Seamlessly adapts to your theme
+- **Responsive grid layout** - Auto-fit grid that works on all screen sizes
+
+### 📦 Importing Hover Cards
+
+```jsx
+import { HoverCard, HoverCardContainer } from '@/react/Cards';
+```
+
+> **Important:** Always use the `.mdx` file extension (not `.md`) when working with React components in your blog posts.
+
+### 🎯 Hover Card Usage
+
+#### Multiple Cards in a Grid
+
+<HoverCardContainer>
+  <HoverCard
+    image="https://images.unsplash.com/photo-1591485423007-765bde4139ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+    title="Seal"
+    imageAlt="Seal in the ocean"
+  client:load>
+    <p>
+      Pinnipeds, commonly known as seals, are a widely distributed and diverse clade of carnivorous, 
+      fin-footed, semiaquatic marine mammals. They comprise the extant families Odobenidae (whose only 
+      living member is the walrus), Otariidae (the eared seals: sea lions and fur seals), and Phocidae 
+      (the earless seals, or true seals).
+    </p>
+  </HoverCard>
+
+  <HoverCard
+    image="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+    title="Lion"
+    imageAlt="Lion portrait"
+  client:load>
+    <p>
+      The lion (Panthera leo) is a species in the family Felidae and a member of the genus Panthera. 
+      It has a muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft at the 
+      end of its tail. It is sexually dimorphic; adult male lions have a prominent mane.
+    </p>
+  </HoverCard>
+
+  <HoverCard
+    image="https://images.unsplash.com/photo-1534251369789-5067c8b8602a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+    title="Hawk"
+    imageAlt="Hawk in flight"
+  client:load>
+    <p>
+      Hawks are a group of medium-sized diurnal birds of prey of the family Accipitridae. Hawks are 
+      widely distributed and vary greatly in size. The subfamily Accipitrinae includes goshawks, 
+      sparrowhawks, sharp-shinned hawks and others. This subfamily are mainly woodland birds with long 
+      tails and high visual acuity. They hunt by dashing suddenly from a concealed perch.
+    </p>
+  </HoverCard>
+</HoverCardContainer>
+
+  <HoverCard
+    image="https://images.unsplash.com/photo-1534251369789-5067c8b8602a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+    title="Hawk"
+    imageAlt="Hawk in flight"
+  client:load>
+    <p>
+      Hawks are a group of medium-sized diurnal birds of prey of the family Accipitridae. Hawks are 
+      widely distributed and vary greatly in size. The subfamily Accipitrinae includes goshawks, 
+      sparrowhawks, sharp-shinned hawks and others. This subfamily are mainly woodland birds with long 
+      tails and high visual acuity. They hunt by dashing suddenly from a concealed perch.
+    </p>
+  </HoverCard>
+
+**Code Example:**
+
+```jsx
+<HoverCardContainer>
+  <HoverCard 
+    image="your-image-url.jpg" 
+    title="Card Title"
+    imageAlt="Description of the image"
+  >
+    <p>Your content here...</p>
+  </HoverCard>
+</HoverCardContainer>
+```
+
+### 🎨 Hover Card Features
+
+- **Hover to Reveal**: Descriptions slide up smoothly when you hover over the card
+- **Dark Mode Support**: Automatically adjusts colors for light and dark themes
+- **Custom Scrollbar**: If content is long, you get a beautifully styled scrollbar
+- **Lift Animation**: Cards elevate with enhanced shadow on hover
+- **Responsive Grid**: Auto-fit layout adapts to screen size
+
+### ⚙️ Props
+
+- `image` - URL of the image to display **(required)**
+- `title` - Title displayed on the card header **(required)**
+- `children` - Content to display on hover (can include paragraphs, lists, etc.) **(required)**
+- `imageAlt` - Alt text for the image (defaults to title if not provided)
+
+### Hover Cards Perfect For:
+- **Wildlife & Nature** - Animal descriptions and facts
+- **Product Showcases** - Detailed product information
+- **Portfolio Items** - Project descriptions and details
+- **Team Members** - Bio and background information
+- **Image Galleries** - Photo descriptions and context
+- **Educational Content** - Learning materials with images
+
+---
 
 ## 🚀 Coming Soon
 
