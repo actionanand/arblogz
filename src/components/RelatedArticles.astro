@@ -44,9 +44,9 @@ const formatDate = (date: Date) => {
       <svg class="related-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
       </svg>
-      {t('post.relatedArticles')}
+      <span data-translate="post.relatedArticles">{t('post.relatedArticles')}</span>
     </h2>
-    <p class="related-articles-subtitle">{t('post.continueExploring')}</p>
+    <p class="related-articles-subtitle"><span data-translate="post.continueExploring">{t('post.continueExploring')}</span></p>
   </div>
   
   <div class="related-articles-grid">
@@ -74,7 +74,7 @@ const formatDate = (date: Date) => {
           
           <div class="card-footer">
             <span class="read-more">
-              {t('post.readArticle')}
+              <span data-translate="post.readArticle">{t('post.readArticle')}</span>
               <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
@@ -108,6 +108,13 @@ const formatDate = (date: Date) => {
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
+  }
+  
+  /* Light mode specific heading color */
+  @media (prefers-color-scheme: light) {
+    .related-articles-title {
+      color: #635C59;
+    }
   }
 
   .related-icon {
@@ -218,7 +225,7 @@ const formatDate = (date: Date) => {
 
   .card-date {
     font-size: 0.875rem;
-    color: rgb(var(--color-text-muted));
+    color: #8B8B8B;
     font-weight: 500;
   }
 
@@ -233,6 +240,13 @@ const formatDate = (date: Date) => {
     -webkit-box-orient: vertical;
     overflow: hidden;
     transition: color 0.2s ease;
+  }
+  
+  /* Light mode specific card title color */
+  @media (prefers-color-scheme: light) {
+    .card-title {
+      color: #635C59;
+    }
   }
 
   .related-article-card:hover .card-title {
