@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 const HoverCard = ({ image, title, children, imageAlt = '' }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false); // Default to false for SSR
   const [isHovered, setIsHovered] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Theme detection
+  // Theme detection - only runs on client
   useEffect(() => {
+    setIsMounted(true);
+    
     const checkTheme = () => {
+      if (typeof window === 'undefined') return;
+      
       const htmlElement = document.documentElement;
       const bodyElement = document.body;
       
@@ -56,6 +61,7 @@ const HoverCard = ({ image, title, children, imageAlt = '' }) => {
 
   const cardItemStyle = {
     position: 'relative',
+    width: '100%',
     maxWidth: '250px',
     maxHeight: '350px',
     boxShadow: isHovered 
@@ -93,7 +99,8 @@ const HoverCard = ({ image, title, children, imageAlt = '' }) => {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-    display: 'block'
+    display: 'block',
+    pointerEvents: 'none' // Prevent external scripts from adding attributes
   };
 
   const descStyle = {
@@ -117,6 +124,8 @@ const HoverCard = ({ image, title, children, imageAlt = '' }) => {
   };
 
   useEffect(() => {
+    if (!isMounted || typeof window === 'undefined') return;
+    
     const scrollbarStyles = `
       .hover-card-desc::-webkit-scrollbar {
         width: 6px;
@@ -143,7 +152,27 @@ const HoverCard = ({ image, title, children, imageAlt = '' }) => {
         document.head.removeChild(styleElement);
       }
     };
-  }, [isDarkMode]);
+  }, [isDarkMode, isMounted]);
+
+  // Prevent external scripts from modifying image attributes
+  useEffect(() => {
+    if (!isMounted || typeof window === 'undefined') return;
+    
+    const images = document.querySelectorAll('.hover-card-image');
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-fancybox') {
+          mutation.target.removeAttribute('data-fancybox');
+        }
+      });
+    });
+    
+    images.forEach((img) => {
+      observer.observe(img, { attributes: true });
+    });
+    
+    return () => observer.disconnect();
+  }, [isMounted]);
 
   return (
     <li 
@@ -154,6 +183,7 @@ const HoverCard = ({ image, title, children, imageAlt = '' }) => {
       <h2 style={titleStyle}>{title}</h2>
       <div style={imageContainerStyle}>
         <img 
+          className="hover-card-image"
           src={image} 
           alt={imageAlt || title}
           style={imageStyle}
