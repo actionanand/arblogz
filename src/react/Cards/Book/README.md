@@ -9,7 +9,6 @@ A flip card component with gradient background and expandable inside page, inspi
 - **Remix Icons**: Uses Remix Icon library for consistent iconography
 - **4 Color Themes**: City (pink), Ski (cyan), Beach (coral), Camping (green)
 - **Dark Mode**: Automatically adapts to theme
-- **Optional CTA**: Include button only when needed
 
 ## Usage
 
@@ -31,28 +30,11 @@ import { BookCard, BookCardContainer } from '@/react/Cards';
     title="City break"
     subtitle="Urban adventure"
     heading="For urban lovers"
-    buttonText="View more"
-    buttonUrl="/deals"
     color="city"
   >
     <p>As cities never sleep, there are always something going on!</p>
   </BookCard>
 </BookCardContainer>
-```
-
-### Without Button
-
-```jsx
-<BookCard
-  client:load
-  icon="ri-snowflake-line"
-  title="Ski trip"
-  subtitle="Mountain escape"
-  heading="For snow lovers"
-  color="ski"
->
-  <p>Love snow? Why not take up exciting ski-in sessions!</p>
-</BookCard>
 ```
 
 ### Multiple Cards
@@ -80,8 +62,6 @@ import { BookCard, BookCardContainer } from '@/react/Cards';
 | `subtitle` | string | No | - | Subtitle text below title |
 | `heading` | string | Yes | - | Heading for inside page |
 | `children` | ReactNode | Yes | - | Content for inside page |
-| `buttonText` | string | No | - | Text for call-to-action button (button hidden if not provided) |
-| `buttonUrl` | string | No | - | URL for button link (button hidden if not provided) |
 | `color` | string | No | `'city'` | Color scheme: `city`, `ski`, `beach`, `camping` |
 | `client:load` | directive | Yes | - | Required for React hydration |
 
@@ -108,7 +88,6 @@ Browse all icons at: [remixicon.com](https://remixicon.com/)
 
 - Requires `client:load` directive in Astro/MDX for interactivity
 - Card expands from 15rem to 30rem on hover
-- Button is optional - only shown if both `buttonText` and `buttonUrl` are provided
 - Requires Remix Icon CSS to be loaded in your project
 - Works best with 2-4 cards in a row
 

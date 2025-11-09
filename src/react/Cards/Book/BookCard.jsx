@@ -6,8 +6,6 @@ const BookCard = ({
   subtitle, 
   heading, 
   children, 
-  buttonText, 
-  buttonUrl,
   color = 'city' // city, ski, beach, camping
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -157,7 +155,8 @@ const BookCard = ({
   const iconStyle = {
     fontSize: '3.25rem',
     color: '#fafbfa',
-    marginTop: '-.5rem'
+    marginTop: '-.5rem',
+    marginBottom: '.5rem'
   };
 
   const headingStyle = {
@@ -244,42 +243,12 @@ const BookCard = ({
     lineHeight: '1.5'
   };
 
-  const buttonStyle = {
-    backgroundColor: 'transparent',
-    border: `3px solid ${currentColor.button}`,
-    borderRadius: '.5rem',
-    fontSize: '1.2rem',
-    fontWeight: 600,
-    marginTop: '2rem',
-    overflow: 'hidden',
-    padding: '.7rem .75rem',
-    position: 'relative',
-    textDecoration: 'none',
-    transition: 'all .3s ease',
-    width: '90%',
-    maxWidth: '12rem',
-    zIndex: 10,
-    color: currentColor.button,
-    display: 'inline-block',
-    cursor: 'pointer'
-  };
-
   return (
     <div 
       style={cardStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <style>{`
-        .book-card-button-${color} {
-          background-color: transparent;
-          color: ${currentColor.button};
-        }
-        .book-card-button-${color}:hover {
-          background-color: ${currentColor.buttonHover} !important;
-          color: #fafbfa !important;
-        }
-      `}</style>
       <div style={flipCardStyle}>
         <div style={{ visibility: 'visible' }}>
           <div style={flipCardContainerStyle}>
@@ -308,15 +277,6 @@ const BookCard = ({
         <div style={insidePageContainerStyle}>
           <h3 style={insideHeadingStyle}>{heading}</h3>
           <div style={insideTextStyle}>{children}</div>
-          {buttonText && buttonUrl && (
-            <a 
-              href={buttonUrl} 
-              className={`book-card-button-${color}`}
-              style={buttonStyle}
-            >
-              {buttonText}
-            </a>
-          )}
         </div>
       </div>
     </div>

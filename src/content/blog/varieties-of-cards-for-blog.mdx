@@ -623,7 +623,6 @@ Book Cards are interactive flip cards with expandable content, featuring:
 - **Expandable width** - Card doubles in width to show inside page
 - **Remix Icons** - Beautiful icon library integration
 - **4 color themes** - City, Ski, Beach, Camping gradients
-- **Optional CTA** - Include button only when needed
 - **Automatic dark mode** - Seamlessly adapts to your theme
 
 ### 📦 Importing Book Cards
@@ -649,8 +648,6 @@ import { BookCard, BookCardContainer } from '@/react/Cards';
     title="City break"
     subtitle="Urban adventure"
     heading="For urban lovers"
-    buttonText="View more"
-    buttonUrl="#"
     color="city"
   >
     <p>
@@ -665,8 +662,6 @@ import { BookCard, BookCardContainer } from '@/react/Cards';
     title="Ski trip"
     subtitle="Mountain escape"
     heading="For snow lovers"
-    buttonText="View more"
-    buttonUrl="#"
     color="ski"
   >
     <p>
@@ -717,8 +712,6 @@ Single book Card
     title="City break"
     subtitle="Urban adventure"
     heading="For urban lovers"
-    buttonText="View more"
-    buttonUrl="/deals"
     color="city"
   >
     <p>Description here...</p>
@@ -732,7 +725,7 @@ Single book Card
     heading="For snow lovers"
     color="ski"
   >
-    <p>No button example...</p>
+    <p>Content here...</p>
   </BookCard>
 </BookCardContainer>
 ```
@@ -743,7 +736,6 @@ Single book Card
 - **Expandable Design**: Card width doubles (15rem → 30rem) to reveal content
 - **Remix Icons**: Use any icon from [remixicon.com](https://remixicon.com/)
 - **4 Color Themes**: City (pink), Ski (cyan), Beach (coral), Camping (green)
-- **Optional Button**: Show CTA only when needed
 - **Dark Mode Support**: Automatically adjusts colors
 
 ### ⚙️ Props
@@ -753,8 +745,6 @@ Single book Card
 - `subtitle` - Subtitle text below title (optional)
 - `heading` - Heading for inside page **(required)**
 - `children` - Inside page content **(required)**
-- `buttonText` - Button text (optional, button hidden if not provided)
-- `buttonUrl` - Button URL (optional, button hidden if not provided)
 - `color` - Color scheme: `city`, `ski`, `beach`, `camping` (defaults to `city`)
 - `client:load` - Astro directive to enable interactivity **(required)**
 
@@ -794,8 +784,6 @@ Single book Card
 | `children` | ReactNode | Yes | - | Card content (paragraphs, HTML, etc.) |
 | `client:load` | directive | Hover: Yes<br/>Book: Yes | - | **Required for Hover/Book cards** to enable React hydration for interactivity |
 | `readMoreUrl` | string | No (Simple only) | - | Link URL for "Read more" button (Simple cards only) |
-| `buttonText` | string | Book only | - | Button text for Book cards (optional) |
-| `buttonUrl` | string | Book only | - | Button URL for Book cards (optional) |
 | `color` | string | Dogear/Book | Dogear: `'teal'`<br/>Book: `'city'` | Dogear: `teal`, `blue`, `purple`, `orange`, `green`, `red`, `pink`, `gray`<br/>Book: `city`, `ski`, `beach`, `camping` |
 | `customColor` | string | No (Dogear only) | - | Custom hex color to override predefined schemes (Dogear cards only) |
 | `bgColor` | string | No (Dogear only) | `'transparent'` | **Important:** Set to match your page/container background for the dogear effect to work properly (Dogear cards only) |
@@ -803,7 +791,6 @@ Single book Card
 > **⚠️ Important Notes:**
 > - **Hover & Book Cards** require `client:load` directive for interactive functionality
 > - **Image** prop is mandatory for Hover cards - component will not render properly without it
-> - **Book Cards** button is optional - only shown if both `buttonText` and `buttonUrl` are provided
 > - Single Hover card is automatically centered; multiple cards display in responsive grid
 
 ## ✨ Feature Comparison
@@ -888,12 +875,11 @@ Single book Card
 10. **Read more links** - Use meaningful URLs instead of '#' for Simple cards
 11. **Mix and match** - Combine single cards with containers for variety
 12. **Remix Icons** - Book cards require Remix Icons CSS to be loaded in your project
-13. **Optional buttons** - Book cards work great with or without buttons; only include when you have a clear call-to-action
-14. **Client hydration** - Remember to add `client:load` to Hover and Book cards for interactivity
-15. **Color consistency** - Book card gradient colors (city, ski, beach, camping) match their thematic content
-12. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
-13. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
-14. **Hover card images** - Use compelling images that work well with text overlays
+13. **Client hydration** - Remember to add `client:load` to Hover and Book cards for interactivity
+14. **Color consistency** - Book card gradient colors (city, ski, beach, camping) match their thematic content
+15. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
+16. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
+17. **Hover card images** - Use compelling images that work well with text overlays
 
 ---
 
