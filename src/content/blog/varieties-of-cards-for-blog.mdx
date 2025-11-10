@@ -1136,25 +1136,29 @@ Sign Cards are React components that display text with a bold 3D cutout effect, 
 import { SignCard, SignCardContainer } from '@/react/Cards';
 ```
 
+> **Important:** Always use the `.mdx` file extension (not `.md`) when working with React components in your blog posts.
+
+> **Hydration Required:** Add `client:load` directive to each `SignCard` component for interactivity.
+
 ### 🎯 Sign Card Usage
 
 #### Predefined Sign Types
 
 <SignCardContainer>
-  <SignCard type="warning" />
-  <SignCard type="continued" />
-  <SignCard type="note" />
+  <SignCard type="warning" client:load />
+  <SignCard type="continued" client:load />
+  <SignCard type="note" client:load />
 </SignCardContainer>
 
 <SignCardContainer>
-  <SignCard type="alert" />
-  <SignCard type="info" />
-  <SignCard type="important" />
+  <SignCard type="alert" client:load />
+  <SignCard type="info" client:load />
+  <SignCard type="important" client:load />
 </SignCardContainer>
 
 <SignCardContainer>
-  <SignCard type="tip" />
-  <SignCard type="update" />
+  <SignCard type="tip" client:load />
+  <SignCard type="update" client:load />
 </SignCardContainer>
 
 #### Custom Sign with Split Text
@@ -1163,6 +1167,7 @@ import { SignCard, SignCardContainer } from '@/react/Cards';
   type="custom"
   firstWord="Cut"
   secondWord="out"
+  client:load
 />
 
 #### Custom Colors
@@ -1175,26 +1180,28 @@ import { SignCard, SignCardContainer } from '@/react/Cards';
   textColor="#fff"
   enclosedBg="#fff"
   enclosedColor="#3498db"
+  client:load
 />
 
 **Code Examples:**
 
 ```jsx
 // Predefined types - just specify the type
-<SignCard type="warning" />
-<SignCard type="continued" />
-<SignCard type="note" />
-<SignCard type="alert" />
-<SignCard type="info" />
-<SignCard type="important" />
-<SignCard type="tip" />
-<SignCard type="update" />
+<SignCard type="warning" client:load />
+<SignCard type="continued" client:load />
+<SignCard type="note" client:load />
+<SignCard type="alert" client:load />
+<SignCard type="info" client:load />
+<SignCard type="important" client:load />
+<SignCard type="tip" client:load />
+<SignCard type="update" client:load />
 
 // Custom sign with default yellow
 <SignCard 
   type="custom"
   firstWord="Cut"
   secondWord="out"
+  client:load
 />
 
 // Custom sign with your colors
@@ -1206,13 +1213,14 @@ import { SignCard, SignCardContainer } from '@/react/Cards';
   textColor="#fff"
   enclosedBg="#fff"
   enclosedColor="#e74c3c"
+  client:load
 />
 
 // Multiple signs in container
 <SignCardContainer>
-  <SignCard type="warning" />
-  <SignCard type="important" />
-  <SignCard type="tip" />
+  <SignCard type="warning" client:load />
+  <SignCard type="important" client:load />
+  <SignCard type="tip" client:load />
 </SignCardContainer>
 ```
 
@@ -1299,7 +1307,7 @@ import { SignCard, SignCardContainer } from '@/react/Cards';
 | `imageAlt` | string | No | `title` value or defaults | Alt text for accessibility. For Circle cards, defaults to title or 'Circle image'. For Diamond cards, defaults to 'Diamond card image'. |
 | `heading` | string | Book only | - | Inside page heading for Book cards **(required for Book cards)** |
 | `children` | ReactNode | Most cards: Yes<br/>Circle: N/A<br/>Diamond: N/A<br/>Sign: N/A | - | Card content (paragraphs, HTML, etc.). Not used in Circle, Diamond, or Sign cards. |
-| `client:load` | directive | Hover: Yes<br/>Book: Yes | - | **Required for Hover/Book cards** to enable React hydration for interactivity |
+| `client:load` | directive | Hover: Yes <br/> Book: Yes <br/> Sign: Yes | - | **Required for Hover, Book & Sign cards** to enable React hydration for interactivity |
 | `readMoreUrl` | string | No (Simple only) | - | Link URL for "Read more" button (Simple cards only) |
 | `size` | string | Circle/Diamond only | `'auto'` | Size of card as CSS value (%, px, rem, etc.). When `'auto'`, uses `width` and `height` props. |
 | `width` | string | Circle/Diamond only | Circle: `'200px'`<br/>Diamond: `'300px'` | Width of card (used when `size='auto'`). |
@@ -1314,7 +1322,7 @@ import { SignCard, SignCardContainer } from '@/react/Cards';
 | `bgColor` | string | No (Dogear only) | `'transparent'` | **Important:** Set to match your page/container background for the dogear effect to work properly (Dogear cards only) |
 
 > **⚠️ Important Notes:**
-> - **Hover & Book Cards** require `client:load` directive for interactive functionality
+> - **Hover, Book & Sign Cards** require `client:load` directive for interactive functionality
 > - **Image** prop is mandatory for Hover cards - component will not render properly without it
 > - Single Hover card is automatically centered; multiple cards display in responsive grid
 
@@ -1334,16 +1342,16 @@ import { SignCard, SignCardContainer } from '@/react/Cards';
 | **Icons** | No | No | No | No | **No** | **Yes (Remix Icons)** | **No** | **No** | **No** |
 | **Text Mode** | No | No | No | Text-only | **No** | **No** | **Yes** | **No** | **Yes (split text)** |
 | **Shape** | Rectangle | Rectangle | Rectangle | Rectangle | **Rectangle** | **Rectangle** | **Circle** | **Rounded diagonal** | **3D perspective** |
-| **Client Hydration** | No | No | No | No | **Yes (required)** | **Yes (required)** | **No** | **No** | **No** |
+| **Client Hydration** | No | No | No | No | **Yes (required)** | **Yes (required)** | **No** | **No** | **Yes (required)** |
 | **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | **✅ Yes** | **✅ Yes** | **✅ Yes** | **✅ Yes** | **✅ Yes** |
-| **Hover Effect** | None | Card scale | Image zoom + arrow animation | None | **Description overlay** | **Flip + width expand** | **None** | **Lift + shadow** |
-| **Read More Link** | No | No | Yes (optional) | No | **No** | **No** | **No** | **No** |
-| **Images** | Optional | Required | Required | Text-only | **Required** | **No (uses icons)** | **Optional** | **Required** |
-| **Icons** | No | No | No | No | **No** | **Yes (Remix Icons)** | **No** | **No** |
+| **Hover Effect** | None | Card scale | Image zoom + arrow animation | None | **Description overlay** | **Flip + width expand** | **None** | **Lift + shadow** | **Straightening Sign Card** |
+| **Read More Link** | No | No | Yes (optional) | No | **No** | **No** | **No** | **No** | **No** |
+| **Images** | Optional | Required | Required | Text-only | **Required** | **No (uses icons)** | **Optional** | **Required** | Text-only |
+| **Icons** | No | No | No | No | **No** | **Yes (Remix Icons)** | **No** | **No** | **No** |
 | **Text Mode** | No | No | No | Text-only | **No** | **No** | **Yes** | **No** |
-| **Shape** | Rectangle | Rectangle | Rectangle | Rectangle | **Rectangle** | **Rectangle** | **Circle** | **Rounded diagonal** |
-| **Client Hydration** | No | No | No | No | **Yes (required)** | **Yes (required)** | **No** | **No** |
-| **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | **✅ Yes** | **✅ Yes** | **✅ Yes** | **✅ Yes** |
+| **Shape** | Rectangle | Rectangle | Rectangle | Rectangle | **Rectangle** | **Rectangle** | **Circle** | **Rounded diagonal** | **Rectangle** |
+| **Client Hydration** | No | No | No | No | **Yes (required)** | **Yes (required)** | **No** | **No** | **Yes (required)** |
+| **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | **✅ Yes** | **✅ Yes** | **✅ Yes** | **✅ Yes** | **✅ Yes** |
 
 ## 💡 Use Cases
 
