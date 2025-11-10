@@ -56,9 +56,19 @@ import { CircleCard, CircleCardContainer } from '@/react/Cards';
 
 ```jsx
 <CircleCardContainer>
-  <CircleCard image="/avatar.jpg" size="20%" />
-  <CircleCard image="/avatar2.jpg" size="25%" />
-  <CircleCard image="/avatar3.jpg" size="15%" />
+  <CircleCard image="/avatar.jpg" width="300px" height="300px" />
+  <CircleCard image="/avatar2.jpg" width="250px" height="250px" />
+  <CircleCard image="/avatar3.jpg" size="20%" />
+</CircleCardContainer>
+```
+
+### Free Size (Natural Image Dimensions)
+
+```jsx
+<CircleCardContainer>
+  <CircleCard image="/photo1.jpg" isFreeSize={true} />
+  <CircleCard image="/photo2.jpg" isFreeSize={true} />
+  <CircleCard image="/photo3.jpg" isFreeSize={true} />
 </CircleCardContainer>
 ```
 
@@ -71,8 +81,11 @@ import { CircleCard, CircleCardContainer } from '@/react/Cards';
 | `image` | string | No | - | URL or path to the image |
 | `imageAlt` | string | No | `title` or 'Circle image' | Alt text for accessibility |
 | `title` | string | No | - | Text to display (used when no image provided) |
-| `size` | string | No | `'15%'` | Size of the circle (CSS percentage or px) |
+| `size` | string | No | `'auto'` | Size of the circle (CSS percentage or px). Use with width/height for fixed sizes |
+| `width` | string | No | `'200px'` | Width of the circle (when size is 'auto') |
+| `height` | string | No | `'200px'` | Height of the circle (when size is 'auto') |
 | `bgColor` | string | No | `'#ff0082'` | Background color for text-only circles |
+| `isFreeSize` | boolean | No | `false` | When true, image displays at natural size with circular crop (may be ellipse if not square) |
 
 ### CircleCardContainer
 

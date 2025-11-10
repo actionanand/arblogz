@@ -7,7 +7,8 @@ const CircleCard = ({
   size = 'auto',
   width = '200px',
   height = '200px',
-  bgColor = '#ff0082'
+  bgColor = '#ff0082',
+  isFreeSize = false
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -63,7 +64,16 @@ const CircleCard = ({
     };
   }, []);
 
-  const circleStyle = {
+  const circleStyle = isFreeSize && image ? {
+    textAlign: 'center',
+    position: 'relative',
+    borderRadius: '50%',
+    overflow: 'hidden',
+    backgroundColor: 'transparent',
+    flexShrink: 0,
+    display: 'inline-block',
+    maxWidth: '100%'
+  } : {
     width: size === 'auto' ? (image ? width : '200px') : size,
     height: size === 'auto' ? (image ? height : '200px') : size,
     textAlign: 'center',
@@ -75,7 +85,13 @@ const CircleCard = ({
     display: 'inline-block'
   };
 
-  const imageStyle = {
+  const imageStyle = isFreeSize ? {
+    width: 'auto',
+    height: 'auto',
+    maxWidth: '100%',
+    display: 'block',
+    borderRadius: '50%'
+  } : {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
