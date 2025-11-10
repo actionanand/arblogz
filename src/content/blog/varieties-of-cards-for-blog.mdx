@@ -769,14 +769,14 @@ Single book Card
 ### What are Circle Cards?
 
 Circle Cards are React components that display images or text in perfect circular shapes, ideal for:
-- **Circular cropping** - Images automatically cut into perfect circles
+- **Circular cropping** - Images automatically cut into circular/elliptical shapes
 - **Profile pictures** - Display avatars and team member photos
 - **Icon galleries** - Showcase technology stacks or tool icons
-- **Responsive sizing** - Percentage-based sizing that adapts to container
+- **Flexible sizing** - Fixed dimensions (width/height) or free-size mode for natural dimensions
 - **Text circles** - Display text in colored circular backgrounds
 - **Custom colors** - Configurable background colors for text-only circles
 - **Flexbox layout** - Responsive grid arrangement with automatic wrapping
-- **Object-fit cover** - Images fill circles without distortion
+- **Two display modes** - Controlled size for perfect circles or free size for natural image dimensions
 
 ### 📦 Importing Circle Cards
 
@@ -786,7 +786,7 @@ import { CircleCard, CircleCardContainer } from '@/react/Cards';
 
 ### 🎯 Circle Card Usage
 
-#### Image Circles
+#### Default Image Circles (200x200px)
 
 <CircleCardContainer>
   <CircleCard 
@@ -815,25 +815,30 @@ import { CircleCard, CircleCardContainer } from '@/react/Cards';
   />
 </CircleCardContainer>
 
-single 
+#### Free Size Mode (Natural Image Dimensions)
 
+When you want images to display at their full natural size without any dimension restrictions, use `isFreeSize={true}`:
 
   <CircleCard 
     image="https://www.greendna.in/cdn/shop/products/all_1024x1024@2x.jpg?v=1586941497" 
-    imageAlt="Team member 1"
+    imageAlt="Product showcase"
     isFreeSize={true}
   />
 
-Custom Size
+> **Free Size Mode**: Image displays at its natural dimensions with circular/elliptical crop. Perfect when you don't want to manually set dimensions for each image.
+
+#### Custom Fixed Size (Perfect Circles)
+
+For perfect circles with specific dimensions, use the `width` and `height` props:
 
   <CircleCard 
     image="https://www.greendna.in/cdn/shop/products/all_1024x1024@2x.jpg?v=1586941497" 
-    imageAlt="Team member 1"
+    imageAlt="Large circle"
     width="450px"
     height="450px"
   />
 
-> Custom size only will work for image.
+> **Fixed Size Mode**: Creates perfect circles by specifying exact width and height. Best for uniform circular grids.
 
 #### Text Circles
 
@@ -846,10 +851,10 @@ Custom Size
   <CircleCard title="Astro" bgColor="#ff5a03" />
 </CircleCardContainer>
 
-**Code Example:**
+**Code Examples:**
 
 ```jsx
-// Image circles
+// Default 200x200px circles
 <CircleCardContainer>
   <CircleCard 
     image="/team/member1.jpg" 
@@ -859,9 +864,44 @@ Custom Size
     image="/team/member2.jpg" 
     imageAlt="Jane Smith"
   />
+</CircleCardContainer>
+
+// Free size mode - images display at natural dimensions
+<CircleCardContainer>
   <CircleCard 
-    image="/team/member3.jpg" 
-    imageAlt="Bob Johnson"
+    image="/photos/photo1.jpg" 
+    imageAlt="Photo 1"
+    isFreeSize={true}
+  />
+  <CircleCard 
+    image="/photos/photo2.jpg" 
+    imageAlt="Photo 2"
+    isFreeSize={true}
+  />
+</CircleCardContainer>
+
+// Custom fixed size - perfect circles
+<CircleCardContainer>
+  <CircleCard 
+    image="/profiles/user1.jpg" 
+    imageAlt="User 1"
+    width="300px"
+    height="300px"
+  />
+  <CircleCard 
+    image="/profiles/user2.jpg" 
+    imageAlt="User 2"
+    width="300px"
+    height="300px"
+  />
+</CircleCardContainer>
+
+// Percentage-based size (responsive)
+<CircleCardContainer>
+  <CircleCard 
+    image="/avatar.jpg" 
+    imageAlt="Avatar"
+    size="20%"
   />
 </CircleCardContainer>
 
@@ -871,37 +911,38 @@ Custom Size
   <CircleCard title="CSS" bgColor="#264de4" />
   <CircleCard title="JS" bgColor="#f0db4f" />
 </CircleCardContainer>
-
-// Custom size
-<CircleCardContainer>
-  <CircleCard 
-    image="/profile.jpg" 
-    size="20%" 
-    imageAlt="Profile"
-  />
-</CircleCardContainer>
 ```
 
 ### 🎨 Circle Card Features
 
-- **Perfect Circles**: Images automatically cropped to circular shape using `border-radius: 50%`
-- **Object Fit**: Images cover entire circle without distortion
-- **Responsive Size**: Percentage-based sizing adapts to container width
-- **Text Mode**: Display text in circular colored backgrounds
-- **Custom Colors**: Set any background color for text circles
-- **Minimum Width**: 100px minimum ensures visibility on all devices
-- **Flexbox Grid**: Automatic wrapping and spacing between circles
-- **Dark Mode**: Inherits theme for text colors
+- **Perfect Circles**: Images cropped to circular shape using `border-radius: 50%`
+- **Two Size Modes**: 
+  - **Fixed Mode** (default): Use `width`/`height` or `size` props for controlled dimensions
+  - **Free Mode**: Use `isFreeSize={true}` for natural image dimensions
+- **Text Mode**: Display text in circular colored backgrounds when no image provided
+- **Custom Colors**: Set any background color for text circles via `bgColor` prop
+- **Flexbox Grid**: Container automatically wraps and spaces circles
+- **Dark Mode**: Text circles adapt to theme automatically
 
 ### ⚙️ Props
 
-- `image` - Image URL or path (optional, for image mode)
-- `imageAlt` - Alt text for accessibility (optional, defaults to title or 'Circle image')
-- `title` - Text to display in circle (optional, for text mode)
-- `size` - Circle size as CSS value (defaults to `'15%'`)
-- `bgColor` - Background color for text circles (defaults to `'#ff0082'`)
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `image` | string | No | - | Image URL or path (for image mode) |
+| `imageAlt` | string | No | `title` or 'Circle image' | Alt text for accessibility |
+| `title` | string | No | - | Text to display in circle (for text mode, when no image) |
+| `size` | string | No | `'auto'` | Circle size as CSS value. Works with width/height when 'auto' |
+| `width` | string | No | `'200px'` | Width of circle (used when size is 'auto') |
+| `height` | string | No | `'200px'` | Height of circle (used when size is 'auto') |
+| `bgColor` | string | No | `'#ff0082'` | Background color for text-only circles |
+| `isFreeSize` | boolean | No | `false` | When `true`, image displays at natural size with circular crop |
 
-> **Note:** Either `image` or `title` should be provided. If `image` is provided, it takes precedence over `title`.
+> **Important Notes:**
+> - **Either `image` or `title`** should be provided. If both are provided, `image` takes precedence.
+> - **For perfect circles**: Use `width` and `height` with equal values (e.g., `width="300px" height="300px"`)
+> - **For natural image size**: Use `isFreeSize={true}` - image will display at full dimensions with circular/elliptical crop
+> - **For responsive circles**: Use `size` prop with percentage value (e.g., `size="20%"`)
+> - **Text circles**: Only require `title` and optionally `bgColor` props
 
 ### Circle Cards Perfect For:
 - **Team Members** - Display profile pictures in circular format
@@ -913,8 +954,9 @@ Custom Size
 - **Icon Collections** - Tool or feature icons
 - **Portfolio Previews** - Circular project thumbnails
 
-**Design Credit:** Circle card design inspired by responsive circular image galleries.
+**Design Credit:** Circle card design inspired by <cite>Codepen responsive circular image galleries[^7]</cite>
 
+[^7]: Circle card design from [Codepen](https://codepen.io/jakezhong/pen/ZByGjb).
 ---
 
 ## 📋 Component Props Reference
@@ -929,7 +971,7 @@ Custom Size
 
 | Prop | Type | Required | Default | Description |
 |------|------|----------|---------|-------------|
-| `image` | string | Notebook: No<br/>Fancy: Yes<br/>Simple: Yes<br/>Dogear: N/A<br/>Hover: Yes<br/>Book: N/A<br/>Circle: No | - | URL or path to the image. Optional for Notebook/Circle cards. Not used in Dogear/Book cards. **Required for Hover cards**. For Circle cards, creates circular image display. |
+| `image` | string | Notebook: No<br/>Fancy: Yes<br/>Simple: Yes<br/>Dogear: N/A<br/>Hover: Yes<br/>Book: N/A<br/>Circle: No | - | URL or path to the image. Optional for Notebook/Circle cards. Not used in Dogear/Book cards. **Required for Hover cards**. For Circle cards, creates circular image display with fixed size (default) or natural size (with `isFreeSize={true}`). |
 | `icon` | string | Book only | `'ri-book-open-line'` | Remix Icon class name (e.g., `ri-map-pin-line`) for Book cards |
 | `title` | string | Most cards: Yes<br/>Circle: No | - | Card heading/title. For Circle cards, displays text in circle when no image provided. |
 | `subtitle` | string | Book only | - | Subtitle text for Book cards |
@@ -938,7 +980,10 @@ Custom Size
 | `children` | ReactNode | Most cards: Yes<br/>Circle: N/A | - | Card content (paragraphs, HTML, etc.). Not used in Circle cards. |
 | `client:load` | directive | Hover: Yes<br/>Book: Yes | - | **Required for Hover/Book cards** to enable React hydration for interactivity |
 | `readMoreUrl` | string | No (Simple only) | - | Link URL for "Read more" button (Simple cards only) |
-| `size` | string | Circle only | `'15%'` | Size of the circle as CSS value (%, px, rem, etc.) for Circle cards |
+| `size` | string | Circle only | `'auto'` | Size of the circle as CSS value (%, px, rem, etc.). When `'auto'`, uses `width` and `height` props. For responsive circles, use percentage values (e.g., `'20%'`). |
+| `width` | string | Circle only | `'200px'` | Width of circle (used when `size='auto'`). Set equal to `height` for perfect circles. |
+| `height` | string | Circle only | `'200px'` | Height of circle (used when `size='auto'`). Set equal to `width` for perfect circles. |
+| `isFreeSize` | boolean | Circle only | `false` | When `true`, image displays at natural dimensions with circular/elliptical crop. Ignores `size`, `width`, and `height` props. |
 | `bgColor` | string | Circle only | `'#ff0082'` | Background color for text-only Circle cards |
 | `color` | string | Dogear/Book | Dogear: `'teal'`<br/>Book: `'city'` | Dogear: `teal`, `blue`, `purple`, `orange`, `green`, `red`, `pink`, `gray`<br/>Book: `city`, `ski`, `beach`, `camping` |
 | `customColor` | string | No (Dogear only) | - | Custom hex color to override predefined schemes (Dogear cards only) |
@@ -958,7 +1003,7 @@ Custom Size
 | **Colors** | Blue lines, red margin | Purple, aqua, violet | Theme-based minimal | 8 predefined + custom | **Theme-adaptive** | **4 gradients** | **Custom bg colors** |
 | **Special Classes** | No | `upcharge`, `note` | No | No | **No** | **No** | **No** |
 | **Typography** | Monospace | Georgia + Sans-serif | System fonts | Marvel | **System fonts** | **System fonts** | **System fonts** |
-| **Best For** | Documentation, tutorials | Products, menus, promotions | Articles, blogs, news | Notes, quotes, highlights | **Galleries, wildlife, portfolios** | **Services, travel, products** | **Profiles, avatars, icons** |
+| **Best For** | Documentation, tutorials | Products, menus, promotions | Articles, blogs, news | Notes, quotes, highlights | **Galleries, wildlife, portfolios** | **Services, travel, products** | **Profiles, avatars, tech stacks** |
 | **Hover Effect** | None | Card scale | Image zoom + arrow animation | None | **Description overlay** | **Flip + width expand** | **None** |
 | **Read More Link** | No | No | Yes (optional) | No | **No** | **No** | **No** |
 | **Images** | Optional | Required | Required | Text-only | **Required** | **No (uses icons)** | **Optional** |
@@ -1028,7 +1073,7 @@ Custom Size
 
 1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles, Dogear for notes, Hover for image-heavy content, Book for services/offerings, Circle for profiles/avatars
 2. **Consistent styling** - Stick to one card type per blog post
-3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum, 300x300px for Circle cards)
+3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum)
 4. **Text-only notebooks** - Skip the image prop on Notebook cards for pure text content
 5. **Descriptive alt text** - Improve accessibility and SEO
 6. **Concise titles** - Keep titles short and impactful
@@ -1038,14 +1083,14 @@ Custom Size
 10. **Read more links** - Use meaningful URLs instead of '#' for Simple cards
 11. **Mix and match** - Combine single cards with containers for variety
 12. **Remix Icons** - Book cards require Remix Icons CSS to be loaded in your project
-13. **Circle card images** - Use square images (1:1 aspect ratio) for best results in Circle cards
-14. **Circle sizing** - Adjust size prop for Circle cards to fit your layout (default 15%)
-15. **Text circles** - Use contrasting colors for text-only Circle cards for better visibility
-13. **Client hydration** - Remember to add `client:load` to Hover and Book cards for interactivity
-14. **Color consistency** - Book card gradient colors (city, ski, beach, camping) match their thematic content
-15. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
-16. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
-17. **Hover card images** - Use compelling images that work well with text overlays
+13. **Circle card sizing** - For fixed circles use equal `width` and `height` (e.g., `width="300px" height="300px"`). For natural image size, use `isFreeSize={true}`
+14. **Circle responsive sizing** - Use the `size` prop with percentage values (e.g., `size="20%"`) for container-relative circles
+15. **Text circles** - Use contrasting colors via `bgColor` prop for text-only Circle cards for better visibility
+16. **Client hydration** - Remember to add `client:load` to Hover and Book cards for interactivity
+17. **Color consistency** - Book card gradient colors (city, ski, beach, camping) match their thematic content
+18. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
+19. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
+20. **Hover card images** - Use compelling images that work well with text overlays
 
 ---
 
