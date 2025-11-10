@@ -1,6 +1,6 @@
 ---
 title: Beautiful Card Components for Your Blog Posts
-description: Learn how to use stunning card components including notebook-style, fancy animated cards, simple article cards, dogear bookmark cards, hover reveal cards, flip book cards, and circular image cards to create visually appealing content displays in your MDX blog posts with automatic dark mode support.
+description: Learn how to use stunning card components including notebook-style, fancy animated cards, simple article cards, dogear bookmark cards, hover reveal cards, flip book cards, circular image cards, and diagonal diamond cards to create visually appealing content displays in your MDX blog posts with automatic dark mode support.
 date: 2025-11-06
 tags: [astro, react, cards, ui, design, mdx, animations]
 category: tutorial
@@ -13,8 +13,9 @@ import { DogearCard, DogearCardContainer } from '@/react/Cards';
 import { HoverCard, HoverCardContainer } from '@/react/Cards';
 import { BookCard, BookCardContainer } from '@/react/Cards';
 import { CircleCard, CircleCardContainer } from '@/react/Cards';
+import { DiamondCard, DiamondCardContainer } from '@/react/Cards';
 
-Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer seven distinct card styles: **Notebook Cards** for a classic paper aesthetic, **Fancy Cards** for vibrant displays, **Simple Cards** for clean, professional article layouts, **Dogear Cards** for bookmarked highlights, **Hover Cards** for image galleries, **Book Cards** for interactive flip animations, and **Circle Cards** for circular profile pictures and icons. Let's explore all seven!
+Looking for creative ways to showcase content in your blog posts? Our custom card components make it easy to present information in visually appealing, organized ways. We offer eight distinct card styles: **Notebook Cards** for a classic paper aesthetic, **Fancy Cards** for vibrant displays, **Simple Cards** for clean, professional article layouts, **Dogear Cards** for bookmarked highlights, **Hover Cards** for image galleries, **Book Cards** for interactive flip animations, **Circle Cards** for circular profile pictures and icons, and **Diamond Cards** for elegant diagonal-cornered image displays. Let's explore all eight!
 
 ---
 
@@ -957,6 +958,160 @@ For perfect circles with specific dimensions, use the `width` and `height` props
 **Design Credit:** Circle card design inspired by <cite>Codepen responsive circular image galleries[^7]</cite>
 
 [^7]: Circle card design from [Codepen](https://codepen.io/jakezhong/pen/ZByGjb).
+
+---
+
+## 💎 Diamond Cards
+
+### What are Diamond Cards?
+
+Diamond Cards are React components that display images with distinctive diagonal rounded corners, creating an elegant asymmetric look. Perfect for:
+
+- **Diagonal Rounded Corners** - 48px radius on top-right and bottom-left corners
+- **Subtle Corner Curves** - 8px radius on top-left and bottom-right for balance
+- **Image-Only Display** - Focused entirely on showcasing images beautifully
+- **Flexible Sizing Modes** - Fixed dimensions, natural size, or percentage-based
+- **Dark Mode Support** - Shadows automatically adapt to current theme
+- **Hover Effects** - Smooth lift animation with enhanced shadow on hover
+- **Responsive Grid** - Container automatically wraps and spaces cards
+
+### 📦 Importing Diamond Cards
+
+```jsx
+import { DiamondCard, DiamondCardContainer } from '@/react/Cards';
+```
+
+### 🎯 Diamond Card Usage
+
+#### Default Image Cards (300x300px)
+
+<DiamondCardContainer>
+  <DiamondCard 
+    image="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=400&h=400&fit=crop"
+    imageAlt="Modern architecture"
+  />
+  <DiamondCard 
+    image="https://images.unsplash.com/photo-1682687221038-404670f09439?w=400&h=400&fit=crop"
+    imageAlt="Nature landscape"
+  />
+  <DiamondCard 
+    image="https://images.unsplash.com/photo-1682687221080-5cb261c645cb?w=400&h=400&fit=crop"
+    imageAlt="Urban scene"
+  />
+</DiamondCardContainer>
+
+#### Free Size Mode (Natural Image Dimensions)
+
+Use `isFreeSize={true}` to display images at their natural dimensions with diagonal rounded corners:
+
+<DiamondCard 
+  image="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=800&h=600&fit=crop"
+  imageAlt="Large scenic view"
+  isFreeSize={true}
+/>
+
+> When `isFreeSize={true}`, the image displays at its natural dimensions while maintaining the diagonal rounded corner effect. Perfect for hero images or featured content.
+
+#### Custom Fixed Size
+
+<DiamondCardContainer>
+  <DiamondCard 
+    image="https://images.unsplash.com/photo-1682687220199-d0124f48f95b?w=500&h=500&fit=crop"
+    imageAlt="Product showcase 1"
+    width="400px"
+    height="400px"
+  />
+  <DiamondCard 
+    image="https://images.unsplash.com/photo-1682687220015-186f63b8850a?w=500&h=500&fit=crop"
+    imageAlt="Product showcase 2"
+    width="400px"
+    height="400px"
+  />
+</DiamondCardContainer>
+
+**Code Examples:**
+
+```jsx
+// Default 300x300px diamonds
+<DiamondCardContainer>
+  <DiamondCard 
+    image="/gallery/photo1.jpg"
+    imageAlt="Gallery image 1"
+  />
+  <DiamondCard 
+    image="/gallery/photo2.jpg"
+    imageAlt="Gallery image 2"
+  />
+</DiamondCardContainer>
+
+// Free size mode for large images
+<DiamondCard 
+  image="/hero-image.jpg"
+  imageAlt="Featured image"
+  isFreeSize={true}
+/>
+
+// Custom fixed dimensions
+<DiamondCard 
+  image="/product.jpg"
+  imageAlt="Product photo"
+  width="450px"
+  height="450px"
+/>
+
+// Responsive with percentage
+<DiamondCardContainer>
+  <DiamondCard 
+    image="/portfolio1.jpg"
+    imageAlt="Portfolio item"
+    size="30%"
+  />
+  <DiamondCard 
+    image="/portfolio2.jpg"
+    imageAlt="Portfolio item"
+    size="30%"
+  />
+</DiamondCardContainer>
+```
+
+### 🎨 Diamond Card Features
+
+- **Two Size Modes**:
+  - **Fixed Mode** (default): Use `width`/`height` or `size` props for controlled dimensions
+  - **Free Mode**: Use `isFreeSize={true}` for natural image dimensions
+- **Diagonal Rounded Corners**: Creates distinctive asymmetric look (48px on top-right & bottom-left)
+- **Image-Only Design**: No text overlays, focused on visual impact
+- **Hover Animation**: Cards lift 4px with enhanced shadow
+- **Dark Mode Adaptive**: Shadows change color based on theme
+- **Flexbox Grid**: Container automatically wraps and spaces cards with 20px gap
+
+### ⚙️ Props
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `image` | string | **Yes** | - | URL or path to the image |
+| `imageAlt` | string | No | `'Diamond card image'` | Alt text for accessibility |
+| `size` | string | No | `'auto'` | Card size as CSS value. Works with width/height when 'auto' |
+| `width` | string | No | `'300px'` | Width of card (used when size is 'auto') |
+| `height` | string | No | `'300px'` | Height of card (used when size is 'auto') |
+| `isFreeSize` | boolean | No | `false` | When `true`, image displays at natural size with diagonal corners |
+
+> **Important Notes:**
+> - **`image` prop is required** - Diamond cards are designed exclusively for images
+> - **For consistent grids**: Use equal `width` and `height` values
+> - **For hero/featured images**: Use `isFreeSize={true}` to display at full dimensions
+> - **For responsive layouts**: Use `size` prop with percentage values (e.g., `size="25%"`)
+
+### Diamond Cards Perfect For:
+- **Portfolio Galleries** - Showcase creative work with modern style
+- **Product Photography** - E-commerce and catalog displays
+- **Image Collections** - Photo galleries and visual content
+- **Photography Portfolios** - Professional photo presentations
+- **Art Displays** - Digital art and illustration showcases
+- **Travel Photos** - Destination and journey photography
+- **Event Galleries** - Wedding, conference, or event photos
+- **Featured Images** - Hero sections and highlighted content
+
 ---
 
 ## 📋 Component Props Reference
@@ -971,19 +1126,19 @@ For perfect circles with specific dimensions, use the `width` and `height` props
 
 | Prop | Type | Required | Default | Description |
 |------|------|----------|---------|-------------|
-| `image` | string | Notebook: No<br/>Fancy: Yes<br/>Simple: Yes<br/>Dogear: N/A<br/>Hover: Yes<br/>Book: N/A<br/>Circle: No | - | URL or path to the image. Optional for Notebook/Circle cards. Not used in Dogear/Book cards. **Required for Hover cards**. For Circle cards, creates circular image display with fixed size (default) or natural size (with `isFreeSize={true}`). |
+| `image` | string | Notebook: No<br/>Fancy: Yes<br/>Simple: Yes<br/>Dogear: N/A<br/>Hover: Yes<br/>Book: N/A<br/>Circle: No<br/>Diamond: Yes | - | URL or path to the image. Optional for Notebook/Circle cards. Not used in Dogear/Book cards. **Required for Hover and Diamond cards**. For Circle cards, creates circular image display. For Diamond cards, creates diagonal rounded corner display. |
 | `icon` | string | Book only | `'ri-book-open-line'` | Remix Icon class name (e.g., `ri-map-pin-line`) for Book cards |
-| `title` | string | Most cards: Yes<br/>Circle: No | - | Card heading/title. For Circle cards, displays text in circle when no image provided. |
+| `title` | string | Most cards: Yes<br/>Circle: No<br/>Diamond: N/A | - | Card heading/title. For Circle cards, displays text in circle when no image provided. Not used in Diamond cards. |
 | `subtitle` | string | Book only | - | Subtitle text for Book cards |
-| `imageAlt` | string | No | `title` value | Alt text for accessibility (not applicable to Dogear/Book cards). For Circle cards, defaults to title or 'Circle image'. |
+| `imageAlt` | string | No | `title` value or defaults | Alt text for accessibility. For Circle cards, defaults to title or 'Circle image'. For Diamond cards, defaults to 'Diamond card image'. |
 | `heading` | string | Book only | - | Inside page heading for Book cards **(required for Book cards)** |
-| `children` | ReactNode | Most cards: Yes<br/>Circle: N/A | - | Card content (paragraphs, HTML, etc.). Not used in Circle cards. |
+| `children` | ReactNode | Most cards: Yes<br/>Circle: N/A<br/>Diamond: N/A | - | Card content (paragraphs, HTML, etc.). Not used in Circle or Diamond cards. |
 | `client:load` | directive | Hover: Yes<br/>Book: Yes | - | **Required for Hover/Book cards** to enable React hydration for interactivity |
 | `readMoreUrl` | string | No (Simple only) | - | Link URL for "Read more" button (Simple cards only) |
-| `size` | string | Circle only | `'auto'` | Size of the circle as CSS value (%, px, rem, etc.). When `'auto'`, uses `width` and `height` props. For responsive circles, use percentage values (e.g., `'20%'`). |
-| `width` | string | Circle only | `'200px'` | Width of circle (used when `size='auto'`). Set equal to `height` for perfect circles. |
-| `height` | string | Circle only | `'200px'` | Height of circle (used when `size='auto'`). Set equal to `width` for perfect circles. |
-| `isFreeSize` | boolean | Circle only | `false` | When `true`, image displays at natural dimensions with circular/elliptical crop. Ignores `size`, `width`, and `height` props. |
+| `size` | string | Circle/Diamond only | `'auto'` | Size of card as CSS value (%, px, rem, etc.). When `'auto'`, uses `width` and `height` props. |
+| `width` | string | Circle/Diamond only | Circle: `'200px'`<br/>Diamond: `'300px'` | Width of card (used when `size='auto'`). |
+| `height` | string | Circle/Diamond only | Circle: `'200px'`<br/>Diamond: `'300px'` | Height of card (used when `size='auto'`). |
+| `isFreeSize` | boolean | Circle/Diamond only | `false` | When `true`, image displays at natural dimensions. Circle: circular/elliptical crop. Diamond: diagonal rounded corners. |
 | `bgColor` | string | Circle only | `'#ff0082'` | Background color for text-only Circle cards |
 | `color` | string | Dogear/Book | Dogear: `'teal'`<br/>Book: `'city'` | Dogear: `teal`, `blue`, `purple`, `orange`, `green`, `red`, `pink`, `gray`<br/>Book: `city`, `ski`, `beach`, `camping` |
 | `customColor` | string | No (Dogear only) | - | Custom hex color to override predefined schemes (Dogear cards only) |
@@ -996,22 +1151,22 @@ For perfect circles with specific dimensions, use the `width` and `height` props
 
 ## ✨ Feature Comparison
 
-| Feature | Notebook Cards | Fancy Cards | Simple Cards | Dogear Cards | Hover Cards | Book Cards | Circle Cards |
-|---------|---------------|-------------|--------------|--------------|-----------------|-------------|--------------|
-| **Style** | Classic notebook paper | Modern vibrant design | Clean professional | Bookmarked page | **Image reveal** | **Flip animation** | **Circular** |
-| **Animations** | None | Card scale on hover | Image zoom + icon slide | None | **Slide-up reveal** | **Flip + expand** | **None** |
-| **Colors** | Blue lines, red margin | Purple, aqua, violet | Theme-based minimal | 8 predefined + custom | **Theme-adaptive** | **4 gradients** | **Custom bg colors** |
-| **Special Classes** | No | `upcharge`, `note` | No | No | **No** | **No** | **No** |
-| **Typography** | Monospace | Georgia + Sans-serif | System fonts | Marvel | **System fonts** | **System fonts** | **System fonts** |
-| **Best For** | Documentation, tutorials | Products, menus, promotions | Articles, blogs, news | Notes, quotes, highlights | **Galleries, wildlife, portfolios** | **Services, travel, products** | **Profiles, avatars, tech stacks** |
-| **Hover Effect** | None | Card scale | Image zoom + arrow animation | None | **Description overlay** | **Flip + width expand** | **None** |
-| **Read More Link** | No | No | Yes (optional) | No | **No** | **No** | **No** |
-| **Images** | Optional | Required | Required | Text-only | **Required** | **No (uses icons)** | **Optional** |
-| **Icons** | No | No | No | No | **No** | **Yes (Remix Icons)** | **No** |
-| **Text Mode** | No | No | No | Text-only | **No** | **No** | **Yes** |
-| **Shape** | Rectangle | Rectangle | Rectangle | Rectangle | **Rectangle** | **Rectangle** | **Circle** |
-| **Client Hydration** | No | No | No | No | **Yes (required)** | **Yes (required)** | **No** |
-| **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | **✅ Yes** | **✅ Yes** | **✅ Yes** |
+| Feature | Notebook Cards | Fancy Cards | Simple Cards | Dogear Cards | Hover Cards | Book Cards | Circle Cards | Diamond Cards |
+|---------|---------------|-------------|--------------|--------------|-----------------|-------------|--------------|---------------|
+| **Style** | Classic notebook paper | Modern vibrant design | Clean professional | Bookmarked page | **Image reveal** | **Flip animation** | **Circular** | **Diagonal corners** |
+| **Animations** | None | Card scale on hover | Image zoom + icon slide | None | **Slide-up reveal** | **Flip + expand** | **None** | **Lift on hover** |
+| **Colors** | Blue lines, red margin | Purple, aqua, violet | Theme-based minimal | 8 predefined + custom | **Theme-adaptive** | **4 gradients** | **Custom bg colors** | **Theme shadows** |
+| **Special Classes** | No | `upcharge`, `note` | No | No | **No** | **No** | **No** | **No** |
+| **Typography** | Monospace | Georgia + Sans-serif | System fonts | Marvel | **System fonts** | **System fonts** | **System fonts** | **N/A** |
+| **Best For** | Documentation, tutorials | Products, menus, promotions | Articles, blogs, news | Notes, quotes, highlights | **Galleries, wildlife, portfolios** | **Services, travel, products** | **Profiles, avatars, tech stacks** | **Galleries, products, art** |
+| **Hover Effect** | None | Card scale | Image zoom + arrow animation | None | **Description overlay** | **Flip + width expand** | **None** | **Lift + shadow** |
+| **Read More Link** | No | No | Yes (optional) | No | **No** | **No** | **No** | **No** |
+| **Images** | Optional | Required | Required | Text-only | **Required** | **No (uses icons)** | **Optional** | **Required** |
+| **Icons** | No | No | No | No | **No** | **Yes (Remix Icons)** | **No** | **No** |
+| **Text Mode** | No | No | No | Text-only | **No** | **No** | **Yes** | **No** |
+| **Shape** | Rectangle | Rectangle | Rectangle | Rectangle | **Rectangle** | **Rectangle** | **Circle** | **Rounded diagonal** |
+| **Client Hydration** | No | No | No | No | **Yes (required)** | **Yes (required)** | **No** | **No** |
+| **Dark Mode** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | **✅ Yes** | **✅ Yes** | **✅ Yes** | **✅ Yes** |
 
 ## 💡 Use Cases
 
@@ -1069,11 +1224,21 @@ For perfect circles with specific dimensions, use the `width` and `height` props
 - **Icon Collections** - Tool or feature icons
 - **Portfolio Previews** - Circular project thumbnails
 
+### Diamond Cards Perfect For:
+- **Portfolio Galleries** - Showcase creative work with modern asymmetric style
+- **Product Photography** - E-commerce and catalog displays with distinctive look
+- **Image Collections** - Photo galleries with elegant diagonal corners
+- **Photography Portfolios** - Professional photo presentations
+- **Art Displays** - Digital art and illustration showcases
+- **Travel Photos** - Destination and journey photography
+- **Event Galleries** - Wedding, conference, or event photos
+- **Featured Images** - Hero sections and highlighted visual content
+
 ## 🎨 Tips for Best Results
 
-1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles, Dogear for notes, Hover for image-heavy content, Book for services/offerings, Circle for profiles/avatars
+1. **Choose the right card** - Notebook for documentation, Fancy for products, Simple for articles, Dogear for notes, Hover for image-heavy content, Book for services/offerings, Circle for profiles/avatars, Diamond for image galleries
 2. **Consistent styling** - Stick to one card type per blog post
-3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum)
+3. **Quality images** - Use high-resolution images (recommended: 800x600px minimum, 600x600px+ for Diamond cards)
 4. **Text-only notebooks** - Skip the image prop on Notebook cards for pure text content
 5. **Descriptive alt text** - Improve accessibility and SEO
 6. **Concise titles** - Keep titles short and impactful
@@ -1086,11 +1251,14 @@ For perfect circles with specific dimensions, use the `width` and `height` props
 13. **Circle card sizing** - For fixed circles use equal `width` and `height` (e.g., `width="300px" height="300px"`). For natural image size, use `isFreeSize={true}`
 14. **Circle responsive sizing** - Use the `size` prop with percentage values (e.g., `size="20%"`) for container-relative circles
 15. **Text circles** - Use contrasting colors via `bgColor` prop for text-only Circle cards for better visibility
-16. **Client hydration** - Remember to add `client:load` to Hover and Book cards for interactivity
-17. **Color consistency** - Book card gradient colors (city, ski, beach, camping) match their thematic content
-18. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
-19. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
-20. **Hover card images** - Use compelling images that work well with text overlays
+16. **Diamond card grids** - Use consistent dimensions (e.g., `width="400px" height="400px"`) for uniform gallery layouts
+17. **Diamond free size** - Use `isFreeSize={true}` on Diamond cards for hero images or featured content at natural dimensions
+18. **Diamond corners** - The diagonal rounded corners (48px on top-right & bottom-left) create distinctive asymmetry
+19. **Client hydration** - Remember to add `client:load` to Hover and Book cards for interactivity
+20. **Color consistency** - Book card gradient colors (city, ski, beach, camping) match their thematic content
+21. **Dogear backgrounds** - Always set `bgColor` to match your page background for proper dogear effect
+22. **Color meaning** - Use Dogear card colors meaningfully (red for alerts, green for success, etc.)
+23. **Hover card images** - Use compelling images that work well with text overlays
 
 ---
 

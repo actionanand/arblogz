@@ -6,3 +6,4 @@ export { DogearCard, DogearCardContainer } from './Dogear';
 export { HoverCard, HoverCardContainer } from './Hover';
 export { BookCard, BookCardContainer } from './Book';
 export { CircleCard, CircleCardContainer } from './Circle';
+export { DiamondCard, DiamondCardContainer } from './Diamond';
