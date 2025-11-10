@@ -85,7 +85,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
-| **Pearl Spot** | கருமீன் (Karumeen) | ಪರ್ಲ್ ಸ್ಪಾಟ್ (Pearl Spot) | पर्ल स्पॉट (Pearl Spot) |
+| **Pearl Spot** | கறிமீன் / சேத்துக் கெண்டை / பளிஞ்சா (Karimeen / Sethu Kendai / Palinja) | ಪರ್ಲ್ ಸ್ಪಾಟ್ (Pearl Spot) | पर्ल स्पॉट (Pearl Spot) |
 | **Bhetki / Betki / Asian Sea Bass** | கொடுவா மீன் (Koduvaa Meen) | ಭೇಟ್ಕಿ / ಏಷ್ಯನ್ ಸೀ ಬಾಸ್ (Bhetki / Asian Sea Bass) | भेटकी / कोरामीन (Bhetki / Korameen) |
 | **Mullet** | மடவை (Madavai) | ಮದ್ದಾಳ (Maddala) | मुल्लेट (Mullet) |
 | **Sailfish** | மயில் மீன் (Mayil Meen) | ಸೈಲ್ ಫಿಶ್ (Sail Fish) | पाल मछली (Paal Machli) |
