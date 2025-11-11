@@ -1,0 +1,225 @@
+---
+import { site } from '@/consts';
+import { t } from '@/i18n/utils';
+
+const { posts } = Astro.props;
+---
+
+<style>
+  .blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .blog-card img {
+    transition: transform 0.5s ease;
+  }
+
+  .blog-card:hover img {
+    transform: scale(1.1);
+  }
+
+  .tag {
+    transition: background-color 0.3s ease;
+    background-color: rgba(16, 185, 129, 0.1);
+    color: rgb(5, 150, 105);
+  }
+
+  .tag:hover {
+    background-color: rgba(16, 185, 129, 0.2);
+  }
+
+  html[data-theme='dark'] .tag {
+    background-color: rgba(52, 211, 153, 0.15);
+    color: rgb(52, 211, 153);
+  }
+
+  html[data-theme='dark'] .tag:hover {
+    background-color: rgba(52, 211, 153, 0.25);
+  }
+
+  html[data-theme='dark'] .blog-card {
+    background: rgb(31, 41, 55);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  html[data-theme='light'] .blog-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .gradient-badge {
+    background: rgb(16, 185, 129);
+  }
+
+  html[data-theme='dark'] .gradient-badge {
+    background: rgb(52, 211, 153);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, rgb(16, 185, 129) 0%, rgb(5, 150, 105) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  html[data-theme='dark'] .gradient-text {
+    background: linear-gradient(135deg, rgb(52, 211, 153) 0%, rgb(16, 185, 129) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-button {
+    background: linear-gradient(135deg, rgb(5, 150, 105) 0%, rgb(6, 95, 70) 100%);
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: linear-gradient(135deg, rgb(16, 185, 129) 0%, rgb(5, 150, 105) 100%);
+  }
+
+  html[data-theme='dark'] .cta-button {
+    background: linear-gradient(135deg, rgb(52, 211, 153) 0%, rgb(16, 185, 129) 100%);
+    color: rgb(17, 24, 39);
+  }
+
+  html[data-theme='dark'] .cta-button:hover {
+    background: linear-gradient(135deg, rgb(16, 185, 129) 0%, rgb(6, 95, 70) 100%);
+  }
+
+  /* Read More link styling */
+  .read-more-link {
+    color: rgb(5, 150, 105);
+  }
+
+  .read-more-link:hover {
+    color: rgb(4, 120, 87);
+  }
+
+  html[data-theme='dark'] .read-more-link {
+    color: rgb(255, 255, 255) !important;
+  }
+
+  html[data-theme='dark'] .read-more-link:hover {
+    color: rgb(167, 243, 208) !important;
+  }
+</style>
+
+<section class="py-16 bg-skin-secondary">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-skin-base mb-4">
+        <span class="gradient-text" data-translate="home.featuredStories">
+          {t('home.featuredStories')}
+        </span>
+      </h2>
+      <p class="text-skin-muted text-lg">
+        <span data-translate="home.featuredStoriesDesc">{t('home.featuredStoriesDesc')}</span>
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {posts.map((post: any) => {
+        const { data, slug } = post;
+        const postUrl = `${site.baseUrl}/blog/${slug}`;
+        
+        // Use ogImage from frontmatter, fallback to avatar, then to default image
+        const imageUrl = data.ogImage || site.avatar || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=300&fit=crop';
+        
+        return (
+          <article class="blog-card rounded-xl shadow-lg">
+            <!-- Image -->
+            <div class="relative h-48 overflow-hidden">
+              <a href={postUrl}>
+                <img 
+                  src={imageUrl} 
+                  alt={data.title}
+                  class="w-full h-full object-cover"
+                />
+              </a>
+              {data.sticky && (
+                <div class="absolute top-4 right-4">
+                  <span class="gradient-badge text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    <i class="ri-pushpin-fill mr-1"></i>
+                    <span data-translate="home.featured">{t('home.featured')}</span>
+                  </span>
+                </div>
+              )}
+            </div>
+
+            <!-- Content -->
+            <div class="p-6">
+              <!-- Category & Date -->
+              <div class="flex items-center gap-3 mb-3 text-sm text-skin-muted">
+                {data.category && (
+                  <span class="flex items-center">
+                    <i class="ri-folder-line mr-1"></i>
+                    {data.category}
+                  </span>
+                )}
+                <span class="flex items-center">
+                  <i class="ri-calendar-line mr-1"></i>
+                  {new Date(data.date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'short', 
+                    day: 'numeric' 
+                  })}
+                </span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-skin-base mb-3 line-clamp-2">
+                <a href={postUrl} class="hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                  {data.title}
+                </a>
+              </h3>
+
+              <!-- Description -->
+              <p class="text-skin-muted mb-4 line-clamp-3">
+                {data.description}
+              </p>
+
+              <!-- Tags -->
+              {data.tags && data.tags.length > 0 && (
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {data.tags.slice(0, 3).map((tag: string) => (
+                    <span class="tag px-3 py-1 text-xs rounded-full font-medium">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <!-- Read More -->
+              <a 
+                href={postUrl}
+                class="read-more-link inline-flex items-center font-semibold transition-colors"
+              >
+                <span data-translate="home.readMore">{t('home.readMore')}</span>
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-12">
+      <a 
+        href="/blog/1"
+        class="cta-button inline-block px-8 py-3 rounded-full font-semibold text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+      >
+        <i class="ri-article-line mr-2"></i>
+        <span data-translate="home.viewAllStories">{t('home.viewAllStories')}</span>
+      </a>
+    </div>
+  </div>
+</section>

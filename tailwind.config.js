@@ -36,6 +36,7 @@ export default {
       skin: {
         base: withOpacity("--color-text"),
         dodge: withOpacity("--color-text-dodge"),
+        muted: withOpacity("--color-text-dodge"),
         active: withOpacity("--color-text-active")
       },
     },
