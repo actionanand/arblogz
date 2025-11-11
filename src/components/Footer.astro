@@ -8,7 +8,7 @@ const initialDate = 2025;
 let displayDate = new Date().getFullYear() === initialDate ? `${initialDate}` : `${initialDate} - ${new Date().getFullYear()}`;
 ---
 
-<div class:list={[shouldLoadBusuanzi ? 'h-16' : 'h-10', 'container p-1 absolute left-0 bottom-0']}>
+<div class:list={[shouldLoadBusuanzi ? 'h-16' : 'h-10', 'w-full p-1 absolute left-0 right-0 bottom-0 bg-skin-secondary']}>
   {
     shouldLoadBusuanzi && (
       <div class="flex items-center justify-center text-skin-base">
