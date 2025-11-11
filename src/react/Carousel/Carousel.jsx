@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Carousel = ({ images, height = '600px' }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   if (!images || images.length === 0) {
     return null;
@@ -20,14 +32,14 @@ const Carousel = ({ images, height = '600px' }) => {
   };
 
   const carouselStyle = {
-    marginLeft: '15%',
-    marginRight: '15%'
+    marginLeft: isMobile ? '0' : '15%',
+    marginRight: isMobile ? '0' : '15%'
   };
 
   const slidesStyle = {
     display: 'block',
     position: 'relative',
-    height: height,
+    height: isMobile ? '300px' : height,
     margin: 0,
     padding: 0,
     overflow: 'hidden',
@@ -62,8 +74,8 @@ const Carousel = ({ images, height = '600px' }) => {
     left: 0,
     right: 0,
     zIndex: 999,
-    fontSize: '100px',
-    lineHeight: height,
+    fontSize: isMobile ? '60px' : '100px',
+    lineHeight: isMobile ? '300px' : height,
     color: '#fff',
     userSelect: 'none'
   };
@@ -71,7 +83,7 @@ const Carousel = ({ images, height = '600px' }) => {
   const controlLabelStyle = (isVisible) => ({
     display: isVisible ? 'block' : 'none',
     position: 'absolute',
-    padding: '0 20px',
+    padding: isMobile ? '0 10px' : '0 20px',
     opacity: 0.5,
     transition: 'opacity .2s',
     cursor: 'pointer'
@@ -93,19 +105,19 @@ const Carousel = ({ images, height = '600px' }) => {
     position: 'absolute',
     left: 0,
     right: 0,
-    bottom: '20px',
+    bottom: isMobile ? '10px' : '20px',
     zIndex: 999,
     textAlign: 'center'
   };
 
   const carouselDotStyle = (isActive) => ({
     display: 'inline-block',
-    width: '30px',
-    height: '30px',
+    width: isMobile ? '20px' : '30px',
+    height: isMobile ? '20px' : '30px',
     borderRadius: '50%',
     backgroundColor: '#fff',
     opacity: isActive ? 1 : 0.5,
-    margin: '10px',
+    margin: isMobile ? '5px' : '10px',
     cursor: 'pointer',
     transition: 'opacity .2s'
   });
