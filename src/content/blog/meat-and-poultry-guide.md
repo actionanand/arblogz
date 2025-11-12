@@ -4,7 +4,9 @@ description: "Comprehensive guide to meat, poultry, and non-veg dishes with name
 date: 2025-11-01
 tags: ["meat", "poultry", "multilingual", "indian cuisine", "reference", "non-veg"]
 category: Indian Cuisine
+outdated: 1
 ogImage: /images/year-2025/chicken-parts.webp
+relatedArticles: ['groceries-guide-multilingual', 'fish-names-multilingual']
 ---
 
 A complete reference guide for meat and poultry terms across Tamil, English, Kannada, and Hindi languages, plus detailed explanations of popular non-veg dishes and cooking styles!
@@ -15,7 +17,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 
 ## 🐐 Goat & Mutton (Lamb/Sheep)
 
-![goat mutton](/images/year-2025/goat.png)
+![lazy](/images/year-2025/goat.png)
 
 <div class="table-luxury-grid">
 
@@ -45,7 +47,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 
 ## 🐔 Chicken & Poultry
 
-![chicke parts](/images/year-2025/chicken-parts.webp)
+![lazy](/images/year-2025/chicken-parts.webp)
 
 <div class="table-ocean-grid">
 
@@ -63,6 +65,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred langu
 | **Liver** | ஈரல் (Eeral) | ಕಲ್ಲೀರಲು (Kalleeralu) | कलेजी (Kaleji) |
 | **Egg** | முட்டை (Muttai) | ಮೊಟ್ಟೆ (Motte) | अंडा (Anda) |
 | **Wings** | சிறகு (Siragu) | ರೆಕ್ಕೆ (Rekke) | पंख (Pankh) |
+| **Country Chicken / Desi Chicken** | நாட்டுக் கோழி (Naattu Kozhi) | ನಾಟಿ ಕೋಳಿ (Naati Kooli) | देसी मुर्गी (Desi Murgi) |
 
 </div>
 
@@ -112,7 +115,7 @@ In India, the term "mutton" commonly refers to **goat meat**, while in Western c
 
 ## 🥓 Understanding Processed Meats & Special Cuts
 
-![pig pork](/images/year-2025/pig.png)
+![lazy](/images/year-2025/pig.png)
 
 ### **Ham**
 **What is Ham**: 
@@ -187,13 +190,13 @@ Boneless, skinless breast meat that's been butterflied or sliced thin. Very vers
 
 ### **Chicken Lollipop**
 
-![chicken wing](/images/year-2025/chicken-wing.webp)
+![lazy](/images/year-2025/chicken-wing.webp)
 
 A popular appetizer/starter where the drumette (upper wing portion) is cut and meat is pushed down to form a lollipop shape. Typically marinated, fried, and served with sauce.
 
 ### **Giblets**
 
-![chicken giblets](/images/year-2025/giblets.webp)
+![lazy](/images/year-2025/giblets.webp)
 
 A collective term for the edible internal organs of poultry including:
 - **Heart**: Small, muscular organ
@@ -559,4 +562,3 @@ Dumplings made with thin wheat or flour dough filled with meat or vegetables.
 :::note[Note]
 Meat terminology may vary by region and local dialects. Some communities may have religious or cultural dietary restrictions. Always respect local customs and preferences.
 :::
-

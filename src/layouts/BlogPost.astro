@@ -6,6 +6,7 @@ import Profile from '@/components/Profile.astro'
 import Comment from '@/components/Comment.astro'
 import Toc from '@/components/Toc.astro'
 import Donate from '@/components/Donate.astro';
+import RelatedArticles from '@/components/RelatedArticles.astro';
 import {comment, config, donate} from "@/consts";
 import ScrollToTop from '@/components/ScrollToTop.astro'
 import {t} from '@/i18n/utils'
@@ -54,6 +55,13 @@ const shouldShowDonate = donate.enable && (
       </button>
       <slot/>
       
+      <!-- Related Articles Section -->
+      {
+        frontmatter.relatedArticles && frontmatter.relatedArticles.length > 0 && (
+          <RelatedArticles relatedSlugs={frontmatter.relatedArticles} />
+        )
+      }
+      
       <!-- Donation Section - Show based on global and manual controls -->
       {
         shouldShowDonate && (
@@ -88,6 +96,7 @@ const shouldShowDonate = donate.enable && (
 <script>
   import {Fancybox} from "@fancyapps/ui";
   import "@fancyapps/ui/dist/fancybox/fancybox.css";
+  import {t} from '@/i18n/utils';
 
   Fancybox.bind("[data-fancybox]");
   // 给所有的a标签添加target属性和不追踪
@@ -116,6 +125,91 @@ const shouldShowDonate = donate.enable && (
     const observer = new IntersectionObserver(callback);
     images.forEach((image) => {
       observer.observe(image);
+    });
+
+    // Style footnote references in text with green color
+    const footnoteRefs = markdownBody.querySelectorAll('[data-footnote-ref]');
+    footnoteRefs.forEach(ref => {
+      // Make [1] green in text
+      ref.style.color = 'rgb(var(--color-border-active))';
+      ref.style.textDecoration = 'none';
+      
+      // Remove underline on hover
+      ref.addEventListener('mouseenter', () => {
+        ref.style.textDecoration = 'none';
+      });
+      
+      ref.addEventListener('mouseleave', () => {
+        ref.style.textDecoration = 'none';
+      });
+      
+      // Add green highlight to footnotes when navigated via # anchor
+      ref.addEventListener('click', () => {
+        const targetId = ref.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+          // Wait for native scroll to complete, then highlight
+          setTimeout(() => {
+            const originalBg = target.style.backgroundColor;
+            target.style.backgroundColor = 'rgba(var(--color-border-active), 0.2)';
+            target.style.transition = 'background-color 0.3s ease';
+            setTimeout(() => {
+              target.style.backgroundColor = originalBg;
+              setTimeout(() => {
+                target.style.transition = '';
+              }, 300);
+            }, 2500);
+          }, 100);
+        }
+      });
+    });
+    
+    // Change footnote numbering from '1.' to '[1]' with green color
+    const footnoteSection = markdownBody.querySelector('.footnotes');
+    if (footnoteSection) {
+      const footnoteList = footnoteSection.querySelector('ol');
+      if (footnoteList) {
+        // Hide default list markers
+        footnoteList.style.listStyleType = 'none';
+        footnoteList.style.paddingLeft = '0';
+        
+        const footnoteItems = footnoteList.querySelectorAll('li');
+        footnoteItems.forEach((item, index) => {
+          // Keep text in normal color (reset any green color applied to li)
+          item.style.color = '';
+          
+          // Add custom [1] numbering
+          item.style.position = 'relative';
+          item.style.paddingLeft = '2rem'; // gap between number and text in footnote citation
+          
+          // Create and insert [n] before content
+          const number = document.createElement('span');
+          number.textContent = `[${index + 1}]`;
+          number.style.position = 'absolute';
+          number.style.left = '0';
+          number.style.color = 'rgb(var(--color-border-active))';
+          number.style.fontWeight = 'bold';
+          
+          // Insert at the beginning
+          item.insertBefore(number, item.firstChild);
+        });
+      }
+    }
+    
+    // Style back arrows with green color and remove underline
+    const footnoteBackrefs = markdownBody.querySelectorAll('[data-footnote-backref]');
+    footnoteBackrefs.forEach(backref => {
+      backref.style.color = 'rgb(var(--color-border-active))';
+      backref.style.textDecoration = 'none';
+      
+      // Remove underline on hover
+      backref.addEventListener('mouseenter', () => {
+        backref.style.textDecoration = 'none';
+      });
+      
+      backref.addEventListener('mouseleave', () => {
+        backref.style.textDecoration = 'none';
+      });
     });
 
     var links = markdownBody.querySelectorAll("a");

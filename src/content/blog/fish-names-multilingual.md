@@ -4,7 +4,9 @@ description: "Complete multilingual guide to popular sea and river fish names in
 date: 2025-11-02
 tags: ["fish", "multilingual", "seafood", "indian cuisine", "reference"]
 category: Indian Cuisine
+outdated: 1
 ogImage: /images/year-2025/sea-fish.webp
+relatedArticles: ['groceries-guide-multilingual', 'meat-and-poultry-guide']
 ---
 
 A comprehensive reference guide for popular sea and river fish names across Tamil, English, Kannada, and Hindi languages. Perfect for seafood lovers, home cooks, and anyone interested in regional fish varieties!
@@ -13,7 +15,7 @@ A comprehensive reference guide for popular sea and river fish names across Tami
 Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred language!
 :::
 
-![sea food](/images/year-2025/sea-fish.webp)
+![lazy](/images/year-2025/sea-fish.webp)
 
 ## 🌊 Popular Sea Fish
 
@@ -30,7 +32,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Anchovy** | நெத்திலி (Nethili) | ನೆತ್ತಿಲಿ (Nethili) | झींगा मछली (Jhinga Machli) |
 | **Ribbon Fish** | வாளை மீன்/ சாவாளை மீன் (Vaalai / Savaalai) | ಸವಾಲ (Saval) | पट्टी मछली (Patti Machli) |
 | **Barracuda / Sea Pike** | சீலா /ஊலா / ஊளி / திரியன் (Seela) | Obantol, Kanaki, Suruli, Kandai(ಕಂಡಾಯಿ/ಕನಕಿ/ಒಬಂಟೊಲ್) | कांटा (Kanta) |
-| **Indian Salmon** | கிழங்கான் மீன்/ கானமீன் / காளா மீன் (Kizhangan / Kaana Meen) |  Arkoli/ Rumus (ಅರ್ಕೊಲಿ/ರುಮುಸ್) | रावस / हिलसा (Ravas / Hilsa) |
+| **Indian Salmon** | கானமீன் / காளா மீன் (Kaana Meen / Kala Meen) |  Arkoli/ Rumus (ಅರ್ಕೊಲಿ/ರುಮುಸ್) | रावस / हिलसा (Ravas / Hilsa) |
 | **Grouper/ Reef cod** | கலவா மீன் / கல்லு மீன்/ கலவான் (Kalava meen / Kallu Meen) | ಗರೋಪ (Garopa) | गरूपा (Garupa) |
 | **Red Snapper** | சங்கரா / ரத்த மீன் (Sankara / Ratha Meen) | ಕೆಂಪು ಸ್ನಾಪರ (Kempu Snaper) | रानी मछली / लाल मछली (Rani Machli / Lal Machli) |
 | **Shark** | சுறா (Sura) | ಶಾರ್ಕ್ (Shark) | शार्क / मोरी (Shark / Mori) |
@@ -41,6 +43,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Sole Fish** | நாக்கு மீன்/ மாந்தல் மீன் (Naakku Meen) | ನಾಲಿಗೆ ಮೀನು (Nalige Meenu) | जीभ मछली (Jeebh Machli) |
 | **Hilsa** | உள்ளம் /ஊலம் /வெங்கண்ணை/ இலிஷ் (Ullam) | ಇಲಿಶಾ (Ilisha) | इलिशा / हिलसा (Ilisha / Hilsa) |
 | **Croaker** | கோரல் (Koral) | ಘೋಳ (Ghol) | ढोल / घोल (Dhol / Ghol) |
+| **Lady Fish** | கிழங்கான் மீன் / கிழங்கா மீன் / வெள்ளைக்கிழங்கான் மீன் (Kizhangaan Meen / Kizhanga Meen / Vellai Kizhangaan Meen) | ಕೇನ್ ಮೀನು (Kane Meenu) | लेडी फिश / मोरी (Lady Fish / Mori) |
 | **Sea Bass** | குடுவா / குடுவை (Kuduvaa / Kuduvai) | ಸೀ ಬಾಸ್ (Sea Bass) | समुद्री बास (Samudri Bass) |
 | **Rabbit Fish** | ஓரா மீன் (Ora Meen / Oora) | ಮೊಲದ ಮೀನು (Molada Meenu) | खरगोश मछली (Khargosh Machli) |
 | **Mussel / Clam / Oyster** | சிப்பி / தோடு (Sippi / Thodu) | ಮಸ್ಸೆಲ್ / ಶಿಪ್ಪಿ (Mussel / Shippi) | सीप / शंख (Seep / Shankh) |
@@ -71,7 +74,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Eel** | விலாங்கு (Vilaangu) | ಬಾವಳಿ (Baavali) | बाम मछली (Baam Machli) |
 | **Walking Catfish** | தேளி மீன் (Theli Meen) | ನಡೆಯುವ ಜೇಲೆ (Nadeyuva Jele) | चलने वाली मछली (Chalne Wali Machli) |
 | **Basa Fish** | பாசா மீன் (Basa Meen) | ಬಾಸಾ ಮೀನು (Basa Meenu) | बासा मछली (Basa Machli) |
-| **Pangasius** | பங்காசியஸ் மீன் (Pangasius Meen) | ಪಂಗಾಸಿಯಸ್ (Pangasius) | पंगेसियस (Pangasius) |
+| **Pangasius / Pungus / Pangas** | பங்காசியஸ் மீன் (Pangasius Meen) | ಪಂಗಾಸಿಯಸ್ (Pangasius) | पंगेसियस (Pangasius) |
 | **Roop Chand / Silver Pomfret** | ரூப் சாந்த் (Roop Chand) | ರೂಪ್ ಚಂದ್ / ಬೆಳ್ಳಿ ಪಾಪ್ಲೆಟ್ (Roop Chand / Belli Paplet) | रूप चाँद / चांदी पॉम्फ्रेट (Roop Chand / Chandi Pomfret) |
 
 </div>
@@ -82,7 +85,8 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
-| **Pearl Spot** | கருமீன் (Karumeen) | ಪರ್ಲ್ ಸ್ಪಾಟ್ (Pearl Spot) | पर्ल स्पॉट (Pearl Spot) |
+| **Pearl Spot** | கறிமீன் / சேத்துக் கெண்டை / பளிஞ்சா (Karimeen / Sethu Kendai / Palinja) | ಪರ್ಲ್ ಸ್ಪಾಟ್ (Pearl Spot) | पर्ल स्पॉट (Pearl Spot) |
+| **Bhetki / Betki / Asian Sea Bass** | கொடுவா மீன் (Koduvaa Meen) | ಭೇಟ್ಕಿ / ಏಷ್ಯನ್ ಸೀ ಬಾಸ್ (Bhetki / Asian Sea Bass) | भेटकी / कोरामीन (Bhetki / Korameen) |
 | **Mullet** | மடவை (Madavai) | ಮದ್ದಾಳ (Maddala) | मुल्लेट (Mullet) |
 | **Sailfish** | மயில் மீன் (Mayil Meen) | ಸೈಲ್ ಫಿಶ್ (Sail Fish) | पाल मछली (Paal Machli) |
 | **Marlin** | கத்தி மீன் (Kathi Meen) | ಮಾರ್ಲಿನ್ (Marlin) | मार्लिन (Marlin) |
@@ -215,4 +219,3 @@ Different regions may use different names for the same fish. This guide provides
 :::note[Note]
 Fish names may vary by region and local dialects. This guide uses the most widely recognized names in each language. If you know additional regional names, feel free to share!
 :::
-

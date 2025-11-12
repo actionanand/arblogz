@@ -1,0 +1,204 @@
+---
+import { site, infoLinks } from '@/consts';
+import Carousel from '@/react/Carousel/Carousel';
+import { t } from '@/i18n/utils';
+import getUrl from '@/utils/getUrl';
+import '@/styles/home.css';
+
+const { avatar, author, motto, description } = site;
+
+// Sample images for carousel - you can customize these
+const carouselImages = [
+  {
+    src: '/images/carousel/nature_exploration.webp',
+    alt: 'Nature + Exploration'
+  },
+  {
+    src: '/images/carousel/ideas_learning.webp',
+    alt: 'Ideas + Learning'
+  },
+  {
+    src: '/images/carousel/creativity_observation.webp',
+    alt: 'Creativity + Observation'
+  }
+];
+
+const { totalBlogs } = Astro.props;
+---
+
+<!-- Hero Section -->
+<section class="hero-gradient min-h-[60vh] flex items-center justify-center relative overflow-hidden py-20" style="z-index: 1;">
+  <!-- Decorative Elements -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-5xl mx-auto text-center">
+      <!-- Avatar -->
+      <div class="mb-8 flex justify-center">
+        <div class="floating-avatar">
+          <img 
+            src={getUrl(avatar)} 
+            alt={author} 
+            class="w-40 h-40 rounded-full shadow-2xl object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Title and Motto -->
+      <h1 class="hero-title text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
+        <span data-translate="home.welcomeTo">{t('home.welcomeTo')}</span> <span class="block md:inline">{site.title}</span>
+      </h1>
+      
+      <p class="hero-motto text-2xl md:text-3xl mb-4 font-light italic">
+        "{motto}"
+      </p>
+
+      <p class="hero-description text-lg md:text-xl mb-10 max-w-3xl mx-auto">
+        {description}
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a 
+          href="/blog/1" 
+          class="glass-effect px-8 py-4 rounded-full text-white font-semibold hover:bg-white/20 transition-all duration-300"
+        >
+          <i class="ri-article-line mr-2"></i>
+          <span data-translate="home.exploreBlog">{t('home.exploreBlog')}</span>
+        </a>
+        <a 
+          href="/about" 
+          class="glass-effect px-8 py-4 rounded-full text-white font-semibold hover:bg-white/20 transition-all duration-300"
+        >
+          <i class="ri-user-line mr-2"></i>
+          <span data-translate="home.aboutMe">{t('home.aboutMe')}</span>
+        </a>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex justify-center gap-6">
+        {infoLinks.map(link => (
+          <a 
+            href={link.outlink} 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link text-3xl"
+            aria-label={link.name}
+          >
+            <i class={link.icon}></i>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Carousel Section -->
+<section class="py-16 pb-0 bg-skin-secondary">
+  <div class="text-center mb-12 px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-skin-base">
+      <span class="gradient-text" data-translate="home.throughMyLens">{t('home.throughMyLens')}</span>
+    </h2>
+  </div>
+  <Carousel images={carouselImages} height="500px" client:load />
+</section>
+
+<!-- Features Section -->
+<section class="pt-20 pb-20 bg-skin-secondary">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-16 text-skin-base">
+      <span data-translate="home.whatYouFindHere">{t('home.whatYouFindHere')}</span>
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Feature 1 -->
+      <div class="feature-card p-8 rounded-2xl bg-skin-card shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-green-500">
+        <div class="text-5xl mb-4 text-green-500">
+          <i class="ri-book-open-line"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-skin-base">
+          <span data-translate="home.lifeBeyondCode">{t('home.lifeBeyondCode')}</span>
+        </h3>
+        <p class="text-skin-muted">
+          <span data-translate="home.lifeBeyondCodeDesc">{t('home.lifeBeyondCodeDesc')}</span>
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-card p-8 rounded-2xl bg-skin-card shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-emerald-500">
+        <div class="text-5xl mb-4 text-emerald-500">
+          <i class="ri-lightbulb-flash-line"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-skin-base">
+          <span data-translate="home.realExperiences">{t('home.realExperiences')}</span>
+        </h3>
+        <p class="text-skin-muted">
+          <span data-translate="home.realExperiencesDesc">{t('home.realExperiencesDesc')}</span>
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-card p-8 rounded-2xl bg-skin-card shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-teal-500">
+        <div class="text-5xl mb-4 text-teal-500">
+          <i class="ri-global-line"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-skin-base">
+          <span data-translate="home.multilingualStories">{t('home.multilingualStories')}</span>
+        </h3>
+        <p class="text-skin-muted">
+          <span data-translate="home.multilingualStoriesDesc">{t('home.multilingualStoriesDesc')}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-gradient py-16 text-white">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+      <div>
+        <div class="text-5xl font-bold mb-2">{totalBlogs}+</div>
+        <div class="text-xl opacity-90">
+          <span data-translate="home.discoveries">{t('home.discoveries')}</span>
+        </div>
+      </div>
+      <div>
+        <div class="text-5xl font-bold mb-2">9</div>
+        <div class="text-xl opacity-90">
+          <span data-translate="home.languages">{t('home.languages')}</span>
+        </div>
+      </div>
+      <div>
+        <div class="text-5xl font-bold mb-2">∞</div>
+        <div class="text-xl opacity-90">
+          <span data-translate="home.insights">{t('home.insights')}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-20 bg-skin-secondary">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold mb-6 text-skin-base">
+      <span data-translate="home.readyToExplore">{t('home.readyToExplore')}</span>
+    </h2>
+    <p class="text-xl text-skin-muted mb-8 max-w-2xl mx-auto">
+      <span data-translate="home.discoverInsights">{t('home.discoverInsights')}</span>
+    </p>
+    <a 
+      href="/blog/1" 
+      class="cta-button inline-block px-10 py-4 text-white font-bold text-lg rounded-full shadow-lg hover:shadow-2xl transition-all duration-300"
+    >
+      <i class="ri-compass-3-line mr-2"></i>
+      <span data-translate="home.startReading">{t('home.startReading')}</span>
+    </a>
+  </div>
+</section>
+  </div>
+</section>

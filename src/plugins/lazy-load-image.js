@@ -34,13 +34,13 @@ export function lazyLoadImage() {
         // HTML: <img src="lazy" data-src="...">
         props.dataSrc = processPath(existingDataSrc);
         props['data-src'] = processPath(existingDataSrc);
-        props.src = getUrl('/images/spinner.gif');
+        props.src = getUrl('/images/spinner.svg');
         props.alt = 'default';
       } else if (isLazyLoadMarkdown) {
         // Markdown: ![lazy](/image.jpg)
         props.dataSrc = processPath(src);
         props['data-src'] = processPath(src);
-        props.src = getUrl('/images/spinner.gif');
+        props.src = getUrl('/images/spinner.svg');
         props.dataAlt = alt;
         props['data-alt'] = alt;
         props.alt = 'default';

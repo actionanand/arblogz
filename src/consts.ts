@@ -353,9 +353,9 @@ export const comment = {
 // Try using the excellent https://squoosh.app web app for creating small webp files
 
 export const characters = {
-  owl: `${baseUrl}/admonitions/owl.webp`,
-  unicorn: `${baseUrl}/admonitions/unicorn.webp`,
-  duck: `${baseUrl}/admonitions/duck.webp`,
+  owl: `/admonitions/owl.webp`,
+  unicorn: `/admonitions/unicorn.webp`,
+  duck: `/admonitions/duck.webp`,
 }
 
 /**
