@@ -4,7 +4,9 @@ description: "Comprehensive guide to groceries including rice, pulses (dal), spi
 date: 2025-11-07
 tags: ["groceries", "pulses", "spices", "vegetables", "fruits", "multilingual", "indian cuisine", "reference"]
 category: Indian Cuisine
-ogImage: /images/year-2025/groceries.webp
+ogImage: /images/year-2025/vegetables.webp
+lastUpdated: 2025-11-12
+outdated: 1
 relatedArticles: ["fish-names-multilingual", "meat-and-poultry-guide"]
 ---
 
@@ -14,9 +16,9 @@ A complete reference guide for grocery items including rice, pulses (dal), spice
 Use Ctrl+F (Cmd+F on Mac) to quickly search for any term in your preferred language!
 :::
 
-## 🌾 Rice Varieties (அரிசி / ಅಕ್ಕಿ / चावल)
+![lazy](/images/year-2025/vegetables.webp)
 
-![lazy](/images/year-2025/rice.webp)
+## 🌾 Rice Varieties (அரிசி / ಅಕ್ಕಿ / चावल)
 
 <div class="table-luxury-grid">
 
@@ -53,8 +55,6 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 4. **Split vs Whole**: Some are sold whole (with skin), some split (husked)
 5. **Texture**: Smooth or rough exterior
 
-![lazy](/images/year-2025/pulses.webp)
-
 <div class="table-ocean-grid">
 
 | English Name | Tamil Name | Kannada Name | Hindi Name | Identification | Mostly Used For |
@@ -90,7 +90,6 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 ## 🌶️ Spices & Condiments (மசாலா பொருட்கள் / ಮಸಾಲೆ / मसाले)
 
-![lazy](/images/year-2025/spices.webp)
 
 <div class="table-green-grid">
 
@@ -144,7 +143,6 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 ## 🥬 Vegetables (காய்கறிகள் / ತರಕಾರಿಗಳು / सब्जियाँ)
 
-![lazy](/images/year-2025/vegetables.webp)
 
 ### 🍆 Common Vegetables
 
@@ -169,6 +167,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Potato** | உருளைக்கிழங்கு (Urulaikizhangu) | ಆಲೂಗೆಡ್ಡೆ (Aalugedde) | आलू (Aloo) |
 | **Onion** | வெங்காயம் (Vengayam) | ಈರುಳ್ಳಿ (Eerulli) | प्याज (Pyaaz) |
 | **Small Onions / Shallots** | சின்ன வெங்காயம் / சாம்பார் வெங்காயம் / சின்ன உள்ளி (Chinna Vengayam / Sambar Vengayam / Cinna Ulli) | ಸಣ್ಣ ಈರುಳ್ಳಿ (Sanna Eerulli) | छोटा प्याज (Chhota Pyaaz) |
+| **Spring Onion / Green Onion** | வெங்காயத்தாள் / பச்சை வெங்காயம் (Vengayaththaal / pachai vengayam) | ಹಸಿರು ಈರುಳ್ಳಿ (Hasiru Eerulli) | हरा प्याज (Hara Pyaaz) |
 | **Carrot** | கேரட் (Carrot) | ಕ್ಯಾರೆಟ್ (Carrot) | गाजर (Gaajar) |
 | **Beetroot** | பீட்ரூட் (Beetroot) | ಬೀಟ್ರೂಟ್ (Beetroot) | चुकंदर (Chukandar) |
 | **Radish** | முள்ளங்கி (Mullangi) | ಮೂಲಂಗಿ (Moolangi) | मूली (Mooli) |
@@ -296,6 +295,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Lemon Juice** | எலுமிச்சை சாறு (Elumichai Saaru) | ನಿಂಬೆ ರಸ (Nimbe Rasa) | नींबू का रस (Neembu Ka Ras) |
 | **Lime Water / Lemonade** | எலுமிச்சைப் பானம் / போஞ்சி / எலுமிச்சை தண்ணீர் (Elumichchap Baanam / Elumichai Thanneer) | ನಿಂಬೆ ನೀರು (Nimbe Neeru) | नींबू पानी (Neembu Paani) |
 | **Coconut Water** | இளநீர் (Ilaneer) | ಎಳನೀರು (Elaneeru) | नारियल पानी (Nariyal Paani) |
+| **Palm Nectar** | பதநீர் / பயினி (Pathaneer / Payini) | ತಾಳೀ ರಸ (Taali Rasa) | ताड़ी (Taadi) |
 | **Tea** | தேநீர் / டீ (Theneer / Tea) | ಚಹಾ (Chahaa) | चाय (Chaay) |
 | **Coffee** | காபி (Kaapi) | ಕಾಫಿ (Kaafi) | कॉफी (Coffee) |
 | **Fruit Juice** | பழச்சாறு (Pazhach Chaaru) | ಹಣ್ಣಿನ ರಸ (Hannina Rasa) | फलों का रस (Phalon Ka Ras) |
@@ -493,9 +493,3 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 :::note[Regional Variations]
 Names for groceries can vary significantly by region and local dialects. Some items may have multiple local names. When in doubt, show a picture or ask for clarification at your local store!
 :::
-
----
-
-**Related Guides:**
-- [Fish Names Multilingual Guide](/blog/fish-names-multilingual)
-- [Meat & Poultry Guide](/blog/meat-and-poultry-guide)
