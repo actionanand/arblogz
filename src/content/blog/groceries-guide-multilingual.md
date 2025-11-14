@@ -5,7 +5,7 @@ date: 2025-11-07
 tags: ["groceries", "pulses", "spices", "vegetables", "fruits", "multilingual", "indian cuisine", "reference"]
 category: Indian Cuisine
 ogImage: /images/year-2025/vegetables.webp
-lastUpdated: 2025-11-12
+lastUpdated: 2025-11-14
 outdated: 1
 relatedArticles: ["fish-names-multilingual", "meat-and-poultry-guide"]
 ---
@@ -483,13 +483,18 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 > **Jackfruit varieties**: Jackfruit (பலாப்பழம் / ಹಲಸಿನಹಣ್ಣು / कटहल) is the world's largest tree fruit, with different varieties suited for specific uses:
 >
-> **Cooking Varieties** (firm texture, mild flavor): **Varikka / Varukkai** (வரிக்க / ವರಿಕ್ಕಾ / वरिक्का) - Firm, fibrous texture, light yellow color, best for curries, stir-fries, and chips when raw/unripe; holds shape well during cooking. **Champaruthi / Singapore Jack** (சம்பருத்தி / ಚಂಪರುತ್ತಿ / चंपरुत्ती) - Medium-firm texture, versatile for both cooking (when raw) and eating (when ripe), moderate sweetness, multipurpose variety.
+> **Cooking Varieties** (firm texture, mild flavor): 
+> - **Varikka / Varukkai** (வரிக்க / ವರಿಕ್ಕಾ / वरिक्का) - Firm, fibrous texture, light yellow color, best for curries, stir-fries, and chips when raw/unripe; holds shape well during cooking.
+> - **Singapore Jack** (சிங்கப்பூர் ஜாக் / ಸಿಂಗಾಪುರ್ ಜಾಕ್ / सिंगापुर जैक) - Also known as Ceylon Jackfruit; medium-sized fruit with early bearing (fruits within 3 years); firm, crisp yellow flesh; precocious variety valued for quick production.
 >
-> **Eating Varieties** (soft, sweet, aromatic): **Koozha / Koozha Pazham** (கூழை / ಕೂಳ / कूळ) - Extremely soft, sweet, custard-like texture when ripe, melts in mouth, very aromatic, best eaten fresh; not suitable for cooking. **Sindura** (सिन्दूर / ಸಿಂದೂರ / சிந்தூர) - Red-tinged flesh, exceptionally sweet, soft texture, rich flavor, premium eating variety.
+> **Eating Varieties** (soft, sweet, aromatic): 
+> - **Koozha / Koozha Pazham** (கூழை / ಕೂಳ / कूळ) - Extremely soft, sweet, custard-like texture when ripe, melts in mouth, very aromatic, best eaten fresh; not suitable for cooking.
+> - **Champaruthi** (சம்பருத்தி / செம்பருத்தி / ಚಂಪರುತ್ತಿ / चंपरुत्ती) - Also spelled Sembaruthi or Chembaratti Varikka; unique red-fleshed variety (name means "red hibiscus" in Tamil/Malayalam); soft to medium-firm, sweet, aromatic; distinctive red-tinged flesh contrasts with typical yellow varieties.
+> - **Sindura** (சிந்தூர / ಸಿಂದೂರ / सिन्दूर) - Red-tinged flesh, exceptionally sweet, soft texture, rich flavor, premium eating variety.
 >
 > **Hybrid/Regional**: **Muthu Koozha** (முத்து கூழை) - Pearl-like soft flesh, Tamil Nadu favorite. **Palakkad Varikka** (பாலக்காடு வருக்கை / പാലക്കാട് വരിയ്ക്ക) - Kerala cooking variety, firm and fibrous. **Muttom Varikka** (முட்டம்  வருக்கை / മുട്ടം വരിയ്ക്ക) - Kerala premium cooking variety, ideal for chips and curry.
 >
-> **Selection Tips**: For cooking (curries, chips, papad), choose **Varikka** when raw/green with firm texture; the flesh should be white/light yellow. For fresh eating, choose **Koozha or Champaruthi** when fully ripe with strong sweet aroma and slight give when pressed; bulbs should be golden yellow and easily separable. **Ripeness indicator**: Tap the fruit - a dull, hollow sound indicates ripeness; a sharp sound means it's raw. Raw jackfruit has firm, white flesh; ripe has soft, golden-yellow, aromatic bulbs.
+> **Selection Tips**: For cooking (curries, chips, papad), choose **Varikka or Singapore Jack** when raw/green with firm texture; the flesh should be white/light yellow. For fresh eating, choose **Koozha, Champaruthi, or Sindura** when fully ripe with strong sweet aroma and slight give when pressed; bulbs should be golden yellow (or reddish for Champaruthi/Sindura) and easily separable. **Ripeness indicator**: Tap the fruit - a dull, hollow sound indicates ripeness; a sharp sound means it's raw. Raw jackfruit has firm, white flesh; ripe has soft, golden-yellow (or red-tinged) aromatic bulbs.
 
 ## 📝 Shopping Tips
 
