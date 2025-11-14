@@ -434,6 +434,37 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 > **Banana varieties**: Banana is a nutritious tropical fruit enjoyed worldwide. Popular varieties include **Nendran / Ethapazham** (cooking banana), **Red Banana** (sweet, reddish skin), **Matti** (small, sweet), **Poovan**, **Yelakki** (aromatic, Karnataka favorite), **Robusta** (common table banana), **Rasthali** (sweet, aromatic), **Karpooravalli** (large, firm), **Chingan** (Kerala variety), and **Cavendish** (most common export variety). Each variety has unique taste, texture, and culinary uses.
 
+> **Date varieties**: Dates (பேரீச்சம்பழம் / ಖರ್ಜೂರ / खजूर) are nature's candy—sweet, nutritious fruits from the palm tree, packed with energy and minerals. Originating from the Middle East, particularly Saudi Arabia, dates come in numerous varieties, each with distinct taste, texture, and appearance:
+>
+> **Premium Varieties**:
+> - **Ajwa** (அஜ்வா / ಅಜ್ವಾ / अजवा) - The "Holy Date" from Medina, Saudi Arabia; dark brown to black, soft, slightly dry texture; prune-like flavor with hints of chocolate; highly prized for religious and health significance; expensive and considered medicinal.
+> - **Medjool** (மெட்ஜூல் / ಮೆಡ್ಜೂಲ್ / मेदजूल) - The "King of Dates"; large, plump, soft and chewy; caramel-like sweetness; deep amber to brown color; grown in Morocco, Palestine, California; perfect for stuffing and desserts.
+> - **Mabroom** (மப்ரூம் / ಮಾಬ್ರೂಮ್ / माबरूम) - Long, slender, wrinkled; bronze to reddish-brown; chewy texture with caramel notes; less sweet than Medjool; from Medina; excellent for snacking and Ramadan.
+> - **Safawi** (சஃபாவி / ಸಫಾವಿ / सफावी) - Medium-sized, cylindrical, dark brown to black; soft, moist texture; balanced sweetness; from Medina; affordable premium option; good for cooking and eating fresh.
+> - **Sukari** (சுக்கரி / ಸುಕರಿ / सुकरी) - "Sugar date" in Arabic; golden to light brown; extremely sweet, soft, almost melts in mouth; crunchy when semi-dry; from Al-Qassim, Saudi Arabia; one of the sweetest varieties.
+>
+> **Popular Everyday Varieties**:
+> - **Kimia** (கிமியா / ಕಿಮಿಯಾ / किमिया) - Iranian date; dark brown to black; soft, fleshy, moist; sweet with slight bitterness; affordable; widely available in India; excellent for milkshakes and desserts.
+> - **Amber** (ஆம்பர் / ಆಂಬರ್ / अंबर) - Also called "Amer"; medium to large size; light brown to golden; firm yet tender; mildly sweet; from Saudi Arabia; good shelf life; versatile for cooking.
+> - **Deglet Noor** (டெக்லெட் நூர் / ಡೆಗ್ಲೆಟ್ ನೂರ್ / डेग्लेट नूर) - "Date of Light" in Arabic; semi-dry, firm texture; translucent golden-amber color; less sweet than Medjool; from Tunisia and Algeria; widely exported; perfect for baking.
+> - **Zahidi** (ஜாஹிதி / ಝಾಹಿದಿ / ज़ाहिदी) - Medium-sized, oval; golden brown when ripe; firm, nutty flavor; less sweet; excellent for cooking and processing; popular in Lion Dates brand (brown variety); good for diabetics due to lower sugar content.
+> - **Tunisian Dates** (துனீசியன் பேரீச்சம்பழம் / ಟ್ಯೂನೀಷಿಯನ್ ಖರ್ಜೂರ / ट्यूनीशियाई खजूर) - Includes Deglet Noor and other varieties; generally firm texture; light to medium brown; semi-dry; good for general consumption and export.
+>
+> **Other Notable Varieties**:
+> - **Khudri** (குத்ரி / ಖುದ್ರಿ / खुदरी) - Large, wrinkled, dark brown; chewy, sweet; from Riyadh; economical; widely consumed.
+> - **Barhi** (பார்ஹி / ಬರ್ಹಿ / बरही) - Unique as can be eaten at "khalal" stage (yellow, crunchy, less sweet) or fully ripe (soft, very sweet); small, round; from Iraq.
+> - **Halawi** (ஹலாவி / ಹಲಾವಿ / हलावी) - "Sweet" in Arabic; medium-sized, golden; soft, caramel-like; from Iraq; excellent for fresh eating.
+> - **Khadrawi** (கத்ராவி / ಖದ್ರಾವಿ / खद्रावी) - Soft, dark brown; very sweet, chewy; from Iraq; good for desserts.
+>
+> **Selection and Storage Tips**:
+> - **Fresh dates**: Look for plump, shiny skin without crystallization; should be soft but not mushy; avoid dates with fermented smell.
+> - **Dried dates**: Check for uniform color; should be slightly sticky but not overly hard; no mold or off-odors.
+> - **Storage**: Fresh dates last 6-12 months refrigerated; dried dates can last up to a year in airtight containers; freeze for longer storage (up to 2 years).
+> - **Culinary uses**: Eat fresh as snacks; stuff with nuts or cheese; blend into smoothies; use in energy balls, cakes, and traditional sweets; natural sweetener in recipes.
+> - **Health benefits**: Rich in fiber, potassium, magnesium, antioxidants; natural energy booster; supports digestive health; good for heart health.
+>
+> **Shopping Tip**: For premium quality and special occasions, choose Ajwa or Medjool; for everyday consumption, Kimia and Safawi offer great value; for baking and cooking, Deglet Noor or Zahidi work best. During Ramadan, demand increases and prices rise, so buy in advance. Check origin labels—Saudi Arabian dates (especially from Medina and Al-Qassim) are highly regarded for quality.
+
 > **Mango varieties**: Mango, the "King of Fruits," is a delicious tropical treasure with hundreds of varieties. Popular ones include **Alphonso/Hapus** (aromatic, smooth), **Banginapalli** (large, fiberless), **Totapuri** (tangy, used for pickles), **Neelam** (sweet, affordable), **Sindhura/Sindoora** (vibrant, sweet), **Malgova** (rich, creamy), **Mallika** (hybrid, aromatic), **Raspuri** (Karnataka favorite), **Kesar** (saffron-colored, Gujarat), **Chausa** (aromatic, North India), **Dasheri** (sweet, North India), **Langra** (green even when ripe), **Amrapali** (hybrid, disease-resistant), and **Badami** (aromatic, Karnataka). Each has distinct flavor, texture, and regional popularity.
 
 > **Apple varieties by texture**: Apples come in different textures that affect their eating experience and culinary uses:
