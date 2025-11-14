@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-const Carousel = ({ images, height = '600px' }) => {
+const Carousel = ({ images, height = '600px', autoPlayInterval = 5000 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -14,6 +15,19 @@ const Carousel = ({ images, height = '600px' }) => {
     
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (isPaused || !images || images.length <= 1) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, autoPlayInterval);
+
+    return () => clearInterval(interval);
+  }, [currentSlide, isPaused, images, autoPlayInterval]);
 
   if (!images || images.length === 0) {
     return null;
@@ -29,6 +43,14 @@ const Carousel = ({ images, height = '600px' }) => {
 
   const handleDotClick = (index) => {
     setCurrentSlide(index);
+  };
+
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
   };
 
   const carouselStyle = {
@@ -125,7 +147,11 @@ const Carousel = ({ images, height = '600px' }) => {
   const [hoveredControl, setHoveredControl] = useState(null);
 
   return (
-    <div style={carouselStyle}>
+    <div 
+      style={carouselStyle}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div>
         <ul style={slidesStyle}>
           {images.map((image, index) => {
