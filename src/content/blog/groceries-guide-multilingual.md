@@ -439,22 +439,30 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 > **Premium Varieties**:
 > - **Ajwa** (அஜ்வா / ಅಜ್ವಾ / अजवा) - The "Holy Date" from Medina, Saudi Arabia; dark brown to black, soft, slightly dry texture; prune-like flavor with hints of chocolate; highly prized for religious and health significance; expensive and considered medicinal.
 > - **Medjool** (மெட்ஜூல் / ಮೆಡ್ಜೂಲ್ / मेदजूल) - The "King of Dates"; large, plump, soft and chewy; caramel-like sweetness; deep amber to brown color; grown in Morocco, Palestine, California; perfect for stuffing and desserts.
+> - **Mazafati** (மஸாஃபதி / ಮಜಾಫತಿ / मज़ाफ़ती) - Also known as "Iranian Black Dates" or "Bam Dates"; extremely soft, tender, almost melting texture; dark brown to black color; very sweet, rich flavor; high moisture content; from Bam, Iran; considered one of the finest dates; premium price; best consumed fresh; refrigeration recommended.
 > - **Mabroom** (மப்ரூம் / ಮಾಬ್ರೂಮ್ / माबरूम) - Long, slender, wrinkled; bronze to reddish-brown; chewy texture with caramel notes; less sweet than Medjool; from Medina; excellent for snacking and Ramadan.
-> - **Safawi** (சஃபாவி / ಸಫಾವಿ / सफावी) - Medium-sized, cylindrical, dark brown to black; soft, moist texture; balanced sweetness; from Medina; affordable premium option; good for cooking and eating fresh.
+> - **Safawi / Kalmi** (சஃபாவி / கல்மி / ಸಫಾವಿ / ಕಲ್ಮಿ / सफावी / कलमी) - Medium-sized, cylindrical, dark brown to black; soft, moist texture; balanced sweetness; from Medina, Saudi Arabia; affordable premium option; good for cooking and eating fresh. "Kalmi" is the popular Indian market name for Safawi dates.
 > - **Sukari** (சுக்கரி / ಸುಕರಿ / सुकरी) - "Sugar date" in Arabic; golden to light brown; extremely sweet, soft, almost melts in mouth; crunchy when semi-dry; from Al-Qassim, Saudi Arabia; one of the sweetest varieties.
+> - **Khalas** (காலாஸ் / ಖಲಾಸ್ / खलास) - Also spelled "Khlas"; medium-sized, oval; golden to amber color when ripe; soft, smooth texture; very sweet with caramel and honey notes; from Al-Ahsa and UAE; highly prized in Gulf countries; considered a delicacy.
 >
 > **Popular Everyday Varieties**:
 > - **Kimia** (கிமியா / ಕಿಮಿಯಾ / किमिया) - Iranian date; dark brown to black; soft, fleshy, moist; sweet with slight bitterness; affordable; widely available in India; excellent for milkshakes and desserts.
+> - **Khajur** (கஜூர் / ಖಜೂರ್ / खजूर) - Generic term for dates in Hindi/Urdu; commonly refers to dried dates sold loose in Indian markets; usually semi-dry, brown, affordable; various origins; good for everyday consumption, cooking, and traditional remedies.
 > - **Amber** (ஆம்பர் / ಆಂಬರ್ / अंबर) - Also called "Amer"; medium to large size; light brown to golden; firm yet tender; mildly sweet; from Saudi Arabia; good shelf life; versatile for cooking.
 > - **Deglet Noor** (டெக்லெட் நூர் / ಡೆಗ್ಲೆಟ್ ನೂರ್ / डेग्लेट नूर) - "Date of Light" in Arabic; semi-dry, firm texture; translucent golden-amber color; less sweet than Medjool; from Tunisia and Algeria; widely exported; perfect for baking.
-> - **Zahidi** (ஜாஹிதி / ಝಾಹಿದಿ / ज़ाहिदी) - Medium-sized, oval; golden brown when ripe; firm, nutty flavor; less sweet; excellent for cooking and processing; popular in Lion Dates brand (brown variety); good for diabetics due to lower sugar content.
+> - **Zahidi / Qyno** (ஜாஹிதி / கெய்னோ / ಝಾಹಿದಿ / ಕೈನೊ / ज़ाहिदी / क़ैनो) - A type of semi-dry date from Iraq that is medium-sized, oval; golden-amber to brown when ripe; firm, chewy texture with a sweet, nutty, caramel-like flavor; less sweet than most varieties; excellent for cooking, processing, and diabetics due to lower sugar content; popular in Lion Dates brand (brown variety). **Qyno dates** are a specific type of Zahidi date from Northern Iraq, known for their deseeded, ready-to-eat convenience with pronounced caramel-like flavor. It can also refer to **Saadia Zahidi**, a cultivar with similar characteristics but slightly softer texture.
 > - **Tunisian Dates** (துனீசியன் பேரீச்சம்பழம் / ಟ್ಯೂನೀಷಿಯನ್ ಖರ್ಜೂರ / ट्यूनीशियाई खजूर) - Includes Deglet Noor and other varieties; generally firm texture; light to medium brown; semi-dry; good for general consumption and export.
+> - **Fard** (ஃபார்த் / ಫಾರ್ಡ್ / फ़ार्द) - Omani dates; large, elongated; reddish-brown to dark brown; soft to semi-soft texture; sweet with mild flavor; from Oman; popular in Middle East; good for gifting and special occasions.
 >
 > **Other Notable Varieties**:
 > - **Khudri** (குத்ரி / ಖುದ್ರಿ / खुदरी) - Large, wrinkled, dark brown; chewy, sweet; from Riyadh; economical; widely consumed.
 > - **Barhi** (பார்ஹி / ಬರ್ಹಿ / बरही) - Unique as can be eaten at "khalal" stage (yellow, crunchy, less sweet) or fully ripe (soft, very sweet); small, round; from Iraq.
 > - **Halawi** (ஹலாவி / ಹಲಾವಿ / हलावी) - "Sweet" in Arabic; medium-sized, golden; soft, caramel-like; from Iraq; excellent for fresh eating.
 > - **Khadrawi** (கத்ராவி / ಖದ್ರಾವಿ / खद्रावी) - Soft, dark brown; very sweet, chewy; from Iraq; good for desserts.
+>
+> **Special Marketing Categories**:
+> - **Un-pitted Dates** (கொட்டையுடன் பேரீச்சம்பழம் / ಬೀಜದೊಂದಿಗೆ ಖರ್ಜೂರ / बीज के साथ खजूर) - Dates sold with pits/stones intact (Dates with seeds); fresher, more authentic taste; requires manual pitting before eating; better texture and flavor retention; preferred by purists; available in all varieties; slightly lower price than pitted dates; traditional choice.
+> - **Un-junked Dates** (இயற்கை பேரீச்சம்பழம் / ನೈಸರ್ಗಿಕ ಖರ್ಜೂರ / प्राकृतिक खजूर) - Marketing term for dates sold as a healthy, natural snack with no added sugar, artificial flavors, or preservatives; typically unprocessed and minimally handled; positioned as a "guilt-free" wholesome option; emphasizes natural state and purity; can be any variety.
 >
 > **Selection and Storage Tips**:
 > - **Fresh dates**: Look for plump, shiny skin without crystallization; should be soft but not mushy; avoid dates with fermented smell.
@@ -463,7 +471,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 > - **Culinary uses**: Eat fresh as snacks; stuff with nuts or cheese; blend into smoothies; use in energy balls, cakes, and traditional sweets; natural sweetener in recipes.
 > - **Health benefits**: Rich in fiber, potassium, magnesium, antioxidants; natural energy booster; supports digestive health; good for heart health.
 >
-> **Shopping Tip**: For premium quality and special occasions, choose Ajwa or Medjool; for everyday consumption, Kimia and Safawi offer great value; for baking and cooking, Deglet Noor or Zahidi work best. During Ramadan, demand increases and prices rise, so buy in advance. Check origin labels—Saudi Arabian dates (especially from Medina and Al-Qassim) are highly regarded for quality.
+> **Shopping Tip**: For premium quality and special occasions, choose Ajwa, Medjool, or Mazafati; for everyday consumption, Kimia, Khajur, and Safawi/Kalmi offer great value; for baking and cooking, Deglet Noor or Zahidi work best. During Ramadan, demand increases and prices rise, so buy in advance. Check origin labels—Saudi Arabian dates (especially from Medina and Al-Qassim), Iranian Mazafati, and Omani Fard are highly regarded for quality. Un-pitted dates are often fresher and more flavorful than pitted varieties.
 
 > **Mango varieties**: Mango, the "King of Fruits," is a delicious tropical treasure with hundreds of varieties. Popular ones include **Alphonso/Hapus** (aromatic, smooth), **Banginapalli** (large, fiberless), **Totapuri** (tangy, used for pickles), **Neelam** (sweet, affordable), **Sindhura/Sindoora** (vibrant, sweet), **Malgova** (rich, creamy), **Mallika** (hybrid, aromatic), **Raspuri** (Karnataka favorite), **Kesar** (saffron-colored, Gujarat), **Chausa** (aromatic, North India), **Dasheri** (sweet, North India), **Langra** (green even when ripe), **Amrapali** (hybrid, disease-resistant), and **Badami** (aromatic, Karnataka). Each has distinct flavor, texture, and regional popularity.
 
