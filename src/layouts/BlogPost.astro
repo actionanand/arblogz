@@ -7,6 +7,7 @@ import Comment from '@/components/Comment.astro'
 import Toc from '@/components/Toc.astro'
 import Donate from '@/components/Donate.astro';
 import RelatedArticles from '@/components/RelatedArticles.astro';
+import PasswordProtection from '@/components/PasswordProtection.astro';
 import {comment, config, donate} from "@/consts";
 import ScrollToTop from '@/components/ScrollToTop.astro'
 import {t} from '@/i18n/utils'
@@ -21,6 +22,7 @@ const {
     showDonate: undefined, // Can be true, false, or undefined
     donateMessage: undefined,
     customDonate: undefined,
+    passwordProtected: undefined, // Can be true, false, or undefined
   },
 } = Astro.props;
 
@@ -53,7 +55,9 @@ const shouldShowDonate = donate.enable && (
         <i class="ri-arrow-left-line mr-2"/>
         <span data-translate="home.goBack">{t('home.goBack')}</span>
       </button>
-      <slot/>
+      <PasswordProtection passwordProtected={frontmatter.passwordProtected}>
+        <slot/>
+      </PasswordProtection>
       
       <!-- Related Articles Section -->
       {
