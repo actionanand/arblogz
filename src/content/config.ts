@@ -45,6 +45,9 @@ const blog = defineCollection({
       bitcoin: z.string().optional(),
       ethereum: z.string().optional(),
     }).optional(),
+    
+    // Password protection feature
+    passwordProtected: z.boolean().optional(),
   }),
 });
 

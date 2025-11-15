@@ -283,6 +283,33 @@ export const donate = {
 }
 
 /**
+ * Password Protection Feature
+ * enable {boolean} - Global enable/disable for all pages
+ * passwordHash {string} - SHA1 hash of the password (use online SHA1 generator)
+ * Example: "secret" -> "e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4"
+ * Generate hash at: https://emn178.github.io/online-tools/sha1.html
+ * 
+ * Can be overridden with environment variable: PASSWORD_HASH
+ * 
+ * Usage:
+ * 1. Set enable: true to protect all pages
+ * 2. Generate SHA1 hash of your password and paste in passwordHash
+ * 3. Override per-post using frontmatter: passwordProtected: true
+ */
+export const passwordProtection = {
+  enable: false, // Global enable/disable
+  passwordHash: import.meta.env.PASSWORD_HASH || "e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4", // SHA1 hash of "secret" - CHANGE THIS!
+  storageKey: "site_auth_token", // LocalStorage key name
+  sessionTimeout: 24 * 60 * 60 * 1000, // 24 hours in milliseconds (0 = no timeout)
+  title: "Protected Content",
+  message: "This content is password protected. Please enter the password to continue.",
+  placeholder: "Enter password",
+  buttonText: "Unlock",
+  errorMessage: "Incorrect password. Please try again.",
+  successMessage: "Access granted!",
+}
+
+/**
  * Friendship Links Page
  * name {string}
  * url {string}
