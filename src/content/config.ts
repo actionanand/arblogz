@@ -21,7 +21,7 @@ const blog = defineCollection({
     hideDivider: z.boolean().default(false).nullable(),
     //  Open Graph (OG) images
     ogImage: z.string().optional(),
-    
+
     // Related articles feature - max 5 articles
     relatedArticles: z.array(z.string()).max(5).optional().nullable(),
     
@@ -45,6 +45,9 @@ const blog = defineCollection({
       bitcoin: z.string().optional(),
       ethereum: z.string().optional(),
     }).optional(),
+    
+    // Password protection feature
+    passwordProtected: z.boolean().optional(),
   }),
 });
 
