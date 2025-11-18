@@ -63,14 +63,14 @@ const { totalBlogs } = Astro.props;
       <!-- CTA Buttons -->
       <div class="flex flex-wrap justify-center gap-4 mb-12">
         <a 
-          href="/blog/1" 
+          href={getUrl('/blog/1')}
           class="glass-effect px-8 py-4 rounded-full text-white font-semibold hover:bg-white/20 transition-all duration-300"
         >
           <i class="ri-article-line mr-2"></i>
           <span data-translate="home.exploreBlog">{t('home.exploreBlog')}</span>
         </a>
         <a 
-          href="/about" 
+          href={getUrl('/about')}
           class="glass-effect px-8 py-4 rounded-full text-white font-semibold hover:bg-white/20 transition-all duration-300"
         >
           <i class="ri-user-line mr-2"></i>
@@ -192,7 +192,7 @@ const { totalBlogs } = Astro.props;
       <span data-translate="home.discoverInsights">{t('home.discoverInsights')}</span>
     </p>
     <a 
-      href="/blog/1" 
+      href={getUrl('/blog/1')}
       class="cta-button inline-block px-10 py-4 text-white font-bold text-lg rounded-full shadow-lg hover:shadow-2xl transition-all duration-300"
     >
       <i class="ri-compass-3-line mr-2"></i>
