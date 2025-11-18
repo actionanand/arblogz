@@ -219,6 +219,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 </div>
 
+
 > **Summer Squash Varieties**: Summer squash are vegetables with thick, edible rinds that are harvested when immature and tender. They can be eaten raw or cooked and have a mild, slightly sweet flavor. The most common types are:
 >
 > - **Zucchini / Courgette** (சீமை சுரைக்காய்): Dark green, cylindrical shape, smooth skin; most popular summer squash; mild flavor, versatile for grilling, sautéing, baking, or spiralizing into "zoodles"; harvest when 6-8 inches long for best texture.
@@ -329,6 +330,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Skimmed Milk / Skim Milk** | ஆடை நீக்கிய பால் / கொழுப்பு நீக்கப்பட்ட பால் (Kozhuppu Neekkapatta Paal) | ಕೊಬ್ಬು ತೆಗೆದ ಹಾಲು (Kobbu Tegeda Haalu) | स्किम्ड दूध (Skimmed Doodh) |
 | **Cow Milk** | பசும்பால் (Pasumpaal) | ಹಸುವಿನ ಹಾಲು (Hasuvina Haalu) | गाय का दूध (Gaay Ka Doodh) |
 | **Buffalo Milk** | எருமைப்பால் (Erumaippaal) | ಎಮ್ಮೆ ಹಾಲು (Emme Haalu) | भैंस का दूध (Bhains Ka Doodh) |
+| **Colostrum** | சீம்பால் / கடும்புப்பால் (Seempaal / Kadumpuppaal) | ಸೀರು ಹಾಲು (Seeru Haalu) | खीस / कोलोस्ट्रम (Khees / Colostrum) |
 | **Curd / Yogurt** | தயிர் (Thayir) | ಮೊಸರು (Mosaru) | दही (Dahi) |
 | **Buttermilk** | மோர் (Mor) | ಮಜ್ಜಿಗೆ (Majjige) | छाछ / मट्ठा (Chhaach / Mattha) |
 | **Butter** | வெண்ணெய் (Vennai) | ಬೆಣ್ಣೆ (Benne) | मक्खन (Makkan) |
@@ -524,8 +526,18 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Wood Apple** | விளாம்பழம் (Vilaampazham) | ಬೇಲದ ಹಣ್ಣು (Belada Hannu) | बेल / कैथा (Bel / Kaitha) |
 | **Indian Jujube / Ber** | இலந்தைப்பழம் (Ilandhaippazham) | ಎಲಚಿ ಹಣ್ಣು (Elachi Hannu) | बेर (Ber) |
 | **Java Plum / Jamun** | நாவல் பழம் (Naaval Pazham) | ನೀರಲಿ ಹಣ್ಣು (Neerali Hannu) | जामुन (Jamun) |
+| **Ice Apple / Nungu** | நுங்கு (Nungu) | ತಾಳೆ ಹಣ್ಣು (Taale Hannu) | ताड़ का फल (Tad ka Phal) |
+| **Palmyra Fruit (ripe)** | பனம்பழம் (Panam Pazham) | ತಾಳೆ ಹಣ್ಣು (Taale Hannu) | ताड़ फल (Tad Phal) |
+| **Palmyra Sprout** | பனை தவுண் (Panai Thavun) | ತಾಳೆ ಮೊಗ್ಗು (Taale Moggu) | ताड़ अंकुर (Tad Ankur) |
+| **Coconut Sprout** | தென்னை தவுண் (Thennai Thavun) | ತೆಂಗಿನ ಮೊಗ್ಗು (Tengin Moggu) | नारियल अंकुर (Nariyal Ankur) |
+| **Palmyra Tuber** | பனங்கிழங்கு (Panam Kizhangu) | ತಾಳೆ ಗೆಡ್ಡೆ (Taale Gedde) | ताड़ कंद (Tad Kand) |
+| **Coconut palm heart** | தென்னங்குருத்து (Thennan Guruthu) | ತೆಂಗಿನ ಚಿಗುರು (Tengin Chiguru) | नारियल कोंपल (Nariyal Konpal) |
 
 </div>
+
+![lazy](/images/year-2025/palm-products.webp)
+
+> **Palmyra Sprout / Coconut Sprout** (பனை தவுண் / தென்னை தவுண்): These are the germinated seed embryos of palmyra and coconut palms. The edible endosperm of the germinated palmyra palm seed is soft, spongy, and mildly sweet with a unique coconut-like flavor; traditionally consumed as a nutritious snack in South India; rich in nutrients and minerals; typically eaten raw or lightly steamed; considered a delicacy in Tamil Nadu and Kerala.
 
 > **Banana varieties**: Banana is a nutritious tropical fruit enjoyed worldwide. Popular varieties include **Nendran / Ethapazham** (cooking banana), **Red Banana** (sweet, reddish skin), **Matti** (small, sweet), **Poovan**, **Yelakki** (aromatic, Karnataka favorite), **Robusta** (common table banana), **Rasthali** (sweet, aromatic), **Karpooravalli** (large, firm), **Chingan** (Kerala variety), and **Cavendish** (most common export variety). Each variety has unique taste, texture, and culinary uses.
 
