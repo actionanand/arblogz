@@ -215,7 +215,7 @@ const { posts } = Astro.props;
     <!-- View All Button -->
     <div class="text-center mt-12">
       <a 
-        href="/blog/1"
+        href={getUrl('/blog/1')}
         class="cta-button inline-block px-8 py-3 rounded-full font-semibold text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
       >
         <i class="ri-article-line mr-2"></i>
