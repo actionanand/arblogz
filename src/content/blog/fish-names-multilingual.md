@@ -24,30 +24,30 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
 | **Sardine** | மத்தி / சாளை (Mathi / Chalai/ Salai) | ಮತಿ ಮೀನು (Mathi Meenu) | सार्डिन / पेडवे (Sardine / Pedve) |
-| **Mackerel** | ஆயிலை / காணாங்கெளுத்தி /ஆயில் மீன்/ வெக்கடா (Ayilai / Kanangeluthi / Vekkata) | ಬಂಗುಡೆ (Bangude) | बांगड़ा (Bangda) |
+| **Mackerel** | கானங்கத்தை மீன் / அகலை / ஆயிலை / காணாங்கெளுத்தி /ஆயில் மீன்/ வெங்கடா (Ayilai / Kanangeluthi / Venkada) | ಬಂಗುಡೆ (Bangude) | बांगड़ा (Bangda) |
 | **Pomfret (White)/ silver pomfret** | வௌவால் மீன்/ வெள்ளை வவ்வல்/ வாவல்/  (Vavval/Vaaval Meen) | ಪಾಪ್ಲೆಟ್ (Paplet) | पापलेट / चांदी मछली (Paplet / Chandi Machli) |
 | **Pomfret (Black)** | கருப்பு வௌவால் (Karuppu Vaaval) | ಕಪ್ಪು ಪಾಪ್ಲೆಟ್ (Kappu Paplet) | काला पापलेट (Kala Paplet) |
 | **Tuna** | சூரை / கெண்டை (Soorai / Kendai) | ಚೂರೈ (Churai) | चूरा / टूना (Chura / Tuna) |
-| **Seer Fish / King Fish** | வஞ்சிரம் / நெய்மீன் / சீரா (Vanchiram / Neimeen / Seera) | ಸೀರ್ ಮೀನು / ಅಂಜಲ್ (Anjal) | सुरमई (Surmai) |
-| **Anchovy** | நெத்திலி (Nethili) | ನೆತ್ತಿಲಿ (Nethili) | झींगा मछली (Jhinga Machli) |
+| **Seer Fish / King Fish** | வஞ்சிரம் / சீரா (Vanchiram / Seera) | ಸೀರ್ ಮೀನು / ಅಂಜಲ್ (Anjal) | सुरमई (Surmai) |
+| **Anchovy** | நெத்திலி (Nethili) | ನೆತ್ತಿಲಿ (Nethili / Nethallu / Bolingei Kollathuru) | झींगा मछली (Jhinga Machli) |
 | **Ribbon Fish** | வாளை மீன்/ சாவாளை மீன் (Vaalai / Savaalai) | ಸವಾಲ (Saval) | पट्टी मछली (Patti Machli) |
-| **Barracuda / Sea Pike** | சீலா /ஊலா / ஊளி / திரியன் (Seela) | Obantol, Kanaki, Suruli, Kandai(ಕಂಡಾಯಿ/ಕನಕಿ/ಒಬಂಟೊಲ್) | कांटा (Kanta) |
+| **Barracuda / Sea Pike** | ஷீலா / சீலா / ஊலா / ஊழா / ஊளி / பிளிஞ்சன் / கோலா (Sheela / Seela / Pilinjan/ Oozha / Ooli), നെടുവ(Neduva), കോടുവ(Koduva), തിരുതക്കടിയൻ (Thiruthakkadian) | Obantol, Kanaki, Suruli, Kandai(ಕಂಡಾಯಿ/ಕನಕಿ/ಒಬಂಟೊಲ್) | कांटा (Kanta) |
 | **Indian Salmon** | கானமீன் / காளா மீன் (Kaana Meen / Kala Meen) |  Arkoli/ Rumus (ಅರ್ಕೊಲಿ/ರುಮುಸ್) | रावस / हिलसा (Ravas / Hilsa) |
-| **Grouper/ Reef cod** | கலவா மீன் / கல்லு மீன்/ கலவான் (Kalava meen / Kallu Meen) | ಗರೋಪ (Garopa) | गरूपा (Garupa) |
-| **Red Snapper** | சங்கரா / ரத்த மீன் (Sankara / Ratha Meen) | ಕೆಂಪು ಸ್ನಾಪರ (Kempu Snaper) | रानी मछली / लाल मछली (Rani Machli / Lal Machli) |
+| **Grouper/ Reef cod** | புள்ளி களவாய் / கலவா மீன் / கல்லு மீன்/ கலவான் (Kalava meen / Kallu Meen) | ಗರೋಪ (Garopa) | गरूपा (Garupa) |
+| **Red Snapper** | சங்கரா / பட்டை சங்கரா / ரத்த மீன் / செம்பள்ளி (Sankara / Ratha Meen) | ಕೆಂಪು ಸ್ನಾಪರ (Kempu Snaper) | रानी मछली / लाल मछली (Rani Machli / Lal Machli) |
 | **Shark** | சுறா (Sura) | ಶಾರ್ಕ್ (Shark) | शार्क / मोरी (Shark / Mori) |
 | **Squid** | கணவாய் / ஊசி (Kanavai / Oosi) | ಸ್ಕ್ವಿಡ್ (Squid) | स्क्विड / झींगा (Squid / Jhinga) |
 | **Prawn** | இறால் (Iraal) | ಸಂಡು (Sandu) | झींगा (Jhinga) |
 | **Crab** | நண்டு (Nandu) | ನಳ್ಳಿ (Nalli) | केकड़ा (Kekda) |
 | **Lobster** | கடல் இறால் (Kadal Iraal) | ನೀರು ನಳ್ಳಿ (Neeru Nalli) | झींगा मछली (Jhinga Machli) |
 | **Sole Fish** | நாக்கு மீன்/ மாந்தல் மீன் (Naakku Meen) | ನಾಲಿಗೆ ಮೀನು (Nalige Meenu) | जीभ मछली (Jeebh Machli) |
-| **Hilsa** | உள்ளம் /ஊலம் /வெங்கண்ணை/ இலிஷ் (Ullam) | ಇಲಿಶಾ (Ilisha) | इलिशा / हिलसा (Ilisha / Hilsa) |
+| **Indian Shad / Hilsa** | உள்ளம் /ஊலம் /வேங்கண்ணை/ இலிஷ் (Ullam) | ಇಲಿಶಾ (Ilisha) | इलिशा / हिलसा (Ilisha / Hilsa) |
 | **Croaker** | கோரல் (Koral) | ಘೋಳ (Ghol) | ढोल / घोल (Dhol / Ghol) |
 | **Lady Fish** | கிழங்கான் மீன் / கிழங்கா மீன் / வெள்ளைக்கிழங்கான் மீன் (Kizhangaan Meen / Kizhanga Meen / Vellai Kizhangaan Meen) | ಕೇನ್ ಮೀನು (Kane Meenu) | लेडी फिश / मोरी (Lady Fish / Mori) |
-| **Sea Bass** | குடுவா / குடுவை (Kuduvaa / Kuduvai) | ಸೀ ಬಾಸ್ (Sea Bass) | समुद्री बास (Samudri Bass) |
+| **Sea Bass / Bhetki / Barramundi** | கொடுவா / குடுவா / குடுவை (Kuduvaa / Kuduvai) | ಸೀ ಬಾಸ್ (Sea Bass) | समुद्री बास (Samudri Bass) |
 | **Rabbit Fish** | ஓரா மீன் (Ora Meen / Oora) | ಮೊಲದ ಮೀನು (Molada Meenu) | खरगोश मछली (Khargosh Machli) |
 | **Mussel / Clam / Oyster** | சிப்பி / தோடு (Sippi / Thodu) | ಮಸ್ಸೆಲ್ / ಶಿಪ್ಪಿ (Mussel / Shippi) | सीप / शंख (Seep / Shankh) |
-| **Pink Perch** | ரத்தின் மீன் / வெள்ளை சங்கரா (Rathin Meen / Vellai Sankara) | ಗುಲಾಬಿ ಪರ್ಚ್ (Gulabi Perch) | गुलाबी पर्च (Gulabi Perch) |
+| **Pink Perch** | ராணி / ரத்தின் மீன் / வெள்ளை சங்கரா (Rathin Meen / Vellai Sankara) | ಗುಲಾಬಿ ಪರ್ಚ್ (Gulabi Perch) | गुलाबी पर्च (Gulabi Perch) |
 | **Dry Fish** | கருவாடு (Karuvaadu) | ಒಣ ಮೀನು (Ona Meenu) | सूखी मछली (Sookhi Machli) |
 
 </div>
@@ -61,8 +61,8 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Rohu** | கெண்டை (Kendai) | ರೊಹು (Rohu) | रोहू (Rohu) |
 | **Catla** | கட்லா (Katla) | ಕಟ್ಲಾ (Katla) | कतला (Katla) |
 | **Catfish** | கெளுத்தி/ கெள்ளு / மாங்குரு (Keluthi / Kellu / Maanguru) | ಜೇಲೆ (Jele) | मांगुर / सिंगी (Mangur / Singi) |
-| **Tilapia** | ஜிலாபி / ஜிலேபி / சிலோபி / கறி மீன் / திலாப்பி (Jilabi / Jilebi / Silobi / Kari Meen / Thilappi) | ತಿಲಾಪಿಯಾ (Tilapia) | तिलापिया (Tilapia) |
-| **Murrel / Snake Head** | வேரால் / விரால் (Veraal / Viraal / Viral) | ಹರಳು (Haralu) | मुर्रल / सोल (Murrel / Sohl) |
+| **Tilapia** | ஜிலாபி / ஜிலேபி / சிலோபி / கறி மீன் / திலாப்பி (Jilabi / Jilebi / jalebi / Silobi / Kari Meen / Thilappi) | ತಿಲಾಪಿಯಾ (Tilapia) | तिलापिया (Tilapia) |
+| **Murrel / Snake Head** | விறால் மீன் / வேரால் / விரால் (Veraal / Viraal / Viral) | ಹರಳು (Haralu) | मुर्रल / सोल (Murrel / Sohl) |
 | **Indian Carp** | சாளை (Chalai) | ಕರಿ (Kari) | कार्प / सिंघी (Carp / Singhi) |
 | **Climbing Perch** | பனை மீன் (Panai Meen) | ಕೂಬೆ (Koobe) | कोबी / कुई (Kobi / Kui) |
 | **Wallago** | வாலா (Vaalaa) | ಬೇಲೆ (Bele) | बाल्ला / पाभू (Balla / Pabhu) |
@@ -71,7 +71,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Silver Carp** | வெள்ளி மீன் (Velli Meen) | ಬೆಳ್ಳಿ ಮೀನು (Belli Meenu) | चांदी कार्प (Chandi Carp) |
 | **Freshwater Prawn** | உளுந்து இறால் (Ulundhu Iraal) | ನೀರು ಸಂಡು (Neeru Sandu) | नदी का झींगा (Nadi Ka Jhinga) |
 | **Common Indian Spiny Loach** | அயிரை (Ayirai) | ಭಾರತೀಯ ಸ್ಪೈನಿ ಲೋಚ್ (Bharatiya Spiny Loach) | भारतीय स्पाइनी लोच (Bharatiya Spiny Loach) |
-| **Eel** | விலாங்கு (Vilaangu) | ಬಾವಳಿ (Baavali) | बाम मछली (Baam Machli) |
+| **Eel** | விலாங்கு (Vilaangu) | ಹಾವು ಮೀನು /ನೀರು ಹಾವು / ಮೀನು / ಬಾವಳಿ (haavu meenu / neeru haavu / Haari Meenu / Baavali) | बाम मछली (Baam Machli) |
 | **Walking Catfish** | தேளி மீன் (Theli Meen) | ನಡೆಯುವ ಜೇಲೆ (Nadeyuva Jele) | चलने वाली मछली (Chalne Wali Machli) |
 | **Basa Fish** | பாசா மீன் (Basa Meen) | ಬಾಸಾ ಮೀನು (Basa Meenu) | बासा मछली (Basa Machli) |
 | **Pangasius / Pungus / Pangas** | பங்காசியஸ் மீன் (Pangasius Meen) | ಪಂಗಾಸಿಯಸ್ (Pangasius) | पंगेसियस (Pangasius) |
