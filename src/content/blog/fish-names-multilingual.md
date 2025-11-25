@@ -37,17 +37,13 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Grouper/ Reef cod** | புள்ளி களவாய் / கலவா மீன் / கல்லு மீன்/ கலவான் (Pulli Kalava / Kalava meen / Kallu Meen) | ಗರೋಪ (Garopa) | गरूपा (Garupa) |
 | **Red Snapper** | சங்கரா / பட்டை சங்கரா / ரத்த மீன் / செம்பள்ளி (Sankara / Ratha Meen) | ಕೆಂಪು ಸ್ನಾಪರ (Kempu Snaper) | रानी मछली / लाल मछली (Rani Machli / Lal Machli) |
 | **Shark** | சுறா (Sura) | ಶಾರ್ಕ್ (Shark) | शार्क / मोरी (Shark / Mori) |
-| **Squid** | கணவாய் / ஊசி (Kanavai / Oosi) | ಸ್ಕ್ವಿಡ್ (Squid) | स्क्विड / झींगा (Squid / Jhinga) |
-| **Prawn** | இறால் (Iraal) | ಸಂಡು (Sandu) | झींगा (Jhinga) |
-| **Crab** | நண்டு (Nandu) | ನಳ್ಳಿ (Nalli) | केकड़ा (Kekda) |
-| **Lobster** | கடல் இறால் (Kadal Iraal) | ನೀರು ನಳ್ಳಿ (Neeru Nalli) | झींगा मछली (Jhinga Machli) |
 | **Sole Fish** | நாக்கு மீன்/ மாந்தல் மீன் (Naakku Meen) | ನಾಲಿಗೆ ಮೀನು (Nalige Meenu) | जीभ मछली (Jeebh Machli) |
 | **Indian Shad / Hilsa** | உள்ளம் /ஊலம் /வேங்கண்ணை/ இலிஷ் (Ullam) | ಇಲಿಶಾ (Ilisha) | इलिशा / हिलसा (Ilisha / Hilsa) |
 | **Croaker** | கோரல் (Koral) | ಘೋಳ (Ghol) | ढोल / घोल (Dhol / Ghol) |
 | **Lady Fish** | கிழங்கான் மீன் / கிழங்கா மீன் / வெள்ளைக்கிழங்கான் மீன் (Kizhangaan Meen / Kizhanga Meen / Vellai Kizhangaan Meen) | ಕೇನ್ ಮೀನು (Kane Meenu) | लेडी फिश / मोरी (Lady Fish / Mori) |
+| **Lizard Fish** | தும்பிலி மீன் / அரணை மீன் / கிழங்கான் (Thumpili Meen / Aranai Meen) | ಅರಣೈ ಮೀನು (Aranai Meenu) | छिपकली मछली (Chhipkali Machli) |
 | **Sea Bass / Bhetki / Barramundi** | கொடுவா / குடுவா / குடுவை (Kuduvaa / Kuduvai) | ಸೀ ಬಾಸ್ (Sea Bass) | समुद्री बास (Samudri Bass) |
 | **Rabbit Fish** | ஓரா மீன் (Ora Meen / Oora) | ಮೊಲದ ಮೀನು (Molada Meenu) | खरगोश मछली (Khargosh Machli) |
-| **Mussel / Clam / Oyster** | சிப்பி / தோடு (Sippi / Thodu) | ಮಸ್ಸೆಲ್ / ಶಿಪ್ಪಿ (Mussel / Shippi) | सीप / शंख (Seep / Shankh) |
 | **Pink Perch** | ராணி / ரத்தின் மீன் / வெள்ளை சங்கரா (Rathin Meen / Vellai Sankara) | ಗುಲಾಬಿ ಪರ್ಚ್ (Gulabi Perch) | गुलाबी पर्च (Gulabi Perch) |
 | **Dry Fish** | கருவாடு (Karuvaadu) | ಒಣ ಮೀನು (Ona Meenu) | सूखी मछली (Sookhi Machli) |
 | **Leather Jacket / Malabar Trevally** | கிளாத்தி / செருப்பு கிளாத்தி / தோல்பாரை (Kilathi / Seruppu Kilathi / Tholparai) | ಪಾಲಿ ಮೀನು / ತೋಲು ಪಾರೈ (Paali Meenu / Tholu Parai) | लेदर जैकेट / डायना (Leather Jacket / Diana) |
@@ -59,7 +55,6 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Yellow Trevally** | மஞ்சள் பாறை மீன் (Manjal Parai Meen) | ಹಳದಿ ಪಾರೈ (Haladi Parai) | पीली ट्रेवली (Peeli Trevally) |
 | **Bombay Duck / Bummalo** | வங்காரவாசி / வாங்கரவாசி / பம்பாய் வாத்து மீன் (Vangaravasi / Vangaravasi / Bombay Vathu Meen) | ಬೊಂಬಿಲ್ / ಬೂಮ್ಮಲೋ (Bombil / Boommalo) | बॉम्बे डक / बोम्बिल (Bombay Duck / Bombil) |
 | **Cod Fish** | பன்னா மீன் (Panna Meen) | ಕಾಡ್ ಮೀನು (Cod Meenu) | कॉड मछली (Cod Machli) |
-| **Cuttle Fish** | தோட்டுக்கணவாய் / ஓலை கணவாய் (Thottu Kanavai / Olai Kanavai) | ಕಟ್ಲ್ ಫಿಶ್ (Cuttle Fish) | कटल फिश (Cuttle Fish) |
 | **Dart Fish** | குடிலி (Kudili) | ಡಾರ್ಟ್ ಫಿಶ್ (Dart Fish) | डार्ट मछली (Dart Machli) |
 | **Indian Oil Sardine** | பேச்சாளை / நெய் மத்தி / இந்திய எண்ணெய் மத்தி (Pechalai / Nei Mathi / Indhiya Ennai Mathi) | ಎಣ್ಣೆ ಮತ್ತಿ (Enne Mathi) | तेल सार्डिन / पेड्वे (Tel Sardine / Pedve) |
 | **Keeri Fish** | கீரி மீன் சாளை (Keeri Meen Chalai) | ಕೀರಿ ಮೀನು (Keeri Meenu) | कीरी मछली (Keeri Machli) |
@@ -123,6 +118,30 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Golden Anchovy** | தங்க நெத்திலி (Thanga Nethili) | ಚಿನ್ನದ ನೆತ್ತಿಲಿ (Chinnada Nethili) | सुनहरा एंकोवी (Sunehra Anchovy) |
 | **Goat Fish / Red Mullet** | நவரை மீன் / நகரை (Navarai Meen / Nagarai) | ನವರೈ ಮೀನು / ಕೆಂಪು ಮುಲ್ಲೆಟ್ (Navarai Meenu / Kempu Mullet) | बकरी मछली / लाल मुल्लेट (Bakri Machli / Laal Mullet) |
 | **Milk Shark** | பிள்ளை சுறா மீன் (Pillai Sura Meen) | ಹಾಲು ಶಾರ್ಕ್ (Haalu Shark) | दूध शार्क (Doodh Shark) |
+
+</div>
+
+
+## 🦀 Shell Fish - Aquatic Arthropods, Crustacean & Molluscs
+
+<div class="table-ocean-grid">
+
+| English Name | Tamil Name | Kannada Name | Hindi Name |
+|--------------|------------|--------------|------------|
+| **Cuttle Fish** | தோட்டுக்கணவாய் / ஓலை கணவாய் (Thottu Kanavai / Olai Kanavai) | ಕಟ್ಲ್ ಫಿಶ್ (Cuttle Fish) | कटल फिश (Cuttle Fish) |
+| **Squid** | கணவாய் / ஊசி (Kanavai / Oosi) | ಸ್ಕ್ವಿಡ್ (Squid) | स्क्विड / झींगा (Squid / Jhinga) |
+| **Prawn** | இறால் (Iraal) | ಸಂಡು (Sandu) | झींगा (Jhinga) |
+| **Lobster** | கடல் இறால் (Kadal Iraal) | ನೀರು ನಳ್ಳಿ (Neeru Nalli) | झींगा मछली (Jhinga Machli) |
+| **Tiger Prawns** | வரி இறால் (Vari Iraal) | ಹುಲಿ ಸೀಗಡಿ (Huli Seegadi) | बाघ झींगा (Bagh Jhinga) |
+| **White Prawns** | வெள்ளை இறால் (Vellai Iraal) | ಬಿಳಿ ಸೀಗಡಿ (Bili Seegadi) | सफेद झींगा (Safed Jhinga) |
+| **Crab** | நண்டு (Nandu) | ನಳ್ಳಿ (Nalli) | केकड़ा (Kekda) |
+| **Sea Crab / Three Spotted Crab** | கடல் நண்டு (Kadal Nandu) | ಸಮುದ್ರ ಏಡಿ (Samudra Yedi) | समुद्री केकड़ा (Samudri Kekda) |
+| **Mangrove Crab / Mud Crab** | சேற்று நண்டு (Setru Nandu) | ಕೆಸರು ಏಡಿ / ಡೆಂಜಿ (Kesaru Yedi / Denji) | मैंग्रोव केकड़ा / कीचड़ केकड़ा (Mangrove Kekda / Keechad Kekda) |
+| **Monster Mud Crab** | அசுர நண்டு (Asura Nandu) | ದೈತ್ಯ ಏಡಿ (Daitya Yedi) | राक्षस केकड़ा (Rakshas Kekda) |
+| **Mussel / Clam / Oyster** | சிப்பி / தோடு (Sippi / Thodu) | ಮಸ್ಸೆಲ್ / ಶಿಪ್ಪಿ (Mussel / Shippi) | सीप / शंख (Seep / Shankh) |
+| **Snailfish** | நத்தை மீன் (Nathai Meen) | ನತ್ತೆ ಮೀನು (Natte Meenu) | घोंघा मछली (Ghongha Machli) |
+| **Sea Turtle** | கடல் ஆமை (Kadal Aamai) | ಸಮುದ್ರ ಆಮೆ (Samudra Aame) | समुद्री कछुआ (Samudri Kachua) |
+| **Pond Turtle / Freshwater Turtle** | குளத்து ஆமை (Kulathu Aamai) | ಕೆರೆ ಆಮೆ / ನೀರಿನ ಆಮೆ (Kere Aame / Neerina Aame) | तालाब कछुआ / मीठे पानी का कछुआ (Talab Kachua / Meethe Paani Ka Kachua) |
 
 </div>
 
