@@ -156,6 +156,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Zucchini / Courgette** | சீமை சுரைக்காய் / வெள்ளரிக்காய் வகை (Seemai Suraikkai / Vellarikkai Vagai) | ಜುಚಿನಿ (Zucchini) | तोरी / जुकीनी (Tori / Zucchini) |
 | **Yellow Squash / Yellow Zucchini** | தங்க சீமை சுரைக்காய் (Thanga Seemai Suraikkai) | ಹಳದಿ ಜುಚಿನಿ (Haladi Zucchini) | पीली तोरी / पीली जुकीनी (Peeli Tori / Peeli Zucchini) |
 | **Patty Pan Squash** | பட்டி பன் சுரைக்காய் (Patty Pan Suraikkai) | ಪ್ಯಾಟಿ ಪ್ಯಾನ್ ಸ್ಕ್ವಾಷ್ (Patty Pan Squash) | तश्तरी कद्दू (Tashtari Kaddu) |
+| **Butternut Squash** | வெண்ணெய் பரங்கிக்காய் (Vennai Parangikkai) | ಬಟರ್ನಟ್ ಸ್ಕ್ವಾಷ್ (Butternut Squash) | बटरनट स्क्वैश (Butternut Squash) |
 | **Drumstick** | முருங்கைக்காய் (Murungaikkai) | ನುಗ್ಗೆಕಾಯಿ (Nuggekayi) | सहजन (Sahjan) |
 | **Ladies Finger / Okra** | வெண்டைக்காய் (Vendaikkai) | ಬೆಂಡೆಕಾಯಿ (Bendekayi) | भिंडी (Bhindi) |
 | **Bitter Gourd** | பாகற்காய் (Paagarkkai) | ಹಾಗಲಕಾಯಿ (Haagalakayi) | करेला (Karela) |
@@ -163,11 +164,16 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Pointed Gourd / Ivy Gourd / Parwal** | கோவக்காய் / சுட்டக்காய் / பரவல் (Kovakkai / Parval) | ಪಡವಲಕಾಯಿ (Padavalakayi) | परवल (Parwal) |
 | **Bottle Gourd** | சுரைக்காய் (Suraikkai) | ಸೋರೆಕಾಯಿ (Sorekayi) | लौकी (Lauki) |
 | **Ridge Gourd** | பீர்க்கங்காய் (Peerkkangai) | ಹೀರೆಕಾಯಿ (Heerekayi) | तोरी (Tori) |
+| **Sponge Gourd / Luffa** | நெட்டைப் பீர்க்கங்காய் (Nettai Peerkkangai) | ಹೀರೇಕಾಯಿ (Heerekayi) | नेनुआ / तोरई (Nenua / Torai) |
 | **Snake Gourd** | புடலங்காய் (Pudalangai) | ಪಡವಲಕಾಯಿ (Padavalakayi) | चिचिंडा (Chichinda) |
 | **Ash Gourd / Winter Melon** | பூசணிக்காய் (Poosanikkai) | ಬೂದಿ ಗುಂಬಳ (Boodi Gumbala) | पेठा (Petha) |
 | **Pumpkin** | பரங்கிக்காய் (Parangikkai) | ಗುಂಬಳಕಾಯಿ (Gumbalakayi) | कद्दू (Kaddu) |
 | **Tomato** | தக்காளி (Thakkaali) | ಟೊಮೇಟೊ (Tomato) | टमाटर (Tamatar) |
 | **Potato** | உருளைக்கிழங்கு (Urulaikizhangu) | ಆಲೂಗೆಡ್ಡೆ (Aalugedde) | आलू (Aloo) |
+| **Vitelotte / Purple Potato** | ஊதா உருளைக்கிழங்கு (Ootha Urulaikizhangu) | ನೇರಳೆ ಆಲೂಗೆಡ್ಡೆ (Nerale Aalugedde) | बैंगनी आलू (Baingani Aloo) |
+| **Sweet Potato** | சர்க்கரை வள்ளிக்கிழங்கு / சீனிக் கிழங்கு / வற்றாளை கிழங்கு (Sakkarai Vallikizhangu) | ಗೆಣಸು (Genasu) | शकरकंद (Shakarkand) |
+| **Yam / suran** | சேனைக்கிழங்கு (Senaikiizhangu) | ಸುರಣ (Surana) | जिमीकंद (Jimikand) |
+| **Tapioca / Cassava** | மரச்சினி கிழங்கு / மரவள்ளிக்கிழங்கு (Maravallikizhangu) | ಮರಗೆಣಸು (Maragenasu) | टैपिओका (Tapioca) |
 | **Onion** | வெங்காயம் (Vengayam) | ಈರುಳ್ಳಿ (Eerulli) | प्याज (Pyaaz) |
 | **Small Onions / Shallots** | சின்ன வெங்காயம் / சாம்பார் வெங்காயம் / சின்ன உள்ளி (Chinna Vengayam / Sambar Vengayam / Cinna Ulli) | ಸಣ್ಣ ಈರುಳ್ಳಿ (Sanna Eerulli) | छोटा प्याज (Chhota Pyaaz) |
 | **Spring Onion / Green Onion** | வெங்காயத்தாள் / பச்சை வெங்காயம் (Vengayaththaal / pachai vengayam) | ಹಸಿರು ಈರುಳ್ಳಿ (Hasiru Eerulli) | हरा प्याज (Hara Pyaaz) |
@@ -175,6 +181,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Beetroot / Red Beet** | பீட்ரூட் (Beetroot) | ಬೀಟ್ರೂಟ್ (Beetroot) | चुकंदर (Chukandar) |
 | **Radish** | முள்ளங்கி (Mullangi) | ಮೂಲಂಗಿ (Moolangi) | मूली (Mooli) |
 | **Cabbage** | முட்டைக்கோஸ் (Muttaikose) | ಎಲೆಕೋಸು (Elekosu) | पत्तागोभी (Pattagobhi) |
+| **Brussels Sprouts** | கிளைக்கோசு / மரக்கோசு (Kilaikosu / Marakkosu) | ಬ್ರಸೆಲ್ಸ್ ಮೊಳಕೆ (Brussels Molake) | ब्रसेल्स स्प्राउट्स (Brussels Sprouts) |
 | **Cauliflower** | காலிஃப்ளவர் (Cauliflower) | ಹೂಕೋಸು (Hookosu) | फूलगोभी (Phulgobhi) |
 | **Broccoli** | பச்சை பூக்கோசு / புரோக்கோலி (Pachai Pookosu / Broccoli) | ಬ್ರೊಕೊಲಿ (Broccoli) | ब्रोकोली / हरी फूलगोभी (Broccoli / Hari Phulgobhi) |
 | **Knol Khol / Kohlrabi** | நூல்கோல் / கோஸ் கிழங்கு (Noolkol / Kose Kizhangu) | ನೂಲ್ಕೋಲ್ (Noolkol) | गांठगोभी (Gaanthgobhi) |
@@ -192,10 +199,6 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Chilli Picador Green / Bajji Chilli** | பஜ்ஜி மிளகாய் (Bajji Milagai) | ಬಜ್ಜಿ ಮೆಣಸಿನಕಾಯಿ (Bajji Menasinakayi) | भज्जी मिर्च (Bhajji Mirch) |
 | **Curd Chillies / Buttermilk Chillies** | மோர் மிளகாய் (Mor Milagai) | ಮೋರು ಮೆಣಸಿನಕಾಯಿ (Moru Menasinakayi) | मोर मिर्च (Mor Mirch) |
 | **Eye Bird Chilli / Kanthari Chilli** | கந்தாரி மிளகாய் / சீனி மிளகாய் (Kanthari Milagai / Cheeni Milagai) | ಕಂತಾರಿ ಮೆಣಸಿನಕಾಯಿ (Kanthari Menasinakayi) | कांटारी मिर्च (Kanthari Mirch) |
-| **Spinach** | கீரை (Keerai) | ಸೊಪ್ಪು (Soppu) | पालक (Palak) |
-| **Coriander Leaves** | கொத்தமல்லி (Kothamalli) | ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು (Kothambari Soppu) | हरा धनिया (Hara Dhaniya) |
-| **Mint Leaves** | புதினா (Pudhina) | ಪುದೀನ (Pudeena) | पुदीना (Pudeena) |
-| **Neem Leaves / Margosa Leaves** | வேப்பிலை (Veppilai) | ಬೇವಿನ ಎಲೆ (Bevina Ele) | नीम पत्ता (Neem Patta) |
 | **Organic Vegetables** | இயற்கை காய்கறிகள் (Iyarkai Kaigarikal) | ಸಾವಯವ ತರಕಾರಿಗಳು (Saavayava Tarakarigalu) | जैविक सब्जियाँ (Jaivik Sabziyan) |
 | **Garlic** | பூண்டு (Poondu) | ಬೆಳ್ಳುಳ್ಳಿ (Bellulli) | लहसुन (Lahsun) |
 | **Ginger** | இஞ்சி (Inji) | ಶುಂಠಿ (Shunthi) | अदरक (Adrak) |
@@ -203,9 +206,6 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Citron Fruit** | நாரத்தங்காய் / நாரந்தி காய் (Narathankai / Naranthi kaay) | ನಾರಂಗಿ (Narangi) | सिट्रॉन (Citron) |
 | **Corn / Maize** | மக்காச்சோளம் (Makka cholam) | ಮೆಕ್ಕೆಜೋಳ (Mekkejola) | मक्का (Makka) |
 | **Sambar Cucumber / Mangalore Cucumber** | சாம்பார் வெள்ளரி (Sambar Vellari) | ಸೌತೆಕಾಯಿ (Soutekayi) | खीरा (Kheera) |
-| **Sweet Potato** | சர்க்கரை வள்ளிக்கிழங்கு / சீனிக் கிழங்கு / வற்றாளை கிழங்கு (Sakkarai Vallikizhangu) | ಗೆಣಸು (Genasu) | शकरकंद (Shakarkand) |
-| **Yam / suran** | சேனைக்கிழங்கு (Senaikiizhangu) | ಸುರಣ (Surana) | जिमीकंद (Jimikand) |
-| **Tapioca / Cassava** | மரச்சினி கிழங்கு / மரவள்ளிக்கிழங்கு (Maravallikizhangu) | ಮರಗೆಣಸು (Maragenasu) | टैपिओका (Tapioca) |
 | **Raw Banana** | வாழைக்காய் (Vazhaikkai) | ಬಾಳೆಕಾಯಿ (Baalekayi) | कच्चा केला (Kaccha Kela) |
 | **Banana Flower / Plantain Flower** | வாழைப்பூ (Vazhaipoou) | ಬಾಳೆ ಹೂವು (Baale Hoovu) | केले का फूल (Kele Ka Phool) |
 | **Banana Stem / Plantain Stem** | வாழைத்தண்டு (Vazhaiththandu) | ಬಾಳೆ ದಿಂಡು (Baale Dindu) | केले का तना (Kele Ka Tana) |
@@ -259,13 +259,18 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
-| **Spinach** | பசலைக்கீரை (Pasalai Keerai) | ಸೊಪ್ಪು (Soppu) | पालक (Palak) |
+| **Spinach** | கீரை (Keerai) | ಸೊಪ್ಪು (Soppu) | पालक (Palak) |
 | **Fenugreek Leaves** | வெந்தயக்கீரை (Vendhaya Keerai) | ಮೆಂತೆ ಸೊಪ್ಪು (Menthe Soppu) | मेथी साग (Methi Saag) |
 | **Amaranth Leaves / Red Spinach** | அரைக்கீரை / தண்டுக்கீரை (Arai Keerai / Thandu Keerai) | ದಂಟು ಸೊಪ್ಪು (Dantu Soppu) | लाल साग / चौलाई (Laal Saag / Chaulai) |
 | **Colocasia Leaves** | சேப்பங்கிழங்கு இலை (Seppan Keerai) | ಕೇಸವಿನ ಎಲೆ (Kesavina Ele) | अरबी पत्ता (Arbi Patta) |
 | **Dill Leaves** | சதகுப்பை (Sadhakuppai) | ಸಬ್ಬಸಿಗೆ ಸೊಪ್ಪು (Sabbasige Soppu) | सोआ (Sowa) |
 | **Moringa Leaves** | முருங்கைக்கீரை (Murungai Keerai) | ನುಗ್ಗೆ ಸೊಪ್ಪು (Nugge Soppu) | सहजन पत्ता (Sahjan Patta) |
 | **Black Nightshade Leaves** | மணத்தக்காளி கீரை / மணித்தக்காளி கீரை (Manathakkali Keerai) | ಗಣಿಕೆ ಸೊಪ್ಪು / ಕಾಗೆ ಸೊಪ್ಪು / ಕಾಮನಿ ಸೊಪ್ಪು (Ganike Soppu / Kaage Soppu / Kamani Soppu) | मकोय साग (Makoy Saag) |
+| **Celery** | சீவரி கீரை (Seevari Keerai) | ಸೆಲರಿ (Celery) | अजमोदा (Ajmoda) |
+| **Purslane** | பருப்புக்கீரை / தரைக்கீரை / கொழுக்கட்டைக் கீரை (Paruppukeerai / Tharai Keerai / Kozhukkattai Keerai) | ದೊಡ್ಡಪತ್ರೆ ಸೊಪ್ಪು (Doddapatre Soppu) | कुलफा (Kulfa) |
+| **Coriander Leaves** | கொத்தமல்லி (Kothamalli) | ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು (Kothambari Soppu) | हरा धनिया (Hara Dhaniya) |
+| **Mint Leaves** | புதினா (Pudhina) | ಪುದೀನ (Pudeena) | पुदीना (Pudeena) |
+| **Neem Leaves / Margosa Leaves** | வேப்பிலை (Veppilai) | ಬೇವಿನ ಎಲೆ (Bevina Ele) | नीम पत्ता (Neem Patta) |
 
 </div>
 
@@ -496,6 +501,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Banana** | வாழைப்பழம் (Vazhaipaazham) | ಬಾಳೆಹಣ್ಣು (Baalehannnu) | केला (Kela) |
 | **Mango** | மாம்பழம் (Maampazham) | ಮಾವಿನ ಹಣ್ಣು (Maavina Hannu) | आम (Aam) |
 | **Orange** | ஆரஞ்சு / ஆரஞ்சு பழம் (Orange) | ಕಿತ್ತಳೆ (Kitthale) | संतरा (Santara) |
+| **Pomelo** | பம்பளிமாசு / பெரிய எலுமிச்சை (Pampalimaasu / Periya Elumichai) | ಚಕೋತರ (Chakotra) | चकोतरा (Chakotara) |
 | **Grapes** | திராட்சை (Thiratchai) | ದ್ರಾಕ್ಷಿ (Draakshi) | अंगूर (Angoor) |
 | **Watermelon** | தர்பூசணி (Tharpoosani) | ಕಲ್ಲಂಗಡಿ (Kallangadi) | तरबूज (Tarbooz) |
 | **Muskmelon** | முலாம்பழம் (Mulaampazham) | ಮೋಸಂಬಿ (Mosambi) | खरबूज (Kharbooj) |
