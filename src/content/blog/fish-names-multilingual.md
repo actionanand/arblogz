@@ -24,7 +24,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 
 | English Name | Tamil Name | Kannada Name | Hindi Name | Best Uses & Health Notes |
 |--------------|------------|--------------|------------|--------------------------|
-| **Sardine / Pilchard** | மத்தி / சாளை / கவளை / சூடை / நீத்துக்கவளை / சூடைகவளை (Mathi / Chalai/ Salai / Kavalai) | ಮತಿ ಮೀನು (Mathi Meenu) | सार्डिन / पेडवे (Sardine / Pedve) | **Rich in Omega-3** (982mg/100g), vitamin B12, calcium. Great for frying, Curry. Very affordable and sustainable. Helps improve insulin sensitivity. Safe for pregnancy |
+| **Sardine / Pilchard** | மத்தி[^1] / சாளை / கவளை / சூடை / நீத்துக்கவளை / சூடைகவளை (Mathi / Chalai/ Salai / Kavalai) | ಮತಿ ಮೀನು (Mathi Meenu) | सार्डिन / पेडवे (Sardine / Pedve) | **Rich in Omega-3** (982mg/100g), vitamin B12, calcium. Great for frying, Curry. Very affordable and sustainable. Helps improve insulin sensitivity. Safe for pregnancy |
 | **Mackerel** | காணங்கத்தை மீன் / அகலை / ஆயிலை / காணாங்கெளுத்தி /ஆயில மீன்/ வெங்கடா (Ayilai / Kanangeluthi / Venkada) | ಬಂಗುಡೆ (Bangude) | बांगड़ा (Bangda) | ✅ **Best:** Fry, BBQ, curry<br>💪 Very high Omega-3<br>🦴 Moderate bones<br>⚠️ High mercury - limit intake<br>🔥 Strong flavor |
 | **Pomfret (White)/ Silver Pomfret** | வௌவால் மீன்/ வெள்ளை வவ்வல்/ வாவல்/  (Vavval/Vaaval Meen) | ಪಾಪ್ಲೆಟ್ (Paplet) | पापलेट / चांदी मछली (Paplet / Chandi Machli) | ✅ **Best:** Fry, steam, BBQ<br>💪 High protein, low fat<br>🦴 Very few bones<br>👶 Safe for pregnancy<br>💎 Premium fish<br>⭐ Mild, delicate flavor |
 | **Pomfret (Black)** | கருப்பு வௌவால் (Karuppu Vaaval) | ಕಪ್ಪು ಪಾಪ್ಲೆಟ್ (Kappu Paplet) | काला पापलेट (Kala Paplet) | ✅ **Best:** Fry, tandoori<br>💪 Rich in selenium<br>🦴 Few bones<br>💎 Premium, expensive<br>🍽️ Firmer than white pomfret |
@@ -304,3 +304,5 @@ Fish names may vary by region and local dialects. This guide uses the most widel
 :::
 
 **Disclaimer:** This guide provides general information. Consult healthcare professionals for specific dietary advice, especially during pregnancy or medical conditions. Fish consumption recommendations may vary based on individual health status.
+
+[^1]: Article about [sardine](https://kanaiyali.com/sardine-fish/)
