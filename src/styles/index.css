@@ -1162,6 +1162,116 @@ html[data-theme="dark"] .divider-end:hover > * {
 }
 
 /* ===============================================
+   COLUMN VARIANTS FOR ALL THEMES
+   =============================================== */
+/* 5th Column Width 200px */
+
+.table-5th-width-200 table th:nth-child(5) {
+  width: 200px !important;
+}
+
+/* 4th Column Width 200px */
+.table-4th-width-200 table th:nth-child(4) {
+  width: 200px !important;
+}
+
+/* 3rd Column Width 200px */
+.table-3rd-width-200 table th:nth-child(3) {
+  width: 200px !important;
+}
+
+/* 2nd Column Width 200px */
+.table-2nd-width-200 table th:nth-child(2) {
+  width: 200px !important;  
+}
+
+/* 1st Column Width 200px */
+.table-1st-width-200 table th:first-child {
+  width: 200px !important;
+}
+
+/* Last Column Width 200px */
+.table-last-width-200 table td:last-child {
+  width: 200px !important;
+}
+
+/* Second Last Column Width 200px */
+.table-second-last-width-200 table td:nth-last-child(2) {
+  width: 200px !important;
+}
+
+/* Third Last Column Width 200px */
+.table-third-last-width-200 table td:nth-last-child(3) {
+  width: 200px !important;
+}
+
+/* 5th Column Width 150px */
+.table-5th-width-150 table th:nth-child(5) {
+  width: 150px !important;
+}
+/* 4th Column Width 150px */
+.table-4th-width-150 table th:nth-child(4) {
+  width: 150px !important;
+}
+/* 3rd Column Width 150px */
+.table-3rd-width-150 table th:nth-child(3) {
+  width: 150px !important;
+}
+/* 2nd Column Width 150px */
+.table-2nd-width-150 table th:nth-child(2) {
+  width: 150px !important;  
+}
+/* 1st Column Width 150px */
+.table-1st-width-150 table th:first-child {
+  width: 150px !important;
+}
+/* Last Column Width 150px */
+.table-last-width-150 table td:last-child {
+  width: 150px !important;
+}
+/* Second Last Column Width 150px */
+.table-second-last-width-150 table td:nth-last-child(2) {
+  width: 150px !important;
+}
+/* Third Last Column Width 150px */
+.table-third-last-width-150 table td:nth-last-child(3) {
+  width: 150px !important;
+}
+
+/* 5th Column Width 100px */
+.table-5th-width-100 table th:nth-child(5) {
+  width: 100px !important;
+}
+/* 4th Column Width 100px */
+.table-4th-width-100 table th:nth-child(4) {
+  width: 100px !important;
+}
+/* 3rd Column Width 100px */
+.table-3rd-width-100 table th:nth-child(3) {
+  width: 100px !important;
+}
+/* 2nd Column Width 100px */
+.table-2nd-width-100 table th:nth-child(2) {
+  width: 100px !important;  
+}
+/* 1st Column Width 100px */
+.table-1st-width-100 table th:first-child {
+  width: 100px !important;
+}
+/* Last Column Width 100px */
+.table-last-width-100 table td:last-child {
+  width: 100px !important;
+}
+/* Second Last Column Width 100px */
+.table-second-last-width-100 table td:nth-last-child(2) {
+  width: 100px !important;
+}
+/* Third Last Column Width 100px */ 
+.table-third-last-width-100 table td:nth-last-child(3) {
+  width: 100px !important;
+}
+
+/* ===============================================
    GRID VARIANTS FOR ALL THEMES
    =============================================== */
 
