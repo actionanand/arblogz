@@ -166,6 +166,37 @@ Cyber theme enhanced with neutral grid lines for improved data readability:
 
 </div>
 
+
+### 🛠️ Custom Table Column Width Classes
+
+You can use these helper classes to set a custom width for a specific table column. Just add the class to your table's wrapping `<div>`. Combine with any table theme or grid class. Available widths: **100px**, **150px**, and **200px** (change the number in the class name as needed).
+
+| CSS Class Name | Description |
+|----------------|-------------|
+| `.table-1st-width-200` | 1st column width 200px |
+| `.table-2nd-width-200` | 2nd column width 200px |
+| `.table-3rd-width-200` | 3rd column width 200px |
+| `.table-4th-width-200` | 4th column width 200px |
+| `.table-5th-width-200` | 5th column width 200px |
+| `.table-last-width-200` | Last column width 200px |
+| `.table-second-last-width-200` | 2nd last column width 200px |
+| `.table-third-last-width-200` | 3rd last column width 200px |
+
+To use **150px** or **100px** widths, just change the number in the class name. For example:
+
+| `.table-1st-width-150` | 1st column width 150px |
+| `.table-third-last-width-100` | 3rd last column width 100px |
+
+**Example:**
+
+```html
+<div class="table-cyber table-default-grid table-last-width-200">
+  <!-- Your table here -->
+</div>
+```
+
+You can combine with any other table class, e.g. `<div class="table-green table-3rd-width-150">`.
+
 #### Cyber Grid Variant (.table-cyber-grid)
 Full cyber-themed grid with matching neon-style vertical lines:
 
