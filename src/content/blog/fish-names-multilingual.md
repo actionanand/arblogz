@@ -1,6 +1,6 @@
 ---
 title: "Famous Sea & River Fish Names: Multilingual Guide"
-description: "Complete multilingual guide to popular sea and river fish names in Tamil, English, Kannada, and Hindi. Learn fish varieties with regional names, perfect for shopping, cooking, and cultural understanding."
+description: "Complete multilingual guide to popular sea & river fish and Aquatic Arthropods' names in Tamil, English, Kannada, and Hindi. Learn fish varieties with regional names, perfect for shopping, cooking, and cultural understanding."
 date: 2025-11-02
 lastUpdated: 2025-11-25
 tags: ["fish", "multilingual", "seafood", "indian cuisine", "reference"]
@@ -20,55 +20,55 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 
 ## 🌊 Popular Sea Fish
 
-<div class="table-ocean-grid">
+<div class="table-ocean-grid table-last-width-200">
 
-| English Name | Tamil Name | Kannada Name | Hindi Name |
-|--------------|------------|--------------|------------|
-| **Sardine / Pilchard** | மத்தி / சாளை / கவளை / சூடை / நீத்துக்கவளை / சூடைகவளை (Mathi / Chalai/ Salai / Kavalai) | ಮತಿ ಮೀನು (Mathi Meenu) | सार्डिन / पेडवे (Sardine / Pedve) |
-| **Mackerel** | கானங்கத்தை மீன் / அகலை / ஆயிலை / காணாங்கெளுத்தி /ஆயில் மீன்/ வெங்கடா (Ayilai / Kanangeluthi / Venkada) | ಬಂಗುಡೆ (Bangude) | बांगड़ा (Bangda) |
-| **Pomfret (White)/ silver pomfret** | வௌவால் மீன்/ வெள்ளை வவ்வல்/ வாவல்/  (Vavval/Vaaval Meen) | ಪಾಪ್ಲೆಟ್ (Paplet) | पापलेट / चांदी मछली (Paplet / Chandi Machli) |
-| **Pomfret (Black)** | கருப்பு வௌவால் (Karuppu Vaaval) | ಕಪ್ಪು ಪಾಪ್ಲೆಟ್ (Kappu Paplet) | काला पापलेट (Kala Paplet) |
-| **Tuna** | சூரை (Soorai / Choorai) | ಚೂರೈ (Churai) | चूरा / टूना (Chura / Tuna) |
-| **Seer Fish / King Fish** | வஞ்சிரம் / சீரா (Vanchiram / Seera) | ಸೀರ್ ಮೀನು / ಅಂಜಲ್ (Anjal) | सुरमई (Surmai) |
-| **Anchovy** | நெத்திலி (Nethili) | ನೆತ್ತಿಲಿ (Nethili / Nethallu / Bolingei Kollathuru) | झींगा मछली (Jhinga Machli) |
-| **Ribbon Fish** | வாளை மீன்/ சாவாளை மீன் (Vaalai / Savaalai) | ಸವಾಲ (Saval) | पट्टी मछली (Patti Machli) |
-| **Barracuda / Sea Pike** | ஷீலா / சீலா / ஊலா / ஊழா / ஊளி / பிளிஞ்சன் / கோலா (Sheela / Seela / Pilinjan/ Oozha / Ooli), നെടുവ(Neduva), കോടുവ(Koduva), തിരുതക്കടിയൻ (Thiruthakkadian) | Obantol, Kanaki, Suruli, Kandai(ಕಂಡಾಯಿ/ಕನಕಿ/ಒಬಂಟೊಲ್) | कांटा (Kanta) |
-| **Indian Salmon / Four-finger threadfin fish** | கானமீன் / காளா மீன் (Kaana Meen / Kala Meen) |  Arkoli/ Rumus (ಅರ್ಕೊಲಿ/ರುಮುಸ್) | रावस / हिलसा (Ravas / Hilsa) |
-| **Grouper/ Reef cod** | புள்ளி களவாய் / கலவா மீன் / கல்லு மீன்/ கலவான் (Pulli Kalava / Kalava meen / Kallu Meen) | ಗರೋಪ (Garopa) | गरूपा (Garupa) |
-| **Red Snapper** | சங்கரா / பட்டை சங்கரா / ரத்த மீன் / செம்பள்ளி (Sankara / Ratha Meen) | ಕೆಂಪು ಸ್ನಾಪರ (Kempu Snaper) | रानी मछली / लाल मछली (Rani Machli / Lal Machli) |
-| **Shark** | சுறா (Sura) | ಶಾರ್ಕ್ (Shark) | शार्क / मोरी (Shark / Mori) |
-| **Sole Fish** | நாக்கு மீன்/ மாந்தல் மீன் (Naakku Meen) | ನಾಲಿಗೆ ಮೀನು (Nalige Meenu) | जीभ मछली (Jeebh Machli) |
-| **Indian Shad / Hilsa** | உள்ளம் /ஊலம் /வேங்கண்ணை/ இலிஷ் (Ullam) | ಇಲಿಶಾ (Ilisha) | इलिशा / हिलसा (Ilisha / Hilsa) |
-| **Croaker** | கோரல் (Koral) | ಘೋಳ (Ghol) | ढोल / घोल (Dhol / Ghol) |
-| **Lady Fish** | கிழங்கான் மீன் / கிழங்கா மீன் / வெள்ளைக்கிழங்கான் மீன் (Kizhangaan Meen / Kizhanga Meen / Vellai Kizhangaan Meen) | ಕೇನ್ ಮೀನು (Kane Meenu) | लेडी फिश / मोरी (Lady Fish / Mori) |
-| **Lizard Fish** | தும்பிலி மீன் / அரணை மீன் / கிழங்கான் (Thumpili Meen / Aranai Meen) | ಅರಣೈ ಮೀನು (Aranai Meenu) | छिपकली मछली (Chhipkali Machli) |
-| **Sea Bass / Bhetki / Barramundi** | கொடுவா / குடுவா / குடுவை (Kuduvaa / Kuduvai) | ಸೀ ಬಾಸ್ (Sea Bass) | समुद्री बास (Samudri Bass) |
-| **Rabbit Fish** | ஓரா மீன் (Ora Meen / Oora) | ಮೊಲದ ಮೀನು (Molada Meenu) | खरगोश मछली (Khargosh Machli) |
-| **Pink Perch** | ராணி / ரத்தின் மீன் / வெள்ளை சங்கரா (Rathin Meen / Vellai Sankara) | ಗುಲಾಬಿ ಪರ್ಚ್ (Gulabi Perch) | गुलाबी पर्च (Gulabi Perch) |
-| **Dry Fish** | கருவாடு (Karuvaadu) | ಒಣ ಮೀನು (Ona Meenu) | सूखी मछली (Sookhi Machli) |
-| **Leather Jacket / Malabar Trevally** | கிளாத்தி / செருப்பு கிளாத்தி / தோல்பாரை (Kilathi / Seruppu Kilathi / Tholparai) | ಪಾಲಿ ಮೀನು / ತೋಲು ಪಾರೈ (Paali Meenu / Tholu Parai) | लेदर जैकेट / डायना (Leather Jacket / Diana) |
-| **Butter Fish** | பொன்னாரம் / மாமியா பாறை / வெண்ணெய் மீன் (Ponnaram / Mamiya Parai / Vennai Meen) | ಬೆಣ್ಣೆ ಮೀನು / ಅಡ್ಡ ಬಣಗು (Benne Meenu / Adda Banagu) | मक्खन मछली / सफेद मछली (Makkhan Machli / Safed Machli) |
-| **False Trevally / White Fish** | குதிப்பு மீன் / சள்ளை மீன் / சுதும்பு (Kuthippu Meen / Challai Meen / Sudumbu) | ಬಿಳಿ ಮೀನು / ಸಳ್ಳೈ (Bili Meenu / Sallai) | व्हाइट फिश / झूठा ट्रेवली (White Fish / Jhootha Trevally) |
-| **Needle Fish / Snakehead Murrel** | முரல் மீன் (Mural Meen) | ಕೋಲ ಮೀನು / ಮೂರಲ್ (Kola Meenu / Mural) | सुई मछली / मुर्रल (Sui Machli / Murral) |
-| **Cobia / Black Seer Fish** | நெய் மீன் / கடல் விரால் / மோதா மீன் (Nei Meen / Kadal Viral / Motha Meen) | ಮೇಲುಗು ಮೀನು / ಕಡಲ್ ವಿರಾಳ್ (Melugu Meenu / Kadal Viral) | कोबिया / ब्लैक सीर (Cobia / Black Seer) |
-| **Silver Belly / Pony Fish** | காரப்பொடி மீன் / காரல் மீன் / பூச்சி மீன் / முள்ளான் (Karappodi Meen / Karal Meen / Poochi Meen / Mullaan) | ಕುರಿಚಿ / ಗುರುಕು (Kurichi / Guruku) | सिल्वर बेली / पोनी फिश (Silver Belly / Pony Fish) |
-| **Yellow Trevally** | மஞ்சள் பாறை மீன் (Manjal Parai Meen) | ಹಳದಿ ಪಾರೈ (Haladi Parai) | पीली ट्रेवली (Peeli Trevally) |
-| **Bombay Duck / Bummalo** | வங்காரவாசி / வாங்கரவாசி / பம்பாய் வாத்து மீன் (Vangaravasi / Vangaravasi / Bombay Vathu Meen) | ಬೊಂಬಿಲ್ / ಬೂಮ್ಮಲೋ (Bombil / Boommalo) | बॉम्बे डक / बोम्बिल (Bombay Duck / Bombil) |
-| **Cod Fish** | பன்னா மீன் (Panna Meen) | ಕಾಡ್ ಮೀನು (Cod Meenu) | कॉड मछली (Cod Machli) |
-| **Dart Fish** | குடிலி (Kudili) | ಡಾರ್ಟ್ ಫಿಶ್ (Dart Fish) | डार्ट मछली (Dart Machli) |
-| **Indian Oil Sardine** | பேச்சாளை / நெய் மத்தி / இந்திய எண்ணெய் மத்தி (Pechalai / Nei Mathi / Indhiya Ennai Mathi) | ಎಣ್ಣೆ ಮತ್ತಿ (Enne Mathi) | तेल सार्डिन / पेड्वे (Tel Sardine / Pedve) |
-| **Keeri Fish** | கீரி மீன் சாளை (Keeri Meen Chalai) | ಕೀರಿ ಮೀನು (Keeri Meenu) | कीरी मछली (Keeri Machli) |
-| **Horse Mackerel** | தேங்காய் பாறை / குதிரை கானாங்கெளுத்தி / அயல பாறை (Thengai Parai / Kuthirai Kanangeluthi / Ayala Parai) | ಕುದುರೆ ಬಂಗುಡೆ (Kudure Bangude) | घोड़ा बांगड़ा (Ghoda Bangda) |
-| **Diamond Trevally** | கண்ணாடி பாறை (Kannadi Parai) | ಗಾಜಿನ ಪಾರೈ (Gajina Parai) | हीरा ट्रेवली (Heera Trevally) |
-| **Romeo Fish** | ரோமியோ மீன் (சங்கரா மீன்போன்று ஆனால் மஞ்சள் பட்டை இல்லாமல் முள் குறைவாக இருக்கும்) | ರೋಮಿಯೋ ಮೀನು (Romeo Meenu) | रोमियो मछली (Romeo Machli) |
-| **Parrot Fish** | கிளி மீன் (Kili Meen) | ಚಿಲಿಪಿಲಿ ಮೀನು / ಗಿಲಿ ಮೀನು (Chilipili Meenu / Gili Meenu) | तोता मछली (Tota Machli) |
-| **Mahi Mahi Fish** | பர்லா மீன் (Parla Meen) | ಮಹಿ ಮಹಿ (Mahi Mahi) | माही माही / डॉल्फिन मछली (Mahi Mahi / Dolphin Machli) |
-| **Big Eye Snapper** | உரி சங்கரா மீன் (Uri Sankara Meen) | ದೊಡ್ಡ ಕಣ್ಣು ಸ್ನಾಪರ್ (Dodda Kannu Snaper) | बड़ी आंख स्नैपर (Badi Aankh Snapper) |
-| **Yellowfin Tuna** | மஞ்சள்தூவி சூரை / கீரை மீன் / நெய் மீன் சூரை (Manjal Thoovi Soorai / Keerai Meen / Nei Meen Choorai) | ಹಳದಿ ಜೀನು ಟೂನಾ (Haladi Jeenu Tuna) | पीला पंख टूना (Peela Pankh Tuna) |
-| **Marine Catfish** | கடல் கெளுத்தி மீன் (Kadal Keluthi Meen) | ಸಮುದ್ರ ಜೇಲೆ (Samudra Jele) | समुद्री कैटफिश (Samudri Catfish) |
-| **Silver Bar Fish** | துப்பு வாளை மீன் / முள்ளு வாளை (Thuppu Valai Meen / Mullu Valai) | ಬೆಳ್ಳಿ ಬಾರ್ ಮೀನು (Belli Bar Meenu) | चांदी पट्टी मछली (Chandi Patti Machli) |
-| **White Perch** | வெள்ளை பெர்ச் (Vellai Perch) | ಬಿಳಿ ಪರ್ಚ್ (Bili Perch) | सफेद पर्च (Safed Perch) |
-| **Snapper Fish / White Snapper** | கொறுக்கை / கொருக்கை / கொண்டல் மீன் (Korukkai / Kondal Meen) | ಸ್ನಾಪರ್ ಮೀನು (Snaper Meenu) | स्नैपर मछली (Snapper Machli) |
+| English Name | Tamil Name | Kannada Name | Hindi Name | Best Uses & Health Notes |
+|--------------|------------|--------------|------------|--------------------------|
+| **Sardine / Pilchard** | மத்தி / சாளை / கவளை / சூடை / நீத்துக்கவளை / சூடைகவளை (Mathi / Chalai/ Salai / Kavalai) | ಮತಿ ಮೀನು (Mathi Meenu) | सार्डिन / पेडवे (Sardine / Pedve) | ✅ **Best:** Deep fry, curry<br>💪 High Omega-3, Vitamin D<br>🦴 Many small bones - careful eating<br>💰 Budget-friendly<br>✔️ Safe for pregnancy (small fish) |
+| **Mackerel** | காணங்கத்தை மீன் / அகலை / ஆயிலை / காணாங்கெளுத்தி /ஆயில மீன்/ வெங்கடா (Ayilai / Kanangeluthi / Venkada) | ಬಂಗುಡೆ (Bangude) | बांगड़ा (Bangda) | ✅ **Best:** Fry, BBQ, curry<br>💪 Very high Omega-3<br>🦴 Moderate bones<br>⚠️ High mercury - limit intake<br>🔥 Strong flavor |
+| **Pomfret (White)/ Silver Pomfret** | வௌவால் மீன்/ வெள்ளை வவ்வல்/ வாவல்/  (Vavval/Vaaval Meen) | ಪಾಪ್ಲೆಟ್ (Paplet) | पापलेट / चांदी मछली (Paplet / Chandi Machli) | ✅ **Best:** Fry, steam, BBQ<br>💪 High protein, low fat<br>🦴 Very few bones<br>👶 Safe for pregnancy<br>💎 Premium fish<br>⭐ Mild, delicate flavor |
+| **Pomfret (Black)** | கருப்பு வௌவால் (Karuppu Vaaval) | ಕಪ್ಪು ಪಾಪ್ಲೆಟ್ (Kappu Paplet) | काला पापलेट (Kala Paplet) | ✅ **Best:** Fry, tandoori<br>💪 Rich in selenium<br>🦴 Few bones<br>💎 Premium, expensive<br>🍽️ Firmer than white pomfret |
+| **Tuna** | சூரை (Soorai / Choorai) | ಚೂರೈ (Churai) | चूरा / टूना (Chura / Tuna) | ✅ **Best:** BBQ, steak, sashimi<br>💪 Very high protein<br>🦴 Boneless cuts available<br>⚠️ High mercury - limit for pregnant women<br>🔥 Meaty texture |
+| **Seer Fish / King Fish** | வஞ்சிரம் / சீரா (Vanchiram / Seera) | ಸೀರು ಮೀನು / ಅಂಜಲ್ (Anjal) | सुरमई (Surmai) | ✅ **Best:** Fry, curry, BBQ<br>💪 High protein, Omega-3<br>🦴 Minimal bones<br>💎 Premium, expensive<br>⚠️ Moderate mercury<br>⭐ Most popular curry fish |
+| **Anchovy** | நெத்திலி (Nethili) | ನೆತ್ತಿಲಿ (Nethili / Nethallu / Bolingei Kollathuru) | झींगा मछली (Jhinga Machli) | ✅ **Best:** Deep fry, dry fry<br>💪 Very high calcium<br>🦴 Eaten whole with bones<br>💰 Very cheap<br>🧂 Often dried for pickles |
+| **Ribbon Fish** | வாளை மீன்/ சாவாளை மீன் (Vaalai / Savaalai) | ಸವಾಲ (Saval) | पट्टी मछली (Patti Machli) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Budget-friendly<br>⚡ Long, flat shape - cut into pieces |
+| **Barracuda / Sea Pike** | ஷீலா / சீலா / ஊலா / ஊழா / ஊளி / பிளிஞ்சன் / கோலா (Sheela / Seela / Pilinjan/ Oozha / Ooli), നെടുവ(Neduva), കോടുവ(Koduva), തിരുതക്കടിയന് (Thiruthakkadian) | Obantol, Kanaki, Suruli, Kandai(ಕಂಡಾಯಿ/ಕನಕಿ/ಒಬಂಟೊಲ್) | कांटा (Kanta) | ✅ **Best:** Curry, fry<br>💪 High protein<br>🦴 Some bones<br>⚠️ May contain ciguatera toxin in large fish<br>🔥 Strong flavor |
+| **Indian Salmon / Four-finger Threadfin Fish** | கானமீன் / காளா மீன் (Kaana Meen / Kala Meen) |  Arkoli/ Rumus (ಅರ್ಕೊಲಿ/ರುಮುಸ್) | रावस / हिलसा (Ravas / Hilsa) | ✅ **Best:** Fry, curry, steam<br>💪 Very high Omega-3<br>🦴 Boneless fillets<br>💎 Expensive<br>⭐ Excellent for all cooking methods |
+| **Grouper/ Reef Cod** | புள்ளி களவாய் / களவா மீன் / கல்லு மீன்/ களவான் (Pulli Kalava / Kalava meen / Kallu Meen) | ಗರೋಪ (Garopa) | गरूपा (Garupa) | ✅ **Best:** Steam, curry, fry<br>💪 High protein, low fat<br>🦴 Few bones<br>💎 Premium fish<br>⭐ Sweet, mild flavor |
+| **Red Snapper** | சங்கரா / பட்டை சங்கரா / ரத்த மீன் / செம்பள்ளி (Sankara / Ratha Meen) | ಕೆಂಪು ಸ್ನಾಪರ್ (Kempu Snaper) | रानी मछली / लाल मछली (Rani Machli / Lal Machli) | ✅ **Best:** BBQ, fry, curry<br>💪 High protein, Vitamin D<br>🦴 Moderate bones<br>💎 Premium<br>⭐ Firm, sweet meat |
+| **Shark** | சுறா (Sura) | ಶಾರ್ಕ್ (Shark) | शार्क / मोरी (Shark / Mori) | ✅ **Best:** Curry, fry<br>💪 Very high protein<br>🦴 Boneless<br>⚠️ Very high mercury - avoid pregnancy<br>⚠️ Endangered - avoid consumption |
+| **Sole Fish** | நாக்கு மீன்/ மாந்தல் மீன் (Naakku Meen) | ನಾಲಿಗೆ ಮೀನು (Nalige Meenu) | जीभ मछली (Jeebh Machli) | ✅ **Best:** Fry, steam<br>💪 Lean protein<br>🦴 Boneless fillets<br>💎 Expensive<br>⭐ Delicate, sweet flavor |
+| **Indian Shad / Hilsa** | உள்ளம் /ஊலம் /வேங்கண்ணை/ இலிஷ் (Ullam) | ಇಲಿಶಾ (Ilisha) | इलिशा / हिलसा (Ilisha / Hilsa) | ✅ **Best:** Steam, mustard curry<br>💪 Very high Omega-3<br>🦴 **Many small bones**<br>💎 Very expensive<br>⭐ Prized delicacy |
+| **Croaker** | கோரல் (Koral) | ಘೋಳ (Ghol) | ढोल / घोल (Dhol / Ghol) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>🔊 Makes croaking sound |
+| **Lady Fish** | கிழங்கான் மீன் / கிழங்கா மீன் / வெள்ளைக்கிழங்கான் மீன் (Kizhangaan Meen / Kizhanga Meen / Vellai Kizhangaan Meen) | ಕೇನ್ ಮೀನು (Kane Meenu) | लेडी फिश / मोरी (Lady Fish / Mori) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Many bones - careful<br>💰 Affordable<br>🔥 Strong flavor |
+| **Lizard Fish** | தும்பிலி மீன் / அரணை மீன் / கிழங்கான் (Thumpili Meen / Aranai Meen) | ಅರಣೈ ಮೀನು (Aranai Meenu) | छिपकली मछली (Chhipkali Machli) | ✅ **Best:** Fry, dry<br>💪 Moderate protein<br>🦴 Many bones<br>💰 Very cheap<br>⚠️ Not popular due to appearance |
+| **Sea Bass / Bhetki / Barramundi** | கொடுவா / குடுவா / குடுவை (Kuduvaa / Kuduvai) | ಸೀ ಬಾಸ್ (Sea Bass) | समुद्री बास (Samudri Bass) | ✅ **Best:** All methods - fry, steam, BBQ<br>💪 High protein, Omega-3<br>🦴 Boneless fillets<br>💎 Premium, expensive<br>⭐ Versatile, mild flavor |
+| **Rabbit Fish** | ஓரா மீன் (Ora Meen / Oora) | ಮೊಲದ ಮೀನು (Molada Meenu) | खरगोश मछली (Khargosh Machli) | ✅ **Best:** Curry<br>💪 Moderate protein<br>🦴 Many bones<br>💰 Affordable<br>⚠️ Venomous spines - handle carefully |
+| **Pink Perch** | ராணி / ரத்தின் மீன் / வெள்ளை சங்கரா (Rathin Meen / Vellai Sankara) | ಗುಲಾಬಿ ಪರ್ಚ್ (Gulabi Perch) | गुलाबी पर्च (Gulabi Perch) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Pink-tinged flesh |
+| **Dry Fish** | கருவாடு (Karuvaadu) | ಒಣ ಮೀನು (Ona Meenu) | सूखी मछली (Sookhi Machli) | ✅ **Best:** Fry, pickle, curry<br>💪 Concentrated protein<br>🧂 Very high sodium<br>⚠️ Limit if high BP<br>📦 Long shelf life |
+| **Leather Jacket / Malabar Trevally** | கிளாத்தி / செருப்பு கிளாத்தி / தோல்பாரை (Kilathi / Seruppu Kilathi / Tholparai) | ಪಾಲಿ ಮೀನು / ತೋಲ್ ಪಾರೈ (Paali Meenu / Tholu Parai) | लेदर जैकेट / डायना (Leather Jacket / Diana) | ✅ **Best:** Fry, curry<br>💪 Moderate protein<br>🦴 Some bones<br>💰 Affordable<br>🔥 Strong flavor |
+| **Butter Fish** | பொன்னாரம் / மாமியா பாறை / வெண்ணெய் மீன் (Ponnaram / Mamiya Parai / Vennai Meen) | ಬೆಣ್ಣೆ ಮೀನು / ಅಡ್ಡ ಬಣಗ್ (Benne Meenu / Adda Banagu) | मक्खन मछली / सफेद मछली (Makkhan Machli / Safed Machli) | ✅ **Best:** Fry, steam<br>💪 Moderate protein<br>🦴 Few bones<br>💰 Affordable<br>⭐ Soft, buttery texture |
+| **False Trevally / White Fish** | குதிப்பு மீன் / சள்ளை மீன் / சுதும்பு (Kuthippu Meen / Challai Meen / Sudumbu) | ಬಿಳಿ ಮೀನು / ಸಳ್ಳೈ (Bili Meenu / Sallai) | व्हाइट फिश / झूठा ट्रेवली (White Fish / Jhootha Trevally) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Budget-friendly<br>⭐ Mild flavor |
+| **Needle Fish / Snakehead Murrel** | முரல் மீன் (Mural Meen) | ಕೋಲ ಮೀನು / ಮೂರಲ್ (Kola Meenu / Mural) | सुई मछली / मुर्रल (Sui Machli / Murral) | ✅ **Best:** Fry, soup<br>💪 High protein, medicinal<br>🦴 Some bones<br>⚠️ Green bones (harmless)<br>🏥 Good for wound healing |
+| **Cobia / Black Seer Fish** | நெய் மீன் / கடல் விரால் / மோதா மீன் (Nei Meen / Kadal Viral / Motha Meen) | ಮೇಲುಗು ಮೀನು / ಕಡಲ್ ವಿರಾಳ್ (Melugu Meenu / Kadal Viral) | कोबिया / ब्लैक सीर (Cobia / Black Seer) | ✅ **Best:** BBQ, steak, fry<br>💪 Very high protein<br>🦴 Boneless cuts<br>💎 Premium<br>⭐ Firm, rich flavor |
+| **Silver Belly / Pony Fish** | காரப்பொடி மீன் / காரல் மீன் / பூச்சி மீன் / முள்ளான் (Karappodi Meen / Karal Meen / Poochi Meen / Mullaan) | ಕುರಿಚಿ / ಗುರುಕು (Kurichi / Guruku) | सिल्वर बेली / पोनी फिश (Silver Belly / Pony Fish) | ✅ **Best:** Deep fry, dry fry<br>💪 Good calcium<br>🦴 Tiny, eaten whole<br>💰 Very cheap<br>🍽️ Popular snack fish |
+| **Yellow Trevally** | மஞ்சள் பாறை மீன் (Manjal Parai Meen) | ಹಳದಿ ಪಾರೈ (Haladi Parai) | पीली ट्रेवली (Peeli Trevally) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Firm texture |
+| **Bombay Duck / Bummalo** | வங்காரவாசி / வாங்கரவாசி / பம்பாய் வாத்து மீன் (Vangaravasi / Vangaravasi / Bombay Vathu Meen) | ಬೊಂಬಿಲ್ / ಬೂಮ್ಮಲೋ (Bombil / Boommalo) | बॉम्बे डक / बोम्बिल (Bombay Duck / Bombil) | ✅ **Best:** Deep fry (fresh or dried)<br>💪 High protein when dried<br>🦴 Soft bones<br>💰 Cheap<br>⚠️ Strong smell |
+| **Cod Fish** | பன்னா மீன் (Panna Meen) | ಕಾಡ್ ಮೀನು (Cod Meenu) | कॉड मछली (Cod Machli) | ✅ **Best:** Fry, bake, curry<br>💪 High protein, low fat<br>🦴 Boneless fillets<br>💎 Imported, expensive<br>⭐ Mild, flaky texture |
+| **Dart Fish** | குடிலி (Kudili) | ಡಾರ್ಟ್ ಫಿಶ್ (Dart Fish) | डार्ट मछली (Dart Machli) | ✅ **Best:** Fry<br>💪 Moderate protein<br>🦴 Some bones<br>💰 Cheap<br>🔹 Small, dart-shaped |
+| **Indian Oil Sardine** | பேச்சாளை / நெய் மத்தி / இந்திய எண்ணெய் மத்தி (Pechalai / Nei Mathi / Indhiya Ennai Mathi) | ಎಣ್ಣೆ ಮತ್ತಿ (Enne Mathi) | तेल सार्डिन / पेड्वे (Tel Sardine / Pedve) | ✅ **Best:** Fry, curry<br>💪 Very high Omega-3<br>🦴 Small bones<br>💰 Affordable<br>🔥 Oily, rich flavor |
+| **Keeri Fish** | கீரி மீன் சாளை (Keeri Meen Chalai) | ಕೀರಿ ಮೀನು (Keeri Meenu) | कीरी मछली (Keeri Machli) | ✅ **Best:** Fry<br>💪 Good protein<br>🦴 Small bones<br>💰 Very cheap<br>🔹 Tiny fish |
+| **Horse Mackerel** | தேங்காய் பாறை / குதிரை கானாங்கெளுத்தி / அயல பாறை (Thengai Parai / Kuthirai Kanangeluthi / Ayala Parai) | ಕುದುರೆ ಬಂಗುಡೆ (Kudure Bangude) | घोड़ा बांगड़ा (Ghoda Bangda) | ✅ **Best:** Fry, curry<br>💪 High Omega-3<br>🦴 Moderate bones<br>💰 Affordable<br>⚠️ Similar to mackerel, moderate mercury |
+| **Diamond Trevally** | கண்ணாடி பாறை (Kannadi Parai) | ಗಾಜಿನ ಪಾರೈ (Gajina Parai) | हीरा ट्रेवली (Heera Trevally) | ✅ **Best:** Fry, BBQ<br>💪 Good protein<br>🦴 Some bones<br>💰 Affordable<br>⭐ Shiny, silvery appearance |
+| **Romeo Fish** | ரோமியோ மீன் (சங்கரா மீன்போன்று ஆனால் மஞ்சள் பட்டை இல்லாமல் முள் குறைவாக இருக்கும்) | ರೋಮಿಯೋ ಮೀನು (Romeo Meenu) | रोमियो मछली (Romeo Machli) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Few bones<br>💰 Affordable<br>⭐ Similar to snapper |
+| **Parrot Fish** | கிளி மீன் (Kili Meen) | ಚಿಲಿಪಿಲಿ ಮೀನು / ಗಿಲಿ ಮೀನು (Chilipili Meenu / Gili Meenu) | तोता मछली (Tota Machli) | ✅ **Best:** Curry<br>💪 Moderate protein<br>🦴 Many bones<br>💰 Affordable<br>⚠️ Parrot-like beak |
+| **Mahi Mahi Fish** | பர்லா மீன் (Parla Meen) | ಮಹಿ ಮಹಿ (Mahi Mahi) | माही माही / डॉल्फिन मछली (Mahi Mahi / Dolphin Machli) | ✅ **Best:** BBQ, steak, grill<br>💪 High protein, lean<br>🦴 Boneless fillets<br>💎 Expensive<br>⭐ Firm, mild-sweet flavor |
+| **Big Eye Snapper** | உரி சங்கரா மீன் (Uri Sankara Meen) | ದೊಡ್ಡ ಕಣ್ಣು ಸ್ನಾಪರ್ (Dodda Kannu Snaper) | बड़ी आंख स्नैपर (Badi Aankh Snapper) | ✅ **Best:** Fry, curry<br>💪 High protein<br>🦴 Moderate bones<br>💰 Affordable<br>👁️ Large eyes |
+| **Yellowfin Tuna** | மஞ்சள்தூவி சூரை / கீரை மீன் / நெய் மீன் சூரை (Manjal Thoovi Soorai / Keerai Meen / Nei Meen Choorai) | ಹಳದಿ ಜೀನು ಟೂನಾ (Haladi Jeenu Tuna) | पीला पंख टूना (Peela Pankh Tuna) | ✅ **Best:** Sashimi, steak, BBQ<br>💪 Very high protein<br>🦴 Boneless steaks<br>⚠️ High mercury - avoid pregnancy<br>💎 Premium |
+| **Marine Catfish** | கடல் கெளுத்தி மீன் (Kadal Keluthi Meen) | ಸಮುದ್ರ ಜೇಲೆ (Samudra Jele) | समुद्री कैटफिश (Samudri Catfish) | ✅ **Best:** Curry<br>💪 Good protein<br>🦴 Some bones<br>💰 Affordable<br>⚠️ Sharp spines |
+| **Silver Bar Fish** | துப்பு வாளை மீன் / முள்ளு வாளை (Thuppu Valai Meen / Mullu Valai) | ಬೆಳ್ಳಿ ಬಾರ್ ಮೀನು (Belli Bar Meenu) | चांदी पट्टी मछली (Chandi Patti Machli) | ✅ **Best:** Fry<br>💪 Good protein<br>🦴 Many bones<br>💰 Cheap<br>🔹 Long, flat |
+| **White Perch** | வெள்ளை பெர்ச் (Vellai Perch) | ಬಿಳಿ ಪರ್ಚ್ (Bili Perch) | सफेद पर्च (Safed Perch) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Mild flavor |
+| **Snapper Fish / White Snapper** | கொறுக்கை / கொருக்கை / கொண்டல் மீன் (Korukkai / Kondal Meen) | ಸ್ನಾಪರ್ ಮೀನು (Snaper Meenu) | स्नैपर मछली (Snapper Machli) | ✅ **Best:** Fry, curry, steam<br>💪 High protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Versatile |
 
 </div>
 
@@ -76,53 +76,52 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 
 ## 🏞️ Popular River & Freshwater Fish
 
-<div class="table-green-grid">
+<div class="table-green-grid table-last-width-200">
 
-| English Name | Tamil Name | Kannada Name | Hindi Name |
-|--------------|------------|--------------|------------|
-| **Rohu** | கண்ணாடி கெண்⁮டை (Kannadi Kendai) | ರೊಹು (Rohu) | रोहू (Rohu) |
-| **Catla** | கட்லா (Katla) | ಕಟ್ಲಾ (Katla) | कतला (Katla) |
-| **Catfish** | கெளுத்தி/ கெள்ளு / மாங்குரு (Keluthi / Kellu / Maanguru) | ಜೇಲೆ (Jele) | मांगुर / सिंगी (Mangur / Singi) |
-| **Tilapia / Jelabi** | ஜிலாபி / ஜிலேபி / சிலோபி / கறி மீன் / திலாப்பி (Jilabi / Jilebi / jalebi / Silobi / Kari Meen / Thilappi) | ತಿಲಾಪಿಯಾ (Tilapia) | तिलापिया (Tilapia) |
-| **Murrel / Snake Head** | விறால் மீன் / வேரால் / விரால் (Veraal / Viraal / Viral) | ಹರಳು (Haralu) | मुर्रल / सोल (Murrel / Sohl) |
-| **Indian Carp** | சாளை (Chalai) | ಕರಿ (Kari) | कार्प / सिंघी (Carp / Singhi) |
-| **Climbing Perch** | பனை மீன் (Panai Meen) | ಕೂಬೆ (Koobe) | कोबी / कुई (Kobi / Kui) |
-| **Wallago** | வாலா (Vaalaa) | ಬೇಲೆ (Bele) | बाल्ला / पाभू (Balla / Pabhu) |
-| **Mystus** | கெள்ளு (Kellu) | ಕೆಳ್ಳು (Kellu) | कल्लू (Kallu) |
-| **Grass Carp** | புல் மீன் (Pul Meen) | ಹುಲ್ ಮೀನು (Hul Meenu) | घास कार्प (Ghaas Carp) |
-| **Silver Carp** | வெள்ளி மீன் (Velli Meen) | ಬೆಳ್ಳಿ ಮೀನು (Belli Meenu) | चांदी कार्प (Chandi Carp) |
-| **Freshwater Prawn** | உளுந்து இறால் (Ulundhu Iraal) | ನೀರು ಸಂಡು (Neeru Sandu) | नदी का झींगा (Nadi Ka Jhinga) |
-| **Common Indian Spiny Loach** | அயிரை (Ayirai) | ಭಾರತೀಯ ಸ್ಪೈನಿ ಲೋಚ್ (Bharatiya Spiny Loach) | भारतीय स्पाइनी लोच (Bharatiya Spiny Loach) |
-| **Eel** | விலாங்கு (Vilaangu) | ಹಾವು ಮೀನು /ನೀರು ಹಾವು / ಮೀನು / ಬಾವಳಿ (haavu meenu / neeru haavu / Haari Meenu / Baavali) | बाम मछली (Baam Machli) |
-| **Walking Catfish** | தேளி மீன் (Theli Meen) | ನಡೆಯುವ ಜೇಲೆ (Nadeyuva Jele) | चलने वाली मछली (Chalne Wali Machli) |
-| **Basa Fish** | பாசா மீன் (Basa Meen) | ಬಾಸಾ ಮೀನು (Basa Meenu) | बासा मछली (Basa Machli) |
-| **Pangasius / Pungus / Pangas** | பங்காசியஸ் மீன் (Pangasius Meen) | ಪಂಗಾಸಿಯಸ್ (Pangasius) | पंगेसियस (Pangasius) |
-| **Roop Chand / Lake Pomfret / River Pomfret** | ஏரி வாவல்/ ரூப் சாந்த் (Yeri Vaval) | ರೂಪ್ ಚಂದ್ / ಬೆಳ್ಳಿ ಪಾಪ್ಲೆಟ್ (Roop Chand / Belli Paplet) | रूप चाँद / चांदी पॉम्फ्रेट (Roop Chand / Chandi Pomfret) |
+| English Name | Tamil Name | Kannada Name | Hindi Name | Best Uses & Health Notes |
+|--------------|------------|--------------|------------|--------------------------|
+| **Rohu** | கண்ணாடி கெண்டை (Kannadi Kendai) | ರೊಹು (Rohu) | रोहू (Rohu) | ✅ **Best:** Curry, fry<br>💪 High protein, Omega-3<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Most popular Indian freshwater fish |
+| **Catla** | கட்லா (Katla) | ಕಟ್ಲಾ (Katla) | कतला (Katla) | ✅ **Best:** Curry<br>💪 Good protein<br>🦴 Many bones<br>💰 Affordable<br>🔹 Large fish, buy smaller ones |
+| **Catfish** | கெளுத்தி/ கெள்ளு / மாங்குர் (Keluthi / Kellu / Maanguru) | ಜೇಲೆ (Jele) | मांगुर / सिंगी (Mangur / Singi) | ✅ **Best:** Curry, medicinal soup<br>💪 High protein<br>🦴 Few bones<br>⚠️ Sharp spines - handle carefully<br>🏥 Good for health recovery |
+| **Tilapia / Jelabi** | ஜிலாபி / ஜிலேபி / சிலோபி / கறி மீன் / திலாப்பி (Jilabi / Jilebi / jalebi / Silobi / Kari Meen / Thilappi) | ತಿಲಾಪಿಯಾ (Tilapia) | तिलापिया (Tilapia) | ✅ **Best:** Fry, curry<br>💪 Moderate protein<br>🦴 Few bones<br>💰 Very cheap<br>⚠️ Farm-raised quality varies |
+| **Murrel / Snake Head** | விறால் மீன் / வேரால் / விரால் (Veraal / Viraal / Viral) | ಹರಳು (Haralu) | मुर्रल / सोल (Murrel / Sohl) | ✅ **Best:** Fry, soup, medicinal<br>💪 Very high protein<br>🦴 Few bones<br>💰 Expensive<br>🏥 Excellent for wound healing, surgery recovery<br>⭐ Most medicinal fish |
+| **Indian Carp** | சாளை (Chalai) | ಕರಿ (Kari) | कार्प / सिंघी (Carp / Singhi) | ✅ **Best:** Curry<br>💪 Good protein<br>🦴 Many bones<br>💰 Very cheap<br>🔹 Common pond fish |
+| **Climbing Perch** | பனை மீன் (Panai Meen) | ಕೂಬೆ (Koobe) | कोबी / कुई (Kobi / Kui) | ✅ **Best:** Fry, curry<br>💪 High protein<br>🦴 Some bones<br>💰 Affordable<br>⚡ Can survive out of water briefly |
+| **Wallago** | வாலா (Vaalaa) | ಬೇಲೆ (Bele) | बाल्ला / पाभू (Balla / Pabhu) | ✅ **Best:** Curry<br>💪 Good protein<br>🦴 Few bones<br>💰 Affordable<br>🔹 Large catfish variety |
+| **Mystus** | கெள்ளு (Kellu) | ಕೆಳ್ಳು (Kellu) | कल्लू (Kallu) | ✅ **Best:** Fry, curry<br>💪 Moderate protein<br>🦴 Some bones<br>💰 Affordable<br>🔹 Small catfish |
+| **Grass Carp** | புல் மீன் (Pul Meen) | ಹುಲ್ ಮೀನು (Hul Meenu) | घास कार्प (Ghaas Carp) | ✅ **Best:** Curry<br>💪 Lean protein<br>🦴 Moderate bones<br>💰 Affordable<br>🌱 Feeds on grass/plants |
+| **Silver Carp** | வெள்ளி மீன் (Velli Meen) | ಬೆಳ್ಳಿ ಮೀನು (Belli Meenu) | चांदी कार्प (Chandi Carp) | ✅ **Best:** Curry<br>💪 Good protein<br>🦴 Many bones<br>💰 Cheap<br>🔹 Silvery appearance |
+| **Common Indian Spiny Loach** | அயிரை (Ayirai) | ಭಾರತೀಯ ಸ್ಪೈನಿ ಲೋಚ್ (Bharatiya Spiny Loach) | भारतीय स्पाइनी लोच (Bharatiya Spiny Loach) | ✅ **Best:** Medicinal soup<br>💪 Moderate protein<br>🦴 Tiny bones<br>💰 Affordable<br>🏥 Traditional medicine use |
+| **Eel** | விலாங்கு (Vilaangu) | ಹಾವು ಮೀನು /ನೀರು ಹಾವು / ಮೀನು / ಬಾವಳಿ (haavu meenu / neeru haavu / Haari Meenu / Baavali) | बाम मछली (Baam Machli) | ✅ **Best:** Curry, fry<br>💪 High protein<br>🦴 Boneless<br>💰 Expensive<br>⚠️ Slimy, snake-like - some avoid<br>🔥 Rich, strong flavor |
+| **Walking Catfish** | தேளி மீன் (Theli Meen) | ನಡೆಯುವ ಜೇಲೆ (Nadeyuva Jele) | चलने वाली मछली (Chalne Wali Machli) | ✅ **Best:** Curry<br>💪 Good protein<br>🦴 Some bones<br>💰 Affordable<br>⚡ Can walk on land briefly |
+| **Basa Fish** | பாசா மீன் (Basa Meen) | ಬಾಸಾ ಮೀನು (Basa Meenu) | बासा मछली (Basa Machli) | ✅ **Best:** Fry, bake<br>💪 High protein, low fat<br>🦴 Boneless fillets<br>💰 Cheap (imported frozen)<br>⚠️ Check quality, mostly imported |
+| **Pangasius / Pungus / Pangas** | பங்காசியஸ் மீன் (Pangasius Meen) | ಪಂಗಾಸಿಯಸ್ (Pangasius) | पंगेसियस (Pangasius) | ✅ **Best:** Fry, curry<br>💪 Moderate protein<br>🦴 Boneless<br>💰 Very cheap<br>⚠️ Imported frozen, quality varies |
+| **Roop Chand / Lake Pomfret / River Pomfret** | ஏரி வாவல்/ ரூப் சான்த் (Yeri Vaval) | ರೂಪ್ ಚಂದ್ / ಬೆಳ್ಳಿ ಪಾಪ್ಲೆಟ್ (Roop Chand / Belli Paplet) | रूप चांद / चांदी पोम्फ्रेट (Roop Chand / Chandi Pomfret) | ✅ **Best:** Fry, steam<br>💪 Good protein<br>🦴 Few bones<br>💰 Affordable<br>⭐ Similar taste to sea pomfret |
 
 </div>
 
 ## 🎣 Premium & Special Fish
 
-<div class="table-luxury-grid">
+<div class="table-luxury-grid table-last-width-200">
 
-| English Name | Tamil Name | Kannada Name | Hindi Name |
-|--------------|------------|--------------|------------|
-| **Pearl Spot** | கறிமீன் / சேத்துக் கெண்டை / பளிஞ்சா (Karimeen / Sethu Kendai / Palinja) | ಪರ್ಲ್ ಸ್ಪಾಟ್ (Pearl Spot) | पर्ल स्पॉट (Pearl Spot) |
-| **Bhetki / Betki / Asian Sea Bass** | கொடுவா மீன் (Koduvaa Meen) | ಭೇಟ್ಕಿ / ಏಷ್ಯನ್ ಸೀ ಬಾಸ್ (Bhetki / Asian Sea Bass) | भेटकी / कोरामीन (Bhetki / Korameen) |
-| **Mullet** | மடவை (Madavai) | ಮದ್ದಾಳ (Maddala) | मुल्लेट (Mullet) |
-| **Sailfish** | மயில் மீன் (Mayil Meen) | ಸೈಲ್ ಫಿಶ್ (Sail Fish) | पाल मछली (Paal Machli) |
-| **Marlin** | கத்தி மீன் (Kathi Meen) | ಮಾರ್ಲಿನ್ (Marlin) | मार्लिन (Marlin) |
-| **Emperor Fish** | விள மீன்/ விளை மீன் /ஓரியா மீன் (Vila Meen / Vilai Meen / Oriya Meen) | ರಾಜ ಮೀನು (Raja Meenu) | शाही मछली (Shahi Machli) |
-| **Travelly** | பாரை (Parai) | ಪಾರೈ (Parai) | तारली / पारा (Tarli / Para) |
-| **Stingray** | திருக்கை (Thirukkai) | ತಿರುಕ್ಕೈ (Thirukkai) | स्टिंगरे (Stingray) |
-| **Golden Anchovy** | தங்க நெத்திலி (Thanga Nethili) | ಚಿನ್ನದ ನೆತ್ತಿಲಿ (Chinnada Nethili) | सुनहरा एंकोवी (Sunehra Anchovy) |
-| **Goat Fish / Red Mullet** | நவரை மீன் / நகரை (Navarai Meen / Nagarai) | ನವರೈ ಮೀನು / ಕೆಂಪು ಮುಲ್ಲೆಟ್ (Navarai Meenu / Kempu Mullet) | बकरी मछली / लाल मुल्लेट (Bakri Machli / Laal Mullet) |
-| **Milk Shark** | பிள்ளை சுறா மீன் (Pillai Sura Meen) | ಹಾಲು ಶಾರ್ಕ್ (Haalu Shark) | दूध शार्क (Doodh Shark) |
+| English Name | Tamil Name | Kannada Name | Hindi Name | Best Uses & Health Notes |
+|--------------|------------|--------------|------------|--------------------------|
+| **Pearl Spot** | கறிமீன் / சேத்துக் கெண்டை / பளிஞ்சா (Karimeen / Sethu Kendai / Palinja) | ಪರ್ಲ್ ಸ್ಪಾಟ್ (Pearl Spot) | पर्ल स्पॉट (Pearl Spot) | ✅ **Best:** Fry, steam, bake<br>💪 High protein, low fat<br>🦴 Few bones<br>💎 Very expensive<br>⭐ Kerala delicacy, pearl-like spots<br>👶 Safe for all ages |
+| **Bhetki / Betki / Asian Sea Bass** | கொடுவா மீன் (Koduvaa Meen) | ಭೇಟ್ಕಿ / ಏಷ್ಯನ್ ಸೀ ಬಾಸ್ (Bhetki / Asian Sea Bass) | भेटकी / कोरामीन (Bhetki / Korameen) | ✅ **Best:** All methods - fry, steam, BBQ<br>💪 Very high protein<br>🦴 Boneless fillets<br>💎 Premium, expensive<br>⭐ Bengal delicacy, versatile |
+| **Mullet** | மடவை (Madavai) | ಮದ್ದಾಳ (Maddala) | मुल्लेट (Mullet) | ✅ **Best:** Fry, curry<br>💪 Good protein, Omega-3<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Mild flavor |
+| **Sailfish** | மயில் மீன் (Mayil Meen) | ಸೈಲ್ ಫಿಶ್ (Sail Fish) | पाल मछली (Paal Machli) | ✅ **Best:** BBQ, steak<br>💪 Very high protein<br>🦴 Boneless cuts<br>💎 Very expensive<br>⚠️ Sport fish, rarely sold<br>⭐ Sail-like dorsal fin |
+| **Marlin** | கத்தி மீன் (Kathi Meen) | ಮಾರ್ಲಿನ್ (Marlin) | मार्लिन (Marlin) | ✅ **Best:** BBQ, steak<br>💪 Very high protein<br>🦴 Boneless steaks<br>💎 Very expensive<br>⚠️ High mercury - limit intake<br>🏆 Prized sport fish |
+| **Emperor Fish** | விள மீன்/ விளை மீன் /ஓரியா மீன் (Vila Meen / Vilai Meen / Oriya Meen) | ರಾಜ ಮೀನು (Raja Meenu) | शाही मछली (Shahi Machli) | ✅ **Best:** Fry, BBQ, steam<br>💪 High protein<br>🦴 Moderate bones<br>💎 Premium<br>⭐ Emperor-like appearance |
+| **Travelly** | பாரை (Parai) | ಪಾರೈ (Parai) | तारली / पारा (Tarli / Para) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Firm, flaky meat |
+| **Stingray** | திருக்கை (Thirukkai) | ತಿರುಕ್ಕೈ (Thirukkai) | स्टिंगरे (Stingray) | ✅ **Best:** Curry<br>💪 Moderate protein<br>🦴 Cartilage, no bones<br>💰 Affordable<br>⚠️ Remove poisonous tail spine<br>🔥 Unique texture |
+| **Golden Anchovy** | தங்க நெத்திலி (Thanga Nethili) | ಚಿನ್ನದ ನೆತ್ತಿಲಿ (Chinnada Nethili) | सुनहरा अंकोवी (Sunehra Anchovy) | ✅ **Best:** Deep fry<br>💪 High calcium, protein<br>🦴 Eaten whole<br>💰 Affordable<br>⭐ Golden color, rare variety |
+| **Goat Fish / Red Mullet** | நவரை மீன் / நகரை (Navarai Meen / Nagarai) | ನವರೈ ಮೀನು / ಕೆಂಪು ಮುಲ್ಲೆಟ್ (Navarai Meenu / Kempu Mullet) | बकरी मछली / लाल मुल्लेट (Bakri Machli / Laal Mullet) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Reddish color, goat-like barbels |
+| **Milk Shark** | பிள்ளை சுறா மீன் (Pillai Sura Meen) | ಹಾಲು ಶಾರ್ಕ್ (Haalu Shark) | दूध शार्क (Doodh Shark) | ✅ **Best:** Curry<br>💪 High protein<br>🦴 Boneless<br>💰 Affordable<br>⚠️ Moderate mercury<br>🔹 Small shark variety |
 
 </div>
 
 
-## 🦀 Shell Fish - Aquatic Arthropods, Crustacean & Molluscs
+## 🦀 Shell Fish - Crustacean & Molluscs
 
 <div class="table-ocean-grid">
 
@@ -134,6 +133,7 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Lobster** | கடல் இறால் (Kadal Iraal) | ನೀರು ನಳ್ಳಿ (Neeru Nalli) | झींगा मछली (Jhinga Machli) |
 | **Tiger Prawns** | வரி இறால் (Vari Iraal) | ಹುಲಿ ಸೀಗಡಿ (Huli Seegadi) | बाघ झींगा (Bagh Jhinga) |
 | **White Prawns** | வெள்ளை இறால் (Vellai Iraal) | ಬಿಳಿ ಸೀಗಡಿ (Bili Seegadi) | सफेद झींगा (Safed Jhinga) |
+| **Freshwater Prawn** | நன்னீர் இறால் (Nanneer Iraal) | ನೀರು ಸಂಡು (Neeru Sandu) | नदी का झींगा (Nadi Ka Jhinga) |
 | **Crab** | நண்டு (Nandu) | ನಳ್ಳಿ (Nalli) | केकड़ा (Kekda) |
 | **Sea Crab / Three Spotted Crab** | கடல் நண்டு (Kadal Nandu) | ಸಮುದ್ರ ಏಡಿ (Samudra Yedi) | समुद्री केकड़ा (Samudri Kekda) |
 | **Mangrove Crab / Mud Crab** | சேற்று நண்டு (Setru Nandu) | ಕೆಸರು ಏಡಿ / ಡೆಂಜಿ (Kesaru Yedi / Denji) | मैंग्रोव केकड़ा / कीचड़ केकड़ा (Mangrove Kekda / Keechad Kekda) |
@@ -144,6 +144,13 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Pond Turtle / Freshwater Turtle** | குளத்து ஆமை (Kulathu Aamai) | ಕೆರೆ ಆಮೆ / ನೀರಿನ ಆಮೆ (Kere Aame / Neerina Aame) | तालाब कछुआ / मीठे पानी का कछुआ (Talab Kachua / Meethe Paani Ka Kachua) |
 
 </div>
+
+**Note on Shellfish:**
+- ✅ High protein, minerals (zinc, selenium)
+- 🦴 Shell/exoskeleton (remove before eating)
+- ⚠️ Common allergen - avoid if shellfish allergy
+- ⚠️ Spoils quickly - ensure freshness
+- 🏥 Many varieties good for immunity
 
 
 ## ⚠️ FORMALIN AWARENESS - Critical Health Alert
@@ -163,7 +170,7 @@ Formalin is a toxic chemical solution (37-40% formaldehyde in water) illegally u
 - **Long-term effects**: Liver damage, kidney problems, respiratory issues, skin allergies
 - **Severe cases**: Can cause blindness, neurological damage, even death
 
-**How to Identify Formalin-Treated Fish:**
+🔍 **How to Identify Formalin-Treated Fish:**
 
 🔴 **Warning Signs:**
 1. **Unnaturally firm flesh** - Too hard/rubbery texture even after days
@@ -175,7 +182,7 @@ Formalin is a toxic chemical solution (37-40% formaldehyde in water) illegally u
 7. **Burns sensation** - Touching may cause skin irritation or burning
 8. **Water test** - If fish is soaked in water and water becomes milky/cloudy, possible formalin presence
 
-**Simple Tests at Home:**
+🧪 **Simple Tests at Home:**
 - **Turmeric Test**: Apply turmeric paste on fish skin; if it turns red/pink, formalin may be present
 - **Smell Test**: Put fish in warm water for 5-10 minutes; pungent chemical smell indicates formalin
 - **Burn Test**: A small piece when burned produces acrid, chemical smell (not recommended for safety)
@@ -206,8 +213,11 @@ Formalin is a toxic chemical solution (37-40% formaldehyde in water) illegally u
 4. Warn others in your community
 5. Switch to a different, trusted vendor
 
-**Government Action:**
-Many countries including India have banned formalin use in food. Food Safety and Standards Authority of India (FSSAI) regularly conducts raids and testing. Report violations to FSSAI helpline: 1800-112-100
+📞 **Important Contacts:**
+
+- **FSSAI (Food Safety and Standards Authority of India) Helpline:** 1800-112-100
+- **Consumer Helpline:** 1800-11-4000
+- **Food Safety Complaint:** [fssai.gov.in](https://fssai.gov.in/)
 
 **Regional Names for Formalin:**
 - Tamil: பார்மலின் (Formalin) / இரசாயன மீன் (Rasayana Meen)
@@ -219,17 +229,19 @@ Many countries including India have banned formalin use in food. Food Safety and
 ## 📝 Usage Tips
 
 :::tip[Shopping Guide]
-- **Fresh Fish Indicators**: Clear eyes, bright red gills, firm flesh, mild ocean smell
+- **Fresh Fish Indicators**: Clear eyes, bright red / pink gills, firm flesh, mild ocean / river smell
 - **Market Names**: Regional names vary even within states - ask vendors for clarification
 - **Seasonal Availability**: Some fish are seasonal - monsoon affects availability
 :::
 
+
 :::note[Cooking Notes]
 - **Sea Fish**: Generally has a stronger flavor, best for grilling, frying, and curries
 - **River Fish**: Milder taste, often preferred for steaming and light preparations
-- **Storage**: Fresh fish keeps 1-2 days refrigerated, 2-3 months frozen
+- **Storage**: Fresh fish keeps 1-2 days refrigerated (at 0 - 4°C), 2-3 months frozen (at -18°C); And Don't refreeze once thawed
 - **Pre-cooking wash**: Always wash fish thoroughly in running water, especially if buying from unknown sources
 :::
+
 
 ## 🌍 Regional Variations
 
@@ -255,6 +267,30 @@ Different regions may use different names for the same fish. This guide provides
 
 </div>
 
+## ⚕️ Special Dietary Considerations
+
+### ✅ Safe for Pregnancy (Low Mercury)
+Pomfret, Sardines, Anchovies, Rohu, Catla, Tilapia, Pearl Spot
+
+### ⚠️ Limit During Pregnancy (Moderate Mercury)
+Seer Fish, Mackerel, Salmon - max 1-2 servings/week
+
+### ❌ Avoid During Pregnancy (High Mercury)
+Shark, Large Tuna, Marlin, Barracuda
+
+### 👶 Good for Children
+Pomfret (boneless), Basa, Sea Bass, Tilapia, Murrel (boneless)
+
+### 🏥 Post-Surgery/Recovery
+Murrel (top choice), Catfish, Rohu, Eel
+
+### ❤️ Heart Patients
+Mackerel, Sardines, Salmon, Hilsa (high Omega-3, low cholesterol)
+
+### 💪 Bodybuilding/High Protein
+Tuna, Seer Fish, Murrel, Cobia, Shark (if sustainable)
+
+
 ## 🔍 How to Use This Guide
 
 1. **Shopping**: Take this guide to the fish market to identify fish in different languages
@@ -265,3 +301,5 @@ Different regions may use different names for the same fish. This guide provides
 :::note[Note]
 Fish names may vary by region and local dialects. This guide uses the most widely recognized names in each language. If you know additional regional names, feel free to share!
 :::
+
+**Disclaimer:** This guide provides general information. Consult healthcare professionals for specific dietary advice, especially during pregnancy or medical conditions. Fish consumption recommendations may vary based on individual health status.
