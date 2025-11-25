@@ -156,6 +156,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Zucchini / Courgette** | சீமை சுரைக்காய் / வெள்ளரிக்காய் வகை (Seemai Suraikkai / Vellarikkai Vagai) | ಜುಚಿನಿ (Zucchini) | तोरी / जुकीनी (Tori / Zucchini) |
 | **Yellow Squash / Yellow Zucchini** | தங்க சீமை சுரைக்காய் (Thanga Seemai Suraikkai) | ಹಳದಿ ಜುಚಿನಿ (Haladi Zucchini) | पीली तोरी / पीली जुकीनी (Peeli Tori / Peeli Zucchini) |
 | **Patty Pan Squash** | பட்டி பன் சுரைக்காய் (Patty Pan Suraikkai) | ಪ್ಯಾಟಿ ಪ್ಯಾನ್ ಸ್ಕ್ವಾಷ್ (Patty Pan Squash) | तश्तरी कद्दू (Tashtari Kaddu) |
+| **Butternut Squash** | வெண்ணெய் பரங்கிக்காய் (Vennai Parangikkai) | ಬಟರ್ನಟ್ ಸ್ಕ್ವಾಷ್ (Butternut Squash) | बटरनट स्क्वैश (Butternut Squash) |
 | **Drumstick** | முருங்கைக்காய் (Murungaikkai) | ನುಗ್ಗೆಕಾಯಿ (Nuggekayi) | सहजन (Sahjan) |
 | **Ladies Finger / Okra** | வெண்டைக்காய் (Vendaikkai) | ಬೆಂಡೆಕಾಯಿ (Bendekayi) | भिंडी (Bhindi) |
 | **Bitter Gourd** | பாகற்காய் (Paagarkkai) | ಹಾಗಲಕಾಯಿ (Haagalakayi) | करेला (Karela) |
@@ -163,18 +164,24 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Pointed Gourd / Ivy Gourd / Parwal** | கோவக்காய் / சுட்டக்காய் / பரவல் (Kovakkai / Parval) | ಪಡವಲಕಾಯಿ (Padavalakayi) | परवल (Parwal) |
 | **Bottle Gourd** | சுரைக்காய் (Suraikkai) | ಸೋರೆಕಾಯಿ (Sorekayi) | लौकी (Lauki) |
 | **Ridge Gourd** | பீர்க்கங்காய் (Peerkkangai) | ಹೀರೆಕಾಯಿ (Heerekayi) | तोरी (Tori) |
+| **Sponge Gourd / Luffa** | நெட்டைப் பீர்க்கங்காய் (Nettai Peerkkangai) | ಹೀರೇಕಾಯಿ (Heerekayi) | नेनुआ / तोरई (Nenua / Torai) |
 | **Snake Gourd** | புடலங்காய் (Pudalangai) | ಪಡವಲಕಾಯಿ (Padavalakayi) | चिचिंडा (Chichinda) |
 | **Ash Gourd / Winter Melon** | பூசணிக்காய் (Poosanikkai) | ಬೂದಿ ಗುಂಬಳ (Boodi Gumbala) | पेठा (Petha) |
 | **Pumpkin** | பரங்கிக்காய் (Parangikkai) | ಗುಂಬಳಕಾಯಿ (Gumbalakayi) | कद्दू (Kaddu) |
 | **Tomato** | தக்காளி (Thakkaali) | ಟೊಮೇಟೊ (Tomato) | टमाटर (Tamatar) |
 | **Potato** | உருளைக்கிழங்கு (Urulaikizhangu) | ಆಲೂಗೆಡ್ಡೆ (Aalugedde) | आलू (Aloo) |
+| **Vitelotte / Purple Potato** | ஊதா உருளைக்கிழங்கு (Ootha Urulaikizhangu) | ನೇರಳೆ ಆಲೂಗೆಡ್ಡೆ (Nerale Aalugedde) | बैंगनी आलू (Baingani Aloo) |
+| **Sweet Potato** | சர்க்கரை வள்ளிக்கிழங்கு / சீனிக் கிழங்கு / வற்றாளை கிழங்கு (Sakkarai Vallikizhangu) | ಗೆಣಸು (Genasu) | शकरकंद (Shakarkand) |
+| **Yam / suran** | சேனைக்கிழங்கு (Senaikiizhangu) | ಸುರಣ (Surana) | जिमीकंद (Jimikand) |
+| **Tapioca / Cassava** | மரச்சினி கிழங்கு / மரவள்ளிக்கிழங்கு (Maravallikizhangu) | ಮರಗೆಣಸು (Maragenasu) | टैपिओका (Tapioca) |
 | **Onion** | வெங்காயம் (Vengayam) | ಈರುಳ್ಳಿ (Eerulli) | प्याज (Pyaaz) |
 | **Small Onions / Shallots** | சின்ன வெங்காயம் / சாம்பார் வெங்காயம் / சின்ன உள்ளி (Chinna Vengayam / Sambar Vengayam / Cinna Ulli) | ಸಣ್ಣ ಈರುಳ್ಳಿ (Sanna Eerulli) | छोटा प्याज (Chhota Pyaaz) |
 | **Spring Onion / Green Onion** | வெங்காயத்தாள் / பச்சை வெங்காயம் (Vengayaththaal / pachai vengayam) | ಹಸಿರು ಈರುಳ್ಳಿ (Hasiru Eerulli) | हरा प्याज (Hara Pyaaz) |
 | **Carrot** | கேரட் (Carrot) | ಕ್ಯಾರೆಟ್ (Carrot) | गाजर (Gaajar) |
-| **Beetroot** | பீட்ரூட் (Beetroot) | ಬೀಟ್ರೂಟ್ (Beetroot) | चुकंदर (Chukandar) |
+| **Beetroot / Red Beet** | பீட்ரூட் (Beetroot) | ಬೀಟ್ರೂಟ್ (Beetroot) | चुकंदर (Chukandar) |
 | **Radish** | முள்ளங்கி (Mullangi) | ಮೂಲಂಗಿ (Moolangi) | मूली (Mooli) |
 | **Cabbage** | முட்டைக்கோஸ் (Muttaikose) | ಎಲೆಕೋಸು (Elekosu) | पत्तागोभी (Pattagobhi) |
+| **Brussels Sprouts** | கிளைக்கோசு / மரக்கோசு (Kilaikosu / Marakkosu) | ಬ್ರಸೆಲ್ಸ್ ಮೊಳಕೆ (Brussels Molake) | ब्रसेल्स स्प्राउट्स (Brussels Sprouts) |
 | **Cauliflower** | காலிஃப்ளவர் (Cauliflower) | ಹೂಕೋಸು (Hookosu) | फूलगोभी (Phulgobhi) |
 | **Broccoli** | பச்சை பூக்கோசு / புரோக்கோலி (Pachai Pookosu / Broccoli) | ಬ್ರೊಕೊಲಿ (Broccoli) | ब्रोकोली / हरी फूलगोभी (Broccoli / Hari Phulgobhi) |
 | **Knol Khol / Kohlrabi** | நூல்கோல் / கோஸ் கிழங்கு (Noolkol / Kose Kizhangu) | ನೂಲ್ಕೋಲ್ (Noolkol) | गांठगोभी (Gaanthgobhi) |
@@ -192,10 +199,6 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Chilli Picador Green / Bajji Chilli** | பஜ்ஜி மிளகாய் (Bajji Milagai) | ಬಜ್ಜಿ ಮೆಣಸಿನಕಾಯಿ (Bajji Menasinakayi) | भज्जी मिर्च (Bhajji Mirch) |
 | **Curd Chillies / Buttermilk Chillies** | மோர் மிளகாய் (Mor Milagai) | ಮೋರು ಮೆಣಸಿನಕಾಯಿ (Moru Menasinakayi) | मोर मिर्च (Mor Mirch) |
 | **Eye Bird Chilli / Kanthari Chilli** | கந்தாரி மிளகாய் / சீனி மிளகாய் (Kanthari Milagai / Cheeni Milagai) | ಕಂತಾರಿ ಮೆಣಸಿನಕಾಯಿ (Kanthari Menasinakayi) | कांटारी मिर्च (Kanthari Mirch) |
-| **Spinach** | கீரை (Keerai) | ಸೊಪ್ಪು (Soppu) | पालक (Palak) |
-| **Coriander Leaves** | கொத்தமல்லி (Kothamalli) | ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು (Kothambari Soppu) | हरा धनिया (Hara Dhaniya) |
-| **Mint Leaves** | புதினா (Pudhina) | ಪುದೀನ (Pudeena) | पुदीना (Pudeena) |
-| **Neem Leaves / Margosa Leaves** | வேப்பிலை (Veppilai) | ಬೇವಿನ ಎಲೆ (Bevina Ele) | नीम पत्ता (Neem Patta) |
 | **Organic Vegetables** | இயற்கை காய்கறிகள் (Iyarkai Kaigarikal) | ಸಾವಯವ ತರಕಾರಿಗಳು (Saavayava Tarakarigalu) | जैविक सब्जियाँ (Jaivik Sabziyan) |
 | **Garlic** | பூண்டு (Poondu) | ಬೆಳ್ಳುಳ್ಳಿ (Bellulli) | लहसुन (Lahsun) |
 | **Ginger** | இஞ்சி (Inji) | ಶುಂಠಿ (Shunthi) | अदरक (Adrak) |
@@ -203,9 +206,6 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Citron Fruit** | நாரத்தங்காய் / நாரந்தி காய் (Narathankai / Naranthi kaay) | ನಾರಂಗಿ (Narangi) | सिट्रॉन (Citron) |
 | **Corn / Maize** | மக்காச்சோளம் (Makka cholam) | ಮೆಕ್ಕೆಜೋಳ (Mekkejola) | मक्का (Makka) |
 | **Sambar Cucumber / Mangalore Cucumber** | சாம்பார் வெள்ளரி (Sambar Vellari) | ಸೌತೆಕಾಯಿ (Soutekayi) | खीरा (Kheera) |
-| **Sweet Potato** | சர்க்கரை வள்ளிக்கிழங்கு / சீனிக் கிழங்கு / வற்றாளை கிழங்கு (Sakkarai Vallikizhangu) | ಗೆಣಸು (Genasu) | शकरकंद (Shakarkand) |
-| **Yam / suran** | சேனைக்கிழங்கு (Senaikiizhangu) | ಸುರಣ (Surana) | जिमीकंद (Jimikand) |
-| **Tapioca / Cassava** | மரச்சினி கிழங்கு / மரவள்ளிக்கிழங்கு (Maravallikizhangu) | ಮರಗೆಣಸು (Maragenasu) | टैपिओका (Tapioca) |
 | **Raw Banana** | வாழைக்காய் (Vazhaikkai) | ಬಾಳೆಕಾಯಿ (Baalekayi) | कच्चा केला (Kaccha Kela) |
 | **Banana Flower / Plantain Flower** | வாழைப்பூ (Vazhaipoou) | ಬಾಳೆ ಹೂವು (Baale Hoovu) | केले का फूल (Kele Ka Phool) |
 | **Banana Stem / Plantain Stem** | வாழைத்தண்டு (Vazhaiththandu) | ಬಾಳೆ ದಿಂಡು (Baale Dindu) | केले का तना (Kele Ka Tana) |
@@ -243,7 +243,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 >
 > - **Banana Stem / Plantain Stem** (வாழைத்தண்டு): The thick, tender inner core of the banana plant's pseudo-stem (the "trunk" is actually layers of tightly wrapped leaf sheaths); only the soft white inner core is edible. **Preparation**: Remove tough outer green layers; extract the tender white cylindrical core from the center; slice thinly or chop; soak in buttermilk or lemon water to prevent browning and reduce astringency; squeeze out excess moisture before cooking. **Taste & Texture**: Mild, slightly sweet, and refreshing taste; fibrous yet tender when cooked properly; high water content (90%+); crunchy when raw. **Uses**: Used in South Indian cooking for curries, kootu (lentil-vegetable stew), poriyal (dry stir-fry), raita, thoran, juice, salads, and pachadi; often combined with lentils, coconut, and yogurt. **Nutritional benefits**: Extremely rich in fiber and water; excellent for kidney health, urinary tract health, weight loss, and detoxification; helps flush out kidney stones; reduces cholesterol; aids digestion; rich in potassium, vitamin B6, and vitamin C. **Medicinal uses**: Traditionally consumed as juice for kidney cleansing; helps with diabetes management; cooling effect on the body. **Availability**: Fresh banana stem sold in bundles in South Indian markets; one stem segment (6-8 inches) yields about 1-2 cups of usable core; best used fresh within 1-2 days. **Cooking tip**: Can be fibrous if not cleaned properly; remove all stringy fibers while slicing; cook until tender; pairs well with coconut and yogurt-based dishes.
 >
-> - **Banana Leaf / Plantain Leaf** (வாழை இலை): Large, flexible, bright green leaves from the banana plant; typically 6-9 feet long and 2 feet wide when fully grown; not eaten but used as natural plates and food wrappers. **Characteristics**: Waterproof, non-toxic, biodegradable; imparts a subtle sweet aroma and flavor to food; naturally antimicrobial properties; eco-friendly alternative to plastic and disposable plates. **Uses**: **Serving plate** - Traditional use in South India for serving meals (especially during festivals, weddings, and special occasions); food is served directly on cleaned banana leaf; **Cooking wrapper** - Used to wrap and steam/grill food (like idli, kozhukattai, fish, meat); steaming in banana leaf adds aromatic flavor; **Wrapping for storage** - Traditional method to store and transport food items like snacks and sweets. **Cultural significance**: Eating on banana leaf is considered auspicious and hygienic in South Indian culture; orientation matters - shiny side up for serving food; used in religious ceremonies and rituals. **Preparation**: Wipe clean with damp cloth; pass over flame briefly or dip in hot water to make it pliable and enhance aroma; never wash with soap. **Health benefits**: Polyphenols in the leaf have antioxidant properties; when hot food is served, beneficial compounds may transfer to food; aids digestion. **Availability**: Sold fresh in Indian grocery stores and markets, usually in bundles; can be frozen for longer storage (wrap in damp cloth and plastic); also available dried (need to be softened before use). **Etiquette**: In traditional banana leaf dining, food is served in specific positions; meal starts with a pinch of salt; fold leaf towards you after finishing (indicates satisfaction); fold away from you in inauspicious occasions. **Environmental impact**: Completely biodegradable and compostable; sustainable alternative to disposable plates; decomposes naturally within weeks. **Regional specialties**: **Kizhi Biryani** (Kerala) - Biryani wrapped in banana leaf and steamed; "Kizhi" (കിഴി) means pouch or bundle (பொதி in Tamil); the leaf imparts aroma and keeps rice moist; **Meen Pollichathu** (Kerala) - Fish wrapped in banana leaf and roasted/grilled; "Pollichathu" (പൊള്ളിച്ചത്) means roasted or pan-fried, translating to "fish roasted in banana leaf" (வாழை இலையில் சுடவைத்த மீன் / வாழை இலையில் பொரித்த மீன்); "Pollichathu" (பொலிச்சது) means "வெந்து/பொரித்தது" in Tamil.
+> - **Banana Leaf / Plantain Leaf** (வாழை இலை): Large, flexible, bright green leaves from the banana plant; typically 6-9 feet long and 2 feet wide when fully grown; not eaten but used as natural plates and food wrappers. **Characteristics**: Waterproof, non-toxic, biodegradable; imparts a subtle sweet aroma and flavor to food; naturally antimicrobial properties; eco-friendly alternative to plastic and disposable plates. **Uses**: **Serving plate** - Traditional use in South India for serving meals (especially during festivals, weddings, and special occasions); food is served directly on cleaned banana leaf; **Cooking wrapper** - Used to wrap and steam/grill food (like idli, kozhukattai, fish, meat); steaming in banana leaf adds aromatic flavor; **Wrapping for storage** - Traditional method to store and transport food items like snacks and sweets. **Cultural significance**: Eating on banana leaf is considered auspicious and hygienic in South Indian culture; orientation matters - shiny side up for serving food; used in religious ceremonies and rituals. **Preparation**: Wipe clean with damp cloth; pass over flame briefly or dip in hot water to make it pliable and enhance aroma; never wash with soap. **Health benefits**: Polyphenols in the leaf have antioxidant properties; when hot food is served, beneficial compounds may transfer to food; aids digestion. **Availability**: Sold fresh in Indian grocery stores and markets, usually in bundles; can be frozen for longer storage (wrap in damp cloth and plastic); also available dried (need to be softened before use). **Etiquette**: In traditional banana leaf dining, food is served in specific positions; meal starts with a pinch of salt; fold leaf towards you after finishing (indicates satisfaction); fold away from you in inauspicious occasions. **Environmental impact**: Completely biodegradable and compostable; sustainable alternative to disposable plates; decomposes naturally within weeks. **Regional specialties**: **Kizhi Biryani** (Kerala) - Biryani wrapped in banana leaf and steamed; "Kizhi" (കിഴി) means pouch or bundle (பொதி in Tamil); the leaf imparts aroma and keeps rice moist; **Meen Pollichathu** (Kerala) - Fish (usually Pearl Spot/Karimeen) wrapped in banana leaf and roasted/grilled; "Pollichathu" (പൊള്ളിച്ചത്) means roasted or pan-fried, translating to "fish roasted in banana leaf" (வாழை இலையில் சுடவைத்த மீன் / வாழை இலையில் பொரித்த மீன்); "Pollichathu" (பொலிச்சது) means "வெந்து/பொரித்தது" in Tamil.
 >
 > - **Therali Leaf / Vayana Leaf** (தெரளி இலை / வாயனா இலை): Aromatic, broad green leaves with a distinctive fragrance; traditionally used for wrapping and steaming traditional South Indian sweets and snacks. **Characteristics**: Large, flexible, aromatic leaves; naturally imparts a unique, pleasant herbal aroma to food; biodegradable and food-safe; commonly found in Kerala and Tamil Nadu. **Botanical source**: The leaf comes from specific native plants in South India; the exact botanical identity varies by region (some sources refer to wild turmeric or related aromatic plants). **Uses**: Primarily used for making **Therali Kozhukattai** or **Therali Appam** - a special type of steamed rice dumpling; batter or dough is wrapped in the leaf and steamed; the leaf's aroma penetrates the food, giving it a distinctive flavor. **Preparation**: Leaves are cleaned, sometimes briefly passed over flame to make pliable; food is placed in center, leaf is folded into a packet, and steamed. **Cultural significance**: Traditional in Tamil Nadu and Kerala cuisines; associated with festivals and special occasions; the unique aroma of Therali Kozhukattai is considered nostalgic and authentic; part of ancestral cooking methods. **Regional specialty**: **Therali Kozhukattai / Therali Appam** (Tamil Nadu & Kerala) - Sweet or savory rice dumplings steamed in Therali/Vayana leaves; the leaf imparts an unmistakable aromatic flavor that defines this dish; popular during Ganesh Chaturthi and other festivals. **Availability**: Seasonal availability in South Indian markets, especially in Kerala and rural Tamil Nadu; sold fresh in bundles; can be hard to find in urban areas or outside South India. **Modern challenges**: Becoming less common due to urbanization and availability issues; some traditional cooks preserve frozen leaves for year-round use.
 >
@@ -259,13 +259,18 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
-| **Spinach** | பசலைக்கீரை (Pasalai Keerai) | ಸೊಪ್ಪು (Soppu) | पालक (Palak) |
+| **Spinach** | கீரை (Keerai) | ಸೊಪ್ಪು (Soppu) | पालक (Palak) |
 | **Fenugreek Leaves** | வெந்தயக்கீரை (Vendhaya Keerai) | ಮೆಂತೆ ಸೊಪ್ಪು (Menthe Soppu) | मेथी साग (Methi Saag) |
 | **Amaranth Leaves / Red Spinach** | அரைக்கீரை / தண்டுக்கீரை (Arai Keerai / Thandu Keerai) | ದಂಟು ಸೊಪ್ಪು (Dantu Soppu) | लाल साग / चौलाई (Laal Saag / Chaulai) |
 | **Colocasia Leaves** | சேப்பங்கிழங்கு இலை (Seppan Keerai) | ಕೇಸವಿನ ಎಲೆ (Kesavina Ele) | अरबी पत्ता (Arbi Patta) |
 | **Dill Leaves** | சதகுப்பை (Sadhakuppai) | ಸಬ್ಬಸಿಗೆ ಸೊಪ್ಪು (Sabbasige Soppu) | सोआ (Sowa) |
 | **Moringa Leaves** | முருங்கைக்கீரை (Murungai Keerai) | ನುಗ್ಗೆ ಸೊಪ್ಪು (Nugge Soppu) | सहजन पत्ता (Sahjan Patta) |
 | **Black Nightshade Leaves** | மணத்தக்காளி கீரை / மணித்தக்காளி கீரை (Manathakkali Keerai) | ಗಣಿಕೆ ಸೊಪ್ಪು / ಕಾಗೆ ಸೊಪ್ಪು / ಕಾಮನಿ ಸೊಪ್ಪು (Ganike Soppu / Kaage Soppu / Kamani Soppu) | मकोय साग (Makoy Saag) |
+| **Celery** | சீவரி கீரை (Seevari Keerai) | ಸೆಲರಿ (Celery) | अजमोदा (Ajmoda) |
+| **Purslane** | பருப்புக்கீரை / தரைக்கீரை / கொழுக்கட்டைக் கீரை (Paruppukeerai / Tharai Keerai / Kozhukkattai Keerai) | ದೊಡ್ಡಪತ್ರೆ ಸೊಪ್ಪು (Doddapatre Soppu) | कुलफा (Kulfa) |
+| **Coriander Leaves** | கொத்தமல்லி (Kothamalli) | ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು (Kothambari Soppu) | हरा धनिया (Hara Dhaniya) |
+| **Mint Leaves** | புதினா (Pudhina) | ಪುದೀನ (Pudeena) | पुदीना (Pudeena) |
+| **Neem Leaves / Margosa Leaves** | வேப்பிலை (Veppilai) | ಬೇವಿನ ಎಲೆ (Bevina Ele) | नीम पत्ता (Neem Patta) |
 
 </div>
 
@@ -496,6 +501,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Banana** | வாழைப்பழம் (Vazhaipaazham) | ಬಾಳೆಹಣ್ಣು (Baalehannnu) | केला (Kela) |
 | **Mango** | மாம்பழம் (Maampazham) | ಮಾವಿನ ಹಣ್ಣು (Maavina Hannu) | आम (Aam) |
 | **Orange** | ஆரஞ்சு / ஆரஞ்சு பழம் (Orange) | ಕಿತ್ತಳೆ (Kitthale) | संतरा (Santara) |
+| **Pomelo** | பம்பளிமாசு / பெரிய எலுமிச்சை (Pampalimaasu / Periya Elumichai) | ಚಕೋತರ (Chakotra) | चकोतरा (Chakotara) |
 | **Grapes** | திராட்சை (Thiratchai) | ದ್ರಾಕ್ಷಿ (Draakshi) | अंगूर (Angoor) |
 | **Watermelon** | தர்பூசணி (Tharpoosani) | ಕಲ್ಲಂಗಡಿ (Kallangadi) | तरबूज (Tarbooz) |
 | **Muskmelon** | முலாம்பழம் (Mulaampazham) | ಮೋಸಂಬಿ (Mosambi) | खरबूज (Kharbooj) |
