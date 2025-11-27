@@ -5,6 +5,7 @@ date: 2023-01-01
 tags: ["test", "markdown"]
 category: astro
 lastUpdated: 2024-10-03
+outdated: 1
 ---
 
 ## This is a H2 Heading

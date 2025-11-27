@@ -3,6 +3,7 @@ title: "Complete Table Theme Showcase"
 description: "Comprehensive testing of all table themes with their grid variants, center alignment, and responsive behavior"
 date: 2025-10-08
 tags: ["tables", "themes", "grid", "responsive", "complete", "system"]
+outdated: 1
 ---
 
 # 🎨 Complete Table Theme System

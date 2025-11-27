@@ -4,6 +4,8 @@ description: Learn how to use the interactive image carousel component with smoo
 date: 2025-11-09
 tags: [astro, react, carousel, ui, gallery, mdx, animations]
 category: tutorial
+outdated: 1
+lastUpdated: 2025-11-27
 ---
 
 import { Carousel } from '@/react/Carousel';
@@ -30,6 +32,11 @@ The Carousel is a React component that displays images in a slideshow format, fe
 
 ```jsx
 import { Carousel } from '@/react/Carousel';
+```
+or with relative path:
+
+```jsx
+import { Carousel } from '../../react/Carousel';
 ```
 
 > **Important:** Always use the `.mdx` file extension (not `.md`) when working with React components in your blog posts.
@@ -336,5 +343,3 @@ The Carousel component provides an elegant solution for displaying multiple imag
 - ✅ Works seamlessly in Astro/MDX with `client:load`
 
 Start creating beautiful image galleries in your blog posts today! 🚀
-
----

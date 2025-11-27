@@ -5,6 +5,7 @@ date: 2025-10-05
 colorHighlight: true
 tags: ["test", "colors", "styling"]
 relatedArticles: ['color-text-with-react']
+outdated: 1
 ---
 
 # Color Highlighting with CSS Styling Test
