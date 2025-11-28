@@ -33,12 +33,12 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Anchovy** | நெத்திலி (Nethili) | ನೆತ್ತಿಲಿ (Nethili / Nethallu / Bolingei Kollathuru) | झींगा मछली (Jhinga Machli) | ✅ **Best:** Deep fry, dry fry<br>💪 Very high calcium<br>🦴 Eaten whole with bones<br>💰 Very cheap<br>🧂 Often dried for pickles |
 | **Ribbon Fish** | வாளை மீன்/ சாவாளை மீன் (Vaalai / Savaalai) | ಸವಾಲ (Saval) | पट्टी मछली (Patti Machli) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Budget-friendly<br>⚡ Long, flat shape - cut into pieces |
 | **Barracuda / Sea Pike** | ஷீலா / சீலா / ஊலா / ஊழா / ஊளி / பிளிஞ்சன் / கோலா (Sheela / Seela / Pilinjan/ Oozha / Ooli), നെടുവ (Neduva), കോടുവ (Koduva), തിരുതക്കടിയന് (Thiruthakkadian) | Obantol, Kanaki, Suruli, Kandai (ಕಂಡಾಯಿ/ಕನಕಿ/ಒಬಂಟೊಲ್) | कांटा (Kanta) | ✅ **Best:** Curry, fry<br>💪 High protein, low calories & Vitamin B12<br>🦴 Some bones<br>⚠️ May contain ciguatera toxin in large fish<br>🔥 Strong flavor<br>🏋️ Good for fitness (high protein)<br>🧴 Supports healthy hair (protein + B12-vitamins) |
-| **Indian Salmon / Four-finger Threadfin Fish** | கானமீன் / காலா மீன் / காளா மீன் (Kaana Meen / Kala Meen) |  Arkoli/ Rumus (ಅರ್ಕೊಲಿ/ರುಮುಸ್) | रावस / हिलसा (Ravas / Hilsa) | ✅ **Best:** Fry, curry, steam<br>💪 Very high Omega-3<br>🦴 Boneless fillets<br>💎 Expensive<br>⭐ Excellent for all cooking methods |
+| **Indian Salmon / Four-finger Threadfin Fish** | கானமீன் / காலா மீன் / காளா மீன் (Kaana Meen / Kala Meen), വാഴമീൻ (Vazhmeen) |  Arkoli/ Rumus (ಅರ್ಕೊಲಿ/ರುಮುಸ್) | रावस / हिलसा (Ravas / Hilsa) | ✅ **Best:** Fry, curry, steam<br>💪 Very high Omega-3<br>🦴 Boneless fillets<br>💎 Expensive<br>⭐ Excellent for all cooking methods |
 | **Grouper/ Reef Cod** | புள்ளி களவாய் / களவா மீன் / கல்லு மீன்/ களவான் (Pulli Kalava / Kalava meen / Kallu Meen) | ಗರೋಪ (Garopa) | गरूपा (Garupa) | ✅ **Best:** Steam, curry, fry, Grill<br>💪 High protein, low fat<br>🦴 Few bones<br>💎 Premium fish<br>⭐ Sweet, mild flavor |
 | **Goat Fish / Red Mullet** | நவரை மீன் / நகரை (Navarai Meen / Nagarai) | ನವರೈ ಮೀನು / ಕೆಂಪು ಮುಲ್ಲೆಟ್ (Navarai Meenu / Kempu Mullet) | बकरी मछली / लाल मुल्लेट (Bakri Machli / Laal Mullet) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Reddish color, goat-like barbels |
 | **Red Snapper** | சங்கரா / பட்டை சங்கரா / ரத்த மீன் / செம்பள்ளி (Sankara / Ratha Meen) | ಕೆಂಪು ಸ್ನಾಪರ್ (Kempu Snaper) | रानी मछली / लाल मछली (Rani Machli / Lal Machli) | ✅ **Best:** BBQ, fry, curry<br>💪 High protein, Vitamin D<br>🦴 Moderate bones<br>💎 Premium<br>⭐ Firm, sweet meat |
 | **Romeo Fish** | ரோமியோ மீன் | ರೋಮಿಯೋ ಮೀನು (Romeo Meenu) | रोमियो मछली (Romeo Machli) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Few bones<br>💰 Affordable<br>⭐ Similar to Sankara (red snapper) but without the yellow stripe and has fewer bones. |
-| **Pink Perch** | ராணி / ரத்தின் மீன் / வெள்ளை சங்கரா (Rathin Meen / Vellai Sankara) | ಗುಲಾಬಿ ಪರ್ಚ್ (Gulabi Perch) | गुलाबी पर्च (Gulabi Perch) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Pink-tinged flesh |
+| **Pink Perch** | ராணி / ரத்தின் மீன் / வெள்ளை சங்கரா (Rathin Meen / Vellai Sankara), കിളിമീൻ(Kilimeen) | ಗುಲಾಬಿ ಪರ್ಚ್ (Gulabi Perch) | गुलाबी पर्च (Gulabi Perch) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Pink-tinged flesh |
 | **White Perch** | வெள்ளை பெர்ச் (Vellai Perch) | ಬಿಳಿ ಪರ್ಚ್ (Bili Perch) | सफेद पर्च (Safed Perch) | ✅ **Best:** Fry, curry<br>💪 Good protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Mild flavor |
 | **Snapper Fish / White Snapper** | கொறுக்கை / கொருக்கை / கொண்டல் மீன் (Korukkai / Kondal Meen) | ಸ್ನಾಪರ್ ಮೀನು (Snaper Meenu) | स्नैपर मछली (Snapper Machli) | ✅ **Best:** Fry, curry, steam<br>💪 High protein<br>🦴 Moderate bones<br>💰 Affordable<br>⭐ Versatile |
 | **Shark** | சுறா (Sura) | ಶಾರ್ಕ್ (Shark) | शार्क / मोरी (Shark / Mori) | ✅ **Best:** Curry, fry<br>💪 Very high protein<br>🦴 Boneless<br>⚠️ Very high mercury - avoid pregnancy<br>⚠️ Endangered - avoid consumption |
@@ -75,21 +75,31 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 
 > **About Salmon (Indian & International):**
 >
-> **True salmon** (Atlantic and Pacific species) are cold-water fish found in Europe, North America, and Japan & famous for their epic migrations. They are born in freshwater rivers, swim to the ocean to grow, and return upstream to spawn. Their flesh is usually pink to deep orange, rich in healthy Omega-3 fats, and ranges from firm (King, Sockeye) to delicate (Coho, Pink). Wild Pacific salmon (like Sockeye, King, Coho) are prized for their flavor and color, while most Atlantic salmon in stores is farm-raised, milder, and more widely available.
+> **True salmon** (Atlantic & Pacific species) are cold-water fish from Europe, North America, and Japan, famous for their river-to-sea migration. Their flesh ranges from pink to deep orange, rich in Omega-3, and varies from firm (King, Sockeye) to delicate (Coho, Pink). Wild Pacific salmon are prized for color and taste, while most Atlantic salmon available globally is farm-raised and milder.
 >
-> **Atlantic Salmon** is almost always farm-raised, especially in Norway, Scotland, and Canada. It has a mild, buttery taste, soft pink flesh, and is popular for grilling, baking, sushi, and smoking. Wild Atlantic salmon is now rare due to overfishing.
+> **Atlantic Salmon** is almost entirely farmed in Norway, Scotland, and Canada. It has a mild, buttery flavour with soft pink flesh, perfect for grilling, baking, sushi, and smoking. Wild Atlantic salmon has become rare over time.
 >
-> **Pacific Salmon** (Sockeye, King, Coho, Pink, Chum) are mostly wild-caught in Alaska, Canada, and Russia. They have a deeper color, firmer texture, and richer flavor than farmed Atlantic salmon. Sockeye is especially known for its deep red color and robust taste.
+> **Pacific Salmon** (Sockeye, King, Coho, Pink, Chum) are mostly wild-caught in Alaska, Canada, and Russia. They have deeper colour, firmer texture, and richer flavour. Sockeye is especially known for its intense red flesh.
 >
-> **Indian Salmon** (Ravas, Gurjali, Kaana Meen, Kala Meen) is not a true salmon, but a local warm-water species (threadfin) found along India's coasts. It is called "salmon" for its premium quality, boneless fillets, and mild, sweet flavor. Flesh is white to pale pink, softer than true salmon, and excellent for curries, steaming, or frying. Indian salmon does not migrate like true salmon and is adapted to warm tropical waters.
+> **Indian Salmon** (Ravas, Gurjali, Kaana Meen, Kala Meen) is **called “salmon” only by name**. It is **not a true salmon**, but a warm-water **threadfin** species found along India’s **west coast**—especially Maharashtra, Goa, Karnataka & Gujarat. Flesh is white to pale pink, soft, and mildly sweet, ideal for curries, steaming, and shallow frying.
 >
-> **Cold-water vs Warm-water Fish:** True salmon thrive in cold, oxygen-rich waters and develop firmer, oilier flesh with a distinct color and taste. Warm-water species like Indian salmon (Ravas) have milder flavor, softer flesh, and less intense color. Most imported "salmon" in India is farmed Atlantic salmon, while local "Indian salmon" is a different species altogether.
+> **Trout in India:**
+> Trout belongs to the **same family as salmon (Salmonidae)** but is **not a sea fish**. It is a **freshwater cold-water fish**, originally introduced by the British. Rainbow Trout is found in Himalayan regions and also in the **Nilgiris—Ooty, Avalanche, and Kodaikanal**.
 >
-> **Speciality:** True salmon are famous for their river-to-ocean migration, pink-orange color, and high Omega-3. Indian salmon is prized for its boneless fillets, mild taste, and versatility in Indian cooking. Both are healthy, but true salmon is richer in Omega-3 and has a firmer, oilier texture.
+> **Availability:**
+>
+> * **Indian Salmon (Ravas):** West-coast fish markets, metro seafood counters, online platforms.
+> * **True Salmon (Atlantic/Pacific):** Mostly imported; available in **gourmet seafood counters**, premium supermarkets, hotels, and sushi restaurants.
+> * **Trout:** Hill-state markets (Kashmir, Himachal, Uttarakhand) and **Nilgiris** (Ooty, Avalanche, Kodaikanal).
+>
+> **Cold-water vs Warm-water Fish:**
+> True salmon grow in cold, oxygen-rich waters, giving firm, oily, colorful flesh. Indian salmon grows in warm tropical waters, resulting in softer, milder meat. Trout is freshwater, cold-water, and delicate in texture.
 >
 > **Cooking Tips:**
-> - **Atlantic/Pacific Salmon:** Best for grilling, baking, sushi, or smoking due to firm, oily flesh.
-> - **Indian Salmon (Ravas):** Great for steaming, curries, or shallow frying; flesh is softer and absorbs spices well.
+>
+> * **Atlantic/Pacific Salmon:** Best for grilling, baking, sushi, smoking.
+> * **Indian Salmon (Ravas):** Excellent for curries, steaming, shallow frying.
+> * **Trout:** Ideal for pan-frying or gentle grilling.
 
 ## 🏞️ Popular River & Freshwater Fish
 
@@ -161,6 +171,23 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 | **Pond Turtle / Freshwater Turtle** | குளத்து ஆமை (Kulathu Aamai) | ಕೆರೆ ಆಮೆ / ನೀರಿನ ಆಮೆ (Kere Aame / Neerina Aame) | तालाब कछुआ / मीठे पानी का कछुआ (Talab Kachua / Meethe Paani Ka Kachua) |
 
 </div>
+
+> **Best-Selling Sea Fish: India & Worldwide**
+>
+> **Worldwide:**
+>
+> * **Tuna** is the world’s **#1 sea fish by volume** (massive catch, affordable price, extremely high global consumption—fresh, frozen, and canned).
+> * **Salmon** is the leading **premium** sea fish, valued for Omega-3 richness, color, and taste.
+> * **Cod** is popular for its **white, flaky, mild-tasting meat**, especially in Europe and North America.
+> * Other high-demand sea species include **Mackerel**, **Sardine**, **Halibut**, **Snapper**, and **Sea Bass**.
+>
+> **India:**
+>
+> * **Indian Mackerel (Bangda)** and **Sardines (Mathi)** dominate **volume & affordability**, making them the most consumed sea fish.
+> * **Tuna** (Indian Ocean tuna varieties) is widely landed and consumed, with strong export demand.
+> * **Seer Fish (King Fish / Vanjaram)** is a top **premium sea fish** for its firm texture and excellent taste.
+> * **Indian Salmon (Ravas)** is another **premium coastal species**, valued for its boneless fillets and mild flavour.
+> * Imported premium options like **Norwegian Atlantic Salmon** *(farmed in Norway’s cold waters)*, **Sea Bass**, **Snapper** and **Pomfret** are popular in gourmet seafood counters and upscale restaurants in major cities.
 
 **Note on Shellfish:**
 - ✅ High protein, minerals (zinc, selenium)
@@ -322,4 +349,3 @@ Fish names may vary by region and local dialects. This guide uses the most widel
 **Disclaimer:** This guide provides general information. Consult healthcare professionals for specific dietary advice, especially during pregnancy or medical conditions. Fish consumption recommendations may vary based on individual health status.
 
 [^1]: Article about [sardine](https://kanaiyali.com/sardine-fish/)
-
