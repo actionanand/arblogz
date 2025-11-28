@@ -73,7 +73,23 @@ Use Ctrl+F (Cmd+F on Mac) to quickly search for any fish name in your preferred 
 
 </div>
 
-</div>
+> **About Salmon (Indian & International):**
+>
+> **True salmon** (Atlantic and Pacific species) are cold-water fish found in Europe, North America, and Japan & famous for their epic migrations. They are born in freshwater rivers, swim to the ocean to grow, and return upstream to spawn. Their flesh is usually pink to deep orange, rich in healthy Omega-3 fats, and ranges from firm (King, Sockeye) to delicate (Coho, Pink). Wild Pacific salmon (like Sockeye, King, Coho) are prized for their flavor and color, while most Atlantic salmon in stores is farm-raised, milder, and more widely available.
+>
+> **Atlantic Salmon** is almost always farm-raised, especially in Norway, Scotland, and Canada. It has a mild, buttery taste, soft pink flesh, and is popular for grilling, baking, sushi, and smoking. Wild Atlantic salmon is now rare due to overfishing.
+>
+> **Pacific Salmon** (Sockeye, King, Coho, Pink, Chum) are mostly wild-caught in Alaska, Canada, and Russia. They have a deeper color, firmer texture, and richer flavor than farmed Atlantic salmon. Sockeye is especially known for its deep red color and robust taste.
+>
+> **Indian Salmon** (Ravas, Gurjali, Kaana Meen, Kala Meen) is not a true salmon, but a local warm-water species (threadfin) found along India's coasts. It is called "salmon" for its premium quality, boneless fillets, and mild, sweet flavor. Flesh is white to pale pink, softer than true salmon, and excellent for curries, steaming, or frying. Indian salmon does not migrate like true salmon and is adapted to warm tropical waters.
+>
+> **Cold-water vs Warm-water Fish:** True salmon thrive in cold, oxygen-rich waters and develop firmer, oilier flesh with a distinct color and taste. Warm-water species like Indian salmon (Ravas) have milder flavor, softer flesh, and less intense color. Most imported "salmon" in India is farmed Atlantic salmon, while local "Indian salmon" is a different species altogether.
+>
+> **Speciality:** True salmon are famous for their river-to-ocean migration, pink-orange color, and high Omega-3. Indian salmon is prized for its boneless fillets, mild taste, and versatility in Indian cooking. Both are healthy, but true salmon is richer in Omega-3 and has a firmer, oilier texture.
+>
+> **Cooking Tips:**
+> - **Atlantic/Pacific Salmon:** Best for grilling, baking, sushi, or smoking due to firm, oily flesh.
+> - **Indian Salmon (Ravas):** Great for steaming, curries, or shallow frying; flesh is softer and absorbs spices well.
 
 ## 🏞️ Popular River & Freshwater Fish
 
@@ -306,3 +322,4 @@ Fish names may vary by region and local dialects. This guide uses the most widel
 **Disclaimer:** This guide provides general information. Consult healthcare professionals for specific dietary advice, especially during pregnancy or medical conditions. Fish consumption recommendations may vary based on individual health status.
 
 [^1]: Article about [sardine](https://kanaiyali.com/sardine-fish/)
+
