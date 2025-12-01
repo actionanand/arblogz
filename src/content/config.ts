@@ -48,6 +48,10 @@ const blog = defineCollection({
     
     // Password protection feature
     passwordProtected: z.boolean().optional(),
+    
+    // Disclaimer feature - disabled by default
+    showDisclaimer: z.boolean().default(false).optional(),
+    customDisclaimer: z.string().optional(),
   }),
 });
 
