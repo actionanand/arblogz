@@ -67,6 +67,8 @@ export  let cs = {
   'post.thanksForReading': 'Děkujeme za přečtení!',
   'post.relatedArticles': 'Související články',
   'post.continueExploring': 'Pokračujte v prozkoumávání souvisejících témat',
+  'post.disclaimer': 'Zřeknutí se odpovědnosti',
+  'post.defaultDisclaimer': 'Informace uvedené v tomto článku jsou pouze pro obecné informační účely. I když se snažíme udržovat informace přesné a aktuální, neposkytujeme žádná prohlášení ani záruky jakéhokoli druhu, výslovné nebo předpokládané, ohledně úplnosti, přesnosti, spolehlivosti, vhodnosti nebo dostupnosti informací. Jakékoli spoléhání se na tyto informace je výhradně na vaše vlastní riziko.',
   'post.readArticle': 'Přečíst článek',
   'search.labelOne':'Zobrazení článků pod',
   'search.labelTwo':'',

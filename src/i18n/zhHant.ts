@@ -44,6 +44,8 @@ export  const zhHant = {
   'post.thanksForReading': '感謝閱讀！',
   'post.relatedArticles': '相關文章',
   'post.continueExploring': '繼續探索相關主題',
+  'post.disclaimer': '免責聲明',
+  'post.defaultDisclaimer': '本文提供的資訊僅供一般參考之用。儘管我們努力保持資訊的準確性和時效性，但我們不對資訊的完整性、準確性、可靠性、適用性或可用性作任何明示或暗示的陳述或保證。您對此類資訊的任何依賴均由您自行承擔風險。',
   'post.readArticle': '閱讀文章',
   'sidebar.categories': '分類',
   'sidebar.uncategorized': '未分類',
