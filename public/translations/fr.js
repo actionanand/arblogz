@@ -63,6 +63,8 @@ const fr = {
   'post.thanksForReading': 'Merci d\'avoir lu!',
   'post.relatedArticles': 'Articles connexes',
   'post.continueExploring': 'Continuez à explorer les sujets connexes',
+  'post.disclaimer': 'Avertissement',
+  'post.defaultDisclaimer': 'Les informations fournies dans cet article sont uniquement à des fins d\'information générale. Bien que nous nous efforcions de maintenir les informations exactes et à jour, nous ne faisons aucune déclaration ou garantie de quelque nature que ce soit, expresse ou implicite, concernant l\'exhaustivité, l\'exactitude, la fiabilité, l\'adéquation ou la disponibilité des informations. Toute confiance que vous accordez à ces informations est strictement à vos propres risques.',
   'post.readArticle': 'Lire l\'article',
   'remark.open': 'Ouvrir',
   'more': 'Plus',
