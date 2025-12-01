@@ -9,6 +9,7 @@ lastUpdated: 2025-11-18
 outdated: 1
 relatedArticles: ["fish-names-multilingual", "meat-and-poultry-guide"]
 ---
+import { BookCard, BookCardContainer } from '@/react/Cards';
 
 A complete reference guide for grocery items including rice, pulses (dal), spices, vegetables, fruits, nuts, and more across Tamil, English, Kannada, and Hindi languages. Perfect for shopping, cooking, and expanding your culinary vocabulary!
 
@@ -430,10 +431,10 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 | English Name | Tamil Name | Kannada Name | Hindi Name |
 |--------------|------------|--------------|------------|
-| **Cashew Nuts** | முந்திரி (Mundhiri) | ಗೋಡಂಬಿ (Godambi) | काजू (Kaju) |
+| **Cashew Nuts** | முந்திரி / அண்டிபருப்பு (Mundhiri / Andi Paruppu) | ಗೋಡಂಬಿ (Godambi) | काजू (Kaju) |
 | **Almonds** | பாதாம் (Baadham) | ಬಾದಾಮಿ (Baadami) | बादाम (Badam) |
-| **Pistachios** | பிஸ்தா (Pista) | ಪಿಸ್ತಾ (Pista) | पिस्ता (Pista) |
-| **Walnuts** | அக்ரூட் (Akroot) | ಅಕ್ರೋಟು (Akrotu) | अखरोट (Akhrot) |
+| **Pistachios** | இன்பசுங்கொட்டை / பசுங்கொட்டை / பசும்பருப்பு (Inbasungkottai / Pasungkottai) | ಪಿಸ್ತಾ (Pista) | पिस्ता (Pista) |
+| **Walnuts** | வாதுமைக் கொட்டை (Vathumai Kottai) | ಅಕ್ರೋಟು (Akrotu) | अखरोट (Akhrot) |
 | **Groundnuts / Peanuts** | நிலக்கடலை / வேர்க்கடலை (Nilakadalai) | ಕಡಲೆಕಾಯಿ (Kadalekayi) | मूंगफली (Moongphali) |
 | **Sesame Seeds** | எள் (Ellu) | ಎಳ್ಳು (Ellu) | तिल (Til) |
 | **Sunflower Seeds** | சூரியகாந்தி விதை (Sooriyakanthi Vidhai) | ಸೂರ್ಯಕಾಂತಿ ಬೀಜ (Sooryakanthi Beeja) | सूरजमुखी के बीज (Surajmukhi Ke Beej) |
@@ -444,7 +445,7 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 
 </div>
 
-### 🌱 Sprouts (முளைக்கட்டிய பயறு / ಮೊಳಕೆ / अंकुरित)
+### 🌱 Sprouts (முளைக்கட்டிய தானியங்கள் அல்லது பயறுகள் / ಮೊಳಕೆ / अंकुरित)
 
 <div class="table-luxury-grid">
 
@@ -456,6 +457,37 @@ Pulses are dried seeds of legume plants. They are a staple protein source in Ind
 | **Lentil Sprouts** | முளைகட்டிய பருப்பு (Mulaikattiya Paruppu) | ಬೇಳೆ ಮೊಳಕೆ (Bele Molake) | दाल अंकुरित (Dal Ankurit) |
 
 </div>
+
+<BookCardContainer>
+  <BookCard
+    client:load
+    icon="ri-seedling-line"
+    title="Sprouts"
+    subtitle="முளைக்கட்டிய தானியங்கள்"
+    heading="Sprouts"
+    color="camping"
+  >
+    Sprouts are grains or legumes that are soaked and allowed to germinate naturally. This live germination boosts vitamins, enzymes, and mineral absorption, making them easier to digest and ideal for health-focused eating. Sprouts are consumed fresh or lightly cooked and are known for supporting fitness, digestion, and weight control.
+  </BookCard>
+</BookCardContainer>
+
+<BookCardContainer>
+  <BookCard
+    client:load
+    icon="ri-drinks-2-line"
+    title="Malt"
+    subtitle="முளைக்கட்டி உலர்த்திய தானியம்"
+    heading="Malt"
+    color="city"
+  >
+  **Malt**, on the other hand, is essentially a **sprouted cereal grain that has been dried**. The grains are soaked → germinated → then dried/roasted to stop growth. This drying stage creates the natural **malt sweetness**, aroma, and flavour used in health drinks, biscuits, and brewing. **Barley is the most preferred and common grain for malting**, thanks to its enzyme activity, flavour, and consistent quality. Other grains also used for malting include **wheat, sorghum, ragi (finger millet), bajra (pearl millet), corn (maize), and rice**—each adding different flavour and enzyme characteristics.
+  </BookCard>
+</BookCardContainer>
+
+:::info[In short]
+**sprouts** are fresh, living, nutrient-boosted grains, while **malt** is sprouted and then dried to create sweetness, flavour, and longer shelf life.
+:::
+
 
 ### 🥒 Pickles & Preserves (ஊறுகாய் / ಉಪ್ಪಿನಕಾಯಿ / अचार)
 
