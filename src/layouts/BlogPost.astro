@@ -7,6 +7,7 @@ import Comment from '@/components/Comment.astro'
 import Toc from '@/components/Toc.astro'
 import Donate from '@/components/Donate.astro';
 import RelatedArticles from '@/components/RelatedArticles.astro';
+import Disclaimer from '@/components/Disclaimer.astro';
 import PasswordProtection from '@/components/PasswordProtection.astro';
 import {comment, config, donate} from "@/consts";
 import ScrollToTop from '@/components/ScrollToTop.astro'
@@ -23,6 +24,8 @@ const {
     donateMessage: undefined,
     customDonate: undefined,
     passwordProtected: undefined, // Can be true, false, or undefined
+    showDisclaimer: false, // Can be true or false, default is false
+    customDisclaimer: undefined, // Custom disclaimer text
   },
 } = Astro.props;
 
@@ -63,6 +66,13 @@ const shouldShowDonate = donate.enable && (
       {
         frontmatter.relatedArticles && frontmatter.relatedArticles.length > 0 && (
           <RelatedArticles relatedSlugs={frontmatter.relatedArticles} />
+        )
+      }
+      
+      <!-- Disclaimer Section - Show only when enabled in frontmatter -->
+      {
+        frontmatter.showDisclaimer && (
+          <Disclaimer customDisclaimer={frontmatter.customDisclaimer} />
         )
       }
       

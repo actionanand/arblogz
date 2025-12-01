@@ -169,7 +169,8 @@ const BookCard = ({
   const subtitleStyle = {
     fontSize: '1.2rem',
     marginTop: '-.2rem',
-    color: '#fafbfa'
+    color: '#fafbfa',
+    textAlign: 'center'
   };
 
   const cardFrontBtStyle = {
@@ -225,7 +226,9 @@ const BookCard = ({
     textAlign: 'center',
     width: '100%',
     justifyContent: 'space-between',
-    overflow: 'hidden'
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    overscrollBehavior: 'contain'
   };
 
   const insideHeadingStyle = {
