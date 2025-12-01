@@ -44,13 +44,13 @@ import {t} from '@/i18n/utils'
   let FUSE_OPTIONS = {
     includeScore: true,
     shouldSort: true,
-    threshold: 0.1,        // Much more precise (0.0 = exact match, 1.0 = match everything)
+    threshold: 0.4,        // More flexible matching (0.0 = exact match, 1.0 = match everything)
     location: 0,           // Search from the beginning of strings
-    distance: 100,         // How far from the beginning to search
+    distance: 1000,        // Allow matches anywhere in the text
     maxPatternLength: 32,  // Maximum pattern length
-    minMatchCharLength: 3, // Minimum characters that must match
-    ignoreLocation: false, // Consider location in matching
-    findAllMatches: false, // Stop after finding the first match
+    minMatchCharLength: 2, // Minimum characters that must match
+    ignoreLocation: true,  // Don't consider location - match anywhere in text
+    findAllMatches: true,  // Find all matches, not just the first one
     keys: [
       {
         name: 'title',
@@ -59,6 +59,14 @@ import {t} from '@/i18n/utils'
       {
         name: 'description',
         weight: 0.75
+      },
+      {
+        name: 'tags',
+        weight: 0.5
+      },
+      {
+        name: 'category',
+        weight: 0.5
       }
     ]
   }
@@ -277,7 +285,7 @@ import {t} from '@/i18n/utils'
     
     // Filter results by score to ensure quality matches
     // Lower scores are better in Fuse.js (0 = perfect match, 1 = no match)
-    const scoreThreshold = 0.3; // Only show results with score <= 0.3
+    const scoreThreshold = 0.6; // More lenient threshold - show results with score <= 0.6
     const searchResults = allSearchResults.filter(result => result.score <= scoreThreshold);
     
     console.log('Filtered search results:', searchResults.length, 'found (score <=', scoreThreshold, ')');
