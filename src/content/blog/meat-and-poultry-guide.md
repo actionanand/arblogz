@@ -537,6 +537,27 @@ Dumplings made with thin wheat or flour dough filled with meat or vegetables.
 - Always check with your butcher if you have specific requirements
 :::
 
+:::tip[Understanding Khasiwala Mutton]
+**Khasiwala** (खसीवाला / ಖಸೀವಾಲ) refers to **castrated male goat meat** - considered premium quality mutton in India, especially popular in Karnataka and neighboring states.
+
+**Why Khasiwala is Special:**
+- **Tender & Juicy**: Castration leads to more marbling (fat distribution), making meat exceptionally tender and flavorful
+- **Larger Size**: Khasi goats grow bigger than regular goats, yielding more meat per animal
+- **Less Gamey**: Milder, less pungent smell and taste compared to regular male goat (buck) meat
+- **Premium Pricing**: Typically 10-20% more expensive than regular mutton due to superior quality
+
+**Common in Bangalore**: Many butcher shops in Bangalore specifically advertise "Khasiwala Mutton" as a premium offering. Look for signs saying "Fresh Khasi Mutton" or "Premium Khasiwala."
+
+**How Halal Applies**: Khasiwala mutton can be both Halal (if slaughtered according to Islamic method) or Jhatka (Sikh method). The term "Khasiwala" refers to the type of goat, not the slaughter method. Most butchers in Bangalore offer Halal Khasiwala mutton, but it's always good to confirm if you have specific requirements.
+
+**Buying Tips**: 
+- Ask your butcher specifically for "Khasi" or "Khasiwala" mutton
+- Slightly pinkish-red color with visible marbling
+- Should have less strong odor than regular mutton
+- Best cuts: leg (raan), shoulder, and ribs
+- Ideal for biryanis, curries, and grills due to tenderness
+:::
+
 ## 🌍 Regional Meat Preferences
 
 <div class="table-ocean-grid">
