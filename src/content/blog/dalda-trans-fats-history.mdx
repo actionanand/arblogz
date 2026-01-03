@@ -516,39 +516,35 @@ They may look similar, but chemically and biologically, they're vastly different
 
 ```mermaid
 flowchart LR
-    subgraph S1["SATURATED FAT<br/>(Coconut Oil)"]
+    subgraph S1["SATURATED FAT - Coconut Oil"]
         direction TB
-        A1["No Double Bonds<br/>═══════════════<br/>═══════════════<br/>═══════════════"]
+        A1["No Double Bonds - Straight lines"]
         A2["Straight Chains"]
         A3["Very Tight Packing"]
         A4["Strong Forces"]
-        A5["⚫ SOLID"]
+        A5["SOLID"]
         A1 --> A2 --> A3 --> A4 --> A5
     end
     
-    subgraph S2["CIS UNSATURATED<br/>(Palmolein Oil)"]
+    subgraph S2["CIS UNSATURATED - Palmolein Oil"]
         direction TB
-        B1["Cis Double Bonds<br/>═══╗<br/>   ╚═══╗<br/>       ╚═══"]
+        B1["Cis Double Bonds - Bent shape"]
         B2["Bent Chains"]
         B3["Loose Packing"]
         B4["Weak Forces"]
-        B5["💧 LIQUID"]
+        B5["LIQUID"]
         B1 --> B2 --> B3 --> B4 --> B5
     end
     
-    subgraph S3["TRANS UNSATURATED<br/>(Dalda)"]
+    subgraph S3["TRANS UNSATURATED - Dalda"]
         direction TB
-        C1["Trans Double Bonds<br/>═══════════════<br/>═══════════════"]
+        C1["Trans Double Bonds - Straight"]
         C2["Artificially Straight"]
         C3["Tight Packing"]
         C4["Strong Forces"]
-        C5["🧈 SEMI-SOLID"]
+        C5["SEMI-SOLID"]
         C1 --> C2 --> C3 --> C4 --> C5
     end
-    
-    S1 -.Natural.-> S1
-    S2 -.Natural.-> S2
-    S3 -.Artificial!.-> S3
     
     style S1 fill:#fff4e1,stroke:#ff9800
     style S2 fill:#e1f5ff,stroke:#2196f3
@@ -733,30 +729,30 @@ Dalda, being a **partially hydrogenated** product, contained significant amounts
 ```mermaid
 flowchart TD
     subgraph Nature["NATURE'S DESIGN"]
-        N1["Liquid Oils<br/>(Cis double bonds)<br/>═══╗<br/>   ╚═══<br/>Healthy ✓"] 
-        N2["Solid Fats<br/>(No double bonds)<br/>═══════<br/>Natural ✓"]
+        N1["Liquid Oils - Cis double bonds - Healthy"] 
+        N2["Solid Fats - No double bonds - Natural"]
     end
     
     subgraph Industry["INDUSTRIAL PROCESS"]
-        I1["Take Liquid Oil<br/>(Palmolein)"]
-        I2["Add Hydrogen<br/>+ Catalyst + Heat"]
+        I1["Take Liquid Oil - Palmolein"]
+        I2["Add Hydrogen + Catalyst + Heat"]
         I3["Partial Hydrogenation"]
-        I4["Creates Trans Fats<br/>═══════<br/>Artificial ✗<br/>Dangerous ✗"]
+        I4["Creates Trans Fats - Artificial - Dangerous"]
         
         I1 --> I2 --> I3 --> I4
     end
     
     subgraph Problem["THE PROBLEM"]
-        P1["Looks like coconut oil<br/>(Both solid/semi-solid)"]
-        P2["Acts like coconut oil<br/>(Good for cooking)"]
-        P3["BUT chemically different!<br/>(Trans isomer)"]
-        P4["Body can't process it<br/>(Health disaster)"]
+        P1["Looks like coconut oil - Both solid/semi-solid"]
+        P2["Acts like coconut oil - Good for cooking"]
+        P3["BUT chemically different - Trans isomer"]
+        P4["Body cannot process it - Health disaster"]
         
         P1 --> P2 --> P3 --> P4
     end
     
-    Nature -."Both safe".-> Nature
-    I4 -."Mimics solid fat".-> Problem
+    N2 --> I1
+    I4 --> P1
     
     style N1 fill:#e1f5ff,stroke:#2196f3
     style N2 fill:#fff4e1,stroke:#ff9800
