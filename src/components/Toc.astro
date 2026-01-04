@@ -40,6 +40,70 @@ import {t} from '@/i18n/utils'
     white-space: nowrap;
     overflow: hidden;
   }
+
+  /* Heading hierarchy styles */
+  .toc-container :global(.toc-list) {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  /* H1 links - largest, boldest */
+  .toc-container :global(.toc-list > li > a) {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-base);
+    padding: 0.5rem 0;
+    display: block;
+    opacity: 0.95;
+  }
+
+  /* H2 links - medium, semi-bold */
+  .toc-container :global(.toc-list .toc-list > li > a) {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-base);
+    padding: 0.4rem 0 0.4rem 1rem;
+    display: block;
+    opacity: 0.85;
+    border-left: 2px solid rgba(128, 128, 128, 0.2);
+  }
+
+  /* H3 links - smaller, normal weight */
+  .toc-container :global(.toc-list .toc-list .toc-list > li > a) {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-base);
+    padding: 0.3rem 0 0.3rem 2rem;
+    display: block;
+    opacity: 0.75;
+    border-left: 2px solid rgba(128, 128, 128, 0.15);
+  }
+
+  /* Active/hover states for all levels */
+  .toc-container :global(.toc-list > li > a:hover),
+  .toc-container :global(.toc-list > li > a.is-active-link) {
+    color: #cc7a00;
+    opacity: 1;
+  }
+
+  .toc-container :global(.toc-list .toc-list > li > a:hover),
+  .toc-container :global(.toc-list .toc-list > li > a.is-active-link) {
+    color: #cc7a00;
+    opacity: 1;
+    border-left-color: #cc7a00;
+  }
+
+  .toc-container :global(.toc-list .toc-list .toc-list > li > a:hover),
+  .toc-container :global(.toc-list .toc-list .toc-list > li > a.is-active-link) {
+    color: #cc7a00;
+    opacity: 1;
+    border-left-color: #cc7a00;
+  }
+
+  /* Spacing between items */
+  .toc-container :global(.toc-list li) {
+    margin: 0.25rem 0;
+  }
 </style>
 
 <script>
