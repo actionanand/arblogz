@@ -1,0 +1,74 @@
+/* Remark SVG Render Plugin Styles */
+
+.remark-svg-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* Make SVGs responsive by default */
+.remark-svg-wrapper svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional: Add subtle shadow to SVGs */
+.remark-svg-wrapper.with-shadow svg {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Optional: Center aligned SVG wrapper */
+.remark-svg-wrapper.centered {
+  display: flex;
+  justify-content: center;
+}
+
+/* Optional: Left aligned SVG wrapper */
+.remark-svg-wrapper.left {
+  justify-content: flex-start;
+}
+
+/* Optional: Right aligned SVG wrapper */
+.remark-svg-wrapper.right {
+  justify-content: flex-end;
+}
+
+/* Optional: Add border to SVG container */
+.remark-svg-wrapper.bordered {
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Optional: Add background to SVG container */
+.remark-svg-wrapper.with-bg {
+  background-color: var(--color-card, #f5f5f5);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .remark-svg-wrapper.bordered {
+    border-color: var(--color-border-dark, #333);
+  }
+  
+  .remark-svg-wrapper.with-bg {
+    background-color: var(--color-card-dark, #1a1a1a);
+  }
+}
+
+/* Ensure SVGs don't overflow on mobile */
+@media (max-width: 640px) {
+  .remark-svg-wrapper {
+    margin: 1rem auto;
+  }
+  
+  .remark-svg-wrapper svg {
+    width: 100%;
+    height: auto;
+  }
+}
