@@ -21,6 +21,7 @@ import remarkCharacterDialogue from './src/plugins/remark-character-dialogue' /*
 import {remarkHtml} from './src/plugins/remark-html.js';
 import {remarkColorHighlight} from './src/plugins/remark-simple-highlight.js';
 import remarkGemoji from './src/plugins/remark-gemoji' /* for shortcode emoji support */
+import {remarkSvgRender} from './src/plugins/remark-svg-render.js'; /* Render SVG code as inline SVG */
 import rehypeRaw from 'rehype-raw'; /* Allow raw HTML in markdown */
 
 import react from '@astrojs/react';
@@ -54,6 +55,7 @@ export default defineConfig({
       remarkButton(), 
       remarkHtml(), 
       remarkColorHighlight,
+      remarkSvgRender(), 
       [remarkCharacterDialogue, { characters }],
       remarkGemoji,
     ],
