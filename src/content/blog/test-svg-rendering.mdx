@@ -1,0 +1,449 @@
+---
+title: "SVG Rendering Demo - Test Post"
+date: 2026-01-13
+description: "Testing the new remark-svg-render plugin with various SVG examples"
+tags: ["test", "svg", "demo"]
+category: tutorial
+draft: false
+sticky: 1
+lastUpdated: 2026-01-13
+outdated: 1
+showDisclaimer: true
+---
+
+import Highlight from "@/react/Highlight/Highlight.jsx";
+
+# SVG Rendering Plugin Demo
+
+This is a test post to demonstrate the new SVG rendering plugin functionality.
+
+## Example 1: Simple Circle
+
+Here's a basic SVG circle using code block syntax:
+
+```svg {class="bordered"}
+<svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="60" cy="60" r="50" fill="#ff6b6b" stroke="#c92a2a" stroke-width="3"/>
+</svg>
+```
+
+---
+
+## Example 2: Star with Custom Class
+
+Here's a star with custom width:
+
+```markdown
+svg {width="150px"}
+<svg viewBox="0 0 51 48" xmlns="http://www.w3.org/2000/svg">
+  <path d="M25.5 0L31.5 18.5H51L35.5 30L41.5 48.5L25.5 37L9.5 48.5L15.5 30L0 18.5H19.5L25.5 0Z" fill="gold" stroke="#ff8800" stroke-width="1.5"/>
+</svg>
+```
+
+```svg {width="150px"}
+<svg viewBox="0 0 51 48" xmlns="http://www.w3.org/2000/svg">
+  <path d="M25.5 0L31.5 18.5H51L35.5 30L41.5 48.5L25.5 37L9.5 48.5L15.5 30L0 18.5H19.5L25.5 0Z" fill="gold" stroke="#ff8800" stroke-width="1.5"/>
+</svg>
+```
+
+---
+
+## Example 3: Gradient Rectangle
+
+Beautiful gradient effect:
+
+```svg
+<svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(255,95,109);stop-opacity:1" />
+      <stop offset="50%" style="stop-color:rgb(255,195,113);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(168,85,247);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="150" rx="10" fill="url(#grad1)" />
+  <text x="150" y="80" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Gradient!</text>
+</svg>
+```
+
+---
+
+## Example 4: Responsive Icon
+
+Using viewBox for responsiveness:
+
+```svg {width="100px"}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="80" height="80" rx="10" fill="#4CAF50"/>
+  <circle cx="35" cy="35" r="8" fill="white"/>
+  <circle cx="65" cy="35" r="8" fill="white"/>
+  <path d="M 30 60 Q 50 75 70 60" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>
+```
+
+---
+
+## Example 5: Multiple Shapes
+
+Complex composition:
+
+```svg
+<svg width="250" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky -->
+  <rect width="250" height="100" fill="#87CEEB"/>
+  <!-- Ground -->
+  <rect y="100" width="250" height="100" fill="#90EE90"/>
+  <!-- Sun -->
+  <circle cx="200" cy="40" r="25" fill="#FFD700"/>
+  <!-- House -->
+  <rect x="80" y="80" width="90" height="80" fill="#D2691E"/>
+  <!-- Roof -->
+  <polygon points="75,80 125,40 175,80" fill="#8B4513"/>
+  <!-- Door -->
+  <rect x="110" y="120" width="30" height="40" fill="#654321"/>
+  <!-- Window -->
+  <rect x="95" y="95" width="20" height="20" fill="#87CEEB"/>
+  <rect x="135" y="95" width="20" height="20" fill="#87CEEB"/>
+</svg>
+```
+
+---
+
+## Example 6: Animated Circle (CSS Animation)
+
+```markdown
+svg {class="pulse-animation"}
+<svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="75" cy="75" r="50" fill="#6366f1">
+    <animate attributeName="r" values="50;60;50" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+```
+
+```svg {class="pulse-animation"}
+<svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="75" cy="75" r="50" fill="#6366f1">
+    <animate attributeName="r" values="50;60;50" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+```
+
+---
+
+## Example 7: Heart Icon
+
+```svg
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50,85 C25,70 5,50 5,30 C5,15 15,5 27.5,5 C35,5 42,10 50,20 C58,10 65,5 72.5,5 C85,15 95,15 95,30 C95,50 75,70 50,85 Z" fill="#e74c3c"/>
+</svg>
+```
+
+---
+
+## Example 8: Checkmark Icon
+
+```svg {width="80px"}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="45" fill="#10b981" stroke="#059669" stroke-width="3"/>
+  <path d="M 30 50 L 45 65 L 70 35" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+```
+
+---
+
+## Example 9: Warning Triangle
+
+```svg
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="50,10 90,85 10,85" fill="#f59e0b" stroke="#d97706" stroke-width="3"/>
+  <text x="50" y="65" font-family="Arial" font-size="50" font-weight="bold" fill="#78350f" text-anchor="middle">!</text>
+</svg>
+```
+
+---
+
+## Example 10: Info Icon
+
+```svg {width="90px"}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="45" fill="#3b82f6" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="50" cy="30" r="5" fill="white"/>
+  <rect x="45" y="42" width="10" height="35" rx="5" fill="white"/>
+</svg>
+```
+
+---
+
+## Using Directive Syntax
+
+You can also use the directive syntax:
+
+:::svg
+<svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="100" height="100" fill="#a855f7" rx="15"/>
+  <circle cx="60" cy="60" r="30" fill="white" opacity="0.3"/>
+</svg>
+:::
+
+---
+
+## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Conclusion </Highlight>
+
+The SVG rendering plugin works great! You can now easily embed SVG graphics directly in your markdown blog posts using either:
+
+- **Code blocks**: \`\`\`svg ... \`\`\'
+- **Directives**: `:::svg ... :::`
+
+### Code Block (Recommended)
+````
+```svg
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- SVG content here -->
+</svg>
+```
+````
+
+### Directive
+```
+:::svg
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- SVG content here -->
+</svg>
+:::
+```
+
+### Code Block with Attributes
+````
+```svg {class="custom-class" width="200px" height="150px"}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- SVG content -->
+</svg>
+```
+````
+
+### Directive with Attributes
+```
+:::svg{class="custom-class" width="200px"}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- SVG content -->
+</svg>
+:::
+```
+
+Both support custom styling through class names and inline styles. The plugin also includes built-in security features to prevent XSS attacks.
+
+## Common SVG Shapes
+
+### Circle
+```xml
+<circle cx="50" cy="50" r="40" fill="blue" />
+```
+
+### Rectangle
+```xml
+<rect x="10" y="10" width="80" height="60" fill="green" />
+```
+
+### Rounded Rectangle
+```xml
+<rect x="10" y="10" width="80" height="60" rx="10" fill="orange" />
+```
+
+### Ellipse
+```xml
+<ellipse cx="50" cy="50" rx="40" ry="25" fill="purple" />
+```
+
+### Line
+```xml
+<line x1="10" y1="10" x2="90" y2="90" stroke="black" stroke-width="2" />
+```
+
+### Polyline
+```xml
+<polyline points="10,10 50,50 90,10" stroke="red" fill="none" stroke-width="2" />
+```
+
+### Polygon (Triangle)
+```xml
+<polygon points="50,10 90,90 10,90" fill="yellow" />
+```
+
+### Path (Complex Shapes)
+```xml
+<path d="M 10 10 L 90 90 L 10 90 Z" fill="cyan" />
+```
+
+### Text
+```xml
+<text x="50" y="50" font-family="Arial" font-size="20" fill="black" text-anchor="middle">Hello!</text>
+```
+
+---
+
+## Common Attributes
+
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| `fill` | Fill color | `fill="red"` `fill="#ff0000"` |
+| `stroke` | Border color | `stroke="blue"` |
+| `stroke-width` | Border thickness | `stroke-width="2"` |
+| `opacity` | Transparency | `opacity="0.5"` |
+| `rx`, `ry` | Rounded corners | `rx="10"` |
+| `viewBox` | Coordinate system | `viewBox="0 0 100 100"` |
+| `xmlns` | **Required!** | `xmlns="http://www.w3.org/2000/svg"` |
+
+---
+
+## Gradients
+
+### Linear Gradient
+```xml
+<defs>
+  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:rgb(255,255,0)" />
+    <stop offset="100%" style="stop-color:rgb(255,0,0)" />
+  </linearGradient>
+</defs>
+<rect width="200" height="100" fill="url(#grad1)" />
+```
+
+### Radial Gradient
+```xml
+<defs>
+  <radialGradient id="grad2">
+    <stop offset="0%" style="stop-color:rgb(255,255,255)" />
+    <stop offset="100%" style="stop-color:rgb(0,0,255)" />
+  </radialGradient>
+</defs>
+<circle cx="50" cy="50" r="40" fill="url(#grad2)" />
+```
+
+---
+
+## Animations
+
+### Attribute Animation
+```xml
+<circle cx="50" cy="50" r="40" fill="red">
+  <animate attributeName="r" values="40;50;40" dur="2s" repeatCount="indefinite" />
+</circle>
+```
+
+### Transform Animation
+```xml
+<rect x="25" y="25" width="50" height="50" fill="blue">
+  <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="3s" repeatCount="indefinite" />
+</rect>
+```
+
+---
+
+## Icons (Ready to Use)
+
+### Checkmark
+```xml
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="45" fill="#10b981"/>
+  <path d="M 30 50 L 45 65 L 70 35" stroke="white" stroke-width="8" fill="none" stroke-linecap="round"/>
+</svg>
+```
+
+### Warning
+```xml
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="50,10 90,85 10,85" fill="#f59e0b"/>
+  <text x="50" y="65" font-size="50" font-weight="bold" fill="white" text-anchor="middle">!</text>
+</svg>
+```
+
+### Info
+```xml
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="45" fill="#3b82f6"/>
+  <circle cx="50" cy="30" r="5" fill="white"/>
+  <rect x="45" y="42" width="10" height="35" rx="5" fill="white"/>
+</svg>
+```
+
+### Heart
+```xml
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50,85 C25,70 5,50 5,30 C5,15 15,5 27.5,5 C35,5 42,10 50,20 C58,10 65,5 72.5,5 C85,15 95,15 95,30 C95,50 75,70 50,85 Z" fill="#e74c3c"/>
+</svg>
+```
+
+### Star
+```xml
+<svg viewBox="0 0 51 48" xmlns="http://www.w3.org/2000/svg">
+  <path d="M25.5 0L31.5 18.5H51L35.5 30L41.5 48.5L25.5 37L9.5 48.5L15.5 30L0 18.5H19.5L25.5 0Z" fill="gold"/>
+</svg>
+```
+
+---
+
+## CSS Custom Classes
+
+Available wrapper classes:
+- `.remark-svg-wrapper` (default)
+- `.with-shadow` - adds drop shadow
+- `.centered` - center aligned
+- `.left` - left aligned
+- `.right` - right aligned
+- `.bordered` - adds border
+- `.with-bg` - adds background
+
+Usage:
+````
+```svg {class="with-shadow centered"}
+<svg>...</svg>
+```
+````
+
+---
+
+## Color Reference
+
+Common colors:
+- Red: `#e74c3c`, `#ff0000`
+- Blue: `#3b82f6`, `#0000ff`
+- Green: `#10b981`, `#00ff00`
+- Yellow: `#f59e0b`, `#ffff00`
+- Purple: `#a855f7`, `#800080`
+- Orange: `#f97316`, `#ffa500`
+- Pink: `#ec4899`, `#ffc0cb`
+- Gray: `#6b7280`, `#808080`
+
+## Tips & Tricks
+
+✅ **DO:**
+- Always include `xmlns="http://www.w3.org/2000/svg"`
+- Use `viewBox` for responsiveness
+- Use semantic class names
+- Optimize SVG before embedding
+- Test in different themes
+
+❌ **DON'T:**
+- Include JavaScript (will be removed)
+- Use event handlers (removed for security)
+- Embed external images
+- Forget to close SVG tag
+- Use absolute pixel sizes when relative units work better
+
+### 🛡️ Security
+
+The plugin automatically:
+- Removes `<script>` tags
+- Removes event handlers (`onclick`, `onload`, etc.)
+- Removes `javascript:` protocol
+- Validates SVG structure
+
+## Additional Resources
+
+- [MDN SVG Tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
+- [SVG Optimization Tools](https://jakearchibald.github.io/svgomg/)
+- [SVG Path Generator](https://yqnn.github.io/svg-path-editor/)
+
+Happy SVG rendering! 🎨
