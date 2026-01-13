@@ -1,23 +1,216 @@
 ---
-title: "SVG Rendering Demo"
+title: "SVG & base64 image Rendering Demo"
 date: 2026-01-13
-description: "Testing the new remark-svg-render plugin with various SVG examples"
-tags: ["test", "svg", "demo"]
+description: "Testing the new remark-svg-render plugin and base64 images with various SVG & jpg examples including imports"
+tags: ["base64", "svg", "demo"]
 category: tutorial
 draft: false
 sticky: 1
-lastUpdated: 2026-01-13
+lastUpdated: 2026-01-14
 outdated: 1
 showDisclaimer: true
 ---
 
 import Highlight from "@/react/Highlight/Highlight.jsx";
+import { SvgWrapper } from "@/react/Svg/SvgWrapper.jsx";
+import { Base64Image } from "@/react/Image/Base64Image.jsx";
+import { HOUSE } from "@/data/svg/house.ts";
+import { CHECK_ICON, WARNING_ICON, INFO_ICON, HEART_ICON, STAR_ICON } from "@/data/svg/icons.ts";
+import { SIMPLE_CIRCLE, GRADIENT_RECT, SMILEY_FACE } from "@/data/svg/shapes.ts";
+import { DEMO_IMAGE, SAMPLE_LANDSCAPE, SAMPLE_PORTRAIT } from "@/data/images/base64-images.ts";
 
 # SVG Rendering Plugin Demo
 
-This is a test post to demonstrate the new SVG rendering plugin functionality.
+This demo shows three ways to use SVGs in your blog posts:
+1. **Inline SVG** - Write SVG code directly in markdown
+2. **Imported SVG** - Import from external files and reuse across posts
+3. **Styled imports** - Apply CSS classes and dimensions to imported SVGs
 
-## Example 1: Simple Circle
+---
+
+## 🎯 NEW: Importing SVG Constants
+
+You can now import SVG constants from external files to save space and reuse graphics!
+
+### Import Syntax
+
+At the top of your MDX file, import `SvgWrapper` component
+
+```jsx
+import { SvgWrapper } from "@/react/Svg/SvgWrapper.jsx";
+// or use backward compatible import
+import Tabs, { TabItem } from "../../react/Svg/SvgWrapper.jsx";
+```
+
+Then import the SVG data as below:
+
+```jsx
+import { HOUSE } from "@/data/svg/house.ts";
+import { CHECK_ICON } from "@/data/svg/icons.ts";
+```
+
+Then use in your content:
+
+```jsx
+<SvgWrapper svg={HOUSE} />
+<SvgWrapper svg={CHECK_ICON} className="pulse-animation" width="100px" />
+```
+
+---
+
+## Example 1: Imported House
+
+<SvgWrapper svg={HOUSE} />
+
+---
+
+## Example 2: Imported Check Icon
+
+<SvgWrapper svg={CHECK_ICON} className="svg-small" />
+
+---
+
+## Example 3: Imported Heart with Animation
+
+<SvgWrapper svg={HEART_ICON} className="heartbeat-animation centered" width="120px" />
+
+---
+
+## Example 4: Imported Warning Icon
+
+<SvgWrapper svg={WARNING_ICON} className="shake-animation" width="100px" />
+
+---
+
+## Example 5: Imported Info Icon with Styling
+
+<SvgWrapper svg={INFO_ICON} className="with-shadow bordered" width="120px" />
+
+---
+
+## Example 6: Imported Star with Hover Effect
+
+<SvgWrapper svg={STAR_ICON} className="hover-rotate" width="100px" />
+
+---
+
+## Example 7: Imported Circle with Pulse
+
+<SvgWrapper svg={SIMPLE_CIRCLE} className="pulse-animation" />
+
+---
+
+## Example 8: Imported Gradient Rectangle
+
+<SvgWrapper svg={GRADIENT_RECT} className="centered" />
+
+---
+
+## Example 9: Imported Smiley with Bounce
+
+<SvgWrapper svg={SMILEY_FACE} className="bounce-animation" width="120px" />
+
+---
+
+
+## 🖼️ NEW: Base64 Image Component!
+
+You can import and display base64 encoded images with **optional** lazy loading!
+
+### Base64 Image Import Syntax
+
+At the top of your MDX file, import `Base64Image` component
+
+```jsx
+import { Base64Image } from "@/react/Image/Base64Image.jsx";
+// or use backward compatible import
+import Tabs, { TabItem } from "../../react/Image/Base64Image.jsx";
+```
+
+Then import the Image data as below:
+
+```jsx
+import { DEMO_IMAGE, SAMPLE_LANDSCAPE } from "@/data/images/base64-images.ts";
+```
+
+### Usage Options
+
+**Without lazy loading (instant display):**
+
+```jsx
+<Base64Image src={DEMO_IMAGE} alt="Demo" width="300px" />
+```
+
+**With lazy loading (shows spinner, requires `client:load`):**
+
+```jsx
+<Base64Image src={SAMPLE_LANDSCAPE} alt="Landscape" width="400px" lazy={true} client:load />
+```
+
+**⚠️ IMPORTANT:** When using `lazy={true}`, you **MUST** add `client:load` directive for React hydration!
+
+### Props
+
+- `src` - Base64 image string (required)
+- `alt` - Alt text
+- `className` - CSS classes (with-shadow, bordered, etc.)
+- `width` / `height` - Custom dimensions
+- `lazy` - Enable lazy loading (default: `false`)
+- `loadingDelay` - Delay in ms (default: 1500, only with lazy)
+
+**Note:** Images are center-aligned by default. Use `className="left"` or `className="right"` to change alignment.
+
+---
+
+## Example 11: Basic Base64 Image (No Lazy Loading)
+
+<Base64Image src={DEMO_IMAGE} alt="Demo image" width="300px" />
+
+---
+
+## Example 12: Base64 Image with Shadow (No Lazy)
+
+<Base64Image src={SAMPLE_LANDSCAPE} alt="Landscape" width="400px" className="with-shadow" />
+
+---
+
+## Example 13: With Lazy Loading + Spinner (Requires `client:load`)
+
+<Base64Image src={SAMPLE_PORTRAIT} alt="Portrait" width="250px" className="bordered" lazy={true} client:load />
+
+---
+
+## Example 14: Left Aligned Image
+
+<Base64Image src={DEMO_IMAGE} alt="Left aligned" width="300px" className="left with-shadow" />
+
+---
+
+## Example 15: Multiple Base64 Images (No Lazy)
+
+<div style={{display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap'}}>
+  <Base64Image src={SAMPLE_LANDSCAPE} alt="Image 1" className="img-small with-shadow" />
+  <Base64Image src={SAMPLE_PORTRAIT} alt="Image 2" className="img-small bordered" />
+  <Base64Image src={DEMO_IMAGE} alt="Image 3" className="img-small rounded" />
+</div>
+
+---
+
+## Example 16: Lazy Loading with Custom Delay (2 seconds)
+
+<Base64Image 
+  src={SAMPLE_LANDSCAPE} 
+  alt="Slow loading" 
+  width="350px" 
+  className="with-shadow"
+  lazy={true}
+  loadingDelay={2000}
+  client:load
+/>
+
+---
+
+## Example 17: Inline SVG (Traditional Method)
 
 Here's a basic SVG circle using code block syntax:
 

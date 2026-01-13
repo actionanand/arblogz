@@ -3,6 +3,7 @@
 @import "tocbot/dist/tocbot.css";
 @import "remark-aside.css";
 @import "remark-svg.css";
+@import "base64-image.css";
 @import "characters.css";
 @import "sticky-pin.css";
 @import "rss.css";

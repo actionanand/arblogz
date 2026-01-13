@@ -26,6 +26,11 @@ function h(el, attrs = {}, children = []) {
  *    <svg>...</svg>
  *    :::
  * 
+ * 3. For imports, use the SvgWrapper component:
+ *    import { HOUSE } from '@/data/svg/house.ts'
+ *    import { SvgWrapper } from '@/components/SvgWrapper'
+ *    <SvgWrapper svg={HOUSE} className="centered" width="300px" />
+ * 
  * Optional attributes for styling:
  *    ```svg {class="my-class" width="200" height="200"}
  *    <svg>...</svg>
