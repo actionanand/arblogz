@@ -8,11 +8,11 @@ draft: false
 sticky: 1
 lastUpdated: 2026-01-13
 outdated: 1
-showDisclaimer: false
+showDisclaimer: true
 ---
 
 import Highlight from "@/react/Highlight/Highlight.jsx";
-import { SvgWrapper } from "@/components/SvgWrapper.jsx";
+import { SvgWrapper } from "@/react/Svg/SvgWrapper.jsx";
 import { HOUSE } from "@/data/svg/house.ts";
 import { CHECK_ICON, WARNING_ICON, INFO_ICON, HEART_ICON, STAR_ICON } from "@/data/svg/icons.ts";
 import { SIMPLE_CIRCLE, GRADIENT_RECT, SMILEY_FACE } from "@/data/svg/shapes.ts";
@@ -32,10 +32,17 @@ You can now import SVG constants from external files to save space and reuse gra
 
 ### Import Syntax
 
-At the top of your MDX file:
+At the top of your MDX file, import `SvgWrapper` component
 
 ```jsx
-import { SvgWrapper } from "@/components/SvgWrapper.jsx";
+import { SvgWrapper } from "@/react/Svg/SvgWrapper.jsx";
+// or use backward compatible import
+import Tabs, { TabItem } from "../../react/Svg/SvgWrapper.jsx";
+```
+
+Then import the SVG data as below:
+
+```jsx
 import { HOUSE } from "@/data/svg/house.ts";
 import { CHECK_ICON } from "@/data/svg/icons.ts";
 ```
