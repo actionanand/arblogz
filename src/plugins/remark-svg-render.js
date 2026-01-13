@@ -120,8 +120,14 @@ export function remarkSvgRender(options = {}) {
         }
       }
 
+      // Combine default wrapper class with custom class
+      const classNames = [defaultOptions.wrapperClass];
+      if (metaAttrs.class) {
+        classNames.push(metaAttrs.class);
+      }
+
       const wrapperAttrs = {
-        class: metaAttrs.class || defaultOptions.wrapperClass,
+        class: classNames.join(' '),
         style: ''
       };
 
@@ -163,8 +169,14 @@ export function remarkSvgRender(options = {}) {
       // Extract attributes from directive
       const attributes = node.attributes || {};
       
+      // Combine default wrapper class with custom class
+      const classNames = [defaultOptions.wrapperClass];
+      if (attributes.class) {
+        classNames.push(attributes.class);
+      }
+
       const wrapperAttrs = {
-        class: attributes.class || defaultOptions.wrapperClass,
+        class: classNames.join(' '),
         style: ''
       };
 
