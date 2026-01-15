@@ -54,7 +54,19 @@ Then use in your content:
 ```jsx
 <SvgWrapper svg={HOUSE} />
 <SvgWrapper svg={CHECK_ICON} className="pulse-animation" width="100px" />
+<SvgWrapper svg={HEART_ICON} caption="Optional caption text" />
 ```
+
+### NEW: Optional Caption
+
+Both `SvgWrapper` and `Base64Image` components now support an optional `caption` prop:
+
+```jsx
+<SvgWrapper svg={HOUSE} caption="A simple house icon" />
+<Base64Image src={MY_IMAGE} caption="Beautiful landscape" />
+```
+
+The caption appears below the image/SVG with muted, italicized text.
 
 ---
 
@@ -64,9 +76,9 @@ Then use in your content:
 
 ---
 
-## Example 2: Imported Check Icon
+## Example 2: Imported Check Icon with Caption
 
-<SvgWrapper svg={CHECK_ICON} className="svg-small" />
+<SvgWrapper svg={CHECK_ICON} className="svg-small" caption="Success indicator icon" />
 
 ---
 
@@ -82,9 +94,9 @@ Then use in your content:
 
 ---
 
-## Example 5: Imported Info Icon with Styling
+## Example 5: Imported Info Icon with Styling and Caption
 
-<SvgWrapper svg={INFO_ICON} className="with-shadow bordered" width="120px" />
+<SvgWrapper svg={INFO_ICON} className="with-shadow bordered" width="120px" caption="Information icon with shadow and border effects" />
 
 ---
 
@@ -94,9 +106,9 @@ Then use in your content:
 
 ---
 
-## Example 7: Imported Circle with Pulse
+## Example 7: Imported Circle with Pulse and Caption
 
-<SvgWrapper svg={SIMPLE_CIRCLE} className="pulse-animation" />
+<SvgWrapper svg={SIMPLE_CIRCLE} className="pulse-animation" caption="Animated circle with pulse effect" />
 
 ---
 
@@ -147,6 +159,12 @@ import { DEMO_IMAGE, SAMPLE_LANDSCAPE } from "@/data/images/base64-images.ts";
 <Base64Image src={SAMPLE_LANDSCAPE} alt="Landscape" width="400px" lazy={true} client:load />
 ```
 
+**With caption:**
+
+```jsx
+<Base64Image src={DEMO_IMAGE} alt="Demo" width="300px" caption="A beautiful demonstration image" />
+```
+
 **⚠️ IMPORTANT:** When using `lazy={true}`, you **MUST** add `client:load` directive for React hydration!
 
 ### Props
@@ -157,26 +175,27 @@ import { DEMO_IMAGE, SAMPLE_LANDSCAPE } from "@/data/images/base64-images.ts";
 - `width` / `height` - Custom dimensions
 - `lazy` - Enable lazy loading (default: `false`)
 - `loadingDelay` - Delay in ms (default: 1500, only with lazy)
+- `caption` - Optional caption text shown below image
 
 **Note:** Images are center-aligned by default. Use `className="left"` or `className="right"` to change alignment.
 
 ---
 
-## Example 11: Basic Base64 Image (No Lazy Loading)
+## Example 11: Basic Base64 Image with Caption
 
-<Base64Image src={DEMO_IMAGE} alt="Demo image" width="300px" />
-
----
-
-## Example 12: Base64 Image with Shadow (No Lazy)
-
-<Base64Image src={SAMPLE_LANDSCAPE} alt="Landscape" width="400px" className="with-shadow" />
+<Base64Image src={DEMO_IMAGE} alt="Demo image" width="300px" caption="Demo image showing instant display (no lazy loading)" />
 
 ---
 
-## Example 13: With Lazy Loading + Spinner (Requires `client:load`)
+## Example 12: Base64 Image with Shadow and Caption
 
-<Base64Image src={SAMPLE_PORTRAIT} alt="Portrait" width="250px" className="bordered" lazy={true} client:load />
+<Base64Image src={SAMPLE_LANDSCAPE} alt="Landscape" width="400px" className="with-shadow" caption="Beautiful landscape with shadow effect" />
+
+---
+
+## Example 13: With Lazy Loading + Spinner + Caption (Requires `client:load`)
+
+<Base64Image src={SAMPLE_PORTRAIT} alt="Portrait" width="250px" className="bordered" lazy={true} caption="Portrait with lazy loading and border" client:load />
 
 ---
 
@@ -196,7 +215,7 @@ import { DEMO_IMAGE, SAMPLE_LANDSCAPE } from "@/data/images/base64-images.ts";
 
 ---
 
-## Example 16: Lazy Loading with Custom Delay (2 seconds)
+## Example 16: Lazy Loading with Custom Delay and Caption (2 seconds)
 
 <Base64Image 
   src={SAMPLE_LANDSCAPE} 
@@ -205,6 +224,7 @@ import { DEMO_IMAGE, SAMPLE_LANDSCAPE } from "@/data/images/base64-images.ts";
   className="with-shadow"
   lazy={true}
   loadingDelay={2000}
+  caption="Landscape with 2-second loading delay for demonstration"
   client:load
 />
 
