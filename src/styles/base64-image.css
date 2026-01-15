@@ -1,0 +1,108 @@
+/* Base64 Image Component Styles */
+
+.base64-image-wrapper {
+  display: block;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.base64-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Size utilities */
+.base64-image-wrapper.img-small {
+  max-width: 150px;
+}
+
+.base64-image-wrapper.img-small img {
+  max-width: 150px;
+}
+
+.base64-image-wrapper.img-medium {
+  max-width: 300px;
+}
+
+.base64-image-wrapper.img-medium img {
+  max-width: 300px;
+}
+
+.base64-image-wrapper.img-large {
+  max-width: 600px;
+}
+
+.base64-image-wrapper.img-large img {
+  max-width: 600px;
+}
+
+.base64-image-wrapper.img-full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.base64-image-wrapper.img-full img {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Style utilities */
+.base64-image-wrapper.with-shadow img {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.base64-image-wrapper.bordered img {
+  border: 2px solid #e5e7eb;
+}
+
+.base64-image-wrapper.rounded img {
+  border-radius: 16px;
+}
+
+.base64-image-wrapper.circle img {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Alignment utilities - default is centered */
+.base64-image-wrapper.centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.base64-image-wrapper.left {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+.base64-image-wrapper.right {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+/* Caption styling */
+.base64-image-wrapper .image-caption {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .base64-image-wrapper.bordered img {
+    border-color: #374151;
+  }
+  
+  .base64-image-wrapper .image-caption {
+    color: #9ca3af;
+  }
+}

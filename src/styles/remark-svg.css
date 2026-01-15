@@ -1,0 +1,371 @@
+/* Remark SVG Render Plugin Styles */
+
+.remark-svg-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* Make SVGs responsive by default */
+.remark-svg-wrapper svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Shadow effect - can be used standalone or combined */
+.with-shadow,
+.remark-svg-wrapper.with-shadow {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.with-shadow svg,
+.remark-svg-wrapper.with-shadow svg {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Alignment classes */
+.centered,
+.remark-svg-wrapper.centered {
+  display: flex;
+  justify-content: center;
+}
+
+.left,
+.remark-svg-wrapper.left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right,
+.remark-svg-wrapper.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* SVG Container for caption support */
+.svg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem auto;
+}
+
+/* Caption styling */
+.svg-container .svg-caption {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Border styling */
+.bordered,
+.remark-svg-wrapper.bordered {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: transparent;
+}
+
+/* Background styling */
+.with-bg,
+.remark-svg-wrapper.with-bg {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+/* Combined border and background */
+.bordered.with-bg,
+.remark-svg-wrapper.bordered.with-bg {
+  border: 2px solid #e0e0e0;
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .bordered,
+  .remark-svg-wrapper.bordered {
+    border-color: #444;
+  }
+  
+  .with-bg,
+  .remark-svg-wrapper.with-bg {
+    background-color: #1a1a1a;
+  }
+  
+  .bordered.with-bg,
+  .remark-svg-wrapper.bordered.with-bg {
+    border-color: #444;
+    background-color: #1a1a1a;
+  }
+  
+  .svg-container .svg-caption {
+    color: #9ca3af;
+  }
+}
+
+/* === ANIMATIONS === */
+
+/* Pulse animation */
+@keyframes svg-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse-animation,
+.remark-svg-wrapper.pulse-animation {
+  animation: svg-pulse 2s ease-in-out infinite;
+}
+
+.pulse-animation svg,
+.remark-svg-wrapper.pulse-animation svg {
+  animation: svg-pulse 2s ease-in-out infinite;
+}
+
+/* Bounce animation */
+@keyframes svg-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce-animation,
+.remark-svg-wrapper.bounce-animation svg {
+  animation: svg-bounce 2s ease infinite;
+}
+
+/* Rotate animation */
+@keyframes svg-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation,
+.remark-svg-wrapper.rotate-animation svg {
+  animation: svg-rotate 3s linear infinite;
+}
+
+/* Spin slow animation */
+.spin-slow,
+.remark-svg-wrapper.spin-slow svg {
+  animation: svg-rotate 8s linear infinite;
+}
+
+/* Wiggle animation */
+@keyframes svg-wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.wiggle-animation,
+.remark-svg-wrapper.wiggle-animation svg {
+  animation: svg-wiggle 1s ease-in-out infinite;
+}
+
+/* Fade in-out animation */
+@keyframes svg-fade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.fade-animation,
+.remark-svg-wrapper.fade-animation svg {
+  animation: svg-fade 2s ease-in-out infinite;
+}
+
+/* Heartbeat animation */
+@keyframes svg-heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.1);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
+}
+
+.heartbeat-animation,
+.remark-svg-wrapper.heartbeat-animation svg {
+  animation: svg-heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Shake animation */
+@keyframes svg-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.shake-animation,
+.remark-svg-wrapper.shake-animation svg {
+  animation: svg-shake 0.5s ease-in-out;
+}
+
+/* Float animation */
+@keyframes svg-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.float-animation,
+.remark-svg-wrapper.float-animation svg {
+  animation: svg-float 3s ease-in-out infinite;
+}
+
+/* Glow animation */
+@keyframes svg-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.8));
+  }
+}
+
+.glow-animation,
+.remark-svg-wrapper.glow-animation svg {
+  animation: svg-glow 2s ease-in-out infinite;
+}
+
+/* Swing animation */
+@keyframes svg-swing {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: top center;
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+}
+
+.swing-animation,
+.remark-svg-wrapper.swing-animation svg {
+  animation: svg-swing 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Zoom in-out animation */
+@keyframes svg-zoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.zoom-animation,
+.remark-svg-wrapper.zoom-animation svg {
+  animation: svg-zoom 2s ease-in-out infinite;
+}
+
+/* Hover effects */
+.hover-grow:hover svg,
+.remark-svg-wrapper.hover-grow:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover svg,
+.remark-svg-wrapper.hover-rotate:hover svg {
+  transform: rotate(360deg);
+  transition: transform 0.6s ease;
+}
+
+.hover-shadow:hover svg,
+.remark-svg-wrapper.hover-shadow:hover svg {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  transition: filter 0.3s ease;
+}
+
+/* Combined animation classes */
+.pulse-glow,
+.remark-svg-wrapper.pulse-glow svg {
+  animation: svg-pulse 2s ease-in-out infinite, svg-glow 2s ease-in-out infinite;
+}
+
+/* Ensure SVGs don't overflow on mobile */
+@media (max-width: 640px) {
+  .remark-svg-wrapper {
+    margin: 1rem auto;
+  }
+  
+  .remark-svg-wrapper svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Utility classes for size control */
+.svg-small,
+.remark-svg-wrapper.svg-small {
+  max-width: 100px;
+}
+
+.svg-medium,
+.remark-svg-wrapper.svg-medium {
+  max-width: 200px;
+}
+
+.svg-large,
+.remark-svg-wrapper.svg-large {
+  max-width: 400px;
+}
+
+.svg-full,
+.remark-svg-wrapper.svg-full {
+  max-width: 100%;
+}
