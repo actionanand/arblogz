@@ -12,6 +12,7 @@ import { SPINNER_SVG } from '@/data/svg/spinner.ts';
  * @param {string} height - Image height
  * @param {boolean} lazy - Enable lazy loading with spinner (default: false)
  * @param {number} loadingDelay - Minimum loading time in ms (default: 1500ms, only if lazy=true)
+ * @param {string} caption - Optional caption text shown below the image
  * 
  * NOTE: When using lazy={true}, you MUST add client:load directive for hydration:
  * <Base64Image src={IMAGE} lazy={true} client:load />
@@ -23,7 +24,8 @@ export function Base64Image({
   width, 
   height,
   lazy = false,
-  loadingDelay = 1500 
+  loadingDelay = 1500,
+  caption = '' 
 }) {
   const [isLoading, setIsLoading] = useState(lazy);
   const [imageLoaded, setImageLoaded] = useState(!lazy);
@@ -116,6 +118,11 @@ export function Base64Image({
         style={imageStyle}
         onLoad={() => lazy && setImageLoaded(true)}
       />
+      
+      {/* Caption */}
+      {caption && (
+        <p className="image-caption">{caption}</p>
+      )}
     </div>
   );
 }

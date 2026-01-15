@@ -45,6 +45,24 @@
   justify-content: flex-end;
 }
 
+/* SVG Container for caption support */
+.svg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem auto;
+}
+
+/* Caption styling */
+.svg-container .svg-caption {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  font-style: italic;
+}
+
 /* Border styling */
 .bordered,
 .remark-svg-wrapper.bordered {
@@ -86,6 +104,10 @@
   .remark-svg-wrapper.bordered.with-bg {
     border-color: #444;
     background-color: #1a1a1a;
+  }
+  
+  .svg-container .svg-caption {
+    color: #9ca3af;
   }
 }
 
