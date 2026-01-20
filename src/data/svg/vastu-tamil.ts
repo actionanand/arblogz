@@ -1,4 +1,4 @@
-export const VASTU_TAMIL = `<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+export const VASTU_TAMIL = `<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
   <!-- Define styles -->
   <defs>
     <style>
