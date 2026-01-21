@@ -16,6 +16,10 @@ customDisclaimer: This guide is for educational purposes. Always consult a quali
 ---
 
 import Highlight from "@/react/Highlight/Highlight.jsx";
+import { SvgWrapper } from "@/react/Svg/SvgWrapper.jsx";
+
+import { SOUTH_INDIAN_CHART_LAYOUT } from "@/data/svg/south-indian-chart-layout.ts";
+import { RASI_CHART_EXAMPLE } from "@/data/svg/rasi-chart-example.ts"
 
 # Jathagam Guide - Part 6A: How to Read Jathagam
 # ஜாதகம் வழிகாட்டி - பாகம் 6A: ஜாதகம் படிப்பது எப்படி
@@ -69,29 +73,8 @@ This comprehensive guide teaches:
 
 **South Indian Chart Layout:**
 
-```
-┌─────────────┬─────────────┬─────────────┬─────────────┐
-│             │             │             │             │
-│    12       │      1      │      2      │      3      │
-│   வியாயம்  │    லக்னம்  │    தனம்    │  சகோதரம் │
-│             │             │             │             │
-├─────────────┼─────────────┼─────────────┼─────────────┤
-│             │             │             │             │
-│    11       │                           │      4      │
-│   லாபம்    │      RASI CHART           │    சுகம்     │
-│             │     ராசி அட்டவணை      │             │
-├─────────────┤                           ├─────────────┤
-│             │                           │             │
-│    10       │                           │      5      │
-│கர்மஸ்தானம்│                           │  புத்திரம்    │
-│             │                           │             │
-├─────────────┼─────────────┼─────────────┼─────────────┤
-│             │             │             │             │
-│     9       │      8      │      7      │      6      │
-│ பாக்கியம்   │   ஆயுள்    │ கலத்திரம்   │    ரிபு      │
-│             │             │             │             │
-└─────────────┴─────────────┴─────────────┴─────────────┘
-```
+<SvgWrapper svg={SOUTH_INDIAN_CHART_LAYOUT} />
+
 
 **Key Points:**
 
@@ -118,32 +101,7 @@ This comprehensive guide teaches:
 
 **Rasi Chart:**
 
-```
-┌─────────────┬─────────────┬─────────────┬─────────────┐
-│  Aquarius   │   PISCES    │    Aries    │   Taurus    │
-│             │   (LAGNA)   │             │   Moon      │
-│   Saturn    │   Jupiter   │             │   Venus     │
-│             │   Mercury   │             │             │
-├─────────────┼─────────────┼─────────────┼─────────────┤
-│ Capricorn   │                           │   Gemini    │
-│             │                           │             │
-│             │                           │             │
-│             │                           │             │
-├─────────────┤                           ├─────────────┤
-│ Sagittarius│                           │   Cancer    │
-│             │                           │             │
-│   Ketu      │                           │   Sun       │
-│             │                           │             │
-├─────────────┼─────────────┼─────────────┼─────────────┤
-│  Scorpio    │    Libra    │    Virgo    │     Leo     │
-│             │             │             │             │
-│   Mars      │             │             │   Rahu      │
-│             │             │             │             │
-└─────────────┴─────────────┴─────────────┴─────────────┘
-
-Houses: 1=Pisces, 2=Aries, 3=Taurus, 4=Gemini, 5=Cancer, 6=Leo,
-        7=Virgo, 8=Libra, 9=Scorpio, 10=Sagittarius, 11=Capricorn, 12=Aquarius
-```
+<SvgWrapper svg={RASI_CHART_EXAMPLE} />
 
 **Planetary Positions:**
 - Lagna: Pisces (1st house)
