@@ -47,11 +47,11 @@ export const THREE_OUTCOMES = `
     </text>
     
     <!-- Visual representation -->
-    <g transform="translate(280, 125)">
+    <g transform="translate(270, 125)">
       <!-- CIS -->
       <text x="20" y="15" font-family="Arial, sans-serif" font-size="10" fill="#666">CIS:</text>
-      <text x="0" y="30" font-family="monospace, sans-serif" font-size="10" fill="#333">H   H</text>
-      <text x="0" y="42" font-family="monospace, sans-serif" font-size="10" fill="#333">|   |</text>
+      <text x="5" y="30" font-family="monospace, sans-serif" font-size="10" fill="#333">H   H</text>
+      <text x="5" y="42" font-family="monospace, sans-serif" font-size="10" fill="#333">|   |</text>
       <text x="0" y="54" font-family="monospace, sans-serif" font-size="10" fill="#333">-C=C-</text>
       
       <!-- Arrow -->
@@ -59,17 +59,17 @@ export const THREE_OUTCOMES = `
       
       <!-- TRANS -->
       <text x="80" y="15" font-family="Arial, sans-serif" font-size="10" fill="#666">TRANS:</text>
-      <text x="75" y="30" font-family="monospace, sans-serif" font-size="10" fill="#333">H</text>
-      <text x="75" y="42" font-family="monospace, sans-serif" font-size="10" fill="#333">|</text>
-      <text x="70" y="54" font-family="monospace, sans-serif" font-size="10" fill="#333">-C=C-</text>
-      <text x="95" y="42" font-family="monospace, sans-serif" font-size="10" fill="#333">|</text>
-      <text x="95" y="54" font-family="monospace, sans-serif" font-size="10" fill="#333">H</text>
+      <text x="85" y="30" font-family="monospace, sans-serif" font-size="10" fill="#333">   H</text>
+      <text x="85" y="42" font-family="monospace, sans-serif" font-size="10" fill="#333">   |</text>
+      <text x="80" y="54" font-family="monospace, sans-serif" font-size="10" fill="#333">-C=C-</text>
+      <text x="85" y="66" font-family="monospace, sans-serif" font-size="10" fill="#333">   |</text>
+      <text x="85" y="78" font-family="monospace, sans-serif" font-size="10" fill="#333">   H</text>
     </g>
     
-    <text x="350" y="200" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
+    <text x="350" y="220" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
       LIQUID → SEMI-SOLID
     </text>
-    <text x="350" y="213" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">
+    <text x="350" y="233" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">
       Still has double bond!
     </text>
   </g>

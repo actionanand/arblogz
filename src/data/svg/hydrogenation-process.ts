@@ -20,32 +20,32 @@ export const HYDROGENATION_PROCESS = `
     </text>
     
     <!-- Bent chain -->
-    <circle cx="80" cy="120" r="14" fill="#444" stroke="#222" stroke-width="2"/>
-    <text x="80" y="126" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
+    <circle cx="80" cy="130" r="14" fill="#444" stroke="#222" stroke-width="2"/>
+    <text x="80" y="136" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
     
-    <circle cx="140" cy="105" r="14" fill="#d32f2f" stroke="#b71c1c" stroke-width="2"/>
-    <text x="140" y="111" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
+    <circle cx="140" cy="115" r="14" fill="#d32f2f" stroke="#b71c1c" stroke-width="2"/>
+    <text x="140" y="121" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
     
-    <circle cx="180" cy="105" r="14" fill="#d32f2f" stroke="#b71c1c" stroke-width="2"/>
-    <text x="180" y="111" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
+    <circle cx="180" cy="115" r="14" fill="#d32f2f" stroke="#b71c1c" stroke-width="2"/>
+    <text x="180" y="121" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
     
-    <circle cx="220" cy="120" r="14" fill="#444" stroke="#222" stroke-width="2"/>
-    <text x="220" y="126" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
+    <circle cx="220" cy="130" r="14" fill="#444" stroke="#222" stroke-width="2"/>
+    <text x="220" y="136" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
     
     <!-- Bonds -->
-    <line x1="94" y1="115" x2="128" y2="108" stroke="#222" stroke-width="2"/>
-    <line x1="154" y1="102" x2="166" y2="102" stroke="#d32f2f" stroke-width="2"/>
-    <line x1="154" y1="108" x2="166" y2="108" stroke="#d32f2f" stroke-width="2"/>
-    <line x1="194" y1="108" x2="206" y2="115" stroke="#222" stroke-width="2"/>
+    <line x1="94" y1="125" x2="128" y2="118" stroke="#222" stroke-width="2"/>
+    <line x1="154" y1="112" x2="166" y2="112" stroke="#d32f2f" stroke-width="2"/>
+    <line x1="154" y1="118" x2="166" y2="118" stroke="#d32f2f" stroke-width="2"/>
+    <line x1="194" y1="118" x2="206" y2="125" stroke="#222" stroke-width="2"/>
     
     <!-- H atoms on same side (cis) -->
-    <circle cx="140" cy="70" r="10" fill="#2196f3" stroke="#1976d2" stroke-width="1.5"/>
-    <text x="140" y="75" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">H</text>
-    <line x1="140" y1="91" x2="140" y2="80" stroke="#1976d2" stroke-width="1.5"/>
+    <circle cx="140" cy="80" r="10" fill="#2196f3" stroke="#1976d2" stroke-width="1.5"/>
+    <text x="140" y="85" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">H</text>
+    <line x1="140" y1="101" x2="140" y2="90" stroke="#1976d2" stroke-width="1.5"/>
     
-    <circle cx="180" cy="70" r="10" fill="#2196f3" stroke="#1976d2" stroke-width="1.5"/>
-    <text x="180" y="75" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">H</text>
-    <line x1="180" y1="91" x2="180" y2="80" stroke="#1976d2" stroke-width="1.5"/>
+    <circle cx="180" cy="80" r="10" fill="#2196f3" stroke="#1976d2" stroke-width="1.5"/>
+    <text x="180" y="85" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">H</text>
+    <line x1="180" y1="101" x2="180" y2="90" stroke="#1976d2" stroke-width="1.5"/>
     
     <text x="150" y="155" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#2196f3">
       Bent - LIQUID
@@ -107,31 +107,31 @@ export const HYDROGENATION_PROCESS = `
       Path 2: Trans (50%) ⚠️
     </text>
     
-    <circle cx="480" cy="220" r="12" fill="#444" stroke="#222" stroke-width="2"/>
-    <text x="480" y="225" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
+    <circle cx="480" cy="230" r="12" fill="#444" stroke="#222" stroke-width="2"/>
+    <text x="480" y="235" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
     
-    <circle cx="530" cy="220" r="12" fill="#d32f2f" stroke="#b71c1c" stroke-width="2"/>
-    <text x="530" y="225" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
+    <circle cx="530" cy="230" r="12" fill="#d32f2f" stroke="#b71c1c" stroke-width="2"/>
+    <text x="530" y="235" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
     
-    <circle cx="580" cy="220" r="12" fill="#d32f2f" stroke="#b71c1c" stroke-width="2"/>
-    <text x="580" y="225" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
+    <circle cx="580" cy="230" r="12" fill="#d32f2f" stroke="#b71c1c" stroke-width="2"/>
+    <text x="580" y="235" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
     
-    <circle cx="630" cy="220" r="12" fill="#444" stroke="#222" stroke-width="2"/>
-    <text x="630" y="225" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
+    <circle cx="630" cy="230" r="12" fill="#444" stroke="#222" stroke-width="2"/>
+    <text x="630" y="235" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff">C</text>
     
-    <line x1="492" y1="220" x2="518" y2="220" stroke="#222" stroke-width="2"/>
-    <line x1="542" y1="217" x2="568" y2="217" stroke="#d32f2f" stroke-width="2"/>
-    <line x1="542" y1="223" x2="568" y2="223" stroke="#d32f2f" stroke-width="2"/>
-    <line x1="592" y1="220" x2="618" y2="220" stroke="#222" stroke-width="2"/>
+    <line x1="492" y1="230" x2="518" y2="230" stroke="#222" stroke-width="2"/>
+    <line x1="542" y1="227" x2="568" y2="227" stroke="#d32f2f" stroke-width="2"/>
+    <line x1="542" y1="233" x2="568" y2="233" stroke="#d32f2f" stroke-width="2"/>
+    <line x1="592" y1="230" x2="618" y2="230" stroke="#222" stroke-width="2"/>
     
     <!-- H on opposite sides -->
-    <circle cx="530" cy="190" r="9" fill="#ff5722" stroke="#d84315" stroke-width="1.5"/>
-    <text x="530" y="195" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">H</text>
-    <line x1="530" y1="208" x2="530" y2="199" stroke="#d84315" stroke-width="1.5"/>
+    <circle cx="530" cy="200" r="9" fill="#ff5722" stroke="#d84315" stroke-width="1.5"/>
+    <text x="530" y="205" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">H</text>
+    <line x1="530" y1="218" x2="530" y2="209" stroke="#d84315" stroke-width="1.5"/>
     
-    <circle cx="580" cy="245" r="9" fill="#ff5722" stroke="#d84315" stroke-width="1.5"/>
-    <text x="580" y="250" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">H</text>
-    <line x1="580" y1="232" x2="580" y2="236" stroke="#d84315" stroke-width="1.5"/>
+    <circle cx="580" cy="255" r="9" fill="#ff5722" stroke="#d84315" stroke-width="1.5"/>
+    <text x="580" y="260" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">H</text>
+    <line x1="580" y1="242" x2="580" y2="246" stroke="#d84315" stroke-width="1.5"/>
     
     <text x="555" y="270" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#f44336" font-weight="bold">
       Straight - SEMI-SOLID

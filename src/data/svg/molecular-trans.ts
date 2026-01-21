@@ -79,19 +79,19 @@ export const MOLECULAR_TRANS = `
   </text>
   
   <!-- Opposite sides annotation -->
-  <rect x="230" y="85" width="80" height="35" fill="#ffebee" stroke="#f44336" stroke-width="2" rx="4"/>
-  <text x="270" y="103" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
+  <rect x="200" y="85" width="80" height="35" fill="#ffebee" stroke="#f44336" stroke-width="2" rx="4"/>
+  <text x="240" y="103" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
     H on
   </text>
-  <text x="270" y="116" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
+  <text x="240" y="116" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
     OPPOSITE
   </text>
   
-  <rect x="330" y="200" width="80" height="35" fill="#ffebee" stroke="#f44336" stroke-width="2" rx="4"/>
-  <text x="370" y="218" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
+  <rect x="420" y="200" width="80" height="35" fill="#ffebee" stroke="#f44336" stroke-width="2" rx="4"/>
+  <text x="460" y="218" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
     H on
   </text>
-  <text x="370" y="231" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
+  <text x="460" y="231" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">
     OPPOSITE
   </text>
   

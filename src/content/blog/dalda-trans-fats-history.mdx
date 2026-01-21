@@ -79,6 +79,23 @@ A **double bond** occurs when two carbon atoms share **two pairs of electrons** 
 
 <SvgWrapper svg={MOLECULAR_UNSATURATED} width="100%" />
 
+**Single Bond (Saturated): ASCII Art**
+```
+    H   H   H   H
+    |   |   |   |
+—C—C—C—C—C—
+    |   |   |   |
+    H   H   H   H
+```
+
+**Double Bond (Unsaturated):  ASCII Art**
+```
+    H       H
+    |       |
+—C—C=C—C—
+    |       |
+    H       H
+```
 
 Notice how the double bond (C=C) means fewer hydrogen atoms are attached. This is why it's called **"unsaturated"**—not all carbon atoms are saturated with hydrogen.
 
@@ -315,6 +332,16 @@ The presence of double bonds means:
 
 <SvgWrapper svg={PALMOLEIN_PACKING} width="100%" />
 
+```
+Palmolein Fatty Acids (Unsaturated - Kinked): ASCII Art
+
+═══╗   
+   ╚═══╗       Bent chains
+       ╚═══    can't pack tightly
+  ╔════╝       → LIQUID
+══╝            
+```
+
 ### <Highlight color='#004080' highlight='fg' fontWeight='bold'> What is Hydrogenation? The Chemical Transformation </Highlight>
 
 To understand the Dalda phenomenon and its eventual downfall, we must understand how hydrogenation transforms liquid oils into solid fats.
@@ -324,6 +351,28 @@ To understand the Dalda phenomenon and its eventual downfall, we must understand
 **The Chemical Reaction:**
 
 <SvgWrapper svg={HYDROGENATION_REACTION} width="100%" />
+
+```
+ASCII Art
+
+BEFORE Hydrogenation (Unsaturated - Liquid):
+    H       H
+    |       |
+—C—C=C—C—    (DOUBLE BOND - bent chain)
+    |       |
+    H       H
+
+        ↓ + H₂ (Hydrogen gas)
+        ↓ + Catalyst (Nickel/Palladium)
+        ↓ + Heat (150-200°C)
+
+AFTER Hydrogenation (Saturated - Solid):
+    H   H   H   H
+    |   |   |   |
+—C—C—C—C—    (SINGLE BOND - straight chain)
+    |   |   |   |
+    H   H   H   H
+```
 
 #### Why Palmolein Needed Hydrogenation
 
@@ -372,6 +421,24 @@ In naturally occurring unsaturated fats, the hydrogen atoms on either side of a 
 
 <SvgWrapper svg={MOLECULAR_CIS} width="100%" />
 
+```
+    H   H
+    |   |
+—C=C—        ← Both H atoms on SAME side
+              Creates a BENT shape
+```
+
+**3D Structure:**
+```
+Cis Configuration (Natural oils like palmolein):
+
+     ╔═══╗     
+═════╝   ╚═════  
+  ↑ KINK/BEND
+
+This bend prevents tight packing → LIQUID
+```
+
 **Characteristics of Cis Fats:**
 - Create a **sharp "kink" or bend** in the fatty acid chain (approximately 30° angle)
 - **Cannot pack tightly** together (like trying to stack banana-shaped objects)
@@ -385,6 +452,24 @@ In naturally occurring unsaturated fats, the hydrogen atoms on either side of a 
 During **partial hydrogenation**, some double bonds flip, placing hydrogen atoms on **opposite sides** of the molecule. This is the **trans configuration** (from Latin "trans" meaning "across").
 
 <SvgWrapper svg={MOLECULAR_TRANS} width="100%" />
+
+```
+    H       
+    |       
+—C=C—        ← H atoms on OPPOSITE sides
+        |     Creates a STRAIGHT shape
+        H
+```
+
+**3D Structure:**
+```
+Trans Configuration (Dalda - partially hydrogenated):
+
+═══════════════  
+  ↑ STRAIGHT (like saturated fat)
+
+Straight chains can pack tightly → SEMI-SOLID
+```
 
 **Characteristics of Trans Fats:**
 - **Straighter molecular structure** (similar to saturated fats)
@@ -408,6 +493,20 @@ Now we can understand the crucial difference between naturally solid fats (like 
 
 <SvgWrapper svg={MOLECULAR_SATURATED} width="100%" />
 
+```
+Saturated Fat (NO double bonds):
+
+    H   H   H   H   H   H
+    |   |   |   |   |   |
+—C—C—C—C—C—C—
+    |   |   |   |   |   |
+    H   H   H   H   H   H
+
+═══════════════  Naturally straight
+═══════════════  (no double bonds to create kinks)
+═══════════════  → SOLID
+```
+
 **Why it's solid:** NO double bonds → naturally straight chains → tight packing → solid
 
 **Health profile:** While saturated, it's **natural**—our bodies evolved eating it.
@@ -417,6 +516,21 @@ Now we can understand the crucial difference between naturally solid fats (like 
 **Structure:**
 
 <SvgWrapper svg={MOLECULAR_TRANS} width="100%" />
+
+```
+Trans Fat (Has double bonds in TRANS configuration):
+
+    H   H       H   H
+    |   |       |   |
+—C—C—C=C—C—C—
+    |   |       |   |
+    H   H   H   H   H
+         (trans)
+
+═══════════════  Artificially straightened
+═══════════════  (trans double bonds don't create kinks)
+═══════════════  → SEMI-SOLID
+```
 
 **Why it's semi-solid:** Double bonds flipped to trans → artificially straightened chains → tight packing → semi-solid
 

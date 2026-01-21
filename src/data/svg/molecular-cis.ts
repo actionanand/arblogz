@@ -87,11 +87,11 @@ export const MOLECULAR_CIS = `
   </text>
   
   <!-- Same side annotation -->
-  <rect x="240" y="55" width="100" height="35" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="4"/>
-  <text x="290" y="73" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1565c0">
+  <rect x="240" y="39" width="100" height="35" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="4"/>
+  <text x="290" y="57" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1565c0">
     H atoms on
   </text>
-  <text x="290" y="86" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1565c0">
+  <text x="290" y="70" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1565c0">
     SAME side
   </text>
   
