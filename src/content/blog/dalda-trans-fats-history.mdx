@@ -13,6 +13,15 @@ relatedArticles: ["harmful-food-additives-india"]
 ---
 
 import Highlight from "@/react/Highlight/Highlight.jsx";
+import { SvgWrapper } from "@/react/Svg/SvgWrapper.jsx";
+import { MOLECULAR_SATURATED } from "@/data/svg/molecular-saturated.ts";
+import { MOLECULAR_UNSATURATED } from "@/data/svg/molecular-unsaturated.ts";
+import { MOLECULAR_CIS } from "@/data/svg/molecular-cis.ts";
+import { MOLECULAR_TRANS } from "@/data/svg/molecular-trans.ts";
+import { HYDROGENATION_PROCESS } from "@/data/svg/hydrogenation-process.ts";
+import { PALMOLEIN_PACKING } from "@/data/svg/palmolein-packing.ts";
+import { HYDROGENATION_REACTION } from "@/data/svg/hydrogenation-reaction.ts";
+import { THREE_OUTCOMES } from "@/data/svg/three-outcomes.ts";
 
 The story of Dalda is more than just a tale of vegetable fat—it's a journey through India's industrial revolution, brilliant marketing, chemical innovation, and eventually, a cautionary tale about health and nutrition. From being a revolutionary cooking medium to becoming synonymous with health risks, Dalda's trajectory mirrors our evolving understanding of nutrition science.
 
@@ -63,22 +72,13 @@ Fats and oils are composed of **fatty acids**—long chains of carbon atoms bond
 A **double bond** occurs when two carbon atoms share **two pairs of electrons** instead of one. Think of it as a stronger, closer connection between carbon atoms.
 
 **Single Bond (Saturated):**
-```
-    H   H   H   H
-    |   |   |   |
-—C—C—C—C—C—
-    |   |   |   |
-    H   H   H   H
-```
+
+<SvgWrapper svg={MOLECULAR_SATURATED} width="100%" />
 
 **Double Bond (Unsaturated):**
-```
-    H       H
-    |       |
-—C—C=C—C—
-    |       |
-    H       H
-```
+
+<SvgWrapper svg={MOLECULAR_UNSATURATED} width="100%" />
+
 
 Notice how the double bond (C=C) means fewer hydrogen atoms are attached. This is why it's called **"unsaturated"**—not all carbon atoms are saturated with hydrogen.
 
@@ -313,15 +313,7 @@ The presence of double bonds means:
 - **Loose packing** (bent chains don't fit together neatly)
 - **Liquid** at room temperature (weaker intermolecular forces)
 
-```
-Palmolein Fatty Acids (Unsaturated - Kinked):
-
-═══╗   
-   ╚═══╗       Bent chains
-       ╚═══    can't pack tightly
-  ╔════╝       → LIQUID
-══╝            
-```
+<SvgWrapper svg={PALMOLEIN_PACKING} width="100%" />
 
 ### <Highlight color='#004080' highlight='fg' fontWeight='bold'> What is Hydrogenation? The Chemical Transformation </Highlight>
 
@@ -331,25 +323,7 @@ To understand the Dalda phenomenon and its eventual downfall, we must understand
 
 **The Chemical Reaction:**
 
-```
-BEFORE Hydrogenation (Unsaturated - Liquid):
-    H       H
-    |       |
-—C—C=C—C—    (DOUBLE BOND - bent chain)
-    |       |
-    H       H
-
-        ↓ + H₂ (Hydrogen gas)
-        ↓ + Catalyst (Nickel/Palladium)
-        ↓ + Heat (150-200°C)
-
-AFTER Hydrogenation (Saturated - Solid):
-    H   H   H   H
-    |   |   |   |
-—C—C—C—C—    (SINGLE BOND - straight chain)
-    |   |   |   |
-    H   H   H   H
-```
+<SvgWrapper svg={HYDROGENATION_REACTION} width="100%" />
 
 #### Why Palmolein Needed Hydrogenation
 
@@ -396,23 +370,7 @@ The critical health issue with hydrogenated fats lies in the **isomer configurat
 
 In naturally occurring unsaturated fats, the hydrogen atoms on either side of a double bond are on the **same side** of the molecule. This is called the **cis configuration** (from Latin "cis" meaning "on this side").
 
-```
-    H   H
-    |   |
-—C=C—        ← Both H atoms on SAME side
-              Creates a BENT shape
-```
-
-**3D Structure:**
-```
-Cis Configuration (Natural oils like palmolein):
-
-     ╔═══╗     
-═════╝   ╚═════  
-  ↑ KINK/BEND
-
-This bend prevents tight packing → LIQUID
-```
+<SvgWrapper svg={MOLECULAR_CIS} width="100%" />
 
 **Characteristics of Cis Fats:**
 - Create a **sharp "kink" or bend** in the fatty acid chain (approximately 30° angle)
@@ -426,23 +384,7 @@ This bend prevents tight packing → LIQUID
 
 During **partial hydrogenation**, some double bonds flip, placing hydrogen atoms on **opposite sides** of the molecule. This is the **trans configuration** (from Latin "trans" meaning "across").
 
-```
-    H       
-    |       
-—C=C—        ← H atoms on OPPOSITE sides
-        |     Creates a STRAIGHT shape
-        H
-```
-
-**3D Structure:**
-```
-Trans Configuration (Dalda - partially hydrogenated):
-
-═══════════════  
-  ↑ STRAIGHT (like saturated fat)
-
-Straight chains can pack tightly → SEMI-SOLID
-```
+<SvgWrapper svg={MOLECULAR_TRANS} width="100%" />
 
 **Characteristics of Trans Fats:**
 - **Straighter molecular structure** (similar to saturated fats)
@@ -463,19 +405,8 @@ Now we can understand the crucial difference between naturally solid fats (like 
 #### Coconut Oil (Naturally Solid)
 
 **Structure:**
-```
-Saturated Fat (NO double bonds):
 
-    H   H   H   H   H   H
-    |   |   |   |   |   |
-—C—C—C—C—C—C—
-    |   |   |   |   |   |
-    H   H   H   H   H   H
-
-═══════════════  Naturally straight
-═══════════════  (no double bonds to create kinks)
-═══════════════  → SOLID
-```
+<SvgWrapper svg={MOLECULAR_SATURATED} width="100%" />
 
 **Why it's solid:** NO double bonds → naturally straight chains → tight packing → solid
 
@@ -484,20 +415,8 @@ Saturated Fat (NO double bonds):
 #### Dalda/Trans Fat (Artificially Solid)
 
 **Structure:**
-```
-Trans Fat (Has double bonds in TRANS configuration):
 
-    H   H       H   H
-    |   |       |   |
-—C—C—C=C—C—C—
-    |   |       |   |
-    H   H   H   H   H
-         (trans)
-
-═══════════════  Artificially straightened
-═══════════════  (trans double bonds don't create kinks)
-═══════════════  → SEMI-SOLID
-```
+<SvgWrapper svg={MOLECULAR_TRANS} width="100%" />
 
 **Why it's semi-solid:** Double bonds flipped to trans → artificially straightened chains → tight packing → semi-solid
 
@@ -582,31 +501,7 @@ The catalyst (nickel) temporarily "breaks" the double bond, creating a reactive 
 
 From this reactive state, three things can happen:
 
-1. **Full Hydrogenation** (Desired for complete saturation):
-   ```
-   Cis double bond → NO double bond (saturated)
-   —C=C— → —C—C—
-   LIQUID → SOLID
-   ```
-
-2. **Isomerization to Trans** (Undesired side reaction):
-   ```
-   Cis double bond → Trans double bond (same number of H atoms!)
-   
-   H   H              H
-   |   |              |
-   —C=C—    →    —C=C—
-   (CIS)              |
-                      H
-                   (TRANS)
-   LIQUID → SEMI-SOLID (looks solid but still has double bond!)
-   ```
-
-3. **Remains Cis** (Unchanged):
-   ```
-   Cis double bond → Cis double bond (no reaction)
-   LIQUID → LIQUID
-   ```
+<SvgWrapper svg={THREE_OUTCOMES} width="100%" />
 
 #### Why Partial Hydrogenation Maximizes Trans Fats
 
@@ -624,19 +519,7 @@ From this reactive state, three things can happen:
 - Trans fat content: **Very high (10-60%)**
 - Problem: **Maximum trans fat creation!**
 
-```
-Palmolein (Liquid Oil):
-100 double bonds (all cis)
-
-        ↓ PARTIAL Hydrogenation
-
-Dalda (Semi-solid Fat):
-30 double bonds removed (saturated)
-50 double bonds flipped to TRANS ← DANGER!
-20 double bonds remain cis
-
-= 50% TRANS FAT content!
-```
+<SvgWrapper svg={HYDROGENATION_PROCESS} width="100%" />
 
 #### Why the Trans Formation Happens
 
