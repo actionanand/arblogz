@@ -10,12 +10,17 @@ lastUpdated: 2026-01-18
 toc: true
 ogImage: /images/year-2026/jathagam.webp
 mermaid: true
-relatedArticles: ["jathagam-vedic-astrology-part6b-practical-guide", "jathagam-vedic-astrology-part1-nakshatras", "jathagam-vedic-astrology-part2-rashis-planets", "jathagam-vedic-astrology-part2b-planets-houses", "jathagam-vedic-astrology-part3-dasha-system"]
+relatedArticles: ["jathagam-vedic-astrology-part6b-practical-guide", "jathagam-vedic-astrology-part1-nakshatras", "jathagam-vedic-astrology-part2-rashis-planets", "jathagam-vedic-astrology-part2b-planets-houses", "jathagam-vedic-astrology-part7-divisional-charts"]
 showDisclaimer: true
 customDisclaimer: This guide is for educational purposes. Always consult a qualified Vedic astrologer for personal predictions and important life decisions.
 ---
 
 import Highlight from "@/react/Highlight/Highlight.jsx";
+import { SvgWrapper } from "@/react/Svg/SvgWrapper.jsx";
+
+import { SOUTH_INDIAN_CHART_LAYOUT } from "@/data/svg/south-indian-chart-layout.ts";
+import { RASI_CHART_EXAMPLE } from "@/data/svg/rasi-chart-example.ts";
+import { NAVAMSA_CHART_EXAMPLE } from "@/data/svg/navamsa-chart-example.ts";
 
 # Jathagam Guide - Part 6A: How to Read Jathagam
 # ஜாதகம் வழிகாட்டி - பாகம் 6A: ஜாதகம் படிப்பது எப்படி
@@ -37,26 +42,72 @@ Welcome to **Part 6A** - where everything comes together! This is the **practica
 :::tip[What You'll Master - நீங்கள் கற்பவை]
 This comprehensive guide teaches:
 
-**Chart Reading:**
-✅ Understanding the Jathagam chart layout <br></br>
-✅ Step-by-step analysis method <br></br>
-✅ Identifying strengths and weaknesses <br></br>
-✅ Recognizing doshas and yogas <br></br>
-✅ Sample chart analysis walkthrough
+**Essential Chart Knowledge:** <br></br>
+✅ Two charts in every Jathagam: Rasi (ராசி) & Navamsa (அம்சம்) <br></br>
+✅ Understanding D1 and D9 divisional charts <br></br>
+✅ Why Navamsa is crucial for marriage analysis <br></br>
+✅ Other divisional charts overview (D2-D60)
 
-**Marriage Compatibility (பொருத்தம்):**
-✅ Complete 10 Porutham system <br></br>
+**Chart Reading:** <br></br>
+✅ Understanding the South Indian chart layout <br></br>
+✅ Step-by-step 7-phase analysis method <br></br>
+✅ Identifying strengths and weaknesses in BOTH charts <br></br>
+✅ Recognizing doshas and yogas <br></br>
+✅ Sample chart analysis walkthrough <br></br>
+✅ Cross-verification between Rasi and Navamsa
+
+**Marriage Compatibility (பொருத்தம்):** <br></br>
+✅ Complete 10 Porutham system explained <br></br>
 ✅ Scoring and interpretation <br></br>
+✅ Navamsa compatibility checking (advanced) <br></br>
 ✅ When to proceed despite low score <br></br>
 ✅ Exceptions and cancellations <br></br>
 ✅ Modern vs traditional approach
 
-**With Mermaid diagrams to visualize the process!**
+**With SVG diagrams, Mermaid flowcharts, and comprehensive tables!**
 :::
 
 ---
 
 ## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Understanding the Jathagam Chart - ஜாதக அட்டவணை </Highlight>
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Two Essential Charts: Rasi & Navamsa </Highlight>
+
+**Every Complete Tamil Jathagam Has TWO Main Charts:**
+
+1. **Rasi Chart (ராசி அட்டவணை)** - D1 Chart (Birth Chart)
+2. **Navamsa Chart (அம்சம் அட்டவணை)** - D9 Chart (Divisional Chart)
+
+**Why TWO Charts?**
+
+**Rasi Chart (ராசி):**
+- **What:** Main birth chart based on planetary positions at birth time
+- **Purpose:** Overall life events, personality, career, health, general predictions
+- **Coverage:** Broad view of life (கட்டத்தில் பெரிய படம்)
+- **Like:** Your "resume" - what you appear to be
+
+**Navamsa Chart (அம்சம்):**
+- **What:** 9th divisional chart - each Rasi divided into 9 parts (3°20' each)
+- **Purpose:** **Marriage, spouse, spiritual strength, TRUE planetary strength**
+- **Coverage:** Deep analysis (ஆழமான பகுப்பாய்வு)
+- **Like:** Your "character reference" - who you truly are
+
+:::tip[Critical Understanding! - முக்கியமான உண்மை!]
+**A planet may appear STRONG in Rasi chart but be WEAK in Navamsa - this reveals the TRUTH!**
+
+**Example:**
+- Jupiter in own sign (Pisces) in Rasi → Looks strong
+- Jupiter debilitated (Capricorn) in Navamsa → Actually weak!
+- **Result:** Person may appear wise but lacks depth, or success comes with struggles
+
+**For Marriage Analysis:**
+- **7th house in Rasi** → When/how marriage happens
+- **7th house in Navamsa** → Quality of married life, spouse nature
+- **Venus in Navamsa** → TRUE capacity for love and relationships
+- **Moon in Navamsa** → Emotional compatibility in marriage
+:::
+
+---
 
 ### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Tamil/South Indian Chart Format </Highlight>
 
@@ -69,29 +120,8 @@ This comprehensive guide teaches:
 
 **South Indian Chart Layout:**
 
-```
-┌─────────────┬─────────────┬─────────────┬─────────────┐
-│             │             │             │             │
-│    12       │      1      │      2      │      3      │
-│   வியாயம்  │    லக்னம்  │    தனம்    │  சகோதரம் │
-│             │             │             │             │
-├─────────────┼─────────────┼─────────────┼─────────────┤
-│             │             │             │             │
-│    11       │                           │      4      │
-│   லாபம்    │      RASI CHART           │    சுகம்     │
-│             │     ராசி அட்டவணை      │             │
-├─────────────┤                           ├─────────────┤
-│             │                           │             │
-│    10       │                           │      5      │
-│கர்மஸ்தானம்│                           │  புத்திரம்    │
-│             │                           │             │
-├─────────────┼─────────────┼─────────────┼─────────────┤
-│             │             │             │             │
-│     9       │      8      │      7      │      6      │
-│ பாக்கியம்   │   ஆயுள்    │ கலத்திரம்   │    ரிபு      │
-│             │             │             │             │
-└─────────────┴─────────────┴─────────────┴─────────────┘
-```
+<SvgWrapper svg={SOUTH_INDIAN_CHART_LAYOUT} />
+
 
 **Key Points:**
 
@@ -118,32 +148,261 @@ This comprehensive guide teaches:
 
 **Rasi Chart:**
 
-```
-┌─────────────┬─────────────┬─────────────┬─────────────┐
-│  Aquarius   │   PISCES    │    Aries    │   Taurus    │
-│             │   (LAGNA)   │             │   Moon      │
-│   Saturn    │   Jupiter   │             │   Venus     │
-│             │   Mercury   │             │             │
-├─────────────┼─────────────┼─────────────┼─────────────┤
-│ Capricorn   │                           │   Gemini    │
-│             │                           │             │
-│             │                           │             │
-│             │                           │             │
-├─────────────┤                           ├─────────────┤
-│ Sagittarius│                           │   Cancer    │
-│             │                           │             │
-│   Ketu      │                           │   Sun       │
-│             │                           │             │
-├─────────────┼─────────────┼─────────────┼─────────────┤
-│  Scorpio    │    Libra    │    Virgo    │     Leo     │
-│             │             │             │             │
-│   Mars      │             │             │   Rahu      │
-│             │             │             │             │
-└─────────────┴─────────────┴─────────────┴─────────────┘
+<SvgWrapper svg={RASI_CHART_EXAMPLE} />
 
-Houses: 1=Pisces, 2=Aries, 3=Taurus, 4=Gemini, 5=Cancer, 6=Leo,
-        7=Virgo, 8=Libra, 9=Scorpio, 10=Sagittarius, 11=Capricorn, 12=Aquarius
-```
+**Planetary Positions:**
+- Lagna: Pisces (1st house)
+- Jupiter, Mercury: 1st house (Pisces)
+- Moon, Venus: 3rd house (Taurus)
+- Sun: 5th house (Cancer)
+- Rahu: 6th house (Leo)
+- Mars: 9th house (Scorpio)
+- Ketu: 10th house (Sagittarius)
+- Saturn: 12th house (Aquarius)
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Understanding Navamsa Chart (அம்சம்) </Highlight>
+
+**What is Navamsa (D9)?**
+
+**Navamsa (நவாம்சம்)** = **Nav** (9) + **Amsa** (division)
+
+- Each of 12 Rasis is divided into **9 equal parts** of 3°20' each
+- Total 108 Navamsas (12 × 9 = 108, sacred number!)
+- Planet's position in which Navamsa it falls → Navamsa chart placement
+
+**How Navamsa is Calculated:**
+
+<div class="table-luxury-grid">
+
+| Rasi Type | Navamsa Sequence | Starting Sign |
+|-----------|-----------------|---------------|
+| **Aries, Leo, Sagittarius** (Fire) | Aries → Sagittarius | Same sign |
+| **Taurus, Virgo, Capricorn** (Earth) | Capricorn → Virgo | 10th from itself |
+| **Gemini, Libra, Aquarius** (Air) | Libra → Gemini | 7th from itself |
+| **Cancer, Scorpio, Pisces** (Water) | Cancer → Pisces | 4th from itself |
+
+</div>
+
+**Example Calculation:**
+- Planet at **Pisces 15°30'** in Rasi
+- Pisces is Water sign → Starts from Cancer
+- 15°30' ÷ 3°20' = 4.65 → 5th Navamsa
+- Cancer + 4 signs = **Scorpio Navamsa**
+
+**Don't worry about calculation - astrology software does this!** Just understand the concept.
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Sample Navamsa Chart Example </Highlight>
+
+**Same Birth Details (Example):**
+- **Date:** January 15, 1995, 10:30 AM, Chennai
+- **Rasi Lagna:** Pisces
+- **Navamsa Lagna:** Cancer (changes based on exact degree!)
+
+**Navamsa Chart:**
+
+<SvgWrapper svg={NAVAMSA_CHART_EXAMPLE} />
+
+**Comparison: Rasi vs Navamsa for Same Person:**
+
+<div class="table-luxury-grid">
+
+| Planet | Rasi Chart Position | Navamsa (D9) Position | Strength Change |
+|--------|-------------------|---------------------|----------------|
+| **Lagna** | Pisces (Water, Jupiter) | Cancer (Water, Moon) | Emotional emphasis increases |
+| **Sun** | Cancer (Own sign) | Leo (Own sign) | Strong in both ✓ |
+| **Moon** | Taurus (Exalted) | Cancer (Own sign) | Excellent in both ✓✓ |
+| **Mars** | Scorpio (Own sign) | Virgo (Neutral but exalted!) | Gets stronger! ✓✓ |
+| **Mercury** | Pisces (Debilitated) | Gemini (Own sign) | Recovers in D9! ↑ |
+| **Jupiter** | Pisces (Own sign) | Scorpio (Debilitated) | **Weakens in D9!** ↓ |
+| **Venus** | Taurus (Own sign) | Taurus (Own sign) | Consistent ✓ |
+| **Saturn** | Aquarius (Own sign) | Capricorn (Own sign) | Strong in both ✓ |
+| **Rahu** | Leo | Sagittarius | Better placement |
+| **Ketu** | Sagittarius | Gemini | Changes significantly |
+
+</div>
+
+**Critical Observations:**
+
+✅ **Moon remains strong** (Exalted → Own sign) → Emotional stability confirmed
+
+✅ **Mercury recovers** (Debilitated → Own sign) → Communication improves with maturity
+
+❌ **Jupiter weakens** (Own sign → Debilitated) → Wisdom may be superficial, spiritual growth needs effort
+
+✅ **Mars strengthens** (Own sign → Exalted) → Courage and action improve over time
+
+✅ **Saturn in 7th house (D9)** → Delayed but mature, stable marriage partner
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Why Navamsa is CRUCIAL for Marriage </Highlight>
+
+**Navamsa is called "Dharma Amsa" (धर्मांश)** - Chart of righteousness and marriage
+
+**Key Marriage Indicators in Navamsa:**
+
+**1. Navamsa Lagna (D9 Ascendant):**
+- Shows **inner personality** in marriage
+- How you **truly behave** with spouse (not public image)
+- **Cancer D9 Lagna** (example) → Nurturing, emotional, protective spouse
+
+**2. 7th House in Navamsa:**
+- **Quality and nature** of married life
+- Spouse's **true character** (not just appearance)
+- **Saturn in 7th (D9)** → Delayed marriage, mature/older spouse, stable but serious
+
+**3. Venus in Navamsa:**
+- **TRUE** capacity for love, romance, intimacy
+- If Venus weak in D9 → Relationship struggles despite Rasi chart promise
+- **Venus in Taurus (D9)** → Genuine love for luxury, arts, sensual pleasures
+
+**4. 7th Lord in Navamsa:**
+- Where 7th lord goes in D9 → Marriage life focus
+- **Mercury (7th lord from Pisces) in Gemini (D9)** → Communication-focused marriage
+
+**5. Planets in 7th House (D9):**
+- **Benefic (Jupiter, Venus, Mercury)** → Happy marriage
+- **Malefic (Saturn, Mars, Rahu)** → Challenges but growth
+- **Saturn in 7th (example)** → Late marriage, age gap, but long-lasting
+
+**6. Upapada Lagna (Advanced):**
+- Calculated from Arudha Lagna
+- Shows **how marriage appears** to society
+- Advanced topic - consult expert
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> How to Use Both Charts Together </Highlight>
+
+**Step-by-Step Integration:**
+
+**1. Basic Personality & Life Events → Rasi Chart**
+- Career path
+- Health issues
+- General wealth
+- Major life timing (Dasha + Rasi transit)
+
+**2. TRUE Strength & Marriage → Navamsa Chart**
+- Planetary **actual strength** (not just positional)
+- Marriage compatibility
+- Spouse nature
+- Spiritual evolution
+
+**3. Cross-Verification:**
+
+**Rule:** A planet must be strong in **BOTH** charts for best results!
+
+<div class="table-luxury-grid">
+
+| Rasi Chart | Navamsa Chart | Result | Example |
+|------------|--------------|--------|---------|
+| Strong | Strong | **Excellent!** Best results | Moon: Exalted → Own sign ✓✓ |
+| Strong | Weak | Good start, later problems | Jupiter: Own → Debilitated ↓ |
+| Weak | Strong | Struggle first, success later | Mercury: Debilitated → Own ↑ |
+| Weak | Weak | **Difficult** Needs remedies | Afflicted in both ✗✗ |
+
+</div>
+
+**Marriage-Specific Analysis:**
+
+1. **Check 7th house in BOTH charts**
+   - Rasi 7th: Virgo (Mercury debilitated in 1st) → Communication issues
+   - D9 7th: Capricorn (Saturn there) → Mature, stable, but delayed
+
+2. **Check Venus in BOTH charts**
+   - Rasi: Taurus (own sign, 3rd house) → Love for arts, communication
+   - D9: Taurus (own sign, 11th house) → Gains through spouse, social life
+
+3. **Check Moon in BOTH charts**
+   - Rasi: Taurus (exalted, 3rd house) → Strong mental state
+   - D9: Cancer (own sign, 1st house) → Emotionally mature in marriage
+
+**Conclusion for Example Person:**
+- **Marriage will be delayed** (Saturn in 7th D9, weak Rasi 7th lord)
+- **But marriage will be stable** (Saturn is own sign, Venus strong in both)
+- **Spouse will be mature, serious** (Saturn influence)
+- **Emotional bond will be strong** (Moon excellent in both)
+- **Need to work on communication** (Mercury debilitated in Rasi, though recovers in D9)
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Other Important Divisional Charts (Advanced) </Highlight>
+
+**Beyond Rasi and Navamsa, there are 14 more divisional charts (Shodasavarga - षोडशवर्ग):**
+
+<div class="table-luxury-grid">
+
+| Chart | Division | Purpose | When Used |
+|-------|----------|---------|-----------|
+| **D1 - Rasi** | 1 (30°) | Main chart | Always |
+| **D9 - Navamsa** | 9 (3°20') | Marriage, spouse, dharma | Marriage matching |
+| **D2 - Hora** | 2 (15°) | Wealth | Financial analysis |
+| **D3 - Drekkana** | 3 (10°) | Siblings, courage | Family analysis |
+| **D4 - Chaturthamsa** | 4 (7°30') | Property, assets | Real estate |
+| **D7 - Saptamsa** | 7 (4°17') | Children, grandchildren | Progeny |
+| **D10 - Dasamsa** | 10 (3°) | Career, profession | Career guidance |
+| **D12 - Dwadasamsa** | 12 (2°30') | Parents | Family relations |
+| **D16 - Shodasamsa** | 16 (1°52.5') | Vehicles, comforts | Material luxuries |
+| **D20 - Vimsamsa** | 20 (1°30') | Spirituality, mantras | Spiritual path |
+| **D24 - Chaturvimsamsa** | 24 (1°15') | Education, learning | Academic success |
+| **D27 - Nakshatramsa** | 27 (1°6.7') | Strengths, weaknesses | Detailed analysis |
+| **D30 - Trimsamsa** | 30 (1°) | Evils, misfortunes | Dosha analysis |
+| **D40 - Khavedamsa** | 40 (45') | Auspicious/inauspicious | Good/bad effects |
+| **D45 - Akshavedamsa** | 45 (40') | General well-being | Overall life quality |
+| **D60 - Shashtiamsa** | 60 (30') | Past karma, complete chart | Advanced analysis only |
+
+</div>
+
+**For Marriage Analysis in Tamil Tradition:**
+
+**Essential:**
+1. **D1 (Rasi)** - Main chart - ALWAYS
+2. **D9 (Navamsa)** - Marriage, spouse - ALWAYS
+
+**Recommended:**
+
+3. **D7 (Saptamsa)** - Children from marriage
+4. **D12 (Dwadasamsa)** - Parents' approval, family relations
+5. **D20 (Vimsamsa)** - Spiritual compatibility (important in Tamil culture)
+
+**For Complete Analysis:**
+- D10 (Career compatibility - can couple support each other's careers?)
+- D60 (Advanced astrologers only - past life karma together)
+
+:::tip[Want to Learn More? - மேலும் அறிய விருப்பமா?]
+For detailed explanation of **D7, D10, D12, D20, and D60** charts with practical examples, read:
+👉 [**Part 7 (BONUS): Divisional Charts Guide**](jathagam-vedic-astrology-part7-divisional-charts)
+
+This comprehensive bonus article covers:
+- How each divisional chart works
+- What to look for in each chart
+- Practical examples with analysis
+- When to use which chart
+:::
+
+:::note[Practical Advice - நடைமுறை ஆலோசனை]
+**For most people:**
+- Focus on **Rasi + Navamsa** only
+- Other divisional charts are for **expert astrologers**
+- Don't get overwhelmed by 16 charts!
+
+**When consulting astrologer for marriage:**
+- Ask for **Rasi + Navamsa** analysis
+- If astrologer checks D7 (children), D20 (spiritual) → Good, thorough
+- If astrologer only checks D1 (Rasi) → Incomplete analysis!
+- If astrologer uses all 16 charts → Either expert or showing off! 😊
+
+**Tamil Tradition:**
+- Traditional astrologers always check **ராசி + அம்சம்** (Rasi + Amsa)
+- Modern astrologers may skip Navamsa - **this is wrong!**
+- **Navamsa is NON-NEGOTIABLE** for marriage matching!
+:::
+
+---
 
 **Planetary Positions:**
 - Lagna: Pisces (1st house)
@@ -475,6 +734,44 @@ Tamil astrology uses **10 different compatibility tests** based on the couple's 
 - Minimum acceptable: **6 Poruthams** (some say 5)
 - Ideal: **8+ Poruthams**
 - Perfect match (all 10): Rare!
+
+:::tip[IMPORTANT: Navamsa Check in Marriage! - அம்சம் சோதனை!]
+**The 10 Poruthams are based on Rasi (D1) chart ONLY.**
+
+**But knowledgeable astrologers ALSO check:**
+
+**1. Navamsa 7th House Compatibility:**
+- Boy's D9 7th house + Girl's D9 7th house
+- Planets there should be compatible
+- **Example:** Boy has Venus in D9 7th, Girl has Saturn → May clash (love vs discipline)
+
+**2. Navamsa Lagna Compatibility:**
+- Boy's D9 Lagna sign + Girl's D9 Lagna sign
+- Should be friendly or compatible elements
+- **Fire + Air** = Good (energize each other)
+- **Fire + Water** = Conflict (extinguish vs evaporate)
+- **Earth + Water** = Excellent (nurture each other)
+
+**3. Venus Position in Both D9 Charts:**
+- Venus = Love, marriage significator
+- Both should have reasonably strong Venus in D9
+- If both have weak Venus in D9 → Relationship struggles despite good Porutham!
+
+**4. Moon Compatibility in D9:**
+- Emotional compatibility at deep level
+- Check Moon sign in both D9 charts
+- Compatible Moon signs → Better understanding
+
+**Modern Comprehensive Matching:**
+- **10 Poruthams** (from Rasi) → **60% weight**
+- **Navamsa compatibility** → **30% weight**
+- **Individual chart strength** → **10% weight**
+- **Total evaluation** → Holistic view
+
+**If Porutham is low (5/10) but Navamsa compatibility is excellent → Can proceed with caution!**
+
+**If Porutham is high (8/10) but Navamsa shows severe conflicts → Proceed with caution despite good score!**
+:::
 
 ---
 
@@ -1141,6 +1438,13 @@ If other poruthams are very strong and Rajju is different, may proceed with reme
 
 ### <Highlight color='#004080' highlight='fg' fontWeight='bold'> What We Covered </Highlight>
 
+✅ **Understanding Jathagam Charts:**
+- Two essential charts: Rasi (ராசி) and Navamsa (அம்சம்)
+- Difference between D1 and D9 charts
+- Why Navamsa is crucial for marriage analysis
+- How to read both charts together
+- Other divisional charts (D2-D60) overview
+
 ✅ **Chart Reading Process:**
 - Understanding South Indian chart format
 - 7-step systematic analysis method
@@ -1148,12 +1452,14 @@ If other poruthams are very strong and Rajju is different, may proceed with reme
 - Identifying strengths, weaknesses, doshas, yogas
 - Current Dasha assessment
 - Life predictions and remedies
+- Cross-verification between Rasi and Navamsa
 
 ✅ **Marriage Compatibility (10 Poruthams):**
 - Complete porutham system explained
 - Each of 10 poruthams in detail with examples
 - Scoring and minimum requirements
 - Critical poruthams: Rajju & Stree Deergha
+- Navamsa compatibility checking (modern approach)
 - When to proceed despite low score
 - Modern vs traditional approaches
 - Exceptions and remedies
@@ -1162,11 +1468,17 @@ If other poruthams are very strong and Rajju is different, may proceed with reme
 
 ### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Key Takeaways </Highlight>
 
+🔑 **Two Charts Essential:** Always check BOTH Rasi and Navamsa - never just Rasi alone!
+
+🔑 **Navamsa Truth:** A planet strong in Rasi but weak in Navamsa = superficial strength only
+
+🔑 **Marriage Analysis:** Navamsa is NON-NEGOTIABLE for marriage compatibility
+
 🔑 **Chart Reading:** Follow systematic 7-step process for accurate analysis
 
-🔑 **Lagna & Moon:** Foundation of any chart reading
+🔑 **Lagna & Moon:** Foundation of any chart reading in BOTH charts
 
-🔑 **Strength Matters:** Exalted/own sign planets give best results
+🔑 **Strength Matters:** Exalted/own sign planets give best results - check in BOTH charts
 
 🔑 **Doshas & Yogas:** Check both - they coexist in most charts
 
@@ -1174,13 +1486,15 @@ If other poruthams are very strong and Rajju is different, may proceed with reme
 
 🔑 **Marriage Porutham:** Minimum 6/10, but Rajju & Stree Deergha are critical
 
+🔑 **Navamsa + Porutham:** Comprehensive matching = 10 Poruthams + Navamsa compatibility
+
 🔑 **Same Rajju:** Very serious - avoid or perform strong remedies
 
 🔑 **Both with Chevvai Dosham:** Cancels the dosha - can proceed
 
 🔑 **Love Marriage:** Can proceed with 5/10 if committed, but remedy doshas
 
-🔑 **Consult Expert:** For important decisions, always seek qualified astrologer
+🔑 **Consult Expert:** For important decisions, always seek qualified astrologer who checks Navamsa!
 
 ---
 
