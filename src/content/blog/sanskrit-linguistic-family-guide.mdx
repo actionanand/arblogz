@@ -6,6 +6,7 @@ tags: ['sanskrit', 'linguistics', 'proto-indo-european', 'language history']
 category: Language Mastery
 showDonate: true
 outdated: 0
+mermaid: true
 lastUpdated: 2026-04-01
 toc: true
 relatedArticles: ["learn-sanskrit-part1-guide", "learn-sanskrit-part2-advanced-grammar", "learn-tamil-hindi-kannada-sanskrit", "learn-hindi-devanagari-script-tamil"]
@@ -80,6 +81,46 @@ Both theories agree that PIE speakers eventually reached the Indian subcontinent
 ## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Part 2: Closest Relatives — The Prakrits, Pali & Ardhamagadhi </Highlight>
 
 ### <Highlight color='#004080' highlight='fg' fontWeight='bold'> The Sanskrit–Prakrit Relationship </Highlight>
+
+Before diving in, here is a quick visual of how Sanskrit, the Prakrits, and modern languages connect — and where Pali and Ardhamagadhi sit in that chain:
+
+```mermaid
+flowchart LR
+    OIA["Old Indo-Aryan\n~1500 BCE"]
+
+    OIA --> Sanskrit["⭐ Sanskrit\nFormal · Sacred · Literary\nPanini codified ~500 BCE"]
+    OIA --> EarlyPrakrit["Early Prakrits\nSpoken vernaculars\n~600 BCE onwards"]
+
+    EarlyPrakrit --> Pali["🟡 Pali\nBuddhist Canon\n'dhamma' not 'dharma'"]
+    EarlyPrakrit --> Ardhamagadhi["🟠 Ardhamagadhi\nJain Agamas\nMahavira's dialect"]
+    EarlyPrakrit --> Shauraseni["Shauraseni\nUsed in Sanskrit plays\nfor women and merchants"]
+    EarlyPrakrit --> Maharashtri["Maharashtri\nLove poetry"]
+    EarlyPrakrit --> Magadhi["Magadhi\nBihar region"]
+
+    Shauraseni --> Apabhramsha["Apabhramsha\nTransitional dialects"]
+    Maharashtri --> Apabhramsha
+    Magadhi --> Apabhramsha
+
+    Apabhramsha --> Hindi["Hindi · Urdu\n600M+ speakers"]
+    Apabhramsha --> Marathi["Marathi · Bengali\nPunjabi · Gujarati"]
+    Pali --> Sinhala["Sinhala\nSri Lanka"]
+
+    Sanskrit -.->|"enriched vocabulary"| Hindi
+    Sanskrit -.-> Marathi
+
+    style OIA fill:#4a0080,color:#fff
+    style Sanskrit fill:#800031,color:#fff
+    style EarlyPrakrit fill:#004080,color:#fff
+    style Pali fill:#b8860b,color:#fff
+    style Ardhamagadhi fill:#b8520b,color:#fff
+    style Shauraseni fill:#006080,color:#fff
+    style Maharashtri fill:#005a9e,color:#fff
+    style Magadhi fill:#006060,color:#fff
+    style Apabhramsha fill:#37474f,color:#fff
+    style Hindi fill:#2e7d32,color:#fff
+    style Marathi fill:#2e7d32,color:#fff
+    style Sinhala fill:#2e7d32,color:#fff
+```
 
 The word **Prakrit (प्राकृत)** literally means *"natural"* or *"derived from nature"* — in contrast to Sanskrit, which means *"refined/perfected."* The Prakrits were the **spoken vernacular languages** of ancient India that evolved naturally from the same Old Indo-Aryan roots as Sanskrit. They were the languages ordinary people actually spoke, while Sanskrit was the formal literary and ritual language used by scholars and priests.
 
@@ -315,6 +356,94 @@ One PIE root. One concept of *leadership*. Across thousands of years and thousan
 ---
 
 ## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Part 5: The Full Family Tree at a Glance </Highlight>
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> The Indo-European Family Tree — Visual Overview </Highlight>
+
+The diagram below maps Sanskrit's exact position in the full Indo-European family — from the ancient PIE root all the way down to modern living languages:
+
+```mermaid
+flowchart TD
+    PIE["🌍 Proto-Indo-European\n~4500–6500 BCE\n(Reconstructed — no written records)"]
+
+    PIE --> IndoIranian["Indo-Iranian Branch\n~2000 BCE"]
+    PIE --> Hellenic["Hellenic Branch"]
+    PIE --> Italic["Italic Branch"]
+    PIE --> Germanic["Germanic Branch"]
+    PIE --> Baltic["Baltic Branch"]
+    PIE --> Slavic["Slavic Branch"]
+    PIE --> Celtic["Celtic Branch"]
+    PIE --> Other["Armenian · Albanian · Others"]
+
+    IndoIranian --> Iranian["Iranian Sub-branch\nAvestan · Old Persian\nModern: Persian · Pashto · Kurdish"]
+    IndoIranian --> IndoAryan["Indo-Aryan Sub-branch\n(Old Indo-Aryan ~1500 BCE)"]
+
+    IndoAryan --> VedicSanskrit["⭐ Vedic Sanskrit\n~1500–500 BCE\n(Rigveda, Upanishads)"]
+    VedicSanskrit --> ClassicalSanskrit["⭐ Classical Sanskrit\nPanini's grammar ~500 BCE\n(Ramayana, Mahabharata, Gita)"]
+
+    ClassicalSanskrit --> Prakrits["Middle Indo-Aryan\nPrakrits ~600 BCE – 1000 CE"]
+
+    Prakrits --> Pali["🟡 Pali\nBuddhist Canon\n(Tipitaka)"]
+    Prakrits --> Ardhamagadhi["🟠 Ardhamagadhi\nJain Agamas\n(Mahavira's language)"]
+    Prakrits --> Shauraseni["Shauraseni\nNW India · Sanskrit drama"]
+    Prakrits --> Maharashtri["Maharashtri\nDeccan · Love poetry"]
+    Prakrits --> Magadhi["Magadhi\nBihar region · Drama"]
+    Prakrits --> Apabhramsha["Apabhraṃśa\nTransitional dialects\n~600–1200 CE"]
+
+    Apabhramsha --> ModernIA["Modern Indo-Aryan Languages"]
+    ModernIA --> Hindi["Hindi · Urdu\n~600M speakers"]
+    ModernIA --> Bengali["Bengali\n~230M speakers"]
+    ModernIA --> Punjabi["Punjabi · Gujarati\nMarathi · Nepali · Odia"]
+    ModernIA --> Sinhala["Sinhala\n(Sri Lanka)"]
+    ModernIA --> Romani["Romani\n(Europe — Sanskrit in the West!)"]
+
+    Hellenic --> AncientGreek["Ancient Greek\n(Homer · Plato · Aristotle)"]
+    AncientGreek --> ModernGreek["Modern Greek\n~13M speakers"]
+
+    Italic --> Latin["Latin\n(Roman Empire)"]
+    Latin --> Romance["Romance Languages\nItalian · French · Spanish\nPortuguese · Romanian"]
+
+    Germanic --> English["English · German\nDutch · Swedish · Norse"]
+
+    Baltic --> Lithuanian["Lithuanian · Latvian\n(Most conservative European branch!)"]
+
+    Slavic --> Russian["Russian · Polish\nCzech · Serbian"]
+
+    Celtic --> Irish["Irish · Welsh · Breton"]
+
+    style PIE fill:#4a0080,color:#fff,stroke:#4a0080
+    style VedicSanskrit fill:#800031,color:#fff,stroke:#800031
+    style ClassicalSanskrit fill:#800031,color:#fff,stroke:#800031
+    style Pali fill:#b8860b,color:#fff,stroke:#b8860b
+    style Ardhamagadhi fill:#b8520b,color:#fff,stroke:#b8520b
+    style IndoIranian fill:#004080,color:#fff,stroke:#004080
+    style IndoAryan fill:#005a9e,color:#fff,stroke:#005a9e
+    style Prakrits fill:#006080,color:#fff,stroke:#006080
+    style Apabhramsha fill:#006060,color:#fff,stroke:#006060
+    style ModernIA fill:#2e7d32,color:#fff,stroke:#2e7d32
+    style Hindi fill:#388e3c,color:#fff,stroke:#388e3c
+    style Bengali fill:#388e3c,color:#fff,stroke:#388e3c
+    style Punjabi fill:#388e3c,color:#fff,stroke:#388e3c
+    style Sinhala fill:#388e3c,color:#fff,stroke:#388e3c
+    style Romani fill:#388e3c,color:#fff,stroke:#388e3c
+    style Hellenic fill:#1a237e,color:#fff,stroke:#1a237e
+    style AncientGreek fill:#283593,color:#fff,stroke:#283593
+    style ModernGreek fill:#3949ab,color:#fff,stroke:#3949ab
+    style Italic fill:#4a148c,color:#fff,stroke:#4a148c
+    style Latin fill:#6a1b9a,color:#fff,stroke:#6a1b9a
+    style Romance fill:#7b1fa2,color:#fff,stroke:#7b1fa2
+    style Germanic fill:#37474f,color:#fff,stroke:#37474f
+    style English fill:#455a64,color:#fff,stroke:#455a64
+    style Baltic fill:#bf360c,color:#fff,stroke:#bf360c
+    style Lithuanian fill:#d84315,color:#fff,stroke:#d84315
+    style Slavic fill:#4e342e,color:#fff,stroke:#4e342e
+    style Russian fill:#5d4037,color:#fff,stroke:#5d4037
+    style Celtic fill:#1b5e20,color:#fff,stroke:#1b5e20
+    style Irish fill:#2e7d32,color:#fff,stroke:#2e7d32
+    style Iranian fill:#004d40,color:#fff,stroke:#004d40
+    style Other fill:#616161,color:#fff,stroke:#616161
+```
+
+> **How to read this tree:** The further down two languages branch from the same node, the more closely related they are. Sanskrit and Pali share a node just two steps from the top — they are extremely close. Sanskrit and Latin share a node only at the very root (PIE) — they are distant cousins.
 
 ### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Indo-European Language Family — Sanskrit's Position </Highlight>
 
