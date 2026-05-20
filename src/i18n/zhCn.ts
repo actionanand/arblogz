@@ -48,6 +48,7 @@ export const zhCn = {
   'post.defaultDisclaimer': '本文提供的信息仅供一般参考之用。虽然我们努力保持信息的准确性和时效性，但我们不对信息的完整性、准确性、可靠性、适用性或可用性作任何明示或暗示的陈述或保证。您对此类信息的任何依赖均由您自行承担风险。',
   'post.readArticle': '阅读文章',
   'remark.open': '展开',
+  'remark.exploreFurther': '深入了解',
   'sidebar.categories': '分类',
   'sidebar.uncategorized': '未分类',
   'sidebar.tags': '标签',

@@ -55,6 +55,7 @@ export  let cs = {
   'pagination.total':'Celkem',
   'pagination.unit': 'Stránky',
   'remark.open': 'Otevřít',
+  'remark.exploreFurther': 'Prozkoumat dále',
   'post.dateFormat': 'D. MMMM YYYY',
   'post.lastUpdated': 'Poslední aktualizace',
   'post.lastUpdatedTip1':'Tento článek byl naposledy aktualizován',

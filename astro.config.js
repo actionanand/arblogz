@@ -14,6 +14,7 @@ import { remarkModifiedTime } from './src/plugins/remark-modified-time.mjs';
 import { resetRemark } from './src/plugins/reset-remark.js';
 import {remarkAsides} from './src/plugins/remark-asides.js'
 import {remarkCollapse} from './src/plugins/remark-collapse.js';
+import {remarkExplore} from './src/plugins/remark-explore.js';
 import {remarkGithubCard} from './src/plugins/remark-github-card.js'
 import {lazyLoadImage} from './src/plugins/lazy-load-image.js';
 import {remarkButton} from './src/plugins/remark-button.js';  /* Add admonitions */
@@ -50,6 +51,7 @@ export default defineConfig({
       remarkDirective, 
       remarkAsides({}), 
       remarkCollapse({}), 
+      remarkExplore(), 
       remarkGithubCard(), 
       remarkButton(), 
       remarkHtml(), 

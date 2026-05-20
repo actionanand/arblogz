@@ -234,6 +234,19 @@ const shouldShowDonate = donate.enable && (
       });
     });
 
+    // Move .explore-further to after .footnotes (or end of body if no footnotes).
+    // This lets authors place :::explore anywhere in the article — it always
+    // renders in a consistent position below footnotes.
+    const exploreSection = markdownBody.querySelector('.explore-further');
+    if (exploreSection) {
+      const footnoteSection = markdownBody.querySelector('.footnotes');
+      if (footnoteSection) {
+        footnoteSection.after(exploreSection);
+      } else {
+        markdownBody.appendChild(exploreSection);
+      }
+    }
+
     var links = markdownBody.querySelectorAll("a");
     // 循环遍历链接标签
     for (var i = 0; i < links.length; i++) {

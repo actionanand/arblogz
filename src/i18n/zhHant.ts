@@ -78,6 +78,7 @@ export  const zhHant = {
   'pagination.total':'共',
   'pagination.unit': '頁',
   'remark.open': '打開',
+  'remark.exploreFurther': '深入了解',
   'title.minutes': '分鐘',
   'title.words': '字',
   'title.draft': '草稿',
