@@ -9,6 +9,7 @@ import Donate from '@/components/Donate.astro';
 import RelatedArticles from '@/components/RelatedArticles.astro';
 import Disclaimer from '@/components/Disclaimer.astro';
 import PasswordProtection from '@/components/PasswordProtection.astro';
+import VideoResources from '@/components/VideoResources.astro';
 import {comment, config, donate} from "@/consts";
 import ScrollToTop from '@/components/ScrollToTop.astro'
 import {t} from '@/i18n/utils'
@@ -61,6 +62,13 @@ const shouldShowDonate = donate.enable && (
       <PasswordProtection passwordProtected={frontmatter.passwordProtected}>
         <slot/>
       </PasswordProtection>
+      
+      <!-- Video Resources Section - rendered from frontmatter mediaEmbeds -->
+      {
+        frontmatter.mediaEmbeds && frontmatter.mediaEmbeds.length > 0 && (
+          <VideoResources embeds={frontmatter.mediaEmbeds} />
+        )
+      }
       
       <!-- Related Articles Section -->
       {

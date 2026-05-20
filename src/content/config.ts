@@ -52,6 +52,13 @@ const blog = defineCollection({
     // Disclaimer feature - disabled by default
     showDisclaimer: z.boolean().default(false).optional(),
     customDisclaimer: z.string().optional(),
+
+    // Media embeds — rendered as a "Video Resources" section at end of post
+    mediaEmbeds: z.array(z.object({
+      type: z.enum(['youtube', 'youtube-short', 'instagram']),
+      id: z.string(),
+      title: z.string().optional(),
+    })).optional(),
   }),
 });
 
