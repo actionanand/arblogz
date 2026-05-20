@@ -58,6 +58,7 @@ const blog = defineCollection({
       type: z.enum(['youtube', 'youtube-short', 'instagram']),
       id: z.string(),
       title: z.string().optional(),
+      startTime: z.number().int().nonnegative().optional(),
     })).optional(),
   }),
 });

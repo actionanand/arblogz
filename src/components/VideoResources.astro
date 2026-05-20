@@ -5,6 +5,7 @@ interface MediaEmbed {
   type: 'youtube' | 'youtube-short' | 'instagram';
   id: string;
   title?: string;
+  startTime?: number; // optional start time in seconds (YouTube only)
 }
 
 interface Props {
@@ -36,15 +37,13 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
         {embed.type === 'youtube' && (
           <div>
             <div class="vr-yt-wrap">
-              <iframe
+              {/* Placeholder div — replaced by YT.Player constructor (avoids Error 153 on dev/cloud) */}
+              <div
                 id={`yt-${index}`}
-                class="vr-iframe"
-                src={`https://www.youtube.com/embed/${embed.id}?rel=0&modestbranding=1&enablejsapi=1`}
-                title={embed.title || 'YouTube video'}
-                loading="lazy"
-                allowfullscreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
+                data-video-id={embed.id}
+                data-start-time={embed.startTime ?? 0}
+                data-short="false"
+              ></div>
             </div>
             <div class="vr-controls">
               <button
@@ -57,7 +56,7 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
                 <span data-mute-text data-translate="media.mute">{t('media.mute')}</span>
               </button>
               <a
-                href={`https://youtu.be/${embed.id}`}
+                href={`https://youtu.be/${embed.id}${embed.startTime ? '?t=' + embed.startTime : ''}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="vr-btn"
@@ -77,15 +76,13 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
         {embed.type === 'youtube-short' && (
           <div>
             <div class="vr-short-wrap">
-              <iframe
+              {/* Placeholder div — replaced by YT.Player constructor (avoids Error 153 on dev/cloud) */}
+              <div
                 id={`yt-${index}`}
-                class="vr-short-iframe"
-                src={`https://www.youtube.com/embed/${embed.id}?rel=0&modestbranding=1&enablejsapi=1`}
-                title={embed.title || 'YouTube Short'}
-                loading="lazy"
-                allowfullscreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
+                data-video-id={embed.id}
+                data-start-time={embed.startTime ?? 0}
+                data-short="true"
+              ></div>
             </div>
             <div class="vr-controls">
               <button
@@ -153,15 +150,42 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
 
       var players = {};
 
-      function initPlayer(id) {
-        if (players[id]) return;
-        players[id] = new window.YT.Player(id);
-      }
-
       function setupButtons() {
         muteButtons.forEach(function (btn) {
           var playerId = btn.getAttribute('data-player-id');
-          initPlayer(playerId);
+          var container = document.getElementById(playerId);
+          if (!container) return;
+
+          var videoId = container.getAttribute('data-video-id');
+          var startTime = parseInt(container.getAttribute('data-start-time') || '0', 10);
+          var isShort = container.getAttribute('data-short') === 'true';
+
+          // Build playerVars — origin is set at runtime so YouTube IFrame API
+          // can verify the embedding domain (prevents Error 153 in dev/cloud IDEs)
+          var playerVars = { rel: 0, enablejsapi: 1, origin: window.location.origin };
+          if (startTime > 0) playerVars.start = startTime;
+
+          // Use YT.Player constructor with videoId: YouTube creates the iframe
+          // itself with the correct origin, avoiding Error 153 entirely
+          players[playerId] = new window.YT.Player(playerId, {
+            videoId: videoId,
+            width: '100%',
+            height: isShort ? '600' : '100%',
+            playerVars: playerVars,
+            events: {
+              onReady: function (event) {
+                var iframe = event.target.getIframe();
+                if (!isShort) {
+                  // Fill the 16:9 padding-bottom container
+                  iframe.style.cssText =
+                    'position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:0.5rem;';
+                } else {
+                  iframe.style.cssText =
+                    'display:block;width:100%;height:600px;border:0;border-radius:0.5rem;';
+                }
+              }
+            }
+          });
 
           btn.addEventListener('click', function () {
             var player = players[playerId];
@@ -262,6 +286,7 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
   .vr-short-wrap {
     width: 100%;
     max-width: 340px;
+    height: 600px; /* fixed height so the YT.Player-created iframe has room */
     margin: 0 auto;
     border-radius: 0.5rem;
     overflow: hidden;
