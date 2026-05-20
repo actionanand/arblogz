@@ -235,6 +235,32 @@ menu {
     @apply text-end mb-1 break-words hover:text-skin-active;
   }
 
+  /* Collapsible aside sections — tags & categories */
+  .aside-collapsible > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .aside-collapsible > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .aside-show-more {
+    @apply inline-flex items-center gap-1 text-sm mt-2 px-2 py-0.5 rounded
+           border text-skin-dodge hover:text-skin-active
+           select-none transition-colors duration-200;
+  }
+
+  /* Default (collapsed) state: hide open-state elements */
+  .aside-show-more .open-icon,
+  .aside-show-more .open-text { display: none; }
+
+  /* Expanded state: swap icons and text */
+  details[open].aside-collapsible .aside-show-more .closed-icon,
+  details[open].aside-collapsible .aside-show-more .closed-text { display: none; }
+  details[open].aside-collapsible .aside-show-more .open-icon,
+  details[open].aside-collapsible .aside-show-more .open-text { display: inline; }
+
   a {
     @apply cursor-pointer;
   }
