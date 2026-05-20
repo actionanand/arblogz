@@ -132,55 +132,55 @@ export const categories = [
       {
         name: 'தமிழ்',
         iconClass: 'ri-flag-line',
-        href: '#',
+        href: 'javascript:void(0)',
         lang: 'ta'
       },
       {
         name: 'English',
         iconClass: 'ri-flag-line',
-        href: '#',
+        href: 'javascript:void(0)',
         lang: 'en'
       },
       {
         name: '简体中文',
         iconClass: 'ri-flag-line',
-        href: '#',
+        href: 'javascript:void(0)',
         lang: 'zh-cn'
       },
       {
         name: '繁體中文',
         iconClass: 'ri-flag-line',
-        href: '#',
+        href: 'javascript:void(0)',
         lang: 'zh-Hant'
       },
       {
         name: 'Čeština',
         iconClass: 'ri-flag-line',
-        href: '#',
+        href: 'javascript:void(0)',
         lang: 'cs'
       },
       {
         name: 'Français',
         iconClass: 'ri-flag-line',
-        href: '#',
+        href: 'javascript:void(0)',
         lang: 'fr'
       },
       {
         name: 'ಕನ್ನಡ',
         iconClass: 'ri-flag-line',
-        href: '#',
+        href: 'javascript:void(0)',
         lang: 'kn'
       },
       {
         name: 'हिन्दी',
         iconClass: 'ri-flag-line',
-        href: '#',
+        href: 'javascript:void(0)',
         lang: 'hi'
       },
       {
         name: 'العربية',
         iconClass: 'ri-flag-line',
-        href: '#',
+        href: 'javascript:void(0)',
         lang: 'ar'
       }
     ]
