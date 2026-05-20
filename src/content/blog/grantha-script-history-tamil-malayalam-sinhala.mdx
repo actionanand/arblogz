@@ -497,6 +497,139 @@ Kannada and Telugu evolved from the **Kadamba-Chalukya branch** of Southern Brah
 
 ---
 
+## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Special Symbols in Tamil Script </Highlight>
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Beyond Letters — Tamil's Administrative Symbols </Highlight>
+
+Tamil script did not just evolve letters for speech sounds. Over centuries of use in land records, temple accounts, almanacs, and commerce, Tamil developed a set of **dedicated shorthand symbols** for everyday administrative concepts. These are not letters, not numerals — they are purpose-built glyphs, each encoding an entire word in a single character.
+
+Most modern Tamil readers have never seen them. They belong to the era of palm-leaf accounting and colonial-period revenue ledgers — yet Unicode enshrined every one of them in the **Tamil block (U+0BF3–U+0BFA)**.
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> The Seven Administrative Symbols </Highlight>
+
+<div class="table-luxury-grid">
+
+| Symbol | Unicode | Word | Meaning | Historical Use |
+|--------|---------|------|---------|----------------|
+| **௳** | U+0BF3 | நாள் (nāḷ) | Day | Date columns in land records, almanacs |
+| **௴** | U+0BF4 | மாதம் (mātam) | Month | Month columns in accounts and deeds |
+| **௵** | U+0BF5 | வருடம் (varuṭam) | Year | Year notation in charters, census records |
+| **௶** | U+0BF6 | பற்று (paṯṟu) | Debit | Credit-debit ledgers; temple treasury accounts |
+| **௷** | U+0BF7 | வரவு (varavu) | Credit | Paired with ௶ in double-entry style records |
+| **௸** | U+0BF8 | மேற்படி (mēṟpaṭi) | As above / Ditto | Avoids repeating a name or value already stated above |
+| **௹** | U+0BF9 | ரூபாய் (rūpāy) | Rupee | Currency amounts in revenue and trade records |
+| **௺** | U+0BFA | எண் (eṇ) | Number | Precedes a numeral, like the # sign in English |
+
+</div>
+
+**Where these symbols appeared:**
+
+- **பஞ்சாங்கம்** (pañcāṅgam = almanac): ௳, ௴, ௵ were used daily to note dates in the Tamil calendar (நாள் X, மாதம் Y, வருடம் Z)
+- **கணக்கு ஏடுகள்** (accounts ledgers): ௶ and ௷ appeared as column headers for debit and credit entries in temple and zamindari accounts
+- **நில ஆவணங்கள்** (land deeds): ௸ (மேற்படி) avoided repeating a landholder's name in consecutive rows — identical to English "ditto" or "ibid."
+- **வரி ஆவணங்கள்** (revenue records): ௹ prefixed every monetary value, just as ₹ does today
+- **பட்டியல்கள்** (registers): ௺ preceded reference numbers and serial counts
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> How a Date Was Written </Highlight>
+
+A typical date line in a palm-leaf Tamil document might read:
+
+```
+௵ கிரேகி ௴ ஆடி ௳ ௧௫
+```
+
+Which decodes as:
+
+```
+வருடம் கிரேகி, மாதம் ஆடி, நாள் 15
+Year: Grēki (a Tamil year name), Month: Āṭi, Day: 15
+```
+
+The three symbols — ௵ ௴ ௳ — compress "வருடம் … மாதம் … நாள் …" into single characters, saving precious space on narrow palm leaves and reducing scribal effort across thousands of entries.
+
+Similarly, an account entry:
+
+```
+௹ ௫௰ ௸ (meaning: Rupee 50, as above/ditto — same as the prior entry)
+```
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Tamil Numerals and Number System </Highlight>
+
+Alongside these symbols, classical Tamil had its own **complete numeral system** — distinct from the Arabic digits used today:
+
+<div class="table-luxury-grid">
+
+| Tamil Numeral | Value | Note |
+|---------------|-------|------|
+| ௦ | 0 | Zero |
+| ௧ | 1 | — |
+| ௨ | 2 | — |
+| ௩ | 3 | — |
+| ௪ | 4 | — |
+| ௫ | 5 | — |
+| ௬ | 6 | — |
+| ௭ | 7 | — |
+| ௮ | 8 | — |
+| ௯ | 9 | — |
+| **௰** | **10** | Special symbol for ten |
+| **௱** | **100** | Special symbol for hundred |
+| **௲** | **1000** | Special symbol for thousand |
+
+</div>
+
+Tamil is one of the few scripts with **dedicated Unicode characters for 10, 100, and 1000** — not just digits 0–9. This reflects the way large numbers were written in records: **௲௱௰௫** = 1000 + 100 + 10 + 5 = **1115**.
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Two More Unique Tamil Characters </Highlight>
+
+**ஃ — The Āytam (ஆய்தம்)**
+
+The **ஃ** (āytam, U+0B83) is one of Tamil's most unique characters — it has no equivalent in any other Brahmic script. It is a **three-dot voiceless fricative** that historically appeared:
+
+- Before hard consonants in certain phonological environments: அஃது (that), இஃது (this)
+- In borrowed words requiring a glottal/fricative sound
+- In modern usage it is rare, but survives in formal and literary Tamil
+
+The āytam is neither a vowel nor a consonant in the traditional Tamil classification — it occupies its own category (ஆய்தம் = "the refined/tested one").
+
+**ௐ — Tamil Om**
+
+Just as Devanagari has ॐ and Sinhala has ඕ, Tamil has its own encoding of the sacred syllable AUM:
+
+**ௐ** (U+0BD0, Tamil Om) — appearing in religious inscriptions, temple signage, and formal invocations alongside the Grantha letters. It is the same cosmic syllable written in a Tamil-script form.
+
+---
+
+### <Highlight color='#004080' highlight='fg' fontWeight='bold'> Why These Symbols Matter for Script History </Highlight>
+
+The existence of these symbols tells us something important: Tamil script was not just a literary alphabet — it was a **complete administrative and commercial writing system**, developed over centuries of practical use in one of the world's oldest continuous civilisations.
+
+<div class="table-luxury-grid">
+
+| Symbol Type | Characters | Purpose Domain |
+|-------------|-----------|----------------|
+| **Calendar symbols** | ௳ ௴ ௵ | Almanacs, date recording |
+| **Accounting symbols** | ௶ ௷ ௸ | Ledgers, land records, temple accounts |
+| **Currency / number** | ௹ ௺ | Commerce, revenue records |
+| **Traditional numerals** | ௦–௯, ௰, ௱, ௲ | All numeric records |
+| **Special phonological** | ஃ | Phonology (unique to Tamil) |
+| **Sacred** | ௐ | Religious inscriptions |
+
+</div>
+
+:::tip[Unicode Preservation]
+All these characters are permanently preserved in Unicode (Tamil block, U+0B80–U+0BFF). Even though most modern Tamil writers use Arabic digits and the ₹ symbol for rupees, the original Tamil symbols remain digitally accessible — and are still used in traditional almanacs, temple publications, and classical scholarship.
+:::
+
+---
+
 ## <Highlight color='#800031' highlight='fg' fontWeight='bold'> Conclusion </Highlight>
 
 Grantha script is one of the most consequential writing systems in South Asian history — not through widespread direct use, but through the scripts it **created and influenced**:
