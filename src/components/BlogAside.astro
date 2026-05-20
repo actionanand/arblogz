@@ -8,25 +8,37 @@ import {sortPostsByDate} from "@/utils/sortPostsByDate";
 import {site} from '@/consts'
 import {t} from '@/i18n/utils'
 import getUrl from "@/utils/getUrl";
+
+const TAGS_SHOW_LIMIT = 10;
+const CATEGORIES_SHOW_LIMIT = 5;
+
 const blogs = await getCollectionByName('blog')
 let tagArr = getUniqueTags(blogs);
 if(site.asideTagsMaxSize > 0)
   tagArr = tagArr.slice(0, site.asideTagsMaxSize)
+
+const visibleTags = tagArr.slice(0, TAGS_SHOW_LIMIT);
+const hiddenTags = tagArr.slice(TAGS_SHOW_LIMIT);
+
 let categoryCount = getCountByCategory(blogs);
+const categoryKeys = Object.keys(categoryCount);
+const visibleCategories = categoryKeys.slice(0, CATEGORIES_SHOW_LIMIT);
+const hiddenCategories = categoryKeys.slice(CATEGORIES_SHOW_LIMIT);
+
 let sortPosts = await sortPostsByDate(blogs);
 let resultPosts = sortPosts.splice(0, site.recentBlogSize);
 ---
 
 <div>
   {
-    Object.keys(categoryCount).length > 0 && (
+    categoryKeys.length > 0 && (
       <div class="aside-widget">
         <i class="ri-folder-3-line menu-icon"/>{t('sidebar.categories')}
       </div>
     )
   }
   {
-    Object.keys(categoryCount).map((category) => (
+    visibleCategories.map((category) => (
       <a
         class="my-1 truncate block hover:text-skin-active"
         title={category + " (" + categoryCount[category] + ")"}
@@ -43,7 +55,36 @@ let resultPosts = sortPosts.splice(0, site.recentBlogSize);
       </a>
     ))
   }
+  {
+    hiddenCategories.length > 0 && (
+      <details class="aside-collapsible">
+        <summary class="aside-show-more">
+          <i class="ri-arrow-down-s-line closed-icon"></i>
+          <i class="ri-arrow-up-s-line open-icon"></i>
+          <span class="closed-text" data-translate="sidebar.moreCategories">+{hiddenCategories.length} {t('sidebar.moreCategories')}</span>
+          <span class="open-text" data-translate="sidebar.showLess">{t('sidebar.showLess')}</span>
+        </summary>
+        {hiddenCategories.map((category) => (
+          <a
+            class="my-1 truncate block hover:text-skin-active"
+            title={category + " (" + categoryCount[category] + ")"}
+            href={getUrl("/category/") + category}
+          >
+            {category === 'uncategorized' ? (
+              <span>
+                <span data-translate="sidebar.uncategorized">{t('sidebar.uncategorized')}</span>
+                {" (" + categoryCount[category] + ")"}
+              </span>
+            ) : (
+              category + " (" + categoryCount[category] + ")"
+            )}
+          </a>
+        ))}
+      </details>
+    )
+  }
 </div>
+
 <div>
   {
     tagArr.length > 0 && (
@@ -55,19 +96,35 @@ let resultPosts = sortPosts.splice(0, site.recentBlogSize);
   }
   <div class="flex flex-wrap">
     {
-      tagArr &&
-      tagArr.map((tag) =>
+      visibleTags.map((tag) =>
         <a class="inline-block truncate m-1 border p-1 text-sm rounded hover:text-skin-active" title={tag} href={getUrl("/tags/") + tag}>{tag}</a>
       )
     }
-    {
-      tagArr &&
-      site.asideTagsMaxSize > 0 &&
-      (
-        <a class="inline-block truncate m-1 border p-1 text-sm rounded hover:text-skin-active" title={t('more')} href={getUrl("/tags")}>{t('more')} »</a>
-      )
-    }
   </div>
+  {
+    hiddenTags.length > 0 && (
+      <details class="aside-collapsible">
+        <summary class="aside-show-more">
+          <i class="ri-arrow-down-s-line closed-icon"></i>
+          <i class="ri-arrow-up-s-line open-icon"></i>
+          <span class="closed-text" data-translate="sidebar.moreTags">+{hiddenTags.length} {t('sidebar.moreTags')}</span>
+          <span class="open-text" data-translate="sidebar.showLess">{t('sidebar.showLess')}</span>
+        </summary>
+        <div class="flex flex-wrap mt-1">
+          {hiddenTags.map((tag) =>
+            <a class="inline-block truncate m-1 border p-1 text-sm rounded hover:text-skin-active" title={tag} href={getUrl("/tags/") + tag}>{tag}</a>
+          )}
+        </div>
+      </details>
+    )
+  }
+  {
+    tagArr.length > 0 &&
+    site.asideTagsMaxSize > 0 &&
+    (
+      <a class="inline-block truncate m-1 border p-1 text-sm rounded hover:text-skin-active" title={t('more')} href={getUrl("/tags")}>{t('more')} »</a>
+    )
+  }
 </div>
 
 <div>

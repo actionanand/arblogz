@@ -427,6 +427,30 @@ function updateLanguageSelectionState() {
 reflectLanguagePreference();
 
 async function init() {
+  // Attach click handlers FIRST (before any async operations) so language
+  // links work even if translations are still loading
+  document.querySelectorAll('[data-language-link]').forEach(link => {
+    link.addEventListener('click', async (e) => {
+      console.log('Language link clicked:', e.target);
+      e.preventDefault();
+
+      const target = e.currentTarget;
+      const newLanguage = target.getAttribute('data-language-code');
+      console.log('New language from data-language-code:', newLanguage);
+
+      if (newLanguage && newLanguage !== languageValue) {
+        console.log('Changing language from', languageValue, 'to', newLanguage);
+        languageValue = newLanguage;
+        setLanguagePreference();
+
+        // Force complete translation update to catch all elements
+        await forceCompleteTranslationUpdate();
+      } else {
+        console.log('No language change needed. Current:', languageValue, 'New:', newLanguage);
+      }
+    });
+  });
+
   // Load translations first
   await loadTranslations();
   
@@ -485,29 +509,6 @@ async function init() {
   observer.observe(document.body, {
     childList: true,
     subtree: true
-  });
-
-  // Listen for clicks on language dropdown items ONLY
-  document.querySelectorAll('[data-language-link]').forEach(link => {
-    link.addEventListener('click', async (e) => {
-      console.log('Language link clicked:', e.target);
-      e.preventDefault();
-      
-      const target = e.currentTarget;
-      const newLanguage = target.getAttribute('data-language-code');
-      console.log('New language from data-language-code:', newLanguage);
-      
-      if (newLanguage && newLanguage !== languageValue) {
-        console.log('Changing language from', languageValue, 'to', newLanguage);
-        languageValue = newLanguage;
-        setLanguagePreference();
-        
-        // Force complete translation update to catch all elements
-        await forceCompleteTranslationUpdate();
-      } else {
-        console.log('No language change needed. Current:', languageValue, 'New:', newLanguage);
-      }
-    });
   });
 }
 

@@ -1,0 +1,359 @@
+---
+import { t } from '@/i18n/utils';
+
+interface MediaEmbed {
+  type: 'youtube' | 'youtube-short' | 'instagram';
+  id: string;
+  title?: string;
+  startTime?: number; // optional start time in seconds (YouTube only)
+}
+
+interface Props {
+  embeds: MediaEmbed[];
+}
+
+const { embeds } = Astro.props;
+const hasInstagram = embeds.some(e => e.type === 'instagram');
+const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-short');
+---
+
+<section class="vr-section">
+  <!-- Section heading — matches aside-widget style -->
+  <div class="aside-widget mb-4">
+    <i class="ri-video-line menu-icon"></i>
+    <span class="font-semibold" data-translate="media.videoResources">
+      {t('media.videoResources')}
+    </span>
+  </div>
+
+  <div class="vr-grid">
+    {embeds.map((embed, index) => (
+      <div class="vr-item">
+        {embed.title && (
+          <p class="vr-title">{embed.title}</p>
+        )}
+
+        {/* ── YouTube Regular (16 : 9) ── */}
+        {embed.type === 'youtube' && (
+          <div>
+            <div class="vr-yt-wrap">
+              {/* Placeholder div — replaced by YT.Player constructor (avoids Error 153 on dev/cloud) */}
+              <div
+                id={`yt-${index}`}
+                data-video-id={embed.id}
+                data-start-time={embed.startTime ?? 0}
+                data-short="false"
+              ></div>
+            </div>
+            <div class="vr-controls">
+              <button
+                class="vr-btn"
+                data-yt-mute
+                data-player-id={`yt-${index}`}
+                aria-label="Toggle mute"
+              >
+                <i class="ri-volume-up-line"></i>
+                <span data-mute-text data-translate="media.mute">{t('media.mute')}</span>
+              </button>
+              <a
+                href={`https://youtu.be/${embed.id}${embed.startTime ? '?t=' + embed.startTime : ''}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="vr-btn"
+              >
+                <i class="ri-youtube-line"></i>
+                <span data-translate="media.openOnYouTube">{t('media.openOnYouTube')}</span>
+              </a>
+              <span class="vr-pip-badge" title="Right-click video → Picture in Picture">
+                <i class="ri-picture-in-picture-2-line"></i>
+                <span>PiP</span>
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* ── YouTube Short (9 : 16 portrait) ── */}
+        {embed.type === 'youtube-short' && (
+          <div>
+            <div class="vr-short-wrap">
+              {/* Placeholder div — replaced by YT.Player constructor (avoids Error 153 on dev/cloud) */}
+              <div
+                id={`yt-${index}`}
+                data-video-id={embed.id}
+                data-start-time={embed.startTime ?? 0}
+                data-short="true"
+              ></div>
+            </div>
+            <div class="vr-controls">
+              <button
+                class="vr-btn"
+                data-yt-mute
+                data-player-id={`yt-${index}`}
+                aria-label="Toggle mute"
+              >
+                <i class="ri-volume-up-line"></i>
+                <span data-mute-text data-translate="media.mute">{t('media.mute')}</span>
+              </button>
+              <a
+                href={`https://www.youtube.com/shorts/${embed.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="vr-btn"
+              >
+                <i class="ri-youtube-line"></i>
+                <span data-translate="media.openOnYouTube">{t('media.openOnYouTube')}</span>
+              </a>
+              <span class="vr-pip-badge" title="Right-click video → Picture in Picture">
+                <i class="ri-picture-in-picture-2-line"></i>
+                <span>PiP</span>
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Instagram Post / Reel ── */}
+        {embed.type === 'instagram' && (
+          <div class="vr-ig-wrap">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-permalink={`https://www.instagram.com/p/${embed.id}/`}
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px auto; max-width:540px; min-width:326px; padding:0; width:99.375%;"
+            ></blockquote>
+            <div class="vr-controls mt-2">
+              <a
+                href={`https://www.instagram.com/p/${embed.id}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="vr-btn"
+              >
+                <i class="ri-instagram-line"></i>
+                <span data-translate="media.viewOnInstagram">{t('media.viewOnInstagram')}</span>
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+</section>
+
+{hasInstagram && (
+  <script async src="https://www.instagram.com/embed.js"></script>
+)}
+
+{hasYouTube && (
+  <script is:inline>
+    (function () {
+      var muteButtons = document.querySelectorAll('[data-yt-mute]');
+      if (!muteButtons.length) return;
+
+      var players = {};
+
+      function setupButtons() {
+        muteButtons.forEach(function (btn) {
+          var playerId = btn.getAttribute('data-player-id');
+          var container = document.getElementById(playerId);
+          if (!container) return;
+
+          var videoId = container.getAttribute('data-video-id');
+          var startTime = parseInt(container.getAttribute('data-start-time') || '0', 10);
+          var isShort = container.getAttribute('data-short') === 'true';
+
+          // Build playerVars — origin is set at runtime so YouTube IFrame API
+          // can verify the embedding domain (prevents Error 153 in dev/cloud IDEs)
+          var playerVars = { rel: 0, enablejsapi: 1, origin: window.location.origin };
+          if (startTime > 0) playerVars.start = startTime;
+
+          // Use YT.Player constructor with videoId: YouTube creates the iframe
+          // itself with the correct origin, avoiding Error 153 entirely
+          players[playerId] = new window.YT.Player(playerId, {
+            videoId: videoId,
+            width: '100%',
+            height: isShort ? '600' : '100%',
+            playerVars: playerVars,
+            events: {
+              onReady: function (event) {
+                var iframe = event.target.getIframe();
+                if (!isShort) {
+                  // Fill the 16:9 padding-bottom container
+                  iframe.style.cssText =
+                    'position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:0.5rem;';
+                } else {
+                  iframe.style.cssText =
+                    'display:block;width:100%;height:600px;border:0;border-radius:0.5rem;';
+                }
+              }
+            }
+          });
+
+          btn.addEventListener('click', function () {
+            var player = players[playerId];
+            if (!player || typeof player.isMuted !== 'function') return;
+
+            var icon = btn.querySelector('i');
+            var label = btn.querySelector('[data-mute-text]');
+
+            if (player.isMuted()) {
+              player.unMute();
+              if (icon) icon.className = 'ri-volume-up-line';
+              if (label) {
+                label.setAttribute('data-translate', 'media.mute');
+                label.textContent =
+                  (window.getCurrentTranslation && window.getCurrentTranslation('media.mute')) ||
+                  'Mute';
+              }
+            } else {
+              player.mute();
+              if (icon) icon.className = 'ri-volume-mute-line';
+              if (label) {
+                label.setAttribute('data-translate', 'media.unmute');
+                label.textContent =
+                  (window.getCurrentTranslation && window.getCurrentTranslation('media.unmute')) ||
+                  'Unmute';
+              }
+            }
+          });
+        });
+      }
+
+      if (window.YT && window.YT.Player) {
+        setupButtons();
+      } else {
+        var prev = window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady = function () {
+          if (prev) prev();
+          setupButtons();
+        };
+        if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
+          var tag = document.createElement('script');
+          tag.src = 'https://www.youtube.com/iframe_api';
+          document.head.appendChild(tag);
+        }
+      }
+    })();
+  </script>
+)}
+
+<style>
+  .vr-section {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* ── Grid: side-by-side on wide screens ── */
+  .vr-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .vr-item {
+    flex: 1 1 300px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* ── Title above video ── */
+  .vr-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+
+  /* ── YouTube 16:9 responsive wrapper ── */
+  .vr-yt-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  .vr-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* ── YouTube Short portrait wrapper ── */
+  .vr-short-wrap {
+    width: 100%;
+    max-width: 340px;
+    height: 600px; /* fixed height so the YT.Player-created iframe has room */
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .vr-short-iframe {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: 0;
+  }
+
+  /* ── Instagram wrapper ── */
+  .vr-ig-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── Control bar ── */
+  .vr-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.4rem;
+  }
+
+  .vr-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(var(--color-border), 0.5);
+    color: rgb(var(--color-text-dodge));
+    cursor: pointer;
+    background: transparent;
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .vr-btn:hover {
+    color: rgb(var(--color-text-active));
+    border-color: rgb(var(--color-text-active));
+  }
+
+  .vr-pip-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    border: 1px dashed rgba(var(--color-text-dodge), 0.4);
+    color: rgba(var(--color-text-dodge), 0.7);
+    cursor: help;
+    user-select: none;
+  }
+
+  @media (max-width: 600px) {
+    .vr-item {
+      flex: 1 1 100%;
+    }
+    .vr-short-iframe {
+      height: 520px;
+    }
+  }
+</style>

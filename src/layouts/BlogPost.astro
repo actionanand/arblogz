@@ -9,6 +9,7 @@ import Donate from '@/components/Donate.astro';
 import RelatedArticles from '@/components/RelatedArticles.astro';
 import Disclaimer from '@/components/Disclaimer.astro';
 import PasswordProtection from '@/components/PasswordProtection.astro';
+import VideoResources from '@/components/VideoResources.astro';
 import {comment, config, donate} from "@/consts";
 import ScrollToTop from '@/components/ScrollToTop.astro'
 import {t} from '@/i18n/utils'
@@ -61,6 +62,13 @@ const shouldShowDonate = donate.enable && (
       <PasswordProtection passwordProtected={frontmatter.passwordProtected}>
         <slot/>
       </PasswordProtection>
+      
+      <!-- Video Resources Section - rendered from frontmatter mediaEmbeds -->
+      {
+        frontmatter.mediaEmbeds && frontmatter.mediaEmbeds.length > 0 && (
+          <VideoResources embeds={frontmatter.mediaEmbeds} />
+        )
+      }
       
       <!-- Related Articles Section -->
       {
@@ -225,6 +233,19 @@ const shouldShowDonate = donate.enable && (
         backref.style.textDecoration = 'none';
       });
     });
+
+    // Move .explore-further to after .footnotes (or end of body if no footnotes).
+    // This lets authors place :::explore anywhere in the article — it always
+    // renders in a consistent position below footnotes.
+    const exploreSection = markdownBody.querySelector('.explore-further');
+    if (exploreSection) {
+      const footnoteSection = markdownBody.querySelector('.footnotes');
+      if (footnoteSection) {
+        footnoteSection.after(exploreSection);
+      } else {
+        markdownBody.appendChild(exploreSection);
+      }
+    }
 
     var links = markdownBody.querySelectorAll("a");
     // 循环遍历链接标签
