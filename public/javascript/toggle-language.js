@@ -168,6 +168,14 @@ async function updatePageTranslations() {
       element.placeholder = currentTranslations[key];
     }
   });
+
+  // Step 2.1: Update titles with data-translate-title attributes
+  document.querySelectorAll('[data-translate-title]').forEach(element => {
+    const key = element.getAttribute('data-translate-title');
+    if (currentTranslations[key]) {
+      element.setAttribute('title', currentTranslations[key]);
+    }
+  });
   
   // Step 2.5: Update template elements with data-translate-template attributes
   document.querySelectorAll('[data-translate-template]').forEach(element => {
@@ -497,6 +505,15 @@ async function init() {
               const dateValue = element.getAttribute('data-date-value');
               if (currentTranslations[key] && dateValue) {
                 element.innerHTML = `${currentTranslations[key]}：${dateValue}`;
+              }
+            });
+
+            // Update any new elements with data-translate-title attributes
+            const newTitleElements = node.querySelectorAll ? node.querySelectorAll('[data-translate-title]') : [];
+            newTitleElements.forEach(element => {
+              const key = element.getAttribute('data-translate-title');
+              if (currentTranslations[key]) {
+                element.setAttribute('title', currentTranslations[key]);
               }
             });
           }

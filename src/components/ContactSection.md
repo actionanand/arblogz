@@ -53,9 +53,9 @@
   
   <!-- Contact Us Button -->
   <div class="contact-button-container">
-    <button class="contact-us-button" onclick="openContactForm()" data-translate="contact.button">
+    <button class="contact-us-button" onclick="openContactForm()">
       <i class="ri-customer-service-2-fill"></i>
-      <span>Contact Us</span>
+      <span data-translate="contact.button">Contact Us</span>
     </button>
   </div>
 </div>
@@ -68,17 +68,51 @@
       <button class="contact-modal-close" onclick="closeContactForm()">&times;</button>
     </div>
     <div class="contact-modal-body">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeGERCF9R3aw9VsTkk6TltyrDXSkIu8Zk4unoZNPjABL53cLA/viewform?embedded=true" 
-              width="100%" 
-              height="600" 
-              frameborder="0" 
-              marginheight="0" 
-              marginwidth="0">
-        <span data-translate="contact.form.loading">Loading…</span>
-      </iframe>
+      <form id="nativeContactForm" class="native-contact-form" novalidate>
+        <div class="contact-form-grid">
+          <label class="contact-field">
+            <span><span data-translate="contact.form.name">Name</span> <strong aria-hidden="true">*</strong></span>
+            <input id="contactName" name="name" type="text" autocomplete="name" placeholder="Your name" data-translate-placeholder="contact.form.namePlaceholder" required />
+          </label>
+          <label class="contact-field">
+            <span><span data-translate="contact.form.email">Email</span> <strong aria-hidden="true">*</strong></span>
+            <input id="contactEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" data-translate-placeholder="contact.form.emailPlaceholder" required />
+          </label>
+        </div>
+        <label class="contact-field">
+          <span data-translate="contact.form.phone">Phone number</span>
+          <input id="contactPhone" name="phone" type="tel" autocomplete="tel" placeholder="Optional" data-translate-placeholder="contact.form.phonePlaceholder" />
+        </label>
+        <fieldset class="contact-purpose-field">
+          <legend><span data-translate="contact.form.purpose">Please let us know the purpose of your inquiry:</span> <strong aria-hidden="true">*</strong></legend>
+          <div class="purpose-options">
+            <label><input type="radio" name="purpose" value="Content-related question" required /> <span data-translate="contact.form.optionContent">Content-related question</span></label>
+            <label><input type="radio" name="purpose" value="Donation" /> <span data-translate="contact.form.optionDonation">Donation</span></label>
+            <label><input type="radio" name="purpose" value="Correction in content" /> <span data-translate="contact.form.optionCorrection">Correction in content</span></label>
+            <label><input type="radio" name="purpose" value="Interested in contributing content" /> <span data-translate="contact.form.optionContributing">Interested in contributing content</span></label>
+            <label><input type="radio" name="purpose" value="Collaboration opportunity" /> <span data-translate="contact.form.optionCollaboration">Collaboration opportunity</span></label>
+            <label><input type="radio" name="purpose" value="Privacy policy inquiry" /> <span data-translate="contact.form.optionPrivacy">Privacy policy inquiry</span></label>
+            <label><input type="radio" name="purpose" value="Suggestion or feedback" /> <span data-translate="contact.form.optionSuggestion">Suggestion or feedback</span></label>
+            <label><input type="radio" name="purpose" value="General contact" /> <span data-translate="contact.form.optionGeneral">General contact</span></label>
+          </div>
+        </fieldset>
+        <label class="contact-field">
+          <span><span data-translate="contact.form.message">Message</span> <strong aria-hidden="true">*</strong></span>
+          <textarea id="contactMessage" name="message" rows="5" placeholder="Please message me back" data-translate-placeholder="contact.form.messagePlaceholder" required></textarea>
+        </label>
+        <div class="contact-form-actions">
+          <button type="button" class="contact-cancel-button" onclick="closeContactForm()" data-translate="contact.form.cancel">Cancel</button>
+          <button type="submit" class="contact-submit-button">
+            <i class="ri-send-plane-fill" aria-hidden="true"></i>
+            <span data-translate="contact.form.send">Send Message</span>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+
+<div id="contactSnackbar" class="contact-snackbar" role="status" aria-live="polite"></div>
 
 <style>
   .contact-social-section {
@@ -397,15 +431,192 @@
   }
   
   .contact-modal-body {
-    padding: 0;
+    padding: 1.5rem;
     overflow-y: auto;
     max-height: calc(90vh - 100px);
   }
   
-  .contact-modal-body iframe {
+  .native-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .contact-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin: 0;
+  }
+
+  .contact-field span,
+  .contact-purpose-field legend {
+    color: var(--tw-prose-body, #374151);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .contact-field strong,
+  .contact-purpose-field strong {
+    color: #dc2626;
+  }
+
+  .contact-field input,
+  .contact-field textarea {
     width: 100%;
-    min-height: 600px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: var(--bg-primary, #ffffff);
+    color: var(--tw-prose-body, #374151);
+    font: inherit;
+    line-height: 1.5;
+    padding: 0.85rem 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .contact-field textarea {
+    min-height: 130px;
+    resize: vertical;
+  }
+
+  .contact-field input:focus,
+  .contact-field textarea:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.16);
+    outline: none;
+  }
+
+  .contact-field input.contact-input-error,
+  .contact-field textarea.contact-input-error,
+  .contact-purpose-field.contact-input-error {
+    border-color: #dc2626;
+  }
+
+  .contact-purpose-field {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .contact-purpose-field legend {
+    padding: 0 0.35rem;
+  }
+
+  .purpose-options {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.35rem;
+  }
+
+  .purpose-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0;
+    color: var(--tw-prose-body, #374151);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+
+  .purpose-options input {
+    width: 1.15rem;
+    height: 1.15rem;
+    accent-color: #10b981;
+    flex: 0 0 auto;
+  }
+
+  .purpose-options span {
+    min-width: 0;
+  }
+
+  .contact-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding-top: 0.25rem;
+  }
+
+  .contact-cancel-button,
+  .contact-submit-button {
     border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .contact-cancel-button {
+    background: #e5e7eb;
+    color: #374151;
+  }
+
+  .contact-submit-button {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+  }
+
+  .contact-cancel-button:hover,
+  .contact-submit-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  .contact-submit-button:disabled,
+  .contact-cancel-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+  }
+
+  .contact-snackbar {
+    position: fixed;
+    left: 50%;
+    bottom: 1.5rem;
+    z-index: 1100;
+    background: #111827;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(17, 24, 39, 0.25);
+    font-size: 0.95rem;
+    font-weight: 600;
+    max-width: min(92vw, 520px);
+    opacity: 0;
+    padding: 0.9rem 1rem;
+    pointer-events: none;
+    transform: translate(-50%, 1rem);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .contact-snackbar.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .contact-snackbar.success {
+    background: #047857;
+  }
+
+  .contact-snackbar.error {
+    background: #b91c1c;
+  }
+
+  .contact-snackbar.info {
+    background: #1f2937;
   }
   
   /* Animations */
@@ -430,6 +641,25 @@
     .contact-modal-content {
       background-color: var(--bg-primary, #1f2937);
       color: var(--text-primary, #e5e7eb);
+    }
+
+    .contact-field span,
+    .contact-purpose-field legend,
+    .purpose-options label {
+      color: var(--text-primary, #e5e7eb);
+    }
+
+    .contact-field input,
+    .contact-field textarea,
+    .contact-purpose-field {
+      background: #111827;
+      border-color: #374151;
+      color: var(--text-primary, #e5e7eb);
+    }
+
+    .contact-cancel-button {
+      background: #374151;
+      color: #e5e7eb;
     }
   }
   
@@ -468,23 +698,197 @@
       width: 95%;
       margin: 5% auto;
     }
-    
-    .contact-modal-body iframe {
-      min-height: 500px;
+
+    .contact-modal-body {
+      padding: 1rem;
+    }
+
+    .contact-form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-form-actions {
+      flex-direction: column-reverse;
+    }
+
+    .contact-cancel-button,
+    .contact-submit-button {
+      width: 100%;
     }
   }
 </style>
 
 <script>
-  // Contact form popup functions
+  const contactGoogleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeGERCF9R3aw9VsTkk6TltyrDXSkIu8Zk4unoZNPjABL53cLA/formResponse';
+  const contactEntryIds = {
+    name: 'entry.2005620554',
+    email: 'entry.1045781291',
+    phone: 'entry.1166974658',
+    purpose: 'entry.1730206658',
+    message: 'entry.839337160',
+  };
+  const contactEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let contactSnackbarTimer;
+
+  function getContactTranslation(key, fallback) {
+    if (typeof window.getCurrentTranslation !== 'function') {
+      return fallback;
+    }
+
+    const translated = window.getCurrentTranslation(key);
+    return translated && translated !== key ? translated : fallback;
+  }
+
+  function showContactSnackbar(message, type = 'info', duration = 3500) {
+    const snackbar = document.getElementById('contactSnackbar');
+    if (!snackbar) return;
+
+    window.clearTimeout(contactSnackbarTimer);
+    snackbar.textContent = message;
+    snackbar.className = `contact-snackbar ${type} show`;
+
+    if (duration > 0) {
+      contactSnackbarTimer = window.setTimeout(() => {
+        snackbar.classList.remove('show');
+      }, duration);
+    }
+  }
+
+  function setContactSubmitting(isSubmitting) {
+    const form = document.getElementById('nativeContactForm');
+    const submitButton = form?.querySelector('.contact-submit-button');
+    const cancelButton = form?.querySelector('.contact-cancel-button');
+    const submitLabel = submitButton?.querySelector('span');
+    const submitIcon = submitButton?.querySelector('i');
+
+    if (submitButton) submitButton.disabled = isSubmitting;
+    if (cancelButton) cancelButton.disabled = isSubmitting;
+    if (submitLabel) {
+      submitLabel.textContent = isSubmitting
+        ? getContactTranslation('contact.form.sending', 'Sending...')
+        : getContactTranslation('contact.form.send', 'Send Message');
+    }
+    if (submitIcon) {
+      submitIcon.className = isSubmitting ? 'ri-loader-4-line' : 'ri-send-plane-fill';
+    }
+  }
+
+  function clearContactValidationState(form) {
+    form.querySelectorAll('.contact-input-error').forEach((field) => {
+      field.classList.remove('contact-input-error');
+    });
+  }
+
+  function markContactFieldInvalid(field) {
+    if (field) {
+      field.classList.add('contact-input-error');
+    }
+  }
+
+  function validateContactForm(form) {
+    clearContactValidationState(form);
+
+    const name = form.elements.name;
+    const email = form.elements.email;
+    const purpose = form.querySelector('input[name="purpose"]:checked');
+    const purposeField = form.querySelector('.contact-purpose-field');
+    const message = form.elements.message;
+
+    if (!name.value.trim()) {
+      markContactFieldInvalid(name);
+      name.focus();
+      showContactSnackbar(getContactTranslation('contact.form.errorName', 'Please enter your name.'), 'error');
+      return false;
+    }
+
+    if (!email.value.trim()) {
+      markContactFieldInvalid(email);
+      email.focus();
+      showContactSnackbar(getContactTranslation('contact.form.errorEmailRequired', 'Please enter your email address.'), 'error');
+      return false;
+    }
+
+    if (!contactEmailRegex.test(email.value.trim())) {
+      markContactFieldInvalid(email);
+      email.focus();
+      showContactSnackbar(getContactTranslation('contact.form.errorEmailInvalid', 'Please enter a valid email address.'), 'error');
+      return false;
+    }
+
+    if (!purpose) {
+      markContactFieldInvalid(purposeField);
+      purposeField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      showContactSnackbar(getContactTranslation('contact.form.errorPurpose', 'Please choose the purpose of your inquiry.'), 'error');
+      return false;
+    }
+
+    if (!message.value.trim()) {
+      markContactFieldInvalid(message);
+      message.focus();
+      showContactSnackbar(getContactTranslation('contact.form.errorMessage', 'Please enter your message.'), 'error');
+      return false;
+    }
+
+    return true;
+  }
+
+  function buildContactFormBody(form) {
+    const formBody = new URLSearchParams();
+    const purpose = form.querySelector('input[name="purpose"]:checked');
+
+    formBody.append(contactEntryIds.name, form.elements.name.value.trim());
+    formBody.append(contactEntryIds.email, form.elements.email.value.trim());
+    formBody.append(contactEntryIds.phone, form.elements.phone.value.trim());
+    formBody.append(contactEntryIds.purpose, purpose ? purpose.value : '');
+    formBody.append(contactEntryIds.message, form.elements.message.value.trim());
+
+    return formBody;
+  }
+
   function openContactForm() {
-    document.getElementById('contactFormModal').style.display = 'block';
+    const modal = document.getElementById('contactFormModal');
+    if (!modal) return;
+
+    modal.style.display = 'block';
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    const firstInput = document.getElementById('contactName');
+    window.setTimeout(() => firstInput?.focus(), 100);
   }
   
   function closeContactForm() {
-    document.getElementById('contactFormModal').style.display = 'none';
+    const modal = document.getElementById('contactFormModal');
+    if (!modal) return;
+
+    modal.style.display = 'none';
     document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+
+  async function handleContactSubmit(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    if (!validateContactForm(form)) return;
+
+    setContactSubmitting(true);
+    showContactSnackbar(getContactTranslation('contact.form.submitting', 'Submitting your message...'), 'info', 0);
+
+    try {
+      await fetch(contactGoogleFormUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: buildContactFormBody(form),
+      });
+
+      form.reset();
+      closeContactForm();
+      showContactSnackbar(getContactTranslation('contact.form.success', 'Message sent successfully. Thank you for reaching out!'), 'success');
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
+      showContactSnackbar(getContactTranslation('contact.form.failure', 'Unable to send your message. Please try again.'), 'error');
+    } finally {
+      setContactSubmitting(false);
+    }
   }
   
   // Close modal when clicking outside
@@ -499,7 +903,7 @@
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
       const modal = document.getElementById('contactFormModal');
-      if (modal.style.display === 'block') {
+      if (modal && modal.style.display === 'block') {
         closeContactForm();
       }
     }
@@ -523,4 +927,14 @@
   // Listen for language changes
   document.addEventListener('languageChanged', updateContactButtonText);
   document.addEventListener('DOMContentLoaded', updateContactButtonText);
+
+  const nativeContactForm = document.getElementById('nativeContactForm');
+  if (nativeContactForm) {
+    nativeContactForm.addEventListener('submit', handleContactSubmit);
+    nativeContactForm.addEventListener('input', () => clearContactValidationState(nativeContactForm));
+    nativeContactForm.addEventListener('change', () => clearContactValidationState(nativeContactForm));
+  }
+
+  window.openContactForm = openContactForm;
+  window.closeContactForm = closeContactForm;
 </script>
