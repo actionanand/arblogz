@@ -53,9 +53,9 @@
   
   <!-- Contact Us Button -->
   <div class="contact-button-container">
-    <button class="contact-us-button" onclick="openContactForm()" data-translate="contact.button">
+    <button class="contact-us-button" onclick="openContactForm()">
       <i class="ri-customer-service-2-fill"></i>
-      <span>Contact Us</span>
+      <span data-translate="contact.button">Contact Us</span>
     </button>
   </div>
 </div>
@@ -71,40 +71,40 @@
       <form id="nativeContactForm" class="native-contact-form" novalidate>
         <div class="contact-form-grid">
           <label class="contact-field">
-            <span>Name <strong aria-hidden="true">*</strong></span>
-            <input id="contactName" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+            <span><span data-translate="contact.form.name">Name</span> <strong aria-hidden="true">*</strong></span>
+            <input id="contactName" name="name" type="text" autocomplete="name" placeholder="Your name" data-translate-placeholder="contact.form.namePlaceholder" required />
           </label>
           <label class="contact-field">
-            <span>Email <strong aria-hidden="true">*</strong></span>
-            <input id="contactEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            <span><span data-translate="contact.form.email">Email</span> <strong aria-hidden="true">*</strong></span>
+            <input id="contactEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" data-translate-placeholder="contact.form.emailPlaceholder" required />
           </label>
         </div>
         <label class="contact-field">
-          <span>Phone number</span>
-          <input id="contactPhone" name="phone" type="tel" autocomplete="tel" placeholder="Optional" />
+          <span data-translate="contact.form.phone">Phone number</span>
+          <input id="contactPhone" name="phone" type="tel" autocomplete="tel" placeholder="Optional" data-translate-placeholder="contact.form.phonePlaceholder" />
         </label>
         <fieldset class="contact-purpose-field">
-          <legend>Please let us know the purpose of your inquiry: <strong aria-hidden="true">*</strong></legend>
+          <legend><span data-translate="contact.form.purpose">Please let us know the purpose of your inquiry:</span> <strong aria-hidden="true">*</strong></legend>
           <div class="purpose-options">
-            <label><input type="radio" name="purpose" value="Content-related question" required /> <span>Content-related question</span></label>
-            <label><input type="radio" name="purpose" value="Donation" /> <span>Donation</span></label>
-            <label><input type="radio" name="purpose" value="Correction in content" /> <span>Correction in content</span></label>
-            <label><input type="radio" name="purpose" value="Interested in contributing content" /> <span>Interested in contributing content</span></label>
-            <label><input type="radio" name="purpose" value="Collaboration opportunity" /> <span>Collaboration opportunity</span></label>
-            <label><input type="radio" name="purpose" value="Privacy policy inquiry" /> <span>Privacy policy inquiry</span></label>
-            <label><input type="radio" name="purpose" value="Suggestion or feedback" /> <span>Suggestion or feedback</span></label>
-            <label><input type="radio" name="purpose" value="General contact" /> <span>General contact</span></label>
+            <label><input type="radio" name="purpose" value="Content-related question" required /> <span data-translate="contact.form.optionContent">Content-related question</span></label>
+            <label><input type="radio" name="purpose" value="Donation" /> <span data-translate="contact.form.optionDonation">Donation</span></label>
+            <label><input type="radio" name="purpose" value="Correction in content" /> <span data-translate="contact.form.optionCorrection">Correction in content</span></label>
+            <label><input type="radio" name="purpose" value="Interested in contributing content" /> <span data-translate="contact.form.optionContributing">Interested in contributing content</span></label>
+            <label><input type="radio" name="purpose" value="Collaboration opportunity" /> <span data-translate="contact.form.optionCollaboration">Collaboration opportunity</span></label>
+            <label><input type="radio" name="purpose" value="Privacy policy inquiry" /> <span data-translate="contact.form.optionPrivacy">Privacy policy inquiry</span></label>
+            <label><input type="radio" name="purpose" value="Suggestion or feedback" /> <span data-translate="contact.form.optionSuggestion">Suggestion or feedback</span></label>
+            <label><input type="radio" name="purpose" value="General contact" /> <span data-translate="contact.form.optionGeneral">General contact</span></label>
           </div>
         </fieldset>
         <label class="contact-field">
-          <span>Message <strong aria-hidden="true">*</strong></span>
-          <textarea id="contactMessage" name="message" rows="5" placeholder="Please message me back" required></textarea>
+          <span><span data-translate="contact.form.message">Message</span> <strong aria-hidden="true">*</strong></span>
+          <textarea id="contactMessage" name="message" rows="5" placeholder="Please message me back" data-translate-placeholder="contact.form.messagePlaceholder" required></textarea>
         </label>
         <div class="contact-form-actions">
-          <button type="button" class="contact-cancel-button" onclick="closeContactForm()">Cancel</button>
+          <button type="button" class="contact-cancel-button" onclick="closeContactForm()" data-translate="contact.form.cancel">Cancel</button>
           <button type="submit" class="contact-submit-button">
             <i class="ri-send-plane-fill" aria-hidden="true"></i>
-            <span>Send Message</span>
+            <span data-translate="contact.form.send">Send Message</span>
           </button>
         </div>
       </form>
@@ -730,6 +730,15 @@
   const contactEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let contactSnackbarTimer;
 
+  function getContactTranslation(key, fallback) {
+    if (typeof window.getCurrentTranslation !== 'function') {
+      return fallback;
+    }
+
+    const translated = window.getCurrentTranslation(key);
+    return translated && translated !== key ? translated : fallback;
+  }
+
   function showContactSnackbar(message, type = 'info', duration = 3500) {
     const snackbar = document.getElementById('contactSnackbar');
     if (!snackbar) return;
@@ -754,7 +763,11 @@
 
     if (submitButton) submitButton.disabled = isSubmitting;
     if (cancelButton) cancelButton.disabled = isSubmitting;
-    if (submitLabel) submitLabel.textContent = isSubmitting ? 'Sending...' : 'Send Message';
+    if (submitLabel) {
+      submitLabel.textContent = isSubmitting
+        ? getContactTranslation('contact.form.sending', 'Sending...')
+        : getContactTranslation('contact.form.send', 'Send Message');
+    }
     if (submitIcon) {
       submitIcon.className = isSubmitting ? 'ri-loader-4-line' : 'ri-send-plane-fill';
     }
@@ -784,35 +797,35 @@
     if (!name.value.trim()) {
       markContactFieldInvalid(name);
       name.focus();
-      showContactSnackbar('Please enter your name.', 'error');
+      showContactSnackbar(getContactTranslation('contact.form.errorName', 'Please enter your name.'), 'error');
       return false;
     }
 
     if (!email.value.trim()) {
       markContactFieldInvalid(email);
       email.focus();
-      showContactSnackbar('Please enter your email address.', 'error');
+      showContactSnackbar(getContactTranslation('contact.form.errorEmailRequired', 'Please enter your email address.'), 'error');
       return false;
     }
 
     if (!contactEmailRegex.test(email.value.trim())) {
       markContactFieldInvalid(email);
       email.focus();
-      showContactSnackbar('Please enter a valid email address.', 'error');
+      showContactSnackbar(getContactTranslation('contact.form.errorEmailInvalid', 'Please enter a valid email address.'), 'error');
       return false;
     }
 
     if (!purpose) {
       markContactFieldInvalid(purposeField);
       purposeField.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      showContactSnackbar('Please choose the purpose of your inquiry.', 'error');
+      showContactSnackbar(getContactTranslation('contact.form.errorPurpose', 'Please choose the purpose of your inquiry.'), 'error');
       return false;
     }
 
     if (!message.value.trim()) {
       markContactFieldInvalid(message);
       message.focus();
-      showContactSnackbar('Please enter your message.', 'error');
+      showContactSnackbar(getContactTranslation('contact.form.errorMessage', 'Please enter your message.'), 'error');
       return false;
     }
 
@@ -858,7 +871,7 @@
     if (!validateContactForm(form)) return;
 
     setContactSubmitting(true);
-    showContactSnackbar('Submitting your message...', 'info', 0);
+    showContactSnackbar(getContactTranslation('contact.form.submitting', 'Submitting your message...'), 'info', 0);
 
     try {
       await fetch(contactGoogleFormUrl, {
@@ -869,10 +882,10 @@
 
       form.reset();
       closeContactForm();
-      showContactSnackbar('Message sent successfully. Thank you for reaching out!', 'success');
+      showContactSnackbar(getContactTranslation('contact.form.success', 'Message sent successfully. Thank you for reaching out!'), 'success');
     } catch (error) {
       console.error('Contact form submission failed:', error);
-      showContactSnackbar('Unable to send your message. Please try again.', 'error');
+      showContactSnackbar(getContactTranslation('contact.form.failure', 'Unable to send your message. Please try again.'), 'error');
     } finally {
       setContactSubmitting(false);
     }
