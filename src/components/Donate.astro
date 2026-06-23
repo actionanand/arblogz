@@ -1,18 +1,21 @@
 ---
 import "@/styles/donate.css";
 import {donate, site} from "@/consts";
+import {t} from "@/i18n/utils";
 
 // Accept donation configuration from page props
 const { 
   showDonate = false, 
   donateMessage, 
+  donateMessageKey,
   customDonateConfig 
 } = Astro.props;
 
 // Use custom config if provided, otherwise fall back to global config
 const donateConfig = customDonateConfig || donate;
 const shouldShow = showDonate && donateConfig.enable;
-const tipMessage = donateMessage || donateConfig.tip;
+const resolvedDonateMessageKey = donateMessageKey || (!donateMessage && !customDonateConfig?.tip ? 'donate.tip' : undefined);
+const tipMessage = resolvedDonateMessageKey ? t(resolvedDonateMessageKey) : (donateMessage || donateConfig.tip);
 
 // Only use baseUrl in production builds, not in dev server
 const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
@@ -24,8 +27,8 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
       <div class="donation-heart">
         <i class="ri-heart-fill"></i>
       </div>
-      <h3 class="donation-title">Support Our Work</h3>
-      <p class="donation-message">{tipMessage}</p>
+      <h3 class="donation-title" data-translate="donate.title">{t('donate.title')}</h3>
+      <p class="donation-message" data-translate={resolvedDonateMessageKey}>{tipMessage}</p>
     </div>
     
     <div class="donation-methods">
@@ -36,7 +39,8 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           target="_blank" 
           rel="noopener noreferrer"
           class="donation-method paypal"
-          title="Donate via PayPal"
+          title={t('donate.titlePayPal')}
+          data-translate-title="donate.titlePayPal"
         >
           <div class="method-icon">
             <img src={`${baseUrl}/images/paypal.svg`} alt="PayPal" />
@@ -47,7 +51,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
 
       <!-- Google Pay (India) -->
       {donateConfig.gpayQRCode && (
-        <div class="donation-method gpay" id="gpay-method" title="Scan QR Code for Google Pay">
+        <div class="donation-method gpay" id="gpay-method" title={t('donate.titleGPay')} data-translate-title="donate.titleGPay">
           <div class="method-icon">
             <i class="ri-google-fill"></i>
           </div>
@@ -55,7 +59,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           <div class="qr-popup" id="gpay-qr">
             <div class="qr-popup-content">
               <img src={donateConfig.gpayQRCode} alt="Google Pay QR Code" class="qr-image" />
-              <p>Scan with Google Pay</p>
+              <p data-translate="donate.scanGPay">{t('donate.scanGPay')}</p>
             </div>
           </div>
         </div>
@@ -63,7 +67,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
 
       <!-- Paytm (India) -->
       {donateConfig.paytmQRCode && (
-        <div class="donation-method paytm" id="paytm-method" title="Scan QR Code for Paytm">
+        <div class="donation-method paytm" id="paytm-method" title={t('donate.titlePaytm')} data-translate-title="donate.titlePaytm">
           <div class="method-icon">
             <img src={`${baseUrl}/images/paytm.svg`} alt="Paytm" />
           </div>
@@ -71,7 +75,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           <div class="qr-popup" id="paytm-qr">
             <div class="qr-popup-content">
               <img src={donateConfig.paytmQRCode} alt="Paytm QR Code" class="qr-image" />
-              <p>Scan with Paytm</p>
+              <p data-translate="donate.scanPaytm">{t('donate.scanPaytm')}</p>
             </div>
           </div>
         </div>
@@ -79,7 +83,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
 
       <!-- PhonePe (India) -->
       {donateConfig.phonepeQRCode && (
-        <div class="donation-method phonepe" id="phonepe-method" title="Scan QR Code for PhonePe">
+        <div class="donation-method phonepe" id="phonepe-method" title={t('donate.titlePhonePe')} data-translate-title="donate.titlePhonePe">
           <div class="method-icon">
             <i class="ri-phone-fill"></i>
           </div>
@@ -87,7 +91,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           <div class="qr-popup" id="phonepe-qr">
             <div class="qr-popup-content">
               <img src={donateConfig.phonepeQRCode} alt="PhonePe QR Code" class="qr-image" />
-              <p>Scan with PhonePe</p>
+              <p data-translate="donate.scanPhonePe">{t('donate.scanPhonePe')}</p>
             </div>
           </div>
         </div>
@@ -95,7 +99,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
 
       <!-- Alipay (China) -->
       {donateConfig.alipayQRCode && (
-        <div class="donation-method alipay" id="alipay-method" title="Scan QR Code for Alipay">
+        <div class="donation-method alipay" id="alipay-method" title={t('donate.titleAlipay')} data-translate-title="donate.titleAlipay">
           <div class="method-icon">
             <img src={`${baseUrl}/images/alipay.svg`} alt="Alipay" />
           </div>
@@ -103,7 +107,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           <div class="qr-popup" id="alipay-qr">
             <div class="qr-popup-content">
               <img src={donateConfig.alipayQRCode} alt="Alipay QR Code" class="qr-image" />
-              <p>Scan with Alipay</p>
+              <p data-translate="donate.scanAlipay">{t('donate.scanAlipay')}</p>
             </div>
           </div>
         </div>
@@ -111,7 +115,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
 
       <!-- WeChat Pay (China) -->
       {donateConfig.wechatQRCode && (
-        <div class="donation-method wechat" id="wechat-method" title="Scan QR Code for WeChat Pay">
+        <div class="donation-method wechat" id="wechat-method" title={t('donate.titleWeChat')} data-translate-title="donate.titleWeChat">
           <div class="method-icon">
             <img src={`${baseUrl}/images/wechat.svg`} alt="WeChat Pay" />
           </div>
@@ -119,7 +123,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           <div class="qr-popup" id="wechat-qr">
             <div class="qr-popup-content">
               <img src={donateConfig.wechatQRCode} alt="WeChat Pay QR Code" class="qr-image" />
-              <p>Scan with WeChat</p>
+              <p data-translate="donate.scanWeChat">{t('donate.scanWeChat')}</p>
             </div>
           </div>
         </div>
@@ -132,12 +136,13 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           target="_blank" 
           rel="noopener noreferrer"
           class="donation-method github"
-          title="Sponsor on GitHub"
+          title={t('donate.titleGitHub')}
+          data-translate-title="donate.titleGitHub"
         >
           <div class="method-icon">
             <i class="ri-github-fill"></i>
           </div>
-          <span class="method-label">Sponsor</span>
+          <span class="method-label" data-translate="donate.methodSponsor">{t('donate.methodSponsor')}</span>
         </a>
       )}
 
@@ -148,12 +153,13 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           target="_blank" 
           rel="noopener noreferrer"
           class="donation-method coffee"
-          title="Buy me a coffee"
+          title={t('donate.titleCoffee')}
+          data-translate-title="donate.titleCoffee"
         >
           <div class="method-icon">
             <i class="ri-cup-fill"></i>
           </div>
-          <span class="method-label">Coffee</span>
+          <span class="method-label" data-translate="donate.methodCoffee">{t('donate.methodCoffee')}</span>
         </a>
       )}
 
@@ -164,7 +170,8 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           target="_blank" 
           rel="noopener noreferrer"
           class="donation-method kofi"
-          title="Support on Ko-fi"
+          title={t('donate.titleKofi')}
+          data-translate-title="donate.titleKofi"
         >
           <div class="method-icon">
             <i class="ri-heart-2-fill"></i>
@@ -180,7 +187,8 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           target="_blank" 
           rel="noopener noreferrer"
           class="donation-method patreon"
-          title="Support on Patreon"
+          title={t('donate.titlePatreon')}
+          data-translate-title="donate.titlePatreon"
         >
           <div class="method-icon">
             <i class="ri-heart-3-fill"></i>
@@ -196,12 +204,13 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
           target="_blank" 
           rel="noopener noreferrer"
           class="donation-method opencollective"
-          title="Support on Open Collective"
+          title={t('donate.titleOpenCollective')}
+          data-translate-title="donate.titleOpenCollective"
         >
           <div class="method-icon">
             <i class="ri-group-fill"></i>
           </div>
-          <span class="method-label">Collective</span>
+          <span class="method-label" data-translate="donate.methodCollective">{t('donate.methodCollective')}</span>
         </a>
       )}
     </div>
@@ -209,7 +218,7 @@ const baseUrl = import.meta.env.PROD ? site.baseUrl : '';
     <div class="donation-footer">
       <p class="donation-thanks">
         <i class="ri-sparkle-fill"></i>
-        Every contribution helps us create better content
+        <span data-translate="donate.thanks">{t('donate.thanks')}</span>
         <i class="ri-sparkle-fill"></i>
       </p>
     </div>
