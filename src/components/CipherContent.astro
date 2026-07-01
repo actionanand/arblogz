@@ -239,6 +239,10 @@ const { cipher = false } = Astro.props;
       fabBtn.title = 'Re-cipher content (reload page)';
 
       badge.classList.remove('cipher-hidden');
+
+      // Notify other widgets (e.g. the Table of Contents) that the article text
+      // changed so they can rebuild from the now-deciphered headings.
+      document.dispatchEvent(new CustomEvent('cipher:deciphered'));
     }
 
     function recipherContent(): void {

@@ -132,4 +132,11 @@ import {t} from '@/i18n/utils'
       toc.classList.add('block')
     }
   }
+
+  // When a ciphered article is deciphered, the heading text changes in place.
+  // Rebuild the ToC so its labels reflect the deciphered headings (anchor IDs
+  // are unchanged, so in-page navigation keeps working).
+  document.addEventListener('cipher:deciphered', () => {
+    tocbot.refresh();
+  });
 </script>
