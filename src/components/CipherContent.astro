@@ -1,0 +1,334 @@
+---
+/**
+ * CipherContent.astro
+ *
+ * Renders a floating "Decipher" button for authenticated users when
+ * `cipher: true` is set in the post frontmatter.
+ *
+ * Auth check mirrors PasswordProtection.astro:
+ *   - Reads localStorage[storageKey] → { hash, timestamp }
+ *   - Validates hash === passwordProtection.passwordHash
+ *   - Validates timestamp within sessionTimeout
+ *
+ * Cipher key is SEPARATE from the site password.
+ * The author ciphered the content with a chosen key; the reader must know it.
+ */
+import { passwordProtection } from '@/consts';
+import '@/styles/cipher-content.css';
+
+interface Props {
+  cipher?: boolean | null;
+}
+
+const { cipher = false } = Astro.props;
+---
+
+{cipher && (
+  <div
+    id="cipher-ui"
+    data-password-hash={passwordProtection.passwordHash}
+    data-storage-key={passwordProtection.storageKey}
+    data-session-timeout={String(passwordProtection.sessionTimeout)}
+    aria-hidden="true"
+  >
+    <!-- Floating action button (hidden until auth check passes) -->
+    <div id="cipher-fab" class="cipher-fab cipher-hidden" role="complementary">
+      <button
+        id="cipher-fab-btn"
+        class="cipher-fab-btn"
+        type="button"
+        aria-label="Toggle content deciphering"
+        title="Decipher content"
+      >
+        <span class="cipher-fab-icon" id="cipher-fab-icon" aria-hidden="true">🔓</span>
+        <span id="cipher-fab-label">Decipher</span>
+      </button>
+    </div>
+
+    <!-- Cipher key modal -->
+    <div
+      id="cipher-modal"
+      class="cipher-modal cipher-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cipher-modal-title"
+    >
+      <div class="cipher-modal-backdrop" id="cipher-modal-backdrop"></div>
+      <div class="cipher-modal-box">
+        <div class="cipher-modal-icon" aria-hidden="true">🌐🔑</div>
+        <h2 class="cipher-modal-title" id="cipher-modal-title">Enter Cipher Key</h2>
+        <p class="cipher-modal-msg">
+          This article contains encrypted content. Enter the cipher key to reveal the original text.
+        </p>
+
+        <form id="cipher-modal-form" class="cipher-modal-form" novalidate>
+          <div class="cipher-input-wrapper">
+            <input
+              type="password"
+              id="cipher-key-input"
+              class="cipher-key-input"
+              placeholder="Enter cipher key…"
+              autocomplete="off"
+              aria-label="Cipher key"
+              required
+            />
+            <button
+              type="button"
+              id="cipher-toggle-visibility"
+              class="cipher-toggle-visibility"
+              aria-label="Toggle cipher key visibility"
+            >
+              <svg id="cipher-eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <svg id="cipher-eye-off-icon" class="cipher-hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div id="cipher-error" class="cipher-error cipher-hidden" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+            </svg>
+            <span id="cipher-error-text">Could not verify the key. Please try again.</span>
+          </div>
+
+          <div class="cipher-modal-actions">
+            <button type="submit" id="cipher-submit-btn" class="cipher-submit-btn">
+              <span id="cipher-submit-text">Decipher</span>
+              <span id="cipher-submit-spinner" class="cipher-spinner cipher-hidden" aria-hidden="true"></span>
+            </button>
+            <button type="button" id="cipher-cancel-btn" class="cipher-cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Status badge (shown when deciphered) -->
+    <div
+      id="cipher-status-badge"
+      class="cipher-status-badge cipher-hidden"
+      title="Content is deciphered — click to re-cipher"
+      role="status"
+    >
+      <span aria-hidden="true">🌐</span>
+      <span>Deciphered</span>
+    </div>
+  </div>
+)}
+
+<script>
+  import { decode } from '@/utils/polyglot-cipher';
+
+  const ui = document.getElementById('cipher-ui');
+  if (ui) {
+    const passwordHash = ui.dataset.passwordHash ?? '';
+    const storageKey = ui.dataset.storageKey ?? 'site_auth_token';
+    const sessionTimeout = parseInt(ui.dataset.sessionTimeout ?? '0', 10);
+
+    // ------------------------------------------------------------------
+    // Auth check — same logic as PasswordProtection.astro
+    // ------------------------------------------------------------------
+    function isAuthenticated(): boolean {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) return false;
+      try {
+        const { hash, timestamp } = JSON.parse(raw) as { hash: string; timestamp: number };
+        if (hash !== passwordHash) {
+          localStorage.removeItem(storageKey);
+          return false;
+        }
+        if (sessionTimeout > 0 && Date.now() - timestamp > sessionTimeout) {
+          localStorage.removeItem(storageKey);
+          return false;
+        }
+        return true;
+      } catch {
+        localStorage.removeItem(storageKey);
+        return false;
+      }
+    }
+
+    // ------------------------------------------------------------------
+    // Text-node walker — deciphers all text in .markdown-body
+    // ------------------------------------------------------------------
+    let isCiphered = true; // current state of the article
+
+    function transformTextNodes(transformFn: (s: string) => string): void {
+      const article = document.querySelector('.markdown-body');
+      if (!article) return;
+
+      // Collect ALL text nodes in document order (including whitespace-only ones).
+      const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT);
+      const nodes: Text[] = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode as Text);
+      if (nodes.length === 0) return;
+
+      // Record original string values so we know the exact character lengths.
+      const origValues = nodes.map((n) => n.nodeValue ?? '');
+
+      // ----------------------------------------------------------------
+      // IMPORTANT: The cipher is a position-sensitive stream.
+      // Decode the ENTIRE article as one string, then redistribute back
+      // to each text node by character count.
+      // (Even with the letter-only PRNG fix, a single concatenated decode
+      //  is more robust against any future whitespace normalisation.)
+      // ----------------------------------------------------------------
+      const fullText = origValues.join('');
+      const transformed = transformFn(fullText);
+
+      let offset = 0;
+      nodes.forEach((node, i) => {
+        const len = origValues[i].length;
+        node.nodeValue = transformed.slice(offset, offset + len);
+        offset += len;
+      });
+    }
+
+    // ------------------------------------------------------------------
+    // UI helpers
+    // ------------------------------------------------------------------
+    const fab = document.getElementById('cipher-fab')!;
+    const fabBtn = document.getElementById('cipher-fab-btn')!;
+    const fabLabel = document.getElementById('cipher-fab-label')!;
+    const fabIcon = document.getElementById('cipher-fab-icon')!;
+
+    const modal = document.getElementById('cipher-modal')!;
+    const modalBackdrop = document.getElementById('cipher-modal-backdrop')!;
+    const form = document.getElementById('cipher-modal-form') as HTMLFormElement;
+    const keyInput = document.getElementById('cipher-key-input') as HTMLInputElement;
+    const toggleVisBtn = document.getElementById('cipher-toggle-visibility')!;
+    const eyeIcon = document.getElementById('cipher-eye-icon')!;
+    const eyeOffIcon = document.getElementById('cipher-eye-off-icon')!;
+    const errorBox = document.getElementById('cipher-error')!;
+    const errorText = document.getElementById('cipher-error-text')!;
+    const submitBtn = document.getElementById('cipher-submit-btn') as HTMLButtonElement;
+    const submitText = document.getElementById('cipher-submit-text')!;
+    const submitSpinner = document.getElementById('cipher-submit-spinner')!;
+    const cancelBtn = document.getElementById('cipher-cancel-btn')!;
+    const badge = document.getElementById('cipher-status-badge')!;
+
+    function showFab(): void {
+      fab.classList.remove('cipher-hidden');
+      ui.removeAttribute('aria-hidden');
+    }
+
+    function openModal(): void {
+      modal.classList.remove('cipher-hidden');
+      keyInput.value = '';
+      errorBox.classList.add('cipher-hidden');
+      keyInput.focus();
+    }
+
+    function closeModal(): void {
+      modal.classList.add('cipher-hidden');
+    }
+
+    function setDecipheredState(key: string): void {
+      isCiphered = false;
+      transformTextNodes((text) => decode(text, key));
+
+      // Update FAB to "re-cipher"
+      fabIcon.textContent = '🔒';
+      fabLabel.textContent = 'Re-cipher';
+      fabBtn.title = 'Re-cipher content (reload page)';
+
+      badge.classList.remove('cipher-hidden');
+    }
+
+    function recipherContent(): void {
+      // Simplest and safest: just reload the page to restore original ciphered content
+      window.location.reload();
+    }
+
+    // ------------------------------------------------------------------
+    // Event listeners
+    // ------------------------------------------------------------------
+
+    // FAB click: open modal if currently ciphered, reload if deciphered
+    fabBtn.addEventListener('click', () => {
+      if (isCiphered) {
+        openModal();
+      } else {
+        recipherContent();
+      }
+    });
+
+    // Badge click: also re-cipher
+    badge.addEventListener('click', () => recipherContent());
+
+    // Backdrop click: close modal
+    modalBackdrop.addEventListener('click', closeModal);
+
+    // Cancel button
+    cancelBtn.addEventListener('click', closeModal);
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('cipher-hidden')) closeModal();
+    });
+
+    // Toggle password visibility
+    toggleVisBtn.addEventListener('click', () => {
+      const isPass = keyInput.type === 'password';
+      keyInput.type = isPass ? 'text' : 'password';
+      eyeIcon.classList.toggle('cipher-hidden');
+      eyeOffIcon.classList.toggle('cipher-hidden');
+    });
+
+    // Form submit
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const key = keyInput.value.trim();
+      if (!key) return;
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitText.classList.add('cipher-hidden');
+      submitSpinner.classList.remove('cipher-hidden');
+      errorBox.classList.add('cipher-hidden');
+
+      // Run decipher in a microtask so the spinner can render first
+      setTimeout(() => {
+        try {
+          setDecipheredState(key);
+          closeModal(); // close AFTER success so errors remain visible
+        } catch {
+          errorText.textContent = 'An error occurred while deciphering. Please try again.';
+          errorBox.classList.remove('cipher-hidden');
+          errorBox.classList.add('cipher-shake');
+          setTimeout(() => errorBox.classList.remove('cipher-shake'), 400);
+        } finally {
+          submitBtn.disabled = false;
+          submitText.classList.remove('cipher-hidden');
+          submitSpinner.classList.add('cipher-hidden');
+        }
+      }, 50);
+    });
+
+    // ------------------------------------------------------------------
+    // Init: show FAB when markdown-body is available and user is auth'd
+    // ------------------------------------------------------------------
+    function tryShowFab(): boolean {
+      if (!isAuthenticated()) return true; // abort — don't observe further
+      if (document.querySelector('.markdown-body')) {
+        showFab();
+        return true;
+      }
+      return false;
+    }
+
+    if (!tryShowFab()) {
+      // Content may appear later (password-protected page, unlocked after form submit)
+      const observer = new MutationObserver(() => {
+        if (tryShowFab()) observer.disconnect();
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+  }
+</script>
