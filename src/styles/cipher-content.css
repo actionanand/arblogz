@@ -1,0 +1,286 @@
+/* ============================================================
+   Cipher Content — Floating button, modal, badge
+   ============================================================ */
+
+/* ── Utility ── */
+.cipher-hidden {
+  display: none !important;
+}
+
+/* ── Floating Action Button ── */
+.cipher-fab {
+  position: fixed;
+  bottom: 5rem;   /* above scroll-to-top button */
+  right: 1.25rem;
+  z-index: 60;
+  animation: cipherFadeIn 0.3s ease-out;
+}
+
+.cipher-fab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.cipher-fab-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.55);
+}
+
+.cipher-fab-btn:active {
+  transform: translateY(0);
+}
+
+.cipher-fab-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ── Modal overlay ── */
+.cipher-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cipherFadeIn 0.2s ease-out;
+}
+
+.cipher-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.cipher-modal-box {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  width: min(440px, 92vw);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+  animation: cipherSlideUp 0.3s ease-out;
+  z-index: 1;
+}
+
+.cipher-modal-icon {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.cipher-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.cipher-modal-msg {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Form ── */
+.cipher-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.cipher-input-wrapper {
+  position: relative;
+}
+
+.cipher-key-input {
+  width: 100%;
+  padding: 0.8rem 3.2rem 0.8rem 0.95rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: #1f2937;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cipher-key-input:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.cipher-toggle-visibility {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  color: #9ca3af;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.cipher-toggle-visibility:hover {
+  color: #7c3aed;
+}
+
+.cipher-toggle-visibility svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Error ── */
+.cipher-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  background: rgba(239, 68, 68, 0.08);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.cipher-error svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Actions ── */
+.cipher-modal-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.cipher-submit-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #ffffff;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cipher-submit-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.cipher-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cipher-cancel-btn {
+  padding: 0.8rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: transparent;
+  color: #6b7280;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.cipher-cancel-btn:hover {
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+/* ── Spinner ── */
+.cipher-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: cipherSpin 0.6s linear infinite;
+}
+
+/* ── Status badge ── */
+.cipher-status-badge {
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.9), rgba(79, 70, 229, 0.9));
+  color: #ffffff;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 60;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+  transition: transform 0.2s ease;
+  animation: cipherFadeIn 0.3s ease-out;
+}
+
+.cipher-status-badge:hover {
+  transform: translateY(-1px);
+}
+
+/* ── Animations ── */
+@keyframes cipherFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes cipherSlideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+
+@keyframes cipherSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes cipherShake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}
+
+.cipher-shake {
+  animation: cipherShake 0.4s ease-in-out;
+}

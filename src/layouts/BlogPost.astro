@@ -9,6 +9,7 @@ import Donate from '@/components/Donate.astro';
 import RelatedArticles from '@/components/RelatedArticles.astro';
 import Disclaimer from '@/components/Disclaimer.astro';
 import PasswordProtection from '@/components/PasswordProtection.astro';
+import CipherContent from '@/components/CipherContent.astro';
 import VideoResources from '@/components/VideoResources.astro';
 import {comment, config, donate} from "@/consts";
 import ScrollToTop from '@/components/ScrollToTop.astro'
@@ -25,6 +26,7 @@ const {
     donateMessage: undefined,
     customDonate: undefined,
     passwordProtected: undefined, // Can be true, false, or undefined
+    cipher: false, // When true: article body contains polyglot-ciphered text
     showDisclaimer: false, // Can be true or false, default is false
     customDisclaimer: undefined, // Custom disclaimer text
   },
@@ -62,6 +64,7 @@ const shouldShowDonate = donate.enable && (
       <PasswordProtection passwordProtected={frontmatter.passwordProtected}>
         <slot/>
       </PasswordProtection>
+      <CipherContent cipher={frontmatter.cipher} />
       
       <!-- Video Resources Section - rendered from frontmatter mediaEmbeds -->
       {
