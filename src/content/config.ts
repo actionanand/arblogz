@@ -48,6 +48,13 @@ const blog = defineCollection({
     
     // Password protection feature
     passwordProtected: z.boolean().optional(),
+
+    // Polyglot Cipher feature — article content is pre-ciphered by the author.
+    // Set cipher: true and paste the encoded text into the markdown body.
+    // Unauthenticated visitors see the raw cipher text.
+    // Authenticated users (valid password hash in localStorage) get a floating
+    // "Decipher" button; entering the correct cipher key reveals the plain text.
+    cipher: z.boolean().default(false).optional().nullable(),
     
     // Disclaimer feature - disabled by default
     showDisclaimer: z.boolean().default(false).optional(),
