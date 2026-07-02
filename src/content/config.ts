@@ -54,6 +54,7 @@ const blog = defineCollection({
     // Unauthenticated visitors see the raw cipher text.
     // Authenticated users (valid password hash in localStorage) get a floating
     // "Decipher" button; entering the correct cipher key reveals the plain text.
+    // default cipher secret key is 'secret'
     cipher: z.boolean().default(false).optional().nullable(),
     
     // Disclaimer feature - disabled by default
