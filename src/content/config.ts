@@ -63,10 +63,11 @@ const blog = defineCollection({
 
     // Media embeds — rendered as a "Video Resources" section at end of post
     mediaEmbeds: z.array(z.object({
-      type: z.enum(['youtube', 'youtube-short', 'instagram', 'instagram-post']),
+      type: z.enum(['youtube', 'youtube-short', 'instagram', 'instagram-post', 'facebook-post', 'facebook-reel', 'tiktok', 'dailymotion']),
       id: z.string(),
       title: z.string().optional(),
       startTime: z.number().int().nonnegative().optional(),
+      username: z.string().optional(), // TikTok handle (without @) — used for the "view on" link
     })).optional(),
   }),
 });
