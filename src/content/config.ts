@@ -63,7 +63,7 @@ const blog = defineCollection({
 
     // Media embeds — rendered as a "Video Resources" section at end of post
     mediaEmbeds: z.array(z.object({
-      type: z.enum(['youtube', 'youtube-short', 'instagram']),
+      type: z.enum(['youtube', 'youtube-short', 'instagram', 'instagram-post']),
       id: z.string(),
       title: z.string().optional(),
       startTime: z.number().int().nonnegative().optional(),
