@@ -2,7 +2,7 @@
 import { t } from '@/i18n/utils';
 
 interface MediaEmbed {
-  type: 'youtube' | 'youtube-short' | 'instagram';
+  type: 'youtube' | 'youtube-short' | 'instagram' | 'instagram-post';
   id: string;
   title?: string;
   startTime?: number; // optional start time in seconds (YouTube only)
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { embeds } = Astro.props;
-const hasInstagram = embeds.some(e => e.type === 'instagram');
+const hasInstagram = embeds.some(e => e.type === 'instagram' || e.type === 'instagram-post');
 const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-short');
 ---
 
@@ -112,17 +112,17 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
         )}
 
         {/* ── Instagram Post / Reel ── */}
-        {embed.type === 'instagram' && (
+        {(embed.type === 'instagram' || embed.type === 'instagram-post') && (
           <div class="vr-ig-wrap">
             <blockquote
               class="instagram-media"
-              data-instgrm-permalink={`https://www.instagram.com/p/${embed.id}/`}
+              data-instgrm-permalink={`https://www.instagram.com/${embed.type === 'instagram-post' ? 'p' : 'reel'}/${embed.id}/`}
               data-instgrm-version="14"
               style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px auto; max-width:540px; min-width:326px; padding:0; width:99.375%;"
             ></blockquote>
             <div class="vr-controls mt-2">
               <a
-                href={`https://www.instagram.com/p/${embed.id}/`}
+                href={`https://www.instagram.com/${embed.type === 'instagram-post' ? 'p' : 'reel'}/${embed.id}/`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="vr-btn"
