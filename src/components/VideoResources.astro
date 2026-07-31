@@ -2,10 +2,11 @@
 import { t } from '@/i18n/utils';
 
 interface MediaEmbed {
-  type: 'youtube' | 'youtube-short' | 'instagram' | 'instagram-post';
+  type: 'youtube' | 'youtube-short' | 'instagram' | 'instagram-post' | 'facebook-post' | 'facebook-reel' | 'tiktok' | 'dailymotion';
   id: string;
   title?: string;
   startTime?: number; // optional start time in seconds (YouTube only)
+  username?: string; // TikTok handle (without @) — used for the "view on" link
 }
 
 interface Props {
@@ -64,10 +65,20 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
                 <i class="ri-youtube-line"></i>
                 <span data-translate="media.openOnYouTube">{t('media.openOnYouTube')}</span>
               </a>
-              <span class="vr-pip-badge" title="Right-click video → Picture in Picture">
+              <button
+                class="vr-btn"
+                type="button"
+                data-vr-pip
+                data-pip-yt-player={`yt-${index}`}
+                data-pip-yt-id={embed.id}
+                data-pip-vertical="false"
+                data-pip-title={embed.title ?? ''}
+                aria-label="Watch in Picture-in-Picture"
+                title="Pop out & keep watching while you read"
+              >
                 <i class="ri-picture-in-picture-2-line"></i>
                 <span>PiP</span>
-              </span>
+              </button>
             </div>
           </div>
         )}
@@ -103,10 +114,20 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
                 <i class="ri-youtube-line"></i>
                 <span data-translate="media.openOnYouTube">{t('media.openOnYouTube')}</span>
               </a>
-              <span class="vr-pip-badge" title="Right-click video → Picture in Picture">
+              <button
+                class="vr-btn"
+                type="button"
+                data-vr-pip
+                data-pip-yt-player={`yt-${index}`}
+                data-pip-yt-id={embed.id}
+                data-pip-vertical="true"
+                data-pip-title={embed.title ?? ''}
+                aria-label="Watch in Picture-in-Picture"
+                title="Pop out & keep watching while you read"
+              >
                 <i class="ri-picture-in-picture-2-line"></i>
                 <span>PiP</span>
-              </span>
+              </button>
             </div>
           </div>
         )}
@@ -130,6 +151,179 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
                 <i class="ri-instagram-line"></i>
                 <span data-translate="media.viewOnInstagram">{t('media.viewOnInstagram')}</span>
               </a>
+              <button
+                class="vr-btn"
+                type="button"
+                data-vr-pip
+                data-pip-src={`https://www.instagram.com/${embed.type === 'instagram-post' ? 'p' : 'reel'}/${embed.id}/embed/`}
+                data-pip-vertical="true"
+                data-pip-title={embed.title ?? ''}
+                aria-label="Watch in Picture-in-Picture"
+                title="Pop out & keep watching while you read"
+              >
+                <i class="ri-picture-in-picture-2-line"></i>
+                <span>PiP</span>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── Facebook Post / Photo (iframe plugin — no SDK needed) ── */}
+        {embed.type === 'facebook-post' && (
+          <div class="vr-fb-wrap">
+            <iframe
+              class="vr-fb-iframe"
+              src={`https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(`https://www.facebook.com/photo?fbid=${embed.id}`)}&show_text=true&width=500`}
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen={true}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              loading="lazy"
+              title="Facebook post"
+            ></iframe>
+            <div class="vr-controls mt-2">
+              <a
+                href={`https://www.facebook.com/photo?fbid=${embed.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="vr-btn"
+              >
+                <i class="ri-facebook-circle-line"></i>
+                <span>View on Facebook</span>
+              </a>
+              <button
+                class="vr-btn"
+                type="button"
+                data-vr-pip
+                data-pip-src={`https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(`https://www.facebook.com/photo?fbid=${embed.id}`)}&show_text=true&width=500`}
+                data-pip-vertical="false"
+                data-pip-title={embed.title ?? ''}
+                aria-label="Watch in Picture-in-Picture"
+                title="Pop out & keep watching while you read"
+              >
+                <i class="ri-picture-in-picture-2-line"></i>
+                <span>PiP</span>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── Facebook Reel / Video (iframe plugin — no SDK needed) ── */}
+        {embed.type === 'facebook-reel' && (
+          <div class="vr-fb-wrap">
+            <iframe
+              class="vr-fb-video-iframe"
+              src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(`https://www.facebook.com/reel/${embed.id}`)}&show_text=false&width=340&height=600`}
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen={true}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              loading="lazy"
+              title="Facebook reel"
+            ></iframe>
+            <div class="vr-controls mt-2">
+              <a
+                href={`https://www.facebook.com/reel/${embed.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="vr-btn"
+              >
+                <i class="ri-facebook-circle-line"></i>
+                <span>View on Facebook</span>
+              </a>
+              <button
+                class="vr-btn"
+                type="button"
+                data-vr-pip
+                data-pip-src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(`https://www.facebook.com/reel/${embed.id}`)}&show_text=false&width=340&height=600`}
+                data-pip-vertical="true"
+                data-pip-title={embed.title ?? ''}
+                aria-label="Watch in Picture-in-Picture"
+                title="Pop out & keep watching while you read"
+              >
+                <i class="ri-picture-in-picture-2-line"></i>
+                <span>PiP</span>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── TikTok (iframe v2 — no SDK needed) ── */}
+        {embed.type === 'tiktok' && (
+          <div class="vr-tt-wrap">
+            <iframe
+              class="vr-tt-iframe"
+              src={`https://www.tiktok.com/embed/v2/${embed.id}`}
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen={true}
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="TikTok video"
+            ></iframe>
+            <div class="vr-controls mt-2">
+              <a
+                href={embed.username ? `https://www.tiktok.com/@${embed.username}/video/${embed.id}` : `https://www.tiktok.com/embed/v2/${embed.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="vr-btn"
+              >
+                <i class="ri-tiktok-line"></i>
+                <span>View on TikTok</span>
+              </a>
+              <button
+                class="vr-btn"
+                type="button"
+                data-vr-pip
+                data-pip-src={`https://www.tiktok.com/embed/v2/${embed.id}`}
+                data-pip-vertical="true"
+                data-pip-title={embed.title ?? ''}
+                aria-label="Watch in Picture-in-Picture"
+                title="Pop out & keep watching while you read"
+              >
+                <i class="ri-picture-in-picture-2-line"></i>
+                <span>PiP</span>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── Dailymotion (16:9 iframe) ── */}
+        {embed.type === 'dailymotion' && (
+          <div>
+            <div class="vr-yt-wrap">
+              <iframe
+                class="vr-iframe"
+                src={`https://www.dailymotion.com/embed/video/${embed.id}`}
+                allowfullscreen={true}
+                allow="autoplay; fullscreen; picture-in-picture; web-share"
+                loading="lazy"
+                title="Dailymotion video"
+              ></iframe>
+            </div>
+            <div class="vr-controls mt-2">
+              <a
+                href={`https://www.dailymotion.com/video/${embed.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="vr-btn"
+              >
+                <i class="ri-dailymotion-line"></i>
+                <span>View on Dailymotion</span>
+              </a>
+              <button
+                class="vr-btn"
+                type="button"
+                data-vr-pip
+                data-pip-src={`https://www.dailymotion.com/embed/video/${embed.id}?autoplay=1`}
+                data-pip-vertical="false"
+                data-pip-title={embed.title ?? ''}
+                aria-label="Watch in Picture-in-Picture"
+                title="Pop out & keep watching while you read"
+              >
+                <i class="ri-picture-in-picture-2-line"></i>
+                <span>PiP</span>
+              </button>
             </div>
           </div>
         )}
@@ -142,13 +336,150 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
   <script async src="https://www.instagram.com/embed.js"></script>
 )}
 
+{/* Picture-in-Picture: pops the video into a floating window so readers can watch while scrolling */}
+<script is:inline>
+  (function () {
+    var buttons = document.querySelectorAll('[data-vr-pip]');
+    if (!buttons.length) return;
+
+    function closeMiniPip() {
+      var existing = document.getElementById('vr-minipip');
+      if (existing) existing.remove();
+    }
+
+    function makeDraggable(box, handle) {
+      var startX = 0, startY = 0, origX = 0, origY = 0, dragging = false;
+      function down(e) {
+        dragging = true;
+        var pt = e.touches ? e.touches[0] : e;
+        startX = pt.clientX; startY = pt.clientY;
+        var rect = box.getBoundingClientRect();
+        origX = rect.left; origY = rect.top;
+        box.style.right = 'auto'; box.style.bottom = 'auto';
+        box.style.left = origX + 'px'; box.style.top = origY + 'px';
+        document.addEventListener('mousemove', move);
+        document.addEventListener('touchmove', move, { passive: false });
+        document.addEventListener('mouseup', up);
+        document.addEventListener('touchend', up);
+      }
+      function move(e) {
+        if (!dragging) return;
+        var pt = e.touches ? e.touches[0] : e;
+        if (e.cancelable) e.preventDefault();
+        box.style.left = (origX + (pt.clientX - startX)) + 'px';
+        box.style.top = (origY + (pt.clientY - startY)) + 'px';
+      }
+      function up() {
+        dragging = false;
+        document.removeEventListener('mousemove', move);
+        document.removeEventListener('touchmove', move);
+        document.removeEventListener('mouseup', up);
+        document.removeEventListener('touchend', up);
+      }
+      handle.addEventListener('mousedown', down);
+      handle.addEventListener('touchstart', down, { passive: true });
+    }
+
+    function openMiniPip(src, vertical, title) {
+      closeMiniPip();
+      var box = document.createElement('div');
+      box.id = 'vr-minipip';
+      box.className = 'vr-minipip' + (vertical ? ' vr-minipip--vertical' : '');
+
+      var bar = document.createElement('div');
+      bar.className = 'vr-minipip__bar';
+      var t = document.createElement('span');
+      t.className = 'vr-minipip__title';
+      t.textContent = title || 'Now playing';
+      var close = document.createElement('button');
+      close.className = 'vr-minipip__close';
+      close.type = 'button';
+      close.setAttribute('aria-label', 'Close mini player');
+      close.innerHTML = '<i class="ri-close-line"></i>';
+      close.addEventListener('click', closeMiniPip);
+      bar.appendChild(t);
+      bar.appendChild(close);
+
+      var frame = document.createElement('iframe');
+      frame.className = 'vr-minipip__frame';
+      frame.src = src;
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+
+      box.appendChild(bar);
+      box.appendChild(frame);
+      document.body.appendChild(box);
+      makeDraggable(box, bar);
+    }
+
+    function openDocumentPip(src, vertical, title, onFail) {
+      var w = vertical ? 360 : 420;
+      var h = vertical ? 640 : 236;
+      var api = window.documentPictureInPicture;
+      if (api && typeof api.requestWindow === 'function') {
+        api.requestWindow({ width: w, height: h }).then(function (pip) {
+          var meta = pip.document.createElement('meta');
+          meta.name = 'referrer';
+          meta.content = 'strict-origin-when-cross-origin';
+          pip.document.head.appendChild(meta);
+          pip.document.documentElement.style.cssText = 'width:100%;height:100%;margin:0;background:#000';
+          pip.document.body.style.cssText = 'margin:0;padding:0;background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center;width:100%;height:100%';
+          var f = pip.document.createElement('iframe');
+          f.style.cssText = 'display:block;width:100%;height:100%;border:0;margin:0';
+          f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          f.allowFullscreen = true;
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.src = src;
+          pip.document.body.appendChild(f);
+        }).catch(function () { onFail(); });
+      } else {
+        onFail();
+      }
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var vertical = btn.getAttribute('data-pip-vertical') === 'true';
+        var title = btn.getAttribute('data-pip-title') || '';
+        var src = btn.getAttribute('data-pip-src');
+
+        // YouTube: resume at the current time and pause the inline player to avoid double audio
+        var ytPlayerId = btn.getAttribute('data-pip-yt-player');
+        if (ytPlayerId) {
+          var ytId = btn.getAttribute('data-pip-yt-id');
+          var start = 0;
+          var players = window.__vrYtPlayers || {};
+          var p = players[ytPlayerId];
+          if (p && typeof p.getCurrentTime === 'function') {
+            start = Math.floor(p.getCurrentTime() || 0);
+            if (typeof p.pauseVideo === 'function') p.pauseVideo();
+          }
+          var params = 'autoplay=1&enablejsapi=1&playsinline=1&rel=0&origin=' + encodeURIComponent(window.location.origin) + '&widget_referrer=' + encodeURIComponent(window.location.href);
+          if (start > 0) params += '&start=' + start;
+          src = 'https://www.youtube.com/embed/' + ytId + '?' + params;
+        }
+
+        if (!src) return;
+        // YouTube throws Error 153 inside a Document PiP window, so route it to the
+        // in-page mini-player (same document context); other platforms use Document PiP.
+        if (ytPlayerId) {
+          openMiniPip(src, vertical, title);
+        } else {
+          openDocumentPip(src, vertical, title, function () { openMiniPip(src, vertical, title); });
+        }
+      });
+    });
+  })();
+</script>
+
 {hasYouTube && (
   <script is:inline>
     (function () {
       var muteButtons = document.querySelectorAll('[data-yt-mute]');
       if (!muteButtons.length) return;
 
-      var players = {};
+      var players = window.__vrYtPlayers = window.__vrYtPlayers || {};
 
       function setupButtons() {
         muteButtons.forEach(function (btn) {
@@ -160,9 +491,9 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
           var startTime = parseInt(container.getAttribute('data-start-time') || '0', 10);
           var isShort = container.getAttribute('data-short') === 'true';
 
-          // Build playerVars — origin is set at runtime so YouTube IFrame API
-          // can verify the embedding domain (prevents Error 153 in dev/cloud IDEs)
-          var playerVars = { rel: 0, enablejsapi: 1, origin: window.location.origin };
+          // Build playerVars — origin + widget_referrer let the YouTube IFrame API
+          // verify the embedding domain (prevents Error 153 in dev/cloud IDEs and PiP)
+          var playerVars = { rel: 0, enablejsapi: 1, playsinline: 1, origin: window.location.origin, widget_referrer: window.location.href };
           if (startTime > 0) playerVars.start = startTime;
 
           // Use YT.Player constructor with videoId: YouTube creates the iframe
@@ -305,6 +636,109 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
     align-items: center;
   }
 
+  /* ── Facebook wrapper ── */
+  .vr-fb-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .vr-fb-iframe {
+    width: 100%;
+    max-width: 500px;
+    height: 640px;
+    border: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: #fff;
+  }
+  .vr-fb-video-iframe {
+    width: 100%;
+    max-width: 340px;
+    height: 600px;
+    border: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: #000;
+  }
+
+  /* ── TikTok portrait wrapper ── */
+  .vr-tt-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .vr-tt-iframe {
+    width: 100%;
+    max-width: 340px;
+    height: 740px;
+    border: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  /* ── Floating mini player (Picture-in-Picture fallback) ── */
+  :global(.vr-minipip) {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 9999;
+    width: 360px;
+    max-width: calc(100vw - 32px);
+    background: #000;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+  }
+  :global(.vr-minipip__bar) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.35rem 0.6rem;
+    background: rgba(20, 20, 20, 0.95);
+    cursor: move;
+    user-select: none;
+  }
+  :global(.vr-minipip__title) {
+    color: #fff;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  :global(.vr-minipip__close) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0.15rem;
+  }
+  :global(.vr-minipip__close:hover) {
+    color: #ff6b6b;
+  }
+  :global(.vr-minipip__frame) {
+    width: 100%;
+    height: 202px; /* ~16:9 for a 360px-wide box */
+    border: 0;
+    display: block;
+    background: #000;
+  }
+  :global(.vr-minipip--vertical) {
+    width: 300px;
+  }
+  :global(.vr-minipip--vertical .vr-minipip__frame) {
+    height: 533px;
+  }
+
   /* ── Control bar ── */
   .vr-controls {
     display: flex;
@@ -354,6 +788,18 @@ const hasYouTube = embeds.some(e => e.type === 'youtube' || e.type === 'youtube-
     }
     .vr-short-iframe {
       height: 520px;
+    }
+    :global(.vr-minipip) {
+      width: 260px;
+    }
+    :global(.vr-minipip__frame) {
+      height: 146px;
+    }
+    :global(.vr-minipip--vertical) {
+      width: 220px;
+    }
+    :global(.vr-minipip--vertical .vr-minipip__frame) {
+      height: 391px;
     }
   }
 </style>
