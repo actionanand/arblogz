@@ -242,7 +242,7 @@ where:
 So:
 
 $$
-I = 5,00,000 \times 0.08 \times 5
+I = \text{5,00,000} \times 0.08 \times 5
 $$
 
 $$
@@ -258,11 +258,11 @@ $$
 For 60 months:
 
 $$
-EMI = \frac{\text{₹7,00,000}}{60}
+\text{EMI} = \frac{\text{₹7,00,000}}{60}
 $$
 
 $$
-EMI \approx \text{₹11,666.67}
+\text{EMI} \approx \text{₹11,666.67}
 $$
 
 ## Why flat rate can be misleading
@@ -358,10 +358,7 @@ flowchart TD
 For a standard monthly reducing-balance loan, the EMI formula is:
 
 $$
-EMI =
-P \times
-\frac{r(1+r)^n}
-{(1+r)^n - 1}
+\text{EMI} = P \times \frac{r(1+r)^n}{(1+r)^n - 1}
 $$
 
 where:
@@ -404,17 +401,81 @@ Also compare the **APR**.
 
 **APR** means **Annual Percentage Rate**.
 
-It is intended to represent the annualised cost of borrowing more comprehensively than the headline interest rate alone.
+Before the definition, here is the same idea told the way you would tell a child.
 
-Depending on the product and applicable disclosure rules, the cost calculation may take account of relevant charges in addition to interest.
+## The toy shop with the honest sign
 
-Think of it this way:
+A shop has a toy car in the window. The sign says:
 
-> **Interest rate = price written on the shelf.**
+> **Toy car — ₹100**
 
-> **APR = closer to the total annualised cost after included borrowing charges.**
+You are happy. You bring exactly ₹100 and walk in.
 
-Always examine the lender's **KFS**.
+At the counter, the shopkeeper starts adding things up:
+
+- ₹100 for the toy car
+- ₹8 for the box it comes in
+- ₹4 because you paid by card
+- ₹3 for the "handling" sticker
+
+You walk out having paid **₹115**.
+
+Nobody lied to you. The toy really did cost ₹100. But ₹100 was never what the trip actually cost you.
+
+> The **interest rate** is the number painted on the sign.
+>
+> The **APR** is much closer to the number at the counter — the whole cost, turned back into a yearly percentage.
+
+## Why a loan needs the same warning
+
+A loan has a sign-board number too. It is the interest rate, and it is the number the advertisement shouts.
+
+But a loan often comes with extra items at the counter:
+
+- a processing fee
+- documentation, stamping or verification charges
+- insurance bundled into the deal
+- applicable taxes on those charges
+
+The interest rate does not include any of these. The APR is designed to pull them into one comparable yearly number.
+
+```mermaid
+graph LR
+    A[Interest rate<br/>the sign-board number] --> C[APR<br/>the counter number]
+    B[Fees, charges,<br/>bundled add-ons] --> C
+```
+
+## Two loans that look identical
+
+Imagine Arun is offered two personal loans. Both advertise **10%**.
+
+| | Loan A | Loan B |
+| --- | --- | --- |
+| Advertised interest rate | 10% | 10% |
+| Processing fee | ₹1,000 | ₹12,000 |
+| Bundled insurance | None | ₹6,000 |
+| Money that actually reaches Arun | More | Less |
+| Money Arun actually parts with | Less | More |
+| **APR** | **Lower** | **Higher** |
+
+On the sign-board, these two loans are twins. At the counter, they are not. APR is the number that tells them apart.
+
+## The rule a child can remember
+
+> **Never judge a shop by its window. Judge it by the bill.**
+
+For a loan, the interest rate is the window and the APR is closer to the bill.
+
+## Two honest cautions
+
+APR is a very useful comparison tool, but it is not magic:
+
+1. **Not every charge is always inside it.** Which costs get included depends on the product and on the disclosure rules that apply to it. A penalty you may never pay, for example, usually is not.
+2. **APR compares like with like.** Comparing the APR of a five-year loan with the APR of a nine-month loan tells you less than it appears to, because the costs are spread over very different lengths of time.
+
+So APR is the better number to compare, not the last number to check.
+
+Always examine the lender's **KFS**, which is the subject of the next section.
 
 ---
 
@@ -477,9 +538,7 @@ Suppose:
 Then:
 
 $$
-\text{Equivalent Flat Rate}
-=
-\frac{I}{P \times T} \times 100
+\text{Equivalent Flat Rate} = \frac{I}{P \times T} \times 100
 $$
 
 But be careful:
@@ -564,9 +623,7 @@ Suppose:
 For the first six months:
 
 $$
-\text{₹5,00,000} \times 9\% \times \frac{6}{12}
-=
-\text{₹22,500}
+\text{₹5,00,000} \times 9\% \times \frac{6}{12} = \text{₹22,500}
 $$
 
 After six months, you pay ₹2 lakh **toward principal**.
@@ -580,9 +637,7 @@ $$
 Approximate interest for the remaining six months:
 
 $$
-\text{₹3,00,000} \times 9\% \times \frac{6}{12}
-=
-\text{₹13,500}
+\text{₹3,00,000} \times 9\% \times \frac{6}{12} = \text{₹13,500}
 $$
 
 Approximate total:
@@ -842,15 +897,7 @@ Do not compare credit-card EMI merely by looking at the monthly EMI.
 Compare:
 
 $$
-\text{Total Cost}
-=
-\text{All EMIs}
-+
-\text{Fees}
-+
-\text{Applicable Taxes}
--
-\text{Any Genuine Discount}
+\text{Total Cost} = \text{All EMIs} + \text{Fees} + \text{Applicable Taxes} - \text{Any Genuine Discount}
 $$
 
 ---
@@ -943,13 +990,7 @@ Write these four numbers down:
 A useful practical measure is:
 
 $$
-\text{Total Borrowing Cost}
-=
-\text{Total Repayments}
-+
-\text{Compulsory Upfront/Periodic Charges}
--
-\text{Net Cash Received}
+\text{Total Borrowing Cost} = \text{Total Repayments} + \text{Compulsory Upfront/Periodic Charges} - \text{Net Cash Received}
 $$
 
 This is not a replacement for APR, but it helps you understand the rupee cost.
@@ -969,9 +1010,7 @@ Imagine two offers.
 Interest:
 
 $$
-\text{₹5,00,000} \times 8\% \times 5
-=
-\text{₹2,00,000}
+\text{₹5,00,000} \times 8\% \times 5 = \text{₹2,00,000}
 $$
 
 Total:
@@ -983,9 +1022,7 @@ $$
 Approximate EMI:
 
 $$
-\text{₹7,00,000} / 60
-=
-\text{₹11,666.67}
+\text{₹7,00,000} / 60 = \text{₹11,666.67}
 $$
 
 ## Offer B
