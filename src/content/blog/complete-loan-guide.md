@@ -1544,7 +1544,6 @@ mindmap
 12. **For credit-card EMI, check the total cost—not just the “no-cost” label.**
 13. **Always read the loan agreement and current product terms before signing.**
 
----
 
 :::explore
 [>] [Key Facts Statement / all-in loan cost guidance](https://www.rbi.org.in/scripts/AnnualReportPublications.aspx?Id=1436)
