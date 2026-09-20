@@ -519,7 +519,7 @@ At maturity, you repay the principal according to the product terms.
 That is a bullet structure.
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Borrow ₹5 lakh] --> B[Principal stays largely unchanged]
     B --> C[Interest accrues]
     C --> D[Loan reaches maturity]
