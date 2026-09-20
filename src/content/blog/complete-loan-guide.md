@@ -115,7 +115,9 @@ A loan can therefore be:
 - fixed + flat
 - in some products, other specially defined structures
 
-> Do not treat “fixed” and “flat” as the same thing.
+::warning
+Do not treat “fixed” and “flat” as the same thing.
+:::
 
 They are completely different ideas.
 
@@ -171,13 +173,13 @@ $$
 For example:
 
 $$
-8\% = 6.5\% + 1.5\%
+8\\% = 6.5\\% + 1.5\\%
 $$
 
 If the benchmark later becomes 7%:
 
 $$
-\text{New Rate} = 7\% + 1.5\% = 8.5\%
+\text{New Rate} = 7\\% + 1.5\\% = 8.5\\%
 $$
 
 The lender may respond to a rate increase by changing:
@@ -370,7 +372,7 @@ where:
 If the annual rate is 12%:
 
 $$
-r = \frac{12\%}{12} = 1\% = 0.01
+r = \frac{12\\%}{12} = 1\\% = 0.01
 $$
 
 ---
@@ -601,7 +603,7 @@ Suppose a one-year bullet loan is ₹5 lakh at 9%.
 If you make **no principal repayment during the year**, then approximately:
 
 $$
-\text{₹5,00,000} \times 9\% = \text{₹45,000}
+\text{₹5,00,000} \times 9\\% = \text{₹45,000}
 $$
 
 The result looks like flat interest because the outstanding principal remained ₹5 lakh for the whole year.
@@ -623,7 +625,7 @@ Suppose:
 For the first six months:
 
 $$
-\text{₹5,00,000} \times 9\% \times \frac{6}{12} = \text{₹22,500}
+\text{₹5,00,000} \times 9\\% \times \frac{6}{12} = \text{₹22,500}
 $$
 
 After six months, you pay ₹2 lakh **toward principal**.
@@ -637,7 +639,7 @@ $$
 Approximate interest for the remaining six months:
 
 $$
-\text{₹3,00,000} \times 9\% \times \frac{6}{12} = \text{₹13,500}
+\text{₹3,00,000} \times 9\\% \times \frac{6}{12} = \text{₹13,500}
 $$
 
 Approximate total:
@@ -649,7 +651,7 @@ $$
 Without the principal part-payment:
 
 $$
-\text{₹5,00,000} \times 9\% = \text{₹45,000}
+\text{₹5,00,000} \times 9\\% = \text{₹45,000}
 $$
 
 So the part-payment could reduce interest by approximately:
@@ -699,7 +701,7 @@ $$
 and the applicable LTV allows 75%:
 
 $$
-\text{₹8,00,000} \times 75\% = \text{₹6,00,000}
+\text{₹8,00,000} \times 75\\% = \text{₹6,00,000}
 $$
 
 The lender may lend up to the applicable eligible amount, subject to its rules and regulation.
@@ -1010,7 +1012,7 @@ Imagine two offers.
 Interest:
 
 $$
-\text{₹5,00,000} \times 8\% \times 5 = \text{₹2,00,000}
+\text{₹5,00,000} \times 8\\% \times 5 = \text{₹2,00,000}
 $$
 
 Total:
