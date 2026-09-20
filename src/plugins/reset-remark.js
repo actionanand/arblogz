@@ -12,12 +12,15 @@ export function resetRemark() {
         node.meta = `${currentMeta}collapse={${config.codeFoldingStartLines}-1000000}`;
       }
 
-      // Only turn a Mermaid fence into a renderable Mermaid element when
-      // the current article explicitly enables `mermaid: true`.
-      // Otherwise it stays a normal fenced code block.
-      if (node.type === 'code' && node.lang === 'mermaid' && mermaidEnabled) {
-        node.type = 'html'
-        node.value = '<pre class="mermaid">\n' + node.value + '</pre>'
+      if (node.type === 'code' && node.lang === 'mermaid') {
+        if (mermaidEnabled) {
+          node.type = 'html';
+          node.value = '<pre class="mermaid">\n' + node.value + '</pre>';
+        } else {
+          // Mermaid is disabled (or omitted): keep the source visible as plain text
+          // and prevent syntax highlighters from treating "mermaid" as a language.
+          node.lang = 'text';
+        }
       }
     })
   }

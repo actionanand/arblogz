@@ -11,6 +11,7 @@ import remarkMath from 'remark-math';
 
 import { remarkModifiedTime } from './src/plugins/remark-modified-time.mjs';
 import { resetRemark } from './src/plugins/reset-remark.js';
+import {remarkMathFallback} from './src/plugins/remark-math-fallback.js';
 import {remarkAsides} from './src/plugins/remark-asides.js'
 import {remarkCollapse} from './src/plugins/remark-collapse.js';
 import {remarkExplore} from './src/plugins/remark-explore.js';
@@ -50,9 +51,12 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      // Needed during parsing so MDX treats $...$/$$...$$ as math instead of
-      // passing TeX braces such as \text{...} to Acorn as JS expressions.
+      // Always parse math first so MDX does not hand TeX braces to Acorn.
       remarkMath,
+
+      // If mathjax is false/omitted, convert parsed math into plain text/code
+      // before Expressive Code can mistake it for a language called "math".
+      remarkMathFallback,
 
       remarkModifiedTime,
       resetRemark,
@@ -69,11 +73,7 @@ export default defineConfig({
     ],
     rehypePlugins: [
       rehypeRaw,
-
-      // KaTeX rendering is still controlled by frontmatter `mathjax: true`.
-      // This plugin also handles literal ₹ safely before KaTeX sees it.
       rehypeConditionalKatex,
-
       lazyLoadImage,
     ],
   }
