@@ -13,6 +13,7 @@ mermaid: true
 mathjax: true
 showDisclaimer: true
 ---
+import { DogearCard, DogearCardContainer } from '@/react/Cards';
 
 # The Complete Loan Guide
 
@@ -225,13 +226,13 @@ $$
 For example:
 
 $$
-8\\% = 6.5\\% + 1.5\\%
+8\% = 6.5\% + 1.5\%
 $$
 
 If the benchmark later becomes 7%:
 
 $$
-\text{New Rate} = 7\\% + 1.5\\% = 8.5\\%
+\text{New Rate} = 7\% + 1.5\% = 8.5\%
 $$
 
 The lender may respond to a rate increase by changing:
@@ -533,7 +534,7 @@ where:
 If the annual rate is 12%:
 
 $$
-r = \frac{12\\%}{12} = 1\\% = 0.01
+r = \frac{12\%}{12} = 1\% = 0.01
 $$
 
 ---
@@ -800,7 +801,7 @@ Suppose a one-year bullet loan is ₹5 lakh at 9%.
 If you make **no principal repayment during the year**, then approximately:
 
 $$
-\text{₹5,00,000} \times 9\\% = \text{₹45,000}
+\text{₹5,00,000} \times 9\% = \text{₹45,000}
 $$
 
 The result looks like flat interest because the outstanding principal remained ₹5 lakh for the whole year.
@@ -822,7 +823,7 @@ Suppose:
 For the first six months:
 
 $$
-\text{₹5,00,000} \times 9\\% \times \frac{6}{12} = \text{₹22,500}
+\text{₹5,00,000} \times 9\% \times \frac{6}{12} = \text{₹22,500}
 $$
 
 After six months, you pay ₹2 lakh **toward principal**.
@@ -836,7 +837,7 @@ $$
 Approximate interest for the remaining six months:
 
 $$
-\text{₹3,00,000} \times 9\\% \times \frac{6}{12} = \text{₹13,500}
+\text{₹3,00,000} \times 9\% \times \frac{6}{12} = \text{₹13,500}
 $$
 
 Approximate total:
@@ -848,7 +849,7 @@ $$
 Without the principal part-payment:
 
 $$
-\text{₹5,00,000} \times 9\\% = \text{₹45,000}
+\text{₹5,00,000} \times 9\% = \text{₹45,000}
 $$
 
 So the part-payment could reduce interest by approximately:
@@ -898,7 +899,7 @@ $$
 and the applicable LTV allows 75%:
 
 $$
-\text{₹8,00,000} \times 75\\% = \text{₹6,00,000}
+\text{₹8,00,000} \times 75\% = \text{₹6,00,000}
 $$
 
 The lender may lend up to the applicable eligible amount, subject to its rules and regulation.
@@ -1213,7 +1214,7 @@ Imagine two offers.
 Interest:
 
 $$
-\text{₹5,00,000} \times 8\\% \times 5 = \text{₹2,00,000}
+\text{₹5,00,000} \times 8\% \times 5 = \text{₹2,00,000}
 $$
 
 Total:
@@ -1251,25 +1252,29 @@ Instead ask:
 
 > **Which structure matches my repayment ability at the lowest reasonable total cost and risk?**
 
-## A reducing-balance loan is generally easier to understand for long-term EMI borrowing
-
-Because principal falls with each repayment and interest follows the outstanding balance.
-
-## A fixed rate is useful when
-
-you want predictable repayments and protection from future rate increases.
-
-## A floating rate is useful when
-
-you are comfortable with changes and want the possibility of benefiting when benchmark rates decline.
-
-## A bullet loan is useful when
-
-you genuinely expect a lump sum within the short loan tenure.
-
-## A bullet loan is risky when
-
-you are using it only because the monthly payment looks small but have no plan for the final principal.
+<DogearCardContainer>
+  <DogearCard title="Which Type Is 'Good'" color="gray" bgColor="#f5f5f5">
+    <p>
+      <ul>
+        <li>
+          <strong>A reducing-balance loan is generally easier to understand for long-term EMI borrowing</strong>: Because principal falls with each repayment and interest follows the outstanding balance.
+        </li>
+        <li>
+          <strong>A fixed rate is useful when</strong>: you want predictable repayments and protection from future rate increases.
+        </li>
+        <li>
+          <strong>A floating rate is useful when</strong>: you are comfortable with changes and want the possibility of benefiting when benchmark rates decline.
+        </li>
+        <li>
+          <strong>A bullet loan is useful when</strong>: you genuinely expect a lump sum within the short loan tenure.
+        </li>
+        <li>
+          <strong>A bullet loan is risky when</strong>: you are using it only because the monthly payment looks small but have no plan for the final principal.
+        </li>
+      </ul>
+    </p>
+  </DogearCard>
+</DogearCardContainer>
 
 ---
 

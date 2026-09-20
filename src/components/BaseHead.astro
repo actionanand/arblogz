@@ -4,6 +4,8 @@ import {site} from "@/consts";
 import UmamiAnalytics from '@/components/UmamiAnalytics.astro';
 import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
 import BusuanziAnalytics from '@/components/BusuanziAnalytics.astro';
+import KaTeXStyles from '@/components/KaTeXStyles.astro';
+import MermaidRenderer from '@/components/MermaidRenderer.astro';
 import getUrl from "@/utils/getUrl";
 import {getOgImageUrl} from "@/utils/getOgImageUrl";
 
@@ -52,23 +54,29 @@ let title = Astro.props.title ? `${Astro.props.title} - ${site.title}` : site.ti
 
   <link rel="sitemap" href={getUrl("/sitemap-0.xml")}>
   <title>{title}</title>
-  
+
   <!-- Set base URL for client-side scripts -->
   <script is:inline define:vars={{baseUrl: import.meta.env.PROD ? site.baseUrl : '', isProduction: import.meta.env.PROD}}>
     window.BASE_URL = baseUrl;
     window.IS_PRODUCTION = isProduction;
   </script>
-  
+
   <script is:inline src={getUrl("/javascript/toggle-theme.js")}></script>
   <script is:inline src={getUrl("/javascript/toggle-language.js")}></script>
+
+  <!--
+    The existing frontmatter flag remains `mathjax` for compatibility,
+    but formulas are now rendered by the locally installed KaTeX package.
+  -->
   {
-    mathjax && <script async type="text/javascript" src=`${getUrl("/javascript/load-mathjax.js")}`></script>
+    mathjax && <KaTeXStyles />
   }
 
+  <!-- Mermaid is bundled from the locally installed npm package; no CDN script. -->
   {
-    mermaid &&
-    <script async type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.9.0/mermaid.min.js"></script>
+    mermaid && <MermaidRenderer />
   }
+
   <GoogleAnalytics />
   <UmamiAnalytics />
   <BusuanziAnalytics/>

@@ -1,0 +1,43 @@
+/*
+ * KaTeX does not ship font metrics for U+20B9 INDIAN RUPEE SIGN.
+ *
+ * The rehype plugin substitutes each literal ₹ inside math with:
+ *
+ *   \htmlClass{rupee-symbol}{R}
+ *
+ * KaTeX measures the supported "R". We hide that glyph while preserving its
+ * layout box, then paint the real ₹ with a browser/system font.
+ */
+
+.katex .rupee-symbol {
+  position: relative;
+  display: inline-block;
+}
+
+/* Preserve width/height but hide the KaTeX placeholder glyph. */
+.katex .rupee-symbol > * {
+  visibility: hidden;
+}
+
+/* Paint the actual rupee sign in the occupied slot. */
+.katex .rupee-symbol::after {
+  content: "₹";
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans",
+    "DejaVu Sans",
+    Arial,
+    sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}

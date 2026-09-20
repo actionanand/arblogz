@@ -1,0 +1,39 @@
+<script>
+  import mermaid from 'mermaid';
+
+  async function renderMermaidDiagrams() {
+    const nodes = Array.from(
+      document.querySelectorAll('.markdown-body pre.mermaid:not([data-processed="true"])')
+    );
+
+    if (nodes.length === 0) {
+      return;
+    }
+
+    const theme =
+      document.documentElement.dataset.theme === 'dark'
+        ? 'dark'
+        : 'default';
+
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: 'strict',
+      theme,
+    });
+
+    try {
+      await mermaid.run({ nodes });
+    } catch (error) {
+      console.error('Mermaid render failed:', error);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderMermaidDiagrams, { once: true });
+  } else {
+    renderMermaidDiagrams();
+  }
+
+  // Harmless when Astro view transitions are not used, and useful if added later.
+  document.addEventListener('astro:page-load', renderMermaidDiagrams);
+</script>
