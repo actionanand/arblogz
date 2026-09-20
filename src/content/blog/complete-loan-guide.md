@@ -1,6 +1,7 @@
 ---
 title: "The Complete Loan Guide: Fixed, Floating, Flat, Reducing Balance, Bullet Repayment & Credit Card EMI"
 description: "A story-style, beginner-friendly guide to understanding how loans really work, how interest is calculated, and how to compare personal loans, home loans, gold loans and credit-card EMIs."
+date: 2026-09-16
 tags:
   - loans
   - personal-finance
@@ -8,6 +9,9 @@ tags:
   - emi
   - gold-loan
   - credit-card
+mermaid: true
+mathjax: true
+showDisclaimer: true
 ---
 
 # The Complete Loan Guide
@@ -41,41 +45,39 @@ Imagine Arun needs **₹5,00,000**.
 
 He visits different lenders.
 
-One says:
+:::owl
+**One says:** “7.9% flat.”
+:::
 
-> “7.9% flat.”
+:::duck{align="left"}
+**Another says:** “11% reducing balance.”
+:::
 
-Another says:
+:::owl{align="left"}
+**Another says:** “8.5% floating.”
+:::
 
-> “11% reducing balance.”
+:::duck{align="left"}
+**A gold-loan counter says:** “9% for one year, bullet repayment.”
+:::
 
-Another says:
-
-> “8.5% floating.”
-
-A gold-loan counter says:
-
-> “9% for one year, bullet repayment.”
-
-His credit card app says:
-
-> “Convert ₹50,000 purchase into 12 EMIs.”
+:::owl{align="left"}
+**His credit card app says:** “Convert ₹50,000 purchase into 12 EMIs.”
+:::
 
 Arun is confused.
 
-He asks:
-
-> “Why can't everyone just tell me how much the loan costs?”
+:::unicorn{align="right"}
+**He asks:** “Why can't everyone just tell me how much the loan costs?”
+:::
 
 That is exactly the right question.
 
 The first lesson is:
 
-## The interest-rate number alone is not enough.
-
+:::note[The interest-rate number alone is not enough.]
 We need to know **how the rate behaves** and **how the interest is calculated**.
-
----
+:::
 
 # 2. There Are Two Different Questions
 
@@ -113,7 +115,7 @@ A loan can therefore be:
 - fixed + flat
 - in some products, other specially defined structures
 
-Do not treat “fixed” and “flat” as the same thing.
+> Do not treat “fixed” and “flat” as the same thing.
 
 They are completely different ideas.
 
@@ -205,11 +207,9 @@ flowchart LR
 - you expect rates may fall,
 - or the product has favourable prepayment terms.
 
-## Main risk
-
+:::Danger[Main risk]
 Your future cost is not fully known on day one.
-
----
+:::
 
 # 5. Flat-Rate Interest
 
@@ -292,7 +292,6 @@ If someone writes or says something like **“definition rate”**, they may act
 
 Suppose you owe:
 
-$$
 ₹5,00,000
 $$
 
@@ -313,7 +312,7 @@ $$
 interest is calculated on the lower outstanding amount again.
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[₹5,00,000 outstanding] --> B[Pay EMI]
     B --> C[Lower outstanding]
     C --> D[Pay EMI]
