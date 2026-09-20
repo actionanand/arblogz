@@ -90,7 +90,7 @@ People often mix these four words:
 
 But they answer **two completely different questions**.
 
-:::success[Think of a loan as having two separate switches]
+:::tip[Think of a loan as having two separate switches]
 **Switch 1 — Fixed or Floating:** decides whether the **interest rate itself can change during the loan tenure**.
 
 **Switch 2 — Flat or Reducing Balance:** decides **how the lender calculates interest on the principal**.
@@ -110,10 +110,14 @@ flowchart TD
 
 The easiest way to remember it is:
 
+<div class="table-green table-default-grid">
+
 | Question | Choices | What it tells you |
 |---|---|---|
 | **Will my interest rate change during the tenure?** | Fixed / Floating | Behaviour of the **rate** |
 | **On what principal will interest be calculated?** | Flat / Reducing Balance | Method of **interest calculation** |
+
+</div>
 
 So:
 
@@ -416,15 +420,19 @@ $$
 
 ## Compare that with the same 8% flat loan
 
+<div class="table-ocean table-default-grid">
+
 | ₹5 lakh for 5 years | **8% Flat** | **8% Reducing Balance** |
 |---|---:|---:|
 | Approx. EMI | ₹11,666.67 | ₹10,138.20 |
 | Approx. total repayment | ₹7,00,000 | ₹6,08,292 |
 | Approx. total interest | ₹2,00,000 | ₹1,08,292 |
 
+</div>
+
 The number printed on both offers is **8%**, but the cost is very different because the calculation method is different.
 
-:::success[This is the key lesson]
+:::tip[This is the key lesson]
 **8% flat and 8% reducing are not equivalent interest rates.**
 
 With reducing balance, the amount on which interest is charged keeps getting smaller as you repay principal.
@@ -604,6 +612,8 @@ graph LR
 
 Imagine Arun is offered two personal loans. Both advertise **10%**.
 
+<div class="table-sunset table-default-grid">
+
 | | Loan A | Loan B |
 | --- | --- | --- |
 | Advertised interest rate | 10% | 10% |
@@ -612,6 +622,8 @@ Imagine Arun is offered two personal loans. Both advertise **10%**.
 | Money that actually reaches Arun | More | Less |
 | Money Arun actually parts with | Less | More |
 | **APR** | **Lower** | **Higher** |
+
+</div>
 
 On the sign-board, these two loans are twins. At the counter, they are not. APR is the number that tells them apart.
 
@@ -684,12 +696,16 @@ So the loan can be described as:
 
 These are different descriptions.
 
+<div class="table-royal table-default-grid">
+
 | Term | What it answers |
 |---|---|
 | **Fixed** | Will the interest-rate percentage change? **No**, during the agreed fixed period. |
 | **Floating** | Can the interest-rate percentage change? **Yes**, according to the benchmark/product terms. |
 | **Flat** | Is interest calculated using the original principal for the agreed calculation? **Yes.** |
 | **Reducing balance** | Is interest calculated using the remaining outstanding principal? **Yes.** |
+
+</div>
 
 A simple way to write common combinations is:
 
@@ -957,6 +973,8 @@ So:
 
 # 19. EMI Loan vs Bullet Loan
 
+<div class="table-luxury table-default-grid">
+
 | Feature | EMI Loan | Bullet Loan |
 |---|---|---|
 | Principal repayment | Gradually every month | Mostly/all at maturity |
@@ -966,6 +984,8 @@ So:
 | Interest benefit from principal reduction | Automatic | Only if part-payment is allowed and made |
 | Good for | Salary-based regular repayment | Short-term need with known repayment source |
 | Main risk | Long tenure can increase total interest | Large lump sum due later |
+
+</div>
 
 ---
 
@@ -1419,6 +1439,8 @@ Other warning signs:
 
 # 33. Important Abbreviations
 
+<div class="table-green table-default-grid">
+
 | Abbreviation | Full Form | Meaning |
 |---|---|---|
 | **EMI** | Equated Monthly Instalment | Regular monthly loan payment |
@@ -1432,6 +1454,8 @@ Other warning signs:
 | **NPA** | Non-Performing Asset | A loan/account classified as non-performing under applicable rules |
 | **p.a.** | Per Annum | Per year |
 | **T&C** | Terms and Conditions | Contractual rules of the product |
+
+</div>
 
 ---
 
@@ -1595,6 +1619,8 @@ Rates can be higher because lender risk is higher.
 
 Create a table like this before choosing:
 
+<div class="table-green table-default-grid">
+
 | Item | Loan A | Loan B |
 |---|---:|---:|
 | Amount sanctioned |  |  |
@@ -1614,6 +1640,8 @@ Create a table like this before choosing:
 | Total borrowing cost |  |  |
 | Security required |  |  |
 | Maturity lump sum |  |  |
+
+</div>
 
 The “smaller interest-rate number” does **not** automatically win.
 
