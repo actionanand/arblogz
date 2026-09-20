@@ -1546,21 +1546,12 @@ mindmap
 
 ---
 
-# Regulatory Notes and Further Reading
-
-This guide is educational and uses simplified examples. Actual interest can vary with exact disbursement date, day-count convention, rest frequency, repayment date, taxes, fees and product rules.
-
-Useful official regulatory references for India:
-
-- Key Facts Statement / all-in loan cost guidance:  
-  https://www.rbi.org.in/scripts/AnnualReportPublications.aspx?Id=1436
-- Fixed and floating interest-rate framework:  
-  https://systemhealth.rbi.org.in/Scripts/BS_ViewMasDirections.aspx_id%3D10295.html
-- Floating-rate EMI reset guidance and borrower options:  
-  https://www.rbi.org.in/scripts/FAQView.aspx/FAQView.aspx/FAQView.aspx?Id=170
-- Credit-card EMI transparency and APR requirements:  
-  https://systemhealth.rbi.org.in/Scripts/BS_ViewMasDirections.aspx_id%3D12300.html
-- Regulatory example of gold-loan bullet repayment structure:  
-  https://www.rbi.org.in/scripts/NotificationUser.aspx?Id=12827
+::explore
+[>] [Key Facts Statement / all-in loan cost guidance](https://www.rbi.org.in/scripts/AnnualReportPublications.aspx?Id=1436)
+[>] [Fixed and floating interest-rate framework](https://systemhealth.rbi.org.in/Scripts/BS_ViewMasDirections.aspx_id%3D10295.html)
+[>] [Floating-rate EMI reset guidance and borrower options](https://www.rbi.org.in/scripts/FAQView.aspx/FAQView.aspx/FAQView.aspx?Id=170)
+[>] [Credit-card EMI transparency and APR requirements](https://systemhealth.rbi.org.in/Scripts/BS_ViewMasDirections.aspx_id%3D12300.html)
+[>] [Regulatory example of gold-loan bullet repayment structure](https://www.rbi.org.in/scripts/NotificationUser.aspx?Id=12827)
+::
 
 > **Important:** Loan products and regulations can change. Use this article to understand the concepts, then verify the latest KFS, sanction letter, repayment schedule and product terms before borrowing.
