@@ -14,6 +14,8 @@ mathjax: true
 showDisclaimer: true
 ---
 import { DogearCard, DogearCardContainer } from '@/react/Cards';
+import Highlight from "@/react/Highlight/Highlight.jsx";
+import Tabs, { TabItem } from "@/react/Tabs/Tabs.jsx";
 
 # The Complete Loan Guide
 
@@ -122,9 +124,40 @@ The easiest way to remember it is:
 
 So:
 
-> **Fixed vs Floating** = Will the **percentage rate** itself stay the same or change?
+> <Highlight color="#2d5aa0">Fixed vs Floating</Highlight> = Will the **percentage rate** itself stay the same or change?
 
-> **Flat vs Reducing Balance** = Will interest be calculated using the **original principal** or the **remaining outstanding principal**?
+> <Highlight color="#2d5aa0">Flat vs Reducing Balance</Highlight> = Will interest be calculated using the **original principal** or the **remaining outstanding principal**?
+
+### Quick comparison
+
+<Tabs defaultValue="rate-behaviour" client:load>
+  <TabItem value="rate-behaviour" label="Fixed vs Floating">
+
+    **Fixed rate**
+
+    The agreed rate stays unchanged for the fixed period defined by the loan.
+
+    **Floating rate**
+
+    The rate can move up or down according to the applicable benchmark and product terms.
+
+    **Question this answers:** *Can the interest-rate percentage itself change?*
+
+  </TabItem>
+  <TabItem value="calculation-method" label="Flat vs Reducing">
+
+    **Flat rate**
+
+    Interest is calculated using the original principal for the agreed calculation.
+
+    **Reducing balance**
+
+    Interest is calculated using the outstanding principal, so the interest base falls as principal is repaid.
+
+    **Question this answers:** *What principal amount is the interest calculated on?*
+
+  </TabItem>
+</Tabs>
 
 ## These are independent ideas
 
@@ -178,7 +211,7 @@ That one question prevents a lot of confusion.
 
 # 3. Fixed Interest Rate
 
-A **fixed interest rate** means the contracted interest rate stays unchanged for the fixed period specified in the loan agreement.
+A <Highlight color="#2d5aa0">fixed interest rate</Highlight> means the contracted interest rate stays unchanged for the fixed period specified in the loan agreement.
 
 Example:
 
@@ -213,7 +246,7 @@ So always ask:
 
 # 4. Floating Interest Rate
 
-A **floating interest rate** can move up or down during the loan tenure.
+A <Highlight color="#2d5aa0">floating interest rate</Highlight> can move up or down during the loan tenure.
 
 It is commonly linked to a benchmark.
 
@@ -272,7 +305,7 @@ Your future cost is not fully known on day one.
 Now we come to one of the most misunderstood terms.
 
 :::warning
-In the **flat-rate method**, interest is calculated using the **original principal** for the agreed tenure.
+In the <Highlight color="#800031">flat-rate method</Highlight>, interest is calculated using the **original principal** for the agreed tenure.
 
 For the purpose of calculating interest, it behaves as though you **continue to owe the same original principal amount throughout the tenure**, even though you are making repayments.
 :::
@@ -350,7 +383,7 @@ But the original flat-interest calculation was still based on the original ₹5 
 
 # 6. Reducing-Balance Interest
 
-The **reducing-balance method** calculates interest on the principal that is still outstanding.
+The <Highlight color="#0d7f3f">reducing-balance method</Highlight> calculates interest on the principal that is still outstanding.
 
 In simple words, every repayment reduces what you owe. The next interest calculation then uses that **smaller outstanding principal**.
 
@@ -563,7 +596,7 @@ Also compare the **APR**.
 
 # 9. What Is APR?
 
-**APR** means **Annual Percentage Rate**.
+<Highlight color="#2d5aa0">APR</Highlight> means **Annual Percentage Rate**.
 
 Before the definition, here is the same idea told the way you would tell a child.
 
@@ -649,7 +682,7 @@ Always examine the lender's **KFS**, which is the subject of the next section.
 
 # 10. What Is KFS?
 
-**KFS** means **Key Facts Statement**.
+<Highlight color="#2d5aa0">KFS</Highlight> means **Key Facts Statement**.
 
 It is the loan's summary sheet containing important information such as:
 
@@ -826,7 +859,7 @@ $$
 \text{₹5,00,000} \times 9\% \times \frac{6}{12} = \text{₹22,500}
 $$
 
-After six months, you pay ₹2 lakh **toward principal**.
+After six months, you pay ₹2 lakh <Highlight color="#0d7f3f">toward principal</Highlight>.
 
 New outstanding:
 
@@ -1108,7 +1141,7 @@ $$
 
 # 24. What Is “No-Cost EMI”?
 
-“No-cost EMI” does **not necessarily mean that no interest calculation exists behind the scenes**.
+<Highlight color="#800031">“No-cost EMI”</Highlight> does **not necessarily mean that no interest calculation exists behind the scenes**.
 
 A common structure is:
 
@@ -1158,7 +1191,7 @@ The card issuer should clearly show the principal, interest and upfront discount
 
 These are **not the same**.
 
-If you simply pay only the **Minimum Amount Due (MAD)** on a normal credit-card bill, the remaining balance can attract high finance charges.
+If you simply pay only the <Highlight color="#800031">Minimum Amount Due (MAD)</Highlight> on a normal credit-card bill, the remaining balance can attract high finance charges.
 
 **MAD** = Minimum Amount Due.
 
@@ -1191,7 +1224,7 @@ Write these four numbers down:
 3. **All compulsory charges**
 4. **How quickly principal falls**
 
-A useful practical measure is:
+A useful practical measure is the <Highlight color="#2d5aa0">Total Borrowing Cost</Highlight>:
 
 $$
 \text{Total Borrowing Cost} = \text{Total Repayments} + \text{Compulsory Upfront/Periodic Charges} - \text{Net Cash Received}
@@ -1534,7 +1567,7 @@ Never choose the shortest tenure if it makes your monthly budget unsafe.
 
 # 37. Part-Payment: A Powerful Tool
 
-On a reducing-balance loan, principal part-payment can save future interest.
+On a reducing-balance loan, <Highlight color="#0d7f3f">principal part-payment</Highlight> can save future interest.
 
 Suppose outstanding principal is:
 
@@ -1570,7 +1603,7 @@ If you can choose, reducing **tenure** while keeping EMI affordable can often sa
 
 # 38. Foreclosure
 
-**Foreclosure** means closing the entire loan before its scheduled final date.
+<Highlight color="#800031">Foreclosure</Highlight> means closing the entire loan before its scheduled final date.
 
 Example:
 
