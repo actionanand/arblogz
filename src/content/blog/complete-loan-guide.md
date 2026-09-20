@@ -208,6 +208,7 @@ flowchart LR
 - or the product has favourable prepayment terms.
 
 :::Danger[Main risk]
+
 Your future cost is not fully known on day one.
 :::
 
@@ -292,6 +293,7 @@ If someone writes or says something like **“definition rate”**, they may act
 
 Suppose you owe:
 
+$$
 ₹5,00,000
 $$
 
@@ -312,7 +314,7 @@ $$
 interest is calculated on the lower outstanding amount again.
 
 ```mermaid
-flowchart TB
+flowchart LR
     A[₹5,00,000 outstanding] --> B[Pay EMI]
     B --> C[Lower outstanding]
     C --> D[Pay EMI]
