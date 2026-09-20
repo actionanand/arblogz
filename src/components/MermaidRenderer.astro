@@ -1,0 +1,60 @@
+<script>
+  import mermaid from 'mermaid';
+
+  async function renderMermaidDiagrams() {
+    const nodes = Array.from(
+      document.querySelectorAll('.markdown-body pre.mermaid:not([data-processed="true"])')
+    );
+
+    if (nodes.length === 0) {
+      return;
+    }
+
+    const theme =
+      document.documentElement.dataset.theme === 'dark'
+        ? 'dark'
+        : 'default';
+
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: 'strict',
+      theme,
+    });
+
+    try {
+      await mermaid.run({ nodes });
+    } catch (error) {
+      console.error('Mermaid render failed:', error);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderMermaidDiagrams, { once: true });
+  } else {
+    renderMermaidDiagrams();
+  }
+
+  // Harmless when Astro view transitions are not used, and useful if added later.
+  document.addEventListener('astro:page-load', renderMermaidDiagrams);
+</script>
+
+<style is:global>
+  /* Center Mermaid diagrams inside blog articles */
+  .markdown-body pre.mermaid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-x: auto;
+    text-align: center;
+  }
+
+  .markdown-body pre.mermaid svg {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0;
+  }
+</style>
