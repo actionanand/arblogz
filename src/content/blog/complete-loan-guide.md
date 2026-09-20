@@ -216,7 +216,9 @@ Your future cost is not fully known on day one.
 
 Now we come to one of the most misunderstood terms.
 
+:::warning
 In the **flat-rate method**, interest is calculated using the **original principal** for the agreed tenure.
+:::
 
 Suppose:
 
@@ -244,23 +246,23 @@ I = 5,00,000 \times 0.08 \times 5
 $$
 
 $$
-I = ₹2,00,000
+I = \text{₹2,00,000}
 $$
 
 Total repayment:
 
 $$
-₹5,00,000 + ₹2,00,000 = ₹7,00,000
+\text{₹5,00,000} + \text{₹2,00,000} = \text{₹7,00,000}
 $$
 
 For 60 months:
 
 $$
-EMI = \frac{₹7,00,000}{60}
+EMI = \frac{\text{₹7,00,000}}{60}
 $$
 
 $$
-EMI \approx ₹11,666.67
+EMI \approx \text{₹11,666.67}
 $$
 
 ## Why flat rate can be misleading
@@ -271,7 +273,7 @@ Your actual outstanding debt may have fallen significantly.
 
 But the original flat-interest calculation was based on the original ₹5 lakh for the whole agreed tenure.
 
-That is why a **small-looking flat percentage can represent a much higher borrowing cost** than the same numerical percentage on a reducing-balance loan.
+> That is why a **small-looking flat percentage can represent a much higher borrowing cost** than the same numerical percentage on a reducing-balance loan.
 
 ---
 
@@ -294,13 +296,13 @@ If someone writes or says something like **“definition rate”**, they may act
 Suppose you owe:
 
 $$
-₹5,00,000
+\text{₹5,00,000}
 $$
 
 After several EMIs, the outstanding principal falls to:
 
 $$
-₹4,00,000
+\text{₹4,00,000}
 $$
 
 Future interest is then calculated using approximately ₹4 lakh, not the original ₹5 lakh.
@@ -308,13 +310,13 @@ Future interest is then calculated using approximately ₹4 lakh, not the origin
 Later, when it falls to:
 
 $$
-₹3,00,000
+\text{₹3,00,000}
 $$
 
 interest is calculated on the lower outstanding amount again.
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[₹5,00,000 outstanding] --> B[Pay EMI]
     B --> C[Lower outstanding]
     C --> D[Pay EMI]
@@ -540,7 +542,7 @@ Suppose a one-year bullet loan is ₹5 lakh at 9%.
 If you make **no principal repayment during the year**, then approximately:
 
 $$
-₹5,00,000 \times 9\% = ₹45,000
+\text{₹5,00,000} \times 9\% = \text{₹45,000}
 $$
 
 The result looks like flat interest because the outstanding principal remained ₹5 lakh for the whole year.
@@ -562,9 +564,9 @@ Suppose:
 For the first six months:
 
 $$
-₹5,00,000 \times 9\% \times \frac{6}{12}
+\text{₹5,00,000} \times 9\% \times \frac{6}{12}
 =
-₹22,500
+\text{₹22,500}
 $$
 
 After six months, you pay ₹2 lakh **toward principal**.
@@ -572,33 +574,33 @@ After six months, you pay ₹2 lakh **toward principal**.
 New outstanding:
 
 $$
-₹5,00,000 - ₹2,00,000 = ₹3,00,000
+\text{₹5,00,000} - \text{₹2,00,000} = \text{₹3,00,000}
 $$
 
 Approximate interest for the remaining six months:
 
 $$
-₹3,00,000 \times 9\% \times \frac{6}{12}
+\text{₹3,00,000} \times 9\% \times \frac{6}{12}
 =
-₹13,500
+\text{₹13,500}
 $$
 
 Approximate total:
 
 $$
-₹22,500 + ₹13,500 = ₹36,000
+\text{₹22,500} + \text{₹13,500} = \text{₹36,000}
 $$
 
 Without the principal part-payment:
 
 $$
-₹5,00,000 \times 9\% = ₹45,000
+\text{₹5,00,000} \times 9\% = \text{₹45,000}
 $$
 
 So the part-payment could reduce interest by approximately:
 
 $$
-₹45,000 - ₹36,000 = ₹9,000
+\text{₹45,000} - \text{₹36,000} = \text{₹9,000}
 $$
 
 Actual interest depends on the lender's day-count, repayment dates and product rules.
@@ -636,13 +638,13 @@ Simplified example:
 If eligible gold value is:
 
 $$
-₹8,00,000
+\text{₹8,00,000}
 $$
 
 and the applicable LTV allows 75%:
 
 $$
-₹8,00,000 \times 75\% = ₹6,00,000
+\text{₹8,00,000} \times 75\% = \text{₹6,00,000}
 $$
 
 The lender may lend up to the applicable eligible amount, subject to its rules and regulation.
@@ -868,25 +870,25 @@ Simplified example:
 Product price:
 
 $$
-₹60,000
+\text{₹60,000}
 $$
 
 Suppose calculated EMI interest is approximately:
 
 $$
-₹3,000
+\text{₹3,000}
 $$
 
 Merchant discount:
 
 $$
-₹3,000
+\text{₹3,000}
 $$
 
 Then the discount offsets the interest:
 
 $$
-₹60,000 - ₹3,000 + ₹3,000 = ₹60,000
+\text{₹60,000} - \text{₹3,000} + \text{₹3,000} = \text{₹60,000}
 $$
 
 But you must still check:
@@ -967,23 +969,23 @@ Imagine two offers.
 Interest:
 
 $$
-₹5,00,000 \times 8\% \times 5
+\text{₹5,00,000} \times 8\% \times 5
 =
-₹2,00,000
+\text{₹2,00,000}
 $$
 
 Total:
 
 $$
-₹7,00,000
+\text{₹7,00,000}
 $$
 
 Approximate EMI:
 
 $$
-₹7,00,000 / 60
+\text{₹7,00,000} / 60
 =
-₹11,666.67
+\text{₹11,666.67}
 $$
 
 ## Offer B
@@ -1288,19 +1290,19 @@ On a reducing-balance loan, principal part-payment can save future interest.
 Suppose outstanding principal is:
 
 $$
-₹10,00,000
+\text{₹10,00,000}
 $$
 
 You make a principal part-payment:
 
 $$
-₹2,00,000
+\text{₹2,00,000}
 $$
 
 New outstanding:
 
 $$
-₹8,00,000
+\text{₹8,00,000}
 $$
 
 Future interest is then calculated using the lower outstanding balance according to the product terms.
@@ -1326,7 +1328,7 @@ Example:
 Outstanding:
 
 $$
-₹3,50,000
+\text{₹3,50,000}
 $$
 
 You pay the required closure amount.
